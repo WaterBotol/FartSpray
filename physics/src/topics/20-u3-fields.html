@@ -1,0 +1,236 @@
+<!--
+id: u3-fields
+title: The field model: gravitational, electric & magnetic
+short: The field model
+summary: What a field is, how to draw and read field diagrams, monopoles and dipoles, attraction and repulsion, uniform and non-uniform fields, the inverse square law and qualitative energy changes in fields.
+keywords: field, field model, field lines, field diagram, gravitational field, electric field, magnetic field, monopole, dipole, uniform field, non-uniform, static field, changing field, inverse square law, attractive, repulsive, field strength, test charge, potential energy, point mass, point charge, parallel plates, bar magnet, compare fields
+dotpoints: describe gravitation, magnetism and electricity using a field model | investigate and compare theoretically and practically gravitational, magnetic and electric fields, including directions and shapes of fields, attractive and repulsive fields, and the existence of dipoles and monopoles | investigate and compare theoretically and practically gravitational fields and electrical fields about a point mass or charge (positive or negative) with reference to: the direction of the field; the shape of the field; the use of the inverse square law to determine the magnitude of the field; potential energy changes (qualitative) associated with a point mass or charge moving in the field | identify fields as static or changing, and as uniform or non-uniform | describe the interaction of two fields, allowing that electric charges, magnetic poles and current carrying conductors can either attract or repel, whereas masses only attract each other
+-->
+<h2>What is a field?</h2>
+<aside class="c-def"><p>A <strong>field</strong> is a region of space in which an object experiences a non-contact force because of a property it has: mass (gravitational field), charge (electric field) or magnetism / moving charge (magnetic field).</p></aside>
+<p>The field model replaces the puzzling idea of “action at a distance”. A mass creates a gravitational field around it; another mass placed in that field feels a force <em>from the field at its location</em>. Fields are <strong>vectors</strong>: they have a strength and a direction at every point.</p>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Gravitational</th><th>Electric</th><th>Magnetic</th></tr></thead>
+<tbody>
+<tr><td>Created by</td><td>Mass</td><td>Charge</td><td>Moving charges (currents) and magnetic materials</td></tr>
+<tr><td>Acts on</td><td>Mass</td><td>Charge</td><td>Moving charges, currents, magnetic poles</td></tr>
+<tr><td>Field strength defined as</td><td>Force per kg: \(g = F/m\) (N kg⁻¹)</td><td>Force per coulomb: \(E = F/q\) (N C⁻¹ or V m⁻¹)</td><td>Magnetic flux density \(B\) (tesla, T)</td></tr>
+<tr><td>Field direction</td><td>Direction of force on a mass</td><td>Direction of force on a <strong>positive</strong> charge</td><td>Direction a compass <strong>north</strong> pole points</td></tr>
+<tr><td>Attract / repel?</td><td><strong>Attract only</strong></td><td>Like repel, unlike attract</td><td>Like poles repel, unlike attract; parallel currents attract, antiparallel repel</td></tr>
+<tr><td>Monopoles?</td><td>Yes (every mass)</td><td>Yes (single charges); dipoles too</td><td><strong>No</strong>: only dipoles</td></tr>
+<tr><td>Point-source strength</td><td>\(g = GM/r^2\)</td><td>\(E = kq/r^2\)</td><td>Not required</td></tr>
+</tbody></table></div>
+
+<h2>Drawing and reading field diagrams</h2>
+<ul>
+  <li>Arrows show the direction of the force on a test mass, a positive test charge, or a north pole.</li>
+  <li>Lines closer together mean a <strong>stronger</strong> field.</li>
+  <li>Field lines <strong>never cross</strong> (the field has only one direction at each point).</li>
+  <li>Electric field lines start on positive charges and end on negative charges, meeting the surface at right angles.</li>
+  <li>Magnetic field lines form <strong>closed loops</strong>: outside a magnet they go N → S, inside they go S → N.</li>
+</ul>
+
+<div class="fig-row">
+<figure class="fig">
+<svg viewBox="0 0 200 160" width="200" role="img" aria-label="Gravitational field of a point mass: radial lines pointing inward">
+  <g class="s-acc">
+    <line x1="150" y1="80" x2="104" y2="80" marker-end="url(#ah-acc)"/><line x1="129.5" y1="129.5" x2="97" y2="97" marker-end="url(#ah-acc)"/>
+    <line x1="80" y1="150" x2="80" y2="104" marker-end="url(#ah-acc)"/><line x1="30.5" y1="129.5" x2="63" y2="97" marker-end="url(#ah-acc)"/>
+    <line x1="10" y1="80" x2="56" y2="80" marker-end="url(#ah-acc)"/><line x1="30.5" y1="30.5" x2="63" y2="63" marker-end="url(#ah-acc)"/>
+    <line x1="80" y1="10" x2="80" y2="56" marker-end="url(#ah-acc)"/><line x1="129.5" y1="30.5" x2="97" y2="63" marker-end="url(#ah-acc)"/>
+  </g>
+  <circle cx="80" cy="80" r="14" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="80" y="85" text-anchor="middle" class="t-b">M</text>
+  <text x="160" y="150" class="t-sm t-mut">g</text>
+</svg>
+<figcaption>Point mass: radial, inward, weaker further out. Always attractive.</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 200 160" width="200" role="img" aria-label="Electric field of a positive point charge: radial lines pointing outward">
+  <g class="s-acc">
+    <line x1="102" y1="80" x2="150" y2="80" marker-end="url(#ah-acc)"/><line x1="95.6" y1="95.6" x2="129.5" y2="129.5" marker-end="url(#ah-acc)"/>
+    <line x1="80" y1="102" x2="80" y2="150" marker-end="url(#ah-acc)"/><line x1="64.4" y1="95.6" x2="30.5" y2="129.5" marker-end="url(#ah-acc)"/>
+    <line x1="58" y1="80" x2="10" y2="80" marker-end="url(#ah-acc)"/><line x1="64.4" y1="64.4" x2="30.5" y2="30.5" marker-end="url(#ah-acc)"/>
+    <line x1="80" y1="58" x2="80" y2="10" marker-end="url(#ah-acc)"/><line x1="95.6" y1="64.4" x2="129.5" y2="30.5" marker-end="url(#ah-acc)"/>
+  </g>
+  <circle cx="80" cy="80" r="14" class="f-w"/>
+  <text x="80" y="86" text-anchor="middle" class="t-b" style="fill:#fff;font-size:18px">+</text>
+</svg>
+<figcaption>Positive point charge: radial, outward. A negative charge looks like the point mass (inward).</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 200 160" width="200" role="img" aria-label="Electric dipole: field lines curve from the positive charge to the negative charge">
+  <g class="s-acc">
+    <path d="M64 80 L136 80"/>
+    <path d="M58 72 Q100 20 142 72"/><path d="M58 88 Q100 140 142 88"/>
+    <path d="M54 67 Q100 -12 146 67"/><path d="M54 93 Q100 172 146 93"/>
+    <line x1="36" y1="80" x2="10" y2="80" marker-end="url(#ah-acc)"/>
+    <line x1="190" y1="80" x2="166" y2="80" marker-end="url(#ah-acc)"/>
+  </g>
+  <g class="f-acc">
+    <path d="M96 76 L104 80 L96 84 z"/><path d="M96 42 L104 46 L96 50 z"/><path d="M96 110 L104 114 L96 118 z"/>
+    <path d="M96 24 L104 28 L96 32 z"/><path d="M96 128 L104 132 L96 136 z"/>
+  </g>
+  <circle cx="48" cy="80" r="13" class="f-w"/><text x="48" y="86" text-anchor="middle" class="t-b" style="fill:#fff;font-size:17px">+</text>
+  <circle cx="152" cy="80" r="13" class="f-n"/><text x="152" y="85" text-anchor="middle" class="t-b" style="fill:#fff;font-size:17px">−</text>
+</svg>
+<figcaption>Electric dipole: lines leave + and enter −.</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 200 160" width="200" role="img" aria-label="Uniform electric field between parallel plates: evenly spaced parallel lines from the positive plate to the negative plate">
+  <rect x="25" y="22" width="150" height="8" class="f-w"/>
+  <rect x="25" y="130" width="150" height="8" class="f-n"/>
+  <text x="100" y="16" text-anchor="middle" class="t-sm t-b">+ + + + + + +</text>
+  <text x="100" y="154" text-anchor="middle" class="t-sm t-b">− − − − − − −</text>
+  <g class="s-acc">
+    <line x1="45" y1="32" x2="45" y2="126" marker-end="url(#ah-acc)"/><line x1="72" y1="32" x2="72" y2="126" marker-end="url(#ah-acc)"/>
+    <line x1="100" y1="32" x2="100" y2="126" marker-end="url(#ah-acc)"/><line x1="128" y1="32" x2="128" y2="126" marker-end="url(#ah-acc)"/>
+    <line x1="155" y1="32" x2="155" y2="126" marker-end="url(#ah-acc)"/>
+  </g>
+  <path d="M25 32 Q12 80 25 128" class="s-dash"/><path d="M175 32 Q188 80 175 128" class="s-dash"/>
+</svg>
+<figcaption>Parallel plates: uniform field (same strength and direction everywhere between the plates), except for edge effects.</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 200 160" width="200" role="img" aria-label="Bar magnet field lines leaving the north pole and entering the south pole">
+  <g class="s-acc">
+    <path d="M60 72 Q100 20 140 72"/><path d="M60 88 Q100 140 140 88"/>
+    <path d="M56 66 Q100 -12 144 66"/><path d="M56 94 Q100 172 144 94"/>
+    <line x1="52" y1="80" x2="12" y2="80" marker-end="url(#ah-acc)"/>
+    <line x1="188" y1="80" x2="150" y2="80" marker-end="url(#ah-acc)"/>
+  </g>
+  <g class="f-acc"><path d="M96 42 L104 46 L96 50 z"/><path d="M96 110 L104 114 L96 118 z"/><path d="M96 24 L104 28 L96 32 z"/><path d="M96 128 L104 132 L96 136 z"/></g>
+  <rect x="60" y="68" width="40" height="24" class="f-w"/><rect x="100" y="68" width="40" height="24" class="f-n"/>
+  <text x="80" y="85" text-anchor="middle" class="t-b" style="fill:#fff">N</text><text x="120" y="85" text-anchor="middle" class="t-b" style="fill:#fff">S</text>
+</svg>
+<figcaption>Bar magnet: a magnetic dipole. Outside, lines run N → S; inside, S → N, forming closed loops.</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 200 160" width="200" role="img" aria-label="Uniform gravitational field near Earth's surface: parallel, equally spaced arrows pointing down">
+  <g class="s-acc">
+    <line x1="40" y1="20" x2="40" y2="118" marker-end="url(#ah-acc)"/><line x1="70" y1="20" x2="70" y2="118" marker-end="url(#ah-acc)"/>
+    <line x1="100" y1="20" x2="100" y2="118" marker-end="url(#ah-acc)"/><line x1="130" y1="20" x2="130" y2="118" marker-end="url(#ah-acc)"/>
+    <line x1="160" y1="20" x2="160" y2="118" marker-end="url(#ah-acc)"/>
+  </g>
+  <rect x="15" y="124" width="170" height="20" class="f-surf3"/>
+  <text x="100" y="138" text-anchor="middle" class="t-sm t-b">Earth's surface</text>
+</svg>
+<figcaption>Near Earth's surface the gravitational field is approximately uniform (\(g = 9.8\ \text{N kg}^{-1}\) down).</figcaption>
+</figure>
+</div>
+
+<h2>Monopoles and dipoles</h2>
+<ul>
+  <li>A <strong>monopole</strong> is a single isolated source: a mass, or a single positive or negative charge. Its field is radial.</li>
+  <li>A <strong>dipole</strong> is a pair of opposite sources: a + and − charge, or the N and S poles of a magnet.</li>
+  <li>Gravity only has monopoles (there is no “negative mass”). Electric fields have both. <strong>Magnetic monopoles have never been observed.</strong> Cut a bar magnet in half and you get two smaller magnets, each with its own N and S pole.</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: 'the N pole is a magnetic monopole'">
+<p>A single pole cannot be isolated. Any question offering “a magnetic monopole such as the north pole of a bar magnet” as correct is wrong. Also note that Earth's geographic North Pole is near a magnetic <em>south</em> pole: that's why the north end of a compass is attracted there.</p>
+</aside>
+
+<h2>Uniform vs non-uniform, static vs changing</h2>
+<div class="tbl"><table>
+<thead><tr><th>Field</th><th>Uniform or non-uniform?</th><th>Static or changing?</th></tr></thead>
+<tbody>
+<tr><td>Between charged parallel plates</td><td>Uniform</td><td>Static (constant voltage)</td></tr>
+<tr><td>Around a point mass or charge</td><td>Non-uniform (radial, \(\propto 1/r^2\))</td><td>Static</td></tr>
+<tr><td>Near Earth's surface (over small heights)</td><td>Approximately uniform</td><td>Static</td></tr>
+<tr><td>Inside a long solenoid carrying DC</td><td>Uniform</td><td>Static</td></tr>
+<tr><td>Inside a solenoid or transformer core with AC</td><td>Uniform in space</td><td>Changing (varies with time)</td></tr>
+<tr><td>Around a bar magnet</td><td>Non-uniform</td><td>Static (unless it moves)</td></tr>
+</tbody></table></div>
+<p>Changing magnetic fields are what make generators and transformers work (<a href="#u3-flux">Unit 3 AoS 3</a>).</p>
+
+<h2>The inverse square law</h2>
+<p>For a point mass or point charge, field strength falls off with the square of the distance from the <strong>centre</strong>:</p>
+<div class="eq">\[ g = \frac{GM}{r^2} \qquad E = \frac{kq}{r^2} \qquad\Rightarrow\qquad \frac{\text{field}_2}{\text{field}_1} = \left(\frac{r_1}{r_2}\right)^2 \]</div>
+<ul>
+  <li>Double the distance → \(\tfrac14\) of the field. Triple → \(\tfrac19\). Halve → 4 ×.</li>
+  <li>The same applies to the force on an object placed in the field.</li>
+</ul>
+<aside class="c-deep" data-title="Going deeper: why the square?"><p>Picture the field lines spreading out from a point source. At distance \(r\) they pass through a sphere of area \(4\pi r^2\). Double \(r\) and the same number of lines spreads over four times the area, so the density of lines (the field strength) drops to a quarter.</p></aside>
+<aside class="c-trap" data-title="Trick alert: measure r from the centre">
+<p>A satellite 6370 km <em>above</em> Earth's surface is \(2R_E\) from Earth's centre, so it experiences \(\tfrac14\) of surface gravity, not \(\tfrac12\) and not zero.</p>
+</aside>
+
+<h2>Potential energy changes in fields (qualitative)</h2>
+<aside class="c-key"><p>Moving an object <strong>against</strong> the force the field exerts on it takes work and <strong>increases</strong> its potential energy. Moving <strong>with</strong> the force decreases potential energy (usually turning it into kinetic energy).</p></aside>
+<div class="tbl"><table>
+<thead><tr><th>Movement</th><th>Potential energy</th></tr></thead>
+<tbody>
+<tr><td>A rocket moving away from Earth</td><td>Gravitational PE increases</td></tr>
+<tr><td>A meteor falling towards Earth</td><td>Gravitational PE decreases (kinetic energy increases)</td></tr>
+<tr><td>A positive charge pushed towards another positive charge</td><td>Electric PE increases</td></tr>
+<tr><td>A positive charge moving away from a positive charge</td><td>Electric PE decreases</td></tr>
+<tr><td>An electron moving towards a positive charge (or positive plate)</td><td>Electric PE decreases (it speeds up)</td></tr>
+<tr><td>An electron moving away from a positive charge</td><td>Electric PE increases</td></tr>
+</tbody></table></div>
+
+<h2>How two fields interact</h2>
+<ul>
+  <li><strong>Masses</strong> only ever attract.</li>
+  <li><strong>Charges</strong>: like charges repel, unlike charges attract.</li>
+  <li><strong>Magnetic poles</strong>: like poles repel, unlike poles attract.</li>
+  <li><strong>Current-carrying conductors</strong>: parallel wires with currents in the same direction attract; opposite directions repel. (Each wire sits in the other's magnetic field.)</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Which of the following is <strong>not</strong> possible?</p></div>
+<ol><li>an electric monopole</li><li>an electric dipole</li><li>a magnetic monopole</li><li>a magnetic dipole</li></ol>
+<div class="mcq-x"><p>Isolated magnetic poles have never been observed; every magnet has both N and S poles.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The gravitational field strength at a point 2000 km from the centre of a small moon is 1.2 N kg⁻¹. At 4000 km from the centre it is:</p></div>
+<ol><li>0.60 N kg⁻¹</li><li>0.30 N kg⁻¹</li><li>2.4 N kg⁻¹</li><li>4.8 N kg⁻¹</li></ol>
+<div class="mcq-x"><p>Doubling the distance gives \(\tfrac14\) of the field: \(1.2/4 = 0.30\ \text{N kg}^{-1}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>The direction of an electric field at a point is defined as the direction of the force on:</p></div>
+<ol><li>an electron placed at that point</li><li>a small mass placed at that point</li><li>a compass needle's north pole</li><li>a small positive charge placed at that point</li></ol>
+<div class="mcq-x"><p>By convention, electric field direction is the force on a positive test charge. An electron experiences a force opposite to the field.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>An electron is released from rest near a positively charged sphere. As it moves towards the sphere, its electric potential energy:</p></div>
+<ol><li>decreases and its kinetic energy increases</li><li>increases and its kinetic energy increases</li><li>increases and its kinetic energy decreases</li><li>stays constant because the electron is negative</li></ol>
+<div class="mcq-x"><p>The electron moves in the direction of the force on it (attraction), so the field does positive work on it: potential energy becomes kinetic energy. Don't confuse this with a positive charge moving along the field direction; think about the direction of the <em>force on the object</em>.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Which field is uniform?</p></div>
+<ol><li>the gravitational field around the Moon</li><li>the electric field around a point charge</li><li>the electric field between two large, parallel charged plates</li><li>the magnetic field around a bar magnet</li></ol>
+<div class="mcq-x"><p>Between parallel plates the field lines are parallel and evenly spaced: same magnitude and direction everywhere (away from the edges).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Two long parallel wires carry currents in the same direction. The wires will:</p></div>
+<ol><li>repel each other</li><li>attract each other</li><li>experience no force, because currents are not charges at rest</li><li>twist to become perpendicular</li></ol>
+<div class="mcq-x"><p>Each wire lies in the magnetic field of the other. Using the right-hand grip rule and the force rule, parallel currents in the same direction attract.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Compare gravitational and electric fields by giving one similarity and two differences.</p></div>
+<div class="pq-s"><p><strong>Similarity:</strong> both are produced by point sources with radial fields whose strength follows an inverse square law (\(g = GM/r^2\), \(E = kq/r^2\)); both are non-contact forces described by a field model.</p><p><strong>Differences:</strong> gravitational fields only attract, but electric fields can attract or repel; gravitational fields act on mass while electric fields act on charge; electric forces are enormously stronger (about \(10^{39}\) times stronger between a proton and an electron).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="2">
+<div class="pq-q"><p>The electric field 0.30 m from a small charged sphere is \(4.0\times10^3\ \text{N C}^{-1}\). At what distance is the field \(1.0\times10^3\ \text{N C}^{-1}\)?</p></div>
+<div class="pq-s"><p>The field has dropped to \(\tfrac14\), so the distance must double: <strong>0.60 m</strong> from the centre of the sphere.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Draw the magnetic field around a bar magnet and explain why the field lines are drawn as closed loops, while electric field lines around a dipole start and stop.</p></div>
+<div class="pq-s"><p>Field lines leave the N pole, curve around outside and enter the S pole; inside the magnet they continue S → N, closing the loop (see the bar magnet diagram above). [1]</p><p>Electric field lines begin on positive charges and end on negative charges: isolated charges (monopoles) exist to act as starting and ending points. [1]</p><p>There are no magnetic monopoles for lines to start or end on, so magnetic field lines always form continuous closed loops. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Field direction: force on a mass (g), a positive charge (E), a north pole (B).</li>
+  <li>Gravity attracts only; electric and magnetic fields attract or repel. No magnetic monopoles.</li>
+  <li>Point sources obey the inverse square law, measured from the centre.</li>
+  <li>Moving against the field force raises potential energy; moving with it lowers potential energy.</li>
+</ul>

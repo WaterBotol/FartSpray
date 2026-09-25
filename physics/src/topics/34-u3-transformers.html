@@ -1,0 +1,129 @@
+<!--
+id: u3-transformers
+title: Transformers
+short: Transformers
+summary: How an ideal transformer uses electromagnetic induction to step voltages up or down, the turns-ratio equations, power conservation, and why transformers only work with AC.
+keywords: transformer, transformers, step up, step down, turns ratio, primary, secondary, coil, iron core, laminated, eddy currents, ideal transformer, power in equals power out, Np Ns, Vp Vs, Is Ip, AC only, DC, charger, electromagnetic induction, mutual induction
+dotpoints: analyse transformer action with reference to electromagnetic induction for an ideal transformer: \(\frac{N_1}{N_2} = \frac{V_1}{V_2} = \frac{I_2}{I_1}\)
+-->
+<h2>What a transformer does</h2>
+<p>A transformer changes the size of an AC voltage. It has two coils, the <strong>primary</strong> (input) and the <strong>secondary</strong> (output), wound on a shared iron core. There is no electrical connection between the coils: energy is transferred entirely through the changing magnetic field.</p>
+<figure class="fig">
+<svg viewBox="0 0 420 200" width="420" role="img" aria-label="Transformer: a primary coil and a secondary coil wound on opposite sides of a square iron core, with the changing flux circulating around the core">
+  <path d="M110 30 H310 V170 H110 Z M140 60 V140 H280 V60 Z" class="f-surf3" fill-rule="evenodd" style="stroke:var(--ink);stroke-width:1.4"/>
+  <g class="s-w" style="stroke-width:3">
+    <path d="M100 55 H150"/><path d="M100 72 H150"/><path d="M100 89 H150"/><path d="M100 106 H150"/><path d="M100 123 H150"/><path d="M100 140 H150"/>
+  </g>
+  <g class="s-n" style="stroke-width:3">
+    <path d="M270 62 H320"/><path d="M270 80 H320"/><path d="M270 98 H320"/><path d="M270 116 H320"/><path d="M270 134 H320"/><path d="M270 152 H320"/><path d="M270 44 H320"/>
+  </g>
+  <path d="M100 55 H40 M100 140 H40" class="s-w"/>
+  <circle cx="40" cy="97" r="16" class="f-surf" style="stroke:var(--ink);stroke-width:1.4"/>
+  <path d="M30 97 q5 -9 10 0 q5 9 10 0" class="s-ink"/>
+  <line x1="40" y1="55" x2="40" y2="81" class="s-w"/><line x1="40" y1="113" x2="40" y2="140" class="s-w"/>
+  <path d="M320 44 H380 V80 M320 152 H380 V116" class="s-n"/>
+  <rect x="370" y="80" width="20" height="36" class="f-surf" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="125" y="192" text-anchor="middle" class="t-sm t-w t-b">primary: N₁ turns</text>
+  <text x="295" y="192" text-anchor="middle" class="t-sm t-n t-b">secondary: N₂ turns</text>
+  <path d="M175 45 H245" class="s-acc" marker-end="url(#ah-acc)"/><path d="M245 155 H175" class="s-acc" marker-end="url(#ah-acc)"/>
+  <text x="210" y="100" text-anchor="middle" class="t-sm t-acc t-b">changing flux</text>
+  <text x="210" y="116" text-anchor="middle" class="t-sm t-acc t-b">in the core</text>
+  <text x="12" y="26" class="t-sm">AC in</text><text x="360" y="26" class="t-sm">load</text>
+</svg>
+<figcaption>The core links the flux from the primary to the secondary. Here the secondary has more turns: a step-up transformer.</figcaption>
+</figure>
+
+<h3>How it works (the induction chain)</h3>
+<ol>
+  <li>An <strong>alternating current</strong> in the primary coil produces an <strong>alternating (changing) magnetic field</strong> in the iron core.</li>
+  <li>The core carries this changing flux through the secondary coil.</li>
+  <li>The <strong>changing flux</strong> through the secondary induces an alternating emf in it (Faraday's law: \(\varepsilon = -N\Delta\Phi/\Delta t\)).</li>
+  <li>Each turn of either coil experiences the same flux change, so the voltage per turn is the same in both coils. More turns on the secondary → more voltage.</li>
+</ol>
+<aside class="c-exam" data-title="Exam tip: the full explanation">
+<p>“Explain how a transformer works” needs all the links: AC in primary → changing magnetic field/flux in the core → changing flux through the secondary → induced emf in the secondary (Faraday's law). Missing the word <em>changing</em> is the most common way to lose the mark.</p>
+</aside>
+
+<h2>The ideal transformer equations</h2>
+<div class="eq"><div class="eq-label">Ideal transformer (subscript 1 = primary, 2 = secondary)</div>\[ \frac{N_1}{N_2} = \frac{V_1}{V_2} = \frac{I_2}{I_1} \]<p>An ideal transformer loses no energy, so \(P_{\text{in}} = P_{\text{out}}\): \(V_1I_1 = V_2I_2\). Note the current ratio is <strong>upside down</strong> compared with the voltage ratio.</p></div>
+<ul>
+  <li><strong>Step-up</strong> (\(N_2 > N_1\)): voltage goes up, current goes down by the same factor.</li>
+  <li><strong>Step-down</strong> (\(N_2 < N_1\)): voltage goes down, current goes up.</li>
+  <li>Power is never “stepped up”. A transformer trades voltage for current.</li>
+</ul>
+
+<div class="we" data-title="A phone charger" data-marks="4">
+<div class="we-q"><p>A phone charger contains a transformer that steps 230 V rms mains down to 5.0 V rms. Its primary has 2300 turns. (a) How many turns are on the secondary? (b) If the phone draws 2.0 A, what current flows in the primary? Assume the transformer is ideal.</p></div>
+<div class="we-s"><p><strong>(a) Turns ratio equals voltage ratio:</strong></p>\[ \frac{N_1}{N_2} = \frac{V_1}{V_2} \Rightarrow N_2 = 2300 \times \frac{5.0}{230} = 50\ \text{turns} \]</div>
+<div class="we-s"><p><strong>(b) Power in = power out:</strong> \(P = V_2I_2 = 5.0 \times 2.0 = 10\ \text{W}\).</p>\[ I_1 = \frac{P}{V_1} = \frac{10}{230} = 0.043\ \text{A} \]</div>
+<div class="we-a"><p><strong>(a) 50 turns (b) 0.043 A (43 mA).</strong> Check with the current ratio: \(I_1 = I_2 \times N_2/N_1 = 2.0 \times 50/2300 = 0.043\ \text{A}\) ✓.</p></div>
+</div>
+
+<div class="we" data-title="A power station step-up transformer" data-marks="3">
+<div class="we-q"><p>A power station generator produces 22 kV. A transformer steps this up to 500 kV for transmission. If the generator supplies 1000 A, what current flows in the transmission line?</p></div>
+<div class="we-s"><p><strong>Voltage ratio:</strong> \(V_2/V_1 = 500/22 = 22.7\).</p></div>
+<div class="we-s"><p><strong>Current goes down by the same factor:</strong> \(I_2 = 1000 \times \dfrac{22}{500} = 44\ \text{A}\).</p></div>
+<div class="we-a"><p><strong>44 A.</strong> The power (22 MW) is unchanged; the much smaller current is the whole point (see <a href="#u3-transmission">Transmission</a>).</p></div>
+</div>
+
+<h2>Why transformers need AC</h2>
+<aside class="c-trap" data-title="Trick alert: DC into a transformer gives no output">
+<p>A steady DC current in the primary makes a <strong>constant</strong> magnetic field, so the flux through the secondary doesn't change and <strong>no emf is induced</strong>. The only output is a brief pulse at the moment DC is switched on or off (when the current, and flux, changes). A 12 V battery connected to a transformer does not produce a stepped-up DC voltage.</p>
+</aside>
+
+<h2>Real transformers</h2>
+<p>Real transformers are very efficient (often over 95%) but not perfect:</p>
+<ul>
+  <li><strong>Resistance of the coils</strong> heats the wire (\(I^2R\)).</li>
+  <li><strong>Eddy currents</strong> induced in the iron core heat it. Making the core from thin insulated <strong>laminations</strong> blocks the eddy-current paths.</li>
+  <li><strong>Flux leakage</strong>: some flux doesn't pass through both coils.</li>
+</ul>
+<p>Unless told otherwise, treat VCE transformers as ideal.</p>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>A 12 V DC battery is connected to the primary of a transformer with a turns ratio of 1:10 (step-up). After the connection is made, the steady secondary voltage is:</p></div>
+<ol><li>120 V DC</li><li>1.2 V DC</li><li>120 V AC</li><li>0 V</li></ol>
+<div class="mcq-x"><p>DC produces a constant flux, so there's no change in flux through the secondary and no induced emf (apart from a momentary spike at switch-on).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>An ideal transformer has 500 primary turns and 100 secondary turns. The primary voltage is 240 V rms. The secondary voltage is:</p></div>
+<ol><li>1200 V</li><li>48 V</li><li>240 V</li><li>24 V</li></ol>
+<div class="mcq-x"><p>\(V_2 = V_1 \times N_2/N_1 = 240 \times 100/500 = 48\ \text{V}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>In an ideal step-up transformer, compared with the primary, the secondary has:</p></div>
+<ol><li>higher voltage and higher power</li><li>higher voltage and higher current</li><li>higher voltage and lower current, with the same power</li><li>the same voltage and lower current</li></ol>
+<div class="mcq-x"><p>Power is conserved: if voltage goes up by some factor, current goes down by the same factor.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>Transformer cores are laminated (made from thin insulated sheets) in order to:</p></div>
+<ol><li>reduce energy losses from eddy currents</li><li>increase the number of turns</li><li>allow DC to pass through</li><li>increase the output voltage</li></ol>
+<div class="mcq-x"><p>The insulation between sheets breaks up the loops in which eddy currents would flow, reducing heating of the core.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A model train set needs 16 V rms from 230 V rms mains, drawing 1.5 A. For an ideal transformer, find the turns ratio \(N_1:N_2\) and the primary current.</p></div>
+<div class="pq-s"><p>\(N_1/N_2 = 230/16 = 14.4\), so about 14.4 : 1.</p><p>\(P = 16 \times 1.5 = 24\ \text{W}\); \(I_1 = 24/230 = 0.10\ \text{A}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>A transformer's primary is connected to 230 V rms. Its secondary supplies 11.5 V rms to a 4.6 Ω resistor. The transformer is 92% efficient. Find the primary current.</p></div>
+<div class="pq-s"><p>Output current: \(I_2 = 11.5/4.6 = 2.5\ \text{A}\); output power \(= 11.5 \times 2.5 = 28.75\ \text{W}\).</p><p>Input power \(= 28.75/0.92 = 31.25\ \text{W}\).</p><p>\(I_1 = 31.25/230 = 0.136\ \text{A}\) (compared with 0.125 A if it were ideal).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Explain how an alternating voltage in the primary coil of a transformer produces an alternating voltage in the secondary coil, even though the coils are not electrically connected.</p></div>
+<div class="pq-s"><p>The alternating current in the primary produces a continuously changing magnetic field (flux) in the iron core. [1]</p><p>The core channels this changing flux through the secondary coil. [1]</p><p>By Faraday's law, a changing flux through the secondary induces an emf in it (\(\varepsilon = -N\Delta\Phi/\Delta t\)); as the flux alternates, so does the induced voltage. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(N_1/N_2 = V_1/V_2 = I_2/I_1\); ideal means \(P_{\text{in}} = P_{\text{out}}\).</li>
+  <li>Transformers need a <em>changing</em> flux, so AC only.</li>
+  <li>Step-up raises voltage and lowers current; power is unchanged.</li>
+  <li>Losses: coil resistance, eddy currents (reduced by laminations), flux leakage.</li>
+</ul>

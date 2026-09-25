@@ -1,0 +1,130 @@
+<!--
+id: u3-transmission
+title: Transmission of electricity & power loss
+short: Transmission & power loss
+summary: Why electricity is transmitted at high voltage: line current, voltage drop, power loss, and full worked problems with and without transformers, including the classic traps.
+keywords: transmission, transmission lines, power loss, power lines, voltage drop, line resistance, I squared R, high voltage, step up, step down, grid, substation, efficiency, P = VI, wind turbine, farm, remote, power station, transformer, losses, AC advantage, HVDC
+dotpoints: analyse the effects of stepping up or stepping down the voltage in the transmission of electricity using transformers, including: the power transmitted \(P = VI\); the voltage drop across the transmission lines \(V_{\text{drop}} = I_{\text{line}}R_{\text{line}}\); the power loss in the transmission lines \(P_{\text{loss}} = I_{\text{line}}^2R_{\text{line}}\) | analyse transformer action with reference to electromagnetic induction for an ideal transformer
+-->
+<h2>The problem: power lines have resistance</h2>
+<p>Transmission lines are long, and even thick aluminium cables have resistance. When current flows through them, two bad things happen:</p>
+<div class="eq"><div class="eq-label">Transmission-line losses</div>\[ V_{\text{drop}} = I_{\text{line}}R_{\text{line}} \qquad P_{\text{loss}} = I_{\text{line}}^2R_{\text{line}} \]<p>\(R_{\text{line}}\) is the <strong>total</strong> resistance of the wires (both the “out” and “return” lines). The voltage drop is lost along the way, so less arrives at the far end; the power loss heats the wires.</p></div>
+<p>Because \(P_{\text{loss}} \propto I^2\), halving the current cuts the loss to a quarter. And for a given power, \(P = VI\) means a higher voltage needs a smaller current.</p>
+<aside class="c-key" data-title="Key idea: why high voltage">
+<p>For a fixed power \(P\), the line current is \(I = P/V\), so \(P_{\text{loss}} = (P/V)^2R\). <strong>Increasing the transmission voltage by a factor of \(n\) reduces the power loss by a factor of \(n^2\).</strong> Transformers make this possible, and they only work with AC, which is the main reason grids use AC.</p>
+</aside>
+
+<figure class="fig">
+<svg viewBox="0 0 440 170" width="440" role="img" aria-label="Power station, step-up transformer, long transmission lines with resistance, step-down transformer, then homes">
+  <rect x="10" y="60" width="62" height="50" rx="6" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="41" y="82" text-anchor="middle" class="t-sm t-b">power</text><text x="41" y="96" text-anchor="middle" class="t-sm t-b">station</text>
+  <line x1="72" y1="85" x2="92" y2="85" class="s-ink"/>
+  <rect x="92" y="62" width="44" height="46" rx="4" class="f-surf" style="stroke:var(--fw);stroke-width:2"/>
+  <text x="114" y="82" text-anchor="middle" class="t-sm t-b t-w">step</text><text x="114" y="96" text-anchor="middle" class="t-sm t-b t-w">up</text>
+  <line x1="136" y1="74" x2="300" y2="74" class="s-ink"/><line x1="136" y1="96" x2="300" y2="96" class="s-ink"/>
+  <rect x="190" y="66" width="46" height="16" class="f-surf2" style="stroke:var(--ink);stroke-width:1.2"/>
+  <text x="213" y="60" text-anchor="middle" class="t-sm">R<tspan dy="2" font-size="9">line</tspan></text>
+  <text x="218" y="124" text-anchor="middle" class="t-sm t-mut">high V, low I → small I²R loss</text>
+  <rect x="300" y="62" width="44" height="46" rx="4" class="f-surf" style="stroke:var(--fn);stroke-width:2"/>
+  <text x="322" y="82" text-anchor="middle" class="t-sm t-b t-n">step</text><text x="322" y="96" text-anchor="middle" class="t-sm t-b t-n">down</text>
+  <line x1="344" y1="85" x2="362" y2="85" class="s-ink"/>
+  <path d="M362 110 V80 L390 58 L418 80 V110 Z" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="390" y="100" text-anchor="middle" class="t-sm t-b">homes</text>
+  <text x="41" y="140" text-anchor="middle" class="t-sm t-mono">22 kV</text>
+  <text x="218" y="150" text-anchor="middle" class="t-sm t-mono">220–500 kV</text>
+  <text x="390" y="140" text-anchor="middle" class="t-sm t-mono">230 V</text>
+</svg>
+<figcaption>Victoria's grid steps generator voltage up for long-distance transmission, then down in stages (zone substations, pole transformers) to 230 V at the home.</figcaption>
+</figure>
+
+<h2>The classic comparison</h2>
+<div class="we" data-title="With and without transformers" data-marks="6">
+<div class="we-q"><p>A generator supplies 100 kW at 250 V to a town through transmission lines with a total resistance of 0.50 Ω.</p><p>(a) Without transformers, find the line current, the voltage drop along the lines, the power lost and the voltage reaching the town. (b) Repeat with an ideal transformer stepping the voltage up to 10 kV at the generator.</p></div>
+<div class="we-s"><p><strong>(a) Line current</strong> (from the power supplied):</p>\[ I = \frac{P}{V} = \frac{100\,000}{250} = 400\ \text{A} \]</div>
+<div class="we-s"><p><strong>Voltage drop and power loss:</strong></p>\[ V_{\text{drop}} = IR = 400 \times 0.50 = 200\ \text{V} \qquad P_{\text{loss}} = I^2R = 400^2 \times 0.50 = 80\ \text{kW} \]</div>
+<div class="we-s"><p><strong>Voltage at the town:</strong> \(250 - 200 = 50\ \text{V}\). Only \(100 - 80 = 20\ \text{kW}\) arrives. Useless.</p></div>
+<div class="we-s"><p><strong>(b) With 10 kV transmission.</strong> The transformer keeps the power at 100 kW:</p>\[ I = \frac{100\,000}{10\,000} = 10\ \text{A} \]</div>
+<div class="we-s"><p><strong>Drop and loss:</strong></p>\[ V_{\text{drop}} = 10 \times 0.50 = 5.0\ \text{V} \qquad P_{\text{loss}} = 10^2 \times 0.50 = 50\ \text{W} \]<p>The town end receives 9995 V (before stepping down) and 99.95 kW.</p></div>
+<div class="we-a"><p><strong>(a) 400 A, 200 V drop, 80 kW lost, 50 V arrives (b) 10 A, 5.0 V drop, 50 W lost.</strong> Raising the voltage 40 times cut the loss by \(40^2 = 1600\) times.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: the \(P = V^2/R\) trap">
+<p>Never calculate line loss as \(V^2/R\) using the <strong>supply or transmission voltage</strong>. That voltage is not across the line resistance. \(10\,000^2/0.50 = 200\ \text{MW}\), which is nonsense. In \(P = V^2/R\) the \(V\) must be the <strong>voltage drop across the lines</strong> (\(5.0^2/0.50 = 50\ \text{W}\) ✓). The safe route is always: find \(I_{\text{line}}\) first, then use \(I^2R\).</p>
+</aside>
+<aside class="c-exam" data-title="Exam tip: the four-line routine">
+<ol>
+  <li>Find the line current: \(I_{\text{line}} = P/V\), using the voltage <em>at the start of the line</em> (after any step-up).</li>
+  <li>\(V_{\text{drop}} = I_{\text{line}}R_{\text{line}}\) → subtract to get the voltage at the far end.</li>
+  <li>\(P_{\text{loss}} = I_{\text{line}}^2R_{\text{line}}\) → subtract to get the power delivered.</li>
+  <li>If there's a step-down transformer, apply its turns ratio to the voltage <em>arriving</em> at it (not the transmission voltage).</li>
+</ol>
+</aside>
+
+<div class="we" data-title="Wind turbine to a farmhouse (exam style)" data-marks="8">
+<div class="we-q"><p>A wind turbine generates 50 kW at 400 V rms. It supplies a farmhouse through lines with a total resistance of 2.0 Ω.</p><p>(a) Find the power delivered to the farmhouse if no transformers are used. (b) An ideal 1:20 step-up transformer is installed at the turbine and an ideal 20:1 step-down transformer at the farmhouse. Find the line current, the power loss, and the voltage supplied to the farmhouse. (c) By what factor did the power loss decrease?</p></div>
+<div class="we-s"><p><strong>(a)</strong> \(I = 50\,000/400 = 125\ \text{A}\); \(P_{\text{loss}} = 125^2 \times 2.0 = 31\,250\ \text{W}\).</p><p>Delivered: \(50\,000 - 31\,250 = 18\,750\ \text{W} \approx 19\ \text{kW}\) (only 38%!). Voltage at the farm: \(400 - 125 \times 2.0 = 150\ \text{V}\).</p></div>
+<div class="we-s"><p><strong>(b) After step-up:</strong> \(V = 400 \times 20 = 8000\ \text{V}\), so</p>\[ I_{\text{line}} = \frac{50\,000}{8000} = 6.25\ \text{A} \]</div>
+<div class="we-s"><p><strong>Loss and drop:</strong></p>\[ P_{\text{loss}} = 6.25^2 \times 2.0 = 78\ \text{W} \qquad V_{\text{drop}} = 6.25 \times 2.0 = 12.5\ \text{V} \]</div>
+<div class="we-s"><p><strong>Voltage arriving at the step-down transformer:</strong> \(8000 - 12.5 = 7987.5\ \text{V}\).</p><p><strong>After stepping down 20:1:</strong> \(7987.5/20 = 399\ \text{V}\).</p></div>
+<div class="we-s"><p><strong>(c)</strong> \(31\,250/78.1 = 400\), which is \(20^2\) because the current dropped by a factor of 20.</p></div>
+<div class="we-a"><p><strong>(a) 19 kW (b) 6.25 A, 78 W lost, 399 V at the farmhouse (c) 400 times smaller.</strong></p></div>
+</div>
+
+<div class="sim" data-sim="transmission"></div>
+
+<h2>AC, DC and the grid</h2>
+<ul>
+  <li>AC is used for distribution because transformers make changing voltage cheap and efficient, and they only work with AC.</li>
+  <li>Transmission voltages are limited by insulation and safety (arcing to towers, electric fields near the ground), which is why lines are high on tall towers.</li>
+</ul>
+<aside class="c-deep" data-title="Going deeper: HVDC links">
+<p>For very long cables, especially undersea ones like Basslink between Victoria and Tasmania, high-voltage <strong>DC</strong> is used. AC in long undersea cables wastes energy charging and discharging the cable's capacitance every cycle. Modern power electronics convert AC to high-voltage DC and back at each end.</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The voltage at which a fixed amount of power is transmitted is doubled. The power lost in the transmission lines becomes:</p></div>
+<ol><li>double</li><li>half</li><li>one quarter</li><li>unchanged</li></ol>
+<div class="mcq-x"><p>Double \(V\) → half \(I\) → \(I^2R\) is \(\tfrac14\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A power station transmits 20 MW at 200 kV through lines of total resistance 10 Ω. The power lost in the lines is:</p></div>
+<ol><li>100 kW</li><li>4.0 GW</li><li>1.0 kW</li><li>2.0 MW</li></ol>
+<div class="mcq-x"><p>\(I = 20\times10^6/200\times10^3 = 100\ \text{A}\); \(P_{\text{loss}} = 100^2 \times 10 = 1.0\times10^5\ \text{W}\). Option B is the \(V^2/R\) trap: \((200\,000)^2/10\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>The main reason transmission lines operate at very high voltages is to:</p></div>
+<ol><li>increase the power delivered by the power station</li><li>make electricity travel faster</li><li>reduce the resistance of the lines</li><li>reduce the current, and so reduce the \(I^2R\) power loss</li></ol>
+<div class="mcq-x"><p>High voltage means low current for the same power. The line resistance is unchanged; the loss drops because it depends on \(I^2\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Power is transmitted at 11 kV to a step-down transformer with a 50:1 ratio. The lines drop 500 V. The voltage at the transformer's output is:</p></div>
+<ol><li>220 V</li><li>210 V</li><li>11 kV</li><li>230 V</li></ol>
+<div class="mcq-x"><p>The voltage arriving at the transformer is \(11\,000 - 500 = 10\,500\ \text{V}\); \(10\,500/50 = 210\ \text{V}\). Dividing 11 kV by 50 ignores the drop.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A generator delivers 5.0 kW at 240 V to a shed through lines of total resistance 0.40 Ω. Find the line current, the voltage at the shed and the percentage of power lost.</p></div>
+<div class="pq-s"><p>\(I = 5000/240 = 20.8\ \text{A}\). \(V_{\text{drop}} = 20.8 \times 0.40 = 8.3\ \text{V}\), so the shed receives \(240 - 8.3 = 232\ \text{V}\).</p><p>\(P_{\text{loss}} = 20.8^2 \times 0.40 = 174\ \text{W}\), which is \(174/5000 = 3.5\%\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>A town needs 2.0 MW. It is supplied through lines of total resistance 5.0 Ω. The power company wants to keep line losses below 1% of the power supplied. What is the minimum transmission voltage? (Assume the 2.0 MW is the power entering the lines.)</p></div>
+<div class="pq-s"><p>Maximum loss: \(0.01 \times 2.0\times10^6 = 2.0\times10^4\ \text{W}\).</p><p>\(I^2R \leq 2.0\times10^4 \Rightarrow I \leq \sqrt{2.0\times10^4/5.0} = 63.2\ \text{A}\).</p><p>\(V = P/I \geq 2.0\times10^6/63.2 = 3.2\times10^4\ \text{V}\): at least about <strong>32 kV</strong>.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A student suggests that, to reduce transmission losses, the power company should use a step-<em>down</em> transformer at the power station “so that less voltage is lost”. Explain why this is wrong.</p></div>
+<div class="pq-s"><p>For a fixed power, stepping the voltage down increases the line current (\(I = P/V\)). [1]</p><p>Power loss is \(I^2R\), so a larger current increases the losses (by the square of the factor), and the voltage drop \(IR\) also increases. [1]</p><p>The correct approach is to step the voltage <em>up</em> for transmission (reducing \(I\)), then step it down near the consumer. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(I_{\text{line}} = P/V\), then \(V_{\text{drop}} = IR\) and \(P_{\text{loss}} = I^2R\).</li>
+  <li>Stepping voltage up by \(n\) cuts the loss by \(n^2\).</li>
+  <li>Never use \(V^2/R\) with the supply voltage.</li>
+  <li>Step-down transformers act on the voltage that <em>arrives</em>, after the drop.</li>
+</ul>

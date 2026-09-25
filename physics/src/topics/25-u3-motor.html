@@ -1,0 +1,172 @@
+<!--
+id: u3-motor
+title: Force on conductors & DC motors
+short: Force on conductors & DC motors
+summary: The force on a current-carrying wire in a magnetic field, the right-hand force rule, and how a simple DC motor turns: torque, coil orientation and the split-ring commutator.
+keywords: force on conductor, current carrying wire, motor effect, F = nILB, right hand rule, right hand slap rule, palm rule, DC motor, motor, coil, torque, split ring commutator, commutator, brushes, armature, rotation, slip rings, current balance, perpendicular, parallel
+dotpoints: investigate and analyse theoretically and practically the force on a current carrying conductor due to an external magnetic field, \(F = nIlB\), where the directions of \(I\) and \(B\) are either perpendicular or parallel to each other | investigate and analyse theoretically and practically the operation of simple DC motors consisting of one coil, containing a number of loops of wire, which is free to rotate about an axis in a uniform magnetic field and including the use of a split ring commutator
+-->
+<h2>The force on a current in a magnetic field</h2>
+<p>A current-carrying wire in a magnetic field feels a force because the moving charges in it are pushed sideways by the field. This <strong>motor effect</strong> is behind every electric motor, speaker and loudspeaker.</p>
+<div class="eq"><div class="eq-label">Force on a conductor</div>\[ F = nIlB \quad (I \perp B) \qquad\qquad F = 0 \quad (I \parallel B) \]<p>\(n\) = number of conductors (e.g. turns of wire along that side of a coil), \(I\) = current (A), \(l\) = length of wire <em>inside the field</em> (m), \(B\) = magnetic flux density (T).</p></div>
+<aside class="c-key" data-title="Right-hand force (slap) rule">
+<p>Hold your right hand flat. <strong>Fingers</strong> point along the field \(B\) (N → S). <strong>Thumb</strong> points along the conventional current \(I\). Your <strong>palm</strong> pushes in the direction of the force \(F\).</p>
+<p>The force is always perpendicular to both the current and the field.</p>
+</aside>
+<aside class="c-trap" data-title="Trick alert: parallel means zero, and electrons reverse">
+<ul>
+  <li>If the wire runs <strong>parallel</strong> to the field, there is <strong>no force</strong>, however large the current.</li>
+  <li>The rule uses <strong>conventional</strong> current. For a flow of electrons, point your thumb the opposite way.</li>
+  <li>\(l\) is only the length <em>in the field</em>. A 2 m wire with 5 cm between the magnet poles has \(l = 0.05\ \text{m}\).</li>
+</ul>
+</aside>
+
+<div class="we" data-title="Force on a wire" data-marks="3">
+<div class="we-q"><p>A straight wire carries 4.0 A horizontally from west to east through a uniform 0.50 T magnetic field pointing north. 0.25 m of the wire is in the field. Find the size and direction of the force on it. What would the force be if the wire ran north–south?</p></div>
+<div class="we-s"><p><strong>Size</strong> (current perpendicular to field):</p>\[ F = nIlB = 1 \times 4.0 \times 0.25 \times 0.50 = 0.50\ \text{N} \]</div>
+<div class="we-s"><p><strong>Direction:</strong> fingers north (B), thumb east (I), palm faces <strong>up</strong>. (Check: \(\text{east} \times \text{north} = \text{up}\).)</p></div>
+<div class="we-s"><p><strong>North–south wire:</strong> current parallel (or antiparallel) to \(B\), so \(F = 0\).</p></div>
+<div class="we-a"><p><strong>0.50 N vertically upward; zero if the wire is parallel to the field.</strong></p></div>
+</div>
+
+<h2>The simple DC motor</h2>
+<p>A DC motor has a rectangular <strong>coil</strong> of \(n\) turns that can rotate about an axis between the poles of a magnet (a uniform field). Current enters and leaves the coil through <strong>brushes</strong> that press on a <strong>split-ring commutator</strong>.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 440 220" width="440" role="img" aria-label="End view of a DC motor coil in two positions: parallel to the field with forces up and down giving maximum torque, and perpendicular to the field with forces along the coil giving zero torque">
+  <g>
+    <rect x="10" y="40" width="26" height="130" class="f-w"/><text x="23" y="110" text-anchor="middle" class="t-b" style="fill:#fff">N</text>
+    <rect x="184" y="40" width="26" height="130" class="f-n"/><text x="197" y="110" text-anchor="middle" class="t-b" style="fill:#fff">S</text>
+    <g class="s-line"><line x1="40" y1="60" x2="180" y2="60"/><line x1="40" y1="150" x2="180" y2="150"/></g>
+    <line x1="60" y1="105" x2="160" y2="105" class="s-ink" style="stroke-width:3"/>
+    <circle cx="110" cy="105" r="3" class="f-mut"/>
+    <circle cx="60" cy="105" r="9" class="f-surf" style="stroke:var(--ink);stroke-width:1.5"/><circle cx="60" cy="105" r="2.6" class="f-ink"/>
+    <circle cx="160" cy="105" r="9" class="f-surf" style="stroke:var(--ink);stroke-width:1.5"/><line x1="154" y1="99" x2="166" y2="111" class="s-ink"/><line x1="166" y1="99" x2="154" y2="111" class="s-ink"/>
+    <line x1="60" y1="94" x2="60" y2="52" class="s-net" marker-end="url(#ah-net)"/><text x="66" y="62" class="t-net t-b">F</text>
+    <line x1="160" y1="116" x2="160" y2="158" class="s-net" marker-end="url(#ah-net)"/><text x="166" y="154" class="t-net t-b">F</text>
+    <path d="M80 70 A45 45 0 0 1 140 70" class="s-acc" marker-end="url(#ah-acc)"/>
+    <text x="110" y="200" text-anchor="middle" class="t-sm t-b">plane ∥ B: maximum torque</text>
+    <text x="110" y="214" text-anchor="middle" class="t-sm t-mut">B →  (fingers)</text>
+  </g>
+  <g transform="translate(225,0)">
+    <rect x="10" y="40" width="26" height="130" class="f-w"/><text x="23" y="110" text-anchor="middle" class="t-b" style="fill:#fff">N</text>
+    <rect x="184" y="40" width="26" height="130" class="f-n"/><text x="197" y="110" text-anchor="middle" class="t-b" style="fill:#fff">S</text>
+    <g class="s-line"><line x1="40" y1="60" x2="180" y2="60"/><line x1="40" y1="150" x2="180" y2="150"/></g>
+    <line x1="110" y1="60" x2="110" y2="150" class="s-ink" style="stroke-width:3"/>
+    <circle cx="110" cy="105" r="3" class="f-mut"/>
+    <circle cx="110" cy="60" r="9" class="f-surf" style="stroke:var(--ink);stroke-width:1.5"/><circle cx="110" cy="60" r="2.6" class="f-ink"/>
+    <circle cx="110" cy="150" r="9" class="f-surf" style="stroke:var(--ink);stroke-width:1.5"/><line x1="104" y1="144" x2="116" y2="156" class="s-ink"/><line x1="116" y1="144" x2="104" y2="156" class="s-ink"/>
+    <line x1="110" y1="49" x2="110" y2="18" class="s-net" marker-end="url(#ah-net)"/><text x="116" y="30" class="t-net t-b">F</text>
+    <line x1="110" y1="161" x2="110" y2="192" class="s-net" marker-end="url(#ah-net)"/><text x="116" y="186" class="t-net t-b">F</text>
+    <text x="110" y="208" text-anchor="middle" class="t-sm t-b">plane ⊥ B: zero torque</text>
+  </g>
+</svg>
+<figcaption>End view along the axis of rotation. • = current out of the page, × = into the page. The forces on the two long sides are always equal and opposite (\(nIlB\) up and down), but they only produce a turning effect when they are not in line with the axis.</figcaption>
+</figure>
+
+<h3>How it turns, step by step</h3>
+<ol>
+  <li>Current flows along one side of the coil and back along the opposite side, so those two sides carry current in <strong>opposite directions</strong>.</li>
+  <li>Both sides are perpendicular to the field, so each feels a force \(F = nIlB\), one up and one down. This pair of forces produces a <strong>torque</strong> that turns the coil.</li>
+  <li>The torque is <strong>maximum when the plane of the coil is parallel to the field</strong> (forces furthest from the axis, at right angles to the coil).</li>
+  <li>As the coil turns towards the vertical, the forces keep the same size and direction but act more and more in line with the axis, so the torque drops. When the <strong>plane is perpendicular to the field, the torque is zero</strong>.</li>
+  <li>At exactly that moment the <strong>split-ring commutator</strong> reverses the current in the coil. The coil's momentum carries it past the vertical, and with the current reversed the forces now turn it the <strong>same way</strong> for the next half turn.</li>
+</ol>
+
+<h3>The split-ring commutator</h3>
+<figure class="fig">
+<svg viewBox="0 0 380 170" width="380" role="img" aria-label="Split ring commutator: two half rings separated by gaps, with a brush pressing on each half connected to a DC supply">
+  <path d="M190 45 A40 40 0 0 1 190 125" class="s-ink" style="stroke-width:10;stroke:var(--fw)"/>
+  <path d="M185 125 A40 40 0 0 1 185 45" class="s-ink" style="stroke-width:10;stroke:var(--fn)"/>
+  <rect x="112" y="76" width="30" height="18" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <rect x="233" y="76" width="30" height="18" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <line x1="112" y1="85" x2="60" y2="85" class="s-ink"/><line x1="263" y1="85" x2="320" y2="85" class="s-ink"/>
+  <line x1="60" y1="85" x2="60" y2="140" class="s-ink"/><line x1="320" y1="85" x2="320" y2="140" class="s-ink"/>
+  <line x1="60" y1="140" x2="175" y2="140" class="s-ink"/><line x1="205" y1="140" x2="320" y2="140" class="s-ink"/>
+  <line x1="175" y1="128" x2="175" y2="152" class="s-ink" style="stroke-width:2.4"/><line x1="185" y1="134" x2="185" y2="146" class="s-ink" style="stroke-width:4"/>
+  <line x1="185" y1="140" x2="205" y2="140" class="s-ink"/>
+  <text x="180" y="166" text-anchor="middle" class="t-sm">DC supply</text>
+  <text x="127" y="70" text-anchor="middle" class="t-sm">brush</text><text x="248" y="70" text-anchor="middle" class="t-sm">brush</text>
+  <text x="190" y="30" text-anchor="middle" class="t-sm t-mut">gap</text><text x="190" y="150" text-anchor="middle" class="t-sm t-mut"></text>
+  <text x="300" y="30" class="t-sm">each half ring is joined</text><text x="300" y="44" class="t-sm">to one end of the coil</text>
+</svg>
+<figcaption>Every half turn the half rings swap brushes, so the current through the coil reverses. The current in the external circuit is always in the same direction.</figcaption>
+</figure>
+<aside class="c-trap" data-title="Trick alert: what the commutator really does">
+<ul>
+  <li>It reverses the current <strong>in the coil</strong> every half turn (when the coil is perpendicular to the field). It does not reverse the current from the supply, and it does not reverse the field.</li>
+  <li>Its purpose is to keep the torque acting in the <strong>same rotational direction</strong>, so the coil spins continuously instead of rocking back and forth.</li>
+  <li>If slip rings replaced the commutator on a DC motor, the coil would swing to the vertical position and oscillate there, then stop. It would not rotate continuously.</li>
+  <li>When the coil is perpendicular to the field the forces on the long sides are <strong>not zero</strong>; only the torque is zero. (In real motors the brushes briefly touch the gap, so there's no current at that instant anyway.)</li>
+</ul>
+</aside>
+
+<div class="we" data-title="Forces on a motor coil" data-marks="4">
+<div class="we-q"><p>A DC motor coil has 50 turns and is square, with sides of 4.0 cm. It carries 2.0 A in a uniform 0.30 T field. The coil can rotate about an axis through the middle of two opposite sides.</p><p>(a) Find the force on each side that is perpendicular to the field when the coil's plane is parallel to the field. (b) What is the force on each of these sides when the plane is perpendicular to the field? (c) What is the force on the other two sides when the plane is parallel to the field?</p></div>
+<div class="we-s"><p><strong>(a)</strong> Each side has 50 conductors of length 0.040 m, perpendicular to \(B\):</p>\[ F = nIlB = 50 \times 2.0 \times 0.040 \times 0.30 = 1.2\ \text{N} \]</div>
+<div class="we-s"><p><strong>(b)</strong> Those sides are still perpendicular to \(B\) (they are parallel to the axis, which is perpendicular to the field), so the force is <strong>still 1.2 N</strong>. It just points along the plane of the coil, so it produces no torque.</p></div>
+<div class="we-s"><p><strong>(c)</strong> When the plane is parallel to the field, the other two sides run parallel to \(B\), so \(F = 0\).</p></div>
+<div class="we-a"><p><strong>(a) 1.2 N (b) still 1.2 N, but zero torque (c) 0 N.</strong> Part (b) is the trap: students often write zero.</p></div>
+</div>
+
+<div class="sim" data-sim="motor"></div>
+
+<h2>Making a better motor</h2>
+<ul>
+  <li><strong>Larger torque:</strong> more turns (\(n\)), more current (\(I\)), a stronger field (\(B\)), or longer sides / a wider coil.</li>
+  <li><strong>Smoother rotation:</strong> use several coils at different angles, each with its own commutator segments, so there's always a coil near maximum torque.</li>
+  <li><strong>Curved pole pieces</strong> and an iron core make the field radial, so the sides are always cutting across the field and the torque stays near maximum for most of the turn.</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>In a DC motor, the torque on the coil is zero when:</p></div>
+<ol><li>the plane of the coil is parallel to the magnetic field</li><li>the current in the coil is at its maximum</li><li>the forces on the sides of the coil are zero</li><li>the plane of the coil is perpendicular to the magnetic field</li></ol>
+<div class="mcq-x"><p>When the plane is perpendicular to the field, the forces on the long sides point along the plane of the coil (in line with the axis), so they produce no turning effect even though they are not zero.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The main function of the split-ring commutator in a DC motor is to:</p></div>
+<ol><li>reverse the direction of the magnetic field every half turn</li><li>reverse the direction of the current in the coil every half turn</li><li>convert DC from the supply into AC in the external circuit</li><li>reduce friction between the brushes and the coil</li></ol>
+<div class="mcq-x"><p>Reversing the coil current every half turn keeps the torque in the same rotational direction, so the motor spins continuously.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A 0.10 m length of wire carries 3.0 A at right angles to a 0.20 T field. The force on it is:</p></div>
+<ol><li>0.060 N</li><li>0.60 N</li><li>6.0 N</li><li>0 N</li></ol>
+<div class="mcq-x"><p>\(F = IlB = 3.0 \times 0.10 \times 0.20 = 0.060\ \text{N}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A wire carrying current is placed along the direction of a uniform magnetic field. The current is doubled. The force on the wire:</p></div>
+<ol><li>doubles</li><li>quadruples</li><li>remains zero</li><li>halves</li></ol>
+<div class="mcq-x"><p>A current parallel to the field experiences no force. Twice zero is still zero.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>The split-ring commutator of a working DC motor is replaced by slip rings, keeping the DC supply. The coil will most likely:</p></div>
+<ol><li>rotate continuously at the same speed</li><li>rotate until its plane is perpendicular to the field, then oscillate about that position and stop</li><li>rotate continuously in the opposite direction</li><li>rotate faster, because slip rings have less friction</li></ol>
+<div class="mcq-x"><p>Without the reversal, the torque changes direction every half turn. The coil overshoots the perpendicular position, is pulled back, and settles there.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A 20-turn rectangular coil has sides of 5.0 cm (perpendicular to the field) and 3.0 cm. It carries 1.5 A in a 0.40 T field. Find the force on each 5.0 cm side when the coil plane is parallel to the field, and describe the directions of these two forces.</p></div>
+<div class="pq-s"><p>\(F = nIlB = 20 \times 1.5 \times 0.050 \times 0.40 = 0.60\ \text{N}\) on each 5.0 cm side.</p><p>The currents in the two sides are in opposite directions, so the forces are opposite: one side is pushed up, the other down, forming a turning pair (torque).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>A “current balance” consists of a horizontal wire 5.0 cm long held between magnet poles sitting on an electronic scale. When 3.0 A flows, the scale reading changes by 3.1 g. Find the magnetic field strength.</p></div>
+<div class="pq-s"><p>Change in force: \(F = mg = 0.0031 \times 9.8 = 0.030\ \text{N}\).</p><p>\(B = \dfrac{F}{Il} = \dfrac{0.030}{3.0 \times 0.050} = 0.20\ \text{T}\).</p><p>(By Newton's third law, the force the field exerts on the wire is matched by a force on the magnet, which is what the scale detects.)</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Explain how a simple DC motor keeps rotating in one direction. Refer to the forces on the coil, the torque, and the role of the split-ring commutator.</p></div>
+<div class="pq-s"><p>The two sides of the coil perpendicular to the field carry current in opposite directions, so they experience equal and opposite forces (\(F = nIlB\)). [1]</p><p>These forces produce a torque that rotates the coil; the torque is greatest when the coil plane is parallel to the field and zero when it is perpendicular. [1]</p><p>At the perpendicular position, the split-ring commutator swaps which brush each end of the coil touches, reversing the current in the coil. [1]</p><p>The coil's momentum carries it past this point, and with the current reversed the forces again produce torque in the same rotational direction, so rotation continues. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(F = nIlB\) when \(I \perp B\); zero when parallel. Right-hand rule: fingers B, thumb I, palm F.</li>
+  <li>Motor torque: maximum with coil plane ∥ B, zero with plane ⊥ B (forces not zero).</li>
+  <li>Split-ring commutator reverses coil current every half turn to keep the rotation one way.</li>
+</ul>

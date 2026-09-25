@@ -1,0 +1,12 @@
+{
+  "name": "vce-physics-34-guide",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Interactive VCE Physics Units 3 & 4 study guide (static site, single-file build)",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "katex": "0.16.22"
+  }
+}

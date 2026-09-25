@@ -1,0 +1,198 @@
+<!--
+id: u3-projectiles
+title: Projectile motion
+short: Projectile motion
+summary: Motion near Earth's surface under gravity alone: independent horizontal and vertical motion, horizontal and angled launches, launches from heights, maximum range, and the qualitative effect of air resistance.
+keywords: projectile, projectiles, trajectory, parabola, horizontal launch, angled launch, cliff, time of flight, range, maximum height, components, independence, suvat, equations of motion, constant acceleration, 45 degrees, air resistance, drag, monkey and hunter, kicked ball, thrown
+dotpoints: investigate and analyse theoretically and practically the motion of projectiles near Earth's surface, including a qualitative description of the effects of air resistance
+-->
+<h2>The big idea: two independent motions</h2>
+<p>Once a projectile is launched, and ignoring air resistance, the only force on it is its <strong>weight</strong>. So its acceleration is always \(g = 9.8\ \text{m s}^{-2}\) <strong>straight down</strong>, from the moment it leaves the hand until the moment it lands.</p>
+<aside class="c-key" data-title="Key idea: split the motion">
+<ul>
+  <li><strong>Horizontal:</strong> no force, so no acceleration. Horizontal velocity is <em>constant</em>: \(s_x = u_x t\).</li>
+  <li><strong>Vertical:</strong> constant acceleration \(g\) downward. Use the constant-acceleration equations.</li>
+  <li>The two motions are completely <strong>independent</strong>. The only thing they share is <strong>time</strong>.</li>
+</ul>
+</aside>
+
+<div class="eq"><div class="eq-label">Constant acceleration equations (vertical motion)</div>\[ v = u + at \qquad s = ut + \tfrac12 at^2 \qquad v^2 = u^2 + 2as \]\[ s = \tfrac12(u + v)t \qquad s = vt - \tfrac12 at^2 \]<p>Choose a positive direction and stick to it. If up is positive, then \(a = -9.8\ \text{m s}^{-2}\).</p></div>
+
+<figure class="fig">
+<svg viewBox="0 0 440 230" width="440" role="img" aria-label="Parabolic trajectory showing constant horizontal velocity components and changing vertical velocity components at several points">
+  <line x1="20" y1="200" x2="425" y2="200" class="s-mut"/>
+  <path d="M30 200 Q 220 -30 410 200" class="s-dash" style="stroke-dasharray:3 4"/>
+  <g>
+    <circle cx="30" cy="200" r="5" class="f-acc"/>
+    <line x1="30" y1="200" x2="80" y2="200" class="s-v" marker-end="url(#ah-v)"/>
+    <line x1="30" y1="200" x2="30" y2="140" class="s-n" marker-end="url(#ah-n)"/>
+    <line x1="30" y1="200" x2="80" y2="140" class="s-ink" marker-end="url(#ah-ink)"/>
+  </g>
+  <g>
+    <circle cx="125" cy="115" r="5" class="f-acc"/>
+    <line x1="125" y1="115" x2="175" y2="115" class="s-v" marker-end="url(#ah-v)"/>
+    <line x1="125" y1="115" x2="125" y2="85" class="s-n" marker-end="url(#ah-n)"/>
+  </g>
+  <g>
+    <circle cx="220" cy="85" r="5" class="f-acc"/>
+    <line x1="220" y1="85" x2="270" y2="85" class="s-v" marker-end="url(#ah-v)"/>
+    <text x="192" y="70" class="t-sm t-b">v<tspan dy="3" font-size="9">y</tspan><tspan dy="-3"> = 0 at the top</tspan></text>
+  </g>
+  <g>
+    <circle cx="315" cy="115" r="5" class="f-acc"/>
+    <line x1="315" y1="115" x2="365" y2="115" class="s-v" marker-end="url(#ah-v)"/>
+    <line x1="315" y1="115" x2="315" y2="145" class="s-n" marker-end="url(#ah-n)"/>
+  </g>
+  <g>
+    <circle cx="410" cy="200" r="5" class="f-acc"/>
+    <line x1="410" y1="190" x2="410" y2="228" class="s-n" marker-end="url(#ah-n)"/><line x1="410" y1="190" x2="440" y2="190" class="s-v"/>
+  </g>
+  <text x="38" y="130" class="t-sm t-n">v<tspan dy="3" font-size="9">y</tspan><tspan dy="-3"> (changes)</tspan></text>
+  <text x="82" y="214" class="t-sm t-v">v<tspan dy="3" font-size="9">x</tspan><tspan dy="-3"> (constant)</tspan></text>
+  <line x1="250" y1="150" x2="250" y2="185" class="s-w" marker-end="url(#ah-w)"/><text x="256" y="176" class="t-sm t-w t-b">a = g, always down</text>
+</svg>
+<figcaption>The horizontal component (pink) never changes. The vertical component (blue) shrinks to zero at the top then grows downward. The path is symmetric on level ground.</figcaption>
+</figure>
+
+<h2>Resolving the launch velocity</h2>
+<p>For a launch at speed \(u\) and angle \(\theta\) above the horizontal:</p>
+<div class="eq">\[ u_x = u\cos\theta \qquad u_y = u\sin\theta \]</div>
+<p>At any later time the velocity is found by recombining the components: speed \(v = \sqrt{v_x^2 + v_y^2}\), direction \(\tan\alpha = v_y/v_x\) below or above the horizontal.</p>
+
+<h2>Horizontal launch</h2>
+<p>A ball rolled off a table or a package dropped from a moving plane starts with \(u_y = 0\). The time to fall depends only on the height.</p>
+<div class="we" data-title="Ball rolling off a table" data-marks="5">
+<div class="we-q"><p>A ball rolls off a 1.8 m high bench at 3.0 m s⁻¹. Find (a) the time to reach the floor, (b) how far from the bench it lands, and (c) its velocity just before landing.</p></div>
+<div class="we-s"><p><strong>(a) Vertical motion</strong> (down positive): \(u_y = 0\), \(a = 9.8\), \(s = 1.8\).</p>\[ s = \tfrac12 at^2 \Rightarrow t = \sqrt{\frac{2(1.8)}{9.8}} = 0.606\ \text{s} \]</div>
+<div class="we-s"><p><strong>(b) Horizontal motion</strong> (constant velocity):</p>\[ s_x = u_x t = 3.0 \times 0.606 = 1.82\ \text{m} \]</div>
+<div class="we-s"><p><strong>(c) Components at landing:</strong> \(v_x = 3.0\ \text{m s}^{-1}\) (unchanged) and</p>\[ v_y = u_y + at = 0 + 9.8(0.606) = 5.94\ \text{m s}^{-1}\ \text{downward} \]</div>
+<div class="we-s"><p><strong>Recombine:</strong></p>\[ v = \sqrt{3.0^2 + 5.94^2} = 6.65\ \text{m s}^{-1}, \qquad \alpha = \tan^{-1}\!\left(\frac{5.94}{3.0}\right) = 63^\circ \]</div>
+<div class="we-a"><p><strong>(a) 0.61 s (b) 1.8 m (c) 6.7 m s⁻¹ at 63° below the horizontal.</strong> A velocity needs a direction for full marks.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: dropped vs thrown sideways">
+<p>A ball dropped from rest and a ball fired horizontally from the same height at the same instant <strong>hit the ground at the same time</strong>. Horizontal velocity has no effect on vertical motion. A bullet fired horizontally and one dropped from the gun land together (on flat ground, ignoring air resistance).</p>
+</aside>
+
+<h2>Angled launch on level ground</h2>
+<p>Useful facts when the projectile lands at the same height it was launched from:</p>
+<ul>
+  <li>Time to the top: \(t_{\text{up}} = u_y/g\). Total flight time: \(2t_{\text{up}}\).</li>
+  <li>Maximum height: \(H = \dfrac{u_y^2}{2g}\) (from \(v_y^2 = u_y^2 - 2gH\) with \(v_y = 0\)).</li>
+  <li>Range: \(R = u_x \times t_{\text{flight}}\).</li>
+  <li>It lands with the same speed it was launched with, at the same angle below the horizontal.</li>
+</ul>
+
+<div class="we" data-title="Kicked ball on a level field" data-marks="5">
+<div class="we-q"><p>A ball is kicked from the ground at 25 m s⁻¹ at 40° above the horizontal. Ignoring air resistance, find (a) the time of flight, (b) the maximum height and (c) the range.</p></div>
+<div class="we-s"><p><strong>Components:</strong></p>\[ u_x = 25\cos 40^\circ = 19.2\ \text{m s}^{-1}, \qquad u_y = 25\sin 40^\circ = 16.1\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>(a) Time to the top</strong> (\(v_y = 0\)), up positive:</p>\[ 0 = 16.07 - 9.8t \Rightarrow t_{\text{up}} = 1.64\ \text{s}, \qquad t_{\text{flight}} = 3.28\ \text{s} \]</div>
+<div class="we-s"><p><strong>(b) Maximum height:</strong></p>\[ H = \frac{u_y^2}{2g} = \frac{16.07^2}{19.6} = 13.2\ \text{m} \]</div>
+<div class="we-s"><p><strong>(c) Range:</strong></p>\[ R = u_x t = 19.15 \times 3.28 = 62.8\ \text{m} \]</div>
+<div class="we-a"><p><strong>(a) 3.3 s (b) 13 m (c) 63 m.</strong> Keep unrounded values in your calculator between steps to avoid rounding drift.</p></div>
+</div>
+
+<aside class="c-key" data-title="Key idea: angle and range on level ground">
+<p>On level ground with no air resistance, range is greatest at 45°. Complementary angles (for example 30° and 60°) give the <strong>same range</strong>. The steeper launch goes higher and stays in the air longer. For a fixed angle, doubling the launch speed doubles the time of flight and multiplies both the maximum height and the range by 4.</p>
+</aside>
+
+<h2>Launching from a height</h2>
+<p>When the launch and landing heights differ, the flight is no longer symmetric. Write the vertical displacement equation with the correct sign and solve the quadratic, or split the flight into “up to the top” and “down from the top”.</p>
+<div class="we" data-title="Stone thrown from a cliff (hard)" data-marks="6">
+<div class="we-q"><p>A stone is thrown at 15 m s⁻¹ at 30° above the horizontal from the top of a 40 m cliff. Find (a) the time until it hits the ground below, (b) how far from the base of the cliff it lands and (c) its speed on impact.</p></div>
+<div class="we-s"><p><strong>Components:</strong> \(u_x = 15\cos 30^\circ = 12.99\ \text{m s}^{-1}\), \(u_y = 15\sin 30^\circ = 7.5\ \text{m s}^{-1}\) (up).</p></div>
+<div class="we-s"><p><strong>(a) Vertical displacement</strong> (up positive): the stone ends 40 m <em>below</em> its start, so \(s_y = -40\ \text{m}\).</p>\[ -40 = 7.5t - 4.9t^2 \Rightarrow 4.9t^2 - 7.5t - 40 = 0 \]</div>
+<div class="we-s"><p><strong>Quadratic formula</strong> (take the positive root):</p>\[ t = \frac{7.5 + \sqrt{7.5^2 + 4(4.9)(40)}}{2(4.9)} = \frac{7.5 + 28.99}{9.8} = 3.72\ \text{s} \]</div>
+<div class="we-s"><p><strong>(b) Horizontal distance:</strong> \(s_x = 12.99 \times 3.72 = 48.4\ \text{m}\).</p></div>
+<div class="we-s"><p><strong>(c) Speed on impact</strong>, quickest by energy conservation (per kg):</p>\[ \tfrac12 v^2 = \tfrac12 u^2 + gh \Rightarrow v = \sqrt{15^2 + 2(9.8)(40)} = \sqrt{1009} = 31.8\ \text{m s}^{-1} \]</div>
+<div class="we-a"><p><strong>(a) 3.7 s (b) 48 m (c) 32 m s⁻¹.</strong> The impact speed does not depend on the launch angle, only on launch speed and height lost.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: 45° is not always best">
+<p>The 45° rule only holds when launch and landing heights are equal and air resistance is ignored. Launching from a height (a shot-putter's hand, a cliff), the best angle is <strong>less than 45°</strong>. With air resistance, it is also less than 45°.</p>
+</aside>
+
+<div class="we" data-title="Does the ball clear the bar?" data-marks="4">
+<div class="we-q"><p>A footballer kicks a ball from the ground at 20 m s⁻¹ at 35° above the horizontal towards goal posts 30 m away. The crossbar is 3.0 m high. Does the ball go over?</p></div>
+<div class="we-s"><p><strong>Components:</strong> \(u_x = 20\cos 35^\circ = 16.38\ \text{m s}^{-1}\), \(u_y = 20\sin 35^\circ = 11.47\ \text{m s}^{-1}\).</p></div>
+<div class="we-s"><p><strong>Time to travel 30 m horizontally:</strong> \(t = 30/16.38 = 1.83\ \text{s}\).</p></div>
+<div class="we-s"><p><strong>Height at that time:</strong></p>\[ s_y = u_y t - \tfrac12 gt^2 = 11.47(1.831) - 4.9(1.831)^2 = 21.0 - 16.4 = 4.6\ \text{m} \]</div>
+<div class="we-a"><p><strong>Yes: the ball is 4.6 m high as it reaches the posts, so it clears the 3.0 m bar by about 1.6 m.</strong> Use horizontal motion to find the time, then vertical motion at that time.</p></div>
+</div>
+
+<div class="sim" data-sim="projectile"></div>
+
+<h2>Air resistance (qualitative)</h2>
+<p>Air resistance (drag) acts opposite to the velocity and grows with speed. VCE only requires a qualitative description of its effects:</p>
+<ul>
+  <li><strong>Lower maximum height</strong> and <strong>shorter range</strong> than the no-drag parabola.</li>
+  <li>The horizontal velocity <strong>decreases</strong> throughout the flight (there is now a horizontal force).</li>
+  <li>The path is <strong>not symmetric</strong>: the descent is steeper than the ascent, and the projectile lands at a steeper angle and lower speed than it was launched with.</li>
+  <li>On the way up drag adds to gravity (acceleration greater than \(g\)); on the way down it opposes gravity (acceleration less than \(g\)). So the time to fall is longer than the time to rise.</li>
+  <li>The angle for maximum range drops below 45°.</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>A ball is thrown at an angle above the horizontal. Ignoring air resistance, at the highest point of its path:</p></div>
+<ol><li>its velocity and acceleration are both zero</li><li>its velocity is zero and its acceleration is 9.8 m s⁻² down</li><li>its velocity is horizontal and its acceleration is zero</li><li>its velocity is horizontal and its acceleration is 9.8 m s⁻² down</li></ol>
+<div class="mcq-x"><p>Only the <em>vertical</em> velocity is zero at the top; the horizontal component continues unchanged. Gravity never switches off, so \(a = g\) downward at every point of the flight.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>From the same height, ball X is dropped from rest while ball Y is launched horizontally at 20 m s⁻¹ at the same instant. Ignoring air resistance:</p></div>
+<ol><li>X lands first</li><li>they land at the same time</li><li>Y lands first</li><li>it depends on their masses</li></ol>
+<div class="mcq-x"><p>Both start with zero vertical velocity and have the same vertical acceleration, so they fall the same height in the same time. Y just lands further away.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>On level ground, a projectile launched at 30° lands 40 m away. Launched at the same speed at 60°, it lands:</p></div>
+<ol><li>20 m away</li><li>80 m away</li><li>40 m away</li><li>69 m away</li></ol>
+<div class="mcq-x"><p>\(R = u^2\sin 2\theta/g\), and \(\sin 60^\circ = \sin 120^\circ\). Complementary angles give the same range; the 60° launch goes higher and takes longer.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A projectile is launched on level ground. If its launch speed is doubled (same angle), its maximum height is multiplied by:</p></div>
+<ol><li>4</li><li>2</li><li>\(\sqrt{2}\)</li><li>8</li></ol>
+<div class="mcq-x"><p>\(H = u_y^2/2g\), and \(u_y\) doubles, so \(H\) quadruples.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Compared with the ideal path, air resistance causes a projectile's path to:</p></div>
+<ol><li>be a lower but still symmetric parabola</li><li>be lower and shorter, with a steeper descent than ascent</li><li>be longer, because drag lifts the projectile</li><li>have the same range but lower maximum height</li></ol>
+<div class="mcq-x"><p>Drag removes energy continuously. Horizontal speed falls during the flight, so the second half covers less horizontal distance than the first: the descent is steeper and the path is asymmetric.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A hunter aims a dart gun directly at a monkey hanging from a branch. The monkey lets go at the exact instant the dart is fired. Ignoring air resistance, the dart:</p></div>
+<ol><li>passes above the monkey</li><li>passes below the monkey</li><li>hits the monkey</li><li>hits the monkey only if fired at 45°</li></ol>
+<div class="mcq-x"><p>Without gravity, the dart would travel in a straight line to the monkey's original position. With gravity, both the dart and the monkey fall the same distance \(\tfrac12 gt^2\) below their gravity-free paths in the same time, so they meet (as long as the dart reaches that horizontal position before the monkey hits the ground).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A package is dropped from a plane flying horizontally at 60 m s⁻¹ at an altitude of 500 m. How far ahead of the target (horizontally) should it be released? Ignore air resistance.</p></div>
+<div class="pq-s"><p>Vertical: \(500 = \tfrac12(9.8)t^2 \Rightarrow t = 10.1\ \text{s}\).</p><p>Horizontal: the package keeps the plane's 60 m s⁻¹: \(s_x = 60 \times 10.1 = 606\ \text{m}\), so release it about <strong>610 m</strong> before the target. (The package stays directly below the plane all the way down.)</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>A ball is thrown horizontally from the top of a building and lands 24 m from the base 2.5 s later. Find (a) the height of the building, (b) the launch speed and (c) the angle of the velocity to the horizontal just before impact.</p></div>
+<div class="pq-s"><p>(a) \(h = \tfrac12 gt^2 = 4.9(2.5)^2 = 30.6\ \text{m}\).</p><p>(b) \(u_x = 24/2.5 = 9.6\ \text{m s}^{-1}\).</p><p>(c) \(v_y = 9.8 \times 2.5 = 24.5\ \text{m s}^{-1}\); \(\tan\alpha = 24.5/9.6 \Rightarrow \alpha = 69^\circ\) below the horizontal.</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="3">
+<div class="pq-q"><p>Two identical balls are thrown from the top of a 20 m building at 15 m s⁻¹, one straight up and one straight down. Ignoring air resistance, compare their speeds as they hit the ground, and explain.</p></div>
+<div class="pq-s"><p>They hit the ground with the <strong>same speed</strong>. By energy conservation \(\tfrac12 v^2 = \tfrac12 u^2 + gh\) for both: \(v = \sqrt{15^2 + 2(9.8)(20)} = 24.8\ \text{m s}^{-1}\).</p><p>The ball thrown up returns past the roof moving down at 15 m s⁻¹, so from then on its motion is identical to the other ball's. It just takes longer.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A student says “a projectile keeps moving forward because the force from the throw is still acting on it, and it gradually runs out.” Explain why this is incorrect.</p></div>
+<div class="pq-s"><p>The throwing force acts only while the ball is in contact with the hand. [1]</p><p>After release (ignoring air resistance) the only force is weight, which is vertical, so there is no horizontal force and no horizontal acceleration. [1]</p><p>The ball keeps its horizontal velocity by inertia (first law). No force is needed to keep it moving; forces change motion. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Horizontal: constant velocity. Vertical: constant acceleration \(g\) down. Time links them.</li>
+  <li>At the top, only \(v_y = 0\); \(a = g\) always.</li>
+  <li>Launching from a height: use \(s_y\) with the correct sign and solve the quadratic, or use energy for the landing speed.</li>
+  <li>Air resistance: lower, shorter, asymmetric (steeper fall), best angle below 45°.</li>
+</ul>

@@ -1,0 +1,155 @@
+<!--
+id: u3-energy
+title: Work & energy
+short: Work & energy
+summary: Work done by a constant force, work as the area under a force–distance graph, kinetic and gravitational potential energy, energy conservation and energy dissipated as heat, sound and deformation.
+keywords: work, work done, energy, kinetic energy, gravitational potential energy, gpe, ke, conservation of energy, mechanical energy, dissipated, heat, sound, deformation, friction, force distance graph, area under graph, joule, work energy theorem, braking distance, power, efficiency, pendulum, slide
+dotpoints: investigate and analyse theoretically and practically the concept of work done by a constant force using: work done = constant force × distance moved in direction of force: \(W = Fs\); work done = area under force–distance graph | analyse transformations of energy between kinetic energy, strain potential energy, gravitational potential energy and energy dissipated to the environment (considered as a combination of heat, sound and deformation of material): kinetic energy at low speeds \(E_k = \frac12 mv^2\); gravitational potential energy \(E_g = mg\Delta h\) or from area under a force–distance graph and area under a field–distance graph multiplied by mass | apply the laws of energy and momentum conservation in isolated systems
+-->
+<h2>Work</h2>
+<aside class="c-def"><p><strong>Work</strong> is done when a force moves its point of application. Work done = force × distance moved <em>in the direction of the force</em>. Work is the amount of energy transferred or transformed. It is a scalar, measured in joules (1 J = 1 N m).</p></aside>
+<div class="eq"><div class="eq-label">Work by a constant force</div>\[ W = Fs \qquad\text{or, for a force at angle } \theta \text{ to the displacement,}\qquad W = Fs\cos\theta \]</div>
+<ul>
+  <li>Force in the direction of motion: <strong>positive work</strong> (energy is given to the object).</li>
+  <li>Force opposite to motion (friction, braking): <strong>negative work</strong> (energy is taken away).</li>
+  <li>Force perpendicular to motion: <strong>zero work</strong>. Examples: the normal force on a car driving on a level road, the tension in a string whirling a ball in a circle, gravity on a satellite in a circular orbit, the magnetic force on a charged particle.</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: 'work' in physics is not effort">
+<p>Carrying a heavy bag horizontally at constant velocity, your upward force is perpendicular to the motion, so you do <strong>no work on the bag</strong>. Holding a weight still above your head does zero work too, even though your muscles tire. Work needs a displacement in the direction of the force.</p>
+</aside>
+
+<div class="we" data-title="Work pulling a sled" data-marks="2">
+<div class="we-q"><p>A child pulls a sled 5.0 m across level snow with a rope at 40° to the horizontal. The tension is 30 N. How much work does the tension do? How much work does gravity do?</p></div>
+<div class="we-s"><p><strong>Only the component of the force along the displacement does work:</strong></p>\[ W = Fs\cos\theta = 30 \times 5.0 \times \cos 40^\circ = 115\ \text{J} \]</div>
+<div class="we-s"><p><strong>Gravity</strong> is vertical and the displacement is horizontal, so \(\cos 90^\circ = 0\): gravity does no work.</p></div>
+<div class="we-a"><p><strong>115 J by the tension; 0 J by gravity</strong> (and 0 J by the normal force).</p></div>
+</div>
+
+<h3>Work as the area under a force–distance graph</h3>
+<p>When the force changes as the object moves, the work done is the <strong>area under the force–distance graph</strong>. For straight-line sections, split the area into rectangles and triangles; for curves, count grid squares.</p>
+<figure class="fig">
+<svg viewBox="0 0 360 215" width="360" role="img" aria-label="Force-distance graph rising linearly from zero to 200 newtons over 0.5 metres then constant at 200 newtons until 1.5 metres">
+  <polygon points="50,180 125,68 275,68 275,180" class="f-accsoft"/>
+  <polyline points="50,180 125,68 275,68" class="s-acc"/>
+  <line x1="275" y1="68" x2="275" y2="180" class="s-dash"/>
+  <line x1="125" y1="68" x2="125" y2="180" class="s-dash"/>
+  <line x1="50" y1="180" x2="330" y2="180" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="180" x2="50" y2="22" class="s-ink" marker-end="url(#ah-ink)"/>
+  <text x="335" y="184" class="t-sm">s (m)</text><text x="18" y="18" class="t-sm">F (N)</text>
+  <text x="125" y="198" text-anchor="middle" class="t-sm t-mono">0.5</text>
+  <text x="200" y="198" text-anchor="middle" class="t-sm t-mono">1.0</text>
+  <text x="275" y="198" text-anchor="middle" class="t-sm t-mono">1.5</text>
+  <text x="42" y="72" text-anchor="end" class="t-sm t-mono">200</text>
+  <text x="100" y="150" text-anchor="middle" class="t-sm">50 J</text>
+  <text x="200" y="130" text-anchor="middle" class="t-sm">200 J</text>
+</svg>
+<figcaption>Triangle: \(\tfrac12(0.5)(200) = 50\ \text{J}\). Rectangle: \((1.0)(200) = 200\ \text{J}\). Total work = 250 J.</figcaption>
+</figure>
+
+<h2>Kinetic and gravitational potential energy</h2>
+<div class="eq"><div class="eq-label">Kinetic energy (speeds much less than c)</div>\[ E_k = \tfrac12 mv^2 \]<div class="eq-label">Change in gravitational potential energy (uniform field, near Earth's surface)</div>\[ \Delta E_g = mg\Delta h \]<p>\(\Delta h\) is the change in <em>vertical</em> height, whatever path was taken.</p></div>
+<p>Gravitational potential energy can also be found from graphs, which matters when \(g\) is not constant (far from Earth, see <a href="#u3-gravity">Gravitational fields</a>):</p>
+<ul>
+  <li>\(\Delta E_g\) = area under a <strong>gravitational force vs distance</strong> graph.</li>
+  <li>\(\Delta E_g\) = mass × area under a <strong>gravitational field strength vs distance</strong> graph.</li>
+</ul>
+<aside class="c-key" data-title="Key idea: the work–energy theorem">
+<p>The net work done on an object equals its change in kinetic energy: \(W_{\text{net}} = \Delta E_k\). This links force and distance to speed without ever needing time, which makes it the quickest route in many problems.</p>
+</aside>
+
+<h2>Conservation of energy</h2>
+<aside class="c-def"><p>Energy cannot be created or destroyed, only transformed from one form to another or transferred between objects. In an isolated system the total energy is constant.</p></aside>
+<p>If no energy is dissipated (no friction, drag or deformation), the <strong>mechanical energy</strong> (kinetic + gravitational + strain potential) is constant:</p>
+<div class="eq">\[ E_{k1} + E_{g1} + E_{s1} = E_{k2} + E_{g2} + E_{s2} \]</div>
+<p>When friction or drag acts, some energy is <strong>dissipated to the environment</strong> as heat, sound and deformation of materials. It is not destroyed, just no longer useful as mechanical energy:</p>
+<div class="eq">\[ E_{\text{initial}} = E_{\text{final}} + E_{\text{dissipated}} \qquad E_{\text{dissipated}} = F_{\text{friction}} \times s \]</div>
+
+<div class="we" data-title="Energy lost by a skier" data-marks="4">
+<div class="we-q"><p>A 70 kg skier starts from rest at the top of a slope 40 m high and 120 m long. She reaches the bottom at 25 m s⁻¹. (a) How much energy was dissipated? (b) What was the average resistive force along the slope?</p></div>
+<div class="we-s"><p><strong>GPE lost:</strong> \(mg\Delta h = 70 \times 9.8 \times 40 = 27\,440\ \text{J}\).</p></div>
+<div class="we-s"><p><strong>KE gained:</strong> \(\tfrac12 mv^2 = \tfrac12 \times 70 \times 25^2 = 21\,875\ \text{J}\).</p></div>
+<div class="we-s"><p><strong>(a) Dissipated</strong> = difference: \(27\,440 - 21\,875 = 5565\ \text{J}\) (to heat, sound and deformation of snow).</p></div>
+<div class="we-s"><p><strong>(b) Resistive force</strong> acts over the 120 m slope length:</p>\[ F = \frac{W}{s} = \frac{5565}{120} = 46\ \text{N} \]</div>
+<div class="we-a"><p><strong>(a) \(5.6\times10^3\ \text{J}\) (b) 46 N.</strong> Use the slope length (distance moved against friction), not the height, for the friction force.</p></div>
+</div>
+
+<div class="we" data-title="Braking distance and speed" data-marks="3">
+<div class="we-q"><p>A 1200 kg car brakes with a constant force of 8000 N. Find its braking distance from 20 m s⁻¹ and from 40 m s⁻¹.</p></div>
+<div class="we-s"><p><strong>Work done by brakes removes all the kinetic energy:</strong> \(Fs = \tfrac12 mv^2\), so \(s = \dfrac{mv^2}{2F}\).</p></div>
+<div class="we-s"><p><strong>From 20 m s⁻¹:</strong> \(s = \dfrac{1200 \times 400}{16\,000} = 30\ \text{m}\). <strong>From 40 m s⁻¹:</strong> \(s = \dfrac{1200 \times 1600}{16\,000} = 120\ \text{m}\).</p></div>
+<div class="we-a"><p><strong>30 m and 120 m.</strong> Doubling the speed quadruples the braking distance, because braking distance ∝ \(v^2\).</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: path doesn't matter (without friction)">
+<p>Frictionless slides of different shapes starting at the same height all deliver the same <strong>speed</strong> at the bottom, because only the vertical drop sets the energy change. They do not take the same <em>time</em>: a steeper start gets fast sooner and usually wins.</p>
+</aside>
+
+<h3>Energy transformations to describe</h3>
+<div class="tbl"><table>
+<thead><tr><th>Situation</th><th>Transformations</th></tr></thead>
+<tbody>
+<tr><td>Rollercoaster going down a hill</td><td>\(E_g \to E_k\) (+ some heat and sound from friction and drag)</td></tr>
+<tr><td>Ball bouncing</td><td>\(E_g \to E_k \to\) strain \(E_s\) (ball compresses) \(\to E_k \to E_g\); each bounce is lower because energy is dissipated as heat, sound and deformation</td></tr>
+<tr><td>Bungee jump</td><td>\(E_g \to E_k\) then \(E_g + E_k \to\) strain \(E_s\) in the cord (see <a href="#u3-springs">Springs</a>)</td></tr>
+<tr><td>Car braking</td><td>\(E_k \to\) heat in brakes and tyres, plus sound</td></tr>
+<tr><td>Pendulum swinging</td><td>\(E_g \leftrightarrow E_k\), slowly dissipated by air resistance</td></tr>
+</tbody></table></div>
+
+<aside class="c-deep" data-title="Going deeper: power and efficiency">
+<p><strong>Power</strong> is the rate of doing work: \(P = W/t\) (watts, W). For a force moving an object at constant speed, \(P = Fv\). <strong>Efficiency</strong> = useful energy out ÷ total energy in × 100%. These are not separate Unit 3 dot points, but they appear in practical contexts and in electricity questions.</p>
+<p>Example: a 50 kg student runs up 3.0 m of stairs in 4.0 s. Work against gravity = \(50 \times 9.8 \times 3.0 = 1470\ \text{J}\), so average power = \(1470/4.0 = 368\ \text{W}\).</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A satellite moves in a circular orbit at constant speed. The work done on the satellite by gravity during one complete orbit is:</p></div>
+<ol><li>zero, because gravity is always perpendicular to the velocity</li><li>positive, because gravity keeps it moving</li><li>negative, because gravity pulls it inward</li><li>equal to its kinetic energy</li></ol>
+<div class="mcq-x"><p>In a circular orbit gravity points to the centre while the velocity is tangential, so \(\cos 90^\circ = 0\) at every instant. No work is done and the speed stays constant.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>If the speed of a car is tripled, its kinetic energy is multiplied by:</p></div>
+<ol><li>3</li><li>6</li><li>9</li><li>27</li></ol>
+<div class="mcq-x"><p>\(E_k \propto v^2\), so \(3^2 = 9\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Two children start from rest at the top of two frictionless slides of equal height. One slide is straight and steep; the other is long and curvy. At the bottom:</p></div>
+<ol><li>the child on the steep slide is faster</li><li>both children have the same speed</li><li>the child on the long slide is faster, because they had more time to accelerate</li><li>it depends on the children's masses</li></ol>
+<div class="mcq-x"><p>With no friction, \(mgh = \tfrac12 mv^2\), so \(v = \sqrt{2gh}\) for both, independent of path and of mass.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>A 2.0 kg box is lifted vertically 3.0 m at constant speed. The work done by the lifting force is:</p></div>
+<ol><li>6.0 J</li><li>0 J, because the speed didn't change</li><li>19.6 J</li><li>58.8 J</li></ol>
+<div class="mcq-x"><p>At constant speed the lifting force equals the weight, 19.6 N. \(W = 19.6 \times 3.0 = 58.8\ \text{J}\), which becomes gravitational potential energy. The <em>net</em> work is zero (no change in \(E_k\)), but the lifting force alone does positive work.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>A force–distance graph for a spring-loaded launcher is a straight line from (0 m, 0 N) to (0.10 m, 60 N). The work done compressing the launcher is:</p></div>
+<ol><li>3.0 J</li><li>6.0 J</li><li>600 J</li><li>0.30 J</li></ol>
+<div class="mcq-x"><p>Area of the triangle: \(\tfrac12 \times 0.10 \times 60 = 3.0\ \text{J}\). Forgetting the half gives 6.0 J.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>A pendulum bob is pulled aside and released from rest at a height of 0.45 m above its lowest point. Ignoring air resistance, find its speed at the lowest point.</p></div>
+<div class="pq-s"><p>\(mgh = \tfrac12 mv^2 \Rightarrow v = \sqrt{2gh} = \sqrt{2 \times 9.8 \times 0.45} = 3.0\ \text{m s}^{-1}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>A 25 kg crate is pushed 6.0 m up a ramp to a platform 1.5 m high. The pushing force is 140 N parallel to the ramp and the crate arrives at the top at rest, having started at rest. Find (a) the work done by the pusher, (b) the gain in gravitational potential energy and (c) the average friction force.</p></div>
+<div class="pq-s"><p>(a) \(W = Fs = 140 \times 6.0 = 840\ \text{J}\).</p><p>(b) \(\Delta E_g = mg\Delta h = 25 \times 9.8 \times 1.5 = 368\ \text{J}\).</p><p>(c) No change in kinetic energy, so the rest is dissipated: \(840 - 368 = 472\ \text{J}\). \(F_f = 472/6.0 = 79\ \text{N}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A 0.20 kg ball is dropped from 2.0 m and bounces back to a height of 1.5 m. Calculate the percentage of energy dissipated in the bounce, and describe where that energy went.</p></div>
+<div class="pq-s"><p>Initial \(E_g = 0.20 \times 9.8 \times 2.0 = 3.92\ \text{J}\); final \(E_g = 0.20 \times 9.8 \times 1.5 = 2.94\ \text{J}\). [1]</p><p>Dissipated: \(0.98\ \text{J}\), which is 25% of the original energy. [1]</p><p>It was transformed into heat (in the ball and floor), sound, and permanent deformation of the materials during the collision (and a little to air resistance). [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(W = Fs\cos\theta\): only the force component along the motion does work. Perpendicular forces do none.</li>
+  <li>Work = area under the F–s graph.</li>
+  <li>\(E_k = \tfrac12 mv^2\), \(\Delta E_g = mg\Delta h\). Braking distance ∝ \(v^2\).</li>
+  <li>Energy is conserved; energy “lost” is dissipated as heat, sound and deformation.</li>
+</ul>

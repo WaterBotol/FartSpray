@@ -1,0 +1,148 @@
+<!--
+id: u3-particles
+title: Charged particles in magnetic fields & particle accelerators
+short: Charged particles & synchrotrons
+summary: The force on a moving charge, why charged particles travel in circles in a magnetic field, the radius of the path, and how particle accelerators and synchrotrons combine electric and magnetic fields.
+keywords: charged particle, moving charge, magnetic force, qvB, F = qvB, radius, circular path, r = mv/qB, electron beam, proton, direction, right hand rule, negative charge, work done, kinetic energy constant, particle accelerator, synchrotron, australian synchrotron, linac, booster ring, storage ring, bending magnet, velocity selector, mass spectrometer, cyclotron
+dotpoints: analyse the use of a magnetic field to change the path of a charged particle, including: the magnitude and direction of the force applied to an electron beam by a magnetic field: \(F = qvB\), in cases where the directions of \(v\) and \(B\) are perpendicular or parallel; the radius of the path followed by an electron in a magnetic field: \(qvB = \frac{mv^2}{r}\), where \(v \ll c\) | model the acceleration of particles in a particle accelerator (including synchrotrons) as uniform circular motion (limited to linear acceleration by a uniform electric field and direction change by a uniform magnetic field)
+-->
+<h2>The force on a moving charge</h2>
+<div class="eq"><div class="eq-label">Magnetic force on a moving charge</div>\[ F = qvB \quad (v \perp B) \qquad\qquad F = 0 \quad (v \parallel B) \]<p>\(q\) = charge (C), \(v\) = speed (m s⁻¹), \(B\) = magnetic flux density (T). A charge at rest feels no magnetic force at all.</p></div>
+<p>The direction comes from the same right-hand rule as for currents, with the thumb along the velocity of a <strong>positive</strong> charge:</p>
+<aside class="c-key" data-title="Right-hand rule for moving charges"><p>Fingers along \(B\), thumb along \(v\), palm gives \(F\) on a <strong>positive</strong> charge. For an <strong>electron</strong> (negative), the force is in the <strong>opposite</strong> direction: use the back of your hand, or point your thumb opposite to the electron's velocity.</p></aside>
+
+<h2>Why the path is a circle</h2>
+<p>The magnetic force is always perpendicular to the velocity. So:</p>
+<ul>
+  <li>It changes the particle's <strong>direction</strong>, never its speed.</li>
+  <li>It does <strong>no work</strong> (force ⊥ displacement), so kinetic energy stays constant.</li>
+  <li>A constant-size force always perpendicular to the velocity is exactly the recipe for <strong>uniform circular motion</strong>. The magnetic force is the centripetal force.</li>
+</ul>
+<div class="eq"><div class="eq-label">Radius of the path (\(v \ll c\))</div>\[ qvB = \frac{mv^2}{r} \quad\Rightarrow\quad r = \frac{mv}{qB} \]<p>Faster or heavier particles make wider circles; stronger fields or bigger charges make tighter circles.</p></div>
+
+<figure class="fig">
+<svg viewBox="0 0 420 230" width="420" role="img" aria-label="An electron enters a region of magnetic field directed into the page and follows a semicircular path curving downward, with the force always pointing to the centre">
+  <rect x="120" y="14" width="290" height="206" class="f-surf2" rx="6"/>
+  <g class="t-mut" style="font-size:14px">
+    <text x="140" y="36">×</text><text x="190" y="36">×</text><text x="240" y="36">×</text><text x="290" y="36">×</text><text x="340" y="36">×</text><text x="385" y="36">×</text>
+    <text x="215" y="86">×</text><text x="265" y="86">×</text><text x="315" y="86">×</text><text x="365" y="86">×</text>
+    <text x="215" y="136">×</text><text x="265" y="136">×</text><text x="315" y="136">×</text><text x="365" y="136">×</text>
+    <text x="215" y="186">×</text><text x="265" y="186">×</text><text x="315" y="186">×</text><text x="365" y="186">×</text>
+    <text x="140" y="212">×</text><text x="340" y="212">×</text><text x="385" y="212">×</text>
+  </g>
+  <text x="300" y="112" class="t-sm t-b">B into page</text>
+  <path d="M30 62 L120 62 A68 68 0 0 1 120 198 L30 198" class="s-v" style="stroke-width:2.2"/>
+  <circle cx="120" cy="62" r="6" class="f-n"/><text x="120" y="66" text-anchor="middle" style="fill:#fff;font-size:10px;font-weight:700">−</text>
+  <line x1="40" y1="46" x2="95" y2="46" class="s-v" marker-end="url(#ah-v)"/><text x="50" y="38" class="t-sm t-v t-b">v</text>
+  <line x1="120" y1="70" x2="120" y2="108" class="s-net" marker-end="url(#ah-net)"/><text x="126" y="98" class="t-sm t-net t-b">F</text>
+  <circle cx="188" cy="130" r="6" class="f-n"/>
+  <line x1="180" y1="130" x2="146" y2="130" class="s-net" marker-end="url(#ah-net)"/>
+  <line x1="120" y1="130" x2="188" y2="130" class="s-dash"/><text x="150" y="146" class="t-sm t-mut">r</text>
+  <text x="30" y="222" class="t-sm t-mut">exits moving the opposite way at the same speed</text>
+</svg>
+<figcaption>An electron entering a field into the page curves downward (a positive charge would curve upward). The speed never changes.</figcaption>
+</figure>
+
+<div class="we" data-title="Electron in a magnetic field" data-marks="4">
+<div class="we-q"><p>An electron moves at \(2.0\times10^7\ \text{m s}^{-1}\) to the right, perpendicular to a uniform magnetic field of \(5.0\ \text{mT}\) directed into the page (as in the diagram). Find (a) the force on the electron, (b) the initial direction of the force and (c) the radius of its path.</p></div>
+<div class="we-s"><p><strong>(a) Size of the force:</strong></p>\[ F = qvB = (1.60\times10^{-19})(2.0\times10^7)(5.0\times10^{-3}) = 1.6\times10^{-14}\ \text{N} \]</div>
+<div class="we-s"><p><strong>(b) Direction:</strong> for a positive charge, fingers into the page, thumb right: palm faces up (towards the top of the page). The electron is negative, so the force is <strong>down</strong> the page.</p></div>
+<div class="we-s"><p><strong>(c) Radius:</strong></p>\[ r = \frac{mv}{qB} = \frac{(9.1\times10^{-31})(2.0\times10^7)}{(1.60\times10^{-19})(5.0\times10^{-3})} = 2.3\times10^{-2}\ \text{m} \]</div>
+<div class="we-a"><p><strong>(a) \(1.6\times10^{-14}\ \text{N}\) (b) towards the bottom of the page (c) 2.3 cm.</strong> Remember mT = \(10^{-3}\) T.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: magnetic fields never speed particles up">
+<p>Because \(F \perp v\), a magnetic field does no work: it cannot change a particle's speed or kinetic energy. To <strong>accelerate</strong> a charged particle (increase its speed) you need an <strong>electric</strong> field. Magnetic fields only <strong>steer</strong>. Questions that ask “how much kinetic energy does the electron gain in the magnetic field?” have the answer zero.</p>
+</aside>
+
+<div class="we" data-title="Electron gun into a magnetic field (hard)" data-marks="4">
+<div class="we-q"><p>Electrons are accelerated from rest through 500 V, then enter a uniform 2.0 mT magnetic field at right angles. Find the radius of their circular path.</p></div>
+<div class="we-s"><p><strong>Speed from the electric field</strong> (\(eV = \tfrac12 mv^2\)):</p>\[ v = \sqrt{\frac{2eV}{m}} = \sqrt{\frac{2(1.60\times10^{-19})(500)}{9.1\times10^{-31}}} = 1.33\times10^7\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>Radius in the magnetic field:</strong></p>\[ r = \frac{mv}{eB} = \frac{(9.1\times10^{-31})(1.33\times10^7)}{(1.60\times10^{-19})(2.0\times10^{-3})} = 3.8\times10^{-2}\ \text{m} \]</div>
+<div class="we-a"><p><strong>3.8 cm.</strong> This two-field combination (E to accelerate, B to bend) is exactly what a particle accelerator does.</p></div>
+</div>
+
+<h3>Comparing particles</h3>
+<p>Using \(r = mv/(qB)\) in the same field:</p>
+<ul>
+  <li><strong>Same speed:</strong> a proton's radius is \(m_p/m_e = 1835\) times an electron's, and it curves the other way.</li>
+  <li><strong>Double the speed:</strong> double the radius.</li>
+  <li><strong>Same kinetic energy:</strong> \(mv = \sqrt{2mE_k}\), so \(r \propto \sqrt{m}\): the proton's radius is \(\sqrt{1835} \approx 43\) times larger.</li>
+</ul>
+
+<div class="sim" data-sim="bfield"></div>
+
+<h2>Particle accelerators and synchrotrons</h2>
+<p>VCE models a particle accelerator with two simple pieces of physics:</p>
+<div class="tbl"><table>
+<thead><tr><th>Job</th><th>Field used</th><th>Physics</th></tr></thead>
+<tbody>
+<tr><td>Speed particles up (increase \(E_k\))</td><td>Uniform <strong>electric</strong> field across a gap</td><td>\(\Delta E_k = qV\) for each gap crossed; \(F = qE\) along the direction of motion</td></tr>
+<tr><td>Bend the path into a circle</td><td>Uniform <strong>magnetic</strong> field in bending magnets</td><td>\(qvB = mv^2/r\), so \(r = mv/(qB)\); no change in speed</td></tr>
+</tbody></table></div>
+
+<h3>How a synchrotron works</h3>
+<ol>
+  <li><strong>Electron gun:</strong> a heated cathode releases electrons, which are accelerated by a potential difference (\(E_k = eV\)).</li>
+  <li><strong>Linear accelerator (linac):</strong> a series of electric fields boosts the electrons to high energy in a straight line.</li>
+  <li><strong>Booster ring:</strong> the electrons travel around a ring, gaining energy from an electric field every lap. Bending magnets keep them on a circle. Because \(r = mv/(qB)\), the magnetic field must be <strong>increased in step with (synchronised to) the increasing speed</strong> to keep the radius fixed. That's where the name comes from.</li>
+  <li><strong>Storage ring:</strong> electrons circulate at constant energy. Bending magnets steer them; each time they are deflected they emit intense electromagnetic radiation (<strong>synchrotron radiation</strong>, from infrared to X-rays), which is directed down beamlines to experiments. Electric fields in radio-frequency cavities top up the energy they lose.</li>
+</ol>
+<aside class="c-deep" data-title="Going deeper: the Australian Synchrotron"><p>The Australian Synchrotron in Clayton, Melbourne, has a 216 m circumference storage ring holding 3 GeV electrons. Its X-ray beamlines are used for medical imaging, protein crystallography and materials science. At 3 GeV the electrons travel at 99.999999% of \(c\), so real synchrotron design uses relativistic momentum; the VCE \(v \ll c\) model is a simplification that still explains why \(B\) must rise with energy.</p></aside>
+
+<aside class="c-deep" data-title="Going deeper: the velocity selector">
+<p>Crossed electric and magnetic fields push a charge in opposite directions. Only particles with \(qE = qvB\), i.e. \(v = E/B\), pass straight through undeflected. With \(E = 2.0\times10^4\ \text{V m}^{-1}\) and \(B = 0.010\ \text{T}\), only particles moving at \(2.0\times10^6\ \text{m s}^{-1}\) get through. Mass spectrometers use this before bending the beam to measure \(m\) from \(r\).</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>An electron travels through a uniform magnetic field and follows a circular path. Its kinetic energy:</p></div>
+<ol><li>increases, because there is a force on it</li><li>decreases, because the field does negative work</li><li>stays constant, because the force is perpendicular to its velocity</li><li>increases and decreases each revolution</li></ol>
+<div class="mcq-x"><p>The magnetic force is always perpendicular to the velocity, so it does no work and the speed is constant.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>An electron is fired parallel to the field lines of a uniform magnetic field. It will:</p></div>
+<ol><li>continue in a straight line at constant speed</li><li>follow a circular path</li><li>speed up along the field lines</li><li>slow down and stop</li></ol>
+<div class="mcq-x"><p>\(F = 0\) when \(v \parallel B\). With no force, velocity is unchanged.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>A beam of electrons moves in a circle in a magnetic field. If the electrons' speed is doubled (same field), the radius of the circle:</p></div>
+<ol><li>halves</li><li>stays the same</li><li>quadruples</li><li>doubles</li></ol>
+<div class="mcq-x"><p>\(r = mv/(qB) \propto v\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>An electron moves towards the top of the page through a magnetic field pointing out of the page. The initial force on it is towards the:</p></div>
+<ol><li>right</li><li>left</li><li>top of the page</li><li>bottom of the page</li></ol>
+<div class="mcq-x"><p>For a positive charge: fingers out of the page, thumb up the page, palm faces right. The electron is negative, so the force is to the <strong>left</strong>.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>In a synchrotron, the magnetic field in the booster ring is increased as the electrons speed up. This is because:</p></div>
+<ol><li>a stronger magnetic field increases the electrons' speed</li><li>the electrons' charge increases as they speed up</li><li>a larger field is needed to keep faster electrons on the same radius</li><li>the magnetic field provides the energy to produce synchrotron radiation</li></ol>
+<div class="mcq-x"><p>\(r = mv/(qB)\): for constant \(r\), \(B\) must increase in proportion to \(v\). Magnetic fields never add energy; electric fields do that.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>A proton moving at \(1.0\times10^6\ \text{m s}^{-1}\) enters a 0.10 T field at right angles. Find the radius of its path.</p></div>
+<div class="pq-s"><p>\(r = \dfrac{mv}{qB} = \dfrac{(1.67\times10^{-27})(1.0\times10^6)}{(1.60\times10^{-19})(0.10)} = 0.10\ \text{m}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>Protons with a kinetic energy of 5.0 MeV must be bent around a curve of radius 0.50 m. (a) Find the protons' speed (the non-relativistic formula is acceptable here). (b) Find the magnetic field needed.</p></div>
+<div class="pq-s"><p>(a) \(E_k = 5.0\times10^6 \times 1.60\times10^{-19} = 8.0\times10^{-13}\ \text{J}\). \(v = \sqrt{2E_k/m} = \sqrt{2(8.0\times10^{-13})/1.67\times10^{-27}} = 3.1\times10^7\ \text{m s}^{-1}\) (about 0.1c).</p><p>(b) \(B = \dfrac{mv}{qr} = \dfrac{(1.67\times10^{-27})(3.1\times10^7)}{(1.60\times10^{-19})(0.50)} = 0.65\ \text{T}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Describe how electric and magnetic fields are used in a synchrotron to (a) increase the energy of the electrons and (b) keep them moving in a circular path. Explain why a magnetic field alone could not be used to increase the electrons' energy.</p></div>
+<div class="pq-s"><p>(a) Electric fields (in the electron gun, linac and RF cavities) exert a force \(F = qE\) along the electrons' direction of motion, doing work \(W = qV\) and increasing their kinetic energy. [1]</p><p>(b) Bending magnets provide a magnetic force \(F = qvB\) perpendicular to the velocity, which acts as the centripetal force: \(qvB = mv^2/r\). [1]</p><p>As the electrons gain speed, \(B\) is increased so that \(r = mv/(qB)\) stays constant. [1]</p><p>A magnetic force is always perpendicular to the velocity, so it does no work and cannot change the electrons' speed or kinetic energy. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(F = qvB\) (\(v \perp B\)), zero when parallel; reverse the rule for electrons.</li>
+  <li>Magnetic force is centripetal: \(r = mv/(qB)\); speed and kinetic energy stay constant.</li>
+  <li>Accelerators: electric fields add energy (\(qV\)); magnetic fields bend the path. In a synchrotron, \(B\) rises with speed to keep \(r\) fixed.</li>
+</ul>
