@@ -1,0 +1,115 @@
+<!--
+id: gases
+title: Gases & combustion stoichiometry
+short: Gases & stoichiometry
+summary: The ideal gas equation, molar volume at SLC, volume–volume ratios for gases at the same temperature and pressure, limiting reactants in combustion, and mass–volume–energy calculations for fuels.
+keywords: gas, ideal gas equation, PV = nRT, molar volume, SLC, 24.8 L, standard laboratory conditions, kelvin, kPa, pressure, volume, Avogadro, gas stoichiometry, limiting reactant, excess, combustion calculation, mass volume energy
+dotpoints: the universal gas equation and molar volume of a gas at SLC | calculations involving mass, gas volume and energy for the combustion of fuels, including limiting reactants
+-->
+<h2>Gas equations</h2>
+<div class="grid2">
+<div class="eq"><div class="eq-label">Ideal gas equation</div>\[ PV = nRT \]<p>\(P\) in kPa, \(V\) in L, \(T\) in K (\(T = \theta + 273\)), \(R = 8.31\ \text{J K}^{-1}\,\text{mol}^{-1}\).</p></div>
+<div class="eq"><div class="eq-label">Molar volume at SLC</div>\[ V = n \times 24.8\ \text{L mol}^{-1} \]<p>SLC = standard laboratory conditions: 25 °C and 100 kPa.</p></div>
+</div>
+<aside class="c-key"><p><strong>Avogadro's hypothesis:</strong> equal volumes of gases at the same temperature and pressure contain equal numbers of particles. So for gases at the same T and P, <strong>volume ratios = mole ratios</strong>. You can use the equation coefficients directly on volumes.</p></aside>
+
+<div class="we" data-title="Mass to gas volume" data-marks="3">
+<div class="we-q"><p>Calculate the volume of CO₂ at SLC produced by the complete combustion of 5.00 g of propane: \(\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}\).</p></div>
+<div class="we-s"><p>\(n(\ce{C3H8}) = \frac{5.00}{44.0} = 0.1136\text{ mol}\).</p></div>
+<div class="we-s"><p>\(n(\ce{CO2}) = 3 \times 0.1136 = 0.3409\text{ mol}\).</p></div>
+<div class="we-a"><p>\(V = 0.3409 \times 24.8 = \) <strong>8.45 L</strong>.</p></div>
+</div>
+
+<div class="we" data-title="PV = nRT for a gas cylinder" data-marks="3">
+<div class="we-q"><p>A 10.0 L cylinder holds methane at 500 kPa and 20 °C. What mass of methane does it contain?</p></div>
+<div class="we-s"><p>\(T = 20 + 273 = 293\text{ K}\).</p></div>
+<div class="we-s"><p>\(n = \frac{PV}{RT} = \frac{500 \times 10.0}{8.31 \times 293} = 2.05\text{ mol}\).</p></div>
+<div class="we-a"><p>\(m = 2.05 \times 16.0 = \) <strong>32.9 g</strong>. (kPa × L gives J, which matches \(R\) in J K⁻¹ mol⁻¹.)</p></div>
+</div>
+
+<div class="we" data-title="Limiting reactant with volumes (hard)" data-marks="4">
+<div class="we-q"><p>20.0 L of methane is mixed with 50.0 L of oxygen and ignited. After cooling to SLC (water condenses), what is the total volume of gas remaining, and what does it consist of?</p></div>
+<div class="we-s"><p>\(\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}\). 20.0 L CH₄ needs 40.0 L O₂; 50.0 L is available, so CH₄ is limiting.</p></div>
+<div class="we-s"><p>O₂ left over: \(50.0 - 40.0 = 10.0\text{ L}\). CO₂ formed: 20.0 L. Water is liquid at SLC, so it contributes no gas volume.</p></div>
+<div class="we-a"><p><strong>30.0 L: 20.0 L CO₂ and 10.0 L O₂.</strong></p></div>
+</div>
+
+<div class="we" data-title="Mass, volume and energy together" data-marks="4">
+<div class="we-q"><p>How many litres of O₂ at SLC are needed to burn 100 g of octane completely, and how much energy is released? (\(\Delta H_c = -5460\ \text{kJ mol}^{-1}\) of octane)</p></div>
+<div class="we-s"><p>\(n(\ce{C8H18}) = \frac{100}{114} = 0.877\text{ mol}\).</p></div>
+<div class="we-s"><p>\(\ce{2C8H18 + 25O2 -> 16CO2 + 18H2O}\): \(n(\ce{O2}) = 0.877 \times \frac{25}{2} = 10.96\text{ mol}\), so \(V = 10.96 \times 24.8 = 272\text{ L}\).</p></div>
+<div class="we-a"><p><strong>272 L of O₂; energy \(= 0.877 \times 5460 = 4.79 \times 10^3\text{ kJ}\).</strong> Air is about 21% O₂, so the engine draws in about 1300 L of air for that 100 g of fuel.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: gas traps">
+<ul>
+  <li><strong>Kelvin, always:</strong> 20 °C is 293 K. Using °C in \(PV = nRT\) gives nonsense.</li>
+  <li><strong>24.8 L mol⁻¹ is only for gases at SLC.</strong> Water at 25 °C is a liquid, and conditions other than SLC need \(PV = nRT\).</li>
+  <li><strong>Units:</strong> kPa with L; Pa with m³. Mixing them is out by 1000.</li>
+  <li><strong>Volume ratios only work for gases at the same T and P.</strong></li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The volume occupied by 0.250 mol of nitrogen at SLC is</p></div>
+<ol><li>5.60 L</li><li>24.8 L</li><li>6.20 L</li><li>99.2 L</li></ol>
+<div class="mcq-x"><p>\(0.250 \times 24.8 = 6.20\text{ L}\). (5.60 L uses the old STP value, 22.4.)</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>12.4 L of propane burns completely. At the same temperature and pressure, the volume of CO₂ produced is</p></div>
+<ol><li>37.2 L</li><li>12.4 L</li><li>62.0 L</li><li>4.13 L</li></ol>
+<div class="mcq-x"><p>\(\ce{C3H8 : CO2} = 1 : 3\) by volume.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>0.300 mol of gas is in a 5.00 L container at 30 °C. The pressure is closest to</p></div>
+<ol><li>15.0 kPa</li><li>1.49 kPa</li><li>1510 kPa</li><li>151 kPa</li></ol>
+<div class="mcq-x"><p>\(P = \frac{0.300 \times 8.31 \times 303}{5.00} = 151\text{ kPa}\). Option A uses 30 instead of 303 K.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>A 1.25 g sample of an unknown gas occupies 0.620 L at SLC. Its molar mass is</p></div>
+<ol><li>31.0 g mol⁻¹</li><li>50.0 g mol⁻¹</li><li>0.775 g mol⁻¹</li><li>2.02 g mol⁻¹</li></ol>
+<div class="mcq-x"><p>\(n = \frac{0.620}{24.8} = 0.0250\text{ mol}\); \(M = \frac{1.25}{0.0250} = 50.0\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>10.0 L of H₂ and 10.0 L of O₂ react to form water. After cooling to SLC, the gas remaining is</p></div>
+<ol><li>10.0 L of H₂</li><li>none</li><li>5.0 L of O₂</li><li>10.0 L of water vapour</li></ol>
+<div class="mcq-x"><p>\(\ce{2H2 + O2 -> 2H2O}\): 10.0 L H₂ uses 5.0 L O₂, leaving 5.0 L O₂. The water is liquid at SLC.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>At constant temperature, doubling the pressure on a fixed amount of gas will</p></div>
+<ol><li>halve its volume</li><li>double its volume</li><li>double the number of moles</li><li>not change its volume</li></ol>
+<div class="mcq-x"><p>\(PV = nRT\) with \(n, T\) fixed: \(V \propto \frac{1}{P}\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>What volume do 3.00 mol of gas occupy at 150 kPa and 40 °C?</p></div>
+<div class="pq-s"><p>\(V = \frac{nRT}{P} = \frac{3.00 \times 8.31 \times 313}{150} = 52.0\text{ L}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Methane at SLC releases how much energy per litre? Compare it with hydrogen (\(\Delta H_c = -286\ \text{kJ mol}^{-1}\)) and comment on what this means for storing hydrogen.</p></div>
+<div class="pq-s"><p>Methane: \(\frac{890}{24.8} = 35.9\text{ kJ L}^{-1}\). Hydrogen: \(\frac{286}{24.8} = 11.5\text{ kJ L}^{-1}\). [2]</p><p>Hydrogen gives about one-third as much energy per litre, so it must be highly compressed or liquefied to store useful amounts, even though it has the highest energy per gram. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>A camping stove burns butane: \(\ce{2C4H10(g) + 13O2(g) -> 8CO2(g) + 10H2O(g)}\), \(\Delta H = -5760\ \text{kJ mol}^{-1}\). (a) What volume of butane at SLC must be burnt to boil 1.50 kg of water from 20 °C (to 100 °C), if 40% of the energy reaches the water? (b) What volume of CO₂ at SLC is produced?</p></div>
+<div class="pq-s"><p>(a) \(q = 1500 \times 4.18 \times 80 = 501.6\text{ kJ}\); energy released needed \(= \frac{501.6}{0.40} = 1254\text{ kJ}\). [1]</p><p>Per mol of butane: \(\frac{5760}{2} = 2880\text{ kJ}\); \(n = \frac{1254}{2880} = 0.4354\text{ mol}\); \(V = 0.4354 \times 24.8 = 10.8\text{ L}\). [2]</p><p>(b) \(n(\ce{CO2}) = 4 \times 0.4354 = 1.742\text{ mol}\), so \(V = 43.2\text{ L}\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student calculates the volume of water produced when 1.00 mol of methane burns at SLC as \(2 \times 24.8 = 49.6\text{ L}\). What's wrong?</p></div>
+<div class="pq-s"><p>At 25 °C, water is a liquid, so molar volume doesn't apply. 2.00 mol of water is 36.0 g, which is about 36 mL of liquid.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(PV = nRT\) (kPa, L, K) or \(V = 24.8n\) at SLC.</li>
+  <li>Same T and P: volume ratios = coefficient ratios.</li>
+  <li>Find the limiting reactant before calculating products or leftovers.</li>
+</ul>

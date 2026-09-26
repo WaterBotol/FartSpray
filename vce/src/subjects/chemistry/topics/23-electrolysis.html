@@ -1,0 +1,140 @@
+<!--
+id: electrolysis
+title: Electrolysis & rechargeable batteries
+short: Electrolysis & batteries
+summary: Electrolytic cells and how they differ from galvanic cells, predicting products for molten salts and aqueous solutions (including water competing), active vs inert electrodes, electroplating and refining, rechargeable (secondary) cells, and green hydrogen.
+keywords: electrolysis, electrolytic cell, anode positive, cathode negative, power supply, molten electrolyte, aqueous electrolysis, inert electrode, active electrode, electroplating, electrorefining, predicting products, water oxidised, water reduced, rechargeable battery, secondary cell, lithium ion, lead acid, discharge, recharge, green hydrogen, electrolysis of water
+dotpoints: the operation of electrolytic cells, including comparison with galvanic cells | predicting the products of electrolysis of molten and aqueous electrolytes, including the effect of electrodes and competing reactions with water | rechargeable (secondary) cells, including the processes of discharging and recharging
+-->
+<h2>Electrolytic cells</h2>
+<p>An electrolytic cell uses an external power supply to <strong>force a non-spontaneous redox reaction</strong>: electrical energy becomes chemical energy.</p>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Galvanic cell</th><th>Electrolytic cell</th></tr></thead>
+<tbody>
+<tr><td>Energy</td><td>Chemical → electrical</td><td>Electrical → chemical</td></tr>
+<tr><td>Reaction</td><td>Spontaneous</td><td>Non-spontaneous (driven)</td></tr>
+<tr><td>Anode (oxidation)</td><td>Negative</td><td><strong>Positive</strong> (connected to + terminal)</td></tr>
+<tr><td>Cathode (reduction)</td><td>Positive</td><td><strong>Negative</strong> (connected to − terminal)</td></tr>
+<tr><td>Set-up</td><td>Usually two half-cells and a salt bridge</td><td>Often a single container</td></tr>
+</tbody></table></div>
+<aside class="c-key"><p>Oxidation is <em>always</em> at the anode and reduction is <em>always</em> at the cathode. Only the polarity (sign) swaps between cell types. In electrolysis, the negative cathode attracts cations, which get reduced.</p></aside>
+
+<h2>Predicting the products</h2>
+<ol>
+  <li>List every species present: ions, water (if aqueous), and the electrode material (if it's not inert).</li>
+  <li><strong>Cathode:</strong> the <em>strongest oxidant</em> present (highest on the left of the series) is reduced.</li>
+  <li><strong>Anode:</strong> the <em>strongest reductant</em> present (lowest on the right of the series) is oxidised. That includes a non-inert anode metal itself.</li>
+  <li>Minimum voltage needed ≈ the difference between the two \(E^\circ\) values (in practice more is needed).</li>
+</ol>
+<div class="tbl"><table>
+<thead><tr><th>Electrolyte (inert electrodes)</th><th>Cathode product</th><th>Anode product</th></tr></thead>
+<tbody>
+<tr><td>Molten NaCl</td><td>Na (l)</td><td>Cl₂ (g)</td></tr>
+<tr><td>1 M CuSO₄(aq)</td><td>Cu (s)</td><td>O₂ (g) (water oxidised; the solution becomes acidic)</td></tr>
+<tr><td>1 M NaCl(aq), dilute</td><td>H₂ (g) (water reduced, since Na⁺ is too weak an oxidant)</td><td>O₂ predicted from \(E^\circ\); Cl₂ in practice when the chloride is concentrated</td></tr>
+<tr><td>1 M KI(aq)</td><td>H₂ (g)</td><td>I₂ (I⁻ is a stronger reductant than water)</td></tr>
+<tr><td>CuSO₄(aq) with a <strong>copper anode</strong></td><td>Cu (s)</td><td>Cu dissolves as Cu²⁺ (electrorefining/plating)</td></tr>
+</tbody></table></div>
+<aside class="c-exam" data-title="The NaCl(aq) exception"><p>From \(E^\circ\) values alone, water (+1.23 V) should be oxidised before Cl⁻ (+1.36 V). In practice, concentrated brine gives chlorine because oxidising water at the electrode requires extra voltage. VCAA accepts this when the question says the solution is concentrated. Otherwise, go with the electrochemical series and mention the limitation.</p></aside>
+
+<div class="we" data-title="Electrolysis of copper(II) sulfate solution" data-marks="4">
+<div class="we-q"><p>1.0 M CuSO₄ is electrolysed with graphite electrodes. Write the half-equations at each electrode, the overall equation, and describe what's observed.</p></div>
+<div class="we-s"><p>Species: Cu²⁺, SO₄²⁻, H₂O. Cathode: strongest oxidant is Cu²⁺ (+0.34) vs H₂O (−0.83): \(\ce{Cu^2+(aq) + 2e- -> Cu(s)}\).</p></div>
+<div class="we-s"><p>Anode: the reductants are SO₄²⁻ (not in the series as a reductant; very hard to oxidise) and H₂O: \(\ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-}\).</p></div>
+<div class="we-s"><p>Overall (× 2 for Cu): \(\ce{2Cu^2+(aq) + 2H2O(l) -> 2Cu(s) + O2(g) + 4H+(aq)}\).</p></div>
+<div class="we-a"><p><strong>Pink-brown copper coats the cathode; bubbles of O₂ form at the anode; the blue colour fades (Cu²⁺ used up) and the pH falls (H⁺ produced).</strong> Minimum voltage \(\approx 1.23 - 0.34 = 0.89\text{ V}\).</p></div>
+</div>
+
+<h2>Electroplating and refining</h2>
+<p>To plate an object with a metal M: make the object the <strong>cathode</strong>, use an anode of M, and use a solution of M's ions. The anode dissolves at the same rate as metal deposits on the cathode, so the electrolyte concentration stays constant.</p>
+
+<h2>Rechargeable (secondary) cells</h2>
+<p>In a secondary cell, the products of discharge stay in contact with the electrodes, so the reaction can be reversed by an external power supply:</p>
+<ul>
+  <li><strong>Discharging</strong> = galvanic (spontaneous; anode −).</li>
+  <li><strong>Recharging</strong> = electrolytic (the charger forces the reverse reaction). The electrode that was the anode becomes the cathode, and vice versa. The charger's − terminal is connected to the battery's − terminal.</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>Cell</th><th>Discharge: anode (−)</th><th>Discharge: cathode (+)</th></tr></thead>
+<tbody>
+<tr><td>Lead–acid (car battery)</td><td>\(\ce{Pb(s) + SO4^2-(aq) -> PbSO4(s) + 2e-}\)</td><td>\(\ce{PbO2(s) + SO4^2-(aq) + 4H+(aq) + 2e- -> PbSO4(s) + 2H2O(l)}\)</td></tr>
+<tr><td>Lithium-ion (one common type)</td><td>\(\ce{LiC6 -> C6 + Li+ + e-}\) (lithium leaves the graphite)</td><td>\(\ce{CoO2 + Li+ + e- -> LiCoO2}\) (lithium enters the metal oxide)</td></tr>
+</tbody></table></div>
+<p>Lithium-ion cells have a high voltage and energy density because lithium is very light and a very strong reductant. They use non-aqueous electrolytes, because lithium would react with water.</p>
+
+<h2>Green hydrogen</h2>
+<p>Electrolysis of water (\(\ce{2H2O -> 2H2 + O2}\), non-spontaneous, \(\Delta H = +572\ \text{kJ}\) per 2 mol) powered by solar or wind makes hydrogen without CO₂ emissions. The hydrogen can later be used in a fuel cell: renewable electricity is stored as chemical energy.</p>
+
+<aside class="c-trap" data-title="Trick alert: electrolysis traps">
+<ul>
+  <li><strong>Polarity:</strong> in electrolysis the anode is positive. In galvanic cells it's negative.</li>
+  <li><strong>Don't forget water</strong> in aqueous electrolysis, or a reactive anode.</li>
+  <li><strong>Very weak oxidants (Na⁺, K⁺, Mg²⁺, Al³⁺)</strong> aren't reduced in water: H₂ forms instead. Those metals need molten electrolytes.</li>
+  <li><strong>During recharging</strong>, the battery's positive electrode becomes the anode.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>In an electrolytic cell, the cathode is</p></div>
+<ol><li>positive, and oxidation occurs there</li><li>negative, and reduction occurs there</li><li>positive, and reduction occurs there</li><li>negative, and oxidation occurs there</li></ol>
+<div class="mcq-x"><p>Reduction at the cathode, which is connected to the negative terminal of the power supply.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The products of electrolysis of molten magnesium chloride with inert electrodes are</p></div>
+<ol><li>H₂ and O₂</li><li>Mg and O₂</li><li>Mg and Cl₂</li><li>H₂ and Cl₂</li></ol>
+<div class="mcq-x"><p>No water present: the only ions are Mg²⁺ (reduced to Mg) and Cl⁻ (oxidised to Cl₂).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>1 M potassium nitrate solution is electrolysed with inert electrodes. The product at the cathode is</p></div>
+<ol><li>hydrogen gas</li><li>potassium metal</li><li>nitrogen dioxide</li><li>oxygen gas</li></ol>
+<div class="mcq-x"><p>K⁺ (−2.93 V) is a far weaker oxidant than water (−0.83 V), so water is reduced: \(\ce{2H2O + 2e- -> H2 + 2OH-}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>To electroplate a spoon with silver, the spoon should be</p></div>
+<ol><li>the anode, in a solution of Ag⁺ ions</li><li>the cathode, in a solution of Cu²⁺ ions</li><li>the anode, with a silver cathode</li><li>the cathode, with a silver anode, in a solution of Ag⁺ ions</li></ol>
+<div class="mcq-x"><p>Ag⁺ is reduced onto the cathode (spoon); the silver anode dissolves to replace the Ag⁺.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>While a lead–acid battery is being recharged, the reaction at the electrode connected to the positive terminal of the charger is</p></div>
+<ol><li>\(\ce{Pb + SO4^2- -> PbSO4 + 2e-}\)</li><li>\(\ce{PbSO4 + 2H2O -> PbO2 + SO4^2- + 4H+ + 2e-}\)</li><li>\(\ce{PbO2 + SO4^2- + 4H+ + 2e- -> PbSO4 + 2H2O}\)</li><li>\(\ce{PbSO4 + 2e- -> Pb + SO4^2-}\)</li></ol>
+<div class="mcq-x"><p>The positive terminal is the anode during recharging (oxidation): the discharge cathode reaction runs in reverse, regenerating PbO₂.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>During electrolysis of CuSO₄(aq) using copper electrodes, the concentration of Cu²⁺ in the solution</p></div>
+<ol><li>decreases</li><li>increases</li><li>stays about the same</li><li>drops to zero</li></ol>
+<div class="mcq-x"><p>The Cu anode dissolves (\(\ce{Cu -> Cu^2+ + 2e-}\)) as fast as Cu²⁺ deposits at the cathode.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>1 M potassium iodide solution is electrolysed with inert electrodes. Write the half-equations at each electrode and state what is observed around the anode.</p></div>
+<div class="pq-s"><p>Cathode: \(\ce{2H2O(l) + 2e- -> H2(g) + 2OH-(aq)}\). Anode: \(\ce{2I-(aq) -> I2(aq) + 2e-}\).</p><p>A yellow-brown colour (iodine) appears around the anode, and bubbles form at the cathode.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Explain why aluminium is produced by electrolysis of molten alumina (Al₂O₃ dissolved in molten cryolite) rather than an aqueous solution of an aluminium salt.</p></div>
+<div class="pq-s"><p>Al³⁺ (−1.66 V) is a much weaker oxidant than water (−0.83 V). [1] In aqueous solution, water would be reduced to H₂ at the cathode instead of Al³⁺. [1] With no water present in the melt, Al³⁺ is the strongest oxidant and is reduced to Al. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>A phone battery is a lithium-ion cell. (a) State the energy transformation during use and during charging. (b) Explain why these cells can be recharged whereas an alkaline primary cell can't. (c) Why must the electrolyte be non-aqueous?</p></div>
+<div class="pq-s"><p>(a) Use: chemical → electrical (galvanic). Charging: electrical → chemical (electrolytic). [1]</p><p>(b) The discharge products remain in contact with the electrodes (Li⁺ stays in the cell and inserts into the electrode materials), so an applied voltage can reverse the reaction. [2]</p><p>(c) Lithium is a very strong reductant and would react with water, producing H₂. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student says: “In electrolysis, the anode is positive, so it must be where reduction happens.” Correct this.</p></div>
+<div class="pq-s"><p>Oxidation always occurs at the anode (AN OX), whatever the cell type. The positive anode attracts anions, which lose electrons to it; reduction happens at the negative cathode.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Electrolytic: forced reaction; anode +, cathode −; oxidation still at the anode.</li>
+  <li>Cathode: strongest oxidant reduced. Anode: strongest reductant (including an active anode) oxidised.</li>
+  <li>Water competes in aqueous solutions; reactive metals need molten electrolytes.</li>
+  <li>Secondary cells: discharge = galvanic, recharge = electrolytic.</li>
+</ul>

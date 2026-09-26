@@ -1,0 +1,138 @@
+<!--
+id: volumetric
+title: Volumetric analysis (titrations)
+short: Titrations
+summary: Standard solutions and primary standards, titration technique (rinsing, aliquots, concordant titres, end point vs equivalence point), acid–base titrations of organic acids, redox titrations (permanganate, iodine/vitamin C), dilution factors and error analysis.
+keywords: titration, volumetric analysis, standard solution, primary standard, burette, pipette, aliquot, titre, concordant titres, end point, equivalence point, indicator, acid base titration, vinegar, ethanoic acid, citric acid, redox titration, permanganate, iodine, vitamin C, ascorbic acid, dilution factor, rinsing, errors, m/v percentage
+dotpoints: the principles of volumetric analysis, including standard solutions, primary standards and titration technique | calculations from acid–base and redox titration data, including dilution factors | sources of error in titrations
+-->
+<h2>Technique</h2>
+<div class="tbl"><table>
+<thead><tr><th>Equipment</th><th>Rinse with</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Burette</td><td>The solution it will contain (titrant)</td><td>Water left inside would dilute the titrant</td></tr>
+<tr><td>Pipette</td><td>The solution it will deliver (aliquot)</td><td>Water would dilute the aliquot</td></tr>
+<tr><td>Conical flask</td><td>Deionised water</td><td>Extra water doesn't change the moles of analyte in the aliquot</td></tr>
+<tr><td>Volumetric flask</td><td>Deionised water</td><td>It's filled to the mark with water anyway</td></tr>
+</tbody></table></div>
+<ul>
+  <li><strong>Titre</strong>: the volume delivered from the burette. Repeat until you have three <strong>concordant titres</strong> (within 0.10 mL of each other), and average those.</li>
+  <li><strong>Equivalence point</strong>: reactants have been added in the exact mole ratio. <strong>End point</strong>: when the indicator changes colour. A good indicator makes these nearly the same.</li>
+  <li><strong>Primary standard</strong>: a substance pure enough to weigh directly to make a solution of accurately known concentration. It must be very pure, stable in air (not hygroscopic), and have a high molar mass (smaller weighing error). Example: anhydrous sodium carbonate.</li>
+</ul>
+
+<h2>The calculation pattern</h2>
+<ol>
+  <li>\(n\)(titrant) = \(c \times V\) (in L), using the average concordant titre.</li>
+  <li>Mole ratio from the balanced equation → \(n\)(analyte) in the aliquot.</li>
+  <li>Scale up by the dilution factor or aliquot fraction to the original sample.</li>
+  <li>Convert to what's asked (mol L⁻¹, g L⁻¹, % m/v, mg per serve).</li>
+</ol>
+
+<div class="we" data-title="Ethanoic acid in vinegar" data-marks="5">
+<div class="we-q"><p>25.00 mL of vinegar is diluted to 250.0 mL in a volumetric flask. 20.00 mL aliquots of the diluted solution are titrated with 0.1000 M NaOH, giving titres of 18.40, 18.90, 18.45 and 18.50 mL. Calculate the concentration of ethanoic acid in the vinegar in mol L⁻¹ and in % (m/v).</p></div>
+<div class="we-s"><p>Concordant titres: 18.40, 18.45, 18.50 (18.90 is an outlier). Average = 18.45 mL.</p></div>
+<div class="we-s"><p>\(n(\ce{NaOH}) = 0.1000 \times 0.01845 = 1.845 \times 10^{-3}\text{ mol}\). \(\ce{CH3COOH + NaOH -> CH3COONa + H2O}\) (1 : 1), so \(n(\text{acid}) = 1.845 \times 10^{-3}\) mol in 20.00 mL.</p></div>
+<div class="we-s"><p>Diluted concentration \(= \frac{1.845 \times 10^{-3}}{0.02000} = 0.09225\ \text{M}\). Dilution factor 10, so the vinegar is 0.9225 M.</p></div>
+<div class="we-a"><p><strong>0.9225 M; mass per litre \(= 0.9225 \times 60.0 = 55.4\text{ g L}^{-1}\), i.e. 5.54% (m/v)</strong> (grams per 100 mL).</p></div>
+</div>
+
+<div class="we" data-title="A triprotic acid: citric acid" data-marks="3">
+<div class="we-q"><p>Citric acid, \(\ce{H3C6H5O7}\) (\(M = 192.1\)), reacts: \(\ce{H3C6H5O7 + 3NaOH -> Na3C6H5O7 + 3H2O}\). A 20.00 mL aliquot of juice needs 15.60 mL of 0.1000 M NaOH. Find the citric acid concentration in g L⁻¹.</p></div>
+<div class="we-s"><p>\(n(\ce{NaOH}) = 1.560 \times 10^{-3}\text{ mol}\), so \(n(\text{citric}) = \frac{1.560 \times 10^{-3}}{3} = 5.200 \times 10^{-4}\text{ mol}\).</p></div>
+<div class="we-s"><p>Mass in 20.00 mL \(= 5.200 \times 10^{-4} \times 192.1 = 0.0999\text{ g}\).</p></div>
+<div class="we-a"><p><strong>\(\frac{0.0999}{0.02000} = 5.00\text{ g L}^{-1}\).</strong> Forgetting the 1 : 3 ratio triples the answer.</p></div>
+</div>
+
+<h2>Redox titrations</h2>
+<div class="we" data-title="Iron tablet with permanganate" data-marks="4">
+<div class="we-q"><p>An iron tablet is dissolved in acid and made up to 100.0 mL. 20.00 mL aliquots of this Fe²⁺ solution are titrated with 0.0200 M KMnO₄, with an average titre of 15.20 mL. Calculate the mass of iron in the tablet.</p></div>
+<div class="we-s"><p>\(\ce{MnO4- + 8H+ + 5Fe^2+ -> Mn^2+ + 5Fe^3+ + 4H2O}\). \(n(\ce{MnO4-}) = 0.0200 \times 0.01520 = 3.04 \times 10^{-4}\text{ mol}\).</p></div>
+<div class="we-s"><p>\(n(\ce{Fe^2+}) = 5 \times 3.04 \times 10^{-4} = 1.52 \times 10^{-3}\text{ mol}\) in 20.00 mL, so \(7.60 \times 10^{-3}\text{ mol}\) in 100.0 mL.</p></div>
+<div class="we-a"><p><strong>\(m = 7.60 \times 10^{-3} \times 55.8 = 0.424\text{ g}\) of iron.</strong> Permanganate is self-indicating: the end point is the first permanent pale pink.</p></div>
+</div>
+<div class="we" data-title="Vitamin C with iodine" data-marks="3">
+<div class="we-q"><p>Vitamin C (ascorbic acid, \(\ce{C6H8O6}\), \(M = 176.1\)) reacts with iodine: \(\ce{C6H8O6 + I2 -> C6H6O6 + 2H+ + 2I-}\). A 25.00 mL sample of juice needs 12.40 mL of 0.00500 M I₂ (starch indicator). Calculate the vitamin C content in mg per 100 mL.</p></div>
+<div class="we-s"><p>\(n(\ce{I2}) = 0.00500 \times 0.01240 = 6.20 \times 10^{-5}\text{ mol} = n(\text{vit C})\).</p></div>
+<div class="we-s"><p>Mass \(= 6.20 \times 10^{-5} \times 176.1 = 0.01092\text{ g} = 10.9\text{ mg}\) in 25.00 mL.</p></div>
+<div class="we-a"><p><strong>43.7 mg per 100 mL.</strong> End point: the first permanent blue-black colour (excess iodine with starch).</p></div>
+</div>
+
+<h2>Errors</h2>
+<div class="tbl"><table>
+<thead><tr><th>Mistake</th><th>Effect on titre</th><th>Effect on calculated analyte</th></tr></thead>
+<tbody>
+<tr><td>Burette rinsed with water (titrant diluted)</td><td>Larger</td><td>Too high</td></tr>
+<tr><td>Pipette rinsed with water (aliquot diluted)</td><td>Smaller</td><td>Too low</td></tr>
+<tr><td>Conical flask rinsed with the analyte solution</td><td>Larger (extra analyte)</td><td>Too high</td></tr>
+<tr><td>Air bubble in the burette tip that escapes during the titration</td><td>Reading larger than the volume delivered</td><td>Too high</td></tr>
+<tr><td>Overshooting the end point</td><td>Larger</td><td>Too high</td></tr>
+</tbody></table></div>
+
+<aside class="c-trap" data-title="Trick alert: titration traps">
+<ul>
+  <li><strong>Use only concordant titres</strong> in the average.</li>
+  <li><strong>Convert mL to L</strong> before multiplying by concentration.</li>
+  <li><strong>Mole ratios</strong>: 1 : 5 for permanganate/Fe²⁺, 1 : 3 for citric acid/NaOH.</li>
+  <li><strong>Aliquot vs whole sample</strong>: scale by \(\frac{\text{total volume}}{\text{aliquot volume}}\).</li>
+  <li><strong>% (m/v)</strong> means grams per 100 mL, not per litre.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The burette should be rinsed with</p></div>
+<ol><li>deionised water only</li><li>the solution to be titrated in the flask</li><li>the solution it will be filled with</li><li>ethanol</li></ol>
+<div class="mcq-x"><p>Otherwise the titrant is diluted and the titre is too large.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Titres of 21.30, 20.85, 20.90 and 20.80 mL are obtained. The average titre to use is</p></div>
+<ol><li>20.96 mL</li><li>20.85 mL</li><li>21.30 mL</li><li>20.90 mL</li></ol>
+<div class="mcq-x"><p>Concordant: 20.85, 20.90, 20.80 (within 0.10 mL). Average 20.85 mL.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A student rinses the conical flask with deionised water before adding the aliquot. The calculated concentration of the analyte will be</p></div>
+<ol><li>unaffected</li><li>too high</li><li>too low</li><li>impossible to calculate</li></ol>
+<div class="mcq-x"><p>The moles of analyte come from the pipetted aliquot; extra water in the flask doesn't change them.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>25.00 mL of Fe²⁺ solution reacts with 20.00 mL of 0.0100 M KMnO₄. The concentration of Fe²⁺ is</p></div>
+<ol><li>0.00800 M</li><li>0.0100 M</li><li>0.0500 M</li><li>0.0400 M</li></ol>
+<div class="mcq-x"><p>\(n(\ce{MnO4-}) = 2.00 \times 10^{-4}\); \(n(\ce{Fe^2+}) = 1.00 \times 10^{-3}\); \(c = \frac{1.00 \times 10^{-3}}{0.02500} = 0.0400\ \text{M}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Which is the best choice for a primary standard?</p></div>
+<ol><li>solid NaOH, which absorbs water and CO₂ from the air</li><li>concentrated HCl</li><li>anhydrous sodium carbonate</li><li>ethanoic acid</li></ol>
+<div class="mcq-x"><p>Pure, stable and not hygroscopic. NaOH absorbs water and CO₂, so its mass isn't reliable.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>20.00 mL of NaOH solution is neutralised by 17.50 mL of 0.1200 M HCl. Calculate the concentration of the NaOH.</p></div>
+<div class="pq-s"><p>\(n(\ce{HCl}) = 0.1200 \times 0.01750 = 2.100 \times 10^{-3}\text{ mol} = n(\ce{NaOH})\). \(c = \frac{2.100 \times 10^{-3}}{0.02000} = 0.1050\ \text{M}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>A 1.20 g sample of impure oxalic acid (\(\ce{H2C2O4}\), \(M = 90.0\)) is dissolved and made up to 250.0 mL. 25.00 mL aliquots react with 0.0200 M KMnO₄, average titre 21.30 mL: \(\ce{2MnO4- + 6H+ + 5H2C2O4 -> 2Mn^2+ + 10CO2 + 8H2O}\). Calculate the % purity.</p></div>
+<div class="pq-s"><p>\(n(\ce{MnO4-}) = 0.0200 \times 0.02130 = 4.26 \times 10^{-4}\). [1]</p><p>\(n(\ce{H2C2O4}) = \frac52 \times 4.26 \times 10^{-4} = 1.065 \times 10^{-3}\) in 25 mL; \(1.065 \times 10^{-2}\) in 250 mL. [1]</p><p>Mass \(= 1.065 \times 10^{-2} \times 90.0 = 0.9585\text{ g}\). [1]</p><p>Purity \(= \frac{0.9585}{1.20} \times 100 = 79.9\%\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>In the vinegar analysis above, the student rinsed the burette with deionised water instead of NaOH solution. Explain the effect on the calculated % (m/v) of ethanoic acid.</p></div>
+<div class="pq-s"><p>Water left in the burette dilutes the NaOH, so it's less concentrated than 0.1000 M. [1] A larger volume is needed to reach the end point (larger titre). [1] The calculation uses the larger titre with 0.1000 M, overestimating the moles of NaOH, so the calculated % (m/v) is too high. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>In the iron tablet titration, a student forgets to multiply by 5 (the permanganate : iron ratio) but correctly scales from 20.00 mL to 100.0 mL. What mass do they report, and by what factor is it wrong?</p></div>
+<div class="pq-s"><p>\(3.04 \times 10^{-4} \times 5\text{ (aliquots)} \times 55.8 = 0.0848\text{ g}\): five times too small (the correct mass is 0.424 g).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Rinse the burette and pipette with their solutions; the flask with water.</li>
+  <li>Average concordant titres → \(n = cV\) → mole ratio → scale up → convert units.</li>
+  <li>Self-indicating permanganate (pink); iodine/starch (blue-black).</li>
+</ul>

@@ -1,0 +1,19 @@
+{
+  "id": "chemistry", "prefix": "ch", "name": "Chemistry", "short": "Chemistry",
+  "design": "Study design 2024–2027",
+  "blurb": "Fuels, energy and electrochemistry; rates, equilibrium and electrolysis; organic structure, reactions and analysis; food chemistry.",
+  "groups": [
+    { "id": "start", "eyebrow": "Start here", "title": "", "map": false, "topics": ["home", "exam-technique", "data-book"] },
+    { "id": "u3a1", "eyebrow": "Unit 3 · AoS 1", "title": "What are the current and future options for supplying energy?", "quiz": true,
+      "topics": ["fuels", "thermochem", "calorimetry", "gases", "redox", "galvanic", "fuel-cells"] },
+    { "id": "u3a2", "eyebrow": "Unit 3 · AoS 2", "title": "How can the rate and yield of chemical reactions be optimised?", "quiz": true,
+      "topics": ["rates", "equilibrium", "le-chatelier", "electrolysis", "faraday"] },
+    { "id": "u4a1", "eyebrow": "Unit 4 · AoS 1", "title": "How are organic compounds categorised and synthesised?", "quiz": true,
+      "topics": ["nomenclature", "isomers", "organic-reactions", "pathways"] },
+    { "id": "u4a2", "eyebrow": "Unit 4 · AoS 2", "title": "How are organic compounds analysed and used?", "quiz": true,
+      "topics": ["ir-ms", "nmr", "chromatography", "volumetric", "food", "enzymes"] },
+    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed, exam-style sets from basic to brutal", "quiz": true,
+      "topics": ["exam-mcq", "exam-extended"] },
+    { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }
+  ]
+}

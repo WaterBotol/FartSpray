@@ -1,0 +1,139 @@
+<!--
+id: thermochem
+title: Thermochemical equations & energy profiles
+short: Thermochemistry & ΔH
+summary: Exothermic and endothermic reactions, enthalpy change ΔH, writing and manipulating thermochemical equations, energy profile diagrams with activation energy, and energy calculations from ΔH.
+keywords: thermochemistry, enthalpy, delta H, ΔH, exothermic, endothermic, thermochemical equation, energy profile, activation energy, bond breaking, bond making, reversing equations, scaling equations, Hess's law, kJ mol-1, energy released, heat of combustion
+dotpoints: exothermic and endothermic reactions, including energy profile diagrams and activation energy | thermochemical equations and ΔH, including manipulating equations and calculating energy released or absorbed
+-->
+<h2>Exothermic vs endothermic</h2>
+<p>The <strong>enthalpy change</strong> \(\Delta H = H_{\text{products}} - H_{\text{reactants}}\) is the heat energy absorbed or released at constant pressure.</p>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Exothermic</th><th>Endothermic</th></tr></thead>
+<tbody>
+<tr><td>Energy flow</td><td>Released to the surroundings (they get hotter)</td><td>Absorbed from the surroundings (they get colder)</td></tr>
+<tr><td>\(\Delta H\)</td><td>Negative</td><td>Positive</td></tr>
+<tr><td>Bonds</td><td>Energy released making bonds > energy absorbed breaking bonds</td><td>Energy absorbed breaking bonds > energy released making bonds</td></tr>
+<tr><td>Examples</td><td>Combustion, respiration, neutralisation</td><td>Photosynthesis, dissolving NH₄NO₃, thermal decomposition, electrolysis of water</td></tr>
+</tbody></table></div>
+<aside class="c-key"><p>Breaking bonds <em>always</em> absorbs energy; making bonds <em>always</em> releases energy. Whether a reaction is exothermic depends on which of these is bigger overall.</p></aside>
+
+<h2>Energy profile diagrams</h2>
+<figure class="fig">
+<svg viewBox="0 0 420 250" width="420" role="img" aria-label="energy profile of an exothermic reaction"><defs><clipPath id="clip91a84453"><rect x="34" y="18" width="356" height="202"/></clipPath></defs><line x1="34" y1="220.0" x2="398" y2="220.0" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><line x1="34.0" y1="220" x2="34.0" y2="10" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><text x="394" y="214.0" class="t-sm t-b"></text><text x="40.0" y="16" class="t-sm t-b">energy</text><line x1="34" y1="98.8" x2="390" y2="98.8" class="s-dash"/><line x1="34" y1="169.5" x2="390" y2="169.5" class="s-dash"/><line x1="34" y1="42.2" x2="390" y2="42.2" class="s-dash"/><polyline clip-path="url(#clip91a84453)" points="51.8,98.8 52.6,98.8 53.4,98.8 54.2,98.8 55.0,98.8 55.8,98.8 56.6,98.8 57.4,98.8 58.2,98.8 59.0,98.8 59.8,98.8 60.6,98.8 61.4,98.8 62.2,98.8 63.0,98.8 63.8,98.8 64.6,98.8 65.4,98.8 66.2,98.8 67.0,98.8 67.8,98.8 68.6,98.8 69.4,98.8 70.2,98.8 71.0,98.8 71.8,98.8 72.6,98.8 73.4,98.8 74.2,98.8 75.0,98.8 75.8,98.8 76.6,98.8 77.4,98.8 78.2,98.8 79.0,98.8 79.8,98.8 80.6,98.8 81.4,98.8 82.2,98.8 83.0,98.9 83.8,98.9 84.6,98.9 85.4,98.9 86.2,98.9 87.0,98.9 87.8,98.9 88.6,98.9 89.4,98.9 90.2,98.9 91.0,98.9 91.8,98.9 92.7,98.9 93.5,98.9 94.3,98.9 95.1,98.9 95.9,98.9 96.7,98.9 97.5,98.8 98.3,98.8 99.1,98.8 99.9,98.8 100.7,98.8 101.5,98.8 102.3,98.8 103.1,98.8 103.9,98.8 104.7,98.8 105.5,98.8 106.3,98.8 107.1,98.8 107.9,98.7 108.7,98.7 109.5,98.7 110.3,98.7 111.1,98.7 111.9,98.6 112.7,98.6 113.5,98.6 114.3,98.5 115.1,98.5 115.9,98.5 116.7,98.4 117.5,98.4 118.3,98.3 119.1,98.3 119.9,98.2 120.7,98.1 121.5,98.1 122.3,98.0 123.1,97.9 123.9,97.8 124.7,97.7 125.5,97.6 126.3,97.5 127.1,97.4 127.9,97.3 128.7,97.2 129.5,97.0 130.3,96.9 131.1,96.7 131.9,96.6 132.7,96.4 133.5,96.2 134.3,96.0 135.1,95.8 135.9,95.6 136.7,95.3 137.5,95.1 138.3,94.8 139.1,94.6 139.9,94.3 140.7,94.0 141.5,93.7 142.3,93.3 143.1,93.0 143.9,92.6 144.7,92.2 145.5,91.8 146.3,91.4 147.1,91.0 147.9,90.5 148.7,90.1 149.5,89.6 150.3,89.1 151.1,88.5 151.9,88.0 152.7,87.4 153.5,86.8 154.3,86.2 155.1,85.6 155.9,84.9 156.7,84.3 157.5,83.6 158.3,82.9 159.1,82.1 159.9,81.4 160.7,80.6 161.5,79.8 162.3,79.0 163.1,78.2 163.9,77.3 164.7,76.5 165.5,75.6 166.3,74.7 167.1,73.8 167.9,72.9 168.7,72.0 169.5,71.0 170.3,70.1 171.1,69.1 171.9,68.1 172.8,67.1 173.6,66.2 174.4,65.2 175.2,64.2 176.0,63.2 176.8,62.2 177.6,61.2 178.4,60.2 179.2,59.2 180.0,58.3 180.8,57.3 181.6,56.4 182.4,55.4 183.2,54.5 184.0,53.6 184.8,52.7 185.6,51.9 186.4,51.0 187.2,50.2 188.0,49.4 188.8,48.7 189.6,48.0 190.4,47.3 191.2,46.6 192.0,46.0 192.8,45.4 193.6,44.9 194.4,44.4 195.2,44.0 196.0,43.6 196.8,43.2 197.6,42.9 198.4,42.7 199.2,42.5 200.0,42.4 200.8,42.3 201.6,42.2 202.4,42.3 203.2,42.3 204.0,42.5 204.8,42.7 205.6,42.9 206.4,43.3 207.2,43.6 208.0,44.1 208.8,44.6 209.6,45.1 210.4,45.8 211.2,46.4 212.0,47.2 212.8,48.0 213.6,48.8 214.4,49.7 215.2,50.7 216.0,51.7 216.8,52.8 217.6,53.9 218.4,55.0 219.2,56.3 220.0,57.5 220.8,58.8 221.6,60.2 222.4,61.6 223.2,63.0 224.0,64.5 224.8,66.0 225.6,67.5 226.4,69.1 227.2,70.7 228.0,72.4 228.8,74.0 229.6,75.7 230.4,77.4 231.2,79.1 232.0,80.9 232.8,82.6 233.6,84.4 234.4,86.2 235.2,88.0 236.0,89.8 236.8,91.6 237.6,93.4 238.4,95.2 239.2,97.0 240.0,98.8 240.8,100.6 241.6,102.3 242.4,104.1 243.2,105.9 244.0,107.6 244.8,109.4 245.6,111.1 246.4,112.8 247.2,114.5 248.0,116.2 248.8,117.8 249.6,119.5 250.4,121.1 251.2,122.6 252.0,124.2 252.9,125.7 253.7,127.2 254.5,128.7 255.3,130.2 256.1,131.6 256.9,133.0 257.7,134.3 258.5,135.6 259.3,136.9 260.1,138.2 260.9,139.4 261.7,140.6 262.5,141.8 263.3,142.9 264.1,144.0 264.9,145.1 265.7,146.1 266.5,147.2 267.3,148.1 268.1,149.1 268.9,150.0 269.7,150.9 270.5,151.7 271.3,152.6 272.1,153.3 272.9,154.1 273.7,154.9 274.5,155.6 275.3,156.2 276.1,156.9 276.9,157.5 277.7,158.1 278.5,158.7 279.3,159.3 280.1,159.8 280.9,160.3 281.7,160.8 282.5,161.3 283.3,161.7 284.1,162.1 284.9,162.5 285.7,162.9 286.5,163.3 287.3,163.6 288.1,164.0 288.9,164.3 289.7,164.6 290.5,164.9 291.3,165.2 292.1,165.4 292.9,165.7 293.7,165.9 294.5,166.1 295.3,166.3 296.1,166.5 296.9,166.7 297.7,166.9 298.5,167.0 299.3,167.2 300.1,167.3 300.9,167.5 301.7,167.6 302.5,167.7 303.3,167.8 304.1,167.9 304.9,168.0 305.7,168.1 306.5,168.2 307.3,168.3 308.1,168.4 308.9,168.4 309.7,168.5 310.5,168.6 311.3,168.6 312.1,168.7 312.9,168.7 313.7,168.8 314.5,168.8 315.3,168.9 316.1,168.9 316.9,169.0 317.7,169.0 318.5,169.0 319.3,169.1 320.1,169.1 320.9,169.1 321.7,169.1 322.5,169.2 323.3,169.2 324.1,169.2 324.9,169.2 325.7,169.2 326.5,169.3 327.3,169.3 328.1,169.3 328.9,169.3 329.7,169.3 330.5,169.3 331.3,169.3 332.2,169.3 333.0,169.4 333.8,169.4 334.6,169.4 335.4,169.4 336.2,169.4 337.0,169.4 337.8,169.4 338.6,169.4 339.4,169.4 340.2,169.4 341.0,169.4 341.8,169.4 342.6,169.4 343.4,169.4 344.2,169.4 345.0,169.4 345.8,169.4 346.6,169.4 347.4,169.4 348.2,169.4 349.0,169.5 349.8,169.5 350.6,169.5 351.4,169.5 352.2,169.5 353.0,169.5 353.8,169.5 354.6,169.5 355.4,169.5 356.2,169.5 357.0,169.5 357.8,169.5 358.6,169.5 359.4,169.5 360.2,169.5 361.0,169.5 361.8,169.5 362.6,169.5 363.4,169.5 364.2,169.5 365.0,169.5 365.8,169.5 366.6,169.5 367.4,169.5 368.2,169.5 369.0,169.5 369.8,169.5 370.6,169.5 371.4,169.5 372.2,169.5" class="s-acc" style="stroke-width:2.4"/><line x1="93.3" y1="98.8" x2="93.3" y2="44.3" class="s-ink" style="stroke-width:1.5" marker-end="url(#ah-ink)"/><text x="99.3" y="75.5" class="t-sm t-b">Eₐ</text><line x1="330.7" y1="98.8" x2="330.7" y2="167.1" class="s-ink" style="stroke-width:1.5" marker-end="url(#ah-ink)"/><text x="336.7" y="136.9" class="t-sm t-b">ΔH</text><text x="54.8" y="91.7" text-anchor="start" class="t-sm ">reactants</text><text x="369.2" y="184.6" text-anchor="end" class="t-sm ">products</text><text x="212.0" y="238.2" text-anchor="middle" class="t-sm t-b">reaction progress</text></svg>
+<figcaption>Exothermic: products are lower than reactants, so ΔH is negative. The activation energy \(E_a\) is measured from the reactants up to the peak (the transition state).</figcaption>
+</figure>
+<figure class="fig">
+<svg viewBox="0 0 420 250" width="420" role="img" aria-label="energy profile of an endothermic reaction"><defs><clipPath id="clipa52be928"><rect x="34" y="18" width="356" height="202"/></clipPath></defs><line x1="34" y1="220.0" x2="398" y2="220.0" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><line x1="34.0" y1="220" x2="34.0" y2="10" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><text x="394" y="214.0" class="t-sm t-b"></text><text x="40.0" y="16" class="t-sm t-b">energy</text><line x1="34" y1="169.5" x2="390" y2="169.5" class="s-dash"/><line x1="34" y1="98.8" x2="390" y2="98.8" class="s-dash"/><line x1="34" y1="42.2" x2="390" y2="42.2" class="s-dash"/><polyline clip-path="url(#clipa52be928)" points="51.8,169.5 52.6,169.5 53.4,169.5 54.2,169.5 55.0,169.5 55.8,169.5 56.6,169.5 57.4,169.5 58.2,169.5 59.0,169.5 59.8,169.5 60.6,169.5 61.4,169.5 62.2,169.5 63.0,169.5 63.8,169.5 64.6,169.5 65.4,169.5 66.2,169.5 67.0,169.5 67.8,169.5 68.6,169.5 69.4,169.5 70.2,169.5 71.0,169.5 71.8,169.5 72.6,169.5 73.4,169.5 74.2,169.5 75.0,169.5 75.8,169.4 76.6,169.4 77.4,169.4 78.2,169.4 79.0,169.4 79.8,169.4 80.6,169.4 81.4,169.4 82.2,169.4 83.0,169.4 83.8,169.4 84.6,169.4 85.4,169.4 86.2,169.4 87.0,169.4 87.8,169.4 88.6,169.4 89.4,169.4 90.2,169.4 91.0,169.4 91.8,169.3 92.7,169.3 93.5,169.3 94.3,169.3 95.1,169.3 95.9,169.3 96.7,169.3 97.5,169.3 98.3,169.2 99.1,169.2 99.9,169.2 100.7,169.2 101.5,169.2 102.3,169.1 103.1,169.1 103.9,169.1 104.7,169.1 105.5,169.0 106.3,169.0 107.1,169.0 107.9,168.9 108.7,168.9 109.5,168.8 110.3,168.8 111.1,168.7 111.9,168.7 112.7,168.6 113.5,168.6 114.3,168.5 115.1,168.4 115.9,168.4 116.7,168.3 117.5,168.2 118.3,168.1 119.1,168.0 119.9,167.9 120.7,167.8 121.5,167.7 122.3,167.6 123.1,167.5 123.9,167.3 124.7,167.2 125.5,167.0 126.3,166.9 127.1,166.7 127.9,166.5 128.7,166.3 129.5,166.1 130.3,165.9 131.1,165.7 131.9,165.4 132.7,165.2 133.5,164.9 134.3,164.6 135.1,164.3 135.9,164.0 136.7,163.6 137.5,163.3 138.3,162.9 139.1,162.5 139.9,162.1 140.7,161.7 141.5,161.3 142.3,160.8 143.1,160.3 143.9,159.8 144.7,159.3 145.5,158.7 146.3,158.1 147.1,157.5 147.9,156.9 148.7,156.2 149.5,155.6 150.3,154.9 151.1,154.1 151.9,153.3 152.7,152.6 153.5,151.7 154.3,150.9 155.1,150.0 155.9,149.1 156.7,148.1 157.5,147.2 158.3,146.1 159.1,145.1 159.9,144.0 160.7,142.9 161.5,141.8 162.3,140.6 163.1,139.4 163.9,138.2 164.7,136.9 165.5,135.6 166.3,134.3 167.1,133.0 167.9,131.6 168.7,130.2 169.5,128.7 170.3,127.2 171.1,125.7 171.9,124.2 172.8,122.6 173.6,121.1 174.4,119.5 175.2,117.8 176.0,116.2 176.8,114.5 177.6,112.8 178.4,111.1 179.2,109.4 180.0,107.6 180.8,105.9 181.6,104.1 182.4,102.3 183.2,100.6 184.0,98.8 184.8,97.0 185.6,95.2 186.4,93.4 187.2,91.6 188.0,89.8 188.8,88.0 189.6,86.2 190.4,84.4 191.2,82.6 192.0,80.9 192.8,79.1 193.6,77.4 194.4,75.7 195.2,74.0 196.0,72.4 196.8,70.7 197.6,69.1 198.4,67.5 199.2,66.0 200.0,64.5 200.8,63.0 201.6,61.6 202.4,60.2 203.2,58.8 204.0,57.5 204.8,56.3 205.6,55.0 206.4,53.9 207.2,52.8 208.0,51.7 208.8,50.7 209.6,49.7 210.4,48.8 211.2,48.0 212.0,47.2 212.8,46.4 213.6,45.8 214.4,45.1 215.2,44.6 216.0,44.1 216.8,43.6 217.6,43.3 218.4,42.9 219.2,42.7 220.0,42.5 220.8,42.3 221.6,42.3 222.4,42.2 223.2,42.3 224.0,42.4 224.8,42.5 225.6,42.7 226.4,42.9 227.2,43.2 228.0,43.6 228.8,44.0 229.6,44.4 230.4,44.9 231.2,45.4 232.0,46.0 232.8,46.6 233.6,47.3 234.4,48.0 235.2,48.7 236.0,49.4 236.8,50.2 237.6,51.0 238.4,51.9 239.2,52.7 240.0,53.6 240.8,54.5 241.6,55.4 242.4,56.4 243.2,57.3 244.0,58.3 244.8,59.2 245.6,60.2 246.4,61.2 247.2,62.2 248.0,63.2 248.8,64.2 249.6,65.2 250.4,66.2 251.2,67.1 252.0,68.1 252.9,69.1 253.7,70.1 254.5,71.0 255.3,72.0 256.1,72.9 256.9,73.8 257.7,74.7 258.5,75.6 259.3,76.5 260.1,77.3 260.9,78.2 261.7,79.0 262.5,79.8 263.3,80.6 264.1,81.4 264.9,82.1 265.7,82.9 266.5,83.6 267.3,84.3 268.1,84.9 268.9,85.6 269.7,86.2 270.5,86.8 271.3,87.4 272.1,88.0 272.9,88.5 273.7,89.1 274.5,89.6 275.3,90.1 276.1,90.5 276.9,91.0 277.7,91.4 278.5,91.8 279.3,92.2 280.1,92.6 280.9,93.0 281.7,93.3 282.5,93.7 283.3,94.0 284.1,94.3 284.9,94.6 285.7,94.8 286.5,95.1 287.3,95.3 288.1,95.6 288.9,95.8 289.7,96.0 290.5,96.2 291.3,96.4 292.1,96.6 292.9,96.7 293.7,96.9 294.5,97.0 295.3,97.2 296.1,97.3 296.9,97.4 297.7,97.5 298.5,97.6 299.3,97.7 300.1,97.8 300.9,97.9 301.7,98.0 302.5,98.1 303.3,98.1 304.1,98.2 304.9,98.3 305.7,98.3 306.5,98.4 307.3,98.4 308.1,98.5 308.9,98.5 309.7,98.5 310.5,98.6 311.3,98.6 312.1,98.6 312.9,98.7 313.7,98.7 314.5,98.7 315.3,98.7 316.1,98.7 316.9,98.8 317.7,98.8 318.5,98.8 319.3,98.8 320.1,98.8 320.9,98.8 321.7,98.8 322.5,98.8 323.3,98.8 324.1,98.8 324.9,98.8 325.7,98.8 326.5,98.8 327.3,98.9 328.1,98.9 328.9,98.9 329.7,98.9 330.5,98.9 331.3,98.9 332.2,98.9 333.0,98.9 333.8,98.9 334.6,98.9 335.4,98.9 336.2,98.9 337.0,98.9 337.8,98.9 338.6,98.9 339.4,98.9 340.2,98.9 341.0,98.9 341.8,98.8 342.6,98.8 343.4,98.8 344.2,98.8 345.0,98.8 345.8,98.8 346.6,98.8 347.4,98.8 348.2,98.8 349.0,98.8 349.8,98.8 350.6,98.8 351.4,98.8 352.2,98.8 353.0,98.8 353.8,98.8 354.6,98.8 355.4,98.8 356.2,98.8 357.0,98.8 357.8,98.8 358.6,98.8 359.4,98.8 360.2,98.8 361.0,98.8 361.8,98.8 362.6,98.8 363.4,98.8 364.2,98.8 365.0,98.8 365.8,98.8 366.6,98.8 367.4,98.8 368.2,98.8 369.0,98.8 369.8,98.8 370.6,98.8 371.4,98.8 372.2,98.8" class="s-acc" style="stroke-width:2.4"/><line x1="93.3" y1="169.5" x2="93.3" y2="44.3" class="s-ink" style="stroke-width:1.5" marker-end="url(#ah-ink)"/><text x="99.3" y="110.9" class="t-sm t-b">Eₐ</text><line x1="330.7" y1="169.5" x2="330.7" y2="101.2" class="s-ink" style="stroke-width:1.5" marker-end="url(#ah-ink)"/><text x="336.7" y="139.4" class="t-sm t-b">ΔH</text><text x="54.8" y="162.4" text-anchor="start" class="t-sm ">reactants</text><text x="369.2" y="91.7" text-anchor="end" class="t-sm ">products</text><text x="212.0" y="238.2" text-anchor="middle" class="t-sm t-b">reaction progress</text></svg>
+<figcaption>Endothermic: products are higher, so ΔH is positive. For the reverse reaction, \(E_a(\text{reverse}) = E_a(\text{forward}) - \Delta H\).</figcaption>
+</figure>
+
+<h2>Thermochemical equations</h2>
+<div class="eq"><div class="eq-label">A thermochemical equation</div>\[ \ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)} \quad \Delta H = -890\ \text{kJ mol}^{-1} \]<p>“Per mole” means <strong>per mole of reaction as written</strong>: 890 kJ is released when 1 mol CH₄ reacts with 2 mol O₂. States matter: forming \(\ce{H2O(g)}\) releases less energy than forming \(\ce{H2O(l)}\).</p></div>
+<div class="tbl"><table>
+<thead><tr><th>If you…</th><th>then \(\Delta H\)…</th></tr></thead>
+<tbody>
+<tr><td>reverse the equation</td><td>changes sign</td></tr>
+<tr><td>multiply all coefficients by \(k\)</td><td>is multiplied by \(k\)</td></tr>
+<tr><td>add two equations</td><td>adds (this is Hess's law)</td></tr>
+</tbody></table></div>
+
+<div class="we" data-title="Reversing and scaling" data-marks="2">
+<div class="we-q"><p>Given \(\ce{2H2(g) + O2(g) -> 2H2O(l)}\), \(\Delta H = -572\ \text{kJ mol}^{-1}\), write the thermochemical equation for the decomposition of 1 mol of liquid water.</p></div>
+<div class="we-s"><p>Reverse (sign flips): \(\ce{2H2O(l) -> 2H2(g) + O2(g)}\), \(\Delta H = +572\ \text{kJ mol}^{-1}\).</p></div>
+<div class="we-a"><p>Halve: <strong>\(\ce{H2O(l) -> H2(g) + 1/2O2(g)}\), \(\Delta H = +286\ \text{kJ mol}^{-1}\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Energy from a mass of fuel" data-marks="2">
+<div class="we-q"><p>Using the methane equation above, calculate the energy released when 10.0 g of methane burns completely.</p></div>
+<div class="we-s"><p>\(n(\ce{CH4}) = \dfrac{10.0}{16.0} = 0.625\text{ mol}\).</p></div>
+<div class="we-a"><p>\(E = 0.625 \times 890 = \) <strong>556 kJ</strong> released.</p></div>
+</div>
+
+<div class="we" data-title="Combining equations (Hess's law)" data-marks="3">
+<div class="we-q"><p>Given \(\ce{C(s) + O2(g) -> CO2(g)}\), \(\Delta H = -394\ \text{kJ mol}^{-1}\), and \(\ce{2CO(g) + O2(g) -> 2CO2(g)}\), \(\Delta H = -566\ \text{kJ mol}^{-1}\), find \(\Delta H\) for \(\ce{2C(s) + O2(g) -> 2CO(g)}\).</p></div>
+<div class="we-s"><p>Double the first: \(\ce{2C + 2O2 -> 2CO2}\), \(\Delta H = -788\).</p></div>
+<div class="we-s"><p>Reverse the second: \(\ce{2CO2 -> 2CO + O2}\), \(\Delta H = +566\).</p></div>
+<div class="we-a"><p>Add (the 2CO₂ and one O₂ cancel): \(\ce{2C + O2 -> 2CO}\), <strong>\(\Delta H = -222\ \text{kJ mol}^{-1}\)</strong>. Incomplete combustion releases far less energy than complete combustion (−788 kJ for 2 mol C).</p></div>
+</div>
+
+<div class="we" data-title="Mass of fuel for a given energy" data-marks="3">
+<div class="we-q"><p>Propane burns according to \(\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}\), \(\Delta H = -2220\ \text{kJ mol}^{-1}\). What mass of propane is needed to heat water requiring 5.00 MJ, if only 60.0% of the energy is transferred to the water?</p></div>
+<div class="we-s"><p>Energy that must be released: \(\dfrac{5.00 \times 10^3\text{ kJ}}{0.600} = 8.33 \times 10^3\text{ kJ}\).</p></div>
+<div class="we-s"><p>\(n(\ce{C3H8}) = \dfrac{8333}{2220} = 3.754\text{ mol}\).</p></div>
+<div class="we-a"><p>\(m = 3.754 \times 44.0 = \) <strong>165 g</strong>. Divide by the efficiency (you need <em>more</em> fuel), don't multiply.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: ΔH traps">
+<ul>
+  <li><strong>Sign conventions:</strong> “energy released = 556 kJ” (positive number) but \(\Delta H = -890\ \text{kJ mol}^{-1}\) (negative).</li>
+  <li><strong>“Per mole” is per mole of equation</strong>, not per mole of each substance. For \(\ce{2C8H18 + 25O2 -> ...}\), \(\Delta H = -10\,920\ \text{kJ mol}^{-1}\) is for 2 mol octane.</li>
+  <li><strong>Catalysts lower \(E_a\) but don't change \(\Delta H\).</strong></li>
+  <li><strong>Efficiency:</strong> fuel needed = energy required ÷ efficiency.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>For the reaction \(\ce{N2(g) + 3H2(g) -> 2NH3(g)}\), \(\Delta H = -92\ \text{kJ mol}^{-1}\). The value of \(\Delta H\) for \(\ce{NH3(g) -> 1/2N2(g) + 3/2H2(g)}\) is</p></div>
+<ol><li>−46 kJ mol⁻¹</li><li>+46 kJ mol⁻¹</li><li>+92 kJ mol⁻¹</li><li>+184 kJ mol⁻¹</li></ol>
+<div class="mcq-x"><p>Reverse (+92) and halve (+46).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>On an energy profile diagram for an exothermic reaction, the activation energy is the energy difference between</p></div>
+<ol><li>the reactants and the products</li><li>the products and the peak</li><li>the reactants and the peak</li><li>zero and the peak</li></ol>
+<div class="mcq-x"><p>\(E_a\) is measured from the reactants to the transition state. B is the activation energy of the reverse reaction.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Which statement about an endothermic reaction is correct?</p></div>
+<ol><li>It releases energy because bonds are broken</li><li>Its products have less enthalpy than its reactants</li><li>It can't happen at room temperature</li><li>The energy absorbed breaking bonds exceeds the energy released forming bonds</li></ol>
+<div class="mcq-x"><p>Breaking bonds absorbs energy. Many endothermic processes happen spontaneously at room temperature (e.g. dissolving NH₄NO₃).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>A reaction has \(E_a = 120\ \text{kJ mol}^{-1}\) and \(\Delta H = -45\ \text{kJ mol}^{-1}\). The activation energy of the reverse reaction is</p></div>
+<ol><li>165 kJ mol⁻¹</li><li>75 kJ mol⁻¹</li><li>120 kJ mol⁻¹</li><li>45 kJ mol⁻¹</li></ol>
+<div class="mcq-x"><p>\(E_a(\text{rev}) = E_a(\text{fwd}) - \Delta H = 120 - (-45) = 165\). Draw it: the products sit 45 kJ below the reactants, so they're further from the peak.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Octane: \(\Delta H_c = -5460\ \text{kJ mol}^{-1}\). The energy released by burning 57.0 g of octane (\(M = 114\)) is</p></div>
+<ol><li>5460 kJ</li><li>10 920 kJ</li><li>2730 kJ</li><li>311 kJ</li></ol>
+<div class="mcq-x"><p>\(n = 0.500\text{ mol}\), so \(0.500 \times 5460 = 2730\text{ kJ}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>\(\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(g)}\) has \(\Delta H = -802\ \text{kJ mol}^{-1}\), whereas forming liquid water gives −890. The difference is mainly because</p></div>
+<ol><li>gaseous water has stronger bonds</li><li>energy is released when water vapour condenses</li><li>the reaction with liquid water is faster</li><li>a catalyst is used in one reaction</li></ol>
+<div class="mcq-x"><p>Condensation is exothermic, so forming liquid water releases an extra \(2 \times 44 = 88\) kJ.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Sketch and label an energy profile for an endothermic reaction with \(E_a = 80\ \text{kJ mol}^{-1}\) and \(\Delta H = +30\ \text{kJ mol}^{-1}\). What is \(E_a\) for the reverse reaction?</p></div>
+<div class="pq-s"><p>Products drawn 30 units above the reactants; the peak 80 units above the reactants. Label \(E_a\) (reactants → peak) and \(\Delta H\) (reactants → products, arrow up).</p><p>\(E_a(\text{reverse}) = 80 - 30 = 50\ \text{kJ mol}^{-1}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>\(\ce{C2H5OH(l) + 3O2(g) -> 2CO2(g) + 3H2O(l)}\), \(\Delta H = -1360\ \text{kJ mol}^{-1}\). Calculate the volume of CO₂ at SLC produced when enough ethanol burns to release 500 kJ.</p></div>
+<div class="pq-s"><p>\(n(\text{reaction}) = \frac{500}{1360} = 0.3676\text{ mol}\), so \(n(\ce{CO2}) = 2 \times 0.3676 = 0.7353\text{ mol}\). [2]</p><p>\(V = 0.7353 \times 24.8 = 18.2\text{ L}\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Given \(\ce{S(s) + O2(g) -> SO2(g)}\), \(\Delta H = -297\ \text{kJ mol}^{-1}\), and \(\ce{2SO2(g) + O2(g) -> 2SO3(g)}\), \(\Delta H = -198\ \text{kJ mol}^{-1}\), find \(\Delta H\) for \(\ce{2S(s) + 3O2(g) -> 2SO3(g)}\).</p></div>
+<div class="pq-s"><p>Double the first: \(\ce{2S + 2O2 -> 2SO2}\), \(\Delta H = -594\). [1]</p><p>Add the second: \(\ce{2S + 3O2 -> 2SO3}\). [1]</p><p>\(\Delta H = -594 + (-198) = -792\ \text{kJ mol}^{-1}\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student writes: “\(\ce{2C8H18 + 25O2 -> 16CO2 + 18H2O}\), \(\Delta H = -5460\ \text{kJ mol}^{-1}\).” What's wrong?</p></div>
+<div class="pq-s"><p>\(-5460\ \text{kJ mol}^{-1}\) is for 1 mol of octane. As written (2 mol octane), \(\Delta H = -10\,920\ \text{kJ mol}^{-1}\). States are also missing.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Exothermic: \(\Delta H &lt; 0\); endothermic: \(\Delta H &gt; 0\).</li>
+  <li>Reverse → change sign; scale → scale \(\Delta H\); add equations → add \(\Delta H\).</li>
+  <li>\(E_a\): reactants to peak. \(E_a(\text{rev}) = E_a(\text{fwd}) - \Delta H\).</li>
+  <li>Energy = \(n \times |\Delta H|\), with \(n\) in moles of the equation as written.</li>
+</ul>
