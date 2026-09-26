@@ -1,0 +1,136 @@
+<!--
+id: population-genetics
+title: Genetic change in populations
+short: Population genetics
+summary: Gene pools and allele frequencies, sources of new alleles (point, frameshift and chromosomal block mutations), gene flow, genetic drift (bottleneck and founder effects) and natural selection, selective breeding, antibiotic resistance and antigenic change in viruses.
+keywords: gene pool, allele frequency, mutation, point mutation, substitution, frameshift, insertion, deletion, silent, missense, nonsense, chromosomal mutation, block mutation, duplication, inversion, translocation, gene flow, genetic drift, bottleneck effect, founder effect, natural selection, selection pressure, variation, fitness, adaptation, selective breeding, artificial selection, genetic diversity, antibiotic resistance, MRSA, antigenic drift, antigenic shift, evolution
+dotpoints: causes of changing allele frequencies in a population's gene pool, including environmental selection pressures, genetic drift (bottleneck and founder effects), gene flow and mutations (point, frameshift and block mutations) | manipulation of gene pools through selective breeding and its consequences | consequences of bacterial resistance and viral antigenic drift and shift
+-->
+<h2>Gene pools and allele frequencies</h2>
+<p>A <strong>gene pool</strong> is all the alleles of all genes in a population. <strong>Evolution</strong> is a change in allele frequencies in a population over generations. Individuals don't evolve; populations do.</p>
+<div class="we" data-title="Calculating an allele frequency" data-marks="2">
+<div class="we-q"><p>In a population of 100 plants, 36 are AA, 48 are Aa and 16 are aa. Find the frequency of allele A.</p></div>
+<div class="we-s"><p>Total alleles \(= 2 \times 100 = 200\). A alleles \(= 2(36) + 48 = 120\).</p></div>
+<div class="we-a"><p><strong>\(p(A) = \frac{120}{200} = 0.6\)</strong>, so \(q(a) = 0.4\).</p></div>
+</div>
+
+<h2>Mutations: the source of new alleles</h2>
+<div class="tbl"><table>
+<thead><tr><th>Mutation</th><th>What happens</th><th>Typical effect</th></tr></thead>
+<tbody>
+<tr><td>Substitution (point)</td><td>One base replaced</td><td><strong>Silent</strong> (same amino acid), <strong>missense</strong> (different amino acid) or <strong>nonsense</strong> (premature stop codon)</td></tr>
+<tr><td>Insertion or deletion (point)</td><td>A base added or removed</td><td><strong>Frameshift</strong>: every codon after it changes, usually producing a non-functional protein (unless the change is in multiples of 3)</td></tr>
+<tr><td>Block (chromosomal) mutations</td><td>Duplication, deletion, inversion or translocation of a large segment</td><td>Many genes affected; can change gene dosage or break genes</td></tr>
+</tbody></table></div>
+<p>Mutations are <strong>random</strong>: they don't happen because an organism “needs” them. Only mutations in gametes (or cells that give rise to them) are inherited.</p>
+
+<h2>Four ways allele frequencies change</h2>
+<div class="tbl"><table>
+<thead><tr><th>Mechanism</th><th>What happens</th><th>Effect on diversity</th></tr></thead>
+<tbody>
+<tr><td>Mutation</td><td>New alleles arise</td><td>Increases</td></tr>
+<tr><td>Gene flow</td><td>Alleles move between populations via migration or interbreeding</td><td>Increases in the receiving population; makes populations more similar</td></tr>
+<tr><td>Genetic drift</td><td>Random changes in allele frequencies, strongest in <strong>small</strong> populations</td><td>Usually decreases (alleles can be lost or fixed by chance)</td></tr>
+<tr><td>Natural selection</td><td>Individuals with advantageous phenotypes survive and reproduce more, passing on their alleles</td><td>Can decrease (for the selected trait)</td></tr>
+</tbody></table></div>
+<ul>
+  <li><strong>Bottleneck effect</strong>: a sudden large reduction in population size (disaster, hunting) leaves a small random sample of alleles. Example: northern elephant seals were hunted to perhaps 20–100 individuals in the 1890s; today's large population has very low genetic diversity.</li>
+  <li><strong>Founder effect</strong>: a small group starts a new, isolated population, carrying only some of the original alleles, possibly at unusual frequencies (e.g. high rates of certain inherited conditions in isolated island communities).</li>
+</ul>
+<div class="sim" data-sim="drift"></div>
+
+<h2>Natural selection</h2>
+<ol>
+  <li><strong>Variation</strong>: individuals differ, partly because of different alleles.</li>
+  <li><strong>Selection pressure</strong>: an environmental factor (predator, disease, climate, antibiotic) affects survival.</li>
+  <li><strong>Differential survival and reproduction</strong>: individuals with advantageous traits leave more offspring.</li>
+  <li><strong>Inheritance</strong>: the advantageous alleles are passed on and increase in frequency over generations.</li>
+</ol>
+<div class="we" data-title="Antibiotic resistance (exam classic)" data-marks="4">
+<div class="we-q"><p>Explain how a population of <em>Staphylococcus aureus</em> in a hospital can become resistant to an antibiotic.</p></div>
+<div class="we-s"><p>By chance, a few bacteria already carry a mutation (or a plasmid gene) giving resistance. The antibiotic didn't cause it.</p></div>
+<div class="we-s"><p>When the antibiotic is used (selection pressure), susceptible bacteria die, while resistant ones survive.</p></div>
+<div class="we-s"><p>Survivors reproduce rapidly (binary fission), passing on the resistance allele; resistance genes can also spread between bacteria on plasmids.</p></div>
+<div class="we-a"><p><strong>Over many generations, the frequency of the resistance allele increases until most of the population is resistant</strong> (e.g. MRSA). Overuse and not finishing courses increase the selection pressure.</p></div>
+</div>
+
+<h2>Selective breeding</h2>
+<p>Humans act as the selection pressure, choosing individuals with desired traits to breed (e.g. high-yield wheat, dog breeds, merino wool). It changes allele frequencies quickly but <strong>reduces genetic diversity</strong>, which can increase inherited disorders and vulnerability to new diseases or environmental change.</p>
+
+<h2>Viruses: antigenic drift and shift</h2>
+<p>Small mutations in viral surface-protein genes (drift) accumulate, allowing viruses to escape existing immunity: a form of evolution by natural selection, with host immunity as the selection pressure. Shift (reassortment between strains) produces sudden major changes. See <a href="#disease">disease challenges</a>.</p>
+
+<aside class="c-trap" data-title="Trick alert: evolution traps">
+<ul>
+  <li><strong>Individuals don't evolve</strong>; populations do (allele frequencies change across generations).</li>
+  <li><strong>Mutations are random</strong>; the environment selects, it doesn't cause the useful mutation.</li>
+  <li><strong>Drift is random, selection isn't.</strong> Drift can even remove advantageous alleles in small populations.</li>
+  <li><strong>“Survival of the fittest”</strong> means reproductive success, not strength.</li>
+  <li><strong>Antibiotic resistance evolves in bacteria</strong>, not in the patient.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>In a population of 50 mice, 18 are BB, 24 are Bb and 8 are bb. The frequency of allele b is</p></div>
+<ol><li>0.16</li><li>0.24</li><li>0.40</li><li>0.60</li></ol>
+<div class="mcq-x"><p>b alleles \(= 2(8) + 24 = 40\) out of 100: 0.40.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A deletion of one base near the start of a gene usually has a larger effect than a substitution because it</p></div>
+<ol><li>causes a frameshift, changing every codon after it</li><li>always creates a stop codon</li><li>changes one amino acid</li><li>affects the promoter</li></ol>
+<div class="mcq-x"><p>The reading frame shifts, altering all downstream amino acids.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Which statement about natural selection is correct?</p></div>
+<ol><li>Organisms develop mutations because they need them to survive</li><li>An individual becomes more adapted during its lifetime</li><li>It always increases genetic diversity</li><li>It acts on existing variation in phenotypes</li></ol>
+<div class="mcq-x"><p>Selection acts on phenotypes that already exist in the population.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Genetic drift has the greatest effect on allele frequencies in</p></div>
+<ol><li>large populations</li><li>small populations</li><li>populations with high gene flow</li><li>populations with strong selection</li></ol>
+<div class="mcq-x"><p>Random sampling errors are proportionally larger in small populations.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>A storm kills 90% of a lizard population at random, regardless of their traits. The survivors have different allele frequencies from the original population. This is an example of</p></div>
+<ol><li>natural selection</li><li>gene flow</li><li>a bottleneck effect (genetic drift)</li><li>a founder effect</li></ol>
+<div class="mcq-x"><p>Random, drastic reduction in size, not selection on traits.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>Gene flow between two populations tends to</p></div>
+<ol><li>make their gene pools more similar</li><li>make them more different</li><li>always cause speciation</li><li>reduce diversity in both</li></ol>
+<div class="mcq-x"><p>Exchanging alleles homogenises the populations, which works against speciation.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Distinguish between the founder effect and the bottleneck effect.</p></div>
+<div class="pq-s"><p>Both are forms of genetic drift that reduce diversity. Founder effect: a small group leaves to start a new isolated population, carrying a non-representative sample of alleles. Bottleneck: an existing population is drastically reduced in size (e.g. by a disaster), and the survivors' alleles are a random, non-representative sample.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>Explain how selective breeding of a crop for high yield could make it vulnerable to a new fungal disease.</p></div>
+<div class="pq-s"><p>Breeders repeatedly select plants with the high-yield trait, so only a few parent lines contribute alleles. [1] Genetic diversity falls: many alleles, including rare ones that might give resistance, are lost. [1] If a new fungus appears, most plants are genetically similar and equally susceptible. [1] So the whole crop could be devastated (as in the Irish potato famine), because there's little variation for selection to act on. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A substitution mutation changes the codon UAC (tyrosine) to UAG. (a) Name this type of point mutation. (b) Predict its effect on the protein. (c) Would it affect the next generation? Explain.</p></div>
+<div class="pq-s"><p>(a) Nonsense mutation. [1] (b) UAG is a stop codon: translation ends early, giving a shortened, probably non-functional polypeptide. [1] (c) Only if it occurred in a gamete-producing (germline) cell; a mutation in a body (somatic) cell isn't inherited. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student writes: “The bacteria became resistant because they were exposed to the antibiotic.” Rewrite this to be scientifically accurate.</p></div>
+<div class="pq-s"><p>Some bacteria already carried resistance alleles due to random mutation. The antibiotic acted as a selection pressure, killing susceptible bacteria, so the resistant ones survived, reproduced and increased in frequency over generations.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Evolution = change in allele frequencies over generations.</li>
+  <li>Mutation and gene flow add alleles; drift (random, small populations) and selection change frequencies.</li>
+  <li>Bottleneck and founder effects reduce diversity.</li>
+  <li>Selective breeding and antibiotic use are human-driven selection pressures.</li>
+</ul>

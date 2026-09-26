@@ -1,0 +1,134 @@
+<!--
+id: dna-tools
+title: DNA tools: enzymes, CRISPR-Cas9, PCR & gel electrophoresis
+short: DNA tools
+summary: The enzymes used to manipulate DNA (endonucleases, ligases, polymerases), CRISPR-Cas9 as a bacterial defence and a gene-editing tool, amplifying DNA with PCR, and separating and sizing fragments by gel electrophoresis, with DNA profiling applications.
+keywords: DNA manipulation, restriction enzyme, endonuclease, recognition site, sticky ends, blunt ends, DNA ligase, polymerase, Taq polymerase, CRISPR, Cas9, guide RNA, sgRNA, PAM, gene editing, knockout, NHEJ, HDR, PCR, polymerase chain reaction, primers, denaturation, annealing, extension, cycles, gel electrophoresis, agarose, DNA ladder, fragment size, DNA profiling, forensic, paternity, STR
+dotpoints: the use of enzymes to manipulate DNA, including endonucleases, ligases and polymerases | the function of CRISPR-Cas9 in bacteria and its application in editing an organism's genome | amplification of DNA using the polymerase chain reaction and the use of gel electrophoresis in sorting DNA fragments, including interpretation of gel runs for DNA profiling
+-->
+<h2>The enzyme toolkit</h2>
+<div class="tbl"><table>
+<thead><tr><th>Enzyme</th><th>What it does</th><th>Use</th></tr></thead>
+<tbody>
+<tr><td>Endonucleases (restriction enzymes)</td><td>Cut DNA at a specific <strong>recognition site</strong> (often palindromic), breaking the sugar–phosphate backbone. Some leave <strong>sticky ends</strong> (short single-stranded overhangs), others blunt ends.</td><td>Cutting a gene and a plasmid so they have matching ends</td></tr>
+<tr><td>DNA ligase</td><td>Joins DNA fragments by re-forming phosphodiester bonds in the backbone</td><td>Sealing a gene into a plasmid</td></tr>
+<tr><td>DNA polymerase</td><td>Builds a new DNA strand complementary to a template, adding nucleotides to a primer</td><td>PCR (heat-stable Taq polymerase)</td></tr>
+</tbody></table></div>
+<p>Example: EcoRI recognises 5′-GAATTC-3′ and cuts between G and A on each strand, leaving 5′-AATT overhangs. Any two fragments cut with EcoRI have complementary sticky ends that can base pair.</p>
+
+<h2>CRISPR-Cas9</h2>
+<h3>In bacteria: an adaptive defence against viruses</h3>
+<ol>
+  <li>When a bacteriophage infects, the bacterium cuts out a short piece of the viral DNA and inserts it into its CRISPR array as a <strong>spacer</strong> (a genetic memory of the infection).</li>
+  <li>The array is transcribed; each spacer becomes a guide RNA (crRNA).</li>
+  <li>On re-infection, the guide RNA leads the <strong>Cas9</strong> endonuclease to the matching viral DNA, which Cas9 cuts, disabling the virus.</li>
+</ol>
+<h3>As a gene-editing tool</h3>
+<ul>
+  <li>Scientists design a <strong>single guide RNA (sgRNA)</strong> complementary to the target gene. Cas9 cuts both strands where the sgRNA binds, but only next to a short <strong>PAM</strong> sequence (e.g. NGG).</li>
+  <li>The cell repairs the break: <strong>non-homologous end joining</strong> often inserts or deletes bases, causing a frameshift that <strong>knocks out</strong> the gene; if a <strong>DNA template</strong> is supplied, homology-directed repair can insert a specific new sequence.</li>
+  <li>Uses: research (knockout organisms), agriculture (disease-resistant crops), potential therapies (e.g. editing blood stem cells for sickle-cell disease).</li>
+</ul>
+
+<h2>PCR: the DNA photocopier</h2>
+<div class="tbl"><table>
+<thead><tr><th>Step</th><th>Temperature</th><th>What happens</th></tr></thead>
+<tbody>
+<tr><td>Denaturation</td><td>~95 °C</td><td>Hydrogen bonds break; the DNA strands separate</td></tr>
+<tr><td>Annealing</td><td>~50–60 °C</td><td>Primers (short single-stranded DNA) bind complementarily to each end of the target sequence</td></tr>
+<tr><td>Extension</td><td>~72 °C</td><td>Taq polymerase adds nucleotides from the primers, copying each strand</td></tr>
+</tbody></table></div>
+<p>Each cycle roughly doubles the target DNA: after \(n\) cycles, one molecule gives up to \(2^n\) copies. Ingredients: template DNA, two primers, free nucleotides (dNTPs), Taq polymerase, buffer. Taq comes from the heat-loving bacterium <em>Thermus aquaticus</em>, so it isn't denatured at 95 °C.</p>
+
+<h2>Gel electrophoresis</h2>
+<p>DNA is negatively charged (phosphate groups), so in an electric field it moves through an agarose gel towards the <strong>positive electrode</strong>. The gel acts as a sieve: <strong>smaller fragments move further</strong>. A <strong>DNA ladder</strong> (fragments of known size) in one lane allows the sizes of unknown fragments to be estimated. DNA is made visible with a stain.</p>
+<div class="sim" data-sim="gel"></div>
+<aside class="c-key" data-title="DNA profiling"><p>DNA profiles compare <strong>short tandem repeats (STRs)</strong>: regions where a short sequence repeats a variable number of times. PCR amplifies several STR loci and electrophoresis separates them by size. Each person has two alleles per locus (one from each parent), so a child's bands must each match a band from the mother or the father.</p></aside>
+
+<div class="we" data-title="Paternity from a gel" data-marks="3">
+<div class="we-q"><p>At one STR locus, a child has bands at 150 and 190 bp. The mother has 150 and 210 bp. Alleged father A has 170 and 230 bp; alleged father B has 190 and 250 bp. Which man could be the biological father?</p></div>
+<div class="we-s"><p>The child's 150 bp band matches the mother, so the 190 bp band must come from the father.</p></div>
+<div class="we-s"><p>A has no 190 bp band; B does.</p></div>
+<div class="we-a"><p><strong>B could be the father; A is excluded.</strong> One matching locus doesn't prove paternity. Many loci are tested, and it's the combined probability that gives confidence.</p></div>
+</div>
+
+<div class="we" data-title="PCR arithmetic" data-marks="2">
+<div class="we-q"><p>A sample contains 50 copies of a target DNA sequence. How many copies could there be after 20 cycles of PCR?</p></div>
+<div class="we-s"><p>Each cycle doubles: \(50 \times 2^{20} = 50 \times 1\,048\,576\).</p></div>
+<div class="we-a"><p><strong>About \(5.2 \times 10^7\) copies</strong> (in practice slightly fewer, as efficiency drops and reagents run out).</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: DNA tool traps">
+<ul>
+  <li><strong>DNA moves to the positive electrode</strong> (it's negative). Loading wells go at the negative end.</li>
+  <li><strong>Smaller fragments travel further</strong>, not faster because they're “lighter” (it's easier to move through the gel pores).</li>
+  <li><strong>Primers are DNA</strong> (in PCR), and two different primers are needed, one for each strand.</li>
+  <li><strong>Cas9 cuts; the guide RNA targets.</strong> Cas9 alone doesn't know where to cut.</li>
+  <li><strong>A plasmid cut once becomes one linear fragment</strong>; cut twice, two fragments.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The enzyme used in PCR to build new DNA strands is</p></div>
+<ol><li>DNA ligase</li><li>Taq polymerase</li><li>RNA polymerase</li><li>a restriction endonuclease</li></ol>
+<div class="mcq-x"><p>A heat-stable DNA polymerase survives the 95 °C denaturation steps.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>In gel electrophoresis, the fragments that travel furthest from the wells are</p></div>
+<ol><li>the most negatively charged per base</li><li>the largest</li><li>those with the most G–C pairs</li><li>the smallest</li></ol>
+<div class="mcq-x"><p>Charge per base is the same for all DNA; smaller fragments pass through the gel matrix more easily.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A circular plasmid of 5000 bp is cut with an enzyme that has two recognition sites in it. The number of fragments produced is</p></div>
+<ol><li>2</li><li>3</li><li>1</li><li>4</li></ol>
+<div class="mcq-x"><p>Cutting a circle twice gives two pieces (cutting a linear molecule twice gives three).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>In CRISPR-Cas9 gene editing, the component that determines where the DNA is cut is the</p></div>
+<ol><li>Cas9 protein</li><li>DNA ligase</li><li>guide RNA</li><li>PAM sequence on the RNA</li></ol>
+<div class="mcq-x"><p>The sgRNA's sequence is complementary to the target DNA; Cas9 cuts there (next to a PAM in the DNA).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>The annealing step of PCR is carried out at about 55 °C rather than 95 °C because</p></div>
+<ol><li>Taq polymerase works best at 55 °C</li><li>primers can only form stable hydrogen bonds with the template at the lower temperature</li><li>the DNA must be denatured again</li><li>nucleotides are destroyed at 95 °C</li></ol>
+<div class="mcq-x"><p>At 95 °C hydrogen bonds break, so primers can't stay bound. Taq's optimum is about 72 °C.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>In bacteria, the spacer sequences in a CRISPR array are</p></div>
+<ol><li>genes coding for Cas9</li><li>copies of the bacterium's own essential genes</li><li>random non-coding DNA</li><li>fragments of DNA from viruses that previously infected the bacterium</li></ol>
+<div class="mcq-x"><p>They're the bacterium's “memory” of past infections, used to make guide RNAs.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Describe the three steps of one PCR cycle, including temperatures.</p></div>
+<div class="pq-s"><p>Denaturation (about 95 °C): double-stranded DNA separates as hydrogen bonds break. Annealing (about 50–60 °C): primers bind to complementary sequences on each strand. Extension (about 72 °C): Taq polymerase extends from the primers, synthesising new complementary strands.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Explain how CRISPR-Cas9 can be used to “knock out” a gene.</p></div>
+<div class="pq-s"><p>An sgRNA complementary to part of the gene is designed and delivered with Cas9. [1] Cas9 makes a double-strand break at the target site. [1] The cell's error-prone repair (non-homologous end joining) often inserts or deletes nucleotides, causing a frameshift or premature stop codon, so no functional protein is made. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>DNA from a crime scene and three suspects is amplified at four STR loci and run on a gel. The crime-scene sample matches suspect 2 at all four loci. (a) Why must PCR be used first? (b) Why are STR regions used? (c) Does the match prove suspect 2 was at the scene? Explain.</p></div>
+<div class="pq-s"><p>(a) Crime-scene samples contain tiny amounts of DNA; PCR amplifies the STR regions to enough copies to be seen on a gel. [1]</p><p>(b) The number of repeats (and so fragment length) varies a lot between people, so they discriminate well between individuals. [1]</p><p>(c) No: it shows suspect 2's DNA was present, with high probability (the chance of a random match at four loci is small but not zero; more loci are normally used). [1] It doesn't show when or how the DNA got there, and identical twins share profiles. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student loads DNA into wells at the positive end of the gel. What happens, and why?</p></div>
+<div class="pq-s"><p>The negatively charged DNA moves towards the positive electrode, so it runs out of the wells into the buffer and off the gel, and no bands are seen in the gel. Wells must be at the negative end.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Restriction enzymes cut at specific sites; ligase joins; polymerase copies.</li>
+  <li>CRISPR: bacterial immunity; sgRNA targets, Cas9 cuts; repair gives knockouts or edits.</li>
+  <li>PCR: 95 → 55 → 72 °C cycles, doubling the target each time.</li>
+  <li>Gel: DNA to the + electrode; small fragments go furthest; compare with a ladder.</li>
+</ul>

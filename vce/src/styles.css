@@ -720,3 +720,14 @@ pre.code code { font-family: var(--font-mono); background: none; padding: 0; col
 .tbl, .eq, .katex-display, pre.code, .fs-card { position: relative; }
 .fig-pair { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: center; }
 .fig-pair svg { margin: 0; }
+
+/* codon strip (biology translator) */
+.codon-out { margin: 10px 0 4px; }
+.codon-out .ln { margin: 6px 0 4px; font-size: 13px; color: var(--muted); }
+.codon-strip { display: flex; flex-wrap: wrap; gap: 6px; }
+.codon-strip .cd { display: inline-flex; flex-direction: column; align-items: center; min-width: 52px; padding: 5px 6px; border: 1px solid var(--line-2); border-radius: 8px; background: var(--surface); }
+.codon-strip .cd b { font-family: var(--font-mono); font-size: 13.5px; letter-spacing: 0.06em; }
+.codon-strip .cd i { font-style: normal; font-size: 12px; color: var(--ink-2); }
+.codon-strip .cd.start { border-color: var(--good); background: color-mix(in srgb, var(--good) 12%, var(--surface)); }
+.codon-strip .cd.stop { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, var(--surface)); }
+.codon-strip .cd.mut { outline: 2px solid var(--warn); outline-offset: 1px; }

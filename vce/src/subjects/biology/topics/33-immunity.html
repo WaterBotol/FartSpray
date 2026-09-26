@@ -1,0 +1,112 @@
+<!--
+id: immunity
+title: Types of immunity, vaccination & herd immunity
+short: Immunity & vaccines
+summary: Natural and artificial, active and passive immunity (with examples), how vaccines work and the types of vaccine, why booster doses are given, and herd immunity including the threshold calculation.
+keywords: natural immunity, artificial immunity, active immunity, passive immunity, vaccination, vaccine, immunisation, booster, attenuated vaccine, inactivated vaccine, subunit vaccine, mRNA vaccine, toxoid, antivenom, breast milk, placenta, maternal antibodies, memory cells, herd immunity, R0, basic reproduction number, herd immunity threshold, vaccination rate, measles
+dotpoints: the difference between natural and artificial immunity and active and passive strategies for acquiring immunity | vaccination programs and their role in maintaining herd immunity
+-->
+<h2>Four ways to be immune</h2>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Active (your own immune system makes antibodies and memory cells)</th><th>Passive (you receive ready-made antibodies)</th></tr></thead>
+<tbody>
+<tr><td><strong>Natural</strong></td><td>Catching an infection and recovering</td><td>Antibodies crossing the placenta to the fetus, or in breast milk</td></tr>
+<tr><td><strong>Artificial</strong></td><td>Vaccination</td><td>Injection of antibodies: antivenom, antibody treatments (e.g. for tetanus or rabies exposure), monoclonal antibodies</td></tr>
+</tbody></table></div>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Active</th><th>Passive</th></tr></thead>
+<tbody>
+<tr><td>Speed of protection</td><td>Slow (days to weeks)</td><td>Immediate</td></tr>
+<tr><td>Duration</td><td>Long-lasting (memory cells)</td><td>Short (weeks to months; antibodies break down, no memory cells)</td></tr>
+<tr><td>Memory cells?</td><td>Yes</td><td>No</td></tr>
+</tbody></table></div>
+
+<h2>How vaccines work</h2>
+<p>A vaccine contains antigens (or instructions to make them) from a pathogen in a form that can't cause disease. It triggers a <strong>primary immune response</strong>, producing memory B and T cells. On real exposure, a rapid <strong>secondary response</strong> clears the pathogen before illness develops.</p>
+<div class="tbl"><table>
+<thead><tr><th>Vaccine type</th><th>Contains</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>Live attenuated</td><td>Weakened pathogen that replicates slightly</td><td>Measles–mumps–rubella (MMR)</td></tr>
+<tr><td>Inactivated</td><td>Killed pathogen</td><td>Polio (injected), hepatitis A</td></tr>
+<tr><td>Subunit / recombinant</td><td>Purified antigen proteins</td><td>Hepatitis B, HPV</td></tr>
+<tr><td>Toxoid</td><td>Inactivated toxin</td><td>Tetanus, diphtheria</td></tr>
+<tr><td>mRNA</td><td>mRNA coding for an antigen, made by the person's own cells</td><td>Several COVID-19 vaccines</td></tr>
+</tbody></table></div>
+<p><strong>Boosters</strong> re-expose the immune system to the antigen, producing a secondary response with even more memory cells and antibody, extending protection (e.g. tetanus boosters every 10 years).</p>
+
+<h2>Herd immunity</h2>
+<p>When a high enough proportion of a population is immune, the pathogen can't spread effectively, so people who can't be vaccinated (newborns, immunocompromised people) are protected indirectly.</p>
+<div class="eq"><div class="eq-label">Herd immunity threshold</div>\[ \text{threshold} = 1 - \frac{1}{R_0} \]<p>\(R_0\) (basic reproduction number) = average number of people infected by one case in a fully susceptible population. Measles (\(R_0 \approx 12\text{–}18\)) needs about 92–95% immunity.</p></div>
+<div class="we" data-title="Calculating a threshold" data-marks="2">
+<div class="we-q"><p>A disease has \(R_0 = 4\). What proportion of the population must be immune for herd immunity? If the vaccine is 90% effective, what vaccination coverage is needed?</p></div>
+<div class="we-s"><p>Threshold \(= 1 - \frac14 = 0.75\), i.e. 75% immune.</p></div>
+<div class="we-a"><p>Coverage \(= \frac{0.75}{0.90} \approx 83\%\). <strong>75% immune; about 83% vaccinated.</strong></p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: immunity traps">
+<ul>
+  <li><strong>Vaccination is artificial <em>active</em> immunity</strong>, not passive: your body makes the antibodies.</li>
+  <li><strong>Passive immunity provides no memory cells.</strong></li>
+  <li><strong>Antivenom works immediately</strong> because it's passive; a vaccine would be too slow after a snakebite.</li>
+  <li><strong>Herd immunity doesn't mean everyone is immune</strong>; it means transmission chains break.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>A baby receives antibodies in breast milk. This is</p></div>
+<ol><li>natural active immunity</li><li>artificial passive immunity</li><li>natural passive immunity</li><li>artificial active immunity</li></ol>
+<div class="mcq-x"><p>Ready-made antibodies from a natural source.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A snakebite victim is given antivenom rather than a vaccine because antivenom</p></div>
+<ol><li>provides immediate protection with ready-made antibodies</li><li>produces memory cells faster</li><li>is a form of active immunity</li><li>contains weakened venom</li></ol>
+<div class="mcq-x"><p>Passive immunity acts at once; active immunity takes days to weeks.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Which provides long-term protection?</p></div>
+<ol><li>an injection of monoclonal antibodies</li><li>antibodies crossing the placenta</li><li>antivenom</li><li>a live attenuated vaccine</li></ol>
+<div class="mcq-x"><p>Only active immunity produces memory cells.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>For a disease with \(R_0 = 10\), the herd immunity threshold is</p></div>
+<ol><li>10%</li><li>90%</li><li>99%</li><li>50%</li></ol>
+<div class="mcq-x"><p>\(1 - \frac{1}{10} = 0.90\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Booster vaccinations are given to</p></div>
+<ol><li>provide passive immunity</li><li>replace the innate response</li><li>produce a secondary response, increasing memory cells and antibody levels</li><li>kill memory cells from the first dose</li></ol>
+<div class="mcq-x"><p>Each re-exposure strengthens and prolongs protection.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Explain how a vaccine protects a person from a future infection.</p></div>
+<div class="pq-s"><p>The vaccine contains antigens from the pathogen (in a form that can't cause disease), triggering a primary adaptive response. [1] Clonal selection and expansion produce memory B and T cells specific to that antigen. [1] On later exposure, memory cells produce a rapid, strong secondary response that destroys the pathogen before symptoms develop. [1]</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Vaccination rates for measles in a community fall from 95% to 85%. Explain why an outbreak becomes likely, and who is most at risk.</p></div>
+<div class="pq-s"><p>Measles has a very high \(R_0\) (about 12–18), so its herd immunity threshold is about 92–95%. [1] At 85% coverage there are enough susceptible people for chains of transmission to continue. [1] Most at risk: babies too young to be vaccinated and immunocompromised people, who relied on herd protection. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Compare natural active and artificial passive immunity, with an example of each.</p></div>
+<div class="pq-s"><p>Natural active: the body makes its own antibodies and memory cells after infection (e.g. recovering from chickenpox); slow onset, long-lasting. [1] Artificial passive: ready-made antibodies are injected (e.g. antivenom); immediate, short-lived, no memory cells. [1] Both give protection, but only active immunity gives long-term memory. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student says mRNA vaccines change your DNA. Explain why this is incorrect.</p></div>
+<div class="pq-s"><p>The mRNA stays in the cytoplasm, where ribosomes translate it into the antigen protein; it doesn't enter the nucleus and there's no reverse transcriptase to convert it to DNA. The mRNA is broken down within days.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Active: own antibodies and memory (slow, lasting). Passive: received antibodies (fast, temporary).</li>
+  <li>Natural vs artificial depends on the source.</li>
+  <li>Vaccines trigger a primary response so the real infection meets a secondary response.</li>
+  <li>Herd immunity threshold \(= 1 - \frac{1}{R_0}\).</li>
+</ul>
