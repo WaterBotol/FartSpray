@@ -731,3 +731,14 @@ pre.code code { font-family: var(--font-mono); background: none; padding: 0; col
 .codon-strip .cd.start { border-color: var(--good); background: color-mix(in srgb, var(--good) 12%, var(--surface)); }
 .codon-strip .cd.stop { border-color: var(--bad); background: color-mix(in srgb, var(--bad) 12%, var(--surface)); }
 .codon-strip .cd.mut { outline: 2px solid var(--warn); outline-offset: 1px; }
+
+/* transcripts (English Language) */
+.transcript { list-style: none; counter-reset: ln; margin: 14px 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); font-size: 15px; line-height: 1.65; }
+.transcript li { counter-increment: ln; position: relative; padding-left: 44px; }
+.transcript li::before { content: counter(ln); position: absolute; left: 0; width: 30px; text-align: right; font-family: var(--font-mono); font-size: 12px; color: var(--muted); top: 2px; }
+.transcript li b { font-family: var(--font-mono); font-size: 13px; color: var(--accent); margin-right: 6px; }
+.transcript .ov { background: var(--accent-soft); border-radius: 3px; }
+.textbox { border: 1px solid var(--line); border-left: 3px solid var(--accent); border-radius: var(--radius-sm); background: var(--surface); padding: 12px 18px; margin: 14px 0; }
+.textbox p { font-size: 15.5px; }
+.textbox .src { font-size: 13px; color: var(--muted); margin-top: 8px; }
+p.ln { font-size: 13px; color: var(--muted); margin-top: -4px; }

@@ -1,0 +1,19 @@
+{
+  "id": "english", "prefix": "el", "name": "English Language", "short": "English Lang.",
+  "design": "Study design 2024 onwards",
+  "blurb": "Metalanguage across all subsystems; informal and formal language; Australian English, varieties and identity; commentary and essay practice with contemporary examples.",
+  "groups": [
+    { "id": "start", "eyebrow": "Start here", "title": "", "map": false, "topics": ["home", "exam-technique", "metalanguage"] },
+    { "id": "u3a1", "eyebrow": "Unit 3 · AoS 1", "title": "Informal language", "quiz": true,
+      "topics": ["informal-features", "informal-functions", "spoken-discourse"] },
+    { "id": "u3a2", "eyebrow": "Unit 3 · AoS 2", "title": "Formal language", "quiz": true,
+      "topics": ["formal-features", "formal-functions", "cohesion"] },
+    { "id": "u4a1", "eyebrow": "Unit 4 · AoS 1", "title": "Language variation in Australian society", "quiz": true,
+      "topics": ["aus-english", "aboriginal-english", "ethnolects", "standard"] },
+    { "id": "u4a2", "eyebrow": "Unit 4 · AoS 2", "title": "Individual and group identities", "quiz": true,
+      "topics": ["identity", "youth", "power"] },
+    { "id": "practice", "eyebrow": "Exam practice", "title": "Short answer, analytical commentary and essays", "quiz": true,
+      "topics": ["short-answer", "commentary", "essays"] },
+    { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }
+  ]
+}
