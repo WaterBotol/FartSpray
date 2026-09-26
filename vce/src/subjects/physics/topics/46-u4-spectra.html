@@ -3,7 +3,7 @@ id: u4-spectra
 title: Energy levels, spectra & electron standing waves
 short: Energy levels & spectra
 summary: Quantised atomic energy levels, emission and absorption line spectra, calculating photon energies and wavelengths from transitions, metal vapour lamps, and why electrons form standing waves in atoms.
-keywords: energy levels, quantised, bohr, ground state, excited state, ionisation energy, emission spectrum, absorption spectrum, line spectrum, continuous spectrum, photon, transition, delta E = hf, hydrogen, mercury, sodium, metal vapour lamp, standing wave, n lambda = 2 pi r, electron orbit, number of spectral lines, fraunhofer, collision excitation
+keywords: laser, stimulated emission, coherent, coherence, LED, band gap, incandescent, synchrotron light, light sources, energy levels, quantised, bohr, ground state, excited state, ionisation energy, emission spectrum, absorption spectrum, line spectrum, continuous spectrum, photon, transition, delta E = hf, hydrogen, mercury, sodium, metal vapour lamp, standing wave, n lambda = 2 pi r, electron orbit, number of spectral lines, fraunhofer, collision excitation
 dotpoints: explain the production of atomic absorption and emission line spectra, including those from metal vapour lamps | interpret spectra and calculate the energy of absorbed or emitted photons: \(\Delta E = hf\) | analyse the emission or absorption of a photon by an atom in terms of a change in the electron energy levels, and the frequency and wavelength of the emitted or absorbed photon: \(\Delta E = hf = \frac{hc}{\lambda}\) | describe the quantised states of the atom with reference to electrons forming standing waves, and explain this as evidence for the dual nature of matter
 -->
 <h2>Quantised energy levels</h2>
@@ -89,9 +89,27 @@ dotpoints: explain the production of atomic absorption and emission line spectra
 <tbody>
 <tr><td>Incandescent bulb, the Sun's surface, hot solids</td><td>Continuous</td><td>Densely packed atoms in a hot solid produce a smooth range of energies (thermal radiation)</td></tr>
 <tr><td>Metal vapour lamp, gas discharge tube</td><td>Line emission</td><td>Isolated atoms with discrete energy levels</td></tr>
-<tr><td>LED</td><td>Narrow band around one colour</td><td>Electrons crossing a fixed energy gap in a semiconductor</td></tr>
+<tr><td>LED</td><td>Narrow band around one colour</td><td>Electrons crossing a fixed energy gap in a semiconductor (see the comparison below)</td></tr>
 <tr><td>White light through cool gas</td><td>Continuous with dark lines</td><td>Atoms absorb photons matching their energy gaps</td></tr>
 </tbody></table></div>
+
+<h2>How different light sources produce light</h2>
+<p>Four sources are worth comparing, because each makes light in a different way and so gives a different spectrum:</p>
+<div class="tbl"><table>
+<thead><tr><th>Source</th><th>How the light is produced</th><th>Spectrum</th><th>Coherence and direction</th></tr></thead>
+<tbody>
+<tr><td><strong>Incandescent bulb</strong></td><td>A filament is heated to about 2500–3000 K; the hot, dense solid emits thermal radiation</td><td>Continuous and broad; most of the energy is emitted as infrared, so it's inefficient</td><td>Incoherent (random phases), emitted in all directions</td></tr>
+<tr><td><strong>LED</strong></td><td>In a semiconductor, electrons drop across a fixed energy gap (band gap) and each emits a photon with \(E \approx E_{\text{gap}}\)</td><td>Narrow band of wavelengths (typically tens of nanometres wide) around one colour; the colour depends on the material. White LEDs use a blue LED plus a phosphor</td><td>Incoherent; emitted over a wide angle</td></tr>
+<tr><td><strong>Laser</strong></td><td><strong>Stimulated emission</strong>: an incoming photon triggers an excited atom to emit an identical photon, and the light is amplified between mirrors</td><td>Essentially one wavelength (monochromatic)</td><td><strong>Coherent</strong> (same frequency and phase), highly directional, intense narrow beam</td></tr>
+<tr><td><strong>Synchrotron</strong></td><td>Electrons travelling at nearly \(c\) are accelerated centripetally by bending magnets and radiate (accelerating charges emit EM waves)</td><td>Very broad and continuous, from infrared to X-rays; a narrow band can be selected for experiments</td><td>Extremely bright, highly collimated beam, emitted tangentially to the ring</td></tr>
+</tbody></table></div>
+<aside class="c-trap" data-title="Trick alert: light-source traps">
+<ul>
+  <li><strong>Coherent ≠ bright.</strong> Coherent means a constant phase relationship. A synchrotron beam is far brighter than a laser but covers a wide range of wavelengths.</li>
+  <li><strong>An LED isn't a laser.</strong> Both can look like one colour, but LED light comes from spontaneous emission and is incoherent.</li>
+  <li><strong>Why coherence matters</strong>: a stable interference pattern (Young's experiment) needs coherent sources, which is why lasers are used.</li>
+</ul>
+</aside>
 
 <h2>Why levels are quantised: electron standing waves</h2>
 <p>Bohr simply <em>assumed</em> electrons have fixed orbits. De Broglie's matter waves explained why. Treat the electron in an orbit of radius \(r\) as a wave travelling around the nucleus. It will only be stable if it forms a <strong>standing wave</strong>, joining up smoothly with itself after one lap:</p>
@@ -150,6 +168,23 @@ dotpoints: explain the production of atomic absorption and emission line spectra
 <div class="pq-s"><p>Energies needed from the ground state: n = 2 needs 10.2 eV, n = 3 needs 12.09 eV, n = 4 needs 12.75 eV. With 12.5 eV, electrons can excite up to <strong>n = 3</strong>.</p><p>Possible emissions: 3→2 (1.89 eV, 657 nm), 3→1 (12.09 eV, 103 nm) and 2→1 (10.2 eV, 122 nm).</p></div>
 </div>
 
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Which light source produces coherent light by stimulated emission?</p></div>
+<ol><li>an incandescent bulb</li><li>an LED</li><li>a laser</li><li>a synchrotron</li></ol>
+<div class="mcq-x"><p>Stimulated emission produces photons identical in frequency, phase and direction. LEDs and incandescent bulbs rely on spontaneous emission or thermal radiation; a synchrotron's light comes from electrons accelerated in magnetic fields.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Researchers need an extremely bright beam of X-rays whose wavelength can be tuned to study a protein crystal. The most suitable source is:</p></div>
+<ol><li>a red laser</li><li>a synchrotron</li><li>a white LED</li><li>a sodium vapour lamp</li></ol>
+<div class="mcq-x"><p>Synchrotrons give a very bright, broad spectrum (IR to X-rays) from which a narrow band can be selected. The Australian Synchrotron in Melbourne is used for exactly this.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Compare how light is produced by an incandescent bulb and by a laser, and explain why only one of them would produce a clear interference pattern in a double slit experiment without extra filtering.</p></div>
+<div class="pq-s"><p>Incandescent: a hot filament emits thermal radiation from a dense solid, giving a continuous spectrum. [1]</p><p>Laser: stimulated emission produces photons with the same frequency and phase, giving monochromatic, directional light. [1]</p><p>A clear, stable interference pattern needs coherent light of a single wavelength, so the two slits act as sources with a constant phase difference and \(\Delta x = \lambda L/d\) has one value. [1]</p><p>The laser satisfies this. The bulb's light is incoherent (unless it's first passed through a narrow single slit, as Young did) and contains many wavelengths, so any fringes are coloured and blur together beyond the first few orders. [1]</p></div>
+</div>
+
 <div class="pq" data-level="exam" data-marks="3">
 <div class="pq-q"><p>Explain why a sodium vapour lamp emits light of only certain wavelengths, whereas an incandescent bulb emits a continuous spectrum.</p></div>
 <div class="pq-s"><p>In the sodium lamp, the current excites isolated sodium atoms; their electrons can only occupy discrete (quantised) energy levels. [1]</p><p>When electrons drop between levels they emit photons with \(E = hf = \Delta E\), and since only certain \(\Delta E\) values exist, only certain wavelengths (e.g. 589 nm) are emitted: a line spectrum. [1]</p><p>An incandescent filament is a hot, dense solid in which atoms interact strongly, producing thermal radiation with a continuous range of energies, so all wavelengths are emitted. [1]</p></div>
@@ -161,5 +196,6 @@ dotpoints: explain the production of atomic absorption and emission line spectra
   <li>Emission: bright lines. Absorption: dark lines at the same wavelengths.</li>
   <li>Photons must match a gap exactly; colliding electrons can give part of their energy.</li>
   <li>Lines from level \(n\): \(n(n-1)/2\).</li>
+  <li>Incandescent (thermal, continuous), LED (band gap, narrow band), laser (stimulated emission, coherent), synchrotron (accelerated electrons, broad and very bright).</li>
   <li>Standing waves: \(n\lambda = 2\pi r\) explains quantisation and is evidence for matter waves.</li>
 </ul>
