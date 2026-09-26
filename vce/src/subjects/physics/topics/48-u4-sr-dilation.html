@@ -4,7 +4,7 @@ title: Time dilation, length contraction & muons
 short: Time dilation & length contraction
 summary: Proper time and proper length, the Lorentz factor γ, time dilation and length contraction calculations, how to decide who measures what, and muon decay as experimental evidence.
 keywords: time dilation, length contraction, proper time, proper length, lorentz factor, gamma, t = gamma t0, L = L0/gamma, muon, muon decay, light clock, spaceship, astronaut, twin paradox, relativistic, observer, frame, GPS, atmosphere, lifetime, half life
-dotpoints: describe proper time (\(t_0\)) as the time interval between two events in a reference frame where the two events occur at the same point in space | describe proper length (\(L_0\)) as the length that is measured in the frame of reference in which objects are at rest | model mathematically time dilation and length contraction at speeds approaching c using the equations: \(t = t_0\gamma\) and \(L = \frac{L_0}{\gamma}\) where \(\gamma = \left(1 - \frac{v^2}{c^2}\right)^{-\frac12}\) | explain muon decay as evidence for time dilation and length contraction
+dotpoints: describe proper time (\(t_0\)) as the time interval between two events in a reference frame where the two events occur at the same point in space | describe proper length (\(L_0\)) as the length that is measured in the frame of reference in which objects are at rest | model mathematically time dilation and length contraction at speeds approaching c using the equations: \(t = t_0\gamma\) and \(L = \frac{L_0}{\gamma}\) where \(\gamma = \left(1 - \frac{v^2}{c^2}\right)^{-\frac12}\) | explain examples of special relativity, including muons, particle accelerators and GPS satellites
 -->
 <h2>The Lorentz factor</h2>
 <div class="eq"><div class="eq-label">Lorentz factor</div>\[ \gamma = \frac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}} \]<p>\(\gamma\) is always ≥ 1. It is essentially 1 at everyday speeds and grows without limit as \(v \to c\).</p></div>
@@ -99,8 +99,22 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 
 <div class="sim" data-sim="relativity"></div>
 
-<aside class="c-deep" data-title="Going deeper: it's symmetric, and GPS proves it">
-<p>Each inertial observer sees the <em>other's</em> clock running slow. There's no contradiction because they disagree about which events are simultaneous. The famous “twin paradox” is resolved because the travelling twin must accelerate to turn around, so their frame is not inertial the whole time. GPS satellites move fast enough that their clocks would drift by several microseconds per day if special (and general) relativity weren't corrected for, giving position errors of kilometres.</p>
+<h2>Relativity in action: particle accelerators and GPS</h2>
+<h3>Particle accelerators</h3>
+<ul>
+  <li><strong>Longer lifetimes</strong>: unstable particles moving close to \(c\) in an accelerator live longer in the lab by exactly the factor \(\gamma\). In a 1977 CERN storage-ring experiment, muons with \(\gamma \approx 29\) had a lab lifetime of about 64 μs instead of 2.2 μs, matching time dilation to within about 0.1%.</li>
+  <li><strong>The speed limit</strong>: at the Australian Synchrotron, 3 GeV electrons have \(\gamma \approx 5900\) but travel at about \(0.99999999c\). Adding more energy raises \(\gamma\) (and the energy) enormously while the speed barely changes, which is why accelerator designs must use relativistic equations (see <a href="#u4-sr-energy">mass–energy</a>).</li>
+</ul>
+<h3>GPS satellites</h3>
+<p>GPS receivers find position by timing signals from satellites, so the satellites' atomic clocks must agree with ground clocks to within nanoseconds. A GPS satellite orbits at about 3.9 km s⁻¹, so special relativity makes its clock run slow, relative to the ground, by about 7 μs per day. (General relativity, which isn't in the course, makes it run fast by about 45 μs per day, so the net effect is about 38 μs fast per day.) Uncorrected, 38 μs of timing error corresponds to \(c \times 38\ \mu\text{s} \approx 11\ \text{km}\) of position error building up every day, so the satellite clocks are deliberately adjusted.</p>
+<div class="we" data-title="Special-relativity drift of a GPS clock" data-marks="3">
+<div class="we-q"><p>A GPS satellite moves at \(3.87\times10^3\ \text{m s}^{-1}\). Using \(\gamma - 1 \approx \tfrac12\left(\frac{v}{c}\right)^2\) for small speeds, estimate how far its clock falls behind a ground clock in one day because of special relativity alone.</p></div>
+<div class="we-s"><p>\(\frac{v}{c} = \frac{3.87\times10^3}{3.0\times10^8} = 1.29\times10^{-5}\), so \(\gamma - 1 \approx \tfrac12(1.29\times10^{-5})^2 = 8.3\times10^{-11}\).</p></div>
+<div class="we-s"><p>In one day (86 400 s) the difference is \(86\,400 \times 8.3\times10^{-11} = 7.2\times10^{-6}\ \text{s}\).</p></div>
+<div class="we-a"><p><strong>About 7 μs per day.</strong> Tiny, but light travels about 2 km in 7 μs, so it matters for navigation.</p></div>
+</div>
+<aside class="c-deep" data-title="Going deeper: it's symmetric">
+<p>Each inertial observer sees the <em>other's</em> clock running slow. There's no contradiction because they disagree about which events are simultaneous. The famous “twin paradox” is resolved because the travelling twin must accelerate to turn around, so their frame is not inertial the whole time.</p>
 </aside>
 
 <h2>Practice</h2>
@@ -149,10 +163,17 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 <div class="pq-s"><p>Muons are produced ~10 km up with a proper mean lifetime of about 2.2 μs; classically, even at nearly \(c\), they'd travel only ~660 m before decaying, so very few should reach sea level. [1]</p><p>Earth frame: the muon's lifetime is proper time in its own frame; Earth observers measure it dilated (\(t = \gamma t_0\), about 35 μs for \(\gamma \approx 16\)), long enough to travel ~10 km. [1]</p><p>Muon frame: the atmosphere's thickness is proper length in Earth's frame; the muon measures it contracted (\(L = L_0/\gamma\), ~630 m), which it can cross within its normal 2.2 μs lifetime. [1]</p><p>Both frames predict that many muons reach the ground, which matches observation and contradicts classical physics. [1]</p></div>
 </div>
 
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Without relativistic corrections, GPS positions would drift by kilometres per day. Special relativity alone predicts that a GPS satellite clock, compared with a ground clock,</p></div>
+<ol><li>runs fast, because the satellite is higher up</li><li>runs slow, because the satellite is moving relative to the ground</li><li>runs at exactly the same rate, because both are in inertial frames</li><li>stops, because it is in free fall</li></ol>
+<div class="mcq-x"><p>Moving clocks are measured to run slow (time dilation), by about 7 μs per day for GPS. The “runs fast because it is higher” effect in A is general relativity, which isn't part of the course.</p></div>
+</div>
+
 <h2>Summary</h2>
 <ul>
   <li>\(\gamma = 1/\sqrt{1 - v^2/c^2}\); \(t = \gamma t_0\); \(L = L_0/\gamma\).</li>
   <li>Proper time: events at the same place (the traveller). Proper length: object at rest (usually Earth for Earth–star distances).</li>
   <li>Contraction only along the motion.</li>
   <li>Muons: Earth frame → time dilation; muon frame → length contraction. Same answer.</li>
+  <li>Particle accelerators (longer lifetimes, speed limit) and GPS clocks (about 7 μs per day from special relativity) are everyday evidence.</li>
 </ul>

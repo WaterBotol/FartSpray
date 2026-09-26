@@ -509,7 +509,7 @@
     let h = '<header class="t-head"><div class="eyebrow">' + esc((s ? s.name : 'Everywhere') + (g && g.eyebrow ? ' · ' + g.eyebrow : '')) + '</div><h1>' + t.title + '</h1>';
     if (t.summary) h += '<p class="t-summary">' + t.summary + '</p>';
     h += '<div class="chips">' + chipsFor(t) + '</div>';
-    if (t.dotpoints && t.dotpoints.length) h += '<details class="dotpoints"><summary>Study design key knowledge covered<span>VCAA</span></summary><ul>' + t.dotpoints.map(d => '<li>' + d + '</li>').join('') + '</ul></details>';
+    if (t.dotpoints && t.dotpoints.length) h += '<details class="dotpoints"><summary>Study design key knowledge covered<span>summary</span></summary><p class="ln">Summarised from the VCAA study design; the official wording may differ. Check the study design on the VCAA website for the exact dot points.</p><ul>' + t.dotpoints.map(d => '<li>' + d + '</li>').join('') + '</ul></details>';
     return h + '</header>';
   }
   function footHTML(t) {

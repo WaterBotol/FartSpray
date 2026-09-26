@@ -1,10 +1,10 @@
 <!--
 id: enzymes
-title: Enzymes, respiration & energy from food
-short: Enzymes & food energy
-summary: Enzymes as protein catalysts (active site, specificity, induced fit), the effects of temperature and pH, coenzymes, cellular respiration and fermentation, and calculating the energy content of foods from composition data or bomb calorimetry.
-keywords: enzyme, biological catalyst, active site, substrate, enzyme-substrate complex, lock and key, induced fit, specificity, optimum temperature, optimum pH, denaturation, coenzyme, cofactor, vitamin coenzyme, cellular respiration, glucose oxidation, anaerobic respiration, fermentation, energy content of food, kJ per gram, carbohydrate 16, protein 17, fat 37, food label, bomb calorimeter, kilojoules
-dotpoints: enzymes as protein catalysts, including the active site, specificity, the effects of temperature and pH, and the role of coenzymes | the oxidation of glucose in cellular respiration as a source of energy | calculation of the energy content of foods
+title: Enzymes & enzyme inhibition
+short: Enzymes & inhibition
+summary: Enzymes as protein catalysts (active site, specificity, induced fit), the effects of temperature and pH, denaturation, and competitive and non-competitive enzyme inhibition as the way many medicines work, including the role of chirality.
+keywords: enzyme, biological catalyst, active site, substrate, enzyme-substrate complex, lock and key, induced fit, specificity, stereospecificity, optimum temperature, optimum pH, denaturation, coenzyme, enzyme inhibition, competitive inhibitor, non-competitive inhibitor, allosteric site, medicine, drug, statin, ibuprofen, COX, chirality, enantiomer
+dotpoints: enzymes as protein catalysts, including the active site, specificity, the effects of temperature and pH, and denaturation | competitive and non-competitive enzyme inhibition, including the action of medicines as enzyme inhibitors
 -->
 <h2>Enzymes are protein catalysts</h2>
 <p>An enzyme speeds up a reaction by providing an alternative pathway with a lower activation energy. It isn't consumed, and it doesn't change \(\Delta H\) or the position of equilibrium.</p>
@@ -20,30 +20,17 @@ dotpoints: enzymes as protein catalysts, including the active site, specificity,
 <aside class="c-key" data-title="Why pH matters"><p>Changing the pH changes the charges on acidic and basic R groups (–COOH ⇌ –COO⁻, –NH₂ ⇌ –NH₃⁺). This disrupts the ionic bonds and hydrogen bonds that hold the tertiary structure, so the active site changes shape and the substrate no longer fits.</p></aside>
 <p><strong>Coenzymes</strong> are small non-protein organic molecules (many derived from B vitamins) that some enzymes need to function, often by carrying electrons or groups between reactions.</p>
 
-<h2>Respiration: energy from glucose</h2>
-<div class="eq"><div class="eq-label">Aerobic cellular respiration</div>\[ \ce{C6H12O6(aq) + 6O2(g) -> 6CO2(g) + 6H2O(l)} \quad \Delta H \approx -2.8 \times 10^3\ \text{kJ mol}^{-1} \]<p>The same overall reaction as combustion, but done in many enzyme-catalysed steps at body temperature, capturing energy efficiently (as ATP).</p></div>
-<p>Without enough oxygen (anaerobic): in muscles glucose → lactic acid; in yeast, fermentation gives ethanol and CO₂.</p>
-
-<h2>Energy content of food</h2>
+<h2>Enzyme inhibition: how many medicines work</h2>
+<p>Many medicines work by <strong>inhibiting</strong> a particular enzyme, slowing a reaction that causes disease or symptoms.</p>
 <div class="tbl"><table>
-<thead><tr><th>Nutrient</th><th>Average energy (kJ g⁻¹)</th></tr></thead>
+<thead><tr><th></th><th>Competitive inhibitor</th><th>Non-competitive inhibitor</th></tr></thead>
 <tbody>
-<tr><td>Carbohydrate</td><td>16</td></tr>
-<tr><td>Protein</td><td>17</td></tr>
-<tr><td>Fat</td><td>37</td></tr>
+<tr><td>Where it binds</td><td>The <strong>active site</strong>, because its shape and functional groups resemble the substrate</td><td>A different site on the enzyme (an allosteric site)</td></tr>
+<tr><td>Effect</td><td>Blocks the substrate from binding while it occupies the active site</td><td>Changes the enzyme's shape, so the active site no longer works properly</td></tr>
+<tr><td>Adding more substrate</td><td>Outcompetes the inhibitor, so the rate can return towards the maximum</td><td>Doesn't restore the rate; the maximum rate stays lower</td></tr>
+<tr><td>Medicine examples</td><td>Statins (block an enzyme in cholesterol synthesis); ibuprofen (blocks the COX enzymes that make inflammatory prostaglandins)</td><td>Some anti-HIV drugs (non-nucleoside reverse transcriptase inhibitors) bind away from the active site</td></tr>
 </tbody></table></div>
-<p>Fats release more energy per gram because their carbon is less oxidised (they contain far fewer O atoms relative to C and H).</p>
-<div class="we" data-title="Energy in a muesli bar" data-marks="2">
-<div class="we-q"><p>A muesli bar contains 8.0 g fat, 25 g carbohydrate and 4.0 g protein. Estimate its energy content.</p></div>
-<div class="we-s"><p>\(8.0 \times 37 + 25 \times 16 + 4.0 \times 17 = 296 + 400 + 68\).</p></div>
-<div class="we-a"><p><strong>764 kJ</strong>. Fat is only 22% of the mass but gives 39% of the energy.</p></div>
-</div>
-<div class="we" data-title="Bomb calorimetry of a food" data-marks="3">
-<div class="we-q"><p>A 1.20 g sample of potato chips is burnt in a bomb calorimeter (CF = 8.50 kJ °C⁻¹); the temperature rises by 3.10 °C. Calculate the energy content in kJ g⁻¹, and the energy in a 45 g packet.</p></div>
-<div class="we-s"><p>\(q = 8.50 \times 3.10 = 26.35\text{ kJ}\).</p></div>
-<div class="we-s"><p>\(\frac{26.35}{1.20} = 22.0\text{ kJ g}^{-1}\).</p></div>
-<div class="we-a"><p><strong>22.0 kJ g⁻¹; a 45 g packet provides about 990 kJ.</strong> That's between the carbohydrate and fat values, as expected for a food containing both.</p></div>
-</div>
+<aside class="c-key" data-title="Structure decides activity"><p>A drug that inhibits an enzyme must fit and interact with its binding site: the right shape, functional groups positioned to hydrogen bond or form ionic interactions, and often the right <strong>enantiomer</strong>. Because enzymes are made of chiral amino acids, they usually bind one enantiomer of a chiral drug much better than the other. For ibuprofen, the S-enantiomer is the active inhibitor.</p></aside>
 
 <aside class="c-trap" data-title="Trick alert: enzyme traps">
 <ul>
@@ -51,7 +38,6 @@ dotpoints: enzymes as protein catalysts, including the active site, specificity,
   <li><strong>Low temperature slows enzymes without denaturing them</strong>; activity returns on warming.</li>
   <li><strong>Enzymes don't change ΔH or equilibrium yield.</strong></li>
   <li><strong>The active site isn't just a shape</strong>: the R groups there interact chemically with the substrate.</li>
-  <li><strong>Fibre (cellulose)</strong> is a carbohydrate but provides little energy to humans, because we can't hydrolyse it.</li>
 </ul>
 </aside>
 
@@ -74,26 +60,21 @@ dotpoints: enzymes as protein catalysts, including the active site, specificity,
 <div class="mcq-x"><p>pH changes affect the ionisation of R groups, disrupting the ionic and hydrogen bonds of the tertiary structure.</p></div>
 </div>
 
-<div class="mcq" data-ans="D" data-level="core">
-<div class="mcq-q"><p>A food contains 10 g fat and 10 g protein. Its approximate energy content is</p></div>
-<ol><li>200 kJ</li><li>370 kJ</li><li>170 kJ</li><li>540 kJ</li></ol>
-<div class="mcq-x"><p>\(10 \times 37 + 10 \times 17 = 540\text{ kJ}\).</p></div>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A medicine has a shape very similar to the natural substrate of an enzyme and binds to its active site. Increasing the substrate concentration restores the reaction rate. The medicine is</p></div>
+<ol><li>a non-competitive inhibitor</li><li>a competitive inhibitor</li><li>a coenzyme</li><li>a denaturing agent</li></ol>
+<div class="mcq-x"><p>It competes with the substrate for the active site, so enough substrate can outcompete it.</p></div>
 </div>
 
-<div class="mcq" data-ans="C" data-level="hard">
-<div class="mcq-q"><p>Which statement about aerobic respiration and the combustion of glucose is correct?</p></div>
-<ol><li>Respiration releases more energy per mole of glucose</li><li>Combustion is catalysed by enzymes</li><li>They have the same overall equation and ΔH, but respiration happens in many controlled steps</li><li>Respiration produces carbon monoxide</li></ol>
-<div class="mcq-x"><p>Same reactants and products, so the same ΔH (Hess's law); the pathway is different.</p></div>
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>A racemic drug contains equal amounts of two enantiomers, but only one inhibits the target enzyme. The best explanation is that</p></div>
+<ol><li>the enantiomers have different molecular formulas</li><li>one enantiomer has a higher boiling point</li><li>the inactive enantiomer is always toxic</li><li>the enzyme's binding site is chiral, so only one enantiomer's 3D arrangement of groups fits and interacts correctly</li></ol>
+<div class="mcq-x"><p>Enantiomers have identical formulas and most physical properties, but a chiral binding site distinguishes them.</p></div>
 </div>
 
 <div class="pq" data-level="core" data-marks="3">
 <div class="pq-q"><p>Explain why enzyme activity decreases sharply above its optimum temperature.</p></div>
 <div class="pq-s"><p>At high temperatures, the increased vibration disrupts the weak interactions (hydrogen bonds, ionic bonds, dispersion forces) that maintain the tertiary structure. [1] The active site changes shape (denaturation). [1] Substrate molecules can no longer bind, so the rate falls, even though collisions are more energetic. [1]</p></div>
-</div>
-
-<div class="pq" data-level="hard" data-marks="3">
-<div class="pq-q"><p>A 250 mL sports drink contains 15 g of sugar (carbohydrate) and no fat or protein. (a) Calculate its energy content. (b) How long would that energy last a person using 450 kJ per hour while walking?</p></div>
-<div class="pq-s"><p>(a) \(15 \times 16 = 240\text{ kJ}\). [1]</p><p>(b) \(\frac{240}{450} = 0.533\text{ h} \approx 32\text{ min}\). [2]</p></div>
 </div>
 
 <div class="pq" data-level="exam" data-marks="4">
@@ -110,6 +91,6 @@ dotpoints: enzymes as protein catalysts, including the active site, specificity,
 <ul>
   <li>Enzymes: specific protein catalysts; the active site comes from the tertiary structure.</li>
   <li>High temperature and extreme pH denature enzymes; cold only slows them.</li>
-  <li>Respiration: same overall reaction as combustion, many enzyme-controlled steps.</li>
-  <li>Food energy: carbohydrate 16, protein 17, fat 37 kJ g⁻¹.</li>
+  <li>Competitive inhibitors block the active site (overcome by more substrate); non-competitive inhibitors bind elsewhere and change its shape.</li>
+  <li>Many medicines are enzyme inhibitors; chirality often decides which enantiomer is active.</li>
 </ul>
