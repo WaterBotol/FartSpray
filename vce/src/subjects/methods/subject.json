@@ -1,0 +1,19 @@
+{
+  "id": "methods", "prefix": "mm", "name": "Mathematical Methods", "short": "Methods",
+  "design": "Study design 2023–2027",
+  "blurb": "Functions, algebra, calculus, probability and statistics, with Exam 1 (tech-free) and Exam 2 (CAS) practice sets.",
+  "groups": [
+    { "id": "start", "eyebrow": "Start here", "title": "", "map": false, "topics": ["home", "exam-technique", "formula-sheet"] },
+    { "id": "frg", "eyebrow": "Functions, relations & graphs", "title": "Graphs, transformations and families of functions", "quiz": true,
+      "topics": ["functions", "polynomials", "power", "transformations", "explog", "circular", "composite-inverse", "functional-eq"] },
+    { "id": "ans", "eyebrow": "Algebra, number & structure", "title": "Equations, systems, parameters and algorithms", "quiz": true,
+      "topics": ["systems", "newton"] },
+    { "id": "calc", "eyebrow": "Calculus", "title": "Differentiation, integration and their applications", "quiz": true,
+      "topics": ["limits", "diff-rules", "diff-apps", "optimisation", "antidiff", "integration", "numerical"] },
+    { "id": "prob", "eyebrow": "Data analysis, probability & statistics", "title": "Random variables, distributions and inference", "quiz": true,
+      "topics": ["probability", "drv", "binomial", "crv", "normal", "sampling", "ci"] },
+    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed, exam-style sets from basic to brutal", "quiz": true,
+      "topics": ["exam1-set", "exam2-set"] },
+    { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }
+  ]
+}

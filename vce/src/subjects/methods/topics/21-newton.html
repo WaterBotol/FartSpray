@@ -1,0 +1,160 @@
+<!--
+id: newton
+title: Newton's method, bisection & pseudocode
+short: Newton's method & algorithms
+summary: Numerical root finding with Newton's method and the bisection method, when Newton's method fails, and reading, tracing and writing pseudocode the way VCAA presents it.
+keywords: newton's method, newton raphson, iteration, tangent, root finding, bisection, numerical method, algorithm, pseudocode, while loop, for loop, if then else, trace table, convergence, divergence, cycling, stationary point failure, initial estimate
+dotpoints: Newton's method for estimating solutions of equations, including cases where it fails | the bisection method | use of pseudocode to describe and trace algorithms
+-->
+<h2>Newton's method</h2>
+<p>Start with a guess \(x_0\) near a root. Draw the tangent at \((x_0, f(x_0))\); where it hits the \(x\)-axis is the next, usually better, estimate. Repeat.</p>
+<div class="eq"><div class="eq-label">Newton's method</div>\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]<p>Derivation: the tangent \(y - f(x_n) = f'(x_n)(x - x_n)\) crosses \(y = 0\) at \(x = x_n - \frac{f(x_n)}{f'(x_n)}\).</p></div>
+<div class="sim" data-sim="newton"></div>
+
+<div class="we" data-title="Two iterations by hand" data-marks="3">
+<div class="we-q"><p>Use Newton's method with \(x_0 = 2\) to find \(x_2\) for \(f(x) = x^3 - 2x - 5\). Give \(x_2\) correct to four decimal places.</p></div>
+<div class="we-s"><p>\(f'(x) = 3x^2 - 2\). \(f(2) = 8 - 4 - 5 = -1\), \(f'(2) = 10\). So \(x_1 = 2 - \frac{-1}{10} = 2.1\).</p></div>
+<div class="we-s"><p>\(f(2.1) = 9.261 - 4.2 - 5 = 0.061\), \(f'(2.1) = 13.23 - 2 = 11.23\). So \(x_2 = 2.1 - \frac{0.061}{11.23} = 2.09457\ldots\)</p></div>
+<div class="we-a"><p><strong>\(x_2 \approx 2.0946\)</strong>. (The true root is 2.094551…: two steps already give four correct decimal places.)</p></div>
+</div>
+
+<div class="we" data-title="Estimating √2" data-marks="2">
+<div class="we-q"><p>Use Newton's method on \(f(x) = x^2 - 2\) with \(x_0 = 1\) to find \(x_1\), \(x_2\) and \(x_3\).</p></div>
+<div class="we-s"><p>\(x_{n+1} = x_n - \frac{x_n^2 - 2}{2x_n}\). \(x_1 = 1 - \frac{-1}{2} = 1.5\).</p></div>
+<div class="we-s"><p>\(x_2 = 1.5 - \frac{0.25}{3} = 1.41\overline{6}\); \(x_3 = 1.41667 - \frac{0.0069444}{2.83333} \approx 1.414216\).</p></div>
+<div class="we-a"><p><strong>\(x_1 = 1.5,\ x_2 \approx 1.416667,\ x_3 \approx 1.414216\)</strong>. The number of correct digits roughly doubles each step.</p></div>
+</div>
+
+<h3>When Newton's method fails</h3>
+<div class="tbl"><table>
+<thead><tr><th>Problem</th><th>What happens</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td>\(f'(x_n) = 0\)</td><td>Horizontal tangent never meets the axis: division by zero</td><td>\(x^2 - 2\) with \(x_0 = 0\)</td></tr>
+<tr><td>Near a stationary point</td><td>Tangent is nearly flat, so the next estimate shoots far away</td><td>\(x^3 - 3x + 1\) with \(x_0 = 1.01\)</td></tr>
+<tr><td>Cycling</td><td>Estimates bounce between values forever</td><td>\(x^3 - 2x + 2\) with \(x_0 = 0\): 0, 1, 0, 1, …</td></tr>
+<tr><td>Wrong root</td><td>Converges, but to a different root from the one you wanted</td><td>Starting on the far side of a turning point</td></tr>
+</tbody></table></div>
+<div class="we" data-title="Show that it cycles" data-marks="2">
+<div class="we-q"><p>Show that Newton's method applied to \(f(x) = x^3 - 2x + 2\) with \(x_0 = 0\) does not converge.</p></div>
+<div class="we-s"><p>\(f'(x) = 3x^2 - 2\). \(x_1 = 0 - \frac{2}{-2} = 1\).</p></div>
+<div class="we-s"><p>\(x_2 = 1 - \frac{1 - 2 + 2}{3 - 2} = 1 - 1 = 0\).</p></div>
+<div class="we-a"><p><strong>The estimates alternate 0, 1, 0, 1, … and never approach the actual root</strong> (which is near \(x \approx -1.77\)).</p></div>
+</div>
+
+<h2>The bisection method</h2>
+<p>If \(f\) is continuous and \(f(a)\) and \(f(b)\) have opposite signs, there's a root in \([a, b]\). Evaluate the midpoint \(m = \frac{a + b}{2}\) and keep the half where the sign still changes. It's slow but reliable: after \(n\) steps the interval width is \(\frac{b - a}{2^n}\).</p>
+
+<h2>Pseudocode, VCAA style</h2>
+<p>VCAA exams show algorithms in a simple pseudocode and ask you to trace them (fill in a table of values), find an output, or complete a missing line. The conventions: <code>←</code> means “assign”, <code>define</code> creates a function, and loops are <code>for … end for</code> and <code>while … end while</code>.</p>
+<pre class="code"><code>define f(x)
+    return x^3 - 2x - 5
+define df(x)
+    return 3x^2 - 2
+
+x ← 2
+for i from 1 to 3
+    x ← x - f(x) / df(x)
+end for
+print x</code></pre>
+<p>This prints \(x_3 \approx 2.094551\) (three iterations of Newton's method from \(x_0 = 2\)).</p>
+<div class="we" data-title="Trace a while loop" data-marks="3">
+<div class="we-q"><p>Trace this algorithm and state the output.</p>
+<pre class="code"><code>a ← 1
+b ← 2
+while b - a > 0.2
+    m ← (a + b) / 2
+    if m^2 - 2 < 0 then
+        a ← m
+    else
+        b ← m
+    end if
+end while
+print a, b</code></pre></div>
+<div class="we-s"><p>It's bisection on \(x^2 - 2\). Start \(a = 1, b = 2\) (width 1).</p></div>
+<div class="we-s"><p>\(m = 1.5\): \(2.25 - 2 &gt; 0\), so \(b = 1.5\). \(m = 1.25\): \(1.5625 - 2 &lt; 0\), so \(a = 1.25\). Width now \(0.25 &gt; 0.2\): continue.</p></div>
+<div class="we-s"><p>\(m = 1.375\): \(1.890625 - 2 &lt; 0\), so \(a = 1.375\). Width \(0.125 \le 0.2\): stop.</p></div>
+<div class="we-a"><p><strong>Output: 1.375, 1.5</strong> (an interval containing \(\sqrt2 \approx 1.414\)).</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: algorithm traps">
+<ul>
+  <li><strong>Count loop iterations carefully.</strong> <code>for i from 1 to 3</code> runs 3 times; a <code>while</code> loop checks its condition <em>before</em> each pass.</li>
+  <li><strong>Use the updated value.</strong> Once <code>x ← …</code> runs, every later line uses the new \(x\).</li>
+  <li><strong>Newton needs \(f'\), bisection needs a sign change.</strong> Don't mix up the input requirements.</li>
+  <li><strong>Keep full precision</strong> in the calculator between iterations; round only the final answer.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Newton's method is used to solve \(\cos x = x\) with \(x_0 = 1\). The value of \(x_1\), correct to three decimal places, is</p></div>
+<ol><li>0.739</li><li>0.750</li><li>0.540</li><li>1.000</li></ol>
+<div class="mcq-x"><p>\(f(x) = \cos x - x\), \(f'(x) = -\sin x - 1\). \(x_1 = 1 - \frac{\cos 1 - 1}{-\sin 1 - 1} = 1 - \frac{-0.4597}{-1.8415} \approx 0.750\). (0.739 is the actual root, reached after two more steps.)</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Newton's method applied to \(f(x) = x^2 - 4x + 5\) will fail from any starting value because</p></div>
+<ol><li>\(f'(x) = 0\) at \(x = 2\)</li><li>the method always cycles for quadratics</li><li>\(f\) is not continuous</li><li>\(f\) has no real roots</li></ol>
+<div class="mcq-x"><p>\(\Delta = 16 - 20 &lt; 0\), so there's nothing to converge to. (A is true, but it only causes trouble if you start at \(x = 2\).)</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>For \(f(x) = x^2 - 2\), Newton's method fails immediately when \(x_0 =\)</p></div>
+<ol><li>0</li><li>1</li><li>\(\sqrt2\)</li><li>2</li></ol>
+<div class="mcq-x"><p>\(f'(0) = 0\): the tangent is horizontal and never crosses the \(x\)-axis.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Starting from \([0, 4]\), how many bisection steps are needed before the interval containing the root has width at most 0.1?</p></div>
+<ol><li>4</li><li>5</li><li>6</li><li>40</li></ol>
+<div class="mcq-x"><p>Width after \(n\) steps is \(\frac{4}{2^n}\). \(\frac{4}{2^5} = 0.125 &gt; 0.1\) and \(\frac{4}{2^6} = 0.0625 \le 0.1\). So 6.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Consider the pseudocode below. The value printed is</p>
+<pre class="code"><code>s ← 0
+k ← 1
+while k ≤ 4
+    s ← s + k^2
+    k ← k + 1
+end while
+print s</code></pre></div>
+<ol><li>14</li><li>30</li><li>16</li><li>55</li></ol>
+<div class="mcq-x"><p>\(s = 1 + 4 + 9 + 16 = 30\). The loop runs for \(k = 1, 2, 3, 4\) and stops when \(k = 5\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>For \(f(x) = x^3 - 3x + 1\), the starting value most likely to send Newton's method far from all the roots is</p></div>
+<ol><li>\(x_0 = 1.01\)</li><li>\(x_0 = 0.4\)</li><li>\(x_0 = 1.6\)</li><li>\(x_0 = -2\)</li></ol>
+<div class="mcq-x"><p>\(f'(x) = 3x^2 - 3 = 0\) at \(x = \pm1\). At \(x_0 = 1.01\) the tangent is almost flat, so \(x_1 = 1.01 - \frac{f(1.01)}{f'(1.01)} \approx 1.01 - \frac{-0.9997}{0.0603} \approx 17.6\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Write the Newton's method rule \(x_{n+1} = \ldots\) for solving \(e^x = 3x\), simplified.</p></div>
+<div class="pq-s"><p>\(f(x) = e^x - 3x\), \(f'(x) = e^x - 3\).</p><p>\(x_{n+1} = x_n - \dfrac{e^{x_n} - 3x_n}{e^{x_n} - 3}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Complete the missing line so the algorithm prints an estimate of the root of \(f\) once successive estimates differ by less than \(10^{-6}\).</p>
+<pre class="code"><code>x ← 1
+change ← 1
+while change ≥ 10^(-6)
+    new ← ________
+    change ← |new - x|
+    x ← new
+end while
+print x</code></pre></div>
+<div class="pq-s"><p><code>new ← x - f(x) / df(x)</code>, where <code>df</code> is the derivative. The order matters: <code>change</code> must be calculated before \(x\) is overwritten.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Let \(f(x) = x^3 - 6x^2 + 9x + 1\). (a) Find the stationary points of \(f\). (b) Explain why \(x_0 = 3\) and \(x_0 = 1\) are poor choices for Newton's method. (c) Using \(x_0 = -0.5\), find \(x_1\) and \(x_2\) correct to three decimal places.</p></div>
+<div class="pq-s"><p>(a) \(f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3)\): stationary points \((1, 5)\) and \((3, 1)\). [1]</p><p>(b) \(f'(1) = f'(3) = 0\), so the formula divides by zero (horizontal tangents). [1]</p><p>(c) \(f(-0.5) = -0.125 - 1.5 - 4.5 + 1 = -5.125\), \(f'(-0.5) = 0.75 + 6 + 9 = 15.75\): \(x_1 = -0.5 + \frac{5.125}{15.75} \approx -0.175\). [1]</p><p>\(f(-0.1746) \approx -0.7597\), \(f'(-0.1746) \approx 11.187\): \(x_2 \approx -0.1746 + 0.0679 \approx -0.107\). [1] (The root is \(x \approx -0.1038\).)</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\): fast, but it can fail near stationary points, cycle, or find a different root.</li>
+  <li>Bisection: halve the interval while keeping a sign change. Slow but always works.</li>
+  <li>Pseudocode: trace line by line, update variables immediately, and count loop passes carefully.</li>
+</ul>

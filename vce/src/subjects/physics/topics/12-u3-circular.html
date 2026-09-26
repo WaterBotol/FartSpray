@@ -1,0 +1,217 @@
+<!--
+id: u3-circular
+title: Horizontal circular motion & banked tracks
+short: Circular motion & banked tracks
+summary: Uniform circular motion in a horizontal plane: period, speed, centripetal acceleration, what supplies the net force, objects on strings, cars on flat and banked curves.
+keywords: circular motion, uniform circular motion, centripetal, centripetal force, centripetal acceleration, period, frequency, banked track, banking, design speed, car on curve, flat road, friction, conical pendulum, string, tension, centrifugal, tangent, radius, merry go round
+dotpoints: investigate and analyse theoretically and practically the uniform circular motion of an object moving in a horizontal plane: \(F_{\text{net}} = \frac{mv^2}{r}\), including: a vehicle moving around a circular road; a vehicle moving around a banked track; an object on the end of a string
+-->
+<h2>Describing uniform circular motion</h2>
+<p>An object in <strong>uniform circular motion</strong> travels around a circle at <strong>constant speed</strong>. Its <em>velocity</em> is not constant, because the direction keeps changing. A changing velocity means an acceleration, and by Newton's second law there must be a net force.</p>
+<div class="eq"><div class="eq-label">Describing the motion</div>\[ v = \frac{2\pi r}{T}, \qquad f = \frac{1}{T} \]<p>\(T\) is the period (time for one revolution, s), \(f\) the frequency (revolutions per second, Hz), \(r\) the radius (m) and \(v\) the speed (m s⁻¹).</p></div>
+
+<figure class="fig">
+<svg viewBox="0 0 400 230" width="400" role="img" aria-label="Circle showing velocity tangent to the path and acceleration towards the centre at two points, plus the straight path taken if released">
+  <circle cx="130" cy="120" r="85" class="s-mut" style="stroke-dasharray:4 4"/>
+  <circle cx="130" cy="120" r="3" class="f-mut"/>
+  <text x="120" y="140" class="t-mut t-sm">centre</text>
+  <circle cx="130" cy="35" r="7" class="f-acc"/>
+  <line x1="137" y1="35" x2="205" y2="35" class="s-v" marker-end="url(#ah-v)"/><text x="185" y="27" class="t-v t-b">v</text>
+  <line x1="130" y1="43" x2="130" y2="90" class="s-net" marker-end="url(#ah-net)"/><text x="136" y="72" class="t-net t-b">a, F<tspan dy="3" font-size="10">net</tspan></text>
+  <circle cx="215" cy="120" r="7" class="f-acc"/>
+  <line x1="215" y1="127" x2="215" y2="195" class="s-v" marker-end="url(#ah-v)"/><text x="222" y="190" class="t-v t-b">v</text>
+  <line x1="207" y1="120" x2="160" y2="120" class="s-net" marker-end="url(#ah-net)"/><text x="165" y="112" class="t-net t-b">a</text>
+  <line x1="210" y1="35" x2="330" y2="35" class="s-dash" marker-end="url(#ah-mut)"/>
+  <text x="222" y="56" class="t-mut t-sm">released at the top: carries</text>
+  <text x="222" y="70" class="t-mut t-sm">straight on along the tangent</text>
+  <text x="258" y="112" class="t-sm">velocity: tangent to the circle</text>
+  <text x="258" y="130" class="t-sm">acceleration &amp; net force:</text>
+  <text x="258" y="146" class="t-sm">towards the centre</text>
+</svg>
+<figcaption>Motion is clockwise. Velocity is tangential; acceleration and net force point to the centre. The dashed line is the path if the string breaks at the top.</figcaption>
+</figure>
+
+<h2>Centripetal acceleration and net force</h2>
+<div class="eq"><div class="eq-label">Centripetal acceleration and force (towards the centre)</div>\[ a_c = \frac{v^2}{r} = \frac{4\pi^2 r}{T^2} \qquad\qquad F_{\text{net}} = \frac{mv^2}{r} = \frac{4\pi^2 m r}{T^2} \]</div>
+<p>“Centripetal” just means <em>centre-seeking</em>. The centripetal force is the <strong>net force</strong>, supplied by real forces such as tension, friction, a normal force or gravity.</p>
+<div class="tbl"><table>
+<thead><tr><th>Situation</th><th>What provides the net (centripetal) force</th></tr></thead>
+<tbody>
+<tr><td>Ball on a string, horizontal circle on a table</td><td>Tension</td></tr>
+<tr><td>Conical pendulum (mass on a string swinging in a horizontal circle)</td><td>Horizontal component of tension</td></tr>
+<tr><td>Car on a flat curve</td><td>Sideways friction from the road on the tyres</td></tr>
+<tr><td>Car on a banked track at the design speed</td><td>Horizontal component of the normal force</td></tr>
+<tr><td>Satellite or moon in orbit</td><td>Gravity</td></tr>
+<tr><td>Charged particle in a magnetic field</td><td>Magnetic force</td></tr>
+</tbody></table></div>
+
+<aside class="c-trap" data-title="Trick alert: there is no 'centrifugal force'">
+<p>Never draw a centripetal force <em>or</em> a centrifugal (outward) force on a free-body diagram. When a car turns left, you feel “thrown” to the right because your body tends to keep going in a straight line (inertia) while the car turns under you. The door then pushes you <strong>inward</strong>. If a whirling ball's string snaps, the ball flies off along the <strong>tangent</strong>, not radially outward.</p>
+</aside>
+
+<aside class="c-key" data-title="Key idea: proportional reasoning">
+<p>From \(F = mv^2/r\): double the speed → 4 × the force. From \(F = 4\pi^2 mr/T^2\): halve the period → 4 × the force. At constant speed, double the radius → half the force; at constant period, double the radius → double the force. Multiple-choice questions test these ratios constantly.</p>
+</aside>
+
+<h2>An object on the end of a string</h2>
+<div class="we" data-title="Ball whirled on a table" data-marks="3">
+<div class="we-q"><p>A 0.50 kg ball on a 0.80 m string is whirled in a horizontal circle on a frictionless table at 2.0 revolutions per second. Calculate the tension in the string.</p></div>
+<div class="we-s"><p><strong>Period from frequency:</strong> \(T = 1/f = 1/2.0 = 0.50\ \text{s}\).</p></div>
+<div class="we-s"><p><strong>Speed:</strong></p>\[ v = \frac{2\pi r}{T} = \frac{2\pi(0.80)}{0.50} = 10.05\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>Tension provides the net force:</strong></p>\[ T_{\text{string}} = \frac{mv^2}{r} = \frac{0.50 \times 10.05^2}{0.80} = 63.2\ \text{N} \]</div>
+<div class="we-a"><p><strong>63 N.</strong> (Using symbol \(T\) for both period and tension is a classic way to confuse yourself: label them clearly.)</p></div>
+</div>
+
+<h3>Conical pendulum</h3>
+<p>A mass on a string swinging in a horizontal circle below the pivot is a <strong>conical pendulum</strong>. The string sweeps out a cone. The tension has a vertical component that balances weight and a horizontal component that provides the centripetal force.</p>
+<figure class="fig">
+<svg viewBox="0 0 400 225" width="400" role="img" aria-label="Conical pendulum with tension along the string, weight down, and horizontal net force towards the centre">
+  <line x1="150" y1="18" x2="250" y2="18" class="s-ink" style="stroke-width:2.4"/>
+  <line x1="200" y1="18" x2="200" y2="124" class="s-dash"/>
+  <line x1="200" y1="18" x2="260" y2="124" class="s-ink" style="stroke-width:1.3"/>
+  <path d="M200 48 A30 30 0 0 0 215 44" class="s-mut"/><text x="205" y="64" class="t-mut t-sm">θ</text>
+  <ellipse cx="200" cy="124" rx="60" ry="14" class="s-mut" style="stroke-dasharray:4 4"/>
+  <circle cx="260" cy="124" r="8" class="f-acc"/>
+  <line x1="260" y1="124" x2="219" y2="52" class="s-t" marker-end="url(#ah-t)"/><text x="244" y="70" class="t-t t-b">T</text>
+  <line x1="260" y1="124" x2="260" y2="200" class="s-w" marker-end="url(#ah-w)"/><text x="267" y="196" class="t-w t-b">mg</text>
+  <line x1="252" y1="146" x2="212" y2="146" class="s-net" marker-end="url(#ah-net)"/><text x="206" y="165" class="t-net t-b">F<tspan dy="3" font-size="10">net</tspan></text>
+  <text x="292" y="100" class="t-sm">T cos θ = mg</text>
+  <text x="292" y="120" class="t-sm">T sin θ = mv²/r</text>
+  <text x="292" y="140" class="t-sm">r = L sin θ</text>
+</svg>
+<figcaption>The net force is horizontal, towards the centre of the circle (not towards the pivot).</figcaption>
+</figure>
+<div class="eq">\[ T\cos\theta = mg, \qquad T\sin\theta = \frac{mv^2}{r} \quad\Rightarrow\quad \tan\theta = \frac{v^2}{rg} \]</div>
+
+<div class="we" data-title="Conical pendulum" data-marks="4">
+<div class="we-q"><p>A 0.20 kg mass on a 1.0 m string moves in a horizontal circle so that the string makes 30° with the vertical. Find (a) the tension, (b) the speed and (c) the period.</p></div>
+<div class="we-s"><p><strong>(a) Vertical equilibrium:</strong></p>\[ T\cos 30^\circ = mg \Rightarrow T = \frac{0.20 \times 9.8}{0.866} = 2.26\ \text{N} \]</div>
+<div class="we-s"><p><strong>Radius of the circle</strong> (not the string length!): \(r = L\sin 30^\circ = 1.0 \times 0.5 = 0.50\ \text{m}\).</p></div>
+<div class="we-s"><p><strong>(b) Speed</strong> from \(\tan\theta = v^2/(rg)\):</p>\[ v = \sqrt{rg\tan\theta} = \sqrt{0.50 \times 9.8 \times \tan 30^\circ} = 1.68\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>(c) Period:</strong></p>\[ T_{\text{period}} = \frac{2\pi r}{v} = \frac{2\pi(0.50)}{1.68} = 1.87\ \text{s} \]</div>
+<div class="we-a"><p><strong>(a) 2.3 N (b) 1.7 m s⁻¹ (c) 1.9 s.</strong> Using the string length as the radius is the trap here.</p></div>
+</div>
+
+<h2>A vehicle on a flat circular road</h2>
+<p>On a flat road, the only horizontal force that can turn a car is <strong>sideways friction</strong> between the tyres and the road. The friction needed is \(F_f = mv^2/r\). If the road can't supply that much (ice, oil, too fast), the car can't follow the curve and slides towards the outside of the bend.</p>
+<div class="we" data-title="Friction needed on a flat curve" data-marks="2">
+<div class="we-q"><p>A 1200 kg car travels around a flat curve of radius 50 m at 15 m s⁻¹. What friction force must the road provide? What happens to this force if the speed doubles?</p></div>
+<div class="we-s">\[ F_f = \frac{mv^2}{r} = \frac{1200 \times 15^2}{50} = 5.4\times10^3\ \text{N} \]</div>
+<div class="we-s"><p>Doubling \(v\) multiplies \(v^2\) by 4: the friction needed becomes \(2.16\times10^4\ \text{N}\).</p></div>
+<div class="we-a"><p><strong>5400 N towards the centre; four times as much at double the speed.</strong> This is why curves have much lower speed limits in the wet.</p></div>
+</div>
+
+<h2>Banked tracks</h2>
+<p>Tilting the road towards the centre of the curve lets the <strong>normal force</strong> help. At one particular speed, the <strong>design speed</strong>, the horizontal component of the normal force supplies all of the centripetal force and no sideways friction is needed at all.</p>
+
+<figure class="fig">
+<svg viewBox="0 0 420 235" width="420" role="img" aria-label="Car on a banked track and its free-body diagram, with normal force at angle theta to the vertical, weight down, and a horizontal net force towards the centre">
+  <polygon points="20,195 200,195 200,111" class="f-surf2"/>
+  <polyline points="20,195 200,111" class="s-ink"/>
+  <line x1="20" y1="195" x2="205" y2="195" class="s-mut"/>
+  <path d="M62 195 A42 42 0 0 0 58.1 177.3" class="s-mut"/><text x="66" y="189" class="t-mut">θ</text>
+  <g transform="translate(118,149) rotate(-25)">
+    <rect x="-26" y="-22" width="52" height="22" rx="5" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+    <circle cx="-15" cy="0" r="5" class="f-ink"/><circle cx="15" cy="0" r="5" class="f-ink"/>
+  </g>
+  <line x1="90" y1="222" x2="30" y2="222" class="s-acc" marker-end="url(#ah-acc)"/>
+  <text x="96" y="226" class="t-acc t-sm t-b">towards centre of the curve</text>
+  <circle cx="320" cy="125" r="5" class="f-ink"/>
+  <line x1="320" y1="125" x2="278" y2="35" class="s-n" marker-end="url(#ah-n)"/><text x="258" y="36" class="t-n t-b">N</text>
+  <line x1="320" y1="125" x2="320" y2="212" class="s-w" marker-end="url(#ah-w)"/><text x="327" y="208" class="t-w t-b">mg</text>
+  <line x1="320" y1="125" x2="320" y2="35" class="s-dash"/>
+  <path d="M320 70 A55 55 0 0 0 297 75" class="s-mut"/><text x="302" y="64" class="t-mut">θ</text>
+  <line x1="316" y1="140" x2="282" y2="140" class="s-net" marker-end="url(#ah-net)"/><text x="248" y="156" class="t-net t-b">F<tspan dy="3" font-size="10">net</tspan> = mv²/r</text>
+  <text x="340" y="80" class="t-sm t-n">N cos θ = mg</text>
+  <text x="340" y="98" class="t-sm t-n">N sin θ = mv²/r</text>
+</svg>
+<figcaption>At the design speed: the vertical component of \(N\) balances weight, the horizontal component provides the net force. The net force is <strong>horizontal</strong>, towards the centre.</figcaption>
+</figure>
+
+<div class="eq"><div class="eq-label">Banked track at the design speed (no friction)</div>\[ N\cos\theta = mg \qquad N\sin\theta = \frac{mv^2}{r} \]\[ \Rightarrow\quad \tan\theta = \frac{v^2}{rg}, \qquad v_{\text{design}} = \sqrt{rg\tan\theta}, \qquad N = \frac{mg}{\cos\theta} \]<p>Mass cancels: every vehicle has the same design speed on a given curve.</p></div>
+
+<aside class="c-trap" data-title="Trick alert: the net force is horizontal">
+<p>On a banked track the car moves in a <strong>horizontal</strong> circle, so the net force points <strong>horizontally towards the centre</strong>. It does <em>not</em> point down the slope, and it does not point along the normal force. Also, \(N = mg/\cos\theta\) is <strong>bigger</strong> than \(mg\), unlike a car on a ramp where \(N = mg\cos\theta\). Mixing these up is very common.</p>
+</aside>
+
+<div class="we" data-title="Design speed of a banked curve" data-marks="4">
+<div class="we-q"><p>A curve of radius 80 m is banked at 15°. (a) Calculate the design speed. (b) For a 1000 kg car at this speed, calculate the normal force and the net force.</p></div>
+<div class="we-s"><p><strong>(a) Design speed:</strong></p>\[ v = \sqrt{rg\tan\theta} = \sqrt{80 \times 9.8 \times \tan 15^\circ} = \sqrt{210} = 14.5\ \text{m s}^{-1}\ (52\ \text{km h}^{-1}) \]</div>
+<div class="we-s"><p><strong>(b) Normal force</strong> from vertical equilibrium:</p>\[ N = \frac{mg}{\cos\theta} = \frac{1000 \times 9.8}{\cos 15^\circ} = 1.01\times10^4\ \text{N} \]</div>
+<div class="we-s"><p><strong>Net force</strong> (horizontal):</p>\[ F_{\text{net}} = N\sin\theta = mg\tan\theta = 9800 \times \tan 15^\circ = 2.63\times10^3\ \text{N} \]<p>Check: \(mv^2/r = 1000 \times 210/80 = 2.63\times10^3\ \text{N}\) ✓.</p></div>
+<div class="we-a"><p><strong>(a) 14.5 m s⁻¹ (b) \(N = 1.0\times10^4\ \text{N}\) perpendicular to the road; \(F_{\text{net}} = 2.6\times10^3\ \text{N}\) horizontally towards the centre.</strong></p></div>
+</div>
+
+<h3>Faster or slower than the design speed</h3>
+<ul>
+  <li><strong>Faster than design speed:</strong> the car needs more centripetal force than \(N\sin\theta\) supplies. It tends to slide up and out, so friction acts <strong>down the slope</strong> (towards the centre side).</li>
+  <li><strong>Slower than design speed:</strong> the car tends to slide down and in, so friction acts <strong>up the slope</strong>.</li>
+</ul>
+
+<aside class="c-deep" data-title="Going deeper: calculating the friction off design speed">
+<p>Use axes along and perpendicular to the slope, and resolve the horizontal net force \(mv^2/r\) into those directions. For a 1000 kg car at 20 m s⁻¹ on the 80 m, 15° curve above: \(mv^2/r = 5000\ \text{N}\).</p>
+<p>Along the slope (friction \(f\) down the slope): \(f + mg\sin\theta = \dfrac{mv^2}{r}\cos\theta \Rightarrow f = 5000(0.966) - 9800(0.259) = 2.29\times10^3\ \text{N}\) down the slope.</p>
+<p>Perpendicular: \(N - mg\cos\theta = \dfrac{mv^2}{r}\sin\theta \Rightarrow N = 9466 + 1294 = 1.08\times10^4\ \text{N}\).</p>
+<p>VCE questions normally only ask for the direction of friction, but this is a good check that you understand the vectors.</p>
+</aside>
+
+<div class="sim" data-sim="banked"></div>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A car travels around a banked curve at exactly the design speed. The direction of the net force on the car is:</p></div>
+<ol><li>down the slope of the banking</li><li>perpendicular to the road surface</li><li>horizontal, towards the centre of the curve</li><li>zero, because the car's speed is constant</li></ol>
+<div class="mcq-x"><p>The car moves in a horizontal circle, so the net (centripetal) force is horizontal towards the centre. Constant <em>speed</em> does not mean zero net force: the direction of the velocity is changing.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A stone is whirled in a horizontal circle on a string. At the instant the string breaks, the stone moves:</p></div>
+<ol><li>radially outward, away from the centre</li><li>along the tangent to the circle at that point</li><li>in a spiral outward</li><li>towards the centre</li></ol>
+<div class="mcq-x"><p>With the tension gone there is no horizontal force, so the stone keeps the velocity it had at that instant (first law). That velocity is tangential.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>A mass on a string moves in a horizontal circle of fixed radius. If the period of revolution is halved, the tension becomes:</p></div>
+<ol><li>half as large</li><li>twice as large</li><li>unchanged</li><li>four times as large</li></ol>
+<div class="mcq-x"><p>\(F = 4\pi^2 mr/T^2\). Halving \(T\) multiplies \(1/T^2\) by 4.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>A car goes around a banked curve <strong>slower</strong> than the design speed without sliding. The friction force from the road on the car acts:</p></div>
+<ol><li>up the slope</li><li>down the slope</li><li>there is no friction</li><li>in the direction of motion</li></ol>
+<div class="mcq-x"><p>Below the design speed, \(N\sin\theta\) is more than the centripetal force needed, so the car tends to slide down the bank. Friction opposes this by acting up the slope.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A heavy truck and a light car both take the same banked curve at its design speed. Compared with the car, the truck:</p></div>
+<ol><li>needs a higher speed to avoid friction</li><li>has the same design speed</li><li>needs a lower speed to avoid friction</li><li>cannot travel at the design speed</li></ol>
+<div class="mcq-x"><p>\(\tan\theta = v^2/(rg)\) contains no mass. Every vehicle has the same design speed, although the truck's normal force and net force are larger.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A 0.25 kg rubber stopper is whirled in a horizontal circle of radius 0.60 m with a period of 0.50 s (ignore gravity's effect on the string angle). Calculate its speed and the tension in the string.</p></div>
+<div class="pq-s"><p>\(v = \dfrac{2\pi r}{T} = \dfrac{2\pi(0.60)}{0.50} = 7.5\ \text{m s}^{-1}\)</p><p>\(F = \dfrac{mv^2}{r} = \dfrac{0.25 \times 7.54^2}{0.60} = 24\ \text{N}\) (or \(4\pi^2 mr/T^2 = 23.7\ \text{N}\)).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Engineers want a curve of radius 120 m to have a design speed of 90 km h⁻¹. At what angle should it be banked?</p></div>
+<div class="pq-s"><p>Convert: \(90\ \text{km h}^{-1} = 90/3.6 = 25\ \text{m s}^{-1}\).</p><p>\(\tan\theta = \dfrac{v^2}{rg} = \dfrac{25^2}{120 \times 9.8} = 0.531 \Rightarrow \theta = 28^\circ\).</p><p>Forgetting to convert km h⁻¹ gives a nonsense angle (tan θ ≈ 6.9, θ ≈ 82°).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A car travels at constant speed around a flat, icy roundabout and slides towards the outside of the curve. A passenger says “the centrifugal force became stronger than friction and threw us outward.” Explain what actually happened using Newton's laws.</p></div>
+<div class="pq-s"><p>To travel in a circle the car needs a net force towards the centre of \(mv^2/r\), which on a flat road must be supplied by sideways friction. [1]</p><p>On ice the maximum friction available was less than \(mv^2/r\), so the net inward force was too small to keep the car on that radius. [1]</p><p>By Newton's first law the car then tends to continue in a straighter line (along the tangent), which carries it towards the outside of the curve. No outward force acted. [1]</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>For the conical pendulum above (0.20 kg, 1.0 m string), the mass is made to go faster so the string makes 60° with the vertical. Find the new tension and explain why the string can never become horizontal.</p></div>
+<div class="pq-s"><p>\(T = \dfrac{mg}{\cos 60^\circ} = \dfrac{1.96}{0.5} = 3.9\ \text{N}\).</p><p>A horizontal string would have no vertical component, so nothing could balance the weight: \(T\cos\theta = mg\) needs \(T \to \infty\) as \(\theta \to 90^\circ\).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Constant speed in a circle is still acceleration: \(a = v^2/r\) towards the centre.</li>
+  <li>“Centripetal force” is the net force. Name the real force(s) supplying it; never draw it separately.</li>
+  <li>Banked track at design speed: \(\tan\theta = v^2/(rg)\), \(N = mg/\cos\theta\), net force horizontal.</li>
+  <li>Above design speed friction acts down the slope; below, up the slope.</li>
+</ul>

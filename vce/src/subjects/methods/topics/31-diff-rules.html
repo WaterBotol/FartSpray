@@ -1,0 +1,142 @@
+<!--
+id: diff-rules
+title: Differentiation rules
+short: Differentiation rules
+summary: Standard derivatives (powers, exponentials, logs and trig), then the chain, product and quotient rules, with tech-free worked examples, derivatives from tables of values, and the notation VCAA uses.
+keywords: derivative, differentiate, differentiation, power rule, chain rule, product rule, quotient rule, derivative of e^x, derivative of ln, derivative of log, derivative of sin, derivative of cos, derivative of tan, dy/dx, f'(x), composite derivative, table of values, gradient function
+dotpoints: derivatives of xⁿ, eˣ, logₑx, sin x, cos x and tan x | the chain, product and quotient rules | derivatives of composite functions given in tables or graphs
+-->
+<h2>The standard derivatives</h2>
+<div class="tbl"><table>
+<thead><tr><th>\(f(x)\)</th><th>\(f'(x)\)</th><th>\(f(x)\)</th><th>\(f'(x)\)</th></tr></thead>
+<tbody>
+<tr><td>\(x^n\)</td><td>\(nx^{n-1}\)</td><td>\(\sin(kx)\)</td><td>\(k\cos(kx)\)</td></tr>
+<tr><td>\((ax + b)^n\)</td><td>\(an(ax + b)^{n-1}\)</td><td>\(\cos(kx)\)</td><td>\(-k\sin(kx)\)</td></tr>
+<tr><td>\(e^{kx}\)</td><td>\(ke^{kx}\)</td><td>\(\tan(kx)\)</td><td>\(\dfrac{k}{\cos^2(kx)} = k\sec^2(kx)\)</td></tr>
+<tr><td>\(\log_e(kx)\)</td><td>\(\dfrac{1}{x}\)</td><td>\(\log_e(g(x))\)</td><td>\(\dfrac{g'(x)}{g(x)}\)</td></tr>
+</tbody></table></div>
+<p>Rewrite roots and fractions as powers before differentiating: \(\sqrt{x} = x^{1/2}\) and \(\frac{3}{x^2} = 3x^{-2}\).</p>
+
+<h2>The three rules</h2>
+<div class="eq"><div class="eq-label">Chain, product and quotient rules</div>\[ \frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx} \qquad (uv)' = u'v + uv' \qquad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2} \]<p>Function notation for the chain rule: \(\big(f(g(x))\big)' = f'(g(x))\cdot g'(x)\).</p></div>
+<aside class="c-key"><p>Decide which rule to use from the <strong>outermost</strong> structure. \(x^2e^{3x}\) is a product. \(e^{\sin x}\) is a composite (chain). \(\frac{\sin x}{x}\) is a quotient. Many questions need two rules in a row.</p></aside>
+
+<div class="we" data-title="Product rule, then factorise" data-marks="2">
+<div class="we-q"><p>Differentiate \(y = x^2e^{3x}\) and fully factorise the result.</p></div>
+<div class="we-s"><p>\(u = x^2,\ u' = 2x\); \(v = e^{3x},\ v' = 3e^{3x}\).</p></div>
+<div class="we-a"><p>\(\dfrac{dy}{dx} = 2xe^{3x} + 3x^2e^{3x} = \boldsymbol{xe^{3x}(2 + 3x)}\). Factorised form makes stationary points easy: \(x = 0\) or \(x = -\frac23\).</p></div>
+</div>
+
+<div class="we" data-title="Chain rule with a log" data-marks="2">
+<div class="we-q"><p>Find \(\dfrac{dy}{dx}\) for (a) \(y = \log_e(x^2 + 1)\), (b) \(y = \log_e(\cos x)\).</p></div>
+<div class="we-s"><p>Use \(\dfrac{d}{dx}\log_e(g(x)) = \dfrac{g'(x)}{g(x)}\).</p></div>
+<div class="we-a"><p><strong>(a) \(\dfrac{2x}{x^2 + 1}\); (b) \(\dfrac{-\sin x}{\cos x} = -\tan x\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Quotient rule" data-marks="2">
+<div class="we-q"><p>Differentiate \(f(x) = \dfrac{x}{x + 1}\).</p></div>
+<div class="we-s"><p>\(u = x,\ u' = 1\); \(v = x + 1,\ v' = 1\).</p></div>
+<div class="we-a"><p>\(f'(x) = \dfrac{1\cdot(x + 1) - x\cdot 1}{(x + 1)^2} = \boldsymbol{\dfrac{1}{(x + 1)^2}}\), which is always positive, so \(f\) is increasing on each branch.</p></div>
+</div>
+
+<div class="we" data-title="Evaluate a derivative exactly (tech-free)" data-marks="2">
+<div class="we-q"><p>Let \(f(x) = x^2\sin x\). Find \(f'\!\left(\frac{\pi}{2}\right)\).</p></div>
+<div class="we-s"><p>\(f'(x) = 2x\sin x + x^2\cos x\).</p></div>
+<div class="we-a"><p>\(f'\!\left(\frac{\pi}{2}\right) = 2\cdot\frac{\pi}{2}\cdot 1 + \frac{\pi^2}{4}\cdot 0 = \boldsymbol{\pi}\).</p></div>
+</div>
+
+<div class="we" data-title="Derivatives from a table (Exam 1 style)" data-marks="3">
+<div class="we-q"><p>The table gives values of \(f\), \(g\) and their derivatives.</p>
+<div class="tbl"><table><thead><tr><th>\(x\)</th><th>\(f(x)\)</th><th>\(f'(x)\)</th><th>\(g(x)\)</th><th>\(g'(x)\)</th></tr></thead><tbody><tr><td>1</td><td>3</td><td>−2</td><td>2</td><td>5</td></tr><tr><td>2</td><td>4</td><td>7</td><td>1</td><td>−3</td></tr></tbody></table></div>
+<p>Find the derivatives of (a) \(f(g(x))\) at \(x = 1\), (b) \(f(x)g(x)\) at \(x = 2\), (c) \([f(x)]^2\) at \(x = 1\).</p></div>
+<div class="we-s"><p>(a) \(f'(g(1))\cdot g'(1) = f'(2)\cdot 5 = 7 \times 5 = 35\).</p></div>
+<div class="we-s"><p>(b) \(f'(2)g(2) + f(2)g'(2) = 7(1) + 4(-3) = -5\).</p></div>
+<div class="we-s"><p>(c) \(2f(1)f'(1) = 2(3)(-2) = -12\).</p></div>
+<div class="we-a"><p><strong>(a) 35, (b) −5, (c) −12.</strong> In (a), \(f'\) is evaluated at \(g(1) = 2\), not at 1. That's the trap.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: differentiation traps">
+<ul>
+  <li><strong>\(\frac{d}{dx}\log_e(2x) = \frac1x\)</strong>, not \(\frac2x\): the 2 cancels (\(\frac{2}{2x}\)).</li>
+  <li><strong>\(\sin^2 x\) vs \(\sin(x^2)\):</strong> \(2\sin x\cos x\) vs \(2x\cos(x^2)\).</li>
+  <li><strong>\(e^{x^2}\) differentiates to \(2xe^{x^2}\)</strong>, not \(x^2e^{x^2 - 1}\). The power rule doesn't apply to exponentials.</li>
+  <li><strong>The derivative of a constant is 0:</strong> \(\frac{d}{dx}e^2 = 0\) and \(\frac{d}{dx}\pi^2 = 0\).</li>
+  <li><strong>Quotient rule sign:</strong> it's \(u'v - uv'\) on top, so the order matters.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>If \(y = \sqrt{1 - x^2}\), then \(\dfrac{dy}{dx}\) is</p></div>
+<ol><li>\(\dfrac{1}{2\sqrt{1 - x^2}}\)</li><li>\(\dfrac{-x}{\sqrt{1 - x^2}}\)</li><li>\(-2x\sqrt{1 - x^2}\)</li><li>\(\dfrac{x}{\sqrt{1 - x^2}}\)</li></ol>
+<div class="mcq-x"><p>\(\frac12(1 - x^2)^{-1/2}\cdot(-2x) = \frac{-x}{\sqrt{1 - x^2}}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>\(\dfrac{d}{dx}\big[\log_e(5x)\big]\) is</p></div>
+<ol><li>\(\frac{1}{x}\)</li><li>\(\frac{5}{x}\)</li><li>\(\frac{1}{5x}\)</li><li>\(5\log_e x\)</li></ol>
+<div class="mcq-x"><p>\(\frac{5}{5x} = \frac1x\). Or: \(\log_e(5x) = \log_e 5 + \log_e x\), and \(\log_e 5\) is a constant.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>The derivative of \(\tan(2x)\) is</p></div>
+<ol><li>\(\sec^2(2x)\)</li><li>\(\dfrac{1}{\cos^2(2x)}\)</li><li>\(2\tan(2x)\)</li><li>\(\dfrac{2}{\cos^2(2x)}\)</li></ol>
+<div class="mcq-x"><p>\(\frac{d}{dx}\tan(kx) = \frac{k}{\cos^2(kx)}\) with \(k = 2\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>If \(f(x) = xe^{2x}\), then \(f'(0)\) equals</p></div>
+<ol><li>0</li><li>2</li><li>1</li><li>\(e^2\)</li></ol>
+<div class="mcq-x"><p>\(f'(x) = e^{2x} + 2xe^{2x}\); \(f'(0) = 1 + 0 = 1\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>If \(y = \sin(x^2)\), then \(\dfrac{dy}{dx}\) is</p></div>
+<ol><li>\(2\sin x\cos x\)</li><li>\(2x\cos(x^2)\)</li><li>\(\cos(x^2)\)</li><li>\(\cos(2x)\)</li></ol>
+<div class="mcq-x"><p>Chain rule with inner \(x^2\). A is the derivative of \(\sin^2 x\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>Let \(h(x) = e^{\sin x}\). Then \(h'(\pi)\) equals</p></div>
+<ol><li>\(-1\)</li><li>\(1\)</li><li>\(0\)</li><li>\(-e\)</li></ol>
+<div class="mcq-x"><p>\(h'(x) = \cos x\,e^{\sin x}\); \(h'(\pi) = (-1)e^0 = -1\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>If \(f(x) = [g(x)]^3\), \(g(2) = -1\) and \(g'(2) = 4\), then \(f'(2)\) is</p></div>
+<ol><li>\(-12\)</li><li>\(48\)</li><li>\(12\)</li><li>\(-4\)</li></ol>
+<div class="mcq-x"><p>\(f'(x) = 3[g(x)]^2g'(x)\): \(3(-1)^2(4) = 12\). The square makes the \(-1\) positive.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Differentiate \(y = \dfrac{\cos x}{x}\).</p></div>
+<div class="pq-s"><p>Quotient rule: \(\dfrac{dy}{dx} = \dfrac{-x\sin x - \cos x}{x^2}\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Find \(f'(x)\) if \(f(x) = (3x^2 - 1)^5\).</p></div>
+<div class="pq-s"><p>\(f'(x) = 5(3x^2 - 1)^4\cdot 6x = 30x(3x^2 - 1)^4\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Let \(y = e^{-x}\sin(2x)\). Show that \(\dfrac{dy}{dx} = e^{-x}\big(2\cos(2x) - \sin(2x)\big)\), and find the exact gradient at \(x = \frac{\pi}{4}\).</p></div>
+<div class="pq-s"><p>Product rule: \(-e^{-x}\sin(2x) + e^{-x}\cdot 2\cos(2x) = e^{-x}(2\cos 2x - \sin 2x)\). [2]</p><p>At \(\frac{\pi}{4}\): \(e^{-\pi/4}(2\cdot 0 - 1) = -e^{-\pi/4}\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Let \(f(x) = \log_e(x^2 - 3)\). (a) State the maximal domain. (b) Find \(f'(x)\). (c) Find the value(s) of \(x\) at which the gradient is 4.</p></div>
+<div class="pq-s"><p>(a) \(x^2 &gt; 3\): \((-\infty, -\sqrt3) \cup (\sqrt3, \infty)\). [1]</p><p>(b) \(f'(x) = \dfrac{2x}{x^2 - 3}\). [1]</p><p>(c) \(2x = 4x^2 - 12 \Rightarrow 2x^2 - x - 6 = 0 \Rightarrow (2x + 3)(x - 2) = 0\), so \(x = 2\) or \(x = -\frac32\). But \(-\frac32\) is not in the domain (\(\frac94 - 3 &lt; 0\)). <strong>\(x = 2\) only.</strong> [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>Using the table in the worked example above, a student writes \(\frac{d}{dx}f(g(x))\big|_{x=2} = f'(2)g'(2) = -21\). Find the correct value.</p></div>
+<div class="pq-s"><p>It should be \(f'(g(2))\cdot g'(2) = f'(1)\cdot(-3) = (-2)(-3) = 6\). The outer derivative is evaluated at \(g(2) = 1\), not at 2.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Know the standard derivatives, including \(\tan(kx) \to \frac{k}{\cos^2 kx}\) and \(\log_e g \to \frac{g'}{g}\).</li>
+  <li>Chain: derivative of outside (inside unchanged) × derivative of inside.</li>
+  <li>Product: \(u'v + uv'\). Quotient: \(\frac{u'v - uv'}{v^2}\).</li>
+  <li>Factorise derivatives: you'll usually need \(f'(x) = 0\) next.</li>
+</ul>

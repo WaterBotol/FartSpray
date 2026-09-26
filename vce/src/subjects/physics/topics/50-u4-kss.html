@@ -1,0 +1,182 @@
+<!--
+id: u4-kss
+title: Key science skills: variables, errors & uncertainty
+short: Key science skills & errors
+summary: The vocabulary of experimental physics that VCAA tests every year: variables and hypotheses, accuracy, precision, repeatability, reproducibility, resolution, validity, random and systematic errors, uncertainty, and significant figures.
+keywords: key science skills, independent variable, dependent variable, controlled variable, hypothesis, aim, accuracy, precision, repeatability, reproducibility, resolution, validity, true value, random error, systematic error, personal error, mistake, outlier, uncertainty, absolute uncertainty, percentage uncertainty, significant figures, sig figs, calibration, zero error, parallax, safety, ethics
+dotpoints: independent, dependent and controlled variables | the use of a hypothesis and prediction | accuracy, precision, repeatability, reproducibility, resolution and validity of measurements | the nature of errors (random and systematic) and uncertainty, and how they can be minimised | health, safety and ethical guidelines relevant to physics investigations
+-->
+<h2>Planning: questions, hypotheses and variables</h2>
+<div class="tbl"><table>
+<thead><tr><th>Term</th><th>Meaning</th><th>Example (magnet falling through a coil)</th></tr></thead>
+<tbody>
+<tr><td>Independent variable (IV)</td><td>The one variable you deliberately change</td><td>Height the magnet is dropped from</td></tr>
+<tr><td>Dependent variable (DV)</td><td>The variable you measure, expected to respond to the IV</td><td>Peak emf induced in the coil</td></tr>
+<tr><td>Controlled variables</td><td>Everything else that could affect the DV, kept the same</td><td>Same magnet, same coil (turns and area), same orientation, same data-logger sample rate</td></tr>
+<tr><td>Hypothesis</td><td>A testable prediction of the relationship, with a reason</td><td>“If the drop height increases, then the peak emf will increase, because the magnet will be moving faster, so the flux through the coil will change more rapidly (Faraday's law).”</td></tr>
+</tbody></table></div>
+<aside class="c-exam" data-title="Exam tip: writing a hypothesis">
+<p>Use the “If [IV change] then [DV change] because [physics reason]” structure. It must be testable and name both variables. “The magnet will affect the coil” gets no marks.</p>
+</aside>
+
+<h2>The measurement vocabulary</h2>
+<p>These definitions (from the VCAA study design) are examined almost every year, often as a two-mark “explain the difference between…” question. Learn them precisely.</p>
+<dl class="gloss">
+  <dt>True value</dt><dd>The value that would be obtained in an ideal measurement with no errors. It can never be known exactly.</dd>
+  <dt>Accuracy</dt><dd>How close a measurement (or the mean of measurements) is to the true value.</dd>
+  <dt>Precision</dt><dd>How closely a set of repeated measurements agree with each other (small spread). Says nothing about closeness to the true value.</dd>
+  <dt>Repeatability</dt><dd>How closely results agree when the <em>same</em> experimenter repeats the measurement with the same method, equipment and conditions over a short time.</dd>
+  <dt>Reproducibility</dt><dd>How closely results agree when the measurement is repeated under <em>changed</em> conditions: a different experimenter, method, equipment, location or time.</dd>
+  <dt>Resolution</dt><dd>The smallest change in a quantity that an instrument can detect (e.g. 1 mm for a ruler, 0.01 s for a digital timer).</dd>
+  <dt>Validity</dt><dd>Whether the experiment actually investigates what it claims to (a fair test, measuring the right quantity, controlling other variables). Valid conclusions follow from valid data.</dd>
+  <dt>Random error</dt><dd>Unpredictable variations that scatter readings above and below the true value (e.g. reaction time, small fluctuations). Reduced by repeating and averaging. Affects precision.</dd>
+  <dt>Systematic error</dt><dd>An error that shifts every reading in the same direction by a consistent amount (e.g. a zero error, an uncalibrated instrument, always reading a scale from above). Not reduced by repeating. Affects accuracy.</dd>
+  <dt>Personal error (mistake)</dt><dd>Errors such as misreading a scale or recording a number wrongly. These are not “experimental error”: the data should be excluded and the measurement repeated.</dd>
+  <dt>Outlier</dt><dd>A reading that lies well away from the pattern of the others. Investigate it; exclude it only with a justified reason, and say so.</dd>
+  <dt>Uncertainty</dt><dd>The range within which the true value is expected to lie, written as value ± uncertainty. Every measurement has one.</dd>
+</dl>
+
+<figure class="fig">
+<svg viewBox="0 0 440 150" width="440" role="img" aria-label="Four targets comparing accuracy and precision: accurate and precise, precise but not accurate, accurate but not precise, neither">
+  <circle cx="55" cy="62" r="44" class="f-surf2" style="stroke:var(--line-2)"/>
+  <circle cx="55" cy="62" r="29" class="s-line"/><circle cx="55" cy="62" r="14" class="s-line"/><circle cx="55" cy="62" r="3" class="f-mut"/>
+  <circle cx="55.2" cy="64.8" r="3.2" class="f-v"/>
+  <circle cx="54.4" cy="61.5" r="3.2" class="f-v"/>
+  <circle cx="54.7" cy="61.7" r="3.2" class="f-v"/>
+  <circle cx="55.1" cy="61.8" r="3.2" class="f-v"/>
+  <circle cx="54.9" cy="63.0" r="3.2" class="f-v"/>
+  <circle cx="45.3" cy="63.8" r="3.2" class="f-v"/>
+  <circle cx="57.2" cy="58.4" r="3.2" class="f-v"/>
+  <text x="55" y="128" text-anchor="middle" class="t-sm t-b">accurate + precise</text>
+  <circle cx="165" cy="62" r="44" class="f-surf2" style="stroke:var(--line-2)"/>
+  <circle cx="165" cy="62" r="29" class="s-line"/><circle cx="165" cy="62" r="14" class="s-line"/><circle cx="165" cy="62" r="3" class="f-mut"/>
+  <circle cx="179.4" cy="50.5" r="3.2" class="f-v"/>
+  <circle cx="177.4" cy="48.2" r="3.2" class="f-v"/>
+  <circle cx="178.9" cy="47.3" r="3.2" class="f-v"/>
+  <circle cx="176.8" cy="45.9" r="3.2" class="f-v"/>
+  <circle cx="177.3" cy="48.9" r="3.2" class="f-v"/>
+  <circle cx="177.1" cy="55.6" r="3.2" class="f-v"/>
+  <circle cx="177.9" cy="50.2" r="3.2" class="f-v"/>
+  <text x="165" y="128" text-anchor="middle" class="t-sm t-b">precise, not accurate</text>
+  <circle cx="275" cy="62" r="44" class="f-surf2" style="stroke:var(--line-2)"/>
+  <circle cx="275" cy="62" r="29" class="s-line"/><circle cx="275" cy="62" r="14" class="s-line"/><circle cx="275" cy="62" r="3" class="f-mut"/>
+  <circle cx="272.3" cy="48.5" r="3.2" class="f-v"/>
+  <circle cx="286.5" cy="55.8" r="3.2" class="f-v"/>
+  <circle cx="271.8" cy="64.5" r="3.2" class="f-v"/>
+  <circle cx="286.4" cy="57.1" r="3.2" class="f-v"/>
+  <circle cx="278.8" cy="58.3" r="3.2" class="f-v"/>
+  <circle cx="275.8" cy="65.6" r="3.2" class="f-v"/>
+  <circle cx="290.1" cy="58.7" r="3.2" class="f-v"/>
+  <text x="275" y="128" text-anchor="middle" class="t-sm t-b">accurate, not precise</text>
+  <circle cx="385" cy="62" r="44" class="f-surf2" style="stroke:var(--line-2)"/>
+  <circle cx="385" cy="62" r="29" class="s-line"/><circle cx="385" cy="62" r="14" class="s-line"/><circle cx="385" cy="62" r="3" class="f-mut"/>
+  <circle cx="368.9" cy="82.2" r="3.2" class="f-v"/>
+  <circle cx="362.6" cy="75.6" r="3.2" class="f-v"/>
+  <circle cx="364.7" cy="72.3" r="3.2" class="f-v"/>
+  <circle cx="358.1" cy="68.4" r="3.2" class="f-v"/>
+  <circle cx="380.3" cy="71.6" r="3.2" class="f-v"/>
+  <circle cx="382.1" cy="62.0" r="3.2" class="f-v"/>
+  <circle cx="371.5" cy="76.9" r="3.2" class="f-v"/>
+  <text x="385" y="128" text-anchor="middle" class="t-sm t-b">neither</text>
+</svg>
+<figcaption>Precision is about clustering; accuracy is about being centred on the true value. Systematic error shifts the cluster; random error spreads it.</figcaption>
+</figure>
+
+<aside class="c-trap" data-title="Trick alert: 'human error' and 'more repeats' are not magic">
+<ul>
+  <li>Never write “human error” as a source of error. Name the specific error (e.g. “reaction time in starting and stopping the stopwatch introduces random error”).</li>
+  <li>Repeating measurements and averaging reduces the effect of <strong>random</strong> errors. It does <strong>nothing</strong> for systematic errors: ten readings from a mis-zeroed scale are all wrong by the same amount.</li>
+  <li>Using an instrument with better resolution improves precision, not accuracy, if the instrument is badly calibrated.</li>
+</ul>
+</aside>
+
+<h2>Reducing errors</h2>
+<div class="tbl"><table>
+<thead><tr><th>Error</th><th>Type</th><th>How to reduce it</th></tr></thead>
+<tbody>
+<tr><td>Reaction time with a stopwatch</td><td>Random (and possibly systematic)</td><td>Use light gates or video analysis; time many cycles and divide; repeat and average</td></tr>
+<tr><td>Parallax when reading a scale</td><td>Random or systematic (if always from the same angle)</td><td>Read at eye level, perpendicular to the scale</td></tr>
+<tr><td>Balance that reads 0.3 g with nothing on it (zero error)</td><td>Systematic</td><td>Zero (tare) the balance or subtract the offset from every reading</td></tr>
+<tr><td>Air resistance in a free-fall or projectile experiment</td><td>Systematic (always reduces speed)</td><td>Use dense, compact objects; keep speeds and distances small</td></tr>
+<tr><td>Measuring fringe spacing with a ruler</td><td>Random (resolution)</td><td>Measure across many fringes and divide</td></tr>
+</tbody></table></div>
+
+<h2>Uncertainty</h2>
+<ul>
+  <li><strong>Reading an analogue scale:</strong> uncertainty is usually ± half the smallest division (a ruler marked in mm: ±0.5 mm).</li>
+  <li><strong>Digital instrument:</strong> ± 1 in the last digit displayed (a timer reading 2.47 s: ±0.01 s).</li>
+  <li><strong>Repeated measurements:</strong> use the mean as the best estimate and ± half the range as the uncertainty.</li>
+</ul>
+<div class="we" data-title="Uncertainty from repeated measurements" data-marks="3">
+<div class="we-q"><p>Five measurements of the time for a trolley to travel down a ramp are 2.31 s, 2.28 s, 2.35 s, 2.30 s and 2.26 s. State the best estimate with its absolute uncertainty, and the percentage uncertainty.</p></div>
+<div class="we-s"><p><strong>Mean:</strong> \((2.31 + 2.28 + 2.35 + 2.30 + 2.26)/5 = 11.50/5 = 2.30\ \text{s}\).</p></div>
+<div class="we-s"><p><strong>Uncertainty = half the range:</strong> \((2.35 - 2.26)/2 = 0.045 \approx 0.05\ \text{s}\).</p></div>
+<div class="we-s"><p><strong>Percentage uncertainty:</strong> \(0.05/2.30 \times 100 = 2\%\).</p></div>
+<div class="we-a"><p><strong>\(t = 2.30 \pm 0.05\ \text{s}\) (±2%).</strong> Uncertainties are usually quoted to one significant figure, and the value is rounded to the same decimal place.</p></div>
+</div>
+<aside class="c-deep" data-title="Going deeper: combining uncertainties">
+<p>When quantities are added or subtracted, add their <em>absolute</em> uncertainties. When multiplied or divided, add their <em>percentage</em> uncertainties. When a quantity is squared, double its percentage uncertainty. E.g. \(v = d/t\) with \(d\) ±1% and \(t\) ±2% gives \(v\) ±3%, and \(E_k = \tfrac12 mv^2\) then has about ±6% from \(v\) alone. VCAA may ask you to identify which measurement contributes most uncertainty.</p>
+</aside>
+
+<h2>Significant figures and units</h2>
+<ul>
+  <li>Give answers to the same number of significant figures as the least precise data given (usually 2 or 3 in VCE). Don't round in intermediate steps.</li>
+  <li>Use SI units and scientific notation: \(4.2\times10^{-7}\ \text{m}\), not 0.00000042 m.</li>
+  <li>“Show that” questions: give your answer to one more significant figure than the value shown, so the examiner can see you didn't just copy it.</li>
+</ul>
+
+<h2>Safety and ethics</h2>
+<ul>
+  <li><strong>Risk assessment</strong> before any practical: identify hazards (lasers, high voltages, mains power, projectiles, hot equipment, strong magnets near electronics or pacemakers) and controls.</li>
+  <li><strong>Lasers:</strong> never look into the beam or its reflections; use low-power (Class 2) lasers; keep beams below eye level.</li>
+  <li><strong>Ethics:</strong> report all data honestly, including results that don't fit; don't invent or selectively delete data; acknowledge sources and collaborators.</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A student measures the acceleration due to gravity five times: 9.51, 9.50, 9.52, 9.51, 9.50 m s⁻². The accepted value is 9.80 m s⁻². The results are best described as:</p></div>
+<ol><li>accurate and precise</li><li>precise but not accurate</li><li>accurate but not precise</li><li>neither accurate nor precise</li></ol>
+<div class="mcq-x"><p>The readings agree closely (precise) but are all well below the true value (not accurate), suggesting a systematic error.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Which of the following will reduce the effect of random errors?</p></div>
+<ol><li>re-calibrating the instrument</li><li>correcting for a zero error</li><li>using a different experimenter</li><li>repeating the measurement and averaging</li></ol>
+<div class="mcq-x"><p>Averaging several readings reduces the scatter from random errors. Calibration and zero corrections address systematic errors.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A second class at another school repeats a student's experiment with their own equipment and gets very similar results. This demonstrates the experiment's:</p></div>
+<ol><li>reproducibility</li><li>repeatability</li><li>resolution</li><li>accuracy</li></ol>
+<div class="mcq-x"><p>Different people, equipment and location: reproducibility. Repeatability is the same person, same equipment, same conditions.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>A metre ruler is marked in millimetres. The resolution of the ruler is:</p></div>
+<ol><li>0.5 mm</li><li>1 cm</li><li>1 mm</li><li>1 m</li></ol>
+<div class="mcq-x"><p>Resolution is the smallest change the instrument can show: 1 mm. The reading uncertainty is usually taken as ±0.5 mm, which is a different idea.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Every length measured with a steel tape is 2 mm too long because the tape's end hook is bent. This is:</p></div>
+<ol><li>a random error that reduces precision</li><li>a systematic error that reduces accuracy</li><li>a personal error that should be ignored</li><li>a random error that can be removed by averaging</li></ol>
+<div class="mcq-x"><p>A consistent offset in one direction is systematic. It shifts all results away from the true value (accuracy) without spreading them out.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Explain the difference between accuracy and precision, using an example from a physics experiment.</p></div>
+<div class="pq-s"><p>Accuracy is how close a measurement is to the true value; precision is how close repeated measurements are to each other.</p><p>Example: if repeated measurements of \(g\) are 9.51, 9.50 and 9.52 m s⁻², they are precise (close together) but not accurate (true value 9.80 m s⁻²).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Students investigate how the release height of a trolley on a ramp affects its speed at the bottom, measuring the speed with a stopwatch over the final 50 cm. (a) Identify the independent, dependent and one controlled variable. (b) Identify one random and one systematic error, and suggest how to reduce each.</p></div>
+<div class="pq-s"><p>(a) IV: release height. DV: speed at the bottom. Controlled: same trolley (mass), same ramp surface and angle, same timing distance. [1]</p><p>(b) Random: reaction time starting and stopping the stopwatch, reduced by using light gates or repeating trials and averaging. [1] Systematic: friction and air resistance always reduce the speed below the ideal value (or a timing distance measured incorrectly), reduced by using a low-friction track or measuring the distance carefully from the correct points. [1] Repeating measurements does not reduce the systematic error. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>IV (changed), DV (measured), controlled (kept the same). Hypothesis: if… then… because…</li>
+  <li>Accuracy = close to true value; precision = close to each other.</li>
+  <li>Repeatability = same everything; reproducibility = changed conditions.</li>
+  <li>Random errors scatter (average them); systematic errors shift (calibrate, redesign). No “human error”.</li>
+</ul>

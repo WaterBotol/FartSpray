@@ -1,0 +1,115 @@
+<!--
+id: ci
+title: Confidence intervals for proportions
+short: Confidence intervals
+summary: Approximate confidence intervals for a population proportion, the margin of error, what '95% confidence' actually means, choosing a sample size, working backwards from a given interval, and deciding whether a claim is supported.
+keywords: confidence interval, CI, 95% confidence, 99%, 90%, margin of error, z value, 1.96, interpretation, sample size, width, estimate, population proportion, p hat, standard error, claim, contains
+dotpoints: approximate confidence intervals for a population proportion | the margin of error, the effect of confidence level and sample size on width, and interpretation of confidence intervals
+-->
+<h2>The interval</h2>
+<div class="eq"><div class="eq-label">Approximate confidence interval for \(p\)</div>\[ \left(\hat p - z\sqrt{\frac{\hat p(1 - \hat p)}{n}},\ \ \hat p + z\sqrt{\frac{\hat p(1 - \hat p)}{n}}\right) \]<p>\(z = 1.96\) for 95% (\(\approx 2\) tech-free), \(z \approx 2.576\) for 99%, \(z \approx 1.645\) for 90%. The <strong>margin of error</strong> is \(M = z\sqrt{\frac{\hat p(1 - \hat p)}{n}}\), half the width.</p></div>
+<aside class="c-def" data-title="What “95% confident” means"><p>If we took many samples and built a 95% interval from each, about 95% of those intervals would contain the true \(p\). The true \(p\) is fixed: any single interval either contains it or doesn't.</p></aside>
+<div class="sim" data-sim="ci"></div>
+
+<div class="we" data-title="Building a 95% interval" data-marks="3">
+<div class="we-q"><p>In a random sample of 200 students, 60 walk to school. Find an approximate 95% confidence interval for the proportion of all students who walk, to 4 decimal places.</p></div>
+<div class="we-s"><p>\(\hat p = \frac{60}{200} = 0.3\). Standard error \(= \sqrt{\frac{0.3 \times 0.7}{200}} \approx 0.03240\).</p></div>
+<div class="we-s"><p>\(M = 1.96 \times 0.03240 \approx 0.0635\).</p></div>
+<div class="we-a"><p><strong>\((0.2365,\ 0.3635)\).</strong></p></div>
+</div>
+
+<div class="we" data-title="A 99% interval is wider" data-marks="2">
+<div class="we-q"><p>In a sample of 400 voters, 248 support a proposal. Find an approximate 99% confidence interval for \(p\).</p></div>
+<div class="we-s"><p>\(\hat p = 0.62\); SE \(= \sqrt{\frac{0.62 \times 0.38}{400}} \approx 0.02427\); \(M = 2.5758 \times 0.02427 \approx 0.0625\).</p></div>
+<div class="we-a"><p><strong>\((0.5575,\ 0.6825)\).</strong> The 95% interval is \((0.5724, 0.6676)\). More confidence needs a wider net.</p></div>
+</div>
+
+<div class="we" data-title="Working backwards from an interval (hard)" data-marks="3">
+<div class="we-q"><p>An approximate 95% confidence interval for \(p\) is \((0.52, 0.64)\). Find \(\hat p\), the margin of error and the sample size.</p></div>
+<div class="we-s"><p>\(\hat p\) is the midpoint: \(\frac{0.52 + 0.64}{2} = 0.58\). \(M\) is half the width: \(0.06\).</p></div>
+<div class="we-s"><p>\(0.06 = 1.96\sqrt{\frac{0.58 \times 0.42}{n}} \Rightarrow n = \frac{1.96^2 \times 0.2436}{0.06^2} \approx 259.9\).</p></div>
+<div class="we-a"><p><strong>\(\hat p = 0.58\), \(M = 0.06\), \(n = 260\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Choosing a sample size" data-marks="2">
+<div class="we-q"><p>A pollster wants a 95% margin of error of at most 3 percentage points and has no idea of \(p\). How many people should be surveyed?</p></div>
+<div class="we-s"><p>Use \(\hat p = 0.5\) (which gives the largest possible margin): \(1.96\sqrt{\frac{0.25}{n}} \le 0.03 \Rightarrow n \ge \frac{1.96^2 \times 0.25}{0.03^2} \approx 1067.1\).</p></div>
+<div class="we-a"><p><strong>\(n = 1068\)</strong> (round up). This is why national polls often survey about 1000 people.</p></div>
+</div>
+
+<h2>Using an interval to judge a claim</h2>
+<p>If a claimed value of \(p\) lies <strong>inside</strong> the interval, the data are consistent with the claim. If it's <strong>outside</strong>, the claim is doubtful (at that confidence level). An interval never <em>proves</em> the claim.</p>
+
+<aside class="c-trap" data-title="Trick alert: confidence interval traps">
+<ul>
+  <li><strong>Don't say “there's a 95% probability that \(p\) is in (0.24, 0.36)”.</strong> VCAA wants the “95% of such intervals” interpretation.</li>
+  <li><strong>Higher confidence → wider interval; larger \(n\) → narrower.</strong> To halve the width, quadruple \(n\).</li>
+  <li><strong>Round sample sizes up</strong>, even from 1067.1.</li>
+  <li><strong>The interval is about the population</strong>, not about future samples.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>In a sample of 100, \(\hat p = 0.5\). Using \(z \approx 2\), an approximate 95% confidence interval is</p></div>
+<ol><li>\((0.45, 0.55)\)</li><li>\((0.4, 0.6)\)</li><li>\((0.3, 0.7)\)</li><li>\((0.48, 0.52)\)</li></ol>
+<div class="mcq-x"><p>SE \(= \sqrt{\frac{0.25}{100}} = 0.05\); \(M = 2 \times 0.05 = 0.1\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Which statement about a 95% confidence interval \((0.41, 0.49)\) for \(p\) is correct?</p></div>
+<ol><li>There is a 95% chance that \(p\) lies between 0.41 and 0.49</li><li>95% of samples will have \(\hat p\) between 0.41 and 0.49</li><li>\(p\) is definitely between 0.41 and 0.49</li><li>About 95% of intervals constructed this way from repeated samples would contain \(p\)</li></ol>
+<div class="mcq-x"><p>The confidence is in the method, not in this particular interval (\(p\) is fixed).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>Keeping \(\hat p\) the same, the sample size is multiplied by 4. The width of the confidence interval is</p></div>
+<ol><li>halved</li><li>quartered</li><li>doubled</li><li>unchanged</li></ol>
+<div class="mcq-x"><p>Width \(\propto \frac{1}{\sqrt n}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>A 95% confidence interval for \(p\) is \((0.32, 0.40)\). The sample proportion is</p></div>
+<ol><li>0.04</li><li>0.08</li><li>0.36</li><li>0.32</li></ol>
+<div class="mcq-x"><p>The midpoint: \(\frac{0.32 + 0.40}{2} = 0.36\). The margin is 0.04.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>A company claims 70% of customers are satisfied. A survey gives the 95% interval \((0.61, 0.68)\). The most appropriate conclusion is</p></div>
+<ol><li>the claim is proven false</li><li>the survey suggests the true proportion is lower than claimed</li><li>the survey supports the claim</li><li>the survey is biased</li></ol>
+<div class="mcq-x"><p>0.70 is outside the interval, so the data are inconsistent with the claim at the 95% level. That's evidence against it, not proof.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>Two 95% intervals are built from samples of the same size: one with \(\hat p = 0.5\), one with \(\hat p = 0.1\). Which is wider?</p></div>
+<ol><li>The \(\hat p = 0.5\) interval</li><li>The \(\hat p = 0.1\) interval</li><li>They're the same width</li><li>It depends on \(p\)</li></ol>
+<div class="mcq-x"><p>\(\hat p(1 - \hat p)\) is largest at 0.5 (0.25 vs 0.09).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>In a random sample of 500 phones, 35 are faulty. Find an approximate 95% confidence interval for the proportion faulty, to 3 decimal places.</p></div>
+<div class="pq-s"><p>\(\hat p = 0.07\); SE \(= \sqrt{\frac{0.07 \times 0.93}{500}} \approx 0.01141\); \(M \approx 0.0224\).</p><p>\((0.048, 0.092)\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Find the smallest sample size for a 99% margin of error of at most 0.05, given a pilot study suggests \(p \approx 0.2\).</p></div>
+<div class="pq-s"><p>\(2.5758\sqrt{\frac{0.16}{n}} \le 0.05 \Rightarrow n \ge \frac{2.5758^2 \times 0.16}{0.0025}\). [2]</p><p>\(n \ge 424.6\), so \(n = 425\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>A random sample of 250 households found 90 with solar panels. (a) Find an approximate 95% CI for \(p\). (b) A council claims 40% of households have solar panels. Comment. (c) How many more households would need to be surveyed (with the same \(\hat p\)) to halve the margin of error?</p></div>
+<div class="pq-s"><p>(a) \(\hat p = 0.36\); SE \(= \sqrt{\frac{0.36 \times 0.64}{250}} \approx 0.03036\); \(M \approx 0.0595\): \((0.3005, 0.4195)\). [2]</p><p>(b) 0.40 lies inside the interval, so the sample is consistent with the claim (but doesn't prove it). [1]</p><p>(c) Halving \(M\) needs \(4 \times 250 = 1000\) households: 750 more. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>100 different researchers each build a 95% confidence interval for the same \(p\) from their own random samples. How many intervals would you expect to <em>miss</em> \(p\)? Could it be more?</p></div>
+<div class="pq-s"><p>About 5 (5% of 100). It could easily be more or fewer: the number that miss is itself random (roughly \(\text{Bi}(100, 0.05)\)). Try the simulation above.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(\hat p \pm z\sqrt{\frac{\hat p(1 - \hat p)}{n}}\) with \(z = 1.96\) (95%).</li>
+  <li>Midpoint = \(\hat p\); half-width = margin of error.</li>
+  <li>Sample size: rearrange for \(n\), use \(\hat p = 0.5\) if unknown, round up.</li>
+  <li>Interpret as “95% of such intervals contain \(p\)”.</li>
+</ul>

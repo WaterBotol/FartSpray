@@ -1,0 +1,129 @@
+<!--
+id: antidiff
+title: Antidifferentiation
+short: Antidifferentiation
+summary: Standard antiderivatives, the constant of integration, finding a function from its derivative and a point, antidifferentiation by recognition (differentiate first, then integrate), and sketching an antiderivative from a graph.
+keywords: antiderivative, antidifferentiation, integral, indefinite integral, constant of integration, plus c, integration by recognition, reverse chain rule, boundary condition, initial condition, log, 1/x, e^x integral, sin integral, cos integral, primitive
+dotpoints: antiderivatives of polynomials, xⁿ, (ax + b)ⁿ, eˣ, 1/x, sin and cos | finding a function given its derivative and a point | antidifferentiation by recognition that F'(x) = f(x)
+-->
+<h2>Standard antiderivatives</h2>
+<p>Antidifferentiation reverses differentiation: if \(F'(x) = f(x)\) then \(\int f(x)\,dx = F(x) + c\).</p>
+<div class="tbl"><table>
+<thead><tr><th>\(f(x)\)</th><th>\(\int f(x)\,dx\)</th><th>\(f(x)\)</th><th>\(\int f(x)\,dx\)</th></tr></thead>
+<tbody>
+<tr><td>\(x^n,\ n \ne -1\)</td><td>\(\dfrac{x^{n+1}}{n + 1} + c\)</td><td>\(e^{kx}\)</td><td>\(\dfrac1k e^{kx} + c\)</td></tr>
+<tr><td>\((ax + b)^n,\ n \ne -1\)</td><td>\(\dfrac{(ax + b)^{n+1}}{a(n + 1)} + c\)</td><td>\(\sin(kx)\)</td><td>\(-\dfrac1k\cos(kx) + c\)</td></tr>
+<tr><td>\(\dfrac1x\)</td><td>\(\log_e|x| + c\)</td><td>\(\cos(kx)\)</td><td>\(\dfrac1k\sin(kx) + c\)</td></tr>
+<tr><td>\(\dfrac{1}{ax + b}\)</td><td>\(\dfrac1a\log_e|ax + b| + c\)</td><td>\(\dfrac{1}{\cos^2(kx)}\)</td><td>\(\dfrac1k\tan(kx) + c\)</td></tr>
+</tbody></table></div>
+<aside class="c-key"><p>Linear inside, divide by the coefficient of \(x\). That's the reverse chain rule, and it only works when the inside is <strong>linear</strong>. \(\int e^{x^2}\,dx\) is <em>not</em> \(\frac{e^{x^2}}{2x}\).</p></aside>
+
+<div class="we" data-title="A mixed antiderivative" data-marks="2">
+<div class="we-q"><p>Find \(\displaystyle\int\left(6x^2 - \frac{4}{x^3} + \frac{2}{2x + 1} + e^{-3x}\right)dx\).</p></div>
+<div class="we-s"><p>Term by term: \(2x^3\); \(-4\cdot\frac{x^{-2}}{-2} = \frac{2}{x^2}\); \(\frac{2}{2}\log_e|2x + 1| = \log_e|2x + 1|\); \(-\frac13e^{-3x}\).</p></div>
+<div class="we-a"><p><strong>\(2x^3 + \dfrac{2}{x^2} + \log_e|2x + 1| - \dfrac13e^{-3x} + c\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Function from derivative and a point" data-marks="2">
+<div class="we-q"><p>\(f'(x) = 3x^2 - 4x + 1\) and \(f(1) = 2\). Find \(f(x)\).</p></div>
+<div class="we-s"><p>\(f(x) = x^3 - 2x^2 + x + c\).</p></div>
+<div class="we-a"><p>\(f(1) = 1 - 2 + 1 + c = 2 \Rightarrow c = 2\). <strong>\(f(x) = x^3 - 2x^2 + x + 2\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Trig with a boundary condition" data-marks="3">
+<div class="we-q"><p>The gradient of a curve is \(\dfrac{dy}{dx} = 2\cos(2x) + \sin x\), and the curve passes through \(\left(\frac{\pi}{2}, 3\right)\). Find \(y\).</p></div>
+<div class="we-s"><p>\(y = \sin(2x) - \cos x + c\).</p></div>
+<div class="we-s"><p>\(3 = \sin\pi - \cos\frac{\pi}{2} + c = 0 - 0 + c\).</p></div>
+<div class="we-a"><p><strong>\(y = \sin(2x) - \cos x + 3\).</strong></p></div>
+</div>
+
+<h2>Antidifferentiation by recognition</h2>
+<p>This is an Exam 1 staple: “Differentiate \(g(x)\). Hence find an antiderivative of \(h(x)\).” Differentiate, rearrange so the thing you want is on its own, then antidifferentiate both sides.</p>
+<div class="we" data-title="Hence find ∫ log x dx" data-marks="3">
+<div class="we-q"><p>Find \(\dfrac{d}{dx}(x\log_e x)\). Hence find \(\displaystyle\int\log_e x\,dx\).</p></div>
+<div class="we-s"><p>Product rule: \(\dfrac{d}{dx}(x\log_e x) = \log_e x + x\cdot\dfrac1x = \log_e x + 1\).</p></div>
+<div class="we-s"><p>Antidifferentiate both sides: \(x\log_e x = \int\log_e x\,dx + \int 1\,dx\).</p></div>
+<div class="we-a"><p><strong>\(\displaystyle\int\log_e x\,dx = x\log_e x - x + c\).</strong></p></div>
+</div>
+<div class="we" data-title="Hence find ∫ x cos x dx" data-marks="3">
+<div class="we-q"><p>Differentiate \(x\sin x\) and hence find an antiderivative of \(x\cos x\).</p></div>
+<div class="we-s"><p>\(\dfrac{d}{dx}(x\sin x) = \sin x + x\cos x\), so \(x\cos x = \dfrac{d}{dx}(x\sin x) - \sin x\).</p></div>
+<div class="we-a"><p>\(\displaystyle\int x\cos x\,dx = x\sin x - \int\sin x\,dx = \boldsymbol{x\sin x + \cos x}\) (plus \(c\) if they ask for the general antiderivative).</p></div>
+</div>
+
+<h2>Graphs of antiderivatives</h2>
+<p>If you're given the graph of \(f\) and asked to sketch \(F\) (where \(F' = f\)): where \(f\) is positive, \(F\) increases; where \(f\) crosses the axis, \(F\) has a stationary point; turning points of \(f\) are inflection points of \(F\). There's a whole family of possible \(F\) graphs, each a vertical translation of the others.</p>
+
+<aside class="c-trap" data-title="Trick alert: antiderivative traps">
+<ul>
+  <li><strong>\(\int\frac{1}{x}\,dx \ne \frac{x^0}{0}\).</strong> The power rule excludes \(n = -1\); use \(\log_e|x|\).</li>
+  <li><strong>Sign flip for sine:</strong> \(\int\sin x\,dx = -\cos x + c\).</li>
+  <li><strong>\(\int\frac{1}{3x}\,dx = \frac13\log_e|x| + c\)</strong>, which equals \(\frac13\log_e|3x| + c'\): both are correct (the constants differ).</li>
+  <li><strong>Don't forget \(+c\)</strong> when a question asks for “the general antiderivative” or “\(\int\ldots dx\)”. When it asks for “an antiderivative”, \(c = 0\) is fine.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>An antiderivative of \(\dfrac{1}{(2x - 1)^3}\) is</p></div>
+<ol><li>\(-\dfrac{1}{4(2x - 1)^2}\)</li><li>\(-\dfrac{1}{2(2x - 1)^2}\)</li><li>\(\dfrac{1}{4(2x - 1)^4}\)</li><li>\(\dfrac{\log_e|2x - 1|}{2}\)</li></ol>
+<div class="mcq-x"><p>\(\int(2x - 1)^{-3}dx = \frac{(2x - 1)^{-2}}{2\times(-2)} = -\frac{1}{4(2x - 1)^2}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>\(\displaystyle\int\sin(3x)\,dx\) equals</p></div>
+<ol><li>\(3\cos(3x) + c\)</li><li>\(\frac13\cos(3x) + c\)</li><li>\(-\frac13\cos(3x) + c\)</li><li>\(-3\cos(3x) + c\)</li></ol>
+<div class="mcq-x"><p>Divide by the coefficient 3 and remember the negative sign.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Which of the following is an antiderivative of \(\dfrac{1}{5x}\), \(x &gt; 0\)?</p></div>
+<ol><li>\(5\log_e x\)</li><li>\(\log_e(5x)\)</li><li>\(\frac15\log_e(x^5)\)</li><li>\(\frac15\log_e(5x)\)</li></ol>
+<div class="mcq-x"><p>\(\frac{d}{dx}\left[\frac15\log_e(5x)\right] = \frac15\cdot\frac1x = \frac{1}{5x}\) ✓. Option C simplifies to \(\log_e x\) (derivative \(\frac1x\)) ✗. Option B has derivative \(\frac1x\) ✗.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>If \(f'(x) = e^{2x}\) and \(f(0) = 1\), then \(f(x)\) is</p></div>
+<ol><li>\(e^{2x}\)</li><li>\(\frac12e^{2x} + \frac12\)</li><li>\(2e^{2x} - 1\)</li><li>\(\frac12e^{2x} + 1\)</li></ol>
+<div class="mcq-x"><p>\(f(x) = \frac12e^{2x} + c\); \(\frac12 + c = 1 \Rightarrow c = \frac12\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>Given \(\dfrac{d}{dx}\big(xe^{2x}\big) = e^{2x} + 2xe^{2x}\), an antiderivative of \(xe^{2x}\) is</p></div>
+<ol><li>\(\frac12xe^{2x} - \frac14e^{2x}\)</li><li>\(\frac12xe^{2x} - \frac12e^{2x}\)</li><li>\(xe^{2x} - e^{2x}\)</li><li>\(\frac12x^2e^{2x}\)</li></ol>
+<div class="mcq-x"><p>\(2xe^{2x} = \frac{d}{dx}(xe^{2x}) - e^{2x}\), so \(\int 2xe^{2x}dx = xe^{2x} - \frac12e^{2x}\). Halve it: \(\frac12xe^{2x} - \frac14e^{2x}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A student claims \(\displaystyle\int e^{x^2}dx = \frac{e^{x^2}}{2x} + c\). Differentiating their answer gives</p></div>
+<ol><li>\(e^{x^2}\), so they are right</li><li>\(2xe^{x^2}\)</li><li>something other than \(e^{x^2}\), so they are wrong</li><li>0</li></ol>
+<div class="mcq-x"><p>Quotient rule on \(\frac{e^{x^2}}{2x}\) gives \(e^{x^2} - \frac{e^{x^2}}{2x^2}\), not \(e^{x^2}\). The reverse chain rule only works for linear insides. (\(e^{x^2}\) has no elementary antiderivative.)</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Find \(\displaystyle\int\left(\sqrt{x} + \frac{3}{x}\right)dx\) for \(x &gt; 0\).</p></div>
+<div class="pq-s"><p>\(\frac23x^{3/2} + 3\log_e x + c\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>The gradient of a curve is \(4 - 2x\) and it passes through \((1, 5)\). Find its equation.</p></div>
+<div class="pq-s"><p>\(y = 4x - x^2 + c\); \(5 = 4 - 1 + c \Rightarrow c = 2\). \(y = -x^2 + 4x + 2\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Let \(f(x) = x^2\log_e x\). Find \(f'(x)\) and hence find \(\displaystyle\int x\log_e x\,dx\).</p></div>
+<div class="pq-s"><p>\(f'(x) = 2x\log_e x + x\). [1]</p><p>So \(2x\log_e x = f'(x) - x\), giving \(\int 2x\log_e x\,dx = x^2\log_e x - \frac{x^2}{2}\). [1]</p><p>\(\int x\log_e x\,dx = \frac12x^2\log_e x - \frac14x^2 + c\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>The rate at which water flows into a tank is \(\dfrac{dV}{dt} = 20 - 10e^{-0.5t}\) litres per minute. The tank initially holds 50 L. Find \(V(t)\) and the volume after 4 minutes, correct to one decimal place.</p></div>
+<div class="pq-s"><p>\(V = 20t + 20e^{-0.5t} + c\). [1]</p><p>\(V(0) = 20 + c = 50 \Rightarrow c = 30\). \(V(t) = 20t + 20e^{-0.5t} + 30\). [1]</p><p>\(V(4) = 80 + 20e^{-2} + 30 \approx 112.7\) L. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Reverse each derivative rule; with a linear inside, divide by its coefficient.</li>
+  <li>\(\int\frac1x\,dx = \log_e|x| + c\); \(\int\sin x\,dx = -\cos x + c\).</li>
+  <li>Use a known point to find \(c\).</li>
+  <li>“Hence” questions: differentiate, rearrange, antidifferentiate.</li>
+</ul>

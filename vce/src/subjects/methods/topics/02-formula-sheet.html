@@ -1,0 +1,50 @@
+<!--
+id: formula-sheet
+title: Methods formula sheet & must-knows
+short: Formula sheet
+summary: The key rules for functions, calculus, probability and statistics, grouped by topic, with notes on which are on the VCAA formula sheet and which you must know yourself.
+keywords: formula, formulas, formula sheet, cheat sheet, rules, derivatives table, antiderivatives table, log laws, index laws, exact values, binomial formula, normal, confidence interval, trapezium rule, newton's method, quadratic formula, discriminant
+special: reference
+-->
+<p>VCAA provides a Methods formula sheet in both exams (mensuration, the derivative and antiderivative rules, and the probability and statistics formulas). Many things you use constantly aren't on it: exact values, log laws, transformations and the discriminant. Treat this page as a revision summary. Always check the current official sheet from the VCAA website before your exam.</p>
+
+<h2>Algebra and functions</h2>
+<div class="fs-grid">
+  <div class="fs-card" data-kw="quadratic formula discriminant roots"><h4>Quadratics</h4>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \qquad \Delta = b^2 - 4ac \]<p>\(\Delta &gt; 0\): two roots; \(= 0\): one; \(&lt; 0\): none. Turning point at \(x = -\frac{b}{2a}\). <a href="#systems">Systems</a></p></div>
+  <div class="fs-card" data-kw="factor theorem remainder theorem cubes"><h4>Polynomials</h4>\[ P(a) = 0 \iff (x - a) \text{ is a factor} \]\[ a^3 \pm b^3 = (a \pm b)(a^2 \mp ab + b^2) \]<p><a href="#polynomials">Polynomials</a></p></div>
+  <div class="fs-card" data-kw="index laws log laws change of base"><h4>Index and log laws</h4>\[ a^ma^n = a^{m+n} \quad (a^m)^n = a^{mn} \]\[ \log(xy) = \log x + \log y \quad \log x^n = n\log x \quad \log_a x = \frac{\log_e x}{\log_e a} \]<p><a href="#explog">Exponentials &amp; logs</a></p></div>
+  <div class="fs-card" data-kw="transformations mapping dilation reflection translation"><h4>Transformations</h4>\[ y = af(n(x - h)) + k \]\[ (x, y) \to \left(\tfrac{x}{n} + h,\ ay + k\right) \]<p>Dilation from the \(x\)-axis = vertical. <a href="#transformations">Transformations</a></p></div>
+  <div class="fs-card" data-kw="circular trig period amplitude exact values"><h4>Circular functions</h4>\[ y = a\sin(n(x - h)) + k:\ \text{period } \tfrac{2\pi}{n},\ \text{amplitude } |a| \]\[ \tan:\ \text{period } \tfrac{\pi}{n} \qquad \sin^2 x + \cos^2 x = 1 \]<p><a href="#circular">Circular functions</a></p></div>
+  <div class="fs-card" data-kw="composite inverse existence"><h4>Composite and inverse</h4>\[ f \circ g \text{ exists} \iff \text{ran } g \subseteq \text{dom } f \]\[ \text{dom } f^{-1} = \text{ran } f \]<p><a href="#composite-inverse">Composite &amp; inverse</a></p></div>
+</div>
+
+<h2>Calculus</h2>
+<div class="fs-grid">
+  <div class="fs-card" data-kw="derivative table power exponential log trig"><h4>Derivatives</h4>\[ \tfrac{d}{dx}x^n = nx^{n-1} \quad \tfrac{d}{dx}e^{kx} = ke^{kx} \quad \tfrac{d}{dx}\log_e(kx) = \tfrac1x \]\[ \tfrac{d}{dx}\sin(kx) = k\cos(kx) \quad \tfrac{d}{dx}\cos(kx) = -k\sin(kx) \quad \tfrac{d}{dx}\tan(kx) = \tfrac{k}{\cos^2(kx)} \]<p><a href="#diff-rules">Differentiation rules</a></p></div>
+  <div class="fs-card" data-kw="chain product quotient rule"><h4>Chain, product, quotient</h4>\[ \tfrac{dy}{dx} = \tfrac{dy}{du}\tfrac{du}{dx} \quad (uv)' = u'v + uv' \quad \left(\tfrac{u}{v}\right)' = \tfrac{u'v - uv'}{v^2} \]</div>
+  <div class="fs-card" data-kw="antiderivative integral table"><h4>Antiderivatives</h4>\[ \int x^n dx = \tfrac{x^{n+1}}{n + 1} + c \quad \int \tfrac1x dx = \log_e|x| + c \quad \int e^{kx} dx = \tfrac1k e^{kx} + c \]\[ \int \sin(kx) dx = -\tfrac1k\cos(kx) + c \quad \int\cos(kx) dx = \tfrac1k\sin(kx) + c \]<p><a href="#antidiff">Antidifferentiation</a></p></div>
+  <div class="fs-card" data-kw="tangent normal linear approximation"><h4>Tangents and approximation</h4>\[ y - f(a) = f'(a)(x - a) \qquad m_{\text{normal}} = -\tfrac{1}{f'(a)} \]\[ f(x + h) \approx f(x) + hf'(x) \]<p><a href="#diff-apps">Applications</a></p></div>
+  <div class="fs-card" data-kw="definite integral area average value FTC"><h4>Integrals</h4>\[ \int_a^b f(x)\,dx = F(b) - F(a) \qquad f_{\text{avg}} = \tfrac{1}{b - a}\int_a^b f(x)\,dx \]<p>Area between curves: \(\int(\text{upper} - \text{lower})\). <a href="#integration">Integration</a></p></div>
+  <div class="fs-card" data-kw="first principles limit derivative"><h4>First principles</h4>\[ f'(x) = \lim_{h \to 0}\frac{f(x + h) - f(x)}{h} \]<p><a href="#limits">Limits</a></p></div>
+  <div class="fs-card" data-kw="trapezium rule numerical integration"><h4>Trapezium rule</h4>\[ \int_a^b f \approx \tfrac{h}{2}\big[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)\big] \]<p><a href="#numerical">Numerical integration</a></p></div>
+  <div class="fs-card" data-kw="newton's method iteration"><h4>Newton's method</h4>\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]<p><a href="#newton">Newton's method</a></p></div>
+</div>
+
+<h2>Probability and statistics</h2>
+<div class="fs-grid">
+  <div class="fs-card" data-kw="conditional probability independence addition rule"><h4>Probability rules</h4>\[ P(A \cup B) = P(A) + P(B) - P(A \cap B) \]\[ P(A \mid B) = \tfrac{P(A \cap B)}{P(B)} \qquad \text{independent: } P(A \cap B) = P(A)P(B) \]<p><a href="#probability">Probability</a></p></div>
+  <div class="fs-card" data-kw="expected value variance discrete"><h4>Discrete random variables</h4>\[ E(X) = \sum xp(x) \qquad \operatorname{Var}(X) = E(X^2) - \mu^2 \]\[ E(aX + b) = aE(X) + b \qquad \operatorname{Var}(aX + b) = a^2\operatorname{Var}(X) \]<p><a href="#drv">DRVs</a></p></div>
+  <div class="fs-card" data-kw="binomial distribution formula mean variance"><h4>Binomial</h4>\[ P(X = x) = \tbinom{n}{x}p^x(1 - p)^{n - x} \qquad E = np \qquad \operatorname{Var} = np(1 - p) \]<p><a href="#binomial">Binomial</a></p></div>
+  <div class="fs-card" data-kw="pdf continuous mean variance median"><h4>Continuous random variables</h4>\[ \int f = 1 \quad E(X) = \int xf(x)\,dx \quad \operatorname{Var}(X) = \int x^2f(x)\,dx - \mu^2 \]<p>Median: area to the left \(= \frac12\). <a href="#crv">CRVs</a></p></div>
+  <div class="fs-card" data-kw="normal distribution z score standardise"><h4>Normal</h4>\[ Z = \frac{X - \mu}{\sigma} \qquad 68\% / 95\% / 99.7\% \text{ within } 1/2/3\sigma \]<p><a href="#normal">Normal</a></p></div>
+  <div class="fs-card" data-kw="sample proportion confidence interval margin of error"><h4>Sample proportions and CIs</h4>\[ E(\hat P) = p \qquad \operatorname{sd}(\hat P) = \sqrt{\tfrac{p(1 - p)}{n}} \]\[ \hat p \pm z\sqrt{\tfrac{\hat p(1 - \hat p)}{n}},\quad z_{95\%} \approx 1.96 \]<p><a href="#ci">Confidence intervals</a></p></div>
+</div>
+
+<h2>Exact values (not on the sheet)</h2>
+<div class="tbl"><table>
+<thead><tr><th>\(\theta\)</th><th>0</th><th>\(\frac{\pi}{6}\)</th><th>\(\frac{\pi}{4}\)</th><th>\(\frac{\pi}{3}\)</th><th>\(\frac{\pi}{2}\)</th></tr></thead>
+<tbody>
+<tr><td>\(\sin\)</td><td>0</td><td>\(\frac12\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>1</td></tr>
+<tr><td>\(\cos\)</td><td>1</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac12\)</td><td>0</td></tr>
+<tr><td>\(\tan\)</td><td>0</td><td>\(\frac{\sqrt3}{3}\)</td><td>1</td><td>\(\sqrt3\)</td><td>–</td></tr>
+</tbody></table></div>

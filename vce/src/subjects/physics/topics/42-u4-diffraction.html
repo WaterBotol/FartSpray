@@ -1,0 +1,112 @@
+<!--
+id: u4-diffraction
+title: Diffraction & the limits of imaging
+short: Diffraction
+summary: How waves spread through gaps and around obstacles, why the amount of spreading depends on the ratio λ/w, single-slit patterns, and how diffraction limits the detail any imaging system can resolve.
+keywords: diffraction, single slit, gap width, obstacle, lambda over w, spreading, diffraction pattern, central maximum, resolution, resolving power, microscope, electron microscope, telescope, imaging, limits, wavelength, aperture, sound, radio, x ray crystallography
+dotpoints: investigate and describe theoretically and practically the effects of varying the width of the gap or diameter of an obstacle on the diffraction pattern produced by light and apply this to limitations of imaging using electromagnetic waves (\(\frac{\lambda}{w}\))
+-->
+<h2>What diffraction is</h2>
+<p><strong>Diffraction</strong> is the spreading of a wave as it passes through a gap or around the edge of an obstacle. All waves diffract: water waves around a breakwater, sound around a doorway, radio waves around hills, light through a narrow slit.</p>
+<aside class="c-key" data-title="Key idea: it's all about λ/w">
+<p>The amount of diffraction depends on the ratio of the <strong>wavelength</strong> to the <strong>gap width</strong> (or obstacle size), \(\lambda/w\):</p>
+<ul>
+  <li>\(\lambda/w\) close to 1 or larger → <strong>significant</strong> spreading.</li>
+  <li>\(\lambda/w\) much less than 1 → very little spreading; the wave passes through almost as a straight beam with sharp shadows.</li>
+</ul>
+<p>So diffraction increases if the gap is made narrower <em>or</em> the wavelength is made longer.</p>
+</aside>
+
+<figure class="fig">
+<svg viewBox="0 0 440 180" width="440" role="img" aria-label="Waves passing through a wide gap spread only slightly; waves passing through a gap comparable to the wavelength spread out in near-circular wavefronts">
+  <g>
+    <g class="s-acc" style="opacity:.7"><line x1="20" y1="30" x2="20" y2="150"/><line x1="40" y1="30" x2="40" y2="150"/><line x1="60" y1="30" x2="60" y2="150"/></g>
+    <rect x="76" y="20" width="8" height="20" class="f-ink"/><rect x="76" y="140" width="8" height="20" class="f-ink"/>
+    <g class="s-acc" style="opacity:.7">
+      <path d="M100 40 Q104 90 100 140"/><path d="M120 38 Q128 90 120 142"/><path d="M140 36 Q152 90 140 144"/><path d="M160 34 Q176 90 160 146"/>
+    </g>
+    <text x="110" y="174" text-anchor="middle" class="t-sm t-b">wide gap (λ/w small)</text>
+  </g>
+  <g transform="translate(220,0)">
+    <g class="s-acc" style="opacity:.7"><line x1="20" y1="30" x2="20" y2="150"/><line x1="40" y1="30" x2="40" y2="150"/><line x1="60" y1="30" x2="60" y2="150"/></g>
+    <rect x="76" y="20" width="8" height="62" class="f-ink"/><rect x="76" y="98" width="8" height="62" class="f-ink"/>
+    <g class="s-acc" style="opacity:.7">
+      <path d="M84 72 A18 18 0 0 1 84 108"/><path d="M84 56 A34 34 0 0 1 84 124"/><path d="M84 40 A50 50 0 0 1 84 140"/><path d="M84 24 A66 66 0 0 1 84 156"/><path d="M84 12 A80 80 0 0 1 84 168" style="opacity:.6"/>
+    </g>
+    <text x="110" y="174" text-anchor="middle" class="t-sm t-b">narrow gap (λ/w ≈ 1)</text>
+  </g>
+</svg>
+<figcaption>The wavelength is the same in both. Only the gap width changes. Narrow gap → strong spreading.</figcaption>
+</figure>
+
+<h2>Single-slit diffraction of light</h2>
+<p>Light passing through a single narrow slit produces a pattern on a screen: a <strong>broad, bright central maximum</strong> with much dimmer, narrower bands on either side, separated by dark bands.</p>
+<ul>
+  <li>The central maximum is about <strong>twice as wide</strong> as the other bright bands.</li>
+  <li>Narrowing the slit (larger \(\lambda/w\)) makes the whole pattern <strong>spread out</strong>: wider central maximum.</li>
+  <li>Longer wavelength (red rather than blue) also spreads the pattern.</li>
+  <li>An obstacle (a thin wire or hair) of width \(w\) gives a similar pattern to a slit of width \(w\).</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: diffraction vs interference patterns">
+<p>A <strong>double-slit</strong> pattern has <strong>evenly spaced</strong> fringes of similar width. A <strong>single-slit</strong> pattern has a central band twice as wide as the rest, with side bands fading quickly. Questions often show a pattern and ask which setup produced it. (Real double-slit patterns show both: the interference fringes sit inside a single-slit diffraction “envelope”.)</p>
+</aside>
+
+<div class="we" data-title="Why you hear around corners but can't see around them" data-marks="3">
+<div class="we-q"><p>A doorway is 0.90 m wide. Compare the diffraction of (a) sound at 1000 Hz (speed 340 m s⁻¹) and (b) green light (550 nm) passing through it.</p></div>
+<div class="we-s"><p><strong>(a) Sound:</strong> \(\lambda = v/f = 340/1000 = 0.34\ \text{m}\), so \(\lambda/w = 0.34/0.90 = 0.38\). Comparable to 1, so the sound spreads widely into the room.</p></div>
+<div class="we-s"><p><strong>(b) Light:</strong> \(\lambda/w = 5.5\times10^{-7}/0.90 = 6.1\times10^{-7}\). Tiny, so the light hardly diffracts at all and casts a sharp shadow.</p></div>
+<div class="we-a"><p><strong>Sound (λ/w ≈ 0.4) diffracts strongly; light (λ/w ≈ 10⁻⁶) doesn't.</strong> That's why you can hear someone around a corner but not see them.</p></div>
+</div>
+
+<h2>Diffraction limits imaging</h2>
+<p>Every imaging system (eye, camera, microscope, telescope) collects waves through an opening (aperture). Diffraction spreads the light from each point of the object into a small blurred disc. When two points are close together, their blurs overlap and they can't be told apart: they are not <strong>resolved</strong>.</p>
+<ul>
+  <li>Detail smaller than roughly the <strong>wavelength</strong> being used cannot be resolved. Light microscopes (\(\lambda\) ≈ 400–700 nm) can't show objects much smaller than about 200 nm, such as viruses or individual molecules.</li>
+  <li>To see finer detail, use <strong>shorter wavelengths</strong>: ultraviolet, X-rays, or electrons (whose de Broglie wavelengths can be around 0.01 nm; see <a href="#u4-matterwaves">Matter waves</a>).</li>
+  <li>For telescopes, a <strong>larger aperture</strong> (smaller \(\lambda/w\)) reduces diffraction blurring, which is one reason telescope mirrors are huge. Radio telescopes must be enormous (or linked into arrays) because radio wavelengths are so long.</li>
+</ul>
+<aside class="c-exam" data-title="Exam tip: the imaging argument">
+<p>“To resolve smaller detail, the ratio \(\lambda/w\) must be small, so that diffraction (spreading) of the waves around the object or through the aperture is minimal. Using a shorter wavelength (e.g. electrons or X-rays instead of visible light) achieves this.” Name the ratio, the effect (less spreading/blurring) and the consequence (finer detail resolved).</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Light passes through a single slit. Which change produces the greatest amount of diffraction?</p></div>
+<ol><li>wider slit, blue light</li><li>wider slit, red light</li><li>narrower slit, red light</li><li>narrower slit, blue light</li></ol>
+<div class="mcq-x"><p>Diffraction increases with \(\lambda/w\): the longest wavelength (red) through the narrowest slit.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A screen shows a pattern with a very wide central bright band and much narrower, fainter bands on each side. The pattern was most likely produced by:</p></div>
+<ol><li>a single slit</li><li>a double slit with widely spaced slits</li><li>a mirror</li><li>two separate light bulbs</li></ol>
+<div class="mcq-x"><p>A central maximum about twice as wide as the others is the signature of single-slit diffraction. Double-slit fringes are evenly spaced.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Electron microscopes can resolve much finer detail than light microscopes mainly because:</p></div>
+<ol><li>electrons travel faster than light</li><li>electrons have charge and can be focused</li><li>electrons are particles and don't diffract</li><li>the electrons' wavelength is much shorter, so diffraction is much less</li></ol>
+<div class="mcq-x"><p>Electrons do diffract (they have wave properties), but their de Broglie wavelength is far smaller than visible light's, so \(\lambda/w\) is small and blurring is minimal.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>AM radio (wavelength about 300 m) can be received in valleys behind hills where FM radio (wavelength about 3 m) can't. This is best explained by:</p></div>
+<ol><li>AM radio travelling faster</li><li>AM waves diffracting more around the hills because their wavelength is comparable to the hills' size</li><li>FM radio being absorbed by air</li><li>AM radio being a longitudinal wave</li></ol>
+<div class="mcq-x"><p>Both travel at \(c\). The longer AM wavelength gives a larger \(\lambda/w\) for hill-sized obstacles, so AM bends into the shadowed valleys.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Why do we observe diffraction of light easily with a gap of 0.01 mm but not with a gap of 1 cm?</p></div>
+<div class="pq-s"><p>For 500 nm light: \(\lambda/w = 5\times10^{-7}/1\times10^{-5} = 0.05\) for the 0.01 mm gap, large enough for noticeable spreading. For 1 cm, \(\lambda/w = 5\times10^{-5}\), so the spreading is negligible.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A biologist wants to image structures about 50 nm across. Explain why a visible-light microscope is unsuitable and suggest an alternative.</p></div>
+<div class="pq-s"><p>Visible light has wavelengths of about 400–700 nm, much larger than the 50 nm structures, so \(\lambda/w\) is large. [1]</p><p>The light diffracts significantly around such small structures, blurring their images so that detail can't be resolved. [1]</p><p>An electron microscope (or X-rays), with a wavelength much smaller than 50 nm, gives a small \(\lambda/w\), little diffraction and a resolved image. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Diffraction = spreading through gaps or around obstacles; significant when \(\lambda/w \gtrsim 1\).</li>
+  <li>Single slit: wide central maximum; narrower slit or longer λ → more spreading.</li>
+  <li>Diffraction limits resolution: detail smaller than about λ is blurred. Use shorter wavelengths (electrons, X-rays) or larger apertures.</li>
+</ul>

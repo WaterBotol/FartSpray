@@ -1,0 +1,101 @@
+<!--
+id: exam2-set
+title: Exam 2 practice set (CAS)
+short: Exam 2 practice set
+summary: Twelve Exam 2-style multiple-choice questions (the tricky kind) and three multi-part extended-response questions that combine topics, with full CAS-assumed solutions.
+keywords: exam 2, CAS, technology active, multiple choice, extended response, practice exam, mixed, hardest questions, section a, section b, exam practice
+dotpoints: mixed practice across all areas of study with technology
+-->
+<aside class="c-exam" data-title="How to use this set"><p>Exam 2 is 2 hours (plus 15 min reading): Section A is 20 multiple-choice questions (1 mark each); Section B is extended response (about 60 marks). Budget about 1.5 minutes per MCQ and 1.5 minutes per mark in Section B. Use CAS for heavy algebra, but always write the setup (what you define, what you solve) in Section B: that's where the method marks are.</p></aside>
+
+<h2>Section A: multiple choice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p><strong>1.</strong> The range of \(f: (-1, 2] \to \mathbb{R},\ f(x) = x^2 - 2x - 3\) is</p></div>
+<ol><li>\([-4, 0]\)</li><li>\((-4, 0)\)</li><li>\([-4, 0)\)</li><li>\([-3, 0)\)</li><li>\((-4, -3]\)</li></ol>
+<div class="mcq-x"><p>\(f(x) = (x - 1)^2 - 4\): minimum \(-4\) at \(x = 1\) (included). \(f(-1) = 0\) but \(-1\) is excluded, and nothing else gives 0 (\(f(2) = -3\)). So \([-4, 0)\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p><strong>2.</strong> The average rate of change of \(f(x) = \log_e(2x + 1)\) over \([0, 4]\) is closest to</p></div>
+<ol><li>0.222</li><li>0.549</li><li>0.405</li><li>2.197</li><li>0.111</li></ol>
+<div class="mcq-x"><p>\(\frac{\log_e 9 - \log_e 1}{4} = \frac{\log_e 3}{2} \approx 0.549\). D is \(\log_e 9\) (forgot to divide by 4). The instantaneous rate at \(x = 4\) is \(\frac{2}{9}\) (option A).</p></div>
+</div>
+
+<div class="mcq" data-ans="E" data-level="trick">
+<div class="mcq-q"><p><strong>3.</strong> The equation \(|x^2 - 4| = k\) has exactly two solutions when</p></div>
+<ol><li>\(0 &lt; k &lt; 4\)</li><li>\(k = 4\)</li><li>\(k &gt; 4\) only</li><li>\(k \ge 4\)</li><li>\(k = 0\) or \(k &gt; 4\)</li></ol>
+<div class="mcq-x"><p>Slide \(y = k\) over the W shape: \(k = 0\) touches at \(\pm2\) (2 solutions); \(0 &lt; k &lt; 4\) gives 4; \(k = 4\) gives 3 (including the peak at \(x = 0\)); \(k &gt; 4\) gives 2.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p><strong>4.</strong> The largest interval containing \(x = 0\) on which \(f(x) = \sin\left(2x - \frac{\pi}{3}\right)\) is one-to-one is</p></div>
+<ol><li>\(\left[-\frac{\pi}{12}, \frac{5\pi}{12}\right]\)</li><li>\(\left[-\frac{\pi}{4}, \frac{\pi}{4}\right]\)</li><li>\(\left[0, \frac{\pi}{2}\right]\)</li><li>\(\left[-\frac{\pi}{6}, \frac{\pi}{3}\right]\)</li><li>\(\left[-\frac{7\pi}{12}, -\frac{\pi}{12}\right]\)</li></ol>
+<div class="mcq-x"><p>\(\sin\) is increasing when \(2x - \frac{\pi}{3} \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\), i.e. \(x \in \left[-\frac{\pi}{12}, \frac{5\pi}{12}\right]\), which contains 0.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p><strong>5.</strong> \(X \sim \text{Bi}(n, 0.4)\). The smallest \(n\) for which \(P(X = 0) &lt; 0.01\) is</p></div>
+<ol><li>5</li><li>8</li><li>9</li><li>10</li><li>11</li></ol>
+<div class="mcq-x"><p>\(0.6^n &lt; 0.01 \Rightarrow n &gt; 9.015\), so \(n = 10\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p><strong>6.</strong> \(X\) is normally distributed with \(P(X &lt; 10) = 0.3\) and \(P(X &gt; 20) = 0.1\). The mean of \(X\) is closest to</p></div>
+<ol><li>15.0</li><li>12.9</li><li>13.7</li><li>11.4</li><li>14.3</li></ol>
+<div class="mcq-x"><p>\(\frac{10 - \mu}{\sigma} = -0.5244\), \(\frac{20 - \mu}{\sigma} = 1.2816\). Solving: \(\sigma \approx 5.537\), \(\mu \approx 12.90\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p><strong>7.</strong> A random variable has pdf \(f(x) = 3x^2\) for \(0 \le x \le 1\). Its variance is</p></div>
+<ol><li>\(\frac34\)</li><li>\(\frac35\)</li><li>\(\frac{3}{80}\)</li><li>\(\frac{9}{16}\)</li><li>\(\frac{3}{20}\)</li></ol>
+<div class="mcq-x"><p>\(E(X) = \frac34\), \(E(X^2) = \frac35\). \(\operatorname{Var} = \frac35 - \frac{9}{16} = \frac{3}{80}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p><strong>8.</strong> The number of tangents to \(y = x^3\) that pass through the point \((1, 0)\) is</p></div>
+<ol><li>0</li><li>1</li><li>2</li><li>3</li><li>infinitely many</li></ol>
+<div class="mcq-x"><p>Tangent at \(x = a\): \(y = 3a^2x - 2a^3\). Through \((1, 0)\): \(3a^2 - 2a^3 = 0 \Rightarrow a = 0\) or \(a = \frac32\). Two tangents (\(y = 0\) and \(y = \frac{27}{4}x - \frac{27}{4}\)).</p></div>
+</div>
+
+<div class="mcq" data-ans="E" data-level="trick">
+<div class="mcq-q"><p><strong>9.</strong> The system \(kx + 2y = 4,\ 8x + ky = k\) has no solution when</p></div>
+<ol><li>\(k = 4\) only</li><li>\(k = -4\) only</li><li>\(k = 0\)</li><li>\(k \in \mathbb{R}\setminus\{-4, 4\}\)</li><li>\(k \in \{-4, 4\}\)</li></ol>
+<div class="mcq-x"><p>Determinant \(k^2 - 16 = 0\). \(k = 4\): \(2x + y = 2\) vs \(2x + y = 1\) (parallel). \(k = -4\): \(-2x + y = 2\) vs \(-2x + y = 1\) (parallel). Both give no solution; never assume one of them is the “infinitely many” case.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p><strong>10.</strong> A transformation that maps \(y = \log_e x\) onto \(y = \log_e(2x - 4) + 1\) is</p></div>
+<ol><li>\((x, y) \to \left(\frac{x}{2} + 2,\ y + 1\right)\)</li><li>\((x, y) \to (2x + 4,\ y + 1)\)</li><li>\((x, y) \to \left(\frac{x}{2} + 4,\ y + 1\right)\)</li><li>\((x, y) \to (2x - 4,\ y + 1)\)</li><li>\((x, y) \to \left(\frac{x + 4}{2},\ y - 1\right)\)</li></ol>
+<div class="mcq-x"><p>\(\log_e(2(x - 2)) + 1\): dilate by \(\frac12\) from the \(y\)-axis, translate 2 right and 1 up.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p><strong>11.</strong> An approximate 95% confidence interval for \(p\) is \((0.1, 0.3)\). The sample size is closest to</p></div>
+<ol><li>31</li><li>61</li><li>16</li><li>100</li><li>246</li></ol>
+<div class="mcq-x"><p>\(\hat p = 0.2\), \(M = 0.1\): \(n = \frac{1.96^2 \times 0.16}{0.01} \approx 61.5\), so about 61.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p><strong>12.</strong> The trapezium rule with 4 equal strips is used to estimate \(\int_0^4\sqrt{x}\,dx\). The estimate and its relationship to the exact value are</p></div>
+<ol><li>\(2 + \sqrt2 + \sqrt3\), an overestimate</li><li>\(1 + \sqrt2 + \sqrt3\), an underestimate</li><li>\(\frac{16}{3}\), exact</li><li>\(2 + \sqrt2 + \sqrt3\), an underestimate</li><li>\(4 + 2\sqrt2 + 2\sqrt3\), an overestimate</li></ol>
+<div class="mcq-x"><p>\(\frac12\big(0 + 2(1 + \sqrt2 + \sqrt3) + 2\big) = 2 + \sqrt2 + \sqrt3 \approx 5.146 &lt; \frac{16}{3}\). \(\sqrt x\) is concave down, so trapeziums underestimate.</p></div>
+</div>
+
+<h2>Section B: extended response</h2>
+<div class="pq" data-level="exam" data-marks="10">
+<div class="pq-q"><p><strong>Question 1 (functions and calculus).</strong> Let \(f(x) = x^3 - 6x^2 + 9x\).</p><p>a. Find the coordinates and nature of the stationary points. (3 marks)</p><p>b. Find the equation of the tangent at the origin, and the other point where it meets the graph. (3 marks)</p><p>c. Find the area enclosed between the graph and this tangent. (2 marks)</p><p>d. The graph is translated \(k\) units vertically. Find the values of \(k\) for which the image has three \(x\)-intercepts. (2 marks)</p></div>
+<div class="pq-s"><p>a. \(f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3) = 0\). [1] Local max \((1, 4)\), local min \((3, 0)\). [2]</p><p>b. \(f'(0) = 9\), tangent \(y = 9x\). [1] \(x^3 - 6x^2 + 9x = 9x \Rightarrow x^2(x - 6) = 0\). [1] Other point \((6, 54)\). [1]</p><p>c. \(\int_0^6\big(9x - f(x)\big)\,dx = \int_0^6(6x^2 - x^3)\,dx = 432 - 324 = 108\) square units. [2]</p><p>d. The image is \(y = f(x) + k\): max at \(4 + k\), min at \(k\). Need \(4 + k &gt; 0\) and \(k &lt; 0\): \(-4 &lt; k &lt; 0\). [2]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="11">
+<div class="pq-q"><p><strong>Question 2 (probability and statistics).</strong> Bolt lengths are \(L \sim \text{N}(50, 0.4^2)\) mm. Bolts shorter than 49.3 mm or longer than 50.7 mm are rejected.</p><p>a. Find the proportion rejected, to 4 decimal places. (2 marks)</p><p>b. Bolts are packed in boxes of 20. Find the probability that a box contains at most one rejected bolt. (2 marks)</p><p>c. Given a bolt is accepted, find the probability its length exceeds 50.5 mm. (2 marks)</p><p>d. In a random sample of 400 bolts from a new machine, 36 were rejected. Find an approximate 95% confidence interval for the rejection rate, and comment on whether the new machine appears different from the old one. (3 marks)</p><p>e. The old machine is recalibrated so that only 1% of bolts are rejected, with the mean still 50 mm. Find the new standard deviation. (2 marks)</p></div>
+<div class="pq-s"><p>a. \(P(L &lt; 49.3) + P(L &gt; 50.7) = 2P(Z &gt; 1.75) \approx 0.0801\). [2]</p><p>b. \(R \sim \text{Bi}(20, 0.0801)\): \(P(R \le 1) \approx 0.5161\). [2]</p><p>c. \(\frac{P(50.5 &lt; L &lt; 50.7)}{P(49.3 \le L \le 50.7)} = \frac{0.0656}{0.9199} \approx 0.0713\). [2]</p><p>d. \(\hat p = 0.09\); SE \(\approx 0.01431\); CI \(\approx (0.0620, 0.1180)\). [2] The old rate 0.0801 is inside the interval, so there's no clear evidence the new machine is different. [1]</p><p>e. \(P(|L - 50| &gt; 0.7) = 0.01 \Rightarrow \frac{0.7}{\sigma} = z_{0.995} = 2.5758\), so \(\sigma \approx 0.272\) mm. [2]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="10">
+<div class="pq-q"><p><strong>Question 3 (circular functions model).</strong> The depth of water at a jetty is \(D(t) = 5 + 3\sin\left(\frac{\pi t}{6}\right)\) m, \(t\) hours after midnight.</p><p>a. State the period and the maximum and minimum depths. (2 marks)</p><p>b. Find all times in the first 24 hours when the depth is 6.5 m. (2 marks)</p><p>c. A boat needs at least 3.5 m of water. For how many hours per day can it <em>not</em> use the jetty? (3 marks)</p><p>d. Find the rate at which the depth is changing at 2 am. (1 mark)</p><p>e. Find the average depth between midnight and 3 am, exactly. (2 marks)</p></div>
+<div class="pq-s"><p>a. Period 12 h; max 8 m; min 2 m. [2]</p><p>b. \(\sin\frac{\pi t}{6} = \frac12\): \(t = 1, 5, 13, 17\) (1 am, 5 am, 1 pm, 5 pm). [2]</p><p>c. \(D &lt; 3.5 \iff \sin\frac{\pi t}{6} &lt; -\frac12\). [1] In each 12-hour cycle: \(\frac{\pi t}{6} \in \left(\frac{7\pi}{6}, \frac{11\pi}{6}\right) \Rightarrow t \in (7, 11)\): 4 hours. [1] Two cycles per day: 8 hours. [1]</p><p>d. \(D'(t) = \frac{\pi}{2}\cos\frac{\pi t}{6}\); \(D'(2) = \frac{\pi}{2} \cdot \frac12 = \frac{\pi}{4} \approx 0.785\) m/h. [1]</p><p>e. \(\frac13\int_0^3 D\,dt = \frac13\left(15 + \frac{18}{\pi}\right) = 5 + \frac{6}{\pi}\) m (≈ 6.91 m). [2]</p></div>
+</div>
+
+<h2>How did you go?</h2>
+<p>Section A: 10+ out of 12 is excellent; the “trick” ones (1, 3 and 9) are where most marks go. Section B totals 31 marks. If you lost marks on setups (writing what you're solving), practise writing one line before every CAS step. For more, work through real papers on the <a href="https://www.vcaa.vic.edu.au/assessment/vce/examination-specifications-past-examinations-and-examination-reports/examination-specifications-past-examinations-and-external-assessment-reports" target="_blank" rel="noopener">VCAA past examinations page</a> and read the examiners' reports.</p>
