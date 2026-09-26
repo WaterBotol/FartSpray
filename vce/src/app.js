@@ -333,7 +333,7 @@
         h += '</ul></div>';
       });
     }
-    h += '<div class="nav-group"><div class="nav-eyebrow" style="padding:4px 6px">Everywhere</div><ul>' +
+    h += '<div class="nav-group"><div class="nav-eyebrow" style="padding:4px 6px">General</div><ul>' +
       ['home', 'gauntlet', 'review'].map(id => byId[id] ? '<li><a href="#' + id + '" class="' + (id === activeId ? 'active' : '') + '"><span class="nav-dot" style="border-style:dashed"></span><span>' + esc(byId[id].short) + '</span></a></li>' : '').join('') + '</ul></div>';
     nav.innerHTML = h;
     $$('.subj-btn', nav).forEach(b => b.addEventListener('click', () => {
@@ -506,7 +506,7 @@
   }
   function headHTML(t) {
     const g = t.groupObj, s = t.subj;
-    let h = '<header class="t-head"><div class="eyebrow">' + esc((s ? s.name : 'Everywhere') + (g && g.eyebrow ? ' · ' + g.eyebrow : '')) + '</div><h1>' + t.title + '</h1>';
+    let h = '<header class="t-head"><div class="eyebrow">' + esc((s ? s.name : 'General') + (g && g.eyebrow ? ' · ' + g.eyebrow : '')) + '</div><h1>' + t.title + '</h1>';
     if (t.summary) h += '<p class="t-summary">' + t.summary + '</p>';
     h += '<div class="chips">' + chipsFor(t) + '</div>';
     if (t.dotpoints && t.dotpoints.length) h += '<details class="dotpoints"><summary>Study design key knowledge covered<span>summary</span></summary><p class="ln">Summarised from the VCAA study design; the official wording may differ. Check the study design on the VCAA website for the exact dot points.</p><ul>' + t.dotpoints.map(d => '<li>' + d + '</li>').join('') + '</ul></details>';

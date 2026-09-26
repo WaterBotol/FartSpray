@@ -1,7 +1,7 @@
 {
   "id": "english", "prefix": "el", "name": "English Language", "short": "English Lang.",
   "design": "Study design 2024 onwards",
-  "blurb": "Metalanguage across all subsystems; informal and formal language; Australian English, varieties and identity; commentary and essay practice with contemporary examples.",
+  "blurb": "Metalanguage; informal and formal language; Australian English, varieties and identity; commentary and essays.",
   "groups": [
     { "id": "start", "eyebrow": "Start here", "title": "", "map": false, "topics": ["home", "exam-technique", "metalanguage"] },
     { "id": "u3a1", "eyebrow": "Unit 3 · AoS 1", "title": "Informal language", "quiz": true,

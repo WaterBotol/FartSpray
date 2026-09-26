@@ -1,7 +1,7 @@
 {
   "id": "physics", "prefix": "ph", "name": "Physics", "short": "Physics",
   "design": "Study design 2024–2027",
-  "blurb": "Motion, fields, electricity generation, light, matter and relativity, with 16 simulations.",
+  "blurb": "Motion, fields, electricity generation, light, matter and relativity.",
   "groups": [
     { "id": "start", "eyebrow": "Start here", "title": "", "map": false, "topics": ["home", "exam-technique", "formula-sheet"] },
     { "id": "u3a1", "eyebrow": "Unit 3 · AoS 1", "title": "How do physicists explain motion in two dimensions?", "quiz": true,

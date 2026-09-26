@@ -14,7 +14,7 @@
       "topics": ["population-genetics", "speciation", "evidence", "human-evolution"] },
     { "id": "u4a3", "eyebrow": "Unit 4 · AoS 3", "title": "How is scientific inquiry used to investigate cellular processes and/or biological change?", "quiz": true,
       "topics": ["investigation"] },
-    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed, exam-style sets from basic to brutal", "quiz": true,
+    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed exam-style questions", "quiz": true,
       "topics": ["exam-mcq", "exam-extended"] },
     { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }
   ]

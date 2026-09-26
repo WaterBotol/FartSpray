@@ -14,7 +14,7 @@
       "topics": ["lab-analysis", "ir-ms", "nmr", "chromatography", "volumetric", "food", "enzymes", "medicines"] },
     { "id": "u4a3", "eyebrow": "Unit 4 · AoS 3", "title": "How is scientific inquiry used to investigate the sustainable production of energy and/or materials?", "quiz": true,
       "topics": ["key-skills", "investigation"] },
-    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed, exam-style sets from basic to brutal", "quiz": true,
+    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed exam-style questions", "quiz": true,
       "topics": ["exam-mcq", "exam-extended"] },
     { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }
   ]
