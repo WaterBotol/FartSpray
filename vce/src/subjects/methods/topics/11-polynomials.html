@@ -3,7 +3,7 @@ id: polynomials
 title: Polynomials: factor theorem, cubics & quartics
 short: Polynomials
 summary: Division, the remainder and factor theorems, sums and differences of cubes, the shapes of cubic and quartic graphs, repeated roots, and counting solutions when there is a parameter.
-keywords: polynomial, cubic, quartic, factor theorem, remainder theorem, long division, synthetic division, sum of cubes, difference of cubes, repeated root, stationary point of inflection, turning point form, x-intercepts, number of solutions, parameter, leading coefficient, end behaviour
+keywords: difference of squares, quartic, number of solutions, polynomial, cubic, quartic, factor theorem, remainder theorem, long division, synthetic division, sum of cubes, difference of cubes, repeated root, stationary point of inflection, turning point form, x-intercepts, number of solutions, parameter, leading coefficient, end behaviour
 dotpoints: graphs of polynomial functions and their key features | the factor and remainder theorems and polynomial division | solution of polynomial equations, including those with parameters
 -->
 <h2>Division, remainders and factors</h2>
@@ -74,6 +74,15 @@ dotpoints: graphs of polynomial functions and their key features | the factor an
 <div class="we-s" data-f="f&#x27;(x) = 0 \text{ at turning points}"><p>\(y = x^3 - 3x\) has turning points where \(3x^2 - 3 = 0\), i.e. \(x = \pm1\): a local max at \((-1, 2)\) and a local min at \((1, -2)\).</p></div>
 <div class="we-s"><p>The line cuts three times when it is strictly between the turning points: \(-2 < -k < 2\), i.e. \(-2 < k < 2\). It touches a turning point (two solutions) when \(-k = \pm2\).</p></div>
 <div class="we-a"><p><strong>(a) \(-2 < k < 2\); (b) \(k = \pm2\); (c) \(k < -2\) or \(k > 2\).</strong> Check (b): \(k = 2\) gives \(x^3 - 3x + 2 = (x - 1)^2(x + 2)\), two distinct solutions.</p></div>
+</div>
+
+<div class="we" data-title="How many solutions? A difference of squares (hard)" data-marks="4">
+<div class="we-q"><p>Let \(f(x) = (x^2 - 1)^2\) and \(k &gt; 0\). Find the number of solutions of \(f(x) = k^2\) for each value of \(k\).</p></div>
+<div class="we-t"><p>Don't expand a quartic. Anything of the form \(A^2 = B^2\) is a difference of squares, \((A - B)(A + B) = 0\), which splits into two easier equations. Count the solutions of each separately, and watch for values of the parameter where a solution count changes or two solutions coincide.</p></div>
+<div class="we-s" data-f="A^2 - B^2 = (A - B)(A + B)"><p>\((x^2 - 1)^2 - k^2 = 0 \Rightarrow (x^2 - 1 - k)(x^2 - 1 + k) = 0\), so \(x^2 = 1 + k\) or \(x^2 = 1 - k\).</p></div>
+<div class="we-s" data-f="x^2 = c:\ 2 \text{ solutions if } c &gt; 0,\ 1 \text{ if } c = 0,\ 0 \text{ if } c &lt; 0"><p>\(x^2 = 1 + k\): since \(k &gt; 0\), \(1 + k &gt; 0\), giving always two solutions \(x = \pm\sqrt{1 + k}\).</p></div>
+<div class="we-s"><p>\(x^2 = 1 - k\): two solutions if \(0 &lt; k &lt; 1\); one solution (\(x = 0\)) if \(k = 1\); none if \(k &gt; 1\). The two equations never share a solution, because \(1 + k \neq 1 - k\) for \(k &gt; 0\).</p></div>
+<div class="we-a" data-f="f&#x27;(x) = 0 \text{ at turning points}"><p><strong>4 solutions for \(0 &lt; k &lt; 1\); 3 solutions for \(k = 1\); 2 solutions for \(k &gt; 1\).</strong> Graphically: \(y = (x^2 - 1)^2\) has minimums at \((\pm1, 0)\) and a local maximum at \((0, 1)\). The line \(y = k^2\) cuts four times below the maximum, touches it (3 solutions) when \(k^2 = 1\), and cuts twice above it.</p></div>
 </div>
 
 <aside class="c-trap" data-title="Trick alert: polynomial traps">
