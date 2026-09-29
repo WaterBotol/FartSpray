@@ -548,6 +548,22 @@ svg .t-w { fill: var(--fw); } svg .t-n { fill: var(--fn); } svg .t-t { fill: var
 .rv-item a { font-weight: 700; text-decoration: none; }
 .rv-item .meta { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
 .rv-item .btn { margin-left: auto; height: 30px; font-size: 13px; }
+.nt-bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin: 18px 0 10px; font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.nt-list { display: grid; gap: 12px; }
+.nt-card { border: 1px solid var(--line); border-left: 4px solid var(--sc, var(--accent)); border-radius: var(--radius); background: var(--surface); padding: 14px 18px 16px; min-width: 0; }
+.prose .nt-card h3 { margin: 2px 0 6px; font-size: 19px; }
+.nt-card h3 a { text-decoration: none; color: inherit; }
+.nt-card h3 a:hover { color: var(--sc, var(--accent)); }
+.nt-sum ul { margin: 0.2rem 0 0.4rem; }
+.nt-sum li { margin: 0.2rem 0; }
+.nt-boxes { display: grid; gap: 8px; margin: 10px 0 4px; }
+.prose .nt-boxes aside[class^="c-"] { margin: 0; padding: 10px 14px; font-size: 15px; }
+.nt-more { margin-top: 10px; }
+.nt-card.open .nt-boxes { display: none; }
+.nt-card.open .nt-more { background: var(--sc-soft, var(--accent-soft)); border-color: var(--sc, var(--accent)); }
+.nt-full { margin-top: 14px; padding-top: 6px; border-top: 1px dashed var(--line-2); min-width: 0; }
+.prose .nt-full > h2 { font-size: 21px; margin: 1.6rem 0 0.5rem; }
+.prose .nt-full > h2:first-child { margin-top: 0.6rem; }
 .flash { animation: flash 1.6s ease-out; }
 @keyframes flash { 0% { box-shadow: 0 0 0 4px var(--accent); } 100% { box-shadow: 0 0 0 0 transparent; } }
 

@@ -334,7 +334,7 @@
       });
     }
     h += '<div class="nav-group"><div class="nav-eyebrow" style="padding:4px 6px">General</div><ul>' +
-      ['home', 'gauntlet', 'review'].map(id => byId[id] ? '<li><a href="#' + id + '" class="' + (id === activeId ? 'active' : '') + '"><span class="nav-dot" style="border-style:dashed"></span><span>' + esc(byId[id].short) + '</span></a></li>' : '').join('') + '</ul></div>';
+      ['home', 'notes', 'gauntlet', 'review'].map(id => byId[id] ? '<li><a href="#' + id + '" class="' + (id === activeId ? 'active' : '') + '"><span class="nav-dot" style="border-style:dashed"></span><span>' + esc(byId[id].short) + '</span></a></li>' : '').join('') + '</ul></div>';
     nav.innerHTML = h;
     $$('.subj-btn', nav).forEach(b => b.addEventListener('click', () => {
       const sid = b.dataset.s;
@@ -559,6 +559,7 @@
       else if (k === 'subjects') s.innerHTML = subjectsHTML();
       else if (k === 'subjects-mini') s.innerHTML = subjectsMiniHTML();
       else if (k === 'gauntlet') mountGauntlet(s);
+      else if (k === 'notes') mountNotes(s);
       else if (k === 'review') mountReview(s);
       else if (k === 'resume') s.innerHTML = resumeHTML(sid);
     });
@@ -668,6 +669,85 @@
       step();
     };
     render0();
+  }
+
+  /* Quick notes: short card per topic (summary bullets, key ideas, traps), expandable to the
+     full topic minus its practice questions. */
+  function noteParts(t) {
+    if (t._np) return t._np;
+    const tp = document.createElement('template'); tp.innerHTML = t.html;
+    let sec = '';
+    const full = [], summary = [], boxes = [];
+    Array.from(tp.content.children).forEach(n => {
+      if (n.tagName === 'H2') sec = n.textContent.trim();
+      if (sec === 'Practice') return;
+      if (sec === 'Summary') { if (n.tagName !== 'H2') summary.push(n.outerHTML); return; }
+      full.push(n);
+      if (n.matches('aside.c-key, aside.c-trap')) boxes.push(n.outerHTML);
+    });
+    const box = document.createElement('div'); full.forEach(n => box.appendChild(n));
+    $$('.mcq, .pq', box).forEach(q => q.remove());
+    return (t._np = { summary: summary.join(''), boxes, full: box.innerHTML });
+  }
+  function mountNotes(slot) {
+    const noted = g => g.topics.map(id => byId[id]).filter(t => t && !t.special && /<h2>Summary<\/h2>/.test(t.html));
+    const allGroups = G.subjects.flatMap(s => s.groups.filter(g => noted(g).length));
+    const def = { groups: SUBJ[S.subject] ? allGroups.filter(g => g.subject === S.subject).map(g => g.key) : [], boxes: true };
+    const cfg = Object.assign(def, store.get('nt1', {}));
+    cfg.groups = cfg.groups.filter(k => allGroups.some(g => g.key === k));
+    let h = '<div class="gz-setup">';
+    G.subjects.forEach(s => {
+      const gs = allGroups.filter(g => g.subject === s.id); if (!gs.length) return;
+      h += '<div class="gz-row gz-subj"><label class="pill pill-subj" data-s="' + s.id + '"><input type="checkbox" data-subj="' + s.id + '"' + (gs.every(g => cfg.groups.includes(g.key)) ? ' checked' : '') + '> <b>' + esc(s.name) + '</b></label>' +
+        gs.map(g => '<label class="pill"><input type="checkbox" value="' + g.key + '"' + (cfg.groups.includes(g.key) ? ' checked' : '') + '> ' + esc(g.eyebrow) + '</label>').join('') + '</div>';
+    });
+    h += '<div class="gz-row"><label class="pill"><input type="checkbox" id="ntBoxes"' + (cfg.boxes ? ' checked' : '') + '> Key ideas &amp; trick alerts</label></div></div>' +
+      '<div class="nt-bar"><span class="nt-count"></span><span class="sim-btns"><button class="btn" type="button" id="ntOpen">Expand all</button><button class="btn ghost" type="button" id="ntClose">Collapse all</button></span></div><div class="nt-list"></div>';
+    slot.innerHTML = h;
+    const list = $('.nt-list', slot), count = $('.nt-count', slot);
+    const openCard = (card, on) => {
+      const full = $('.nt-full', card), b = $('.nt-more', card);
+      if (on && !full.dataset.ready) {
+        full.innerHTML = noteParts(byId[card.dataset.t]).full;
+        enhanceCallouts(full); enhanceWorked(full); renderMath(full); mountSims(full);
+        $$('[id]', full).forEach(x => x.removeAttribute('id'));
+        full.dataset.ready = '1';
+      }
+      full.hidden = !on; card.classList.toggle('open', on);
+      b.textContent = on ? 'Hide full notes' : 'Full notes';
+      b.setAttribute('aria-expanded', on);
+    };
+    const draw = () => {
+      runCleanups();
+      const ts = [];
+      G.subjects.forEach(s => s.groups.forEach(g => { if (cfg.groups.includes(g.key)) noted(g).forEach(t => ts.push(t)); }));
+      count.textContent = ts.length ? ts.length + ' topic' + (ts.length > 1 ? 's' : '') : '';
+      $$('button', count.nextElementSibling).forEach(b => { b.hidden = !ts.length; });
+      if (!ts.length) { list.innerHTML = '<p class="ln">Pick at least one area above.</p>'; return; }
+      list.innerHTML = ts.map(t => {
+        const p = noteParts(t);
+        return '<article class="nt-card" data-s="' + t.subject + '" data-t="' + t.id + '"><div class="eyebrow">' + esc(t.subj.short + ' · ' + t.groupObj.eyebrow) + '</div>' +
+          '<h3><a href="#' + t.id + '">' + (t.short || t.title) + '</a></h3><div class="nt-sum">' + p.summary + '</div>' +
+          (cfg.boxes && p.boxes.length ? '<div class="nt-boxes">' + p.boxes.join('') + '</div>' : '') +
+          '<button class="btn nt-more" type="button" aria-expanded="false">Full notes</button><div class="nt-full" hidden></div></article>';
+      }).join('');
+      enhanceCallouts(list); renderMath(list);
+    };
+    slot.addEventListener('change', e => {
+      const sj = e.target.dataset && e.target.dataset.subj;
+      if (sj) $$('input[type=checkbox][value^="' + sj + ':"]', slot).forEach(i => { i.checked = e.target.checked; });
+      else if (e.target.value && e.target.value.includes(':')) { const sp = e.target.value.split(':')[0], all = $$('input[type=checkbox][value^="' + sp + ':"]', slot); $('input[data-subj="' + sp + '"]', slot).checked = all.every(i => i.checked); }
+      cfg.groups = $$('input[type=checkbox][value]:checked', slot).map(i => i.value);
+      cfg.boxes = $('#ntBoxes', slot).checked;
+      store.set('nt1', cfg); draw();
+    });
+    slot.addEventListener('click', e => {
+      const b = e.target.closest('.nt-more');
+      if (b) { const card = b.closest('.nt-card'), on = !card.classList.contains('open'); openCard(card, on); if (!on) card.scrollIntoView({ block: 'nearest' }); return; }
+      if (e.target.id === 'ntOpen') $$('.nt-card', list).forEach(c => openCard(c, true));
+      if (e.target.id === 'ntClose') { $$('.nt-card', list).forEach(c => openCard(c, false)); slot.scrollIntoView({ block: 'start' }); }
+    });
+    draw();
   }
 
   function mountReview(slot) {
