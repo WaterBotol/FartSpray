@@ -226,13 +226,14 @@
         score += best;
       }
       if (!ok) continue;
-      if (toks.length > 1 && e.nTitle.includes(phrase)) score += 12; else if (toks.length > 1 && e.nText.includes(phrase)) score += 5;
+      if (toks.length > 1 && e.nTitle.includes(phrase)) score += 12; else if (toks.length > 1 && e.nKw.includes(phrase)) score += 10; else if (toks.length > 1 && e.nText.includes(phrase)) score += 5;
       score += { topic: 5, term: 4, formula: 3, example: 2, section: 2 }[e.kind] || 0;
-      if (e.s && e.s === S.subject) score += 4;
+      if (e.s && S.subject) score += e.s === S.subject ? 4 : -4;
       res.push({ e, score, alts: groups.flatMap(g => g.map(x => x[0])) });
     }
     res.sort((a, b) => b.score - a.score);
-    return res.slice(0, 16);
+    let terms = 0; // at most two glossary definitions, so topic pages aren't crowded out
+    return res.filter(r => r.e.kind !== 'term' || ++terms <= 2).slice(0, 16);
   }
   function hlRe(alts) {
     const sorted = alts.filter(a => a.length > 1).sort((a, b) => b.length - a.length);

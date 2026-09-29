@@ -2,8 +2,8 @@
 id: volumetric
 title: Volumetric analysis (titrations)
 short: Titrations
-summary: Standard solutions and primary standards, titration technique (rinsing, aliquots, concordant titres, end point vs equivalence point), acid–base titrations of organic acids, redox titrations (permanganate, iodine/vitamin C), dilution factors and error analysis.
-keywords: titration, volumetric analysis, standard solution, primary standard, burette, pipette, aliquot, titre, concordant titres, end point, equivalence point, indicator, acid base titration, vinegar, ethanoic acid, citric acid, redox titration, permanganate, iodine, vitamin C, ascorbic acid, dilution factor, rinsing, errors, m/v percentage
+summary: Standard solutions and primary standards, titration technique (rinsing, aliquots, concordant titres, end point vs equivalence point), choosing an indicator from the titration curve, acid–base titrations of organic acids, redox titrations (permanganate, iodine/vitamin C), dilution factors and error analysis.
+keywords: titration, volumetric analysis, standard solution, primary standard, burette, pipette, aliquot, titre, concordant titres, end point, equivalence point, indicator, choosing an indicator, indicator choice, phenolphthalein, methyl orange, methyl red, bromothymol blue, pH range, titration curve, pH curve, acid base titration, vinegar, ethanoic acid, citric acid, redox titration, permanganate, iodine, vitamin C, ascorbic acid, dilution factor, rinsing, errors, m/v percentage
 dotpoints: the principles of volumetric analysis, including standard solutions, primary standards and titration technique | calculations from acid–base and redox titration data, including dilution factors | sources of error in titrations
 -->
 <h2>Technique</h2>
@@ -44,6 +44,41 @@ dotpoints: the principles of volumetric analysis, including standard solutions, 
 <div class="we-a"><p><strong>\(\frac{0.0999}{0.02000} = 5.00\text{ g L}^{-1}\).</strong> Forgetting the 1 : 3 ratio triples the answer.</p></div>
 </div>
 
+<h2>Choosing an indicator</h2>
+<p>An indicator changes colour over a narrow pH range. Near the equivalence point the pH jumps sharply (the near-vertical part of the titration curve). Pick an indicator whose colour-change range lies <strong>inside that jump</strong>, so the end point matches the equivalence point. The pH at equivalence depends on the salt formed.</p>
+<div class="tbl"><table>
+<thead><tr><th>Titration</th><th>pH at equivalence</th><th>Why</th><th>Suitable indicator</th></tr></thead>
+<tbody>
+<tr><td>Strong acid + strong base (HCl + NaOH)</td><td>7</td><td>The salt (NaCl) is neutral. The jump is very large (about pH 3–11).</td><td>Most indicators work: bromothymol blue, phenolphthalein or methyl orange</td></tr>
+<tr><td>Weak acid + strong base (ethanoic acid in vinegar, citric acid + NaOH)</td><td>Above 7 (about 8–9)</td><td>The ethanoate ion is a weak base, so the solution is basic at equivalence. The jump is smaller and sits above 7.</td><td><strong>Phenolphthalein</strong></td></tr>
+<tr><td>Strong acid + weak base (HCl + NH₃, or Na₂CO₃ as a primary standard)</td><td>Below 7 (about 4–5)</td><td>The ammonium ion is a weak acid, so the solution is acidic at equivalence.</td><td><strong>Methyl orange</strong> or methyl red</td></tr>
+<tr><td>Weak acid + weak base</td><td>Near 7, but no sharp jump</td><td>The pH changes gradually, so no indicator gives a sharp end point.</td><td>Avoid; use a pH meter instead</td></tr>
+</tbody></table></div>
+<figure class="fig">
+<svg viewBox="0 0 420 260" width="420" role="img" aria-label="titration curves for a strong acid and a weak acid titrated with sodium hydroxide, with indicator ranges"><rect x="44" y="76.3" width="352" height="24.8" class="f-w" style="opacity:.16"/><text x="392" y="87.3" text-anchor="end" class="t-sm">phenolphthalein 8.3–10.0</text><rect x="44" y="157.9" width="352" height="18.9" class="f-n" style="opacity:.16"/><text x="392" y="168.9" text-anchor="end" class="t-sm">methyl orange 3.1–4.4</text><line x1="44" y1="222" x2="400" y2="222" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><line x1="44" y1="222" x2="44" y2="10" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><text x="38" y="226.0" text-anchor="end" class="t-sm">0</text><text x="38" y="124.0" text-anchor="end" class="t-sm">7</text><text x="38" y="22.0" text-anchor="end" class="t-sm">14</text><line x1="44" y1="120.0" x2="396" y2="120.0" class="s-dash"/><line x1="220.0" y1="222" x2="220.0" y2="18" class="s-dash"/><text x="220.0" y="236" text-anchor="middle" class="t-sm">20.0 (equivalence)</text><text x="48" y="14" class="t-sm t-b">pH</text><text x="396" y="252" text-anchor="end" class="t-sm t-b">volume of 0.100 M NaOH added (mL)</text><polyline points="44.0,207.4 47.5,207.2 51.0,206.9 54.6,206.7 58.1,206.4 61.6,206.2 65.1,205.9 68.6,205.6 72.2,205.4 75.7,205.1 79.2,204.9 82.7,204.6 86.2,204.3 89.8,204.1 93.3,203.8 96.8,203.5 100.3,203.2 103.8,202.9 107.4,202.7 110.9,202.4 114.4,202.1 117.9,201.8 121.4,201.5 125.0,201.1 128.5,200.8 132.0,200.5 135.5,200.1 139.0,199.8 142.6,199.4 146.1,199.0 149.6,198.7 153.1,198.3 156.6,197.8 160.2,197.4 163.7,196.9 167.2,196.5 170.7,195.9 174.2,195.4 177.8,194.8 181.3,194.2 184.8,193.5 188.3,192.8 191.8,192.0 195.4,191.1 198.9,190.0 202.4,188.8 202.8,188.6 203.3,188.5 203.7,188.3 204.2,188.1 204.6,187.9 205.0,187.7 205.5,187.5 205.9,187.3 206.4,187.1 206.8,186.9 207.2,186.7 207.7,186.4 208.1,186.2 208.6,186.0 209.0,185.7 209.4,185.4 209.9,185.2 210.3,184.9 210.8,184.6 211.2,184.2 211.6,183.9 212.1,183.6 212.5,183.2 213.0,182.8 213.4,182.4 213.8,181.9 214.3,181.5 214.7,180.9 215.2,180.4 215.6,179.8 216.0,179.1 216.5,178.3 216.9,177.5 217.4,176.5 217.8,175.4 218.2,173.9 218.7,172.1 219.1,169.5 219.6,165.1 220.0,120.0 220.4,74.9 220.9,70.5 221.3,67.9 221.8,66.1 222.2,64.7 222.6,63.6 223.1,62.6 223.5,61.8 224.0,61.0 224.4,60.4 224.8,59.8 225.3,59.2 225.7,58.7 226.2,58.3 226.6,57.9 227.0,57.5 227.5,57.1 227.9,56.7 228.4,56.4 228.8,56.1 229.2,55.8 229.7,55.5 230.1,55.2 230.6,54.9 231.0,54.7 231.4,54.5 231.9,54.2 232.3,54.0 232.8,53.8 233.2,53.6 233.6,53.4 234.1,53.2 234.5,53.0 235.0,52.8 235.4,52.6 235.8,52.5 236.3,52.3 236.7,52.1 237.2,52.0 237.6,51.8 241.1,50.7 244.6,49.8 248.2,49.0 251.7,48.4 255.2,47.7 258.7,47.2 262.2,46.7 265.8,46.3 269.3,45.8 272.8,45.5 276.3,45.1 279.8,44.8 283.4,44.5 286.9,44.2 290.4,43.9 293.9,43.7 297.4,43.4 301.0,43.2 304.5,43.0 308.0,42.8 311.5,42.6 315.0,42.4 318.6,42.2 322.1,42.0 325.6,41.9 329.1,41.7 332.6,41.5 336.2,41.4 339.7,41.3 343.2,41.1 346.7,41.0 350.2,40.9 353.8,40.7 357.3,40.6 360.8,40.5 364.3,40.4 367.8,40.3 371.4,40.2 374.9,40.1 378.4,40.0 381.9,39.9 385.4,39.8 389.0,39.7 392.5,39.6 396.0,39.5" class="s-mut" style="stroke-width:2;stroke-dasharray:6 4"/><polyline points="44.0,180.1 47.5,175.6 51.0,172.3 54.6,170.0 58.1,168.1 61.6,166.6 65.1,165.4 68.6,164.3 72.2,163.3 75.7,162.4 79.2,161.6 82.7,160.8 86.2,160.1 89.8,159.5 93.3,158.8 96.8,158.2 100.3,157.6 103.8,157.0 107.4,156.5 110.9,155.9 114.4,155.4 117.9,154.9 121.4,154.4 125.0,153.9 128.5,153.4 132.0,152.9 135.5,152.3 139.0,151.8 142.6,151.3 146.1,150.8 149.6,150.3 153.1,149.8 156.6,149.2 160.2,148.7 163.7,148.1 167.2,147.5 170.7,146.9 174.2,146.2 177.8,145.6 181.3,144.8 184.8,144.1 188.3,143.3 191.8,142.4 195.4,141.4 198.9,140.3 202.4,139.0 202.8,138.8 203.3,138.6 203.7,138.4 204.2,138.2 204.6,138.0 205.0,137.8 205.5,137.6 205.9,137.4 206.4,137.2 206.8,137.0 207.2,136.7 207.7,136.5 208.1,136.2 208.6,136.0 209.0,135.7 209.4,135.4 209.9,135.2 210.3,134.9 210.8,134.6 211.2,134.2 211.6,133.9 212.1,133.5 212.5,133.1 213.0,132.7 213.4,132.3 213.8,131.9 214.3,131.4 214.7,130.9 215.2,130.3 215.6,129.7 216.0,129.0 216.5,128.2 216.9,127.4 217.4,126.4 217.8,125.2 218.2,123.8 218.7,121.9 219.1,119.4 219.6,115.0 220.0,94.9 220.4,74.9 220.9,70.5 221.3,67.9 221.8,66.1 222.2,64.7 222.6,63.6 223.1,62.6 223.5,61.8 224.0,61.0 224.4,60.4 224.8,59.8 225.3,59.2 225.7,58.7 226.2,58.3 226.6,57.9 227.0,57.5 227.5,57.1 227.9,56.7 228.4,56.4 228.8,56.1 229.2,55.8 229.7,55.5 230.1,55.2 230.6,54.9 231.0,54.7 231.4,54.5 231.9,54.2 232.3,54.0 232.8,53.8 233.2,53.6 233.6,53.4 234.1,53.2 234.5,53.0 235.0,52.8 235.4,52.6 235.8,52.5 236.3,52.3 236.7,52.1 237.2,52.0 237.6,51.8 241.1,50.7 244.6,49.8 248.2,49.0 251.7,48.4 255.2,47.7 258.7,47.2 262.2,46.7 265.8,46.3 269.3,45.8 272.8,45.5 276.3,45.1 279.8,44.8 283.4,44.5 286.9,44.2 290.4,43.9 293.9,43.7 297.4,43.4 301.0,43.2 304.5,43.0 308.0,42.8 311.5,42.6 315.0,42.4 318.6,42.2 322.1,42.0 325.6,41.9 329.1,41.7 332.6,41.5 336.2,41.4 339.7,41.3 343.2,41.1 346.7,41.0 350.2,40.9 353.8,40.7 357.3,40.6 360.8,40.5 364.3,40.4 367.8,40.3 371.4,40.2 374.9,40.1 378.4,40.0 381.9,39.9 385.4,39.8 389.0,39.7 392.5,39.6 396.0,39.5" class="s-acc" style="stroke-width:2.4"/><text x="180.4" y="135.0" text-anchor="end" class="t-sm t-b t-acc">ethanoic acid (weak)</text><text x="70.4" y="221.5" class="t-sm t-b t-mut">HCl (strong)</text><text x="226.0" y="98.9" class="t-sm">pH 8.7</text></svg>
+<figcaption>20.00 mL of 0.100 M acid titrated with 0.100 M NaOH. The weak acid's curve starts higher, rises gently through its buffer region, and jumps at equivalence from about pH 7 to 11. Phenolphthalein's range sits inside that jump; methyl orange's doesn't, so it would change colour far too early.</figcaption>
+</figure>
+<div class="tbl"><table>
+<thead><tr><th>Indicator</th><th>Colour change range (pH)</th><th>Colour: acid → base</th></tr></thead>
+<tbody>
+<tr><td>Methyl orange</td><td>3.1–4.4</td><td>red → yellow</td></tr>
+<tr><td>Methyl red</td><td>4.4–6.2</td><td>red → yellow</td></tr>
+<tr><td>Bromothymol blue</td><td>6.0–7.6</td><td>yellow → blue</td></tr>
+<tr><td>Phenol red</td><td>6.8–8.4</td><td>yellow → red</td></tr>
+<tr><td>Phenolphthalein</td><td>8.3–10.0</td><td>colourless → pink</td></tr>
+</tbody></table></div>
+<p class="ln">Typical ranges. In the exam, use the values in the VCAA data book's indicator table.</p>
+<aside class="c-exam" data-title="Exam tip: justify the choice">
+<p>A 2-mark answer names the indicator <em>and</em> links it to the pH at equivalence: “The salt, sodium ethanoate, is basic, so the equivalence point is above pH 7 (about 8.7). Phenolphthalein changes colour between 8.3 and 10.0, within the steep rise, so its end point coincides with the equivalence point.”</p>
+</aside>
+<aside class="c-trap" data-title="Trick alert: indicator traps">
+<ul>
+  <li><strong>Equivalence ≠ neutral.</strong> Only a strong acid–strong base titration reaches equivalence at pH 7.</li>
+  <li><strong>Methyl orange in a vinegar titration</strong> changes colour at about pH 4, long before equivalence, so the titre is far too small and the calculated concentration too low.</li>
+  <li><strong>Use only a couple of drops of indicator.</strong> Indicators are weak acids themselves; too much reacts with the titrant.</li>
+</ul>
+</aside>
+
 <h2>Redox titrations</h2>
 <div class="we" data-title="Iron tablet with permanganate" data-marks="4">
 <div class="we-q"><p>An iron tablet is dissolved in acid and made up to 100.0 mL. 20.00 mL aliquots of this Fe²⁺ solution are titrated with 0.0200 M KMnO₄, with an average titre of 15.20 mL. Calculate the mass of iron in the tablet.</p></div>
@@ -80,6 +115,17 @@ dotpoints: the principles of volumetric analysis, including standard solutions, 
 </aside>
 
 <h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A student titrates vinegar (ethanoic acid) with standardised NaOH using methyl orange (range 3.1–4.4) as the indicator. Compared with using phenolphthalein, the calculated concentration of ethanoic acid will be</p></div>
+<ol><li>the same, because any indicator works for an acid–base titration</li><li>too low, because the colour changes well before the equivalence point</li><li>too high, because the colour changes after the equivalence point</li><li>too high, because methyl orange reacts with the acid</li></ol>
+<div class="mcq-x"><p>The equivalence point of a weak acid–strong base titration is about pH 8.7. Methyl orange changes at about pH 4, while much of the acid is still unreacted, so the titre (and the calculated concentration) is too small.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="2">
+<div class="pq-q"><p>Hydrochloric acid is titrated against a solution of ammonia. Using the indicator table above, select a suitable indicator and justify your choice.</p></div>
+<div class="pq-s"><p>Methyl orange (or methyl red). [1] The salt formed, ammonium chloride, is acidic (NH₄⁺ is a weak acid), so the pH at equivalence is below 7, about 5; methyl orange's range (3.1–4.4) or methyl red's (4.4–6.2) falls within the steep part of the curve. [1]</p></div>
+</div>
+
 <div class="mcq" data-ans="C" data-level="core">
 <div class="mcq-q"><p>The burette should be rinsed with</p></div>
 <ol><li>deionised water only</li><li>the solution to be titrated in the flask</li><li>the solution it will be filled with</li><li>ethanol</li></ol>
@@ -134,5 +180,6 @@ dotpoints: the principles of volumetric analysis, including standard solutions, 
 <ul>
   <li>Rinse the burette and pipette with their solutions; the flask with water.</li>
   <li>Average concordant titres → \(n = cV\) → mole ratio → scale up → convert units.</li>
+  <li>Choose an indicator whose range sits in the steep jump at equivalence: phenolphthalein for weak acid + strong base, methyl orange for strong acid + weak base.</li>
   <li>Self-indicating permanganate (pink); iodine/starch (blue-black).</li>
 </ul>
