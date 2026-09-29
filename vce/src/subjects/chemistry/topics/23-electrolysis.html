@@ -3,8 +3,8 @@ id: electrolysis
 title: Electrolysis & rechargeable batteries
 short: Electrolysis & batteries
 summary: Electrolytic cells and how they differ from galvanic cells, predicting products for molten salts and aqueous solutions (including water competing), active vs inert electrodes, electroplating and refining, rechargeable (secondary) cells, and green hydrogen.
-keywords: electrolysis, electrolytic cell, anode positive, cathode negative, power supply, molten electrolyte, aqueous electrolysis, inert electrode, active electrode, electroplating, electrorefining, predicting products, water oxidised, water reduced, rechargeable battery, secondary cell, lithium ion, lead acid, discharge, recharge, green hydrogen, electrolysis of water
-dotpoints: the operation of electrolytic cells, including comparison with galvanic cells | predicting the products of electrolysis of molten and aqueous electrolytes, including the effect of electrodes and competing reactions with water | rechargeable (secondary) cells, including the processes of discharging and recharging
+keywords: electrolysis, electrorefining copper, blister copper, anode sludge, PEM electrolysis, proton exchange membrane, artificial photosynthesis, water oxidation catalyst, proton reduction catalyst, photovoltaic, wind, electrolytic cell, anode positive, cathode negative, power supply, molten electrolyte, aqueous electrolysis, inert electrode, active electrode, electroplating, electrorefining, predicting products, water oxidised, water reduced, rechargeable battery, secondary cell, lithium ion, lead acid, discharge, recharge, green hydrogen, electrolysis of water
+dotpoints: the operation of electrolytic cells, including comparison with galvanic cells | predicting the products of electrolysis of molten and aqueous electrolytes, including the effect of electrodes and competing reactions with water | rechargeable (secondary) cells, including the processes of discharging and recharging | the design features of commercial electrolytic cells (electrodes, electrolyte and its state, additives, removing products), including electroplating and electrorefining | producing green hydrogen (equations in acidic conditions) by PEM electrolysis powered by solar or wind, and by artificial photosynthesis with water oxidation and proton reduction catalysts
 -->
 <h2>Electrolytic cells</h2>
 <p>An electrolytic cell uses an external power supply to <strong>force a non-spontaneous redox reaction</strong>: electrical energy becomes chemical energy.</p>
@@ -47,7 +47,17 @@ dotpoints: the operation of electrolytic cells, including comparison with galvan
 </div>
 
 <h2>Electroplating and refining</h2>
-<p>To plate an object with a metal M: make the object the <strong>cathode</strong>, use an anode of M, and use a solution of M's ions. The anode dissolves at the same rate as metal deposits on the cathode, so the electrolyte concentration stays constant.</p>
+<p>To plate an object with a metal M: make the object the <strong>cathode</strong>, use an anode of M, and use a solution of M's ions. The anode dissolves at the same rate as metal deposits on the cathode, so the electrolyte concentration stays constant. That's the point of using the same ion at both electrodes: \(\ce{M -> M^{n+} + ne-}\) at the anode replaces exactly what \(\ce{M^{n+} + ne- -> M}\) removes at the cathode.</p>
+<p>Other chemicals in a plating bath need care. Acid is often added to keep the solution conductive and stop metal hydroxides precipitating, but H⁺ (0.00 V) is a stronger oxidant than many metal ions (e.g. Cr³⁺, −0.74 V). Too much acid and H⁺ is reduced at the cathode instead: H₂ gas (flammable) forms and plating slows or fails.</p>
+
+<h3>Electrorefining copper</h3>
+<p>Impure “blister” copper (about 98–99% Cu, with Fe, Ni, Zn, Ag and Au) is purified to 99.99% by electrolysis in acidified CuSO₄:</p>
+<ul>
+  <li><strong>Anode (+): the blister copper.</strong> Cu is oxidised: \(\ce{Cu(s) -> Cu^2+(aq) + 2e-}\). Metals that are <em>stronger</em> reductants than Cu (Fe, Ni, Zn) are oxidised too and dissolve as ions. Metals that are <em>weaker</em> reductants (Ag, Au, Pt) aren't oxidised. They fall to the bottom as <strong>anode sludge</strong>, which is collected and sold.</li>
+  <li><strong>Cathode (−): a thin sheet of pure copper.</strong> Only Cu²⁺ is reduced: \(\ce{Cu^2+(aq) + 2e- -> Cu(s)}\). Fe²⁺, Ni²⁺ and Zn²⁺ are weaker oxidants than Cu²⁺, so at the low voltage used they stay in solution.</li>
+  <li><strong>The electrolyte changes over time.</strong> Some of the anode's charge goes into oxidising impurities, but the cathode always deposits copper. So [Cu²⁺] slowly <strong>decreases</strong> while [Fe²⁺] and [Ni²⁺] build up. The electrolyte has to be purified or replaced. (Contrast plating, where [Mⁿ⁺] stays constant.)</li>
+</ul>
+<p>Commercial cells are designed around the product wanted: suitable electrode materials (inert or reactive), the electrolyte and its state (molten or aqueous), additives (acid, a salt to lower the melting point), and, where practicable, <strong>removing products as they form</strong> so they can't react with each other or with the electrodes.</p>
 
 <h2>Rechargeable (secondary) cells</h2>
 <p>In a secondary cell, the products of discharge stay in contact with the electrodes, so the reaction can be reversed by an external power supply:</p>
@@ -64,7 +74,45 @@ dotpoints: the operation of electrolytic cells, including comparison with galvan
 <p>Lithium-ion cells have a high voltage and energy density because lithium is very light and a very strong reductant. They use non-aqueous electrolytes, because lithium would react with water.</p>
 
 <h2>Green hydrogen</h2>
-<p>Electrolysis of water (\(\ce{2H2O -> 2H2 + O2}\), non-spontaneous, \(\Delta H = +572\ \text{kJ}\) per 2 mol) powered by solar or wind makes hydrogen without CO₂ emissions. The hydrogen can later be used in a fuel cell: renewable electricity is stored as chemical energy.</p>
+<p>Almost all hydrogen today is made from natural gas (steam reforming), which releases CO₂. <strong>Green hydrogen</strong> is made by splitting water with renewable energy, so no CO₂ is emitted: \(\ce{2H2O(l) -> 2H2(g) + O2(g)}\), non-spontaneous, \(\Delta H = +572\ \text{kJ}\) per 2 mol. The hydrogen can later be used in a fuel cell, so renewable energy is stored as chemical energy. The study design names two methods, and wants the equations in <strong>acidic conditions</strong>.</p>
+
+<h3>1. PEM electrolysis powered by solar or wind</h3>
+<p>A proton exchange (polymer electrolyte) membrane electrolyser is an electrolytic cell. Solar panels (PV) or wind turbines supply the electricity.</p>
+<div class="eq"><div class="eq-label">Anode (+), oxidation</div>\[ \ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-} \]</div>
+<div class="eq"><div class="eq-label">Cathode (−), reduction</div>\[ \ce{4H+(aq) + 4e- -> 2H2(g)} \]</div>
+<ul>
+  <li>The <strong>solid polymer membrane</strong> is the electrolyte. It lets H⁺ ions move from the anode side to the cathode side (completing the internal circuit) but keeps H₂ and O₂ apart, so they can't recombine or form an explosive mixture.</li>
+  <li>Porous electrodes coated with catalysts (Pt at the cathode, Ir or IrO₂ at the anode) give a large surface area for the reactions.</li>
+  <li>The theoretical minimum is 1.23 V (from the electrochemical series). In practice 1.8–2 V is needed, and the extra energy is lost as heat.</li>
+  <li>Needs very pure water. Impurities (e.g. Cl⁻) would be oxidised or would damage the membrane.</li>
+  <li>It can be switched on and off quickly, so it can follow a variable solar or wind supply.</li>
+</ul>
+
+<h3>2. Artificial photosynthesis</h3>
+<p>Artificial photosynthesis uses <strong>sunlight directly</strong>: light is absorbed by a light-harvesting material (a semiconductor or dye), and the energy drives two catalysts. There's no external power supply. Light energy is converted into chemical energy.</p>
+<div class="eq"><div class="eq-label">Water oxidation catalyst (anode side)</div>\[ \ce{2H2O(l) -> O2(g) + 4H+(aq) + 4e-} \]</div>
+<div class="eq"><div class="eq-label">Proton reduction catalyst (cathode side)</div>\[ \ce{2H+(aq) + 2e- -> H2(g)} \]</div>
+<ul>
+  <li>Water is <strong>oxidised</strong> (it's the reductant, the source of electrons); H⁺ is <strong>reduced</strong> to H₂ at the cathode.</li>
+  <li>Electrons flow from the anode side to the cathode side, and H⁺ ions migrate the same way through a membrane, which balances the charge and keeps the gases separate.</li>
+  <li>It's called “artificial photosynthesis” because it copies the light-driven water splitting in plants. The products are different, though: plants make glucose and O₂ from CO₂ and H₂O, while this makes H₂ and O₂ from water.</li>
+  <li>Challenges: low efficiency, catalysts that degrade, and rare or expensive metals.</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th></th><th>PEM electrolysis</th><th>Artificial photosynthesis</th></tr></thead>
+<tbody>
+<tr><td>Energy input</td><td>Electricity from PV or wind</td><td>Sunlight absorbed directly by the device</td></tr>
+<tr><td>Anode</td><td colspan="2">\(\ce{2H2O -> O2 + 4H+ + 4e-}\) (water oxidised)</td></tr>
+<tr><td>Cathode</td><td colspan="2">\(\ce{2H+ + 2e- -> H2}\) (H⁺ reduced)</td></tr>
+<tr><td>Status</td><td>Established, commercial</td><td>Mostly still research</td></tr>
+</tbody></table></div>
+<aside class="c-trap" data-title="Green hydrogen traps">
+<ul>
+  <li>In <strong>acidic</strong> conditions write \(\ce{2H+ + 2e- -> H2}\), not the \(\ce{H2O/OH-}\) version. VCAA doesn't accept the alkaline equation when the stem says acidic.</li>
+  <li>H₂ forms at the <strong>cathode</strong> and O₂ at the <strong>anode</strong>. H⁺ moves towards the cathode.</li>
+  <li>“Green” refers to the energy source. Hydrogen from natural gas is not green, even though it burns cleanly.</li>
+</ul>
+</aside>
 
 <aside class="c-trap" data-title="Trick alert: electrolysis traps">
 <ul>
@@ -76,6 +124,18 @@ dotpoints: the operation of electrolytic cells, including comparison with galvan
 </aside>
 
 <h2>Practice</h2>
+<div class="mcq" data-ans="D" data-level="exam">
+<div class="mcq-q"><p>Blister copper containing small amounts of iron, nickel and silver is refined by electrolysis in acidified copper(II) sulfate solution. During the refining</p></div>
+<ol><li>the blister copper is the cathode</li><li>silver ions build up in the electrolyte</li><li>iron is deposited on the pure copper with the copper</li><li>the concentration of Cu²⁺ in the electrolyte slowly decreases</li></ol>
+<div class="mcq-x"><p>Fe and Ni are stronger reductants than Cu, so they're oxidised at the (blister copper) anode and go into solution. Fe²⁺ and Ni²⁺ are weaker oxidants than Cu²⁺, so only copper is deposited at the cathode. Less charge goes into dissolving copper than into depositing it, so [Cu²⁺] falls. Silver isn't oxidised and drops into the anode sludge.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="exam">
+<div class="mcq-q"><p>In artificial photosynthesis designed to produce hydrogen</p></div>
+<ol><li>water is oxidised and hydrogen gas is produced</li><li>the same products are formed as in natural photosynthesis</li><li>H⁺ ions are reduced to hydrogen gas at the anode</li><li>an external power supply is needed to oxidise the water</li></ol>
+<div class="mcq-x"><p>Water is oxidised (\(\ce{2H2O -> O2 + 4H+ + 4e-}\)) and H⁺ is reduced to H₂ at the <em>cathode</em>. Sunlight supplies the energy directly, with no power supply. Natural photosynthesis makes glucose, not H₂.</p></div>
+</div>
+
 <div class="mcq" data-ans="B" data-level="core">
 <div class="mcq-q"><p>In an electrolytic cell, the cathode is</p></div>
 <ol><li>positive, and oxidation occurs there</li><li>negative, and reduction occurs there</li><li>positive, and reduction occurs there</li><li>negative, and oxidation occurs there</li></ol>
