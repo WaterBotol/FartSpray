@@ -11,13 +11,14 @@ dotpoints: continuous random variables and probability density functions | proba
 <div class="eq"><div class="eq-label">Conditions for a pdf</div>\[ f(x) \ge 0 \text{ for all } x \qquad \int_{-\infty}^{\infty} f(x)\,dx = 1 \qquad P(a &lt; X &lt; b) = \int_a^b f(x)\,dx \]<p>\(P(X = a) = 0\) for any single value, so \(&lt;\) and \(\le\) give the same probability. (For discrete variables they don't!)</p></div>
 <div class="eq"><div class="eq-label">Summary statistics</div>\[ E(X) = \int x f(x)\,dx \qquad \operatorname{Var}(X) = \int x^2 f(x)\,dx - \mu^2 \qquad \int_{-\infty}^{m} f(x)\,dx = \frac12 \ (\text{median } m) \]<p>The \(p\)th percentile \(q\) satisfies \(\int_{-\infty}^{q} f(x)\,dx = \frac{p}{100}\). \(E(aX + b) = aE(X) + b\) and \(\operatorname{Var}(aX + b) = a^2\operatorname{Var}(X)\), exactly as for discrete variables.</p></div>
 
-<div class="we" data-title="Everything about f(x) = kx² on [0, 3]" data-marks="6" data-f="\int_{-\infty}^{\infty} f(x)\,dx = 1 ;; P(a &lt; X &lt; b) = \int_a^b f(x)\,dx ;; E(X) = \int x f(x)\,dx ;; \int_{-\infty}^{m} f(x)\,dx = \tfrac12 ;; \operatorname{Var}(X) = E(X^2) - [E(X)]^2">
+<div class="we" data-title="Everything about f(x) = kx² on [0, 3]" data-marks="6">
 <div class="we-q"><p>\(f(x) = kx^2\) for \(0 \le x \le 3\), and 0 elsewhere. Find (a) \(k\), (b) \(P(X &lt; 1)\), (c) \(E(X)\), (d) the median, (e) \(\operatorname{Var}(X)\).</p></div>
-<div class="we-s"><p>(a) \(\int_0^3 kx^2\,dx = 9k = 1 \Rightarrow k = \frac19\).</p></div>
-<div class="we-s"><p>(b) \(\int_0^1\frac{x^2}{9}dx = \frac{1}{27}\).</p></div>
-<div class="we-s"><p>(c) \(E(X) = \int_0^3\frac{x^3}{9}dx = \frac{81}{36} = \frac94\).</p></div>
-<div class="we-s"><p>(d) \(\int_0^m\frac{x^2}{9}dx = \frac{m^3}{27} = \frac12 \Rightarrow m = \frac{3}{\sqrt[3]{2}} \approx 2.381\).</p></div>
-<div class="we-s"><p>(e) \(E(X^2) = \int_0^3\frac{x^4}{9}dx = \frac{243}{45} = 5.4\); \(\operatorname{Var} = 5.4 - \left(\frac94\right)^2 = 0.3375\).</p></div>
+<div class="we-t"><p>For a continuous random variable, probability is area under the pdf. The total area must be 1. The mean uses \(\int x f(x)\,dx\), the median splits the area in half, and variance uses \(E(X^2) - [E(X)]^2\) as in the discrete case.</p></div>
+<div class="we-s" data-f="\int_{-\infty}^{\infty} f(x)\,dx = 1"><p>(a) \(\int_0^3 kx^2\,dx = 9k = 1 \Rightarrow k = \frac19\).</p></div>
+<div class="we-s" data-f="P(a &lt; X &lt; b) = \int_a^b f(x)\,dx"><p>(b) \(\int_0^1\frac{x^2}{9}dx = \frac{1}{27}\).</p></div>
+<div class="we-s" data-f="E(X) = \int x f(x)\,dx"><p>(c) \(E(X) = \int_0^3\frac{x^3}{9}dx = \frac{81}{36} = \frac94\).</p></div>
+<div class="we-s" data-f="\int_{-\infty}^{m} f(x)\,dx = \tfrac12"><p>(d) \(\int_0^m\frac{x^2}{9}dx = \frac{m^3}{27} = \frac12 \Rightarrow m = \frac{3}{\sqrt[3]{2}} \approx 2.381\).</p></div>
+<div class="we-s" data-f="E(X^2) = \int x^2 f(x)\,dx ;; \operatorname{Var}(X) = E(X^2) - [E(X)]^2"><p>(e) \(E(X^2) = \int_0^3\frac{x^4}{9}dx = \frac{243}{45} = 5.4\); \(\operatorname{Var} = 5.4 - \left(\frac94\right)^2 = 0.3375\).</p></div>
 <div class="we-a"><p><strong>\(k = \frac19\); \(P(X &lt; 1) = \frac1{27}\); \(E(X) = 2.25\); median \(\approx 2.381\); \(\operatorname{Var} = 0.3375\).</strong> The median is bigger than the mean here because the distribution is skewed left (bunched at high values).</p></div>
 </div>
 <figure class="fig">
@@ -25,18 +26,20 @@ dotpoints: continuous random variables and probability density functions | proba
 <figcaption>\(f(x) = \frac{x^2}{9}\) on \([0, 3]\). The shaded area is \(P(X &lt; 2) = \frac{8}{27}\); the dashed lines mark the mean (2.25) and the median (≈ 2.38).</figcaption>
 </figure>
 
-<div class="we" data-title="A piecewise (triangular) pdf" data-marks="4" data-f="P(a &lt; X &lt; b) = \int_a^b f(x)\,dx ;; E(X) = \text{line of symmetry} ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
+<div class="we" data-title="A piecewise (triangular) pdf" data-marks="4">
 <div class="we-q"><p>\(f(x) = \begin{cases} x, & 0 \le x \le 1 \\ 2 - x, & 1 &lt; x \le 2 \\ 0, & \text{elsewhere} \end{cases}\). Find \(P(X &lt; 0.5)\), \(E(X)\) and \(P(X &gt; 1.5 \mid X &gt; 1)\).</p></div>
-<div class="we-s"><p>\(P(X &lt; 0.5) = \int_0^{0.5}x\,dx = 0.125\).</p></div>
-<div class="we-s"><p>The graph is symmetric about \(x = 1\), so \(E(X) = 1\) (and the median is 1).</p></div>
-<div class="we-s"><p>\(P(X &gt; 1.5) = \int_{1.5}^2(2 - x)\,dx = 0.125\) and \(P(X &gt; 1) = 0.5\).</p></div>
+<div class="we-t"><p>A piecewise pdf is integrated one piece at a time, each over its own interval. A pdf symmetric about \(x = a\) has mean and median \(a\).</p></div>
+<div class="we-s" data-f="P(a &lt; X &lt; b) = \int_a^b f(x)\,dx"><p>\(P(X &lt; 0.5) = \int_0^{0.5}x\,dx = 0.125\).</p></div>
+<div class="we-s" data-f="E(X) = \text{line of symmetry}"><p>The graph is symmetric about \(x = 1\), so \(E(X) = 1\) (and the median is 1).</p></div>
+<div class="we-s" data-f="P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}"><p>\(P(X &gt; 1.5) = \int_{1.5}^2(2 - x)\,dx = 0.125\) and \(P(X &gt; 1) = 0.5\).</p></div>
 <div class="we-a"><p><strong>0.125; 1; \(\frac{0.125}{0.5} = 0.25\).</strong> For a piecewise pdf, integrate each piece over its own interval.</p></div>
 </div>
 
-<div class="we" data-title="Exponential-type pdf (CAS)" data-marks="3" data-f="P(T &gt; a) = \int_a^\infty f(t)\,dt ;; \int_0^m f(t)\,dt = \tfrac12">
+<div class="we" data-title="Exponential-type pdf (CAS)" data-marks="3">
 <div class="we-q"><p>The time \(T\) (minutes) between customer arrivals has pdf \(f(t) = 0.5e^{-0.5t}\), \(t \ge 0\). Find \(P(T &gt; 2)\) and the median time.</p></div>
-<div class="we-s"><p>\(P(T &gt; 2) = \int_2^\infty 0.5e^{-0.5t}dt = \left[-e^{-0.5t}\right]_2^\infty = e^{-1}\).</p></div>
-<div class="we-s"><p>Median: \(\int_0^m 0.5e^{-0.5t}dt = 1 - e^{-0.5m} = \frac12 \Rightarrow m = 2\log_e 2\).</p></div>
+<div class="we-t"><p>Probabilities for an unbounded pdf use an integral out to infinity, where \(e^{-kt} \to 0\). The median is the \(m\) where the area to its left is exactly half.</p></div>
+<div class="we-s" data-f="P(T &gt; a) = \int_a^\infty f(t)\,dt ;; e^{-kt} \to 0 \text{ as } t \to \infty"><p>\(P(T &gt; 2) = \int_2^\infty 0.5e^{-0.5t}dt = \left[-e^{-0.5t}\right]_2^\infty = e^{-1}\).</p></div>
+<div class="we-s" data-f="\int_0^m f(t)\,dt = \tfrac12"><p>Median: \(\int_0^m 0.5e^{-0.5t}dt = 1 - e^{-0.5m} = \frac12 \Rightarrow m = 2\log_e 2\).</p></div>
 <div class="we-a"><p><strong>\(P(T &gt; 2) = e^{-1} \approx 0.368\); median \(= 2\log_e 2 \approx 1.386\) min</strong> (less than the mean of 2 min: the long right tail pulls the mean up).</p></div>
 </div>
 

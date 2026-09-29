@@ -19,11 +19,12 @@ dotpoints: circular functions sin, cos and tan and their graphs, including ampli
 
 <h2>Graphs</h2>
 <div class="eq"><div class="eq-label">Transformed sine and cosine</div>\[ y = a\sin\big(n(x - h)\big) + k \]<p>Amplitude \(|a|\), period \(\frac{2\pi}{n}\), horizontal shift \(h\), centre line \(y = k\), range \([k - |a|,\ k + |a|]\). For \(y = a\tan(n(x - h)) + k\): period \(\frac{\pi}{n}\), with vertical asymptotes wherever \(n(x - h) = \frac{\pi}{2} + m\pi\).</p></div>
-<div class="we" data-title="Sketch over a restricted domain" data-marks="4" data-f="y = a\sin(n(x - h)) + k ;; \text{period} = \dfrac{2\pi}{n}">
+<div class="we" data-title="Sketch over a restricted domain" data-marks="4">
 <div class="we-q"><p>Sketch \(y = 2\sin\!\left(2x - \frac{\pi}{3}\right) + 1\) for \(x \in [0, \pi]\), labelling endpoints and \(x\)-intercepts with exact coordinates.</p></div>
-<div class="we-s"><p>Factor: \(y = 2\sin\!\left(2\left(x - \frac{\pi}{6}\right)\right) + 1\). Amplitude 2, period \(\pi\), shifted \(\frac{\pi}{6}\) right, centre \(y = 1\), range \([-1, 3]\).</p></div>
-<div class="we-s"><p>Endpoints: \(y(0) = 2\sin\!\left(-\frac{\pi}{3}\right) + 1 = 1 - \sqrt3\); \(y(\pi) = 2\sin\!\left(\frac{5\pi}{3}\right) + 1 = 1 - \sqrt3\).</p></div>
-<div class="we-s"><p>\(x\)-intercepts: \(\sin\!\left(2x - \frac{\pi}{3}\right) = -\frac12\). With \(2x - \frac{\pi}{3} \in \left[-\frac{\pi}{3}, \frac{5\pi}{3}\right]\): \(2x - \frac{\pi}{3} = -\frac{\pi}{6}\) or \(\frac{7\pi}{6}\).</p></div>
+<div class="we-t"><p>Write the rule in the form \(a\sin(n(x - h)) + k\) to read off amplitude, period, horizontal shift and centre line. For intercepts, solve over the transformed interval of the argument.</p></div>
+<div class="we-s" data-f="\text{period} = \dfrac{2\pi}{n},\ \text{range} = [k - |a|, k + |a|]"><p>Factor: \(y = 2\sin\!\left(2\left(x - \frac{\pi}{6}\right)\right) + 1\). Amplitude 2, period \(\pi\), shifted \(\frac{\pi}{6}\) right, centre \(y = 1\), range \([-1, 3]\).</p></div>
+<div class="we-s" data-f="\text{substitute the endpoints}"><p>Endpoints: \(y(0) = 2\sin\!\left(-\frac{\pi}{3}\right) + 1 = 1 - \sqrt3\); \(y(\pi) = 2\sin\!\left(\frac{5\pi}{3}\right) + 1 = 1 - \sqrt3\).</p></div>
+<div class="we-s" data-f="\sin\theta = -\tfrac12 \Rightarrow \theta = -\tfrac\pi6, \tfrac{7\pi}{6}, \ldots"><p>\(x\)-intercepts: \(\sin\!\left(2x - \frac{\pi}{3}\right) = -\frac12\). With \(2x - \frac{\pi}{3} \in \left[-\frac{\pi}{3}, \frac{5\pi}{3}\right]\): \(2x - \frac{\pi}{3} = -\frac{\pi}{6}\) or \(\frac{7\pi}{6}\).</p></div>
 <div class="we-a"><p><strong>Endpoints \((0, 1 - \sqrt3)\) and \((\pi, 1 - \sqrt3)\); \(x\)-intercepts \(\left(\frac{\pi}{12}, 0\right)\) and \(\left(\frac{3\pi}{4}, 0\right)\)</strong>; maximum \(\left(\frac{5\pi}{12}, 3\right)\), minimum \(\left(\frac{11\pi}{12}, -1\right)\).</p></div>
 </div>
 <figure class="fig">
@@ -38,26 +39,29 @@ dotpoints: circular functions sin, cos and tan and their graphs, including ampli
   <li>Find the reference angle from \(|c|\), then use the quadrants for the sign.</li>
   <li>List every solution in the adjusted domain, then solve for \(x\).</li>
 </ol>
-<div class="we" data-title="A double-angle argument" data-marks="3" data-f="\cos\theta = -\dfrac{\sqrt2}{2} \Rightarrow \theta = \dfrac{3\pi}{4}, \dfrac{5\pi}{4}, \ldots ;; x \in [0, 2\pi] \Rightarrow 2x \in [0, 4\pi]">
+<div class="we" data-title="A double-angle argument" data-marks="3">
 <div class="we-q"><p>Solve \(2\cos(2x) + \sqrt2 = 0\) for \(x \in [0, 2\pi]\).</p></div>
-<div class="we-s"><p>\(\cos(2x) = -\frac{\sqrt2}{2}\). Reference angle \(\frac{\pi}{4}\); cosine is negative in quadrants 2 and 3.</p></div>
-<div class="we-s"><p>\(2x \in [0, 4\pi]\): \(2x = \frac{3\pi}{4}, \frac{5\pi}{4}, \frac{11\pi}{4}, \frac{13\pi}{4}\).</p></div>
+<div class="we-t"><p>Find the reference angle, use the quadrant rules (the sign of cos) to list angles, and extend the interval to match the argument: if \(x \in [0, 2\pi]\) then \(2x \in [0, 4\pi]\).</p></div>
+<div class="we-s" data-f="\cos\theta &lt; 0 \text{ in quadrants 2 and 3}"><p>\(\cos(2x) = -\frac{\sqrt2}{2}\). Reference angle \(\frac{\pi}{4}\); cosine is negative in quadrants 2 and 3.</p></div>
+<div class="we-s" data-f="x \in [0, 2\pi] \Rightarrow 2x \in [0, 4\pi]"><p>\(2x \in [0, 4\pi]\): \(2x = \frac{3\pi}{4}, \frac{5\pi}{4}, \frac{11\pi}{4}, \frac{13\pi}{4}\).</p></div>
 <div class="we-a"><p><strong>\(x = \frac{3\pi}{8}, \frac{5\pi}{8}, \frac{11\pi}{8}, \frac{13\pi}{8}\).</strong> A doubled argument means twice as many solutions. Four, not two.</p></div>
 </div>
 
-<div class="we" data-title="sin = cos, and general solutions" data-marks="3" data-f="\tan\theta = \dfrac{\sin\theta}{\cos\theta} ;; \tan\theta = a \Rightarrow \theta = \tan^{-1}a + n\pi">
+<div class="we" data-title="sin = cos, and general solutions" data-marks="3">
 <div class="we-q"><p>(a) Solve \(\sin(2x) = \cos(2x)\) for \(x \in [0, \pi]\). (b) Find the general solution of \(\sqrt3\sin(2x) = \cos(2x)\).</p></div>
-<div class="we-s"><p>(a) Divide by \(\cos(2x)\): \(\tan(2x) = 1\). \(2x \in [0, 2\pi]\): \(2x = \frac{\pi}{4}, \frac{5\pi}{4}\), so \(x = \frac{\pi}{8}, \frac{5\pi}{8}\).</p></div>
-<div class="we-s"><p>(b) \(\tan(2x) = \frac{1}{\sqrt3}\), so \(2x = \frac{\pi}{6} + n\pi\), \(n \in \mathbb{Z}\).</p></div>
+<div class="we-t"><p>When sin and cos of the same angle are equal (or in a fixed ratio), divide to get tan. Tan repeats every \(\pi\), which gives the general solution.</p></div>
+<div class="we-s" data-f="\tan\theta = \dfrac{\sin\theta}{\cos\theta}"><p>(a) Divide by \(\cos(2x)\): \(\tan(2x) = 1\). \(2x \in [0, 2\pi]\): \(2x = \frac{\pi}{4}, \frac{5\pi}{4}\), so \(x = \frac{\pi}{8}, \frac{5\pi}{8}\).</p></div>
+<div class="we-s" data-f="\tan\theta = a \Rightarrow \theta = \tan^{-1}a + n\pi"><p>(b) \(\tan(2x) = \frac{1}{\sqrt3}\), so \(2x = \frac{\pi}{6} + n\pi\), \(n \in \mathbb{Z}\).</p></div>
 <div class="we-a"><p><strong>(a) \(x = \frac{\pi}{8}, \frac{5\pi}{8}\); (b) \(x = \frac{\pi}{12} + \frac{n\pi}{2},\ n \in \mathbb{Z}\).</strong></p></div>
 </div>
 <div class="eq"><div class="eq-label">General solutions (\(n \in \mathbb{Z}\))</div>\[ \sin x = a:\ x = 2n\pi + \sin^{-1}a \ \text{ or } \ x = (2n + 1)\pi - \sin^{-1}a \]\[ \cos x = a:\ x = 2n\pi \pm \cos^{-1}a \qquad \tan x = a:\ x = n\pi + \tan^{-1}a \]</div>
 
 <h2>Periodic models</h2>
-<div class="we" data-title="Tide model (Exam 2 style)" data-marks="4" data-f="\text{max} = k + |a|,\ \text{min} = k - |a| ;; \text{period} = \dfrac{2\pi}{n}">
+<div class="we" data-title="Tide model (Exam 2 style)" data-marks="4">
 <div class="we-q"><p>The depth of water in a harbour is \(D(t) = 3 + 2\cos\!\left(\frac{\pi t}{6}\right)\) metres, \(t\) hours after midnight. (a) State the maximum and minimum depths and the period. (b) For how long in the first 12 hours is the depth at least 4 m?</p></div>
-<div class="we-s"><p>(a) Max \(3 + 2 = 5\) m, min \(3 - 2 = 1\) m, period \(\frac{2\pi}{\pi/6} = 12\) hours.</p></div>
-<div class="we-s"><p>(b) \(\cos\!\left(\frac{\pi t}{6}\right) \ge \frac12\) with \(\frac{\pi t}{6} \in [0, 2\pi]\): \(\frac{\pi t}{6} \in \left[0, \frac{\pi}{3}\right] \cup \left[\frac{5\pi}{3}, 2\pi\right]\).</p></div>
+<div class="we-t"><p>For \(k + a\cos(nt)\), the maximum and minimum are \(k \pm |a|\) and the period is \(2\pi/n\). Inequalities are solved like equations, then you pick the intervals where the condition holds.</p></div>
+<div class="we-s" data-f="\max = k + |a|,\ \min = k - |a|,\ \text{period} = \dfrac{2\pi}{n}"><p>(a) Max \(3 + 2 = 5\) m, min \(3 - 2 = 1\) m, period \(\frac{2\pi}{\pi/6} = 12\) hours.</p></div>
+<div class="we-s" data-f="\cos\theta = \tfrac12 \Rightarrow \theta = \tfrac\pi3, \tfrac{5\pi}{3}"><p>(b) \(\cos\!\left(\frac{\pi t}{6}\right) \ge \frac12\) with \(\frac{\pi t}{6} \in [0, 2\pi]\): \(\frac{\pi t}{6} \in \left[0, \frac{\pi}{3}\right] \cup \left[\frac{5\pi}{3}, 2\pi\right]\).</p></div>
 <div class="we-s"><p>So \(t \in [0, 2] \cup [10, 12]\).</p></div>
 <div class="we-a"><p><strong>(a) 5 m, 1 m, 12 h. (b) 4 hours in total</strong> (midnight to 2 am and 10 am to noon).</p></div>
 </div>

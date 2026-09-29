@@ -13,11 +13,12 @@ dotpoints: sums, differences, products and composites of functions, and conditio
 <div class="eq"><div class="eq-label">Composite</div>\[ (f \circ g)(x) = f\big(g(x)\big) \]<p>\(f \circ g\) exists if and only if \(\text{ran}\, g \subseteq \text{dom}\, f\). Then \(\text{dom}(f \circ g) = \text{dom}\, g\).</p></div>
 <aside class="c-key"><p>Think of \(g\) as the first machine and \(f\) as the second. Every output of \(g\) must be an acceptable input for \(f\). If it isn't, restrict the domain of \(g\) until it is.</p></aside>
 
-<div class="we" data-title="Does the composite exist?" data-marks="4" data-f="f \circ g \text{ exists} \iff \text{ran } g \subseteq \text{dom } f ;; \text{dom}(f \circ g) = \text{dom } g">
+<div class="we" data-title="Does the composite exist?" data-marks="4">
 <div class="we-q"><p>Let \(f(x) = \sqrt{x}\) (maximal domain) and \(g: \mathbb{R} \to \mathbb{R},\ g(x) = x^2 - 4\). (a) Explain why \(f \circ g\) does not exist. (b) Find the maximal domain of \(g\) for which \(f \circ g\) exists. (c) Does \(g \circ f\) exist? If so, state its rule and domain.</p></div>
-<div class="we-s"><p>(a) \(\text{ran}\, g = [-4, \infty)\) but \(\text{dom}\, f = [0, \infty)\). Since \([-4, \infty) \not\subseteq [0, \infty)\), \(f \circ g\) does not exist.</p></div>
-<div class="we-s"><p>(b) Need \(g(x) \ge 0\): \(x^2 \ge 4 \Rightarrow x \le -2\) or \(x \ge 2\).</p></div>
-<div class="we-s"><p>(c) \(\text{ran}\, f = [0, \infty) \subseteq \mathbb{R} = \text{dom}\, g\), so yes. \(g(f(x)) = (\sqrt{x})^2 - 4 = x - 4\), with domain \(= \text{dom}\, f = [0, \infty)\).</p></div>
+<div class="we-t"><p>\(f \circ g\) means apply \(g\) first, so every output of \(g\) must be a valid input for \(f\): the range of \(g\) must fit inside the domain of \(f\).</p></div>
+<div class="we-s" data-f="f \circ g \text{ exists} \iff \text{ran } g \subseteq \text{dom } f"><p>(a) \(\text{ran}\, g = [-4, \infty)\) but \(\text{dom}\, f = [0, \infty)\). Since \([-4, \infty) \not\subseteq [0, \infty)\), \(f \circ g\) does not exist.</p></div>
+<div class="we-s" data-f="g(x) \ge 0"><p>(b) Need \(g(x) \ge 0\): \(x^2 \ge 4 \Rightarrow x \le -2\) or \(x \ge 2\).</p></div>
+<div class="we-s" data-f="\text{dom}(g \circ f) = \text{dom } f"><p>(c) \(\text{ran}\, f = [0, \infty) \subseteq \mathbb{R} = \text{dom}\, g\), so yes. \(g(f(x)) = (\sqrt{x})^2 - 4 = x - 4\), with domain \(= \text{dom}\, f = [0, \infty)\).</p></div>
 <div class="we-a"><p><strong>(b) \((-\infty, -2] \cup [2, \infty)\). (c) \(g \circ f(x) = x - 4\), domain \([0, \infty)\).</strong> It's not the whole line \(y = x - 4\): it's only the part with \(x \ge 0\).</p></div>
 </div>
 
@@ -25,20 +26,22 @@ dotpoints: sums, differences, products and composites of functions, and conditio
 <p>Only <strong>one-to-one</strong> functions have inverse functions. To find \(f^{-1}\): swap \(x\) and \(y\), make \(y\) the subject, and pick the correct branch using the range of \(f^{-1}\).</p>
 <div class="eq"><div class="eq-label">Inverse facts</div>\[ \text{dom}\, f^{-1} = \text{ran}\, f \qquad \text{ran}\, f^{-1} = \text{dom}\, f \qquad f\big(f^{-1}(x)\big) = x \]<p>The graph of \(f^{-1}\) is the reflection of \(f\) in the line \(y = x\).</p></div>
 
-<div class="we" data-title="Restrict, then invert" data-marks="4" data-f="\text{one-to-one needed for an inverse} ;; \text{inverse: swap } x \text{ and } y ;; \text{ran } f^{-1} = \text{dom } f">
+<div class="we" data-title="Restrict, then invert" data-marks="4">
 <div class="we-q"><p>Let \(f: (-\infty, a] \to \mathbb{R},\ f(x) = (x - 2)^2 - 3\). (a) Find the largest value of \(a\) for which \(f^{-1}\) exists. (b) With this \(a\), find \(f^{-1}\) and its domain.</p></div>
-<div class="we-s"><p>(a) The turning point is at \(x = 2\). To the left of it, \(f\) is one-to-one (decreasing). So \(a = 2\).</p></div>
-<div class="we-s"><p>(b) Swap: \(x = (y - 2)^2 - 3 \Rightarrow (y - 2)^2 = x + 3 \Rightarrow y - 2 = \pm\sqrt{x + 3}\).</p></div>
-<div class="we-s"><p>The range of \(f^{-1}\) is the domain of \(f\): \(y \le 2\). So take the <strong>negative</strong> root.</p></div>
+<div class="we-t"><p>Only one-to-one functions have inverses, so a parabola must be restricted to one side of its turning point. The inverse's range is the original domain, which tells you which square root to keep.</p></div>
+<div class="we-s" data-f="\text{restrict to one side of the turning point}"><p>(a) The turning point is at \(x = 2\). To the left of it, \(f\) is one-to-one (decreasing). So \(a = 2\).</p></div>
+<div class="we-s" data-f="\text{swap } x \text{ and } y"><p>(b) Swap: \(x = (y - 2)^2 - 3 \Rightarrow (y - 2)^2 = x + 3 \Rightarrow y - 2 = \pm\sqrt{x + 3}\).</p></div>
+<div class="we-s" data-f="\text{ran } f^{-1} = \text{dom } f"><p>The range of \(f^{-1}\) is the domain of \(f\): \(y \le 2\). So take the <strong>negative</strong> root.</p></div>
 <div class="we-a"><p><strong>\(a = 2\); \(f^{-1}(x) = 2 - \sqrt{x + 3}\), domain \([-3, \infty)\)</strong> (the range of \(f\)).</p></div>
 </div>
 
 <h2>Where does a function meet its inverse?</h2>
 <p>If \(f\) is <strong>increasing</strong>, every intersection of \(y = f(x)\) and \(y = f^{-1}(x)\) lies on \(y = x\), so you can solve \(f(x) = x\) instead. That's much easier.</p>
-<div class="we" data-title="The decreasing-function trap" data-marks="3" data-f="f \text{ and } f^{-1} \text{ meet on } y = x \text{ (if increasing)} ;; \text{also check } f(a) = b,\ f(b) = a">
+<div class="we" data-title="The decreasing-function trap" data-marks="3">
 <div class="we-q"><p>Find all points of intersection of \(f(x) = 1 - x^3\) and \(y = f^{-1}(x)\).</p></div>
-<div class="we-s"><p>Solving \(f(x) = x\): \(1 - x^3 = x\), which has one real solution \(x \approx 0.682\). That's one point, \((0.682, 0.682)\).</p></div>
-<div class="we-s"><p>But \(f\) is <em>decreasing</em>, so there can be intersections off the line \(y = x\). Look for pairs with \(f(a) = b\) and \(f(b) = a\): \(f(0) = 1\) and \(f(1) = 0\).</p></div>
+<div class="we-t"><p>An increasing function meets its inverse only on \(y = x\). A decreasing function can also meet it at pairs of points swapped across \(y = x\), where \(f(a) = b\) and \(f(b) = a\).</p></div>
+<div class="we-s" data-f="f(x) = x"><p>Solving \(f(x) = x\): \(1 - x^3 = x\), which has one real solution \(x \approx 0.682\). That's one point, \((0.682, 0.682)\).</p></div>
+<div class="we-s" data-f="f(a) = b \text{ and } f(b) = a"><p>But \(f\) is <em>decreasing</em>, so there can be intersections off the line \(y = x\). Look for pairs with \(f(a) = b\) and \(f(b) = a\): \(f(0) = 1\) and \(f(1) = 0\).</p></div>
 <div class="we-a"><p><strong>Three points: \((0, 1)\), \((1, 0)\) and \((0.682, 0.682)\)</strong> (to 3 d.p.). Here \(f^{-1}(x) = \sqrt[3]{1 - x}\), and a CAS solve of \(f(x) = f^{-1}(x)\) confirms all three.</p></div>
 </div>
 <figure class="fig">

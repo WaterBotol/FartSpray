@@ -22,6 +22,7 @@ dotpoints: organise, present and interpret data using tables and graphs, includi
 
 <h2>Linearisation</h2>
 <p>Most physics relationships aren't straight lines. To extract a constant, rearrange the equation into the form \(y = mx\) (or \(y = mx + c\)) and choose what to plot so the graph is a straight line. Then the gradient gives the constant.</p>
+<p>There is often more than one correct choice: \(v^2 = 2gs\) gives a straight line for \(v^2\) against \(s\) <em>and</em> for \(v\) against \(\sqrt{s}\). Any pair where \(y\) is directly proportional to \(x\) works.</p>
 <div class="tbl"><table>
 <thead><tr><th>Relationship</th><th>Plot y</th><th>against x</th><th>Gradient</th></tr></thead>
 <tbody>
@@ -33,16 +34,19 @@ dotpoints: organise, present and interpret data using tables and graphs, includi
 <tr><td>Spring energy: \(E_s = \tfrac12 k x^2\)</td><td>\(E_s\)</td><td>\(x^2\)</td><td>\(k/2\)</td></tr>
 <tr><td>Free fall from rest: \(s = \tfrac12 g t^2\)</td><td>\(s\)</td><td>\(t^2\)</td><td>\(g/2\)</td></tr>
 <tr><td>Energy on a ramp: \(v^2 = 2g h\)</td><td>\(v^2\)</td><td>\(h\)</td><td>\(2g\)</td></tr>
+<tr><td>The same, square-rooted: \(v = \sqrt{2g}\,\sqrt{s}\)</td><td>\(v\)</td><td>\(\sqrt{s}\)</td><td>\(\sqrt{2g}\)</td></tr>
+<tr><td>Satellite speed: \(v^2 = GM\cdot\dfrac1r\)</td><td>\(v^2\)</td><td>\(1/r\)</td><td>\(GM\)</td></tr>
 <tr><td>de Broglie: \(\lambda = h\cdot\dfrac{1}{p}\)</td><td>\(\lambda\)</td><td>\(1/p\)</td><td>\(h\)</td></tr>
 </tbody></table></div>
 
-<div class="we" data-title="Finding a laser's wavelength from a graph" data-marks="5" data-f="y = mx + c ;; \Delta x = \dfrac{\lambda}{d}L ;; \lambda = m \times d">
+<div class="we" data-title="Finding a laser's wavelength from a graph" data-marks="5">
 <div class="we-q"><p>A student measures the fringe spacing \(\Delta x\) for a laser passing through a double slit (\(d = 0.30\ \text{mm}\)) at different screen distances \(L\):</p>
 <div class="tbl"><table><thead><tr><th>L (m)</th><th>0.50</th><th>1.00</th><th>1.50</th><th>2.00</th><th>2.50</th></tr></thead><tbody><tr><td>Δx (mm) ± 0.2</td><td>1.1</td><td>2.0</td><td>3.2</td><td>4.3</td><td>5.2</td></tr></tbody></table></div>
+<div class="we-t"><p>Rearrange the relationship into \(y = mx\) so the graph is a straight line; the gradient then contains the constant you want. A gradient uses all the data, so it's more reliable than a single point.</p></div>
 <p>(a) Explain why plotting \(\Delta x\) against \(L\) should give a straight line. (b) Use the graph below to find the wavelength of the laser.</p></div>
-<div class="we-s"><p><strong>(a)</strong> \(\Delta x = \dfrac{\lambda}{d}L\) has the form \(y = mx\) with \(y = \Delta x\), \(x = L\) and gradient \(m = \lambda/d\). So the graph should be a straight line through the origin.</p></div>
-<div class="we-s"><p><strong>(b) Gradient from the line of best fit</strong>, using (0, 0) and (2.50 m, 5.25 mm):</p>\[ m = \frac{5.25\times10^{-3} - 0}{2.50 - 0} = 2.1\times10^{-3}\ (\text{m per m, i.e. no unit}) \]</div>
-<div class="we-s"><p><strong>Gradient = λ/d:</strong></p>\[ \lambda = m \times d = (2.1\times10^{-3})(0.30\times10^{-3}) = 6.3\times10^{-7}\ \text{m} \]</div>
+<div class="we-s" data-f="y = mx \leftrightarrow \Delta x = \dfrac{\lambda}{d}L"><p><strong>(a)</strong> \(\Delta x = \dfrac{\lambda}{d}L\) has the form \(y = mx\) with \(y = \Delta x\), \(x = L\) and gradient \(m = \lambda/d\). So the graph should be a straight line through the origin.</p></div>
+<div class="we-s" data-f="m = \dfrac{\Delta y}{\Delta x}"><p><strong>(b) Gradient from the line of best fit</strong>, using (0, 0) and (2.50 m, 5.25 mm):</p>\[ m = \frac{5.25\times10^{-3} - 0}{2.50 - 0} = 2.1\times10^{-3}\ (\text{m per m, i.e. no unit}) \]</div>
+<div class="we-s" data-f="\lambda = m \times d"><p><strong>Gradient = λ/d:</strong></p>\[ \lambda = m \times d = (2.1\times10^{-3})(0.30\times10^{-3}) = 6.3\times10^{-7}\ \text{m} \]</div>
 <div class="we-a"><p><strong>\(\lambda \approx 630\ \text{nm}\)</strong> (consistent with a red helium–neon laser at 633 nm). Using a gradient averages over all the data, so it's more reliable than calculating λ from a single point.</p></div>
 </div>
 
@@ -93,10 +97,11 @@ dotpoints: organise, present and interpret data using tables and graphs, includi
 
 <h2>What an intercept tells you</h2>
 <p>If theory says the line should pass through the origin but your line of best fit has a clear intercept, that's the signature of a <strong>systematic error</strong>: every reading is shifted by the same amount.</p>
-<div class="we" data-title="Spotting a systematic error" data-marks="3" data-f="F = kx ;; k = \dfrac{1}{\text{gradient}}">
+<div class="we" data-title="Spotting a systematic error" data-marks="3">
 <div class="we-q"><p>Students plot the extension of a spring (y-axis) against the load (x-axis). Hooke's law predicts a line through the origin, but their best-fit line cuts the y-axis at +4 mm. Suggest a cause and explain how it affects the value of the spring constant they calculate.</p></div>
+<div class="we-t"><p>A systematic error that shifts every reading by the same amount moves the whole line up or down (an intercept) without changing its slope. Constants found from the gradient are unaffected.</p></div>
 <div class="we-s"><p><strong>Cause:</strong> a consistent 4 mm offset, e.g. measuring each length from the wrong end of the ruler, or recording total length instead of extension for one reference point (a zero error).</p></div>
-<div class="we-s"><p><strong>Effect on k:</strong> the offset shifts every point by the same amount, so the <strong>gradient is unchanged</strong>. Since \(k\) comes from the gradient (\(k = 1/\text{gradient}\) for this choice of axes), the value of \(k\) is unaffected.</p></div>
+<div class="we-s" data-f="k = \dfrac{1}{\text{gradient}}"><p><strong>Effect on k:</strong> the offset shifts every point by the same amount, so the <strong>gradient is unchanged</strong>. Since \(k\) comes from the gradient (\(k = 1/\text{gradient}\) for this choice of axes), the value of \(k\) is unaffected.</p></div>
 <div class="we-a"><p><strong>A zero error (systematic); it creates an intercept but doesn't change the gradient, so k is still correct.</strong> This is a big advantage of using gradients.</p></div>
 </div>
 

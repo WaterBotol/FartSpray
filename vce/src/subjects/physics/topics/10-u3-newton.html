@@ -87,20 +87,22 @@ dotpoints: investigate and apply theoretically and practically Newton's three la
 <div class="eq">\[ \text{along the slope: } mg\sin\theta \qquad \text{into the slope: } mg\cos\theta \]\[ \text{frictionless slope: } a = g\sin\theta, \qquad N = mg\cos\theta \]</div>
 <aside class="c-key"><p>Sanity-check sin vs cos with extreme angles. At \(\theta = 0^\circ\) (flat) the along-slope component must be zero, and \(\sin 0^\circ = 0\). At \(\theta = 90^\circ\) (vertical) the object free-falls, and \(g\sin 90^\circ = g\).</p></aside>
 
-<div class="we" data-title="Pulling a box with an angled rope" data-marks="4" data-f="F_x = F\cos\theta,\ F_y = F\sin\theta ;; F_{\text{net}} = ma ;; \Sigma F_y = 0">
+<div class="we" data-title="Pulling a box with an angled rope" data-marks="4">
 <div class="we-q"><p>A 12 kg box is dragged across a horizontal floor by a rope angled 30° above the horizontal. The tension in the rope is 50 N and friction on the box is 20 N.</p><p>(a) Calculate the acceleration of the box. (b) Calculate the normal force on the box.</p></div>
-<div class="we-s"><p><strong>Resolve the tension.</strong> Only the horizontal component drags the box forward:</p>\[ T_x = 50\cos 30^\circ = 43.3\ \text{N}, \qquad T_y = 50\sin 30^\circ = 25\ \text{N (upward)} \]</div>
-<div class="we-s"><p><strong>Horizontal: apply \(F_{\text{net}} = ma\).</strong></p>\[ a = \frac{T_x - F_f}{m} = \frac{43.3 - 20}{12} = 1.94\ \text{m s}^{-2} \]</div>
-<div class="we-s"><p><strong>Vertical: no vertical acceleration, so forces balance.</strong> The rope is lifting part of the weight, so the floor pushes up less:</p>\[ N + T_y = mg \Rightarrow N = 12(9.8) - 25 = 117.6 - 25 = 92.6\ \text{N} \]</div>
+<div class="we-t"><p>Newton's second law works separately in perpendicular directions. Horizontally the box speeds up, so the horizontal forces are unbalanced; vertically it doesn't move, so the vertical forces must balance. A force at an angle contributes to both directions through its components.</p></div>
+<div class="we-s" data-f="F_x = F\cos\theta,\ F_y = F\sin\theta"><p><strong>Resolve the tension.</strong> Only the horizontal component drags the box forward:</p>\[ T_x = 50\cos 30^\circ = 43.3\ \text{N}, \]\[ T_y = 50\sin 30^\circ = 25\ \text{N (upward)} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Horizontal: apply \(F_{\text{net}} = ma\).</strong></p>\[ a = \frac{T_x - F_f}{m} = \frac{43.3 - 20}{12} = 1.94\ \text{m s}^{-2} \]</div>
+<div class="we-s" data-f="\Sigma F_y = 0"><p><strong>Vertical: no vertical acceleration, so forces balance.</strong> The rope is lifting part of the weight, so the floor pushes up less:</p>\[ N + T_y = mg \Rightarrow N = 12(9.8) - 25 = 117.6 - 25 = 92.6\ \text{N} \]</div>
 <div class="we-a"><p><strong>(a) \(a \approx 1.9\ \text{m s}^{-2}\) in the direction of the pull. (b) \(N \approx 93\ \text{N}\) upward.</strong> The normal force is less than \(mg\) because the rope carries some of the weight.</p></div>
 </div>
 
-<div class="we" data-title="Block sliding down a ramp" data-marks="4" data-f="F_\parallel = mg\sin\theta ;; N = mg\cos\theta ;; F_{\text{net}} = ma">
+<div class="we" data-title="Block sliding down a ramp" data-marks="4">
 <div class="we-q"><p>A 5.0 kg block slides down a ramp inclined at 25° to the horizontal.</p><p>(a) Find its acceleration if the ramp is frictionless. (b) Find the normal force. (c) Find the acceleration if a constant friction force of 8.0 N acts.</p></div>
-<div class="we-s"><p><strong>Weight component along the slope:</strong></p>\[ mg\sin\theta = 5.0 \times 9.8 \times \sin 25^\circ = 20.7\ \text{N} \]</div>
-<div class="we-s"><p><strong>(a) Frictionless:</strong> this is the only force along the slope.</p>\[ a = \frac{20.7}{5.0} = 4.14\ \text{m s}^{-2} \quad (= g\sin 25^\circ) \]</div>
-<div class="we-s"><p><strong>(b) Perpendicular to the slope nothing accelerates,</strong> so</p>\[ N = mg\cos\theta = 5.0 \times 9.8 \times \cos 25^\circ = 44.4\ \text{N} \]</div>
-<div class="we-s"><p><strong>(c) With friction</strong> acting up the slope (opposing the slide):</p>\[ a = \frac{mg\sin\theta - F_f}{m} = \frac{20.7 - 8.0}{5.0} = 2.54\ \text{m s}^{-2} \]</div>
+<div class="we-t"><p>On a slope, choose axes along and perpendicular to the surface. Weight splits into \(mg\sin\theta\) down the slope (which drives the motion) and \(mg\cos\theta\) into the slope (balanced by the normal force, since nothing accelerates into the surface).</p></div>
+<div class="we-s" data-f="F_\parallel = mg\sin\theta"><p><strong>Weight component along the slope:</strong></p>\[ mg\sin\theta = 5.0 \times 9.8 \times \sin 25^\circ = 20.7\ \text{N} \]</div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m}"><p><strong>(a) Frictionless:</strong> this is the only force along the slope.</p>\[ a = \frac{20.7}{5.0} = 4.14\ \text{m s}^{-2} \quad (= g\sin 25^\circ) \]</div>
+<div class="we-s" data-f="N = mg\cos\theta"><p><strong>(b) Perpendicular to the slope nothing accelerates,</strong> so</p>\[ N = mg\cos\theta = 5.0 \times 9.8 \times \cos 25^\circ = 44.4\ \text{N} \]</div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m}"><p><strong>(c) With friction</strong> acting up the slope (opposing the slide):</p>\[ a = \frac{mg\sin\theta - F_f}{m} = \frac{20.7 - 8.0}{5.0} = 2.54\ \text{m s}^{-2} \]</div>
 <div class="we-a"><p><strong>(a) 4.1 m s⁻² down the slope (b) 44 N perpendicular to the slope (c) 2.5 m s⁻² down the slope.</strong></p></div>
 </div>
 
@@ -143,11 +145,12 @@ dotpoints: investigate and apply theoretically and practically Newton's three la
 <p>A lift <em>moving downward but slowing down</em> is accelerating <strong>upward</strong>, so you feel <strong>heavier</strong>. A lift moving upward at constant speed has \(a = 0\), so the scale reads your true weight. Always ask “which way is the acceleration?”, never “which way is it moving?”.</p>
 </aside>
 
-<div class="we" data-title="Scales in a lift" data-marks="3" data-f="N - mg = ma ;; N = m(g + a)">
+<div class="we" data-title="Scales in a lift" data-marks="3">
 <div class="we-q"><p>A 60 kg student stands on bathroom scales in a lift. The lift is <em>moving downward</em> and <em>slowing down</em> at 1.5 m s⁻². What reading (in newtons, and in the “kg” the scale displays) do the scales show?</p></div>
-<div class="we-s"><p><strong>Direction of acceleration.</strong> Moving down and slowing means the acceleration is opposite to the velocity: <strong>upward</strong>, so \(a = +1.5\ \text{m s}^{-2}\).</p></div>
-<div class="we-s"><p><strong>Apply \(N = m(g + a)\):</strong></p>\[ N = 60(9.8 + 1.5) = 678\ \text{N} \]</div>
-<div class="we-s"><p><strong>Scale display.</strong> Scales divide the force by 9.8:</p>\[ \frac{678}{9.8} = 69.2\ \text{“kg”} \]</div>
+<div class="we-t"><p>Scales read the normal force, not your weight. In an accelerating lift the normal force must provide both support and the extra (or reduced) force needed to accelerate you, so \(N - mg = ma\). What matters is the direction of the acceleration, not of the motion.</p></div>
+<div class="we-s" data-f="\vec a \text{ opposite } \vec v \text{ when slowing}"><p><strong>Direction of acceleration.</strong> Moving down and slowing means the acceleration is opposite to the velocity: <strong>upward</strong>, so \(a = +1.5\ \text{m s}^{-2}\).</p></div>
+<div class="we-s" data-f="N = m(g + a)"><p><strong>Apply \(N = m(g + a)\):</strong></p>\[ N = 60(9.8 + 1.5) = 678\ \text{N} \]</div>
+<div class="we-s" data-f="\text{reading} = \dfrac{N}{g}"><p><strong>Scale display.</strong> Scales divide the force by 9.8:</p>\[ \frac{678}{9.8} = 69.2\ \text{“kg”} \]</div>
 <div class="we-a"><p><strong>678 N (the scale shows about 69 kg).</strong> This is exactly the same as for a lift moving <em>up</em> and <em>speeding up</em> at 1.5 m s⁻².</p></div>
 </div>
 

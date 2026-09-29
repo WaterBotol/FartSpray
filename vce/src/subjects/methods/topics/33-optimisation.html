@@ -16,51 +16,57 @@ dotpoints: application of differentiation to maximum and minimum problems, inclu
 </ol>
 <aside class="c-exam"><p>VCAA marking schemes award a mark for a correct expression in one variable and often for the domain, before any calculus. Show them.</p></aside>
 
-<div class="we" data-title="The open box" data-marks="4" data-f="V = lwh ;; \dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; V&#x27;(x) = 0 \text{ and check endpoints}">
+<div class="we" data-title="The open box" data-marks="4">
 <div class="we-q"><p>Squares of side \(x\) cm are cut from each corner of a 24 cm × 24 cm sheet, and the sides are folded up to make an open box. Find the maximum volume.</p></div>
-<div class="we-s"><p>\(V = x(24 - 2x)^2\), domain \(0 &lt; x &lt; 12\).</p></div>
-<div class="we-s"><p>\(V'(x) = (24 - 2x)^2 + x\cdot 2(24 - 2x)(-2) = (24 - 2x)(24 - 6x)\).</p></div>
-<div class="we-s"><p>\(V' = 0 \Rightarrow x = 12\) (outside the domain; zero volume) or \(x = 4\). Sign: \(V' &gt; 0\) before 4, \(&lt; 0\) after, so it's a maximum.</p></div>
+<div class="we-t"><p>Optimisation always goes: write the quantity as a function of one variable, state the domain, set the derivative to zero, then justify it's a max or min (sign test or second derivative) and check the endpoints.</p></div>
+<div class="we-s" data-f="V = lwh"><p>\(V = x(24 - 2x)^2\), domain \(0 &lt; x &lt; 12\).</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; \dfrac{d}{dx}f(g(x)) = f&#x27;(g(x))\,g&#x27;(x)"><p>\(V'(x) = (24 - 2x)^2 + x\cdot 2(24 - 2x)(-2) = (24 - 2x)(24 - 6x)\).</p></div>
+<div class="we-s" data-f="V&#x27;(x) = 0"><p>\(V' = 0 \Rightarrow x = 12\) (outside the domain; zero volume) or \(x = 4\). Sign: \(V' &gt; 0\) before 4, \(&lt; 0\) after, so it's a maximum.</p></div>
 <div class="we-a"><p><strong>\(V_{\max} = 4(16)^2 = 1024\text{ cm}^3\)</strong> when \(x = 4\).</p></div>
 </div>
 
-<div class="we" data-title="Fence against a wall" data-marks="3" data-f="A = lw ;; A&#x27;(w) = 0 ;; A&#x27;&#x27; &lt; 0 \Rightarrow \text{max}">
+<div class="we" data-title="Fence against a wall" data-marks="3">
 <div class="we-q"><p>A farmer has 60 m of fencing to enclose a rectangular pen against a long straight wall (the wall forms one side). Find the maximum area.</p></div>
-<div class="we-s"><p>Let the two sides perpendicular to the wall be \(w\). The side parallel to the wall is \(60 - 2w\). \(A = w(60 - 2w)\), \(0 &lt; w &lt; 30\).</p></div>
-<div class="we-s"><p>\(A'(w) = 60 - 4w = 0 \Rightarrow w = 15\). \(A'' = -4 &lt; 0\): maximum.</p></div>
+<div class="we-t"><p>The fixed amount of fencing is the constraint: use it to write one side in terms of the other, so the area depends on only one variable.</p></div>
+<div class="we-s" data-f="A = lw"><p>Let the two sides perpendicular to the wall be \(w\). The side parallel to the wall is \(60 - 2w\). \(A = w(60 - 2w)\), \(0 &lt; w &lt; 30\).</p></div>
+<div class="we-s" data-f="A&#x27;(w) = 0 ;; A&#x27;&#x27; &lt; 0 \Rightarrow \text{max}"><p>\(A'(w) = 60 - 4w = 0 \Rightarrow w = 15\). \(A'' = -4 &lt; 0\): maximum.</p></div>
 <div class="we-a"><p><strong>\(A_{\max} = 15 \times 30 = 450\text{ m}^2\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Minimum surface area of a can" data-marks="4" data-f="V = \pi r^2h ;; S = 2\pi r^2 + 2\pi rh ;; S&#x27;(r) = 0">
+<div class="we" data-title="Minimum surface area of a can" data-marks="4">
 <div class="we-q"><p>A closed cylindrical can must hold 500 cm³. Find the radius that minimises its surface area, correct to two decimal places, and the minimum area.</p></div>
-<div class="we-s"><p>Constraint: \(\pi r^2 h = 500 \Rightarrow h = \dfrac{500}{\pi r^2}\).</p></div>
-<div class="we-s"><p>\(S = 2\pi r^2 + 2\pi rh = 2\pi r^2 + \dfrac{1000}{r}\), \(r &gt; 0\).</p></div>
-<div class="we-s"><p>\(S'(r) = 4\pi r - \dfrac{1000}{r^2} = 0 \Rightarrow r^3 = \dfrac{250}{\pi}\).</p></div>
+<div class="we-t"><p>There are two variables (\(r\) and \(h\)) but a fixed volume links them. Use the volume constraint to eliminate \(h\), then minimise the surface area as a function of \(r\) alone.</p></div>
+<div class="we-s" data-f="V = \pi r^2 h"><p>Constraint: \(\pi r^2 h = 500 \Rightarrow h = \dfrac{500}{\pi r^2}\).</p></div>
+<div class="we-s" data-f="S = 2\pi r^2 + 2\pi rh"><p>\(S = 2\pi r^2 + 2\pi rh = 2\pi r^2 + \dfrac{1000}{r}\), \(r &gt; 0\).</p></div>
+<div class="we-s" data-f="S&#x27;(r) = 0"><p>\(S'(r) = 4\pi r - \dfrac{1000}{r^2} = 0 \Rightarrow r^3 = \dfrac{250}{\pi}\).</p></div>
 <div class="we-a"><p><strong>\(r = \left(\frac{250}{\pi}\right)^{1/3} \approx 4.30\) cm</strong>, giving \(S_{\min} \approx 348.73\text{ cm}^2\). (At the optimum \(h = 2r\): the height equals the diameter.)</p></div>
 </div>
 
-<div class="we" data-title="Closest point on a curve" data-marks="4" data-f="d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2 ;; \text{minimise } D = d^2">
+<div class="we" data-title="Closest point on a curve" data-marks="4">
 <div class="we-q"><p>Find the minimum distance from the point \((0, 3)\) to the parabola \(y = x^2\).</p></div>
-<div class="we-s"><p>A point on the curve is \((x, x^2)\). Minimise the <em>square</em> of the distance (easier, same minimising \(x\)): \(D = x^2 + (x^2 - 3)^2\).</p></div>
-<div class="we-s"><p>\(D'(x) = 2x + 4x(x^2 - 3) = 2x(2x^2 - 5) = 0 \Rightarrow x = 0\) or \(x^2 = \frac52\).</p></div>
+<div class="we-t"><p>Distance involves a square root, which is messy to differentiate. Because the square root is increasing, the \(x\) that minimises \(d^2\) also minimises \(d\), so minimise \(D = d^2\) instead.</p></div>
+<div class="we-s" data-f="d^2 = (x_2 - x_1)^2 + (y_2 - y_1)^2"><p>A point on the curve is \((x, x^2)\). Minimise the <em>square</em> of the distance (easier, same minimising \(x\)): \(D = x^2 + (x^2 - 3)^2\).</p></div>
+<div class="we-s" data-f="D&#x27;(x) = 0"><p>\(D'(x) = 2x + 4x(x^2 - 3) = 2x(2x^2 - 5) = 0 \Rightarrow x = 0\) or \(x^2 = \frac52\).</p></div>
 <div class="we-s"><p>\(D(0) = 9\) (local max of \(D\)); \(D\) at \(x^2 = \frac52\): \(\frac52 + \frac14 = \frac{11}{4}\).</p></div>
 <div class="we-a"><p><strong>Minimum distance \(= \sqrt{\frac{11}{4}} = \frac{\sqrt{11}}{2}\)</strong>, at \(\left(\pm\sqrt{\frac52}, \frac52\right)\).</p></div>
 </div>
 
-<div class="we" data-title="Swim then run (Exam 2 style)" data-marks="4" data-f="t = \dfrac{\text{distance}}{\text{speed}} ;; d = \sqrt{a^2 + b^2} ;; T&#x27;(x) = 0 \text{ and check endpoints}">
+<div class="we" data-title="Swim then run (Exam 2 style)" data-marks="4">
 <div class="we-q"><p>A swimmer is 3 km offshore, directly opposite point \(P\) on a straight beach. She wants to reach a café on the beach 8 km from \(P\). She swims at 2 km/h and runs at 5 km/h. Where should she land to minimise the total time?</p></div>
-<div class="we-s"><p>Land \(x\) km from \(P\) towards the café. \(T(x) = \dfrac{\sqrt{9 + x^2}}{2} + \dfrac{8 - x}{5}\), \(0 \le x \le 8\).</p></div>
-<div class="we-s"><p>\(T'(x) = \dfrac{x}{2\sqrt{9 + x^2}} - \dfrac15 = 0 \Rightarrow 5x = 2\sqrt{9 + x^2} \Rightarrow 21x^2 = 36\).</p></div>
-<div class="we-s"><p>\(x = \frac{6}{\sqrt{21}} \approx 1.31\) km, giving \(T \approx 2.975\) h. Endpoints: \(T(0) = 3.1\) h, \(T(8) \approx 4.27\) h.</p></div>
+<div class="we-t"><p>Total time is the sum of each leg's distance divided by its speed. The swim leg is a hypotenuse, so it needs Pythagoras. Because the domain is closed, the endpoints must also be checked.</p></div>
+<div class="we-s" data-f="t = \dfrac{\text{distance}}{\text{speed}} ;; d = \sqrt{a^2 + b^2}"><p>Land \(x\) km from \(P\) towards the café. \(T(x) = \dfrac{\sqrt{9 + x^2}}{2} + \dfrac{8 - x}{5}\), \(0 \le x \le 8\).</p></div>
+<div class="we-s" data-f="T&#x27;(x) = 0"><p>\(T'(x) = \dfrac{x}{2\sqrt{9 + x^2}} - \dfrac15 = 0 \Rightarrow 5x = 2\sqrt{9 + x^2} \Rightarrow 21x^2 = 36\).</p></div>
+<div class="we-s" data-f="\text{compare with the endpoints}"><p>\(x = \frac{6}{\sqrt{21}} \approx 1.31\) km, giving \(T \approx 2.975\) h. Endpoints: \(T(0) = 3.1\) h, \(T(8) \approx 4.27\) h.</p></div>
 <div class="we-a"><p><strong>Land about 1.31 km from \(P\); the minimum time is about 2.97 h</strong> (2 h 58.5 min).</p></div>
 </div>
 
 <h2>Endpoints: absolute max and min</h2>
 <p>On a closed interval, the absolute maximum and minimum are among the stationary points <strong>and the endpoints</strong>. Evaluate all of them and compare.</p>
-<div class="we" data-title="Absolute extrema on [−2, 3]" data-marks="3" data-f="f&#x27;(x) = 0 ;; \text{absolute extrema: compare stationary values and endpoints}">
+<div class="we" data-title="Absolute extrema on [−2, 3]" data-marks="3">
 <div class="we-q"><p>Find the absolute maximum and minimum of \(f(x) = x^3 - 3x\) on \([-2, 3]\).</p></div>
-<div class="we-s"><p>\(f'(x) = 3x^2 - 3 = 0 \Rightarrow x = \pm1\). \(f(-1) = 2\), \(f(1) = -2\).</p></div>
-<div class="we-s"><p>Endpoints: \(f(-2) = -8 + 6 = -2\), \(f(3) = 27 - 9 = 18\).</p></div>
+<div class="we-t"><p>On a closed interval, the absolute max and min happen either at a stationary point or at an endpoint. Evaluate the function at all of them and pick the largest and smallest.</p></div>
+<div class="we-s" data-f="f&#x27;(x) = 0"><p>\(f'(x) = 3x^2 - 3 = 0 \Rightarrow x = \pm1\). \(f(-1) = 2\), \(f(1) = -2\).</p></div>
+<div class="we-s" data-f="\text{evaluate the endpoints}"><p>Endpoints: \(f(-2) = -8 + 6 = -2\), \(f(3) = 27 - 9 = 18\).</p></div>
 <div class="we-a"><p><strong>Absolute max 18 (at \(x = 3\)); absolute min \(-2\) (at \(x = -2\) and \(x = 1\)).</strong> The local max of 2 isn't the absolute max.</p></div>
 </div>
 

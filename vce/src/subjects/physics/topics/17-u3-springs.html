@@ -41,19 +41,21 @@ dotpoints: analyse transformations of energy between kinetic energy, strain pote
 <div class="eq"><div class="eq-label">Strain potential energy (ideal spring)</div>\[ E_s = \tfrac12 kx^2 = \tfrac12 Fx \]<p>For a non-ideal spring (curved graph) there is no formula: find the area under the graph by counting squares or splitting into shapes.</p></div>
 <aside class="c-key"><p>\(E_s \propto x^2\): doubling the extension quadruples the stored energy, even though the force only doubles.</p></aside>
 
-<div class="we" data-title="Reading a force–extension graph" data-marks="3" data-f="k = \text{gradient of } F\text{–}x ;; E_s = \tfrac12 kx^2">
+<div class="we" data-title="Reading a force–extension graph" data-marks="3">
 <div class="we-q"><p>Using the graph above, find (a) the spring constant and (b) the strain energy stored at an extension of 0.20 m. (c) How much extra energy is stored in stretching it from 0.10 m to 0.20 m?</p></div>
-<div class="we-s"><p><strong>(a) Gradient:</strong> \(k = \dfrac{16\ \text{N}}{0.20\ \text{m}} = 80\ \text{N m}^{-1}\).</p></div>
-<div class="we-s"><p><strong>(b)</strong> \(E_s = \tfrac12 kx^2 = \tfrac12(80)(0.20)^2 = 1.6\ \text{J}\).</p></div>
-<div class="we-s"><p><strong>(c)</strong> At 0.10 m: \(\tfrac12(80)(0.10)^2 = 0.40\ \text{J}\). Extra: \(1.6 - 0.40 = 1.2\ \text{J}\).</p></div>
+<div class="we-t"><p>For an ideal spring the force–extension graph is a straight line through the origin: its gradient is the spring constant and the area under it is the stored energy.</p></div>
+<div class="we-s" data-f="k = \text{gradient of } F\text{–}x"><p><strong>(a) Gradient:</strong> \(k = \dfrac{16\ \text{N}}{0.20\ \text{m}} = 80\ \text{N m}^{-1}\).</p></div>
+<div class="we-s" data-f="E_s = \tfrac12 kx^2"><p><strong>(b)</strong> \(E_s = \tfrac12 kx^2 = \tfrac12(80)(0.20)^2 = 1.6\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_s = \tfrac12 kx^2"><p><strong>(c)</strong> At 0.10 m: \(\tfrac12(80)(0.10)^2 = 0.40\ \text{J}\). Extra: \(1.6 - 0.40 = 1.2\ \text{J}\).</p></div>
 <div class="we-a"><p><strong>(a) 80 N m⁻¹ (b) 1.6 J (c) 1.2 J.</strong> The second 0.10 m stores three times as much energy as the first.</p></div>
 </div>
 
 <h2>Horizontal springs: kinetic ↔ strain energy</h2>
-<div class="we" data-title="A cart hitting a spring buffer" data-marks="3" data-f="\tfrac12 mv^2 = \tfrac12 kx^2 ;; F = kx">
+<div class="we" data-title="A cart hitting a spring buffer" data-marks="3">
 <div class="we-q"><p>A 2.0 kg cart rolls at 3.0 m s⁻¹ along a frictionless track into a spring buffer with \(k = 800\ \text{N m}^{-1}\). Find the maximum compression and the maximum force on the cart.</p></div>
-<div class="we-s"><p><strong>All kinetic energy becomes strain energy</strong> at maximum compression (the cart is momentarily at rest):</p>\[ \tfrac12 mv^2 = \tfrac12 kx^2 \Rightarrow x = v\sqrt{\frac{m}{k}} = 3.0\sqrt{\frac{2.0}{800}} = 0.15\ \text{m} \]</div>
-<div class="we-s"><p><strong>Maximum force</strong> at maximum compression: \(F = kx = 800 \times 0.15 = 120\ \text{N}\).</p></div>
+<div class="we-t"><p>At maximum compression the cart is momentarily at rest, so all its kinetic energy has become elastic potential energy. The force is largest there because \(F = kx\).</p></div>
+<div class="we-s" data-f="\tfrac12 mv^2 = \tfrac12 kx^2"><p><strong>All kinetic energy becomes strain energy</strong> at maximum compression (the cart is momentarily at rest):</p>\[ \tfrac12 mv^2 = \tfrac12 kx^2 \Rightarrow x = v\sqrt{\frac{m}{k}} = 3.0\sqrt{\frac{2.0}{800}} = 0.15\ \text{m} \]</div>
+<div class="we-s" data-f="F = kx"><p><strong>Maximum force</strong> at maximum compression: \(F = kx = 800 \times 0.15 = 120\ \text{N}\).</p></div>
 <div class="we-a"><p><strong>0.15 m; 120 N.</strong> The cart then rebounds at 3.0 m s⁻¹ (an ideal spring returns all the energy).</p></div>
 </div>
 
@@ -101,14 +103,15 @@ dotpoints: analyse transformations of energy between kinetic energy, strain pote
 <figcaption>Worked example below: 60 kg jumper, 20 m cord, \(k = 150\ \text{N m}^{-1}\). Kinetic energy keeps rising for 3.9 m after the cord goes taut and peaks at the equilibrium point. At every point \(E_g + E_k + E_s = 21.8\ \text{kJ}\).</figcaption>
 </figure>
 
-<div class="we" data-title="The full bungee jump (hard)" data-marks="8" data-f="v^2 = u^2 + 2as ;; mg(L + x) = \tfrac12 kx^2 ;; x_{\text{eq}} = \dfrac{mg}{k}">
+<div class="we" data-title="The full bungee jump (hard)" data-marks="8">
 <div class="we-q"><p>A 60 kg bungee jumper steps off a platform attached to a cord of natural length 20 m and spring constant 150 N m⁻¹. Treat the cord as ideal and ignore air resistance.</p><p>(a) Find the speed when the cord first becomes taut. (b) Find the maximum extension of the cord and the lowest point reached. (c) Find where the jumper's speed is greatest, and that speed. (d) Find the jumper's acceleration at the lowest point.</p></div>
-<div class="we-s"><p><strong>(a) Free fall for 20 m:</strong></p>\[ v = \sqrt{2gL} = \sqrt{2(9.8)(20)} = 19.8\ \text{m s}^{-1} \]</div>
-<div class="we-s"><p><strong>(b) Lowest point:</strong> all the gravitational energy lost over \(20 + x\) metres is stored in the cord:</p>\[ mg(20 + x) = \tfrac12 kx^2 \Rightarrow 588(20 + x) = 75x^2 \]\[ 75x^2 - 588x - 11\,760 = 0 \]</div>
-<div class="we-s"><p><strong>Quadratic formula</strong> (positive root):</p>\[ x = \frac{588 + \sqrt{588^2 + 4(75)(11\,760)}}{2(75)} = \frac{588 + 1968}{150} = 17.0\ \text{m} \]<p>Lowest point: \(20 + 17.0 = 37.0\ \text{m}\) below the platform.</p></div>
-<div class="we-s"><p><strong>(c) Maximum speed</strong> is at equilibrium, where the cord's force equals the weight (net force zero, acceleration changes from down to up):</p>\[ x_{\text{eq}} = \frac{mg}{k} = \frac{588}{150} = 3.92\ \text{m of extension (23.9 m below the platform)} \]</div>
-<div class="we-s"><p><strong>Energy at that point:</strong></p>\[ \tfrac12 mv^2 = mg(23.92) - \tfrac12 k(3.92)^2 = 14\,065 - 1152 = 12\,913\ \text{J} \]\[ v_{\max} = \sqrt{\frac{2(12\,913)}{60}} = 20.7\ \text{m s}^{-1} \]</div>
-<div class="we-s"><p><strong>(d) Lowest point:</strong> cord force \(= kx = 150 \times 17.04 = 2556\ \text{N}\) up; weight 588 N down.</p>\[ a = \frac{2556 - 588}{60} = 32.8\ \text{m s}^{-2}\ \text{upward} \]</div>
+<div class="we-t"><p>A bungee jump is energy bookkeeping. Before the cord is taut it's free fall; after, gravitational energy is shared between kinetic and elastic energy. At the lowest point \(E_k = 0\), so all the gravitational energy lost is stored in the cord. Speed is greatest where the cord force equals the weight (net force zero).</p></div>
+<div class="we-s" data-f="v^2 = u^2 + 2as"><p><strong>(a) Free fall for 20 m:</strong></p>\[ v = \sqrt{2gL} = \sqrt{2(9.8)(20)} = 19.8\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="mg(L + x) = \tfrac12 kx^2"><p><strong>(b) Lowest point:</strong> all the gravitational energy lost over \(20 + x\) metres is stored in the cord:</p>\[ mg(20 + x) = \tfrac12 kx^2 \Rightarrow 588(20 + x) = 75x^2 \]\[ 75x^2 - 588x - 11\,760 = 0 \]</div>
+<div class="we-s" data-f="x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}"><p><strong>Quadratic formula</strong> (positive root):</p>\[ x = \frac{588 + \sqrt{588^2 + 4(75)(11\,760)}}{2(75)} = \frac{588 + 1968}{150} = 17.0\ \text{m} \]<p>Lowest point: \(20 + 17.0 = 37.0\ \text{m}\) below the platform.</p></div>
+<div class="we-s" data-f="kx_{\text{eq}} = mg"><p><strong>(c) Maximum speed</strong> is at equilibrium, where the cord's force equals the weight (net force zero, acceleration changes from down to up):</p>\[ x_{\text{eq}} = \frac{mg}{k} = \frac{588}{150} = 3.92\ \text{m of extension (23.9 m below the platform)} \]</div>
+<div class="we-s" data-f="\tfrac12 mv^2 = mg\Delta h - \tfrac12 kx^2"><p><strong>Energy at that point:</strong></p>\[ \tfrac12 mv^2 = mg(23.92) - \tfrac12 k(3.92)^2 = 14\,065 - 1152 = 12\,913\ \text{J} \]\[ v_{\max} = \sqrt{\frac{2(12\,913)}{60}} = 20.7\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="a = \dfrac{kx - mg}{m}"><p><strong>(d) Lowest point:</strong> cord force \(= kx = 150 \times 17.04 = 2556\ \text{N}\) up; weight 588 N down.</p>\[ a = \frac{2556 - 588}{60} = 32.8\ \text{m s}^{-2}\ \text{upward} \]</div>
 <div class="we-a"><p><strong>(a) 19.8 m s⁻¹ (b) 17.0 m extension; 37.0 m below the platform (c) 20.7 m s⁻¹, 23.9 m below the platform (d) 33 m s⁻² upward (about 3.3 g).</strong></p></div>
 </div>
 
@@ -124,11 +127,12 @@ dotpoints: analyse transformations of energy between kinetic energy, strain pote
 
 <h2>Springs in collisions</h2>
 <p>When two objects collide through a spring (for example magnetic or spring-loaded trolleys), the spring is at <strong>maximum compression</strong> when the two objects are moving at the <strong>same velocity</strong>. At that instant, use momentum to find the common velocity, then energy to find the strain energy.</p>
-<div class="we" data-title="Maximum compression in a collision (hard)" data-marks="4" data-f="m_1u_1 = (m_1 + m_2)v ;; E_s = \Delta E_k ;; E_s = \tfrac12 kx^2">
+<div class="we" data-title="Maximum compression in a collision (hard)" data-marks="4">
 <div class="we-q"><p>A 1.0 kg trolley moving at 4.0 m s⁻¹ collides with a stationary 3.0 kg trolley that has a light spring (\(k = 1200\ \text{N m}^{-1}\)) on its front. Find the maximum compression of the spring.</p></div>
-<div class="we-s"><p><strong>Common velocity at maximum compression</strong> (momentum):</p>\[ 1.0(4.0) = 4.0v \Rightarrow v = 1.0\ \text{m s}^{-1} \]</div>
-<div class="we-s"><p><strong>Kinetic energy "missing" is stored in the spring:</strong></p>\[ E_s = \tfrac12(1.0)(4.0)^2 - \tfrac12(4.0)(1.0)^2 = 8.0 - 2.0 = 6.0\ \text{J} \]</div>
-<div class="we-s"><p><strong>Compression:</strong></p>\[ \tfrac12 kx^2 = 6.0 \Rightarrow x = \sqrt{\frac{2(6.0)}{1200}} = 0.10\ \text{m} \]</div>
+<div class="we-t"><p>At maximum compression the two trolleys move together, so momentum conservation fixes their shared velocity. The kinetic energy that "disappears" at that instant is stored in the spring, and an ideal spring gives it all back afterwards.</p></div>
+<div class="we-s" data-f="m_1u_1 = (m_1 + m_2)v"><p><strong>Common velocity at maximum compression</strong> (momentum):</p>\[ 1.0(4.0) = 4.0v \Rightarrow v = 1.0\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="E_s = E_{k,\text{before}} - E_{k,\text{after}}"><p><strong>Kinetic energy "missing" is stored in the spring:</strong></p>\[ E_s = \tfrac12(1.0)(4.0)^2 - \tfrac12(4.0)(1.0)^2 = 8.0 - 2.0 = 6.0\ \text{J} \]</div>
+<div class="we-s" data-f="E_s = \tfrac12 kx^2"><p><strong>Compression:</strong></p>\[ \tfrac12 kx^2 = 6.0 \Rightarrow x = \sqrt{\frac{2(6.0)}{1200}} = 0.10\ \text{m} \]</div>
 <div class="we-a"><p><strong>0.10 m.</strong> A common error is to assume all 8.0 J is stored; it can't be, because momentum means the trolleys must still be moving.</p></div>
 </div>
 

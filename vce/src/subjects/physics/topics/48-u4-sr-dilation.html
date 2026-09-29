@@ -40,6 +40,14 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 </svg>
 <figcaption>Light always travels at \(c\). In the frame where the clock moves, the light's path is longer, so each tick takes longer: the moving clock runs slow by the factor \(\gamma\).</figcaption>
 </figure>
+<h3>Einstein's light clock (photon clock)</h3>
+<p>This thought experiment is where \(t = \gamma t_0\) comes from. A photon bounces between two mirrors a distance \(d\) apart.</p>
+<ul>
+  <li>In the clock's own frame the photon goes straight up and down: one tick takes \(t_0 = 2d/c\). This is proper time (both ends of the tick happen at the same place).</li>
+  <li>An observer who sees the clock moving at \(v\) sees the photon follow a longer diagonal path.</li>
+  <li><strong>Newton</strong> would say the tick takes the same time, so the photon must move faster than \(c\) along the diagonal. <strong>Einstein's second postulate</strong> says the photon travels at \(c\) for both observers, so the longer path must take <strong>longer</strong>: the moving clock runs slow.</li>
+  <li>Pythagoras on half a tick: \(\left(\tfrac{ct}{2}\right)^2 = d^2 + \left(\tfrac{vt}{2}\right)^2\), which rearranges to \(t = \dfrac{t_0}{\sqrt{1 - v^2/c^2}} = \gamma t_0\).</li>
+</ul>
 
 <h2>Length contraction</h2>
 <aside class="c-def" data-title="Proper length \(L_0\)"><p>The length of an object (or distance between two points) measured in the frame in which the object (or the two points) is <strong>at rest</strong>.</p></aside>
@@ -66,31 +74,34 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 <p>For a trip to a star, the astronaut measures the <strong>proper time</strong> but a <strong>contracted distance</strong>; Earth measures the <strong>proper distance</strong> but a <strong>dilated time</strong>. Neither observer has both “proper” quantities. Mixing \(t_0\) with \(L_0\) in one speed calculation is a very common error.</p>
 </aside>
 
-<div class="we" data-title="A trip to a star (hard)" data-marks="6" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; t = \gamma t_0 ;; L = \dfrac{L_0}{\gamma}">
+<div class="we" data-title="A trip to a star (hard)" data-marks="6">
 <div class="we-q"><p>A spaceship travels at \(0.80c\) from Earth to a star 12 light-years away (as measured from Earth). Ignore acceleration.</p><p>(a) How long does the trip take according to Earth observers? (b) How long does it take according to the astronaut? (c) How far is it to the star according to the astronaut? (d) Show that both observers agree on the relative speed.</p></div>
-<div class="we-s"><p><strong>\(\gamma\):</strong> \(\gamma = 1/\sqrt{1 - 0.64} = 1/0.6 = 1.667\).</p></div>
-<div class="we-s"><p><strong>(a) Earth frame:</strong> distance 12 ly at \(0.80c\): \(t = \dfrac{12\ \text{ly}}{0.80c} = 15\ \text{years}\). (A light-year is the distance light travels in a year, so ly ÷ c gives years.)</p></div>
-<div class="we-s"><p><strong>(b) The astronaut measures proper time</strong> (departure and arrival both happen at the ship):</p>\[ t_0 = \frac{t}{\gamma} = \frac{15}{1.667} = 9.0\ \text{years} \]</div>
-<div class="we-s"><p><strong>(c) The Earth–star distance is proper length in Earth's frame</strong>, so the astronaut measures it contracted:</p>\[ L = \frac{L_0}{\gamma} = \frac{12}{1.667} = 7.2\ \text{ly} \]</div>
-<div class="we-s"><p><strong>(d)</strong> Earth: \(12\ \text{ly}/15\ \text{y} = 0.80c\). Astronaut: \(7.2\ \text{ly}/9.0\ \text{y} = 0.80c\). ✓</p></div>
+<div class="we-t"><p>Decide who measures proper time (the frame where both events happen at the same place: the ship) and proper length (the frame where the distance is at rest: Earth). Everyone else measures dilated time or contracted length, and both frames agree on the relative speed.</p></div>
+<div class="we-s" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}"><p><strong>\(\gamma\):</strong> \(\gamma = 1/\sqrt{1 - 0.64} = 1/0.6 = 1.667\).</p></div>
+<div class="we-s" data-f="t = \dfrac dv"><p><strong>(a) Earth frame:</strong> distance 12 ly at \(0.80c\): \(t = \dfrac{12\ \text{ly}}{0.80c} = 15\ \text{years}\). (A light-year is the distance light travels in a year, so ly ÷ c gives years.)</p></div>
+<div class="we-s" data-f="t_0 = \dfrac t\gamma"><p><strong>(b) The astronaut measures proper time</strong> (departure and arrival both happen at the ship):</p>\[ t_0 = \frac{t}{\gamma} = \frac{15}{1.667} = 9.0\ \text{years} \]</div>
+<div class="we-s" data-f="L = \dfrac{L_0}{\gamma}"><p><strong>(c) The Earth–star distance is proper length in Earth's frame</strong>, so the astronaut measures it contracted:</p>\[ L = \frac{L_0}{\gamma} = \frac{12}{1.667} = 7.2\ \text{ly} \]</div>
+<div class="we-s" data-f="v = \dfrac dt"><p><strong>(d)</strong> Earth: \(12\ \text{ly}/15\ \text{y} = 0.80c\). Astronaut: \(7.2\ \text{ly}/9.0\ \text{y} = 0.80c\). ✓</p></div>
 <div class="we-a"><p><strong>(a) 15 years (b) 9.0 years (c) 7.2 ly (d) both get \(0.80c\).</strong> Time dilation (Earth's view) and length contraction (the astronaut's view) are two descriptions of the same physics.</p></div>
 </div>
 
-<div class="we" data-title="Length of a moving spaceship" data-marks="2" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; L = \dfrac{L_0}{\gamma}">
+<div class="we" data-title="Length of a moving spaceship" data-marks="2">
 <div class="we-q"><p>A spaceship is 100 m long when measured by its crew. What length does an observer on a space station measure as it passes at \(0.60c\)? What does the crew measure for the ship's length?</p></div>
-<div class="we-s"><p>\(\gamma = 1/\sqrt{1 - 0.36} = 1.25\). The crew measure proper length (100 m).</p></div>
-<div class="we-s"><p>Station: \(L = L_0/\gamma = 100/1.25 = 80\ \text{m}\).</p></div>
+<div class="we-t"><p>Proper length is measured in the frame where the object is at rest (the crew's). Observers who see it moving measure it shorter, but only along the direction of motion.</p></div>
+<div class="we-s" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}"><p>\(\gamma = 1/\sqrt{1 - 0.36} = 1.25\). The crew measure proper length (100 m).</p></div>
+<div class="we-s" data-f="L = \dfrac{L_0}{\gamma}"><p>Station: \(L = L_0/\gamma = 100/1.25 = 80\ \text{m}\).</p></div>
 <div class="we-a"><p><strong>80 m for the station; 100 m for the crew.</strong> The crew notice nothing unusual about their own ship.</p></div>
 </div>
 
 <h2>Evidence: muon decay</h2>
 <p><strong>Muons</strong> are unstable particles created when cosmic rays hit the upper atmosphere, about 10 km up. At rest, a muon's mean lifetime is 2.2 μs. They are created moving at about \(0.998c\).</p>
-<div class="we" data-title="Why do muons reach the ground? (classic)" data-marks="6" data-f="d = vt ;; \gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; t = \gamma t_0 ;; L = \dfrac{L_0}{\gamma}">
+<div class="we" data-title="Why do muons reach the ground? (classic)" data-marks="6">
 <div class="we-q"><p>Muons are created 10 km above the ground moving at \(0.998c\). Their mean lifetime at rest is 2.2 μs. (a) Classically, how far would a typical muon travel before decaying? (b) Explain, from Earth's frame, why many reach the ground. (c) Explain the same result from the muon's frame.</p></div>
-<div class="we-s"><p><strong>(a) Classical:</strong> \(d = vt = (0.998)(3.0\times10^8)(2.2\times10^{-6}) = 660\ \text{m}\). Almost none should reach the ground 10 km below.</p></div>
-<div class="we-s"><p><strong>\(\gamma\) at \(0.998c\):</strong> \(\gamma = 1/\sqrt{1 - 0.998^2} = 15.8\).</p></div>
-<div class="we-s"><p><strong>(b) Earth frame: time dilation.</strong> The 2.2 μs lifetime is proper time (measured in the muon's frame). Earth observers measure it dilated:</p>\[ t = \gamma t_0 = 15.8 \times 2.2\ \mu\text{s} = 34.8\ \mu\text{s} \]<p>In that time: \(d = (0.998c)(34.8\times10^{-6}) = 1.04\times10^4\ \text{m} \approx 10\ \text{km}\). Enough to reach the ground.</p></div>
-<div class="we-s"><p><strong>(c) Muon frame: length contraction.</strong> The muon is at rest; the atmosphere rushes past at \(0.998c\). The 10 km thickness is proper length in Earth's frame, so the muon measures it contracted:</p>\[ L = \frac{L_0}{\gamma} = \frac{10\,000}{15.8} = 632\ \text{m} \]<p>Time to cover 632 m at \(0.998c\): \(632/(2.99\times10^8) = 2.1\ \mu\text{s}\), within its 2.2 μs lifetime.</p></div>
+<div class="we-t"><p>Muons are the classic evidence for relativity. Earth observers see the muon's clock run slow (time dilation); the muon sees the atmosphere contracted (length contraction). Both explanations give the same prediction, and each stays within one frame of reference.</p></div>
+<div class="we-s" data-f="d = vt"><p><strong>(a) Classical:</strong> \(d = vt = (0.998)(3.0\times10^8)(2.2\times10^{-6}) = 660\ \text{m}\). Almost none should reach the ground 10 km below.</p></div>
+<div class="we-s" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}"><p><strong>\(\gamma\) at \(0.998c\):</strong> \(\gamma = 1/\sqrt{1 - 0.998^2} = 15.8\).</p></div>
+<div class="we-s" data-f="t = \gamma t_0"><p><strong>(b) Earth frame: time dilation.</strong> The 2.2 μs lifetime is proper time (measured in the muon's frame). Earth observers measure it dilated:</p>\[ t = \gamma t_0 = 15.8 \times 2.2\ \mu\text{s} = 34.8\ \mu\text{s} \]<p>In that time: \(d = (0.998c)(34.8\times10^{-6}) = 1.04\times10^4\ \text{m} \approx 10\ \text{km}\). Enough to reach the ground.</p></div>
+<div class="we-s" data-f="L = \dfrac{L_0}{\gamma}"><p><strong>(c) Muon frame: length contraction.</strong> The muon is at rest; the atmosphere rushes past at \(0.998c\). The 10 km thickness is proper length in Earth's frame, so the muon measures it contracted:</p>\[ L = \frac{L_0}{\gamma} = \frac{10\,000}{15.8} = 632\ \text{m} \]<p>Time to cover 632 m at \(0.998c\): \(632/(2.99\times10^8) = 2.1\ \mu\text{s}\), within its 2.2 μs lifetime.</p></div>
 <div class="we-a"><p><strong>(a) about 660 m (b) the muon's clock runs slow: 34.8 μs in Earth's frame, enough to travel ~10 km (c) the atmosphere is only ~630 m thick in the muon's frame.</strong> The large number of muons detected at sea level is direct experimental evidence for both effects.</p></div>
 </div>
 <aside class="c-exam" data-title="Exam tip: muon answers need the right frame">
@@ -107,10 +118,11 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 </ul>
 <h3>GPS satellites</h3>
 <p>GPS receivers find position by timing signals from satellites, so the satellites' atomic clocks must agree with ground clocks to within nanoseconds. A GPS satellite orbits at about 3.9 km s⁻¹, so special relativity makes its clock run slow, relative to the ground, by about 7 μs per day. (General relativity, which isn't in the course, makes it run fast by about 45 μs per day, so the net effect is about 38 μs fast per day.) Uncorrected, 38 μs of timing error corresponds to \(c \times 38\ \mu\text{s} \approx 11\ \text{km}\) of position error building up every day, so the satellite clocks are deliberately adjusted.</p>
-<div class="we" data-title="Special-relativity drift of a GPS clock" data-marks="3" data-f="\gamma - 1 \approx \tfrac12\left(\dfrac vc\right)^2 ;; t = \gamma t_0">
+<div class="we" data-title="Special-relativity drift of a GPS clock" data-marks="3">
 <div class="we-q"><p>A GPS satellite moves at \(3.87\times10^3\ \text{m s}^{-1}\). Using \(\gamma - 1 \approx \tfrac12\left(\frac{v}{c}\right)^2\) for small speeds, estimate how far its clock falls behind a ground clock in one day because of special relativity alone.</p></div>
-<div class="we-s"><p>\(\frac{v}{c} = \frac{3.87\times10^3}{3.0\times10^8} = 1.29\times10^{-5}\), so \(\gamma - 1 \approx \tfrac12(1.29\times10^{-5})^2 = 8.3\times10^{-11}\).</p></div>
-<div class="we-s"><p>In one day (86 400 s) the difference is \(86\,400 \times 8.3\times10^{-11} = 7.2\times10^{-6}\ \text{s}\).</p></div>
+<div class="we-t"><p>At everyday speeds \(\gamma\) is only slightly above 1, but atomic clocks are precise enough to detect the difference. GPS clocks must be corrected for it.</p></div>
+<div class="we-s" data-f="\gamma - 1 \approx \tfrac12\left(\dfrac vc\right)^2"><p>\(\frac{v}{c} = \frac{3.87\times10^3}{3.0\times10^8} = 1.29\times10^{-5}\), so \(\gamma - 1 \approx \tfrac12(1.29\times10^{-5})^2 = 8.3\times10^{-11}\).</p></div>
+<div class="we-s" data-f="\Delta t = (\gamma - 1)t"><p>In one day (86 400 s) the difference is \(86\,400 \times 8.3\times10^{-11} = 7.2\times10^{-6}\ \text{s}\).</p></div>
 <div class="we-a"><p><strong>About 7 μs per day.</strong> Tiny, but light travels about 2 km in 7 μs, so it matters for navigation.</p></div>
 </div>
 <aside class="c-deep" data-title="Going deeper: it's symmetric">

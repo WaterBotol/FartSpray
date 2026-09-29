@@ -30,10 +30,11 @@ dotpoints: reversible reactions and dynamic equilibrium in closed systems | the 
 <tr><td>Multiply coefficients by \(n\)</td><td>\(K^n\) (halving gives \(\sqrt{K}\))</td></tr>
 </tbody></table></div>
 
-<div class="we" data-title="Calculate K from equilibrium amounts" data-marks="3" data-f="c = \dfrac nV ;; K = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}">
+<div class="we" data-title="Calculate K from equilibrium amounts" data-marks="3">
 <div class="we-q"><p>At equilibrium, a 2.0 L vessel contains 0.40 mol N₂, 1.20 mol H₂ and 0.20 mol NH₃. Calculate \(K\) for \(\ce{N2(g) + 3H2(g) <=> 2NH3(g)}\).</p></div>
-<div class="we-s"><p>Concentrations: \([\ce{N2}] = 0.20\), \([\ce{H2}] = 0.60\), \([\ce{NH3}] = 0.10\ \text{M}\). (Divide by volume first!)</p></div>
-<div class="we-s"><p>\(K = \dfrac{[\ce{NH3}]^2}{[\ce{N2}][\ce{H2}]^3} = \dfrac{0.10^2}{0.20 \times 0.60^3}\).</p></div>
+<div class="we-t"><p>The equilibrium constant uses equilibrium concentrations, each raised to the power of its coefficient: products over reactants. Convert moles to concentrations first.</p></div>
+<div class="we-s" data-f="c = \dfrac nV"><p>Concentrations: \([\ce{N2}] = 0.20\), \([\ce{H2}] = 0.60\), \([\ce{NH3}] = 0.10\ \text{M}\). (Divide by volume first!)</p></div>
+<div class="we-s" data-f="K = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}"><p>\(K = \dfrac{[\ce{NH3}]^2}{[\ce{N2}][\ce{H2}]^3} = \dfrac{0.10^2}{0.20 \times 0.60^3}\).</p></div>
 <div class="we-a"><p><strong>\(K = 0.23\ \text{M}^{-2}\)</strong>. Units: \(\frac{\text{M}^2}{\text{M} \cdot \text{M}^3} = \text{M}^{-2}\).</p></div>
 </div>
 
@@ -44,25 +45,28 @@ dotpoints: reversible reactions and dynamic equilibrium in closed systems | the 
   <li>\(Q &gt; K\): too many products, so the reaction proceeds backwards (net).</li>
   <li>\(Q = K\): at equilibrium.</li>
 </ul>
-<div class="we" data-title="Which way will it go?" data-marks="2" data-f="Q = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}} ;; Q \text{ vs } K">
+<div class="we" data-title="Which way will it go?" data-marks="2">
 <div class="we-q"><p>For the ammonia equilibrium above (\(K = 0.23\ \text{M}^{-2}\) at that temperature), a mixture has \([\ce{N2}] = [\ce{H2}] = [\ce{NH3}] = 0.50\ \text{M}\). Predict the direction of net reaction.</p></div>
-<div class="we-s"><p>\(Q = \frac{0.50^2}{0.50 \times 0.50^3} = \frac{0.25}{0.0625} = 4.0\).</p></div>
-<div class="we-a"><p><strong>\(Q &gt; K\), so the net reaction goes backwards</strong>: NH₃ decomposes until \(Q\) falls to 0.23.</p></div>
+<div class="we-t"><p>The reaction quotient \(Q\) has the same form as \(K\) but uses the current concentrations. If \(Q > K\) there are too many products, so the net reaction goes backwards; if \(Q < K\) it goes forwards.</p></div>
+<div class="we-s" data-f="Q = \dfrac{[\text{products}]^{\text{coeff}}}{[\text{reactants}]^{\text{coeff}}}"><p>\(Q = \frac{0.50^2}{0.50 \times 0.50^3} = \frac{0.25}{0.0625} = 4.0\).</p></div>
+<div class="we-a" data-f="Q &gt; K \Rightarrow \text{reverse}"><p><strong>\(Q &gt; K\), so the net reaction goes backwards</strong>: NH₃ decomposes until \(Q\) falls to 0.23.</p></div>
 </div>
 
 <h2>ICE tables</h2>
 <p>Initial – Change – Equilibrium. Use the mole ratio for the Change row, then substitute the Equilibrium row into \(K\).</p>
-<div class="we" data-title="From initial amounts and one equilibrium amount" data-marks="4" data-f="\text{ICE table} ;; c = \dfrac nV ;; K = \dfrac{[\ce{SO3}]^2}{[\ce{SO2}]^2[\ce{O2}]}">
+<div class="we" data-title="From initial amounts and one equilibrium amount" data-marks="4">
 <div class="we-q"><p>0.40 mol SO₂ and 0.20 mol O₂ are placed in a 2.0 L vessel. At equilibrium there is 0.30 mol SO₃. Calculate \(K\) for \(\ce{2SO2(g) + O2(g) <=> 2SO3(g)}\).</p></div>
-<div class="we-s"><div class="tbl"><table><thead><tr><th>mol</th><th>SO₂</th><th>O₂</th><th>SO₃</th></tr></thead><tbody><tr><td>I</td><td>0.40</td><td>0.20</td><td>0</td></tr><tr><td>C</td><td>−0.30</td><td>−0.15</td><td>+0.30</td></tr><tr><td>E</td><td>0.10</td><td>0.05</td><td>0.30</td></tr></tbody></table></div></div>
-<div class="we-s"><p>Concentrations (÷ 2.0 L): 0.050, 0.025, 0.15 M.</p></div>
-<div class="we-a"><p>\(K = \dfrac{0.15^2}{0.050^2 \times 0.025} = \) <strong>\(3.6 \times 10^2\ \text{M}^{-1}\)</strong>.</p></div>
+<div class="we-t"><p>An ICE table (Initial, Change, Equilibrium) uses the mole ratio to work out how much of each substance reacted from the one amount you know. Convert to concentrations before substituting into \(K\).</p></div>
+<div class="we-s" data-f="\text{change in moles} \propto \text{coefficients}"><div class="tbl"><table><thead><tr><th>mol</th><th>SO₂</th><th>O₂</th><th>SO₃</th></tr></thead><tbody><tr><td>I</td><td>0.40</td><td>0.20</td><td>0</td></tr><tr><td>C</td><td>−0.30</td><td>−0.15</td><td>+0.30</td></tr><tr><td>E</td><td>0.10</td><td>0.05</td><td>0.30</td></tr></tbody></table></div></div>
+<div class="we-s" data-f="c = \dfrac nV"><p>Concentrations (÷ 2.0 L): 0.050, 0.025, 0.15 M.</p></div>
+<div class="we-a" data-f="K = \dfrac{[\ce{SO3}]^2}{[\ce{SO2}]^2[\ce{O2}]}"><p>\(K = \dfrac{0.15^2}{0.050^2 \times 0.025} = \) <strong>\(3.6 \times 10^2\ \text{M}^{-1}\)</strong>.</p></div>
 </div>
 
-<div class="we" data-title="Solving for x (hard)" data-marks="4" data-f="\text{ICE table} ;; K = \dfrac{[\ce{HI}]^2}{[\ce{H2}][\ce{I2}]}">
+<div class="we" data-title="Solving for x (hard)" data-marks="4">
 <div class="we-q"><p>1.00 mol H₂ and 1.00 mol I₂ are placed in a 1.00 L flask. \(K = 50\) at this temperature for \(\ce{H2(g) + I2(g) <=> 2HI(g)}\). Calculate the equilibrium concentration of HI.</p></div>
-<div class="we-s"><p>E row: \([\ce{H2}] = [\ce{I2}] = 1.00 - x\), \([\ce{HI}] = 2x\).</p></div>
-<div class="we-s"><p>\(\frac{(2x)^2}{(1.00 - x)^2} = 50\). Take square roots: \(\frac{2x}{1.00 - x} = 7.07\).</p></div>
+<div class="we-t"><p>When only initial amounts and \(K\) are known, let \(x\) be the amount that reacts, write every equilibrium concentration in terms of \(x\), substitute into \(K\) and solve.</p></div>
+<div class="we-s" data-f="\text{ICE table in terms of } x"><p>E row: \([\ce{H2}] = [\ce{I2}] = 1.00 - x\), \([\ce{HI}] = 2x\).</p></div>
+<div class="we-s" data-f="K = \dfrac{[\ce{HI}]^2}{[\ce{H2}][\ce{I2}]}"><p>\(\frac{(2x)^2}{(1.00 - x)^2} = 50\). Take square roots: \(\frac{2x}{1.00 - x} = 7.07\).</p></div>
 <div class="we-s"><p>\(2x = 7.07 - 7.07x \Rightarrow x = 0.780\).</p></div>
 <div class="we-a"><p><strong>\([\ce{HI}] = 1.56\ \text{M}\)</strong> (and \([\ce{H2}] = [\ce{I2}] = 0.22\ \text{M}\)). The square-root trick only works because the expression is a perfect square.</p></div>
 </div>

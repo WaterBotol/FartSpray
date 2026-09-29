@@ -8,9 +8,10 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 -->
 <h2>Limits</h2>
 <p>\(\displaystyle\lim_{x \to a} f(x) = L\) means \(f(x)\) gets as close as we like to \(L\) as \(x\) gets close to \(a\) (from both sides). It doesn't matter what happens <em>at</em> \(x = a\) itself.</p>
-<div class="we" data-title="Removing a 0/0 hole" data-marks="1" data-f="\text{factorise and cancel before substituting}">
+<div class="we" data-title="Removing a 0/0 hole" data-marks="1">
 <div class="we-q"><p>Evaluate \(\displaystyle\lim_{x \to 3} \frac{x^2 - 9}{x - 3}\).</p></div>
-<div class="we-s"><p>Direct substitution gives \(\frac00\): factorise. \(\frac{(x - 3)(x + 3)}{x - 3} = x + 3\) for \(x \ne 3\).</p></div>
+<div class="we-t"><p>A limit asks what value the function approaches, not its value at the point. If substitution gives \(\frac00\), factorise and cancel the common factor, then substitute.</p></div>
+<div class="we-s" data-f="\text{factorise and cancel}"><p>Direct substitution gives \(\frac00\): factorise. \(\frac{(x - 3)(x + 3)}{x - 3} = x + 3\) for \(x \ne 3\).</p></div>
 <div class="we-a"><p><strong>\(\lim = 3 + 3 = 6\).</strong> The graph is the line \(y = x + 3\) with a hole at \((3, 6)\).</p></div>
 </div>
 <p><strong>Limits at infinity:</strong> divide top and bottom by the highest power. \(\displaystyle\lim_{x \to \infty}\frac{2x + 1}{x - 3} = \lim_{x \to \infty}\frac{2 + \frac1x}{1 - \frac3x} = 2\): the horizontal asymptote.</p>
@@ -18,11 +19,12 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 <h2>The derivative from first principles</h2>
 <div class="eq"><div class="eq-label">Definition of the derivative</div>\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]<p>The fraction is the gradient of the <strong>secant</strong> through \((x, f(x))\) and \((x + h, f(x + h))\). As \(h \to 0\), the secant becomes the <strong>tangent</strong>.</p></div>
 <div class="sim" data-sim="tangent"></div>
-<div class="we" data-title="First principles (Exam 1 favourite)" data-marks="3" data-f="f&#x27;(x) = \lim_{h\to 0}\dfrac{f(x + h) - f(x)}{h}">
+<div class="we" data-title="First principles (Exam 1 favourite)" data-marks="3">
 <div class="we-q"><p>Use first principles to find the derivative of \(f(x) = x^2 - 3x\).</p></div>
-<div class="we-s"><p>\(f(x + h) = (x + h)^2 - 3(x + h) = x^2 + 2xh + h^2 - 3x - 3h\).</p></div>
-<div class="we-s"><p>\(f(x + h) - f(x) = 2xh + h^2 - 3h\), so \(\dfrac{f(x + h) - f(x)}{h} = 2x + h - 3\) (for \(h \ne 0\)).</p></div>
-<div class="we-a"><p><strong>\(f'(x) = \displaystyle\lim_{h \to 0}(2x + h - 3) = 2x - 3\).</strong> Write “\(\lim_{h \to 0}\)” on every line until the last one: examiners deduct marks when it disappears too early.</p></div>
+<div class="we-t"><p>The derivative is the limit of the gradient of a chord as its width \(h\) shrinks to zero. Expand, simplify, cancel \(h\), and only then let \(h \to 0\).</p></div>
+<div class="we-s" data-f="f(x + h)"><p>\(f(x + h) = (x + h)^2 - 3(x + h) = x^2 + 2xh + h^2 - 3x - 3h\).</p></div>
+<div class="we-s" data-f="\dfrac{f(x + h) - f(x)}{h}"><p>\(f(x + h) - f(x) = 2xh + h^2 - 3h\), so \(\dfrac{f(x + h) - f(x)}{h} = 2x + h - 3\) (for \(h \ne 0\)).</p></div>
+<div class="we-a" data-f="f&#x27;(x) = \lim_{h\to 0}\dfrac{f(x + h) - f(x)}{h}"><p><strong>\(f'(x) = \displaystyle\lim_{h \to 0}(2x + h - 3) = 2x - 3\).</strong> Write “\(\lim_{h \to 0}\)” on every line until the last one: examiners deduct marks when it disappears too early.</p></div>
 </div>
 
 <h2>Continuity</h2>
@@ -41,16 +43,18 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 </tbody></table></div>
 <aside class="c-exam"><p>VCAA convention: a function is differentiable on an <strong>open</strong> interval. When asked for the domain of \(f'\), exclude endpoints and every corner, cusp, jump and vertical tangent.</p></aside>
 
-<div class="we" data-title="A smooth join (continuous and differentiable)" data-marks="3" data-f="\text{continuous: pieces meet} ;; \text{differentiable: gradients match}">
+<div class="we" data-title="A smooth join (continuous and differentiable)" data-marks="3">
 <div class="we-q"><p>Find \(a\) and \(b\) such that \(f(x) = \begin{cases} ax^2 + b, & x \le 1 \\ 4x - 1, & x &gt; 1 \end{cases}\) is differentiable at \(x = 1\).</p></div>
-<div class="we-s"><p><strong>Continuous:</strong> \(a(1)^2 + b = 4(1) - 1 \Rightarrow a + b = 3\).</p></div>
-<div class="we-s"><p><strong>Gradients match:</strong> left derivative \(2ax\) at \(x = 1\) is \(2a\); right derivative is 4. So \(2a = 4\).</p></div>
+<div class="we-t"><p>A hybrid is differentiable at a join only if it's continuous there (the pieces meet) and the gradients from both sides are equal (a smooth join).</p></div>
+<div class="we-s" data-f="\text{continuous: pieces meet}"><p><strong>Continuous:</strong> \(a(1)^2 + b = 4(1) - 1 \Rightarrow a + b = 3\).</p></div>
+<div class="we-s" data-f="\text{differentiable: gradients match}"><p><strong>Gradients match:</strong> left derivative \(2ax\) at \(x = 1\) is \(2a\); right derivative is 4. So \(2a = 4\).</p></div>
 <div class="we-a"><p><strong>\(a = 2,\ b = 1\).</strong> Both conditions are needed. Matching gradients without continuity doesn't make the function differentiable.</p></div>
 </div>
 
-<div class="we" data-title="Domain of the derivative" data-marks="2" data-f="|u| \text{ not differentiable where } u = 0 \text{ (sharp point)}">
+<div class="we" data-title="Domain of the derivative" data-marks="2">
 <div class="we-q"><p>State the domain of \(f'\) for \(f: [-3, 3] \to \mathbb{R},\ f(x) = |x^2 - 4|\).</p></div>
-<div class="we-s"><p>Corners where the graph is reflected: \(x^2 - 4 = 0 \Rightarrow x = \pm2\). Endpoints \(\pm3\) are also excluded.</p></div>
+<div class="we-t"><p>A function isn't differentiable at a sharp corner (like where \(|u|\) reflects the graph) or at the endpoints of a closed domain.</p></div>
+<div class="we-s" data-f="|u| \text{ has a corner where } u = 0"><p>Corners where the graph is reflected: \(x^2 - 4 = 0 \Rightarrow x = \pm2\). Endpoints \(\pm3\) are also excluded.</p></div>
 <div class="we-a"><p><strong>\((-3, -2) \cup (-2, 2) \cup (2, 3)\).</strong></p></div>
 </div>
 

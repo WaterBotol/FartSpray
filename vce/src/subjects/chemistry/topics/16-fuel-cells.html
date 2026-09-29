@@ -21,15 +21,16 @@ dotpoints: the common design features of fuel cells, including porous electrodes
 <tr><td>H₂, acidic (PEM)</td><td>\(\ce{H2 -> 2H+ + 2e-}\)</td><td>\(\ce{O2 + 4H+ + 4e- -> 2H2O}\)</td></tr>
 <tr><td>H₂, alkaline</td><td>\(\ce{H2 + 2OH- -> 2H2O + 2e-}\)</td><td>\(\ce{O2 + 2H2O + 4e- -> 4OH-}\)</td></tr>
 <tr><td>CH₄, acidic</td><td>\(\ce{CH4 + 2H2O -> CO2 + 8H+ + 8e-}\)</td><td>\(\ce{O2 + 4H+ + 4e- -> 2H2O}\)</td></tr>
-<tr><td>C₂H₅OH, acidic</td><td>\(\ce{C2H5OH + 3H2O -> 2CO2 + 12H+ + 12e-}\)</td><td>\(\ce{O2 + 4H+ + 4e- -> 2H2O}\)</td></tr>
+<tr><td>C₂H₅OH, acidic</td><td>\(\ce{C2H5OH + 3H2O}\) \(\ce{-> 2CO2 + 12H+ + 12e-}\)</td><td>\(\ce{O2 + 4H+ + 4e- -> 2H2O}\)</td></tr>
 </tbody></table></div>
 <p>The overall equation is the same as for combustion (e.g. \(\ce{2H2 + O2 -> 2H2O}\)), but no flame is involved.</p>
 <aside class="c-key" data-title="Where does the water form?"><p>In an <strong>acidic</strong> (PEM) cell, H⁺ travels to the cathode and water forms at the <strong>cathode</strong>. In an <strong>alkaline</strong> cell, OH⁻ travels to the anode and water forms at the <strong>anode</strong>. Exam questions love this detail.</p></aside>
 
 <div class="we" data-title="Methane fuel cell overall equation" data-marks="2">
 <div class="we-q"><p>Combine the half-equations for an acidic methane fuel cell into the overall equation.</p></div>
-<div class="we-s"><p>Anode gives 8 e⁻; cathode uses 4 e⁻, so double the cathode: \(\ce{2O2 + 8H+ + 8e- -> 4H2O}\).</p></div>
-<div class="we-a"><p>Add and cancel (8 H⁺, 8 e⁻, 2 H₂O): <strong>\(\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(l)}\)</strong>.</p></div>
+<div class="we-t"><p>A fuel cell carries out the same overall reaction as combustion, but splits it into separate oxidation and reduction half-reactions at different electrodes, so the energy comes out as electricity.</p></div>
+<div class="we-s" data-f="\text{electrons lost} = \text{electrons gained}"><p>Anode gives 8 e⁻; cathode uses 4 e⁻, so double the cathode: \(\ce{2O2 + 8H+ + 8e- -> 4H2O}\).</p></div>
+<div class="we-a"><p>Add and cancel (8 H⁺, 8 e⁻, 2 H₂O): <strong>\(\ce{CH4(g) + 2O2(g)}\) \(\ce{-> CO2(g) + 2H2O(l)}\)</strong>.</p></div>
 </div>
 
 <h2>Comparisons</h2>
@@ -43,12 +44,13 @@ dotpoints: the common design features of fuel cells, including porous electrodes
 <tr><td>Drawbacks</td><td>Expensive catalysts; H₂ storage and supply</td><td>Must be replaced; waste</td><td>Pollutants (CO, NOₓ); lower efficiency</td></tr>
 </tbody></table></div>
 
-<div class="we" data-title="Fuel cell efficiency (hard)" data-marks="4" data-f="Q = It ;; n(e^-) = \dfrac QF ;; E = VIt ;; \text{efficiency} = \dfrac{E_{\text{out}}}{E_{\text{in}}} \times 100">
+<div class="we" data-title="Fuel cell efficiency (hard)" data-marks="4">
 <div class="we-q"><p>A hydrogen fuel cell delivers a current of 50.0 A at 0.700 V for 1.00 hour. (a) What mass of H₂ is consumed? (b) What percentage of the energy available from burning this hydrogen (\(\Delta H = -286\ \text{kJ mol}^{-1}\)) is delivered as electricity? (\(F = 96\,500\ \text{C mol}^{-1}\))</p></div>
-<div class="we-s"><p>\(Q = It = 50.0 \times 3600 = 1.80 \times 10^5\text{ C}\), so \(n(\ce{e-}) = \frac{Q}{F} = 1.865\text{ mol}\).</p></div>
-<div class="we-s"><p>\(\ce{H2 -> 2H+ + 2e-}\): \(n(\ce{H2}) = 0.9326\text{ mol}\), \(m = 1.87\text{ g}\).</p></div>
-<div class="we-s"><p>Electrical energy \(= VIt = 0.700 \times 50.0 \times 3600 = 126\text{ kJ}\). Available: \(0.9326 \times 286 = 267\text{ kJ}\).</p></div>
-<div class="we-a"><p><strong>(a) 1.87 g H₂; (b) \(\frac{126}{267} \times 100 = 47.2\%\).</strong> A typical car engine is about 25–30% efficient.</p></div>
+<div class="we-t"><p>Charge links electricity to chemistry: the total charge gives moles of electrons, and the half-equation turns that into moles of fuel. Efficiency compares the electrical energy delivered with the energy the same fuel would release on burning.</p></div>
+<div class="we-s" data-f="Q = It,\ n(e^-) = \dfrac QF"><p>\(Q = It = 50.0 \times 3600 = 1.80 \times 10^5\text{ C}\), so \(n(\ce{e-}) = \frac{Q}{F} = 1.865\text{ mol}\).</p></div>
+<div class="we-s" data-f="\text{mole ratio from the half-equation},\ m = nM"><p>\(\ce{H2 -> 2H+ + 2e-}\): \(n(\ce{H2}) = 0.9326\text{ mol}\), \(m = 1.87\text{ g}\).</p></div>
+<div class="we-s" data-f="E = VIt,\ E = n|\Delta H|"><p>Electrical energy \(= VIt = 0.700 \times 50.0 \times 3600 = 126\text{ kJ}\). Available: \(0.9326 \times 286 = 267\text{ kJ}\).</p></div>
+<div class="we-a" data-f="\text{efficiency} = \dfrac{E_{\text{out}}}{E_{\text{in}}} \times 100"><p><strong>(a) 1.87 g H₂; (b) \(\frac{126}{267} \times 100 = 47.2\%\).</strong> A typical car engine is about 25–30% efficient.</p></div>
 </div>
 
 <h2>Green chemistry and hydrogen</h2>
@@ -107,7 +109,7 @@ dotpoints: the common design features of fuel cells, including porous electrodes
 
 <div class="pq" data-level="core" data-marks="2">
 <div class="pq-q"><p>Write the cathode half-equation for a methane fuel cell with an alkaline electrolyte.</p></div>
-<div class="pq-s"><p>\(\ce{O2(g) + 2H2O(l) + 4e- -> 4OH-(aq)}\).</p></div>
+<div class="pq-s"><p>\(\ce{O2(g) + 2H2O(l) + 4e-}\) \(\ce{-> 4OH-(aq)}\).</p></div>
 </div>
 
 <div class="pq" data-level="hard" data-marks="3" data-f="Q = It ;; n(e^-) = \dfrac QF ;; V = nV_m">

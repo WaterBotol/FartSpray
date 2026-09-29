@@ -61,12 +61,13 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 
 <h2>Horizontal launch</h2>
 <p>A ball rolled off a table or a package dropped from a moving plane starts with \(u_y = 0\). The time to fall depends only on the height.</p>
-<div class="we" data-title="Ball rolling off a table" data-marks="5" data-f="s = ut + \tfrac12 at^2 ;; s_x = u_x t ;; v = u + at">
+<div class="we" data-title="Ball rolling off a table" data-marks="5">
 <div class="we-q"><p>A ball rolls off a 1.8 m high bench at 3.0 m s⁻¹. Find (a) the time to reach the floor, (b) how far from the bench it lands, and (c) its velocity just before landing.</p></div>
-<div class="we-s"><p><strong>(a) Vertical motion</strong> (down positive): \(u_y = 0\), \(a = 9.8\), \(s = 1.8\).</p>\[ s = \tfrac12 at^2 \Rightarrow t = \sqrt{\frac{2(1.8)}{9.8}} = 0.606\ \text{s} \]</div>
-<div class="we-s"><p><strong>(b) Horizontal motion</strong> (constant velocity):</p>\[ s_x = u_x t = 3.0 \times 0.606 = 1.82\ \text{m} \]</div>
-<div class="we-s"><p><strong>(c) Components at landing:</strong> \(v_x = 3.0\ \text{m s}^{-1}\) (unchanged) and</p>\[ v_y = u_y + at = 0 + 9.8(0.606) = 5.94\ \text{m s}^{-1}\ \text{downward} \]</div>
-<div class="we-s"><p><strong>Recombine:</strong></p>\[ v = \sqrt{3.0^2 + 5.94^2} = 6.65\ \text{m s}^{-1}, \qquad \alpha = \tan^{-1}\!\left(\frac{5.94}{3.0}\right) = 63^\circ \]</div>
+<div class="we-t"><p>Horizontal and vertical motion are independent. Gravity only acts vertically, so the horizontal velocity stays constant while the vertical motion is constant acceleration from rest. Time links the two.</p></div>
+<div class="we-s" data-f="s = ut + \tfrac12 at^2"><p><strong>(a) Vertical motion</strong> (down positive): \(u_y = 0\), \(a = 9.8\), \(s = 1.8\).</p>\[ s = \tfrac12 at^2 \Rightarrow t = \sqrt{\frac{2(1.8)}{9.8}} = 0.606\ \text{s} \]</div>
+<div class="we-s" data-f="s_x = u_xt"><p><strong>(b) Horizontal motion</strong> (constant velocity):</p>\[ s_x = u_x t = 3.0 \times 0.606 = 1.82\ \text{m} \]</div>
+<div class="we-s" data-f="v = u + at"><p><strong>(c) Components at landing:</strong> \(v_x = 3.0\ \text{m s}^{-1}\) (unchanged) and</p>\[ v_y = u_y + at = 0 + 9.8(0.606) = 5.94\ \text{m s}^{-1}\ \text{downward} \]</div>
+<div class="we-s" data-f="v = \sqrt{v_x^2 + v_y^2}"><p><strong>Recombine:</strong></p>\[ v = \sqrt{3.0^2 + 5.94^2} = 6.65\ \text{m s}^{-1}, \]\[ \alpha = \tan^{-1}\!\left(\frac{5.94}{3.0}\right) = 63^\circ \]</div>
 <div class="we-a"><p><strong>(a) 0.61 s (b) 1.8 m (c) 6.7 m s⁻¹ at 63° below the horizontal.</strong> A velocity needs a direction for full marks.</p></div>
 </div>
 
@@ -83,12 +84,13 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
   <li>It lands with the same speed it was launched with, at the same angle below the horizontal.</li>
 </ul>
 
-<div class="we" data-title="Kicked ball on a level field" data-marks="5" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta ;; v = u + at ;; v^2 = u^2 + 2as ;; s_x = u_x t">
+<div class="we" data-title="Kicked ball on a level field" data-marks="5">
 <div class="we-q"><p>A ball is kicked from the ground at 25 m s⁻¹ at 40° above the horizontal. Ignoring air resistance, find (a) the time of flight, (b) the maximum height and (c) the range.</p></div>
-<div class="we-s"><p><strong>Components:</strong></p>\[ u_x = 25\cos 40^\circ = 19.2\ \text{m s}^{-1}, \qquad u_y = 25\sin 40^\circ = 16.1\ \text{m s}^{-1} \]</div>
-<div class="we-s"><p><strong>(a) Time to the top</strong> (\(v_y = 0\)), up positive:</p>\[ 0 = 16.07 - 9.8t \Rightarrow t_{\text{up}} = 1.64\ \text{s}, \qquad t_{\text{flight}} = 3.28\ \text{s} \]</div>
-<div class="we-s"><p><strong>(b) Maximum height:</strong></p>\[ H = \frac{u_y^2}{2g} = \frac{16.07^2}{19.6} = 13.2\ \text{m} \]</div>
-<div class="we-s"><p><strong>(c) Range:</strong></p>\[ R = u_x t = 19.15 \times 3.28 = 62.8\ \text{m} \]</div>
+<div class="we-t"><p>Split the launch velocity into components and treat each direction separately. At the highest point the vertical velocity is zero; on level ground the flight is symmetric, so total time is twice the time to the top.</p></div>
+<div class="we-s" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta"><p><strong>Components:</strong></p>\[ u_x = 25\cos 40^\circ = 19.2\ \text{m s}^{-1}, \]\[ u_y = 25\sin 40^\circ = 16.1\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="v = u + at"><p><strong>(a) Time to the top</strong> (\(v_y = 0\)), up positive:</p>\[ 0 = 16.07 - 9.8t \Rightarrow t_{\text{up}} = 1.64\ \text{s}, \]\[ t_{\text{flight}} = 3.28\ \text{s} \]</div>
+<div class="we-s" data-f="v^2 = u^2 + 2as"><p><strong>(b) Maximum height:</strong></p>\[ H = \frac{u_y^2}{2g} = \frac{16.07^2}{19.6} = 13.2\ \text{m} \]</div>
+<div class="we-s" data-f="s_x = u_xt"><p><strong>(c) Range:</strong></p>\[ R = u_x t = 19.15 \times 3.28 = 62.8\ \text{m} \]</div>
 <div class="we-a"><p><strong>(a) 3.3 s (b) 13 m (c) 63 m.</strong> Keep unrounded values in your calculator between steps to avoid rounding drift.</p></div>
 </div>
 
@@ -98,13 +100,14 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 
 <h2>Launching from a height</h2>
 <p>When the launch and landing heights differ, the flight is no longer symmetric. Write the vertical displacement equation with the correct sign and solve the quadratic, or split the flight into “up to the top” and “down from the top”.</p>
-<div class="we" data-title="Stone thrown from a cliff (hard)" data-marks="6" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta ;; s = ut + \tfrac12 at^2 ;; \tfrac12 mv^2 = \tfrac12 mu^2 + mgh">
+<div class="we" data-title="Stone thrown from a cliff (hard)" data-marks="6">
 <div class="we-q"><p>A stone is thrown at 15 m s⁻¹ at 30° above the horizontal from the top of a 40 m cliff. Find (a) the time until it hits the ground below, (b) how far from the base of the cliff it lands and (c) its speed on impact.</p></div>
-<div class="we-s"><p><strong>Components:</strong> \(u_x = 15\cos 30^\circ = 12.99\ \text{m s}^{-1}\), \(u_y = 15\sin 30^\circ = 7.5\ \text{m s}^{-1}\) (up).</p></div>
-<div class="we-s"><p><strong>(a) Vertical displacement</strong> (up positive): the stone ends 40 m <em>below</em> its start, so \(s_y = -40\ \text{m}\).</p>\[ -40 = 7.5t - 4.9t^2 \Rightarrow 4.9t^2 - 7.5t - 40 = 0 \]</div>
-<div class="we-s"><p><strong>Quadratic formula</strong> (take the positive root):</p>\[ t = \frac{7.5 + \sqrt{7.5^2 + 4(4.9)(40)}}{2(4.9)} = \frac{7.5 + 28.99}{9.8} = 3.72\ \text{s} \]</div>
-<div class="we-s"><p><strong>(b) Horizontal distance:</strong> \(s_x = 12.99 \times 3.72 = 48.4\ \text{m}\).</p></div>
-<div class="we-s"><p><strong>(c) Speed on impact</strong>, quickest by energy conservation (per kg):</p>\[ \tfrac12 v^2 = \tfrac12 u^2 + gh \Rightarrow v = \sqrt{15^2 + 2(9.8)(40)} = \sqrt{1009} = 31.8\ \text{m s}^{-1} \]</div>
+<div class="we-t"><p>Keep a consistent sign convention (up positive, so \(a = -9.8\) and a landing below the start is a negative displacement). The quadratic from \(s = ut + \tfrac12at^2\) gives the flight time in one go, no need to split the flight into stages. Energy conservation gives the impact speed without components.</p></div>
+<div class="we-s" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta"><p><strong>Components:</strong> \(u_x = 15\cos 30^\circ = 12.99\ \text{m s}^{-1}\), \(u_y = 15\sin 30^\circ = 7.5\ \text{m s}^{-1}\) (up).</p></div>
+<div class="we-s" data-f="s = ut + \tfrac12 at^2"><p><strong>(a) Vertical displacement</strong> (up positive): the stone ends 40 m <em>below</em> its start, so \(s_y = -40\ \text{m}\).</p>\[ -40 = 7.5t - 4.9t^2 \Rightarrow 4.9t^2 - 7.5t - 40 = 0 \]</div>
+<div class="we-s" data-f="t = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}"><p><strong>Quadratic formula</strong> (take the positive root):</p>\[ t = \frac{7.5 + \sqrt{7.5^2 + 4(4.9)(40)}}{2(4.9)} = \frac{7.5 + 28.99}{9.8} = 3.72\ \text{s} \]</div>
+<div class="we-s" data-f="s_x = u_xt"><p><strong>(b) Horizontal distance:</strong> \(s_x = 12.99 \times 3.72 = 48.4\ \text{m}\).</p></div>
+<div class="we-s" data-f="\tfrac12 mv^2 = \tfrac12 mu^2 + mgh"><p><strong>(c) Speed on impact</strong>, quickest by energy conservation (per kg):</p>\[ \tfrac12 v^2 = \tfrac12 u^2 + gh \Rightarrow v = \sqrt{15^2 + 2(9.8)(40)} = \sqrt{1009} = 31.8\ \text{m s}^{-1} \]</div>
 <div class="we-a"><p><strong>(a) 3.7 s (b) 48 m (c) 32 m s⁻¹.</strong> The impact speed does not depend on the launch angle, only on launch speed and height lost.</p></div>
 </div>
 
@@ -112,11 +115,12 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 <p>The 45° rule only holds when launch and landing heights are equal and air resistance is ignored. Launching from a height (a shot-putter's hand, a cliff), the best angle is <strong>less than 45°</strong>. With air resistance, it is also less than 45°.</p>
 </aside>
 
-<div class="we" data-title="Does the ball clear the bar?" data-marks="4" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta ;; t = \dfrac{s_x}{u_x} ;; s = ut + \tfrac12 at^2">
+<div class="we" data-title="Does the ball clear the bar?" data-marks="4">
 <div class="we-q"><p>A footballer kicks a ball from the ground at 20 m s⁻¹ at 35° above the horizontal towards goal posts 30 m away. The crossbar is 3.0 m high. Does the ball go over?</p></div>
-<div class="we-s"><p><strong>Components:</strong> \(u_x = 20\cos 35^\circ = 16.38\ \text{m s}^{-1}\), \(u_y = 20\sin 35^\circ = 11.47\ \text{m s}^{-1}\).</p></div>
-<div class="we-s"><p><strong>Time to travel 30 m horizontally:</strong> \(t = 30/16.38 = 1.83\ \text{s}\).</p></div>
-<div class="we-s"><p><strong>Height at that time:</strong></p>\[ s_y = u_y t - \tfrac12 gt^2 = 11.47(1.831) - 4.9(1.831)^2 = 21.0 - 16.4 = 4.6\ \text{m} \]</div>
+<div class="we-t"><p>The horizontal motion tells you when the ball reaches the posts (constant velocity). The vertical motion then tells you how high it is at that moment.</p></div>
+<div class="we-s" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta"><p><strong>Components:</strong> \(u_x = 20\cos 35^\circ = 16.38\ \text{m s}^{-1}\), \(u_y = 20\sin 35^\circ = 11.47\ \text{m s}^{-1}\).</p></div>
+<div class="we-s" data-f="t = \dfrac{s_x}{u_x}"><p><strong>Time to travel 30 m horizontally:</strong> \(t = 30/16.38 = 1.83\ \text{s}\).</p></div>
+<div class="we-s" data-f="s = ut + \tfrac12 at^2"><p><strong>Height at that time:</strong></p>\[ s_y = u_y t - \tfrac12 gt^2 = 11.47(1.831) - 4.9(1.831)^2 = 21.0 - 16.4 = 4.6\ \text{m} \]</div>
 <div class="we-a"><p><strong>Yes: the ball is 4.6 m high as it reaches the posts, so it clears the 3.0 m bar by about 1.6 m.</strong> Use horizontal motion to find the time, then vertical motion at that time.</p></div>
 </div>
 

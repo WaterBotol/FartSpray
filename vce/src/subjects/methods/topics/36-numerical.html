@@ -11,12 +11,13 @@ dotpoints: numerical approximation of definite integrals using the trapezium rul
 <div class="eq"><div class="eq-label">The three estimates</div>\[ L = h\big[f(x_0) + f(x_1) + \cdots + f(x_{n-1})\big] \qquad R = h\big[f(x_1) + \cdots + f(x_n)\big] \]\[ T = \frac{h}{2}\big[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)\big] = \frac{L + R}{2} \]<p>The trapezium rule is on the formula sheet. \(L\) and \(R\) aren't, but they're easy: left uses every height except the last, right every height except the first.</p></div>
 <div class="sim" data-sim="trapezium"></div>
 
-<div class="we" data-title="All three estimates for x² on [0, 2]" data-marks="3" data-f="h = \dfrac{b - a}{n} ;; L = h\,[f(x_0) + \cdots + f(x_{n-1})] ;; R = h\,[f(x_1) + \cdots + f(x_n)] ;; T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)]">
+<div class="we" data-title="All three estimates for x² on [0, 2]" data-marks="3">
 <div class="we-q"><p>Estimate \(\int_0^2 x^2\,dx\) with four strips using (a) left rectangles, (b) right rectangles, (c) the trapezium rule. Compare with the exact value.</p></div>
-<div class="we-s"><p>\(h = 0.5\). Heights at \(x = 0, 0.5, 1, 1.5, 2\): \(0, 0.25, 1, 2.25, 4\).</p></div>
-<div class="we-s"><p>(a) \(L = 0.5(0 + 0.25 + 1 + 2.25) = 1.75\). (b) \(R = 0.5(0.25 + 1 + 2.25 + 4) = 3.75\).</p></div>
-<div class="we-s"><p>(c) \(T = \frac{0.5}{2}\big(0 + 2(0.25 + 1 + 2.25) + 4\big) = 0.25 \times 11 = 2.75\).</p></div>
-<div class="we-a"><p><strong>\(L = 1.75,\ R = 3.75,\ T = 2.75\); exact \(\frac83 \approx 2.667\).</strong> \(x^2\) is increasing, so \(L\) under- and \(R\) over-estimates. It's concave up, so the trapeziums sit above the curve and \(T\) is an overestimate.</p></div>
+<div class="we-t"><p>Split the interval into \(n\) strips of width \(h\). Left rectangles use the left-hand heights, right rectangles the right-hand heights, and trapeziums average the two. Whether each over- or under-estimates depends on whether the function is increasing and on its concavity.</p></div>
+<div class="we-s" data-f="h = \dfrac{b - a}{n}"><p>\(h = 0.5\). Heights at \(x = 0, 0.5, 1, 1.5, 2\): \(0, 0.25, 1, 2.25, 4\).</p></div>
+<div class="we-s" data-f="L = h\,[f(x_0) + \cdots + f(x_{n-1})] ;; R = h\,[f(x_1) + \cdots + f(x_n)]"><p>(a) \(L = 0.5(0 + 0.25 + 1 + 2.25) = 1.75\). (b) \(R = 0.5(0.25 + 1 + 2.25 + 4) = 3.75\).</p></div>
+<div class="we-s" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)]"><p>(c) \(T = \frac{0.5}{2}\big(0 + 2(0.25 + 1 + 2.25) + 4\big) = 0.25 \times 11 = 2.75\).</p></div>
+<div class="we-a" data-f="f&#x27;&#x27; &gt; 0 \Rightarrow T \text{ overestimates}"><p><strong>\(L = 1.75,\ R = 3.75,\ T = 2.75\); exact \(\frac83 \approx 2.667\).</strong> \(x^2\) is increasing, so \(L\) under- and \(R\) over-estimates. It's concave up, so the trapeziums sit above the curve and \(T\) is an overestimate.</p></div>
 </div>
 
 <h2>Over or under?</h2>
@@ -30,17 +31,19 @@ dotpoints: numerical approximation of definite integrals using the trapezium rul
 </tbody></table></div>
 <aside class="c-key"><p>Picture the tops: a trapezium's slanted top is a chord. Chords lie <em>above</em> a concave-up curve and <em>below</em> a concave-down one.</p></aside>
 
-<div class="we" data-title="Trapezium rule for ln 3" data-marks="3" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)] ;; f&#x27;&#x27; &gt; 0 \Rightarrow \text{trapezium overestimates}">
+<div class="we" data-title="Trapezium rule for ln 3" data-marks="3">
 <div class="we-q"><p>Use the trapezium rule with two strips to estimate \(\int_1^3\frac1x\,dx\). Is it an over- or under-estimate?</p></div>
-<div class="we-s"><p>\(h = 1\); heights \(f(1) = 1,\ f(2) = \frac12,\ f(3) = \frac13\).</p></div>
-<div class="we-s"><p>\(T = \frac12\left(1 + 2 \times \frac12 + \frac13\right) = \frac12 \times \frac73 = \frac76 \approx 1.167\).</p></div>
-<div class="we-a"><p><strong>\(\frac76\), an overestimate</strong>: \(\frac1x\) is concave up for \(x &gt; 0\) (\(f''(x) = \frac{2}{x^3} &gt; 0\)). The exact value is \(\log_e 3 \approx 1.099\).</p></div>
+<div class="we-t"><p>The trapezium rule joins points on the curve with straight lines. If the curve is concave up, those chords sit above it, so the rule overestimates. If concave down, it underestimates.</p></div>
+<div class="we-s" data-f="h = \dfrac{b - a}{n}"><p>\(h = 1\); heights \(f(1) = 1,\ f(2) = \frac12,\ f(3) = \frac13\).</p></div>
+<div class="we-s" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)]"><p>\(T = \frac12\left(1 + 2 \times \frac12 + \frac13\right) = \frac12 \times \frac73 = \frac76 \approx 1.167\).</p></div>
+<div class="we-a" data-f="f&#x27;&#x27; &gt; 0 \Rightarrow \text{overestimate}"><p><strong>\(\frac76\), an overestimate</strong>: \(\frac1x\) is concave up for \(x &gt; 0\) (\(f''(x) = \frac{2}{x^3} &gt; 0\)). The exact value is \(\log_e 3 \approx 1.099\).</p></div>
 </div>
 
-<div class="we" data-title="From a table of data" data-marks="2" data-f="\text{distance} = \int v\,dt ;; T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)]">
+<div class="we" data-title="From a table of data" data-marks="2">
 <div class="we-q"><p>A car's speed (m/s) is recorded every 2 seconds: \(t = 0, 2, 4, 6, 8\); \(v = 0, 6, 10, 12, 13\). Estimate the distance travelled in 8 s using the trapezium rule.</p></div>
-<div class="we-s"><p>\(h = 2\): \(T = \frac22\big(0 + 2(6 + 10 + 12) + 13\big) = 56 + 13\).</p></div>
-<div class="we-a"><p><strong>About 69 m.</strong> Distance is the area under a speed–time graph.</p></div>
+<div class="we-t"><p>Distance travelled is the area under a speed–time graph. With only a table of data, the trapezium rule is the way to estimate that area.</p></div>
+<div class="we-s" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)]"><p>\(h = 2\): \(T = \frac22\big(0 + 2(6 + 10 + 12) + 13\big) = 56 + 13\).</p></div>
+<div class="we-a" data-f="\text{distance} = \int v\,dt"><p><strong>About 69 m.</strong> Distance is the area under a speed–time graph.</p></div>
 </div>
 
 <aside class="c-trap" data-title="Trick alert: numerical-integration traps">

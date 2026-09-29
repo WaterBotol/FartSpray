@@ -14,19 +14,21 @@ dotpoints: graphs of polynomial functions and their key features | the factor an
 <div class="eq"><div class="eq-label">Factor theorem</div>\[ (x - a) \text{ is a factor of } P(x) \iff P(a) = 0. \]</div>
 <aside class="c-key"><p>To factorise a cubic by hand: try the factors of the constant term (\(\pm1, \pm2, \pm3, \ldots\)) until \(P(a) = 0\), then divide by \((x - a)\) and factorise the quadratic that is left. With a non-monic leading coefficient, also try fractions \(\pm\frac{\text{factor of constant}}{\text{factor of leading coeff}}\).</p></aside>
 
-<div class="we" data-title="Factorising a cubic (tech-free)" data-marks="3" data-f="\text{factor theorem: } P(a) = 0 \iff (x - a) \text{ is a factor} ;; \text{polynomial division}">
+<div class="we" data-title="Factorising a cubic (tech-free)" data-marks="3">
 <div class="we-q"><p>Factorise \(P(x) = 2x^3 - 3x^2 - 11x + 6\) and solve \(P(x) = 0\).</p></div>
-<div class="we-s"><p><strong>Hunt for a root:</strong> \(P(1) = -6\), \(P(-1) = 12\), \(P(3) = 54 - 27 - 33 + 6 = 0\). So \((x - 3)\) is a factor.</p></div>
-<div class="we-s"><p><strong>Divide</strong> (or match coefficients): \(2x^3 - 3x^2 - 11x + 6 = (x - 3)(2x^2 + 3x - 2)\).</p></div>
-<div class="we-s"><p><strong>Factorise the quadratic:</strong> \(2x^2 + 3x - 2 = (2x - 1)(x + 2)\).</p></div>
+<div class="we-t"><p>The factor theorem: if \(P(a) = 0\) then \((x - a)\) is a factor. Test small integer factors of the constant term (divided by factors of the leading coefficient), then divide to reduce the cubic to a quadratic.</p></div>
+<div class="we-s" data-f="P(a) = 0 \iff (x - a) \text{ is a factor}"><p><strong>Hunt for a root:</strong> \(P(1) = -6\), \(P(-1) = 12\), \(P(3) = 54 - 27 - 33 + 6 = 0\). So \((x - 3)\) is a factor.</p></div>
+<div class="we-s" data-f="\text{polynomial division}"><p><strong>Divide</strong> (or match coefficients): \(2x^3 - 3x^2 - 11x + 6 = (x - 3)(2x^2 + 3x - 2)\).</p></div>
+<div class="we-s" data-f="\text{factorise the quadratic}"><p><strong>Factorise the quadratic:</strong> \(2x^2 + 3x - 2 = (2x - 1)(x + 2)\).</p></div>
 <div class="we-a"><p><strong>\(P(x) = (x - 3)(2x - 1)(x + 2)\)</strong>, so \(x = -2, \tfrac12, 3\).</p></div>
 </div>
 
-<div class="we" data-title="Two unknowns from two factors" data-marks="3" data-f="\text{factor theorem: } P(a) = 0 \iff (x - a) \text{ is a factor}">
+<div class="we" data-title="Two unknowns from two factors" data-marks="3">
 <div class="we-q"><p>\(P(x) = x^3 + ax^2 + bx - 6\) has factors \((x - 1)\) and \((x + 2)\). Find \(a\) and \(b\), then fully factorise \(P(x)\).</p></div>
-<div class="we-s"><p>\(P(1) = 0\): \(1 + a + b - 6 = 0 \Rightarrow a + b = 5\).</p></div>
-<div class="we-s"><p>\(P(-2) = 0\): \(-8 + 4a - 2b - 6 = 0 \Rightarrow 2a - b = 7\).</p></div>
-<div class="we-s"><p>Add the equations: \(3a = 12\), so \(a = 4,\ b = 1\).</p></div>
+<div class="we-t"><p>Each known factor gives an equation: substituting its root into \(P(x)\) must give zero. Two factors give two equations for the two unknowns.</p></div>
+<div class="we-s" data-f="P(1) = 0"><p>\(P(1) = 0\): \(1 + a + b - 6 = 0 \Rightarrow a + b = 5\).</p></div>
+<div class="we-s" data-f="P(-2) = 0"><p>\(P(-2) = 0\): \(-8 + 4a - 2b - 6 = 0 \Rightarrow 2a - b = 7\).</p></div>
+<div class="we-s" data-f="\text{solve simultaneously}"><p>Add the equations: \(3a = 12\), so \(a = 4,\ b = 1\).</p></div>
 <div class="we-a"><p><strong>\(a = 4,\ b = 1\)</strong> and \(P(x) = x^3 + 4x^2 + x - 6 = (x - 1)(x + 2)(x + 3)\). (The third factor must make the constant term \(-6\): \((-1)(2)(c) = -6 \Rightarrow c = 3\).)</p></div>
 </div>
 
@@ -48,25 +50,28 @@ dotpoints: graphs of polynomial functions and their key features | the factor an
 </figure>
 <div class="eq"><div class="eq-label">Cubic in “turning point” (inflection) form</div>\[ y = a(x - h)^3 + k \]<p>Stationary point of inflection at \((h, k)\). No other turning points.</p></div>
 
-<div class="we" data-title="Rule from a graph's features" data-marks="2" data-f="y = a(x - p)(x - q)^2 \text{ (touch at } q)">
+<div class="we" data-title="Rule from a graph's features" data-marks="2">
 <div class="we-q"><p>A cubic touches the \(x\)-axis at \(x = 2\), crosses it at \(x = -1\) and passes through \((0, 8)\). Find its rule.</p></div>
-<div class="we-s"><p>The touch gives a squared factor: \(y = a(x + 1)(x - 2)^2\).</p></div>
-<div class="we-s"><p>Substitute \((0, 8)\): \(8 = a(1)(4)\), so \(a = 2\).</p></div>
+<div class="we-t"><p>The shape at each \(x\)-intercept tells you the factor: a crossing gives \((x - p)\), a touch (turning point on the axis) gives \((x - q)^2\). One more point fixes the dilation factor \(a\).</p></div>
+<div class="we-s" data-f="\text{touch at } q \Rightarrow (x - q)^2"><p>The touch gives a squared factor: \(y = a(x + 1)(x - 2)^2\).</p></div>
+<div class="we-s" data-f="\text{substitute a known point to find } a"><p>Substitute \((0, 8)\): \(8 = a(1)(4)\), so \(a = 2\).</p></div>
 <div class="we-a"><p><strong>\(y = 2(x + 1)(x - 2)^2\)</strong> (expanded: \(y = 2x^3 - 6x^2 + 8\)).</p></div>
 </div>
 
-<div class="we" data-title="Biquadratic (quartic in disguise)" data-marks="2" data-f="\text{substitute } u = x^2 ;; \text{null factor law}">
+<div class="we" data-title="Biquadratic (quartic in disguise)" data-marks="2">
 <div class="we-q"><p>Solve \(x^4 - 5x^2 + 4 = 0\).</p></div>
-<div class="we-s"><p>Let \(u = x^2\): \(u^2 - 5u + 4 = 0 \Rightarrow (u - 1)(u - 4) = 0\), so \(u = 1\) or \(u = 4\).</p></div>
-<div class="we-a"><p><strong>\(x = \pm1, \pm2\)</strong>. Don't stop at \(u\): the question asked for \(x\).</p></div>
+<div class="we-t"><p>A quartic with only \(x^4\) and \(x^2\) terms is a quadratic in \(x^2\). Substitute \(u = x^2\), solve, then go back to \(x\), rejecting any negative \(u\).</p></div>
+<div class="we-s" data-f="u = x^2"><p>Let \(u = x^2\): \(u^2 - 5u + 4 = 0 \Rightarrow (u - 1)(u - 4) = 0\), so \(u = 1\) or \(u = 4\).</p></div>
+<div class="we-a" data-f="x^2 = u \Rightarrow x = \pm\sqrt u"><p><strong>\(x = \pm1, \pm2\)</strong>. Don't stop at \(u\): the question asked for \(x\).</p></div>
 </div>
 
 <h2>How many solutions? Polynomials with a parameter</h2>
 <p>Exam 2 loves “find the values of \(k\) for which the equation has exactly one / two / three solutions”. Rewrite so the parameter sits alone, then think of it as a horizontal line \(y = k\) moving up and down against a fixed graph.</p>
-<div class="we" data-title="Number of solutions of x³ − 3x + k = 0" data-marks="4" data-f="\text{solutions of } f(x) = c \leftrightarrow \text{intersections with } y = c ;; f&#x27;(x) = 0 \text{ at stationary points}">
+<div class="we" data-title="Number of solutions of x³ − 3x + k = 0" data-marks="4">
 <div class="we-q"><p>Find the values of \(k\) for which \(x^3 - 3x + k = 0\) has (a) exactly three, (b) exactly two, (c) exactly one real solution.</p></div>
-<div class="we-s"><p>Rearrange: \(-k = x^3 - 3x\). Count intersections of \(y = x^3 - 3x\) with the horizontal line \(y = -k\).</p></div>
-<div class="we-s"><p>\(y = x^3 - 3x\) has turning points where \(3x^2 - 3 = 0\), i.e. \(x = \pm1\): a local max at \((-1, 2)\) and a local min at \((1, -2)\).</p></div>
+<div class="we-t"><p>The number of solutions of \(f(x) = c\) equals the number of times the horizontal line \(y = c\) meets \(y = f(x)\). The turning points mark where that count changes.</p></div>
+<div class="we-s" data-f="f(x) = c \leftrightarrow \text{intersections with } y = c"><p>Rearrange: \(-k = x^3 - 3x\). Count intersections of \(y = x^3 - 3x\) with the horizontal line \(y = -k\).</p></div>
+<div class="we-s" data-f="f&#x27;(x) = 0 \text{ at turning points}"><p>\(y = x^3 - 3x\) has turning points where \(3x^2 - 3 = 0\), i.e. \(x = \pm1\): a local max at \((-1, 2)\) and a local min at \((1, -2)\).</p></div>
 <div class="we-s"><p>The line cuts three times when it is strictly between the turning points: \(-2 < -k < 2\), i.e. \(-2 < k < 2\). It touches a turning point (two solutions) when \(-k = \pm2\).</p></div>
 <div class="we-a"><p><strong>(a) \(-2 < k < 2\); (b) \(k = \pm2\); (c) \(k < -2\) or \(k > 2\).</strong> Check (b): \(k = 2\) gives \(x^3 - 3x + 2 = (x - 1)^2(x + 2)\), two distinct solutions.</p></div>
 </div>
@@ -138,7 +143,7 @@ dotpoints: graphs of polynomial functions and their key features | the factor an
 <div class="pq-s"><p>\(x^4 - 10x^2 + 9 = (x^2 - 1)(x^2 - 9) = (x - 1)(x + 1)(x - 3)(x + 3)\): \(x\)-intercepts \(\pm1, \pm3\), \(y\)-intercept 9. [1]</p><p>Stationary points: \(4x^3 - 20x = 0 \Rightarrow x = 0, \pm\sqrt5\). Local max \((0, 9)\); minima at \(x = \pm\sqrt5\) where \(y = 25 - 50 + 9 = -16\). [1]</p><p>A horizontal line \(y = c\) cuts the W shape four times when it is between the minima and the local max: \(-16 < c < 9\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3" data-f="f&#x27;(x) = 0 \text{ at stationary points} ;; \text{one solution: both turning points on the same side of } y = 0">
+<div class="pq" data-level="exam" data-marks="3" data-f="f&#x27;(x) = 0 \text{ at turning points} ;; \text{3 solutions: } f_{\max} &gt; 0 &gt; f_{\min} ;; \text{1 solution: } f_{\max},\ f_{\min} \text{ same sign}">
 <div class="pq-q"><p>Let \(f(x) = x^3 - 3x^2 + p\). Find the values of \(p\) for which \(f(x) = 0\) has exactly one real solution.</p></div>
 <div class="pq-s"><p>\(f'(x) = 3x^2 - 6x = 3x(x - 2)\), so turning points at \(x = 0\) (local max, \(f = p\)) and \(x = 2\) (local min, \(f = p - 4\)). [1]</p><p>Three solutions need the max above the axis and the min below: \(p > 0\) and \(p - 4 < 0\). Exactly one solution needs both turning points on the same side of the axis. [1]</p><p>\(p < 0\) or \(p > 4\). [1] (At \(p = 0\) or \(p = 4\) there are two solutions.)</p></div>
 </div>

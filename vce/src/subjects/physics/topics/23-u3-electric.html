@@ -13,28 +13,42 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 </aside>
 <p>Charge prefixes you'll meet: μC = \(10^{-6}\) C, nC = \(10^{-9}\) C. The charge of one electron is \(-1.60\times10^{-19}\ \text{C}\) and of one proton \(+1.60\times10^{-19}\ \text{C}\).</p>
 
-<div class="we" data-title="Force between two charges" data-marks="2" data-f="F = \dfrac{kq_1q_2}{r^2}">
+<div class="we" data-title="Force between two charges" data-marks="2">
 <div class="we-q"><p>A \(+3.0\ \mu\text{C}\) charge and a \(-5.0\ \mu\text{C}\) charge are 0.20 m apart. Find the force between them.</p></div>
-<div class="we-s">\[ F = \frac{(8.99\times10^9)(3.0\times10^{-6})(5.0\times10^{-6})}{(0.20)^2} = \frac{0.135}{0.040} = 3.4\ \text{N} \]</div>
+<div class="we-t"><p>Coulomb's law gives the size of the force between point charges; the signs tell you only whether it attracts or repels. Use magnitudes in the formula and state the direction in words.</p></div>
+<div class="we-s" data-f="F = \dfrac{kq_1q_2}{r^2}">\[ F = \frac{(8.99\times10^9)(3.0\times10^{-6})(5.0\times10^{-6})}{(0.20)^2} = \frac{0.135}{0.040} = 3.4\ \text{N} \]</div>
 <div class="we-a"><p><strong>3.4 N, attractive</strong> (opposite charges). Each charge feels 3.4 N towards the other.</p></div>
 </div>
 
 <h2>Electric field of a point charge</h2>
 <div class="eq"><div class="eq-label">Field strength</div>\[ E = \frac{F}{q} \qquad\qquad E = k\frac{q}{r^2}\ \text{(point charge)} \]<p>Units: N C⁻¹ (equivalently V m⁻¹). Direction: away from a positive source charge, towards a negative one.</p></div>
-<div class="we" data-title="Field near a charged sphere" data-marks="2" data-f="E = \dfrac{kq}{r^2} ;; F = qE">
+<div class="we" data-title="Field near a charged sphere" data-marks="2">
 <div class="we-q"><p>Find the electric field 0.10 m from the centre of a small sphere carrying \(+2.0\ \mu\text{C}\). What force would an electron experience there?</p></div>
-<div class="we-s">\[ E = \frac{(8.99\times10^9)(2.0\times10^{-6})}{(0.10)^2} = 1.8\times10^6\ \text{N C}^{-1}\ \text{(away from the sphere)} \]</div>
-<div class="we-s">\[ F = qE = (1.60\times10^{-19})(1.8\times10^6) = 2.9\times10^{-13}\ \text{N} \]</div>
+<div class="we-t"><p>The field strength at a point is the force per coulomb on a positive test charge. A negative charge feels a force opposite to the field direction.</p></div>
+<div class="we-s" data-f="E = \dfrac{kq}{r^2}">\[ E = \frac{(8.99\times10^9)(2.0\times10^{-6})}{(0.10)^2} = 1.8\times10^6\ \text{N C}^{-1}\ \text{(away from the sphere)} \]</div>
+<div class="we-s" data-f="F = qE">\[ F = qE = (1.60\times10^{-19})(1.8\times10^6) = 2.9\times10^{-13}\ \text{N} \]</div>
 <div class="we-a"><p><strong>\(1.8\times10^6\ \text{N C}^{-1}\) outward; the electron feels \(2.9\times10^{-13}\ \text{N}\) towards the sphere</strong> (opposite to the field, because it is negative).</p></div>
 </div>
 
 <h3>Fields from two charges (along a line)</h3>
 <p>Fields are vectors, so add them. On the line between two charges, work out each field's size and direction separately, then combine.</p>
-<div class="we" data-title="Where is the field zero? (hard)" data-marks="3" data-f="E = \dfrac{kq}{r^2}">
+<div class="we" data-title="Where is the field zero? (hard)" data-marks="3">
 <div class="we-q"><p>A \(+4.0\ \mu\text{C}\) charge and a \(+1.0\ \mu\text{C}\) charge are 0.30 m apart. Where between them is the electric field zero?</p></div>
-<div class="we-s"><p><strong>Between two like charges the fields point in opposite directions</strong>, so they can cancel. Let \(x\) be the distance from the 4.0 μC charge:</p>\[ \frac{k(4.0)}{x^2} = \frac{k(1.0)}{(0.30 - x)^2} \]</div>
+<div class="we-t"><p>Between two like charges the fields point in opposite directions, so they cancel at one point. It lies closer to the smaller charge. Square-rooting the equation turns it into a simple linear equation.</p></div>
+<div class="we-s" data-f="\dfrac{kq_1}{x^2} = \dfrac{kq_2}{(d - x)^2}"><p><strong>Between two like charges the fields point in opposite directions</strong>, so they can cancel. Let \(x\) be the distance from the 4.0 μC charge:</p>\[ \frac{k(4.0)}{x^2} = \frac{k(1.0)}{(0.30 - x)^2} \]</div>
 <div class="we-s"><p><strong>Square-root:</strong> \(\dfrac{2.0}{x} = \dfrac{1.0}{0.30 - x} \Rightarrow 0.60 - 2.0x = x \Rightarrow x = 0.20\ \text{m}\).</p></div>
 <div class="we-a"><p><strong>0.20 m from the 4.0 μC charge</strong> (closer to the smaller charge, as expected).</p></div>
+</div>
+
+<h3>Fields from two charges (at right angles)</h3>
+<p>When the two fields at a point aren't along the same line, draw each field arrow (away from positive charges, towards negative charges), then add them as vectors: Pythagoras for the size and trigonometry for the direction.</p>
+<div class="we" data-title="Adding perpendicular fields" data-marks="4">
+<div class="we-q"><p>Point P is 0.30 m east of a \(+5.0\ \mu\text{C}\) charge and 0.20 m south of a \(+2.0\ \mu\text{C}\) charge. Find the magnitude and direction of the resultant electric field at P.</p></div>
+<div class="we-t"><p>Fields are vectors, so fields from separate charges add by vector addition, not by adding magnitudes. Each field points away from a positive charge (towards a negative one). When the two are perpendicular, use Pythagoras and trigonometry.</p></div>
+<div class="we-s" data-f="E = \dfrac{kq}{r^2}"><p>Field from the 5.0 μC charge: \(E_1 = \dfrac{(8.99\times10^9)(5.0\times10^{-6})}{0.30^2} = 5.0\times10^5\ \text{N C}^{-1}\), pointing <strong>east</strong> (away from a positive charge).</p></div>
+<div class="we-s" data-f="E = \dfrac{kq}{r^2}"><p>Field from the 2.0 μC charge: \(E_2 = \dfrac{(8.99\times10^9)(2.0\times10^{-6})}{0.20^2} = 4.5\times10^5\ \text{N C}^{-1}\), pointing <strong>south</strong>.</p></div>
+<div class="we-s" data-f="E = \sqrt{E_1^2 + E_2^2}"><p>The fields are at right angles: \(E = \sqrt{(5.0\times10^5)^2 + (4.5\times10^5)^2} = 6.7\times10^5\ \text{N C}^{-1}\).</p></div>
+<div class="we-a" data-f="\tan\theta = \dfrac{E_2}{E_1}"><p>Direction: \(\tan\theta = 4.5/5.0 \Rightarrow \theta = 42^\circ\). <strong>\(6.7\times10^5\ \text{N C}^{-1}\), 42° south of east.</strong> Just adding the two magnitudes (\(9.5\times10^5\)) is the classic error.</p></div>
 </div>
 
 <h2>Uniform fields between parallel plates</h2>
@@ -43,11 +57,12 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 <aside class="c-trap" data-title="Trick alert: the force is the same everywhere between the plates">
 <p>In a uniform field, a charge experiences exactly the same force next to the positive plate, in the middle, or next to the negative plate. Don't use \(kq/r^2\) for plates: that formula is only for point charges. Doubling the separation at constant voltage <strong>halves</strong> the field and the force.</p>
 </aside>
-<div class="we" data-title="Electron between plates" data-marks="3" data-f="E = \dfrac{V}{d} ;; F = qE ;; a = \dfrac{F}{m}">
+<div class="we" data-title="Electron between plates" data-marks="3">
 <div class="we-q"><p>Two parallel plates 2.0 cm apart are connected to a 500 V supply. Find the field strength, the force on an electron between the plates and its acceleration (\(m_e = 9.1\times10^{-31}\ \text{kg}\)).</p></div>
-<div class="we-s"><p><strong>Field:</strong> \(E = V/d = 500/0.020 = 2.5\times10^4\ \text{V m}^{-1}\).</p></div>
-<div class="we-s"><p><strong>Force:</strong> \(F = qE = (1.60\times10^{-19})(2.5\times10^4) = 4.0\times10^{-15}\ \text{N}\), towards the positive plate.</p></div>
-<div class="we-s"><p><strong>Acceleration:</strong> \(a = F/m = 4.0\times10^{-15}/9.1\times10^{-31} = 4.4\times10^{15}\ \text{m s}^{-2}\).</p></div>
+<div class="we-t"><p>Between parallel plates the field is uniform, so the force on a charge is the same everywhere between them. The acceleration is huge because an electron's mass is so small.</p></div>
+<div class="we-s" data-f="E = \dfrac Vd"><p><strong>Field:</strong> \(E = V/d = 500/0.020 = 2.5\times10^4\ \text{V m}^{-1}\).</p></div>
+<div class="we-s" data-f="F = qE"><p><strong>Force:</strong> \(F = qE = (1.60\times10^{-19})(2.5\times10^4) = 4.0\times10^{-15}\ \text{N}\), towards the positive plate.</p></div>
+<div class="we-s" data-f="a = \dfrac Fm"><p><strong>Acceleration:</strong> \(a = F/m = 4.0\times10^{-15}/9.1\times10^{-31} = 4.4\times10^{15}\ \text{m s}^{-2}\).</p></div>
 <div class="we-a"><p><strong>\(2.5\times10^4\ \text{V m}^{-1}\); \(4.0\times10^{-15}\ \text{N}\) towards the + plate; \(4.4\times10^{15}\ \text{m s}^{-2}\).</strong> Gravity on the electron (\(\sim10^{-29}\ \text{N}\)) is utterly negligible.</p></div>
 </div>
 
@@ -78,11 +93,12 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 <figcaption>An electron gun (as in a synchrotron's first stage or an old CRT). The field points from anode to cathode; the negative electrons are pushed the other way and gain \(eV\) of kinetic energy.</figcaption>
 </figure>
 
-<div class="we" data-title="Electron gun" data-marks="4" data-f="E_k = qV ;; E_k = \tfrac12 mv^2">
+<div class="we" data-title="Electron gun" data-marks="4">
 <div class="we-q"><p>Electrons start from rest and are accelerated through 2000 V in an electron gun. Find (a) their kinetic energy in eV and in J, and (b) their final speed. (c) What speed would a proton reach through the same voltage?</p></div>
-<div class="we-s"><p><strong>(a)</strong> \(E_k = qV = e(2000) = 2000\ \text{eV} = 2000 \times 1.60\times10^{-19} = 3.2\times10^{-16}\ \text{J}\).</p></div>
-<div class="we-s"><p><strong>(b)</strong> \(\tfrac12 m_ev^2 = 3.2\times10^{-16}\):</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{9.1\times10^{-31}}} = 2.65\times10^7\ \text{m s}^{-1} \]<p>That's under 9% of \(c\), so the non-relativistic formula is fine.</p></div>
-<div class="we-s"><p><strong>(c) Proton:</strong> same charge size, so the same kinetic energy, but 1835 times the mass:</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{1.67\times10^{-27}}} = 6.2\times10^5\ \text{m s}^{-1} \]</div>
+<div class="we-t"><p>The work done on a charge by an accelerating voltage is \(qV\), and it becomes kinetic energy. Equal charges gain equal energy, but the lighter particle ends up much faster.</p></div>
+<div class="we-s" data-f="E_k = qV"><p><strong>(a)</strong> \(E_k = qV = e(2000) = 2000\ \text{eV} = 2000 \times 1.60\times10^{-19} = 3.2\times10^{-16}\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>(b)</strong> \(\tfrac12 m_ev^2 = 3.2\times10^{-16}\):</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{9.1\times10^{-31}}} = 2.65\times10^7\ \text{m s}^{-1} \]<p>That's under 9% of \(c\), so the non-relativistic formula is fine.</p></div>
+<div class="we-s" data-f="v = \sqrt{\dfrac{2E_k}{m}}"><p><strong>(c) Proton:</strong> same charge size, so the same kinetic energy, but 1835 times the mass:</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{1.67\times10^{-27}}} = 6.2\times10^5\ \text{m s}^{-1} \]</div>
 <div class="we-a"><p><strong>(a) 2000 eV = \(3.2\times10^{-16}\ \text{J}\) (b) \(2.7\times10^7\ \text{m s}^{-1}\) (c) \(6.2\times10^5\ \text{m s}^{-1}\).</strong></p></div>
 </div>
 <aside class="c-trap" data-title="Trick alert: energy gained depends only on V">
@@ -90,10 +106,11 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 </aside>
 
 <h2>Electric vs gravitational forces</h2>
-<div class="we" data-title="Inside a hydrogen atom" data-marks="3" data-f="F_e = \dfrac{kq_1q_2}{r^2} ;; F_g = \dfrac{Gm_1m_2}{r^2}">
+<div class="we" data-title="Inside a hydrogen atom" data-marks="3">
 <div class="we-q"><p>In a hydrogen atom the electron is about \(5.3\times10^{-11}\ \text{m}\) from the proton. Compare the electric and gravitational forces between them.</p></div>
-<div class="we-s">\[ F_e = \frac{(8.99\times10^9)(1.60\times10^{-19})^2}{(5.3\times10^{-11})^2} = 8.2\times10^{-8}\ \text{N} \]</div>
-<div class="we-s">\[ F_g = \frac{(6.67\times10^{-11})(9.1\times10^{-31})(1.67\times10^{-27})}{(5.3\times10^{-11})^2} = 3.6\times10^{-47}\ \text{N} \]</div>
+<div class="we-t"><p>Both forces follow inverse-square laws, so their ratio doesn't depend on distance. The comparison shows how weak gravity is between individual particles.</p></div>
+<div class="we-s" data-f="F_e = \dfrac{kq_1q_2}{r^2}">\[ F_e = \frac{(8.99\times10^9)(1.60\times10^{-19})^2}{(5.3\times10^{-11})^2} = 8.2\times10^{-8}\ \text{N} \]</div>
+<div class="we-s" data-f="F_g = \dfrac{Gm_1m_2}{r^2}">\[ F_g = \frac{(6.67\times10^{-11})(9.1\times10^{-31})(1.67\times10^{-27})}{(5.3\times10^{-11})^2} = 3.6\times10^{-47}\ \text{N} \]</div>
 <div class="we-a"><p><strong>The electric force is about \(2\times10^{39}\) times stronger.</strong> Gravity only dominates on large scales because matter is almost perfectly electrically neutral, while mass always adds up.</p></div>
 </div>
 

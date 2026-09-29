@@ -11,6 +11,7 @@ dotpoints: organic reaction pathways, including the design of synthetic routes a
 <div class="eq"><div class="eq-label">A typical four-step pathway</div>\[ \ce{CH2=CH2 ->[H2O, H3PO4][300 °C] CH3CH2OH ->[H+/Cr2O7^2-] CH3COOH ->[CH3CH2OH][conc. H2SO4] CH3COOCH2CH3} \]<p>ethene → ethanol → ethanoic acid → ethyl ethanoate</p></div>
 <div class="we" data-title="Complete the pathway" data-marks="4">
 <div class="we-q"><p>Starting from propene, design a pathway to make propyl propanoate. Give the reagents and conditions for each step.</p></div>
+<div class="we-t"><p>Plan backwards from the target: an ester comes from an acid and an alcohol, and each of those can be made from an alkene through known reactions. Choose steps that give the right isomer.</p></div>
 <div class="we-s"><p>Propyl propanoate = propanoic acid + propan-1-ol. Both come from propene, but we need the <strong>primary</strong> alcohol.</p></div>
 <div class="we-s"><p>Step 1: propene + HCl → 1-chloropropane (some forms alongside 2-chloropropane; separate them). Step 2: 1-chloropropane + NaOH(aq), heat → propan-1-ol.</p></div>
 <div class="we-s"><p>Step 3: some of the propan-1-ol + excess \(\ce{H+/MnO4-}\), heat → propanoic acid.</p></div>
@@ -19,24 +20,27 @@ dotpoints: organic reaction pathways, including the design of synthetic routes a
 
 <h2>Yield</h2>
 <div class="eq"><div class="eq-label">Percentage yield</div>\[ \%\ \text{yield} = \frac{\text{actual mass (or mol)}}{\text{theoretical mass (or mol)}} \times 100 \qquad \text{overall yield} = y_1 \times y_2 \times \cdots \]<p>The theoretical yield comes from the limiting reactant. For multi-step syntheses, multiply the step yields (as decimals).</p></div>
-<div class="we" data-title="Yield of an esterification" data-marks="3" data-f="n = \dfrac mM ;; \%\text{ yield} = \dfrac{\text{actual}}{\text{theoretical}} \times 100">
+<div class="we" data-title="Yield of an esterification" data-marks="3">
 <div class="we-q"><p>12.0 g of ethanoic acid (\(M = 60.0\)) is refluxed with excess ethanol and 11.0 g of ethyl ethanoate (\(M = 88.0\)) is obtained. Calculate the percentage yield.</p></div>
-<div class="we-s"><p>\(n(\text{acid}) = 0.200\text{ mol}\) (limiting), so theoretical \(n(\text{ester}) = 0.200\text{ mol}\).</p></div>
-<div class="we-s"><p>Actual \(n = \frac{11.0}{88.0} = 0.125\text{ mol}\).</p></div>
-<div class="we-a"><p><strong>Yield = \(\frac{0.125}{0.200} \times 100 = 62.5\%\).</strong> Esterification is an equilibrium, so it never reaches 100%; losses in purification (separating funnel, distillation) reduce it further.</p></div>
+<div class="we-t"><p>The theoretical yield comes from the limiting reactant and the mole ratio. Percentage yield compares what you actually got with that maximum.</p></div>
+<div class="we-s" data-f="n = \dfrac mM,\ \text{limiting reactant}"><p>\(n(\text{acid}) = 0.200\text{ mol}\) (limiting), so theoretical \(n(\text{ester}) = 0.200\text{ mol}\).</p></div>
+<div class="we-s" data-f="n = \dfrac mM"><p>Actual \(n = \frac{11.0}{88.0} = 0.125\text{ mol}\).</p></div>
+<div class="we-a" data-f="\%\text{ yield} = \dfrac{\text{actual}}{\text{theoretical}} \times 100"><p><strong>Yield = \(\frac{0.125}{0.200} \times 100 = 62.5\%\).</strong> Esterification is an equilibrium, so it never reaches 100%; losses in purification (separating funnel, distillation) reduce it further.</p></div>
 </div>
-<div class="we" data-title="Overall yield (trick)" data-marks="2" data-f="\text{overall yield} = \text{yield}_1 \times \text{yield}_2 \times \text{yield}_3">
+<div class="we" data-title="Overall yield (trick)" data-marks="2">
 <div class="we-q"><p>A three-step synthesis has step yields of 80%, 75% and 90%. What is the overall yield?</p></div>
-<div class="we-s"><p>\(0.80 \times 0.75 \times 0.90 = 0.54\).</p></div>
+<div class="we-t"><p>Each step only passes on a fraction of its starting material, so the overall yield of a multi-step synthesis is the product of the step yields.</p></div>
+<div class="we-s" data-f="\text{overall yield} = \text{yield}_1 \times \text{yield}_2 \times \text{yield}_3"><p>\(0.80 \times 0.75 \times 0.90 = 0.54\).</p></div>
 <div class="we-a"><p><strong>54%</strong>, not the average (81.7%) and not the lowest (75%). Long pathways lose a lot, which is one reason chemists prefer short routes.</p></div>
 </div>
 
 <h2>Atom economy</h2>
 <div class="eq"><div class="eq-label">Atom economy</div>\[ \text{atom economy} = \frac{M(\text{desired product})}{\text{total } M \text{ of all reactants}} \times 100 \]<p>Uses the balanced equation (coefficients × molar masses). It measures how much of the reactants' mass <em>could</em> end up in the product, even at 100% yield.</p></div>
-<div class="we" data-title="Two routes to ethanol" data-marks="3" data-f="\text{atom economy} = \dfrac{M(\text{desired product})}{\Sigma M(\text{reactants})} \times 100">
+<div class="we" data-title="Two routes to ethanol" data-marks="3">
 <div class="we-q"><p>Compare the atom economy of making ethanol by (a) hydration of ethene and (b) fermentation of glucose.</p></div>
-<div class="we-s"><p>(a) \(\ce{C2H4 + H2O -> C2H5OH}\): all atoms end up in ethanol: 100%.</p></div>
-<div class="we-s"><p>(b) \(\ce{C6H12O6 -> 2C2H5OH + 2CO2}\): \(\frac{2 \times 46.0}{180.0} \times 100 = 51.1\%\).</p></div>
+<div class="we-t"><p>Atom economy measures how much of the reactants' total mass ends up in the desired product. Addition reactions have 100% atom economy; reactions with by-products have less.</p></div>
+<div class="we-s" data-f="\text{atom economy} = \dfrac{M(\text{desired product})}{\Sigma M(\text{reactants})} \times 100"><p>(a) \(\ce{C2H4 + H2O -> C2H5OH}\): all atoms end up in ethanol: 100%.</p></div>
+<div class="we-s" data-f="\text{atom economy} = \dfrac{M(\text{desired product})}{\Sigma M(\text{reactants})} \times 100"><p>(b) \(\ce{C6H12O6 -> 2C2H5OH + 2CO2}\): \(\frac{2 \times 46.0}{180.0} \times 100 = 51.1\%\).</p></div>
 <div class="we-a"><p><strong>(a) 100%; (b) 51.1%.</strong> But (a) uses a non-renewable feedstock (ethene from crude oil) and high temperature, while (b) uses renewable sugar at low temperature. Green chemistry weighs several principles, not just atom economy.</p></div>
 </div>
 
@@ -72,7 +76,7 @@ dotpoints: organic reaction pathways, including the design of synthetic routes a
 </div>
 
 <div class="mcq" data-ans="A" data-level="hard">
-<div class="mcq-q"><p>The atom economy for \(\ce{CH3CH2Cl + NaOH -> CH3CH2OH + NaCl}\) is closest to (\(M\): chloroethane 64.5, NaOH 40.0, ethanol 46.0)</p></div>
+<div class="mcq-q"><p>The atom economy for \(\ce{CH3CH2Cl + NaOH}\) \(\ce{-> CH3CH2OH + NaCl}\) is closest to (\(M\): chloroethane 64.5, NaOH 40.0, ethanol 46.0)</p></div>
 <ol><li>44.0%</li><li>100%</li><li>71.3%</li><li>56.0%</li></ol>
 <div class="mcq-x"><p>\(\frac{46.0}{64.5 + 40.0} \times 100 = 44.0\%\). Substitution always wastes the leaving group.</p></div>
 </div>
@@ -101,7 +105,7 @@ dotpoints: organic reaction pathways, including the design of synthetic routes a
 
 <div class="pq" data-level="exam" data-marks="4" data-f="\text{atom economy} = \dfrac{M(\text{desired product})}{\Sigma M(\text{reactants})} \times 100">
 <div class="pq-q"><p>Ethyl ethanoate (a solvent) can be made by esterification, or by a newer process: \(\ce{2CH3CHO -> CH3COOCH2CH3}\) using a catalyst. Calculate the atom economy of both routes and discuss which is “greener”.</p></div>
-<div class="pq-s"><p>Esterification: \(\ce{CH3COOH + C2H5OH -> CH3COOC2H5 + H2O}\): \(\frac{88.0}{60.0 + 46.0} \times 100 = 83.0\%\). [1]</p><p>Aldehyde route: \(\frac{88.0}{2 \times 44.0} \times 100 = 100\%\). [1]</p><p>The second route produces no by-product and uses a catalyst (good green principles). [1] But also consider where the feedstocks come from (renewable ethanol vs petrochemical ethanal), energy use and yield before deciding. [1]</p></div>
+<div class="pq-s"><p>Esterification: \(\ce{CH3COOH + C2H5OH}\) \(\ce{-> CH3COOC2H5 + H2O}\): \(\frac{88.0}{60.0 + 46.0} \times 100 = 83.0\%\). [1]</p><p>Aldehyde route: \(\frac{88.0}{2 \times 44.0} \times 100 = 100\%\). [1]</p><p>The second route produces no by-product and uses a catalyst (good green principles). [1] But also consider where the feedstocks come from (renewable ethanol vs petrochemical ethanal), energy use and yield before deciding. [1]</p></div>
 </div>
 
 <div class="pq" data-level="trick" data-marks="2" data-f="\%\text{ yield} = \dfrac{\text{actual}}{\text{theoretical}} \times 100">

@@ -34,6 +34,9 @@ dotpoints: describe the limitation of the wave model of light in explaining expe
   <li>The <strong>maximum kinetic energy</strong> of the photoelectrons depends on the <strong>frequency</strong> of the light, not its intensity. It increases linearly with frequency.</li>
   <li>Increasing the <strong>intensity</strong> (above \(f_0\)) increases the <strong>number</strong> of electrons emitted per second (the photocurrent), but not their maximum kinetic energy.</li>
 </ol>
+<aside class="c-trap" data-title="Trick alert: same power, different colour">
+<p>Intensity means energy per second, not photons per second. If the light's <strong>power stays the same</strong> but its frequency increases (e.g. red → blue), each photon carries more energy, so there are <strong>fewer photons per second</strong>. Result: a <strong>larger</strong> maximum kinetic energy (bigger stopping voltage) but a <strong>smaller</strong> saturation photocurrent. Number of photons per second \(= P/(hf)\).</p>
+</aside>
 
 <h2>Why the wave model fails</h2>
 <div class="tbl"><table>
@@ -62,12 +65,13 @@ dotpoints: describe the limitation of the wave model of light in explaining expe
 <p>Making the collector negative repels electrons. The <strong>stopping voltage</strong> \(V_0\) is just enough to stop even the most energetic electrons, so the photocurrent drops to zero:</p>
 <div class="eq">\[ eV_0 = E_{k\max} \]<p>In electron-volts this is neat: if \(E_{k\max} = 1.5\ \text{eV}\), then \(V_0 = 1.5\ \text{V}\).</p></div>
 
-<div class="we" data-title="Sodium lit by violet light" data-marks="5" data-f="E = hf = \dfrac{hc}{\lambda} ;; E_{k\max} = hf - \phi ;; V_0 = \dfrac{E_{k\max}}{e} ;; f_0 = \dfrac{\phi}{h}">
+<div class="we" data-title="Sodium lit by violet light" data-marks="5">
 <div class="we-q"><p>Sodium has a work function of 2.3 eV. It is lit with 400 nm light. Find (a) the photon energy in eV and J, (b) the maximum kinetic energy of the photoelectrons, (c) the stopping voltage and (d) the threshold frequency and threshold wavelength.</p></div>
-<div class="we-s"><p><strong>(a) Photon energy:</strong></p>\[ E = \frac{hc}{\lambda} = \frac{(4.14\times10^{-15})(3.0\times10^8)}{400\times10^{-9}} = 3.1\ \text{eV} = 3.1 \times 1.60\times10^{-19} = 5.0\times10^{-19}\ \text{J} \]</div>
-<div class="we-s"><p><strong>(b)</strong> \(E_{k\max} = hf - \phi = 3.1 - 2.3 = 0.8\ \text{eV}\) (\(1.3\times10^{-19}\ \text{J}\)).</p></div>
-<div class="we-s"><p><strong>(c)</strong> \(V_0 = E_{k\max}/e = 0.8\ \text{V}\).</p></div>
-<div class="we-s"><p><strong>(d)</strong> \(f_0 = \phi/h = 2.3/4.14\times10^{-15} = 5.6\times10^{14}\ \text{Hz}\); \(\lambda_0 = c/f_0 = 5.4\times10^{-7}\ \text{m} = 540\ \text{nm}\).</p></div>
+<div class="we-t"><p>Each photon gives all its energy to one electron. Part of it (the work function) is used to escape the metal; the rest is the maximum kinetic energy. Below the threshold frequency no single photon has enough energy, however bright the light.</p></div>
+<div class="we-s" data-f="E = \dfrac{hc}{\lambda} ;; 1\ \text{eV} = 1.60\times10^{-19}\ \text{J}"><p><strong>(a) Photon energy:</strong></p>\[ E = \frac{hc}{\lambda} = \frac{(4.14\times10^{-15})(3.0\times10^8)}{400\times10^{-9}} = 3.1\ \text{eV} \]<p>In joules:</p>\[ E = 3.1 \times 1.60\times10^{-19} = 5.0\times10^{-19}\ \text{J} \]</div>
+<div class="we-s" data-f="E_{k\max} = hf - \phi"><p><strong>(b)</strong> \(E_{k\max} = hf - \phi = 3.1 - 2.3 = 0.8\ \text{eV}\) (\(1.3\times10^{-19}\ \text{J}\)).</p></div>
+<div class="we-s" data-f="V_0 = \dfrac{E_{k\max}}{e}"><p><strong>(c)</strong> \(V_0 = E_{k\max}/e = 0.8\ \text{V}\).</p></div>
+<div class="we-s" data-f="f_0 = \dfrac\phi h,\ \lambda_0 = \dfrac c{f_0}"><p><strong>(d)</strong> \(f_0 = \phi/h = 2.3/4.14\times10^{-15} = 5.6\times10^{14}\ \text{Hz}\); \(\lambda_0 = c/f_0 = 5.4\times10^{-7}\ \text{m} = 540\ \text{nm}\).</p></div>
 <div class="we-a"><p><strong>(a) 3.1 eV = \(5.0\times10^{-19}\ \text{J}\) (b) 0.8 eV (c) 0.8 V (d) \(5.6\times10^{14}\ \text{Hz}\), 540 nm.</strong> Light with a wavelength longer than 540 nm (green, yellow, red) ejects no electrons from sodium.</p></div>
 </div>
 <aside class="c-trap" data-title="Trick alert: threshold wavelength goes the other way">
@@ -96,11 +100,12 @@ dotpoints: describe the limitation of the wave model of light in explaining expe
 </svg>
 <figcaption>Gradient = Planck's constant \(h\). x-intercept = threshold frequency \(f_0\). y-intercept (extrapolated) = \(-\phi\). Different metals give parallel lines.</figcaption>
 </figure>
-<div class="we" data-title="Analysing experimental data (hard)" data-marks="4" data-f="E_{k\max} = hf - \phi ;; h = \text{gradient of } E_k\text{–}f ;; \phi = hf_0">
+<div class="we" data-title="Analysing experimental data (hard)" data-marks="4">
 <div class="we-q"><p>A student measures \(E_{k\max} = 0.20\ \text{eV}\) at \(6.0\times10^{14}\ \text{Hz}\) and \(E_{k\max} = 1.03\ \text{eV}\) at \(8.0\times10^{14}\ \text{Hz}\) for a metal. Find (a) the experimental value of Planck's constant, (b) the threshold frequency and (c) the work function.</p></div>
-<div class="we-s"><p><strong>(a) Gradient:</strong></p>\[ h = \frac{\Delta E_k}{\Delta f} = \frac{1.03 - 0.20}{(8.0 - 6.0)\times10^{14}} = 4.15\times10^{-15}\ \text{eV s} \]</div>
-<div class="we-s"><p><strong>(b) Extrapolate to \(E_k = 0\):</strong> from the first point, the line drops 0.20 eV more in \(0.20/4.15\times10^{-15} = 0.48\times10^{14}\ \text{Hz}\), so \(f_0 = 6.0\times10^{14} - 0.48\times10^{14} = 5.5\times10^{14}\ \text{Hz}\).</p></div>
-<div class="we-s"><p><strong>(c)</strong> \(\phi = hf_0 = (4.15\times10^{-15})(5.52\times10^{14}) = 2.3\ \text{eV}\).</p></div>
+<div class="we-t"><p>\(E_{k\max} = hf - \phi\) is a straight line: gradient \(h\), x-intercept the threshold frequency, and y-intercept \(-\phi\). Two data points are enough to find all three.</p></div>
+<div class="we-s" data-f="h = \text{gradient} = \dfrac{\Delta E_k}{\Delta f}"><p><strong>(a) Gradient:</strong></p>\[ h = \frac{\Delta E_k}{\Delta f} = \frac{1.03 - 0.20}{(8.0 - 6.0)\times10^{14}} = 4.15\times10^{-15}\ \text{eV s} \]</div>
+<div class="we-s" data-f="f_0 = x\text{-intercept}"><p><strong>(b) Extrapolate to \(E_k = 0\):</strong> from the first point, the line drops 0.20 eV more in \(0.20/4.15\times10^{-15} = 0.48\times10^{14}\ \text{Hz}\), so \(f_0 = 6.0\times10^{14} - 0.48\times10^{14} = 5.5\times10^{14}\ \text{Hz}\).</p></div>
+<div class="we-s" data-f="\phi = hf_0"><p><strong>(c)</strong> \(\phi = hf_0 = (4.15\times10^{-15})(5.52\times10^{14}) = 2.3\ \text{eV}\).</p></div>
 <div class="we-a"><p><strong>(a) \(4.2\times10^{-15}\ \text{eV s}\) (b) \(5.5\times10^{14}\ \text{Hz}\) (c) 2.3 eV</strong> (probably sodium).</p></div>
 </div>
 

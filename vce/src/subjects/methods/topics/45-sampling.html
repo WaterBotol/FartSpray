@@ -18,23 +18,26 @@ dotpoints: random sampling, populations and samples, and sources of bias | the s
 <div class="eq"><div class="eq-label">Sample proportion</div>\[ \hat P = \frac{X}{n},\ X \sim \text{Bi}(n, p) \qquad E(\hat P) = p \qquad \operatorname{sd}(\hat P) = \sqrt{\frac{p(1 - p)}{n}} \]<p>For large \(n\) (a common guide is \(np \ge 10\) and \(n(1 - p) \ge 10\)), \(\hat P\) is approximately \(\text{N}\!\left(p, \frac{p(1 - p)}{n}\right)\).</p></div>
 <aside class="c-key"><p>Quadrupling the sample size <strong>halves</strong> the standard deviation of \(\hat P\) (because of the \(\sqrt{n}\)). Diminishing returns: going from \(n = 100\) to \(n = 400\) helps as much as going from 400 to 1600.</p></aside>
 
-<div class="we" data-title="Mean and sd of p̂" data-marks="2" data-f="E(\hat P) = p ;; \operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}">
+<div class="we" data-title="Mean and sd of p̂" data-marks="2">
 <div class="we-q"><p>30% of a town's households own a dog. Random samples of 100 households are taken. Find the mean and standard deviation of \(\hat P\).</p></div>
-<div class="we-s"><p>\(E(\hat P) = p = 0.3\).</p></div>
-<div class="we-a"><p><strong>\(\operatorname{sd}(\hat P) = \sqrt{\frac{0.3 \times 0.7}{100}} \approx 0.0458\).</strong></p></div>
+<div class="we-t"><p>The sample proportion \(\hat P\) varies from sample to sample. Its mean is the population proportion \(p\), and its spread shrinks as the sample size grows.</p></div>
+<div class="we-s" data-f="E(\hat P) = p"><p>\(E(\hat P) = p = 0.3\).</p></div>
+<div class="we-a" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}"><p><strong>\(\operatorname{sd}(\hat P) = \sqrt{\frac{0.3 \times 0.7}{100}} \approx 0.0458\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Exact vs approximate (a favourite trap)" data-marks="4" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p) ;; Z = \dfrac{\hat p - p}{\operatorname{sd}(\hat P)}">
+<div class="we" data-title="Exact vs approximate (a favourite trap)" data-marks="4">
 <div class="we-q"><p>With \(p = 0.3\) and \(n = 100\), find \(P(\hat P &gt; 0.35)\) (a) exactly, using the binomial distribution, and (b) using the normal approximation.</p></div>
-<div class="we-s"><p>(a) \(\hat P &gt; 0.35 \iff X &gt; 35 \iff X \ge 36\). With \(X \sim \text{Bi}(100, 0.3)\): \(P(X \ge 36) \approx 0.1161\).</p></div>
-<div class="we-s"><p>(b) \(\hat P \approx \text{N}(0.3, 0.0458^2)\): \(P(\hat P &gt; 0.35) = P(Z &gt; 1.091) \approx 0.1376\).</p></div>
+<div class="we-t"><p>\(\hat P = \frac Xn\) with \(X\) binomial, so exact probabilities come from the binomial count. For large \(n\), \(\hat P\) is approximately normal, which gives an approximate answer.</p></div>
+<div class="we-s" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p)"><p>(a) \(\hat P &gt; 0.35 \iff X &gt; 35 \iff X \ge 36\). With \(X \sim \text{Bi}(100, 0.3)\): \(P(X \ge 36) \approx 0.1161\).</p></div>
+<div class="we-s" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}} ;; Z = \dfrac{\hat p - p}{\operatorname{sd}(\hat P)}"><p>(b) \(\hat P \approx \text{N}(0.3, 0.0458^2)\): \(P(\hat P &gt; 0.35) = P(Z &gt; 1.091) \approx 0.1376\).</p></div>
 <div class="we-a"><p><strong>(a) 0.1161 (exact); (b) 0.1376 (approximate).</strong> Read which one the question asks for. For the exact version, the strict “\(&gt;\)” matters: \(X \ge 36\), not \(X \ge 35\).</p></div>
 </div>
 
-<div class="we" data-title="Exact distribution of p̂ for a small sample (tech-free)" data-marks="3" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p)">
+<div class="we" data-title="Exact distribution of p̂ for a small sample (tech-free)" data-marks="3">
 <div class="we-q"><p>A fair coin is tossed 4 times and \(\hat P\) is the proportion of heads. Find \(P(\hat P \ge 0.75)\).</p></div>
-<div class="we-s"><p>\(\hat P \ge 0.75 \iff X \ge 3\) with \(X \sim \text{Bi}(4, \frac12)\).</p></div>
-<div class="we-s"><p>\(P(X = 3) + P(X = 4) = \frac{4}{16} + \frac{1}{16}\).</p></div>
+<div class="we-t"><p>For a small sample, the normal approximation is poor. Convert the proportion into a count \(X = n\hat P\) and use the binomial distribution directly.</p></div>
+<div class="we-s" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p)"><p>\(\hat P \ge 0.75 \iff X \ge 3\) with \(X \sim \text{Bi}(4, \frac12)\).</p></div>
+<div class="we-s" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x}"><p>\(P(X = 3) + P(X = 4) = \frac{4}{16} + \frac{1}{16}\).</p></div>
 <div class="we-a"><p><strong>\(\frac{5}{16}\).</strong> Small samples: convert to a count and use the binomial.</p></div>
 </div>
 

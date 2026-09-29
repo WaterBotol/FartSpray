@@ -14,36 +14,41 @@ dotpoints: the normal distribution N(μ, σ²) and the standard normal distribut
 <tbody><tr><td>Approx. probability</td><td>68%</td><td>95%</td><td>99.7%</td></tr></tbody></table></div>
 <div class="sim" data-sim="normal"></div>
 
-<div class="we" data-title="Probability and percentile" data-marks="3" data-f="Z = \dfrac{X - \mu}{\sigma} ;; x = \mu + z\sigma">
+<div class="we" data-title="Probability and percentile" data-marks="3">
 <div class="we-q"><p>Heights of adult men are \(X \sim \text{N}(170, 8^2)\) cm. Find (a) \(P(X &gt; 180)\), (b) the height exceeded by only 10% of men.</p></div>
-<div class="we-s"><p>(a) \(z = \frac{180 - 170}{8} = 1.25\); \(P(Z &gt; 1.25) \approx 0.1056\).</p></div>
-<div class="we-s"><p>(b) Need \(P(X &gt; h) = 0.1\), i.e. \(P(X &lt; h) = 0.9\). Inverse normal: \(z = 1.2816\), so \(h = 170 + 1.2816 \times 8\).</p></div>
+<div class="we-t"><p>Standardising turns any normal variable into \(Z \sim \text{N}(0, 1)\). Going the other way, a percentile's \(z\)-value converts back with \(x = \mu + z\sigma\). CAS inverse normal works with the area to the left.</p></div>
+<div class="we-s" data-f="Z = \dfrac{X - \mu}{\sigma}"><p>(a) \(z = \frac{180 - 170}{8} = 1.25\); \(P(Z &gt; 1.25) \approx 0.1056\).</p></div>
+<div class="we-s" data-f="P(X &gt; h) = 0.1 \iff P(X &lt; h) = 0.9 ;; x = \mu + z\sigma"><p>(b) Need \(P(X &gt; h) = 0.1\), i.e. \(P(X &lt; h) = 0.9\). Inverse normal: \(z = 1.2816\), so \(h = 170 + 1.2816 \times 8\).</p></div>
 <div class="we-a"><p><strong>(a) 0.1056, (b) \(h \approx 180.25\) cm.</strong> CAS inverse normal uses the area to the <em>left</em> by default: convert “top 10%” into 0.9.</p></div>
 </div>
 
-<div class="we" data-title="Using the 68–95–99.7 rule (tech-free)" data-marks="2" data-f="68\%,\ 95\%,\ 99.7\% \text{ within } 1, 2, 3\ \sigma">
+<div class="we" data-title="Using the 68–95–99.7 rule (tech-free)" data-marks="2">
 <div class="we-q"><p>\(X \sim \text{N}(50, 16)\). Without technology, estimate \(P(42 &lt; X &lt; 54)\).</p></div>
-<div class="we-s"><p>\(\sigma = 4\). \(42 = \mu - 2\sigma\), \(54 = \mu + \sigma\). By symmetry, \(P(42 &lt; X &lt; 50) \approx \frac{95\%}{2} = 47.5\%\) and \(P(50 &lt; X &lt; 54) \approx \frac{68\%}{2} = 34\%\).</p></div>
+<div class="we-t"><p>About 68%, 95% and 99.7% of a normal distribution lies within 1, 2 and 3 standard deviations of the mean. The curve is symmetric, so each half holds half of those amounts.</p></div>
+<div class="we-s" data-f="68\%,\ 95\%,\ 99.7\% \text{ within } 1, 2, 3\ \sigma ;; \sigma = \sqrt{\operatorname{Var}(X)}"><p>\(\sigma = 4\). \(42 = \mu - 2\sigma\), \(54 = \mu + \sigma\). By symmetry, \(P(42 &lt; X &lt; 50) \approx \frac{95\%}{2} = 47.5\%\) and \(P(50 &lt; X &lt; 54) \approx \frac{68\%}{2} = 34\%\).</p></div>
 <div class="we-a"><p><strong>\(\approx 0.815\)</strong> (81.5%). Draw the bell and split at the mean.</p></div>
 </div>
 
-<div class="we" data-title="Finding σ" data-marks="2" data-f="Z = \dfrac{X - \mu}{\sigma}">
+<div class="we" data-title="Finding σ" data-marks="2">
 <div class="we-q"><p>The mass of a packet is normally distributed with mean 50 g, and 10% of packets weigh less than 40 g. Find the standard deviation.</p></div>
-<div class="we-s"><p>\(P(X &lt; 40) = 0.1 \Rightarrow \frac{40 - 50}{\sigma} = -1.2816\).</p></div>
+<div class="we-t"><p>A known percentile gives a \(z\)-value from inverse normal. Put it into the standardising formula and solve for the unknown parameter.</p></div>
+<div class="we-s" data-f="Z = \dfrac{X - \mu}{\sigma} ;; P(Z &lt; -1.2816) = 0.1"><p>\(P(X &lt; 40) = 0.1 \Rightarrow \frac{40 - 50}{\sigma} = -1.2816\).</p></div>
 <div class="we-a"><p><strong>\(\sigma = \frac{10}{1.2816} \approx 7.80\) g.</strong></p></div>
 </div>
 
-<div class="we" data-title="Finding μ and σ together (hard)" data-marks="4" data-f="Z = \dfrac{X - \mu}{\sigma} ;; \text{two equations in } \mu, \sigma">
+<div class="we" data-title="Finding μ and σ together (hard)" data-marks="4">
 <div class="we-q"><p>For a normal variable, \(P(X &lt; 30) = 0.2\) and \(P(X &gt; 60) = 0.1\). Find \(\mu\) and \(\sigma\).</p></div>
-<div class="we-s"><p>\(\frac{30 - \mu}{\sigma} = z_{0.2} = -0.8416\) and \(\frac{60 - \mu}{\sigma} = z_{0.9} = 1.2816\).</p></div>
-<div class="we-s"><p>So \(30 = \mu - 0.8416\sigma\) and \(60 = \mu + 1.2816\sigma\). Subtract: \(30 = 2.1232\sigma\).</p></div>
+<div class="we-t"><p>Two known percentiles give two standardising equations. Both unknowns appear linearly, so solve them simultaneously.</p></div>
+<div class="we-s" data-f="Z = \dfrac{X - \mu}{\sigma}"><p>\(\frac{30 - \mu}{\sigma} = z_{0.2} = -0.8416\) and \(\frac{60 - \mu}{\sigma} = z_{0.9} = 1.2816\).</p></div>
+<div class="we-s" data-f="x = \mu + z\sigma ;; \text{subtract to eliminate } \mu"><p>So \(30 = \mu - 0.8416\sigma\) and \(60 = \mu + 1.2816\sigma\). Subtract: \(30 = 2.1232\sigma\).</p></div>
 <div class="we-a"><p><strong>\(\sigma \approx 14.13\), \(\mu \approx 30 + 0.8416 \times 14.13 \approx 41.89\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Conditional normal, then binomial (Exam 2 chain)" data-marks="4" data-f="P(A \mid B) = \dfrac{P(A \cap B)}{P(B)} ;; P(Y = y) = \dbinom ny p^y(1 - p)^{n - y}">
+<div class="we" data-title="Conditional normal, then binomial (Exam 2 chain)" data-marks="4">
 <div class="we-q"><p>Using \(X \sim \text{N}(170, 8^2)\): (a) find \(P(X &gt; 180 \mid X &gt; 170)\); (b) ten men are chosen at random. Find the probability that at least two are taller than 180 cm.</p></div>
-<div class="we-s"><p>(a) \(\frac{P(X &gt; 180)}{P(X &gt; 170)} = \frac{0.1056}{0.5} \approx 0.2113\).</p></div>
-<div class="we-s"><p>(b) \(Y \sim \text{Bi}(10, 0.1056)\): \(P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1)\).</p></div>
+<div class="we-t"><p>A classic Exam 2 chain: a normal probability becomes the success probability \(p\) of a binomial. Carry the unrounded value through, or your final answer drifts.</p></div>
+<div class="we-s" data-f="P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}"><p>(a) \(\frac{P(X &gt; 180)}{P(X &gt; 170)} = \frac{0.1056}{0.5} \approx 0.2113\).</p></div>
+<div class="we-s" data-f="P(Y = y) = \dbinom ny p^y(1 - p)^{n - y} ;; P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1)"><p>(b) \(Y \sim \text{Bi}(10, 0.1056)\): \(P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1)\).</p></div>
 <div class="we-a"><p><strong>(a) 0.2113; (b) \(\approx 0.2858\).</strong> Use the unrounded probability from the normal part in the binomial part.</p></div>
 </div>
 

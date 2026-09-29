@@ -18,10 +18,11 @@ dotpoints: investigate and analyse theoretically and practically the concept of 
 <p>Carrying a heavy bag horizontally at constant velocity, your upward force is perpendicular to the motion, so you do <strong>no work on the bag</strong>. Holding a weight still above your head does zero work too, even though your muscles tire. Work needs a displacement in the direction of the force.</p>
 </aside>
 
-<div class="we" data-title="Work pulling a sled" data-marks="2" data-f="W = Fs\cos\theta">
+<div class="we" data-title="Work pulling a sled" data-marks="2">
 <div class="we-q"><p>A child pulls a sled 5.0 m across level snow with a rope at 40° to the horizontal. The tension is 30 N. How much work does the tension do? How much work does gravity do?</p></div>
-<div class="we-s"><p><strong>Only the component of the force along the displacement does work:</strong></p>\[ W = Fs\cos\theta = 30 \times 5.0 \times \cos 40^\circ = 115\ \text{J} \]</div>
-<div class="we-s"><p><strong>Gravity</strong> is vertical and the displacement is horizontal, so \(\cos 90^\circ = 0\): gravity does no work.</p></div>
+<div class="we-t"><p>Work is done only by the component of a force along the displacement. A force perpendicular to the motion does no work.</p></div>
+<div class="we-s" data-f="W = Fs\cos\theta"><p><strong>Only the component of the force along the displacement does work:</strong></p>\[ W = Fs\cos\theta = 30 \times 5.0 \times \cos 40^\circ = 115\ \text{J} \]</div>
+<div class="we-s" data-f="\cos 90^\circ = 0"><p><strong>Gravity</strong> is vertical and the displacement is horizontal, so \(\cos 90^\circ = 0\): gravity does no work.</p></div>
 <div class="we-a"><p><strong>115 J by the tension; 0 J by gravity</strong> (and 0 J by the normal force).</p></div>
 </div>
 
@@ -64,19 +65,21 @@ dotpoints: investigate and analyse theoretically and practically the concept of 
 <p>When friction or drag acts, some energy is <strong>dissipated to the environment</strong> as heat, sound and deformation of materials. It is not destroyed, just no longer useful as mechanical energy:</p>
 <div class="eq">\[ E_{\text{initial}} = E_{\text{final}} + E_{\text{dissipated}} \qquad E_{\text{dissipated}} = F_{\text{friction}} \times s \]</div>
 
-<div class="we" data-title="Energy lost by a skier" data-marks="4" data-f="\Delta E_g = mg\Delta h ;; E_k = \tfrac12 mv^2 ;; W = Fs">
+<div class="we" data-title="Energy lost by a skier" data-marks="4">
 <div class="we-q"><p>A 70 kg skier starts from rest at the top of a slope 40 m high and 120 m long. She reaches the bottom at 25 m s⁻¹. (a) How much energy was dissipated? (b) What was the average resistive force along the slope?</p></div>
-<div class="we-s"><p><strong>GPE lost:</strong> \(mg\Delta h = 70 \times 9.8 \times 40 = 27\,440\ \text{J}\).</p></div>
-<div class="we-s"><p><strong>KE gained:</strong> \(\tfrac12 mv^2 = \tfrac12 \times 70 \times 25^2 = 21\,875\ \text{J}\).</p></div>
-<div class="we-s"><p><strong>(a) Dissipated</strong> = difference: \(27\,440 - 21\,875 = 5565\ \text{J}\) (to heat, sound and deformation of snow).</p></div>
-<div class="we-s"><p><strong>(b) Resistive force</strong> acts over the 120 m slope length:</p>\[ F = \frac{W}{s} = \frac{5565}{120} = 46\ \text{N} \]</div>
+<div class="we-t"><p>Without friction all the gravitational energy lost would become kinetic energy. The shortfall is the energy dissipated, which equals the work done by the resistive force over the distance it acts.</p></div>
+<div class="we-s" data-f="\Delta E_g = mg\Delta h"><p><strong>GPE lost:</strong> \(mg\Delta h = 70 \times 9.8 \times 40 = 27\,440\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>KE gained:</strong> \(\tfrac12 mv^2 = \tfrac12 \times 70 \times 25^2 = 21\,875\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_{\text{dissipated}} = \Delta E_g - \Delta E_k"><p><strong>(a) Dissipated</strong> = difference: \(27\,440 - 21\,875 = 5565\ \text{J}\) (to heat, sound and deformation of snow).</p></div>
+<div class="we-s" data-f="W = Fs"><p><strong>(b) Resistive force</strong> acts over the 120 m slope length:</p>\[ F = \frac{W}{s} = \frac{5565}{120} = 46\ \text{N} \]</div>
 <div class="we-a"><p><strong>(a) \(5.6\times10^3\ \text{J}\) (b) 46 N.</strong> Use the slope length (distance moved against friction), not the height, for the friction force.</p></div>
 </div>
 
-<div class="we" data-title="Braking distance and speed" data-marks="3" data-f="W = Fs = \Delta E_k ;; E_k = \tfrac12 mv^2">
+<div class="we" data-title="Braking distance and speed" data-marks="3">
 <div class="we-q"><p>A 1200 kg car brakes with a constant force of 8000 N. Find its braking distance from 20 m s⁻¹ and from 40 m s⁻¹.</p></div>
-<div class="we-s"><p><strong>Work done by brakes removes all the kinetic energy:</strong> \(Fs = \tfrac12 mv^2\), so \(s = \dfrac{mv^2}{2F}\).</p></div>
-<div class="we-s"><p><strong>From 20 m s⁻¹:</strong> \(s = \dfrac{1200 \times 400}{16\,000} = 30\ \text{m}\). <strong>From 40 m s⁻¹:</strong> \(s = \dfrac{1200 \times 1600}{16\,000} = 120\ \text{m}\).</p></div>
+<div class="we-t"><p>The brakes do negative work that removes the car's kinetic energy. Since \(E_k \propto v^2\) and the braking force is fixed, the stopping distance is proportional to \(v^2\).</p></div>
+<div class="we-s" data-f="Fs = \tfrac12 mv^2"><p><strong>Work done by brakes removes all the kinetic energy:</strong> \(Fs = \tfrac12 mv^2\), so \(s = \dfrac{mv^2}{2F}\).</p></div>
+<div class="we-s" data-f="s = \dfrac{mv^2}{2F}"><p><strong>From 20 m s⁻¹:</strong> \(s = \dfrac{1200 \times 400}{16\,000} = 30\ \text{m}\). <strong>From 40 m s⁻¹:</strong> \(s = \dfrac{1200 \times 1600}{16\,000} = 120\ \text{m}\).</p></div>
 <div class="we-a"><p><strong>30 m and 120 m.</strong> Doubling the speed quadruples the braking distance, because braking distance ∝ \(v^2\).</p></div>
 </div>
 

@@ -46,12 +46,13 @@ dotpoints: compare sinusoidal voltages produced as a result of the uniform rotat
 <p>Mains power in Australia is <strong>230 V rms at 50 Hz</strong>. So:</p>
 <div class="eq">\[ V_p = 230\sqrt2 = 325\ \text{V} \qquad V_{p\text{-}p} = 650\ \text{V} \qquad T = \frac{1}{50} = 0.020\ \text{s} = 20\ \text{ms} \]</div>
 
-<div class="we" data-title="An electric kettle" data-marks="4" data-f="P = V_{\text{rms}}I_{\text{rms}} ;; R = \dfrac{V_{\text{rms}}}{I_{\text{rms}}} ;; I_p = \sqrt2\, I_{\text{rms}} ;; I_{p\text{-}p} = 2I_p">
+<div class="we" data-title="An electric kettle" data-marks="4">
 <div class="we-q"><p>A 2400 W kettle runs from 230 V rms mains. Find (a) the rms current, (b) the kettle's resistance, (c) the peak current and (d) the peak-to-peak current.</p></div>
-<div class="we-s"><p><strong>(a)</strong> \(I_{\text{rms}} = P/V_{\text{rms}} = 2400/230 = 10.4\ \text{A}\).</p></div>
-<div class="we-s"><p><strong>(b)</strong> \(R = V_{\text{rms}}/I_{\text{rms}} = 230/10.43 = 22.0\ \Omega\).</p></div>
-<div class="we-s"><p><strong>(c)</strong> \(I_p = \sqrt2 \times 10.43 = 14.8\ \text{A}\).</p></div>
-<div class="we-s"><p><strong>(d)</strong> \(I_{p\text{-}p} = 2 \times 14.8 = 29.5\ \text{A}\).</p></div>
+<div class="we-t"><p>RMS values are the equivalent DC values that deliver the same power, so power calculations use RMS directly. Peak and peak-to-peak values describe the actual sinusoid.</p></div>
+<div class="we-s" data-f="I_{\text{rms}} = \dfrac{P}{V_{\text{rms}}}"><p><strong>(a)</strong> \(I_{\text{rms}} = P/V_{\text{rms}} = 2400/230 = 10.4\ \text{A}\).</p></div>
+<div class="we-s" data-f="R = \dfrac{V_{\text{rms}}}{I_{\text{rms}}}"><p><strong>(b)</strong> \(R = V_{\text{rms}}/I_{\text{rms}} = 230/10.43 = 22.0\ \Omega\).</p></div>
+<div class="we-s" data-f="I_p = \sqrt2\, I_{\text{rms}}"><p><strong>(c)</strong> \(I_p = \sqrt2 \times 10.43 = 14.8\ \text{A}\).</p></div>
+<div class="we-s" data-f="I_{p\text{-}p} = 2I_p"><p><strong>(d)</strong> \(I_{p\text{-}p} = 2 \times 14.8 = 29.5\ \text{A}\).</p></div>
 <div class="we-a"><p><strong>(a) 10 A (b) 22 Ω (c) 15 A (d) 30 A.</strong> Power ratings use RMS, so \(P = V_{\text{rms}}I_{\text{rms}}\) needs no √2.</p></div>
 </div>
 
@@ -61,11 +62,12 @@ dotpoints: compare sinusoidal voltages produced as a result of the uniform rotat
 
 <h2>Reading an oscilloscope (CRO) trace</h2>
 <p>An oscilloscope shows voltage (vertical) against time (horizontal) on a grid. The <strong>vertical sensitivity</strong> (volts per division) and <strong>time base</strong> (time per division) convert squares into values.</p>
-<div class="we" data-title="Oscilloscope reading" data-marks="4" data-f="V_{\text{rms}} = \dfrac{V_p}{\sqrt2} ;; V_{p\text{-}p} = 2V_p ;; f = \dfrac1T">
+<div class="we" data-title="Oscilloscope reading" data-marks="4">
 <div class="we-q"><p>An oscilloscope is set to 5 V/div and 2 ms/div. A sine wave on the screen rises 4.0 divisions above the centre line, and one complete cycle spans 4.0 divisions horizontally. Find \(V_p\), \(V_{p\text{-}p}\), \(V_{\text{rms}}\) and the frequency.</p></div>
-<div class="we-s"><p><strong>Peak:</strong> \(4.0\ \text{div} \times 5\ \text{V/div} = 20\ \text{V}\). <strong>Peak-to-peak:</strong> 40 V.</p></div>
-<div class="we-s"><p><strong>RMS:</strong> \(20/\sqrt2 = 14.1\ \text{V}\).</p></div>
-<div class="we-s"><p><strong>Period:</strong> \(4.0\ \text{div} \times 2\ \text{ms/div} = 8.0\ \text{ms}\); <strong>frequency</strong> \(= 1/0.0080 = 125\ \text{Hz}\).</p></div>
+<div class="we-t"><p>On an oscilloscope, vertical divisions × volts/div give voltage and horizontal divisions × time/div give time. Read peak from the centre line, period from one full cycle.</p></div>
+<div class="we-s" data-f="V_p = \text{div} \times \text{V/div},\ V_{p\text{-}p} = 2V_p"><p><strong>Peak:</strong> \(4.0\ \text{div} \times 5\ \text{V/div} = 20\ \text{V}\). <strong>Peak-to-peak:</strong> 40 V.</p></div>
+<div class="we-s" data-f="V_{\text{rms}} = \dfrac{V_p}{\sqrt2}"><p><strong>RMS:</strong> \(20/\sqrt2 = 14.1\ \text{V}\).</p></div>
+<div class="we-s" data-f="T = \text{div} \times \text{time/div},\ f = \dfrac1T"><p><strong>Period:</strong> \(4.0\ \text{div} \times 2\ \text{ms/div} = 8.0\ \text{ms}\); <strong>frequency</strong> \(= 1/0.0080 = 125\ \text{Hz}\).</p></div>
 <div class="we-a"><p><strong>\(V_p = 20\ \text{V}\), \(V_{p\text{-}p} = 40\ \text{V}\), \(V_{\text{rms}} = 14\ \text{V}\), \(f = 125\ \text{Hz}\).</strong></p></div>
 </div>
 

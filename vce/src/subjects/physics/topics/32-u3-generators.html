@@ -76,11 +76,12 @@ dotpoints: explain the production of DC voltage in DC generators and AC voltage 
 <h3>Average emf over a quarter turn</h3>
 <p>In a quarter turn (time \(T/4\)) the flux goes from \(BA\) to zero (or zero to \(BA\)), so Faraday's law gives the average emf over that quarter:</p>
 <div class="eq">\[ \varepsilon_{\text{avg}} = N\frac{\Delta\Phi}{\Delta t} = N\frac{BA}{T/4} = 4NBAf \]</div>
-<div class="we" data-title="Average emf from a generator coil" data-marks="3" data-f="T = \dfrac1f ;; \varepsilon_{\text{avg}} = N\dfrac{\Delta\Phi}{\Delta t} ;; \Phi = BA">
+<div class="we" data-title="Average emf from a generator coil" data-marks="3">
 <div class="we-q"><p>An alternator coil has 100 turns and an area of 0.020 m². It rotates at 50 revolutions per second in a 0.25 T field. Calculate the average emf during a quarter turn starting from the position where the coil's plane is perpendicular to the field.</p></div>
-<div class="we-s"><p><strong>Time for a quarter turn:</strong> \(T = 1/50 = 0.020\ \text{s}\), so \(\Delta t = 0.020/4 = 0.0050\ \text{s}\).</p></div>
-<div class="we-s"><p><strong>Flux change:</strong> \(BA = 0.25 \times 0.020 = 5.0\times10^{-3}\ \text{Wb}\) to 0.</p></div>
-<div class="we-s">\[ \varepsilon_{\text{avg}} = 100 \times \frac{5.0\times10^{-3}}{0.0050} = 100\ \text{V} \]</div>
+<div class="we-t"><p>As a generator coil turns, the flux through it changes, inducing an emf. The average over a quarter turn uses the full flux change (maximum to zero) over a quarter of the period.</p></div>
+<div class="we-s" data-f="T = \dfrac1f,\ \Delta t = \tfrac14 T"><p><strong>Time for a quarter turn:</strong> \(T = 1/50 = 0.020\ \text{s}\), so \(\Delta t = 0.020/4 = 0.0050\ \text{s}\).</p></div>
+<div class="we-s" data-f="\Phi = BA"><p><strong>Flux change:</strong> \(BA = 0.25 \times 0.020 = 5.0\times10^{-3}\ \text{Wb}\) to 0.</p></div>
+<div class="we-s" data-f="\varepsilon_{\text{avg}} = N\dfrac{\Delta\Phi}{\Delta t}">\[ \varepsilon_{\text{avg}} = 100 \times \frac{5.0\times10^{-3}}{0.0050} = 100\ \text{V} \]</div>
 <div class="we-a"><p><strong>100 V average.</strong> The peak emf is higher: for a sinusoid, \(\varepsilon_{\text{peak}} = 2\pi fNBA = 157\ \text{V}\), which is \(\pi/2\) times the quarter-turn average.</p></div>
 </div>
 

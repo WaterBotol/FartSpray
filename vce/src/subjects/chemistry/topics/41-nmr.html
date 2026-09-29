@@ -50,24 +50,27 @@ dotpoints: the principles of NMR spectroscopy, including chemical shift and the 
 <aside class="c-key" data-title="Splitting names"><p>0 neighbours: singlet (s); 1: doublet (d); 2: triplet (t); 3: quartet (q); 6: septet. Peak heights within a multiplet follow Pascal's triangle (1 : 2 : 1 for a triplet, 1 : 3 : 3 : 1 for a quartet). H on O (OH, COOH) usually appear as singlets and don't split their neighbours.</p></aside>
 <div class="sim" data-sim="nmr"></div>
 
-<div class="we" data-title="The ¹H spectrum of ethanol" data-marks="3" data-f="\text{splitting: } n + 1 \text{ rule}">
+<div class="we" data-title="The ¹H spectrum of ethanol" data-marks="3">
 <div class="we-q"><p>Predict the high-resolution ¹H NMR spectrum of ethanol, \(\ce{CH3CH2OH}\).</p></div>
-<div class="we-s"><p>Three environments: CH₃, CH₂, OH. Ratio 3 : 2 : 1.</p></div>
-<div class="we-s"><p>CH₃ (δ ≈ 1.2) has 2 neighbouring H (on CH₂): triplet. CH₂ (δ ≈ 3.7, next to O) has 3 neighbours (CH₃): quartet. OH: singlet (variable, about 2.6).</p></div>
+<div class="we-t"><p>Each set of equivalent hydrogens gives one signal. Its chemical shift shows the environment (higher near O), its area shows how many H, and its splitting shows how many H are on neighbouring carbons.</p></div>
+<div class="we-s" data-f="\text{integration} \propto \text{number of H}"><p>Three environments: CH₃, CH₂, OH. Ratio 3 : 2 : 1.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule}"><p>CH₃ (δ ≈ 1.2) has 2 neighbouring H (on CH₂): triplet. CH₂ (δ ≈ 3.7, next to O) has 3 neighbours (CH₃): quartet. OH: singlet (variable, about 2.6).</p></div>
 <div class="we-a"><p><strong>1.2 ppm triplet (3H), 3.7 ppm quartet (2H), about 2.6 ppm singlet (1H).</strong> The triplet–quartet pair is the fingerprint of an ethyl group.</p></div>
 </div>
 
-<div class="we" data-title="Distinguishing isomers" data-marks="3" data-f="\text{splitting: } n + 1 \text{ rule}">
+<div class="we" data-title="Distinguishing isomers" data-marks="3">
 <div class="we-q"><p>How would ¹H NMR distinguish 1-chloropropane from 2-chloropropane?</p></div>
-<div class="we-s"><p>1-chloropropane \(\ce{CH3CH2CH2Cl}\): three environments (3 : 2 : 2): CH₃ triplet ≈ 1.0, CH₂ sextet ≈ 1.8, CH₂Cl triplet ≈ 3.5.</p></div>
-<div class="we-s"><p>2-chloropropane \(\ce{CH3CHClCH3}\): two environments (6 : 1): a doublet ≈ 1.5 (6H) and a septet ≈ 4.1 (1H).</p></div>
+<div class="we-t"><p>Isomers can be told apart by the number of hydrogen environments, the integration ratios and the splitting patterns, because each depends on the molecule's symmetry and connections.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule}"><p>1-chloropropane \(\ce{CH3CH2CH2Cl}\): three environments (3 : 2 : 2): CH₃ triplet ≈ 1.0, CH₂ sextet ≈ 1.8, CH₂Cl triplet ≈ 3.5.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule}"><p>2-chloropropane \(\ce{CH3CHClCH3}\): two environments (6 : 1): a doublet ≈ 1.5 (6H) and a septet ≈ 4.1 (1H).</p></div>
 <div class="we-a"><p><strong>Number of peak sets (3 vs 2), integration (3 : 2 : 2 vs 6 : 1) and splitting all differ.</strong> ¹³C NMR also distinguishes them (3 peaks vs 2).</p></div>
 </div>
 
-<div class="we" data-title="Structure from combined data (exam classic)" data-marks="5" data-f="\text{splitting: } n + 1 \text{ rule} ;; \text{integration} \propto \text{number of H}">
+<div class="we" data-title="Structure from combined data (exam classic)" data-marks="5">
 <div class="we-q"><p>Compound X, C₄H₈O₂, shows: IR: strong 1740 cm⁻¹, strong 1240 cm⁻¹, no broad peak above 3000. ¹³C NMR: 4 peaks, one at 171 ppm. ¹H NMR: 4.1 (quartet, 2H), 2.0 (singlet, 3H), 1.3 (triplet, 3H). Identify X.</p></div>
+<div class="we-t"><p>Combine evidence: the formula limits the possibilities, IR shows the functional groups, ¹³C NMR counts carbon environments, and ¹H NMR shows neighbouring groups through splitting. Build fragments, then assemble them.</p></div>
 <div class="we-s"><p>IR: C=O and C–O, no O–H → ester. ¹³C: 171 ppm = ester C=O; 4 carbon environments.</p></div>
-<div class="we-s"><p>¹H: 3H singlet at 2.0 → \(\ce{CH3-CO-}\) with no neighbours. 2H quartet at 4.1 → \(\ce{-O-CH2-}\) next to a CH₃. 3H triplet at 1.3 → CH₃ next to CH₂.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule},\ \text{integration} \propto \text{number of H}"><p>¹H: 3H singlet at 2.0 → \(\ce{CH3-CO-}\) with no neighbours. 2H quartet at 4.1 → \(\ce{-O-CH2-}\) next to a CH₃. 3H triplet at 1.3 → CH₃ next to CH₂.</p></div>
 <div class="we-s"><p>Assemble: \(\ce{CH3-CO-O-CH2-CH3}\).</p></div>
 <div class="we-a"><p><strong>Ethyl ethanoate.</strong> Its isomer methyl propanoate (\(\ce{CH3CH2COOCH3}\)) would instead show a 3H singlet at about 3.7 (OCH₃) and a quartet near 2.3.</p></div>
 </div>

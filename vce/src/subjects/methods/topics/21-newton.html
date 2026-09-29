@@ -11,17 +11,19 @@ dotpoints: Newton's method for estimating solutions of equations, including case
 <div class="eq"><div class="eq-label">Newton's method</div>\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]<p>Derivation: the tangent \(y - f(x_n) = f'(x_n)(x - x_n)\) crosses \(y = 0\) at \(x = x_n - \frac{f(x_n)}{f'(x_n)}\).</p></div>
 <div class="sim" data-sim="newton"></div>
 
-<div class="we" data-title="Two iterations by hand" data-marks="3" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
+<div class="we" data-title="Two iterations by hand" data-marks="3">
 <div class="we-q"><p>Use Newton's method with \(x_0 = 2\) to find \(x_2\) for \(f(x) = x^3 - 2x - 5\). Give \(x_2\) correct to four decimal places.</p></div>
-<div class="we-s"><p>\(f'(x) = 3x^2 - 2\). \(f(2) = 8 - 4 - 5 = -1\), \(f'(2) = 10\). So \(x_1 = 2 - \frac{-1}{10} = 2.1\).</p></div>
-<div class="we-s"><p>\(f(2.1) = 9.261 - 4.2 - 5 = 0.061\), \(f'(2.1) = 13.23 - 2 = 11.23\). So \(x_2 = 2.1 - \frac{0.061}{11.23} = 2.09457\ldots\)</p></div>
+<div class="we-t"><p>Newton's method follows the tangent at the current estimate down to the \(x\)-axis. Each new estimate is where that tangent crosses, which is usually much closer to the root.</p></div>
+<div class="we-s" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}"><p>\(f'(x) = 3x^2 - 2\). \(f(2) = 8 - 4 - 5 = -1\), \(f'(2) = 10\). So \(x_1 = 2 - \frac{-1}{10} = 2.1\).</p></div>
+<div class="we-s" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}"><p>\(f(2.1) = 9.261 - 4.2 - 5 = 0.061\), \(f'(2.1) = 13.23 - 2 = 11.23\). So \(x_2 = 2.1 - \frac{0.061}{11.23} = 2.09457\ldots\)</p></div>
 <div class="we-a"><p><strong>\(x_2 \approx 2.0946\)</strong>. (The true root is 2.094551…: two steps already give four correct decimal places.)</p></div>
 </div>
 
-<div class="we" data-title="Estimating √2" data-marks="2" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
+<div class="we" data-title="Estimating √2" data-marks="2">
 <div class="we-q"><p>Use Newton's method on \(f(x) = x^2 - 2\) with \(x_0 = 1\) to find \(x_1\), \(x_2\) and \(x_3\).</p></div>
-<div class="we-s"><p>\(x_{n+1} = x_n - \frac{x_n^2 - 2}{2x_n}\). \(x_1 = 1 - \frac{-1}{2} = 1.5\).</p></div>
-<div class="we-s"><p>\(x_2 = 1.5 - \frac{0.25}{3} = 1.41\overline{6}\); \(x_3 = 1.41667 - \frac{0.0069444}{2.83333} \approx 1.414216\).</p></div>
+<div class="we-t"><p>Newton's method converges very quickly near a simple root: the number of correct digits roughly doubles each iteration.</p></div>
+<div class="we-s" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}"><p>\(x_{n+1} = x_n - \frac{x_n^2 - 2}{2x_n}\). \(x_1 = 1 - \frac{-1}{2} = 1.5\).</p></div>
+<div class="we-s" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}"><p>\(x_2 = 1.5 - \frac{0.25}{3} = 1.41\overline{6}\); \(x_3 = 1.41667 - \frac{0.0069444}{2.83333} \approx 1.414216\).</p></div>
 <div class="we-a"><p><strong>\(x_1 = 1.5,\ x_2 \approx 1.416667,\ x_3 \approx 1.414216\)</strong>. The number of correct digits roughly doubles each step.</p></div>
 </div>
 
@@ -34,10 +36,11 @@ dotpoints: Newton's method for estimating solutions of equations, including case
 <tr><td>Cycling</td><td>Estimates bounce between values forever</td><td>\(x^3 - 2x + 2\) with \(x_0 = 0\): 0, 1, 0, 1, …</td></tr>
 <tr><td>Wrong root</td><td>Converges, but to a different root from the one you wanted</td><td>Starting on the far side of a turning point</td></tr>
 </tbody></table></div>
-<div class="we" data-title="Show that it cycles" data-marks="2" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
+<div class="we" data-title="Show that it cycles" data-marks="2">
 <div class="we-q"><p>Show that Newton's method applied to \(f(x) = x^3 - 2x + 2\) with \(x_0 = 0\) does not converge.</p></div>
-<div class="we-s"><p>\(f'(x) = 3x^2 - 2\). \(x_1 = 0 - \frac{2}{-2} = 1\).</p></div>
-<div class="we-s"><p>\(x_2 = 1 - \frac{1 - 2 + 2}{3 - 2} = 1 - 1 = 0\).</p></div>
+<div class="we-t"><p>Newton's method can fail: if the tangents send the estimates back and forth, they cycle and never reach the root. A poor starting value or a stationary point nearby causes this.</p></div>
+<div class="we-s" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}"><p>\(f'(x) = 3x^2 - 2\). \(x_1 = 0 - \frac{2}{-2} = 1\).</p></div>
+<div class="we-s" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}"><p>\(x_2 = 1 - \frac{1 - 2 + 2}{3 - 2} = 1 - 1 = 0\).</p></div>
 <div class="we-a"><p><strong>The estimates alternate 0, 1, 0, 1, … and never approach the actual root</strong> (which is near \(x \approx -1.77\)).</p></div>
 </div>
 
@@ -57,7 +60,7 @@ for i from 1 to 3
 end for
 print x</code></pre>
 <p>This prints \(x_3 \approx 2.094551\) (three iterations of Newton's method from \(x_0 = 2\)).</p>
-<div class="we" data-title="Trace a while loop" data-marks="3" data-f="m = \dfrac{a + b}{2} \text{ (bisection)}">
+<div class="we" data-title="Trace a while loop" data-marks="3">
 <div class="we-q"><p>Trace this algorithm and state the output.</p>
 <pre class="code"><code>a ← 1
 b ← 2
@@ -70,9 +73,10 @@ while b - a > 0.2
     end if
 end while
 print a, b</code></pre></div>
+<div class="we-t"><p>Bisection keeps an interval where the function changes sign, halving it each loop. The loop stops once the interval is narrower than the tolerance, so the root is trapped inside.</p></div>
 <div class="we-s"><p>It's bisection on \(x^2 - 2\). Start \(a = 1, b = 2\) (width 1).</p></div>
-<div class="we-s"><p>\(m = 1.5\): \(2.25 - 2 &gt; 0\), so \(b = 1.5\). \(m = 1.25\): \(1.5625 - 2 &lt; 0\), so \(a = 1.25\). Width now \(0.25 &gt; 0.2\): continue.</p></div>
-<div class="we-s"><p>\(m = 1.375\): \(1.890625 - 2 &lt; 0\), so \(a = 1.375\). Width \(0.125 \le 0.2\): stop.</p></div>
+<div class="we-s" data-f="m = \dfrac{a + b}{2}"><p>\(m = 1.5\): \(2.25 - 2 &gt; 0\), so \(b = 1.5\). \(m = 1.25\): \(1.5625 - 2 &lt; 0\), so \(a = 1.25\). Width now \(0.25 &gt; 0.2\): continue.</p></div>
+<div class="we-s" data-f="m = \dfrac{a + b}{2}"><p>\(m = 1.375\): \(1.890625 - 2 &lt; 0\), so \(a = 1.375\). Width \(0.125 \le 0.2\): stop.</p></div>
 <div class="we-a"><p><strong>Output: 1.375, 1.5</strong> (an interval containing \(\sqrt2 \approx 1.414\)).</p></div>
 </div>
 

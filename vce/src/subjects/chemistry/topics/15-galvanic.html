@@ -12,20 +12,20 @@ dotpoints: the electrochemical series and standard electrode potentials, includi
 <thead><tr><th>Reaction (reduction)</th><th>\(E^\circ\) (V)</th></tr></thead>
 <tbody>
 <tr><td>\(\ce{F2(g) + 2e- <=> 2F-(aq)}\)</td><td>+2.87</td></tr>
-<tr><td>\(\ce{H2O2(aq) + 2H+(aq) + 2e- <=> 2H2O(l)}\)</td><td>+1.77</td></tr>
+<tr><td>\(\ce{H2O2(aq) + 2H+(aq) + 2e-}\) \(\ce{<=> 2H2O(l)}\)</td><td>+1.77</td></tr>
 <tr><td>\(\ce{Cl2(g) + 2e- <=> 2Cl-(aq)}\)</td><td>+1.36</td></tr>
-<tr><td>\(\ce{O2(g) + 4H+(aq) + 4e- <=> 2H2O(l)}\)</td><td>+1.23</td></tr>
+<tr><td>\(\ce{O2(g) + 4H+(aq) + 4e-}\) \(\ce{<=> 2H2O(l)}\)</td><td>+1.23</td></tr>
 <tr><td>\(\ce{Br2(l) + 2e- <=> 2Br-(aq)}\)</td><td>+1.09</td></tr>
 <tr><td>\(\ce{Ag+(aq) + e- <=> Ag(s)}\)</td><td>+0.80</td></tr>
 <tr><td>\(\ce{Fe^3+(aq) + e- <=> Fe^2+(aq)}\)</td><td>+0.77</td></tr>
-<tr><td>\(\ce{O2(g) + 2H2O(l) + 4e- <=> 4OH-(aq)}\)</td><td>+0.40</td></tr>
+<tr><td>\(\ce{O2(g) + 2H2O(l) + 4e-}\) \(\ce{<=> 4OH-(aq)}\)</td><td>+0.40</td></tr>
 <tr><td>\(\ce{Cu^2+(aq) + 2e- <=> Cu(s)}\)</td><td>+0.34</td></tr>
 <tr><td>\(\ce{2H+(aq) + 2e- <=> H2(g)}\)</td><td>0.00</td></tr>
 <tr><td>\(\ce{Pb^2+(aq) + 2e- <=> Pb(s)}\)</td><td>−0.13</td></tr>
 <tr><td>\(\ce{Ni^2+(aq) + 2e- <=> Ni(s)}\)</td><td>−0.25</td></tr>
 <tr><td>\(\ce{Fe^2+(aq) + 2e- <=> Fe(s)}\)</td><td>−0.44</td></tr>
 <tr><td>\(\ce{Zn^2+(aq) + 2e- <=> Zn(s)}\)</td><td>−0.76</td></tr>
-<tr><td>\(\ce{2H2O(l) + 2e- <=> H2(g) + 2OH-(aq)}\)</td><td>−0.83</td></tr>
+<tr><td>\(\ce{2H2O(l) + 2e-}\) \(\ce{<=> H2(g) + 2OH-(aq)}\)</td><td>−0.83</td></tr>
 <tr><td>\(\ce{Al^3+(aq) + 3e- <=> Al(s)}\)</td><td>−1.66</td></tr>
 <tr><td>\(\ce{Mg^2+(aq) + 2e- <=> Mg(s)}\)</td><td>−2.37</td></tr>
 <tr><td>\(\ce{Na+(aq) + e- <=> Na(s)}\)</td><td>−2.71</td></tr>
@@ -36,9 +36,10 @@ dotpoints: the electrochemical series and standard electrode potentials, includi
 
 <div class="we" data-title="Will it react?" data-marks="3">
 <div class="we-q"><p>Predict whether a reaction occurs, and write the overall equation if it does: (a) copper wire in silver nitrate solution; (b) copper wire in 1 M hydrochloric acid.</p></div>
-<div class="we-s"><p>(a) Oxidant \(\ce{Ag+}\) (+0.80) is above reductant Cu (+0.34 on the right side): reaction. \(\ce{Cu -> Cu^2+ + 2e-}\) and \(\ce{Ag+ + e- -> Ag}\) (×2).</p></div>
-<div class="we-s"><p>(b) The oxidant available is \(\ce{H+}\) (0.00), which is <em>below</em> Cu (+0.34): no reaction predicted.</p></div>
-<div class="we-a"><p><strong>(a) \(\ce{Cu(s) + 2Ag+(aq) -> Cu^2+(aq) + 2Ag(s)}\) (silver crystals form and the solution turns blue); (b) no reaction.</strong></p></div>
+<div class="we-t"><p>The electrochemical series predicts spontaneous reactions: an oxidant (left side) reacts with a reductant (right side) that sits lower in the table. Predictions assume standard conditions and say nothing about the rate.</p></div>
+<div class="we-s" data-f="\text{oxidant above reductant} \Rightarrow \text{reaction}"><p>(a) Oxidant \(\ce{Ag+}\) (+0.80) is above reductant Cu (+0.34 on the right side): reaction. \(\ce{Cu -> Cu^2+ + 2e-}\) and \(\ce{Ag+ + e- -> Ag}\) (×2).</p></div>
+<div class="we-s" data-f="\text{oxidant below reductant} \Rightarrow \text{no reaction}"><p>(b) The oxidant available is \(\ce{H+}\) (0.00), which is <em>below</em> Cu (+0.34): no reaction predicted.</p></div>
+<div class="we-a"><p><strong>(a) \(\ce{Cu(s) + 2Ag+(aq)}\) \(\ce{-> Cu^2+(aq) + 2Ag(s)}\) (silver crystals form and the solution turns blue); (b) no reaction.</strong></p></div>
 </div>
 
 <h2>Galvanic cells</h2>
@@ -55,18 +56,20 @@ dotpoints: the electrochemical series and standard electrode potentials, includi
 <div class="eq"><div class="eq-label">Cell potential (theoretical, standard conditions)</div>\[ E^\circ_{\text{cell}} = E^\circ_{\text{oxidant half-cell (cathode)}} - E^\circ_{\text{reductant half-cell (anode)}} \]<p>This is the maximum voltage under standard conditions. The actual voltage is lower once current flows.</p></div>
 <div class="sim" data-sim="galvanic"></div>
 
-<div class="we" data-title="Designing a cell: Ag⁺/Ag and Ni²⁺/Ni" data-marks="4" data-f="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}">
+<div class="we" data-title="Designing a cell: Ag⁺/Ag and Ni²⁺/Ni" data-marks="4">
 <div class="we-q"><p>A galvanic cell is made from Ag⁺/Ag and Ni²⁺/Ni half-cells. Identify the anode and cathode, write the half-equations and overall equation, state the direction of electron flow, and calculate \(E^\circ_{\text{cell}}\).</p></div>
-<div class="we-s"><p>The stronger oxidant is \(\ce{Ag+}\) (+0.80), so the Ag electrode is the cathode (+): \(\ce{Ag+(aq) + e- -> Ag(s)}\).</p></div>
-<div class="we-s"><p>Ni is the stronger reductant, so the Ni electrode is the anode (−): \(\ce{Ni(s) -> Ni^2+(aq) + 2e-}\).</p></div>
-<div class="we-s"><p>Overall: \(\ce{Ni(s) + 2Ag+(aq) -> Ni^2+(aq) + 2Ag(s)}\). Electrons flow Ni → Ag through the wire.</p></div>
-<div class="we-a"><p><strong>\(E^\circ_{\text{cell}} = 0.80 - (-0.25) = 1.05\text{ V}\).</strong> The \(\ce{Ag+}\) half-equation was doubled to balance electrons, but its \(E^\circ\) is <em>not</em> doubled.</p></div>
+<div class="we-t"><p>In a galvanic cell the stronger oxidant is reduced at the cathode (positive) and the stronger reductant is oxidised at the anode (negative). Electrons flow from anode to cathode, and the cell voltage is the difference between the two \(E^\circ\) values.</p></div>
+<div class="we-s" data-f="\text{higher } E^\circ \Rightarrow \text{cathode (+)}"><p>The stronger oxidant is \(\ce{Ag+}\) (+0.80), so the Ag electrode is the cathode (+): \(\ce{Ag+(aq) + e- -> Ag(s)}\).</p></div>
+<div class="we-s" data-f="\text{lower } E^\circ \Rightarrow \text{anode (−)}"><p>Ni is the stronger reductant, so the Ni electrode is the anode (−): \(\ce{Ni(s) -> Ni^2+(aq) + 2e-}\).</p></div>
+<div class="we-s"><p>Overall: \(\ce{Ni(s) + 2Ag+(aq)}\) \(\ce{-> Ni^2+(aq) + 2Ag(s)}\). Electrons flow Ni → Ag through the wire.</p></div>
+<div class="we-a" data-f="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}"><p><strong>\(E^\circ_{\text{cell}} = 0.80 - (-0.25) = 1.05\text{ V}\).</strong> The \(\ce{Ag+}\) half-equation was doubled to balance electrons, but its \(E^\circ\) is <em>not</em> doubled.</p></div>
 </div>
 
-<div class="we" data-title="A cell with an inert electrode" data-marks="3" data-f="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}">
+<div class="we" data-title="A cell with an inert electrode" data-marks="3">
 <div class="we-q"><p>A half-cell contains 1 M \(\ce{Fe^3+}\) and 1 M \(\ce{Fe^2+}\) with a platinum electrode; it's connected to a Zn²⁺/Zn half-cell. Give the cathode reaction, the overall equation and \(E^\circ_{\text{cell}}\). Why is platinum used?</p></div>
-<div class="we-s"><p>\(\ce{Fe^3+}\) (+0.77) is the stronger oxidant: cathode \(\ce{Fe^3+(aq) + e- -> Fe^2+(aq)}\) on the Pt. Zn is oxidised at the anode.</p></div>
-<div class="we-s"><p>Overall: \(\ce{Zn(s) + 2Fe^3+(aq) -> Zn^2+(aq) + 2Fe^2+(aq)}\). \(E^\circ = 0.77 - (-0.76) = 1.53\text{ V}\).</p></div>
+<div class="we-t"><p>When neither species in a half-cell is a solid metal, an inert electrode (platinum or graphite) provides a conducting surface for electron transfer. The usual rules still pick the cathode and anode.</p></div>
+<div class="we-s" data-f="\text{higher } E^\circ \Rightarrow \text{cathode}"><p>\(\ce{Fe^3+}\) (+0.77) is the stronger oxidant: cathode \(\ce{Fe^3+(aq) + e- -> Fe^2+(aq)}\) on the Pt. Zn is oxidised at the anode.</p></div>
+<div class="we-s" data-f="E^\circ_{\text{cell}} = E^\circ_{\text{cathode}} - E^\circ_{\text{anode}}"><p>Overall: \(\ce{Zn(s) + 2Fe^3+(aq)}\) \(\ce{-> Zn^2+(aq) + 2Fe^2+(aq)}\). \(E^\circ = 0.77 - (-0.76) = 1.53\text{ V}\).</p></div>
 <div class="we-a"><p>Neither \(\ce{Fe^3+}\) nor \(\ce{Fe^2+}\) is a solid that can act as an electrode, so an <strong>inert, conducting</strong> electrode (Pt or graphite) is needed. It provides a surface for electron transfer but doesn't react.</p></div>
 </div>
 

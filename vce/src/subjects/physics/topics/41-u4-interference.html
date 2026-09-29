@@ -67,28 +67,39 @@ dotpoints: explain the results of Young's double slit experiment with reference 
 <tr><td>White light</td><td>White central band; coloured fringes beyond, violet/blue on the inner edge and red on the outer edge (red has the longest λ so spreads furthest)</td></tr>
 </tbody></table></div>
 
-<div class="we" data-title="Calculating fringe spacing" data-marks="2" data-f="\Delta x = \dfrac{\lambda L}{d}">
+<div class="we" data-title="Calculating fringe spacing" data-marks="2">
 <div class="we-q"><p>Light of wavelength 600 nm passes through two slits 0.20 mm apart onto a screen 2.0 m away. Find the spacing between adjacent bright bands.</p></div>
-<div class="we-s">\[ \Delta x = \frac{\lambda L}{d} = \frac{(600\times10^{-9})(2.0)}{0.20\times10^{-3}} = 6.0\times10^{-3}\ \text{m} \]</div>
+<div class="we-t"><p>Bright bands are where waves from the two slits arrive in phase. For a distant screen neighbouring bright bands are equally spaced, with spacing proportional to wavelength and screen distance and inversely proportional to slit separation.</p></div>
+<div class="we-s" data-f="\Delta x = \dfrac{\lambda L}{d}">\[ \Delta x = \frac{\lambda L}{d} = \frac{(600\times10^{-9})(2.0)}{0.20\times10^{-3}} = 6.0\times10^{-3}\ \text{m} \]</div>
 <div class="we-a"><p><strong>6.0 mm.</strong> Convert nm (×10⁻⁹) and mm (×10⁻³) before substituting.</p></div>
 </div>
 
-<div class="we" data-title="Measuring a wavelength" data-marks="3" data-f="\Delta x = \dfrac{\lambda L}{d}">
+<div class="we" data-title="Measuring a wavelength" data-marks="3">
 <div class="we-q"><p>Students shine a laser through slits 0.25 mm apart onto a wall 1.20 m away. They measure the distance across 10 fringe spacings as 27 mm. Find the laser's wavelength.</p></div>
-<div class="we-s"><p><strong>One fringe spacing:</strong> \(\Delta x = 27/10 = 2.7\ \text{mm}\). (Measuring across many fringes and dividing reduces the uncertainty.)</p></div>
-<div class="we-s">\[ \lambda = \frac{\Delta x\, d}{L} = \frac{(2.7\times10^{-3})(0.25\times10^{-3})}{1.20} = 5.6\times10^{-7}\ \text{m} \]</div>
+<div class="we-t"><p>Rearranging the fringe-spacing equation turns a double slit into a wavelength-measuring device. Measuring across several fringes and dividing reduces the percentage uncertainty.</p></div>
+<div class="we-s" data-f="\Delta x = \dfrac{\text{total}}{\text{number of spacings}}"><p><strong>One fringe spacing:</strong> \(\Delta x = 27/10 = 2.7\ \text{mm}\). (Measuring across many fringes and dividing reduces the uncertainty.)</p></div>
+<div class="we-s" data-f="\lambda = \dfrac{\Delta x\,d}{L}">\[ \lambda = \frac{\Delta x\, d}{L} = \frac{(2.7\times10^{-3})(0.25\times10^{-3})}{1.20} = 5.6\times10^{-7}\ \text{m} \]</div>
 <div class="we-a"><p><strong>563 nm (green-yellow).</strong></p></div>
 </div>
 
-<div class="we" data-title="Which band is it? (trick)" data-marks="3" data-f="\text{bright: } pd = n\lambda ;; \text{dark: } pd = \left(n - \tfrac12\right)\lambda">
+<div class="we" data-title="Which band is it? (trick)" data-marks="3">
 <div class="we-q"><p>In a double slit experiment with 500 nm light, point Q on the screen is 1250 nm further from one slit than the other. Is Q bright or dark, and which band is it? What happens at Q if the wavelength is changed to 625 nm?</p></div>
-<div class="we-s"><p><strong>Path difference in wavelengths:</strong> \(1250/500 = 2.5\lambda\). A half-number, so destructive: <strong>dark</strong>.</p></div>
-<div class="we-s"><p><strong>Which dark band?</strong> \((n - \tfrac12) = 2.5 \Rightarrow n = 3\): the third dark band from the centre.</p></div>
-<div class="we-s"><p><strong>With 625 nm:</strong> \(1250/625 = 2.0\lambda\), a whole number, so Q becomes the <strong>second bright band</strong>.</p></div>
+<div class="we-t"><p>Whether a point is bright or dark depends on the path difference measured in wavelengths: whole numbers are constructive, half-numbers destructive. Changing the wavelength changes that count.</p></div>
+<div class="we-s" data-f="\text{dark: } pd = \left(n - \tfrac12\right)\lambda"><p><strong>Path difference in wavelengths:</strong> \(1250/500 = 2.5\lambda\). A half-number, so destructive: <strong>dark</strong>.</p></div>
+<div class="we-s" data-f="\left(n - \tfrac12\right) = \dfrac{pd}{\lambda}"><p><strong>Which dark band?</strong> \((n - \tfrac12) = 2.5 \Rightarrow n = 3\): the third dark band from the centre.</p></div>
+<div class="we-s" data-f="\text{bright: } pd = n\lambda"><p><strong>With 625 nm:</strong> \(1250/625 = 2.0\lambda\), a whole number, so Q becomes the <strong>second bright band</strong>.</p></div>
 <div class="we-a"><p><strong>Third dark band; with 625 nm it becomes the second bright band.</strong></p></div>
 </div>
 
 <div class="sim" data-sim="doubleslit"></div>
+
+<h2>Not just light: sound and microwaves</h2>
+<p>Any coherent waves interfere, with the same path-difference rules. Two loudspeakers driven by the same signal generator act like two slits:</p>
+<ul>
+  <li>Walking along the line <strong>parallel</strong> to the speakers, you pass through loud (path difference \(n\lambda\)) and quiet (\((n - \tfrac12)\lambda\)) regions.</li>
+  <li>Walking along the <strong>perpendicular bisector</strong> (the centre line) towards the speakers, the path difference is always zero, so it's always constructive. It just gets louder as you get closer.</li>
+  <li>Microwaves (\(\lambda\) of a few cm) through two slits a few cm apart give maxima and minima you can find with a detector. A point where the path difference is \(1.5\lambda\) is a minimum; double the frequency and the same point has a path difference of \(3\lambda\), a maximum.</li>
+</ul>
 
 <h2>Why this is evidence for waves</h2>
 <ul>

@@ -21,11 +21,12 @@ dotpoints: investigate and analyse theoretically and practically the force on a 
 </ul>
 </aside>
 
-<div class="we" data-title="Force on a wire" data-marks="3" data-f="F = nIlB">
+<div class="we" data-title="Force on a wire" data-marks="3">
 <div class="we-q"><p>A straight wire carries 4.0 A horizontally from west to east through a uniform 0.50 T magnetic field pointing north. 0.25 m of the wire is in the field. Find the size and direction of the force on it. What would the force be if the wire ran north–south?</p></div>
-<div class="we-s"><p><strong>Size</strong> (current perpendicular to field):</p>\[ F = nIlB = 1 \times 4.0 \times 0.25 \times 0.50 = 0.50\ \text{N} \]</div>
-<div class="we-s"><p><strong>Direction:</strong> fingers north (B), thumb east (I), palm faces <strong>up</strong>. (Check: \(\text{east} \times \text{north} = \text{up}\).)</p></div>
-<div class="we-s"><p><strong>North–south wire:</strong> current parallel (or antiparallel) to \(B\), so \(F = 0\).</p></div>
+<div class="we-t"><p>A current-carrying wire feels a force only from the component of the field perpendicular to it. The right-hand slap rule gives the direction; a wire parallel to the field feels no force.</p></div>
+<div class="we-s" data-f="F = nIlB"><p><strong>Size</strong> (current perpendicular to field):</p>\[ F = nIlB = 1 \times 4.0 \times 0.25 \times 0.50 = 0.50\ \text{N} \]</div>
+<div class="we-s" data-f="\text{right-hand slap rule}"><p><strong>Direction:</strong> fingers north (B), thumb east (I), palm faces <strong>up</strong>. (Check: \(\text{east} \times \text{north} = \text{up}\).)</p></div>
+<div class="we-s" data-f="F = 0 \text{ when } I \parallel B"><p><strong>North–south wire:</strong> current parallel (or antiparallel) to \(B\), so \(F = 0\).</p></div>
 <div class="we-a"><p><strong>0.50 N vertically upward; zero if the wire is parallel to the field.</strong></p></div>
 </div>
 
@@ -101,11 +102,12 @@ dotpoints: investigate and analyse theoretically and practically the force on a 
 </ul>
 </aside>
 
-<div class="we" data-title="Forces on a motor coil" data-marks="4" data-f="F = nIlB">
+<div class="we" data-title="Forces on a motor coil" data-marks="4">
 <div class="we-q"><p>A DC motor coil has 50 turns and is square, with sides of 4.0 cm. It carries 2.0 A in a uniform 0.30 T field. The coil can rotate about an axis through the middle of two opposite sides.</p><p>(a) Find the force on each side that is perpendicular to the field when the coil's plane is parallel to the field. (b) What is the force on each of these sides when the plane is perpendicular to the field? (c) What is the force on the other two sides when the plane is parallel to the field?</p></div>
-<div class="we-s"><p><strong>(a)</strong> Each side has 50 conductors of length 0.040 m, perpendicular to \(B\):</p>\[ F = nIlB = 50 \times 2.0 \times 0.040 \times 0.30 = 1.2\ \text{N} \]</div>
-<div class="we-s"><p><strong>(b)</strong> Those sides are still perpendicular to \(B\) (they are parallel to the axis, which is perpendicular to the field), so the force is <strong>still 1.2 N</strong>. It just points along the plane of the coil, so it produces no torque.</p></div>
-<div class="we-s"><p><strong>(c)</strong> When the plane is parallel to the field, the other two sides run parallel to \(B\), so \(F = 0\).</p></div>
+<div class="we-t"><p>The force on each side depends on the angle between that side and the field, not on the angle of the coil. What changes as the coil turns is the torque, because the force's line of action moves closer to the axis.</p></div>
+<div class="we-s" data-f="F = nIlB"><p><strong>(a)</strong> Each side has 50 conductors of length 0.040 m, perpendicular to \(B\):</p>\[ F = nIlB = 50 \times 2.0 \times 0.040 \times 0.30 = 1.2\ \text{N} \]</div>
+<div class="we-s" data-f="F = nIlB"><p><strong>(b)</strong> Those sides are still perpendicular to \(B\) (they are parallel to the axis, which is perpendicular to the field), so the force is <strong>still 1.2 N</strong>. It just points along the plane of the coil, so it produces no torque.</p></div>
+<div class="we-s" data-f="F = 0 \text{ when } I \parallel B"><p><strong>(c)</strong> When the plane is parallel to the field, the other two sides run parallel to \(B\), so \(F = 0\).</p></div>
 <div class="we-a"><p><strong>(a) 1.2 N (b) still 1.2 N, but zero torque (c) 0 N.</strong> Part (b) is the trap: students often write zero.</p></div>
 </div>
 
@@ -117,6 +119,10 @@ dotpoints: investigate and analyse theoretically and practically the force on a 
   <li><strong>Smoother rotation:</strong> use several coils at different angles, each with its own commutator segments, so there's always a coil near maximum torque.</li>
   <li><strong>Curved pole pieces</strong> and an iron core make the field radial, so the sides are always cutting across the field and the torque stays near maximum for most of the turn.</li>
 </ul>
+
+<aside class="c-exam" data-title="Exam tip: balances and pivots">
+<p>Experiments often measure a magnetic force by balancing it against a known weight on a beam or balance. If the beam is pivoted at its <strong>centre</strong> and the two forces act at <strong>equal distances</strong> from the pivot, they have equal turning effects when balanced, so \(F_B = mg\). If the distances were unequal, the forces wouldn't be equal at balance. Also check which parts of the wire are parallel to the field: they feel no force (\(F = 0\) when \(I \parallel B\)).</p>
+</aside>
 
 <h2>Practice</h2>
 <div class="mcq" data-ans="D" data-level="trick">

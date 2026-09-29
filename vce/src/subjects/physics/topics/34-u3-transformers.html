@@ -52,17 +52,19 @@ dotpoints: analyse transformer action with reference to electromagnetic inductio
   <li>Power is never “stepped up”. A transformer trades voltage for current.</li>
 </ul>
 
-<div class="we" data-title="A phone charger" data-marks="4" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2} ;; V_1I_1 = V_2I_2">
+<div class="we" data-title="A phone charger" data-marks="4">
 <div class="we-q"><p>A phone charger contains a transformer that steps 230 V rms mains down to 5.0 V rms. Its primary has 2300 turns. (a) How many turns are on the secondary? (b) If the phone draws 2.0 A, what current flows in the primary? Assume the transformer is ideal.</p></div>
-<div class="we-s"><p><strong>(a) Turns ratio equals voltage ratio:</strong></p>\[ \frac{N_1}{N_2} = \frac{V_1}{V_2} \Rightarrow N_2 = 2300 \times \frac{5.0}{230} = 50\ \text{turns} \]</div>
-<div class="we-s"><p><strong>(b) Power in = power out:</strong> \(P = V_2I_2 = 5.0 \times 2.0 = 10\ \text{W}\).</p>\[ I_1 = \frac{P}{V_1} = \frac{10}{230} = 0.043\ \text{A} \]</div>
+<div class="we-t"><p>A transformer's voltage ratio equals its turns ratio. An ideal transformer loses no energy, so power in equals power out: stepping the voltage down steps the current up by the same factor.</p></div>
+<div class="we-s" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2}"><p><strong>(a) Turns ratio equals voltage ratio:</strong></p>\[ \frac{N_1}{N_2} = \frac{V_1}{V_2} \Rightarrow N_2 = 2300 \times \frac{5.0}{230} = 50\ \text{turns} \]</div>
+<div class="we-s" data-f="V_1I_1 = V_2I_2"><p><strong>(b) Power in = power out:</strong> \(P = V_2I_2 = 5.0 \times 2.0 = 10\ \text{W}\).</p>\[ I_1 = \frac{P}{V_1} = \frac{10}{230} = 0.043\ \text{A} \]</div>
 <div class="we-a"><p><strong>(a) 50 turns (b) 0.043 A (43 mA).</strong> Check with the current ratio: \(I_1 = I_2 \times N_2/N_1 = 2.0 \times 50/2300 = 0.043\ \text{A}\) ✓.</p></div>
 </div>
 
-<div class="we" data-title="A power station step-up transformer" data-marks="3" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2} = \dfrac{I_2}{I_1}">
+<div class="we" data-title="A power station step-up transformer" data-marks="3">
 <div class="we-q"><p>A power station generator produces 22 kV. A transformer steps this up to 500 kV for transmission. If the generator supplies 1000 A, what current flows in the transmission line?</p></div>
-<div class="we-s"><p><strong>Voltage ratio:</strong> \(V_2/V_1 = 500/22 = 22.7\).</p></div>
-<div class="we-s"><p><strong>Current goes down by the same factor:</strong> \(I_2 = 1000 \times \dfrac{22}{500} = 44\ \text{A}\).</p></div>
+<div class="we-t"><p>Because power is conserved in an ideal transformer, raising the voltage lowers the current by the same factor. That's why power is transmitted at very high voltage.</p></div>
+<div class="we-s" data-f="\dfrac{V_2}{V_1} = \dfrac{N_2}{N_1}"><p><strong>Voltage ratio:</strong> \(V_2/V_1 = 500/22 = 22.7\).</p></div>
+<div class="we-s" data-f="\dfrac{I_2}{I_1} = \dfrac{V_1}{V_2}"><p><strong>Current goes down by the same factor:</strong> \(I_2 = 1000 \times \dfrac{22}{500} = 44\ \text{A}\).</p></div>
 <div class="we-a"><p><strong>44 A.</strong> The power (22 MW) is unchanged; the much smaller current is the whole point (see <a href="#u3-transmission">Transmission</a>).</p></div>
 </div>
 

@@ -47,14 +47,16 @@ dotpoints: the use of enzymes to manipulate DNA, including endonucleases, ligase
 
 <div class="we" data-title="Paternity from a gel" data-marks="3">
 <div class="we-q"><p>At one STR locus, a child has bands at 150 and 190 bp. The mother has 150 and 210 bp. Alleged father A has 170 and 230 bp; alleged father B has 190 and 250 bp. Which man could be the biological father?</p></div>
+<div class="we-t"><p>STRs are short repeated DNA sequences that vary in length between people. A child inherits one allele at each locus from each parent, so every band in the child's profile must match either the mother or the father.</p></div>
 <div class="we-s"><p>The child's 150 bp band matches the mother, so the 190 bp band must come from the father.</p></div>
 <div class="we-s"><p>A has no 190 bp band; B does.</p></div>
 <div class="we-a"><p><strong>B could be the father; A is excluded.</strong> One matching locus doesn't prove paternity. Many loci are tested, and it's the combined probability that gives confidence.</p></div>
 </div>
 
-<div class="we" data-title="PCR arithmetic" data-marks="2" data-f="\text{copies} = N_0 \times 2^n">
+<div class="we" data-title="PCR arithmetic" data-marks="2">
 <div class="we-q"><p>A sample contains 50 copies of a target DNA sequence. How many copies could there be after 20 cycles of PCR?</p></div>
-<div class="we-s"><p>Each cycle doubles: \(50 \times 2^{20} = 50 \times 1\,048\,576\).</p></div>
+<div class="we-t"><p>Each PCR cycle (denaturation, annealing, extension) copies every target strand present, so the number of copies doubles each cycle. That gives exponential growth.</p></div>
+<div class="we-s" data-f="\text{copies} = N_0 \times 2^n"><p>Each cycle doubles: \(50 \times 2^{20} = 50 \times 1\,048\,576\).</p></div>
 <div class="we-a"><p><strong>About \(5.2 \times 10^7\) copies</strong> (in practice slightly fewer, as efficiency drops and reagents run out).</p></div>
 </div>
 

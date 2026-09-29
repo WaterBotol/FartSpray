@@ -72,7 +72,40 @@
         ignoredTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code', 'option', 'input']
       });
     } catch (e) { console.error(e); }
+    requestAnimationFrame(() => fitMath(root));
   }
+  // KaTeX can't line-break inside one group (a whole \ce equation, a big fraction), so on narrow
+  // screens shrink an overflowing formula by up to 22%, and if it still won't fit let it scroll as a block.
+  function fitMath(root) {
+    if (!root) return;
+    const done = $$('.k-fit', root);
+    done.forEach(k => { k.classList.remove('k-fit', 'k-wide'); k.style.fontSize = ''; });
+    const boxOf = k => { let p = k.parentElement; while (p && getComputedStyle(p).display.startsWith('inline')) p = p.parentElement; return p; };
+    const todo = [];
+    $$('.katex', root).forEach(k => {
+      if (!k.offsetParent || k.closest('table, .fs-card')) return;
+      const disp = k.parentElement.classList.contains('katex-display');
+      let need, have;
+      if (disp) { need = k.parentElement.scrollWidth; have = k.parentElement.clientWidth; }
+      else {
+        const b = boxOf(k); if (!b) return;
+        const cs = getComputedStyle(b);
+        need = k.getBoundingClientRect().width; have = b.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+      }
+      if (have > 0 && need > have + 1) todo.push([k, have / need, disp]);
+    });
+    todo.forEach(([k, r, disp]) => {
+      k.classList.add('k-fit');
+      if (r >= 0.78) k.style.fontSize = (1.08 * r * 0.95).toFixed(3) + 'em';
+      else { k.style.fontSize = (1.08 * 0.78).toFixed(3) + 'em'; if (!disp) k.classList.add('k-wide'); }
+    });
+  }
+  let fitT;
+  window.addEventListener('resize', () => { clearTimeout(fitT); fitT = setTimeout(() => fitMath(main), 150); });
+  document.addEventListener('click', e => {
+    const c = e.target.closest && e.target.closest('.we, .pq, .mcq, .nt-card, details, .quiz');
+    if (c) requestAnimationFrame(() => fitMath(c));
+  });
   const GREEK = { alpha: 'α', beta: 'β', gamma: 'γ', delta: 'δ', Delta: 'Δ', epsilon: 'ε', varepsilon: 'ε', theta: 'θ', lambda: 'λ', mu: 'μ', pi: 'π', rho: 'ρ', sigma: 'σ', Sigma: 'Σ', tau: 'τ', phi: 'φ', varphi: 'φ', Phi: 'Φ', omega: 'ω', Omega: 'Ω', times: '×', cdot: '·', approx: '≈', propto: '∝', le: '≤', leq: '≤', ge: '≥', geq: '≥', to: '→', rightarrow: '→', infty: '∞', pm: '±', circ: '°', ll: '≪', gg: '≫', neq: '≠', in: '∈', mathbb: '', rightleftharpoons: '⇌', hat: '' };
   function texToText(s) {
     let out = s.replace(/\\[\(\)\[\]]/g, ' ');
@@ -381,10 +414,51 @@
     $$('dl.gloss dt', root).forEach(dt => { dt.id = 'a-term-' + slug(texToText(dt.textContent)); });
     $$('.fs-card', root).forEach(c => { const h = c.querySelector('h4'); if (h) c.id = 'a-fs-' + slug(h.textContent); });
   }
+  const splitF = str => (str || '').split(';;').map(x => x.trim()).filter(Boolean);
+  // A formula like "f'(x) = 0 \text{ at turning points}" renders its wordy \text{} parts as plain text,
+  // so a chip can wrap like a sentence instead of being one unbreakable KaTeX box.
+  // Only top-level \text groups containing a space are split out (not units like \text{m s}^{-2}).
+  function fxHtml(f) {
+    const parts = []; let i = 0, last = 0;
+    while ((i = f.indexOf('\\text{', i)) !== -1) {
+      let d = 0, j = i + 5, depth = 0;
+      for (let k = 0; k < i; k++) { if (f[k] === '{') depth++; else if (f[k] === '}') depth--; }
+      for (; j < f.length; j++) { if (f[j] === '{') d++; else if (f[j] === '}' && --d === 0) break; }
+      const inner = f.slice(i + 6, j), next = f[j + 1];
+      if (depth === 0 && /\s/.test(inner) && next !== '^' && next !== '_' && !/[{}\\]/.test(inner.replace(/\\[%&$#]/g, ''))) {
+        parts.push({ m: f.slice(last, i) }, { t: inner.replace(/\\([%&$#])/g, '$1') }); last = j + 1;
+      }
+      i = j + 1;
+    }
+    parts.push({ m: f.slice(last) });
+    const trimM = m => m.replace(/^(\s|\\[ ,;:!]|\\quad)+|(\s|\\[ ,;:!]|\\quad)+$/g, '');
+    // more wrap points: after a top-level ",\ " and before the arrow of a \ce equation
+    const pieces = m => {
+      const out = []; let depth = 0, last = 0;
+      for (let k = 0; k < m.length; k++) {
+        if (m[k] === '{' || /^\\left(?![a-zA-Z])/.test(m.slice(k, k + 6))) depth++;
+        else if (m[k] === '}' || /^\\right(?![a-zA-Z])/.test(m.slice(k, k + 7))) depth--;
+        else if (!depth && m.startsWith(',\\ ', k)) { out.push(m.slice(last, k + 1)); last = k + 3; }
+      }
+      out.push(m.slice(last));
+      return out.map(trimM).filter(Boolean).flatMap(x => { const c = x.match(/^\\ce\{([^{}]*?)\s(->|<=>|<-)\s([^{}]*)\}$/); return c ? ['\\ce{' + c[1] + '}', '\\ce{' + c[2] + ' ' + c[3] + '}'] : [x]; });
+    };
+    return parts.map(p => p.t !== undefined ? (p.t.trim() ? '<span class="fx-t">' + esc(p.t.trim()) + '</span>' : '')
+      : pieces(p.m).map(x => '\\(' + esc(x) + '\\)').join(' ')).filter(Boolean).join(' ');
+  }
   function formulaBox(str) {
-    const fs = (str || '').split(';;').map(x => x.trim()).filter(Boolean);
+    const fs = splitF(str);
     if (!fs.length) return null;
-    return el('aside', 'fx', '<div class="fx-h">Formulas used</div><ul>' + fs.map(f => '<li>\\(' + esc(f) + '\\)</li>').join('') + '</ul>');
+    return el('aside', 'fx', '<div class="fx-h">Formulas used</div><ul>' + fs.map(f => '<li>' + fxHtml(f) + '</li>').join('') + '</ul>');
+  }
+  // formula(s) used in one step, shown beside that step (below it on narrow screens)
+  function stepFormula(s) {
+    const fs = splitF(s.dataset.f);
+    if (!fs.length || s.classList.contains('has-sf')) return;
+    const body = el('div', 's-body');
+    while (s.firstChild) body.appendChild(s.firstChild);
+    s.append(body, el('div', 's-f', '<span class="s-f-h">Using</span>' + fs.map(f => '<span class="s-f-i">' + fxHtml(f) + '</span>').join('')));
+    s.classList.add('has-sf');
   }
   function enhanceWorked(root) {
     $$('.we', root).forEach((we, i) => {
@@ -392,6 +466,9 @@
       const marks = we.dataset.marks;
       const head = el('div', 'we-h', '<span class="we-tag">Worked example ' + (i + 1) + '</span><span class="we-title">' + (we.dataset.title || '') + '</span>' + (marks ? '<span class="marks">' + marks + ' mark' + (marks === '1' ? '' : 's') + '</span>' : ''));
       const steps = $$(':scope > .we-s, :scope > .we-a', we);
+      steps.forEach(stepFormula);
+      const th = $(':scope > .we-t', we);
+      if (th) { th.prepend(el('div', 'we-t-h', 'Theory')); th.hidden = true; }
       const wrap = el('div', 'we-steps');
       let n = 0;
       steps.forEach(s => { if (s.classList.contains('we-s')) s.dataset.n = ++n; s.hidden = true; wrap.appendChild(s); });
@@ -400,10 +477,11 @@
       const bNext = el('button', 'btn primary'); bNext.type = 'button';
       const bAll = el('button', 'btn', 'Show full solution'); bAll.type = 'button';
       const bReset = el('button', 'btn ghost', 'Hide solution'); bReset.type = 'button';
+      const bTh = el('button', 'btn ghost', 'Theory'); bTh.type = 'button'; bTh.hidden = !th;
       const cnt = el('span', 'step-count');
-      ctl.append(bNext, bAll, bReset, cnt); we.appendChild(ctl);
-      const fx = formulaBox(we.dataset.f);
-      if (fx) { we.classList.add('has-f'); const q = $(':scope > .we-q', we); if (q) q.after(fx); else wrap.before(fx); }
+      ctl.append(bNext, bAll, bTh, bReset, cnt); we.appendChild(ctl);
+      const setTh = on => { if (!th) return; th.hidden = !on; bTh.textContent = on ? 'Hide theory' : 'Theory'; bTh.setAttribute('aria-expanded', on); };
+      bTh.addEventListener('click', () => setTh(th.hidden));
       let shown = 0;
       const upd = () => {
         steps.forEach((s, k) => { s.hidden = k >= shown; });
@@ -414,8 +492,8 @@
         cnt.textContent = shown ? shown + ' / ' + steps.length + ' shown' : steps.length + ' steps';
       };
       bNext.addEventListener('click', () => { shown = Math.min(steps.length, shown + 1); upd(); const s = steps[shown - 1]; if (s) s.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); });
-      bAll.addEventListener('click', () => { shown = steps.length; upd(); });
-      bReset.addEventListener('click', () => { shown = 0; upd(); we.scrollIntoView({ block: 'nearest' }); });
+      bAll.addEventListener('click', () => { shown = steps.length; setTh(true); upd(); });
+      bReset.addEventListener('click', () => { shown = 0; setTh(false); upd(); we.scrollIntoView({ block: 'nearest' }); });
       upd();
     });
   }
@@ -460,11 +538,7 @@
       q.prepend(el('div', 'pq-h', '<span class="pq-tag">Question ' + n + '</span><span class="lvl lvl-' + level + '">' + (LEVEL[level] || level) + '</span>' + (marks ? '<span class="marks">' + marks + ' mark' + (marks === '1' ? '' : 's') + '</span>' : '')));
       const sols = $$(':scope > .pq-s', q); sols.forEach(s => { s.hidden = true; });
       const fx = formulaBox(q.dataset.f);
-      if (fx && sols.length) {
-        const sw = el('div', 'pq-sw has-f'), inner = el('div', 'pq-sols');
-        sols[0].before(sw); sols.forEach(s => inner.appendChild(s)); sw.append(inner, fx); fx.hidden = true;
-        sols.push(fx);
-      }
+      if (fx && sols.length) { fx.classList.add('fx-under'); sols[sols.length - 1].after(fx); fx.hidden = true; sols.push(fx); }
       const ctl = el('div', 'pq-ctl');
       const bShow = el('button', 'btn primary', 'Reveal solution'); bShow.type = 'button';
       const sm = el('div', 'selfmark', '<span>How did you go?</span>');

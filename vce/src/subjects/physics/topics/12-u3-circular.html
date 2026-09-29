@@ -54,11 +54,12 @@ dotpoints: investigate and analyse theoretically and practically the uniform cir
 </aside>
 
 <h2>An object on the end of a string</h2>
-<div class="we" data-title="Ball whirled on a table" data-marks="3" data-f="T = \dfrac1f ;; v = \dfrac{2\pi r}{T} ;; F_{\text{net}} = \dfrac{mv^2}{r}">
+<div class="we" data-title="Ball whirled on a table" data-marks="3">
 <div class="we-q"><p>A 0.50 kg ball on a 0.80 m string is whirled in a horizontal circle on a frictionless table at 2.0 revolutions per second. Calculate the tension in the string.</p></div>
-<div class="we-s"><p><strong>Period from frequency:</strong> \(T = 1/f = 1/2.0 = 0.50\ \text{s}\).</p></div>
-<div class="we-s"><p><strong>Speed:</strong></p>\[ v = \frac{2\pi r}{T} = \frac{2\pi(0.80)}{0.50} = 10.05\ \text{m s}^{-1} \]</div>
-<div class="we-s"><p><strong>Tension provides the net force:</strong></p>\[ T_{\text{string}} = \frac{mv^2}{r} = \frac{0.50 \times 10.05^2}{0.80} = 63.2\ \text{N} \]</div>
+<div class="we-t"><p>Anything moving in a circle at constant speed accelerates towards the centre, so it needs a net force towards the centre, \(mv^2/r\). Here the string tension is the only horizontal force, so it is that net force.</p></div>
+<div class="we-s" data-f="T = \dfrac1f"><p><strong>Period from frequency:</strong> \(T = 1/f = 1/2.0 = 0.50\ \text{s}\).</p></div>
+<div class="we-s" data-f="v = \dfrac{2\pi r}{T}"><p><strong>Speed:</strong></p>\[ v = \frac{2\pi r}{T} = \frac{2\pi(0.80)}{0.50} = 10.05\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = \dfrac{mv^2}{r}"><p><strong>Tension provides the net force:</strong></p>\[ T_{\text{string}} = \frac{mv^2}{r} = \frac{0.50 \times 10.05^2}{0.80} = 63.2\ \text{N} \]</div>
 <div class="we-a"><p><strong>63 N.</strong> (Using symbol \(T\) for both period and tension is a classic way to confuse yourself: label them clearly.)</p></div>
 </div>
 
@@ -83,21 +84,23 @@ dotpoints: investigate and analyse theoretically and practically the uniform cir
 </figure>
 <div class="eq">\[ T\cos\theta = mg, \qquad T\sin\theta = \frac{mv^2}{r} \quad\Rightarrow\quad \tan\theta = \frac{v^2}{rg} \]</div>
 
-<div class="we" data-title="Conical pendulum" data-marks="4" data-f="T\cos\theta = mg ;; \tan\theta = \dfrac{v^2}{rg} ;; T = \dfrac{2\pi r}{v}">
+<div class="we" data-title="Conical pendulum" data-marks="4">
 <div class="we-q"><p>A 0.20 kg mass on a 1.0 m string moves in a horizontal circle so that the string makes 30° with the vertical. Find (a) the tension, (b) the speed and (c) the period.</p></div>
-<div class="we-s"><p><strong>(a) Vertical equilibrium:</strong></p>\[ T\cos 30^\circ = mg \Rightarrow T = \frac{0.20 \times 9.8}{0.866} = 2.26\ \text{N} \]</div>
-<div class="we-s"><p><strong>Radius of the circle</strong> (not the string length!): \(r = L\sin 30^\circ = 1.0 \times 0.5 = 0.50\ \text{m}\).</p></div>
-<div class="we-s"><p><strong>(b) Speed</strong> from \(\tan\theta = v^2/(rg)\):</p>\[ v = \sqrt{rg\tan\theta} = \sqrt{0.50 \times 9.8 \times \tan 30^\circ} = 1.68\ \text{m s}^{-1} \]</div>
-<div class="we-s"><p><strong>(c) Period:</strong></p>\[ T_{\text{period}} = \frac{2\pi r}{v} = \frac{2\pi(0.50)}{1.68} = 1.87\ \text{s} \]</div>
+<div class="we-t"><p>In a conical pendulum the string's vertical component balances the weight, and its horizontal component provides the centripetal force. The circle's radius is the horizontal distance to the axis, not the string length.</p></div>
+<div class="we-s" data-f="T\cos\theta = mg"><p><strong>(a) Vertical equilibrium:</strong></p>\[ T\cos 30^\circ = mg \Rightarrow T = \frac{0.20 \times 9.8}{0.866} = 2.26\ \text{N} \]</div>
+<div class="we-s" data-f="r = L\sin\theta"><p><strong>Radius of the circle</strong> (not the string length!): \(r = L\sin 30^\circ = 1.0 \times 0.5 = 0.50\ \text{m}\).</p></div>
+<div class="we-s" data-f="\tan\theta = \dfrac{v^2}{rg}"><p><strong>(b) Speed</strong> from \(\tan\theta = v^2/(rg)\):</p>\[ v = \sqrt{rg\tan\theta} = \sqrt{0.50 \times 9.8 \times \tan 30^\circ} = 1.68\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="T = \dfrac{2\pi r}{v}"><p><strong>(c) Period:</strong></p>\[ T_{\text{period}} = \frac{2\pi r}{v} = \frac{2\pi(0.50)}{1.68} = 1.87\ \text{s} \]</div>
 <div class="we-a"><p><strong>(a) 2.3 N (b) 1.7 m s⁻¹ (c) 1.9 s.</strong> Using the string length as the radius is the trap here.</p></div>
 </div>
 
 <h2>A vehicle on a flat circular road</h2>
 <p>On a flat road, the only horizontal force that can turn a car is <strong>sideways friction</strong> between the tyres and the road. The friction needed is \(F_f = mv^2/r\). If the road can't supply that much (ice, oil, too fast), the car can't follow the curve and slides towards the outside of the bend.</p>
-<div class="we" data-title="Friction needed on a flat curve" data-marks="2" data-f="F_{\text{net}} = \dfrac{mv^2}{r}">
+<div class="we" data-title="Friction needed on a flat curve" data-marks="2">
 <div class="we-q"><p>A 1200 kg car travels around a flat curve of radius 50 m at 15 m s⁻¹. What friction force must the road provide? What happens to this force if the speed doubles?</p></div>
-<div class="we-s">\[ F_f = \frac{mv^2}{r} = \frac{1200 \times 15^2}{50} = 5.4\times10^3\ \text{N} \]</div>
-<div class="we-s"><p>Doubling \(v\) multiplies \(v^2\) by 4: the friction needed becomes \(2.16\times10^4\ \text{N}\).</p></div>
+<div class="we-t"><p>On a flat road the only horizontal force on the car is sideways friction, so friction must supply the whole centripetal force. Because \(F \propto v^2\), small increases in speed need much more grip.</p></div>
+<div class="we-s" data-f="F_{\text{net}} = \dfrac{mv^2}{r}">\[ F_f = \frac{mv^2}{r} = \frac{1200 \times 15^2}{50} = 5.4\times10^3\ \text{N} \]</div>
+<div class="we-s" data-f="F \propto v^2"><p>Doubling \(v\) multiplies \(v^2\) by 4: the friction needed becomes \(2.16\times10^4\ \text{N}\).</p></div>
 <div class="we-a"><p><strong>5400 N towards the centre; four times as much at double the speed.</strong> This is why curves have much lower speed limits in the wet.</p></div>
 </div>
 
@@ -134,11 +137,12 @@ dotpoints: investigate and analyse theoretically and practically the uniform cir
 <p>On a banked track the car moves in a <strong>horizontal</strong> circle, so the net force points <strong>horizontally towards the centre</strong>. It does <em>not</em> point down the slope, and it does not point along the normal force. Also, \(N = mg/\cos\theta\) is <strong>bigger</strong> than \(mg\), unlike a car on a ramp where \(N = mg\cos\theta\). Mixing these up is very common.</p>
 </aside>
 
-<div class="we" data-title="Design speed of a banked curve" data-marks="4" data-f="\tan\theta = \dfrac{v^2}{rg} ;; N = \dfrac{mg}{\cos\theta} ;; F_{\text{net}} = mg\tan\theta = \dfrac{mv^2}{r}">
+<div class="we" data-title="Design speed of a banked curve" data-marks="4">
 <div class="we-q"><p>A curve of radius 80 m is banked at 15°. (a) Calculate the design speed. (b) For a 1000 kg car at this speed, calculate the normal force and the net force.</p></div>
-<div class="we-s"><p><strong>(a) Design speed:</strong></p>\[ v = \sqrt{rg\tan\theta} = \sqrt{80 \times 9.8 \times \tan 15^\circ} = \sqrt{210} = 14.5\ \text{m s}^{-1}\ (52\ \text{km h}^{-1}) \]</div>
-<div class="we-s"><p><strong>(b) Normal force</strong> from vertical equilibrium:</p>\[ N = \frac{mg}{\cos\theta} = \frac{1000 \times 9.8}{\cos 15^\circ} = 1.01\times10^4\ \text{N} \]</div>
-<div class="we-s"><p><strong>Net force</strong> (horizontal):</p>\[ F_{\text{net}} = N\sin\theta = mg\tan\theta = 9800 \times \tan 15^\circ = 2.63\times10^3\ \text{N} \]<p>Check: \(mv^2/r = 1000 \times 210/80 = 2.63\times10^3\ \text{N}\) ✓.</p></div>
+<div class="we-t"><p>On a banked track the normal force tilts inwards. At the design speed its horizontal component alone provides the centripetal force (no friction needed), while its vertical component balances the weight.</p></div>
+<div class="we-s" data-f="\tan\theta = \dfrac{v^2}{rg}"><p><strong>(a) Design speed:</strong></p>\[ v = \sqrt{rg\tan\theta} = \sqrt{80 \times 9.8 \times \tan 15^\circ} = \sqrt{210} = 14.5\ \text{m s}^{-1}\ (52\ \text{km h}^{-1}) \]</div>
+<div class="we-s" data-f="N\cos\theta = mg"><p><strong>(b) Normal force</strong> from vertical equilibrium:</p>\[ N = \frac{mg}{\cos\theta} = \frac{1000 \times 9.8}{\cos 15^\circ} = 1.01\times10^4\ \text{N} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = N\sin\theta = mg\tan\theta"><p><strong>Net force</strong> (horizontal):</p>\[ F_{\text{net}} = N\sin\theta = mg\tan\theta = 9800 \times \tan 15^\circ = 2.63\times10^3\ \text{N} \]<p>Check: \(mv^2/r = 1000 \times 210/80 = 2.63\times10^3\ \text{N}\) ✓.</p></div>
 <div class="we-a"><p><strong>(a) 14.5 m s⁻¹ (b) \(N = 1.0\times10^4\ \text{N}\) perpendicular to the road; \(F_{\text{net}} = 2.6\times10^3\ \text{N}\) horizontally towards the centre.</strong></p></div>
 </div>
 

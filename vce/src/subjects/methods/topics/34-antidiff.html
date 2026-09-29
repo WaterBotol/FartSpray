@@ -18,37 +18,42 @@ dotpoints: antiderivatives of polynomials, xⁿ, (ax + b)ⁿ, eˣ, 1/x, sin and 
 </tbody></table></div>
 <aside class="c-key"><p>Linear inside, divide by the coefficient of \(x\). That's the reverse chain rule, and it only works when the inside is <strong>linear</strong>. \(\int e^{x^2}\,dx\) is <em>not</em> \(\frac{e^{x^2}}{2x}\).</p></aside>
 
-<div class="we" data-title="A mixed antiderivative" data-marks="2" data-f="\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + c ;; \int \dfrac{1}{ax + b}\,dx = \dfrac1a\log_e|ax + b| + c ;; \int e^{kx}\,dx = \dfrac1k e^{kx} + c">
+<div class="we" data-title="A mixed antiderivative" data-marks="2">
 <div class="we-q"><p>Find \(\displaystyle\int\left(6x^2 - \frac{4}{x^3} + \frac{2}{2x + 1} + e^{-3x}\right)dx\).</p></div>
-<div class="we-s"><p>Term by term: \(2x^3\); \(-4\cdot\frac{x^{-2}}{-2} = \frac{2}{x^2}\); \(\frac{2}{2}\log_e|2x + 1| = \log_e|2x + 1|\); \(-\frac13e^{-3x}\).</p></div>
+<div class="we-t"><p>Antidifferentiate term by term. Rewrite powers of \(x\) in the denominator as negative powers first. Linear inside functions (\(ax + b\) or \(kx\)) divide by the coefficient of \(x\).</p></div>
+<div class="we-s" data-f="\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + c ;; \int \dfrac{1}{ax + b}\,dx = \dfrac1a\log_e|ax + b| + c ;; \int e^{kx}\,dx = \dfrac1k e^{kx} + c"><p>Term by term: \(2x^3\); \(-4\cdot\frac{x^{-2}}{-2} = \frac{2}{x^2}\); \(\frac{2}{2}\log_e|2x + 1| = \log_e|2x + 1|\); \(-\frac13e^{-3x}\).</p></div>
 <div class="we-a"><p><strong>\(2x^3 + \dfrac{2}{x^2} + \log_e|2x + 1| - \dfrac13e^{-3x} + c\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Function from derivative and a point" data-marks="2" data-f="\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + c ;; \text{use the given point to find } c">
+<div class="we" data-title="Function from derivative and a point" data-marks="2">
 <div class="we-q"><p>\(f'(x) = 3x^2 - 4x + 1\) and \(f(1) = 2\). Find \(f(x)\).</p></div>
-<div class="we-s"><p>\(f(x) = x^3 - 2x^2 + x + c\).</p></div>
-<div class="we-a"><p>\(f(1) = 1 - 2 + 1 + c = 2 \Rightarrow c = 2\). <strong>\(f(x) = x^3 - 2x^2 + x + 2\).</strong></p></div>
+<div class="we-t"><p>Antidifferentiating gives a whole family of curves (the \(+c\)). A known point on the curve picks out the one you want.</p></div>
+<div class="we-s" data-f="\int x^n\,dx = \dfrac{x^{n+1}}{n+1} + c"><p>\(f(x) = x^3 - 2x^2 + x + c\).</p></div>
+<div class="we-a" data-f="\text{substitute the point to find } c"><p>\(f(1) = 1 - 2 + 1 + c = 2 \Rightarrow c = 2\). <strong>\(f(x) = x^3 - 2x^2 + x + 2\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Trig with a boundary condition" data-marks="3" data-f="\int \cos(kx)\,dx = \dfrac1k\sin(kx) + c ;; \int \sin x\,dx = -\cos x + c">
+<div class="we" data-title="Trig with a boundary condition" data-marks="3">
 <div class="we-q"><p>The gradient of a curve is \(\dfrac{dy}{dx} = 2\cos(2x) + \sin x\), and the curve passes through \(\left(\frac{\pi}{2}, 3\right)\). Find \(y\).</p></div>
-<div class="we-s"><p>\(y = \sin(2x) - \cos x + c\).</p></div>
-<div class="we-s"><p>\(3 = \sin\pi - \cos\frac{\pi}{2} + c = 0 - 0 + c\).</p></div>
+<div class="we-t"><p>Antidifferentiate each trig term, then use the given point to find \(c\). Remember that \(\sin\) goes to \(-\cos\), and that the inside coefficient divides.</p></div>
+<div class="we-s" data-f="\int \cos(kx)\,dx = \dfrac1k\sin(kx) + c ;; \int \sin x\,dx = -\cos x + c"><p>\(y = \sin(2x) - \cos x + c\).</p></div>
+<div class="we-s" data-f="\text{substitute the point to find } c"><p>\(3 = \sin\pi - \cos\frac{\pi}{2} + c = 0 - 0 + c\).</p></div>
 <div class="we-a"><p><strong>\(y = \sin(2x) - \cos x + 3\).</strong></p></div>
 </div>
 
 <h2>Antidifferentiation by recognition</h2>
 <p>This is an Exam 1 staple: “Differentiate \(g(x)\). Hence find an antiderivative of \(h(x)\).” Differentiate, rearrange so the thing you want is on its own, then antidifferentiate both sides.</p>
-<div class="we" data-title="Hence find ∫ log x dx" data-marks="3" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; \text{integrate both sides (antidifferentiation by recognition)}">
+<div class="we" data-title="Hence find ∫ log x dx" data-marks="3">
 <div class="we-q"><p>Find \(\dfrac{d}{dx}(x\log_e x)\). Hence find \(\displaystyle\int\log_e x\,dx\).</p></div>
-<div class="we-s"><p>Product rule: \(\dfrac{d}{dx}(x\log_e x) = \log_e x + x\cdot\dfrac1x = \log_e x + 1\).</p></div>
-<div class="we-s"><p>Antidifferentiate both sides: \(x\log_e x = \int\log_e x\,dx + \int 1\,dx\).</p></div>
+<div class="we-t"><p>“Hence” questions use antidifferentiation by recognition: if you know \(\frac{d}{dx}F(x) = f(x) + g(x)\), then integrating both sides gives \(F(x) = \int f + \int g\). Rearrange for the integral you want.</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27;"><p>Product rule: \(\dfrac{d}{dx}(x\log_e x) = \log_e x + x\cdot\dfrac1x = \log_e x + 1\).</p></div>
+<div class="we-s" data-f="\int \dfrac{d}{dx}F(x)\,dx = F(x) + c"><p>Antidifferentiate both sides: \(x\log_e x = \int\log_e x\,dx + \int 1\,dx\).</p></div>
 <div class="we-a"><p><strong>\(\displaystyle\int\log_e x\,dx = x\log_e x - x + c\).</strong></p></div>
 </div>
-<div class="we" data-title="Hence find ∫ x cos x dx" data-marks="3" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; \int \sin x\,dx = -\cos x + c">
+<div class="we" data-title="Hence find ∫ x cos x dx" data-marks="3">
 <div class="we-q"><p>Differentiate \(x\sin x\) and hence find an antiderivative of \(x\cos x\).</p></div>
-<div class="we-s"><p>\(\dfrac{d}{dx}(x\sin x) = \sin x + x\cos x\), so \(x\cos x = \dfrac{d}{dx}(x\sin x) - \sin x\).</p></div>
-<div class="we-a"><p>\(\displaystyle\int x\cos x\,dx = x\sin x - \int\sin x\,dx = \boldsymbol{x\sin x + \cos x}\) (plus \(c\) if they ask for the general antiderivative).</p></div>
+<div class="we-t"><p>Differentiate the given function, rearrange so the integrand is on its own, then integrate both sides. The derivative term integrates straight back to the original function.</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27;"><p>\(\dfrac{d}{dx}(x\sin x) = \sin x + x\cos x\), so \(x\cos x = \dfrac{d}{dx}(x\sin x) - \sin x\).</p></div>
+<div class="we-a" data-f="\int \dfrac{d}{dx}F(x)\,dx = F(x) ;; \int \sin x\,dx = -\cos x"><p>\(\displaystyle\int x\cos x\,dx = x\sin x - \int\sin x\,dx = \boldsymbol{x\sin x + \cos x}\) (plus \(c\) if they ask for the general antiderivative).</p></div>
 </div>
 
 <h2>Graphs of antiderivatives</h2>

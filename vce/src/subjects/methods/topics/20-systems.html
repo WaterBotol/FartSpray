@@ -11,37 +11,41 @@ dotpoints: solution of systems of simultaneous linear equations, including consi
 <div class="eq"><div class="eq-label">The parameter test</div>\[ \begin{aligned} ax + by &= e \\ cx + dy &= f \end{aligned} \qquad \text{unique solution} \iff ad - bc \ne 0 \]<p>If \(ad - bc = 0\) the lines have the same gradient. Then check the constants: if one equation is a multiple of the other, there are infinitely many solutions; otherwise there are none.</p></div>
 <aside class="c-key"><p>\(ad - bc\) is the determinant of the coefficient matrix \(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\). You don't need matrix theory. Just remember “unique ⇔ determinant ≠ 0”, then test the special values by substituting them back in.</p></aside>
 
-<div class="we" data-title="Classifying by a parameter" data-marks="4" data-f="\text{no unique solution} \iff \text{determinant } a_1b_2 - a_2b_1 = 0 ;; \text{then test for infinitely many vs none}">
+<div class="we" data-title="Classifying by a parameter" data-marks="4">
 <div class="we-q"><p>Consider \(\begin{aligned} ax + 3y &= 3 \\ x + (a - 2)y &= 1 \end{aligned}\). Find the values of \(a\) for which the system has (a) a unique solution, (b) no solution, (c) infinitely many solutions.</p></div>
-<div class="we-s"><p>Determinant: \(a(a - 2) - 3 \cdot 1 = a^2 - 2a - 3 = (a - 3)(a + 1)\). Zero when \(a = 3\) or \(a = -1\).</p></div>
-<div class="we-s"><p>\(a = 3\): \(3x + 3y = 3\) and \(x + y = 1\). The first is 3 × the second, so they're the same line: infinitely many solutions.</p></div>
-<div class="we-s"><p>\(a = -1\): \(-x + 3y = 3\) and \(x - 3y = 1\), i.e. \(x - 3y = -3\) and \(x - 3y = 1\). Parallel, different lines: no solution.</p></div>
+<div class="we-t"><p>Two linear equations have a unique solution unless their lines are parallel (determinant zero). Then they're either the same line (infinitely many solutions) or distinct parallel lines (no solution).</p></div>
+<div class="we-s" data-f="\det = a_1b_2 - a_2b_1 = 0"><p>Determinant: \(a(a - 2) - 3 \cdot 1 = a^2 - 2a - 3 = (a - 3)(a + 1)\). Zero when \(a = 3\) or \(a = -1\).</p></div>
+<div class="we-s" data-f="\text{same line} \Rightarrow \text{infinitely many}"><p>\(a = 3\): \(3x + 3y = 3\) and \(x + y = 1\). The first is 3 × the second, so they're the same line: infinitely many solutions.</p></div>
+<div class="we-s" data-f="\text{parallel, distinct} \Rightarrow \text{none}"><p>\(a = -1\): \(-x + 3y = 3\) and \(x - 3y = 1\), i.e. \(x - 3y = -3\) and \(x - 3y = 1\). Parallel, different lines: no solution.</p></div>
 <div class="we-a"><p><strong>(a) \(a \in \mathbb{R}\setminus\{-1, 3\}\); (b) \(a = -1\); (c) \(a = 3\).</strong></p></div>
 </div>
 
 <h2>Three equations, three unknowns</h2>
 <p>Use elimination to reduce to two equations in two unknowns, or use CAS in Exam 2 (solve the three equations together). Geometrically each equation is a plane; they may meet at a point, along a line (infinitely many solutions) or not at all.</p>
-<div class="we" data-title="A 3 × 3 system by elimination (tech-free)" data-marks="3" data-f="\text{elimination}">
+<div class="we" data-title="A 3 × 3 system by elimination (tech-free)" data-marks="3">
 <div class="we-q"><p>Solve \(\ x + y + z = 6,\quad 2x - y + z = 3,\quad x + 2y - z = 2\).</p></div>
-<div class="we-s"><p>Add equations 1 and 3: \(2x + 3y = 8\). Add equations 2 and 3: \(3x + y = 5\).</p></div>
-<div class="we-s"><p>From \(3x + y = 5\): \(y = 5 - 3x\). Substitute: \(2x + 15 - 9x = 8 \Rightarrow x = 1\), so \(y = 2\).</p></div>
+<div class="we-t"><p>Eliminate one variable at a time by adding or subtracting equations, reducing a 3 × 3 system to 2 × 2 and then to one equation.</p></div>
+<div class="we-s" data-f="\text{eliminate } z"><p>Add equations 1 and 3: \(2x + 3y = 8\). Add equations 2 and 3: \(3x + y = 5\).</p></div>
+<div class="we-s" data-f="\text{substitute}"><p>From \(3x + y = 5\): \(y = 5 - 3x\). Substitute: \(2x + 15 - 9x = 8 \Rightarrow x = 1\), so \(y = 2\).</p></div>
 <div class="we-a"><p>Then \(z = 6 - 1 - 2 = 3\). <strong>\((x, y, z) = (1, 2, 3)\)</strong>. Check in equation 2: \(2 - 2 + 3 = 3\). ✓</p></div>
 </div>
 
-<div class="we" data-title="Infinitely many solutions in 3D (Exam 2 style)" data-marks="4" data-f="\text{elimination} ;; \text{infinitely many: } 0 = 0 \text{ row} ;; \text{none: } 0 = k \ne 0">
+<div class="we" data-title="Infinitely many solutions in 3D (Exam 2 style)" data-marks="4">
 <div class="we-q"><p>For the system \(\ x + y + z = 1,\quad x + 2y + 3z = 2,\quad x + 4y + kz = c\): (a) find \(k\) for which there is no unique solution; (b) for that \(k\), find \(c\) so there are infinitely many solutions and give them in terms of a parameter.</p></div>
-<div class="we-s"><p>(a) Subtract: (2) − (1) gives \(y + 2z = 1\); (3) − (1) gives \(3y + (k - 1)z = c - 1\).</p></div>
-<div class="we-s"><p>Triple the first: \(3y + 6z = 3\). The two equations have the same left side when \(k - 1 = 6\), i.e. \(k = 7\).</p></div>
-<div class="we-s"><p>(b) With \(k = 7\): infinitely many solutions need \(c - 1 = 3\), so \(c = 4\) (otherwise no solution). Let \(z = t\): \(y = 1 - 2t\), \(x = 1 - y - z = t\).</p></div>
+<div class="we-t"><p>Elimination reduces the system. If two reduced equations have identical left sides, the system has no unique solution: infinitely many if the right sides also agree, none if they don't.</p></div>
+<div class="we-s" data-f="\text{eliminate } x"><p>(a) Subtract: (2) − (1) gives \(y + 2z = 1\); (3) − (1) gives \(3y + (k - 1)z = c - 1\).</p></div>
+<div class="we-s" data-f="\text{same left side} \Rightarrow \text{no unique solution}"><p>Triple the first: \(3y + 6z = 3\). The two equations have the same left side when \(k - 1 = 6\), i.e. \(k = 7\).</p></div>
+<div class="we-s" data-f="\text{let } z = t"><p>(b) With \(k = 7\): infinitely many solutions need \(c - 1 = 3\), so \(c = 4\) (otherwise no solution). Let \(z = t\): \(y = 1 - 2t\), \(x = 1 - y - z = t\).</p></div>
 <div class="we-a"><p><strong>(a) \(k = 7\). (b) \(c = 4\); \((x, y, z) = (t,\ 1 - 2t,\ t),\ t \in \mathbb{R}\).</strong></p></div>
 </div>
 
 <h2>Lines meeting curves: the discriminant</h2>
 <p>Substitute the line into the curve to get a quadratic. Its discriminant \(\Delta = b^2 - 4ac\) counts the intersections: \(\Delta > 0\) two, \(\Delta = 0\) one (the line is a <strong>tangent</strong>), \(\Delta < 0\) none.</p>
-<div class="we" data-title="Tangent line condition" data-marks="3" data-f="\text{tangent} \iff \Delta = b^2 - 4ac = 0">
+<div class="we" data-title="Tangent line condition" data-marks="3">
 <div class="we-q"><p>Find the values of \(m\) for which the line \(y = mx + 1\) is a tangent to \(y = x^2 + 2x + 2\).</p></div>
-<div class="we-s"><p>Equate: \(x^2 + 2x + 2 = mx + 1 \Rightarrow x^2 + (2 - m)x + 1 = 0\).</p></div>
-<div class="we-s"><p>Tangent ⇔ \(\Delta = 0\): \((2 - m)^2 - 4 = 0 \Rightarrow 2 - m = \pm2\).</p></div>
+<div class="we-t"><p>A line meets a parabola where their equations are equal. A tangent touches at exactly one point, so the resulting quadratic has a discriminant of zero.</p></div>
+<div class="we-s" data-f="\text{equate the two rules}"><p>Equate: \(x^2 + 2x + 2 = mx + 1 \Rightarrow x^2 + (2 - m)x + 1 = 0\).</p></div>
+<div class="we-s" data-f="\text{tangent} \iff \Delta = b^2 - 4ac = 0"><p>Tangent ⇔ \(\Delta = 0\): \((2 - m)^2 - 4 = 0 \Rightarrow 2 - m = \pm2\).</p></div>
 <div class="we-a"><p><strong>\(m = 0\) or \(m = 4\).</strong> (Check \(m = 0\): the line \(y = 1\) touches the parabola's vertex at \((-1, 1)\). ✓)</p></div>
 </div>
 

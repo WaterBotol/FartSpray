@@ -21,37 +21,42 @@ dotpoints: derivatives of xⁿ, eˣ, logₑx, sin x, cos x and tan x | the chain
 <div class="eq"><div class="eq-label">Chain, product and quotient rules</div>\[ \frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx} \qquad (uv)' = u'v + uv' \qquad \left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2} \]<p>Function notation for the chain rule: \(\big(f(g(x))\big)' = f'(g(x))\cdot g'(x)\).</p></div>
 <aside class="c-key"><p>Decide which rule to use from the <strong>outermost</strong> structure. \(x^2e^{3x}\) is a product. \(e^{\sin x}\) is a composite (chain). \(\frac{\sin x}{x}\) is a quotient. Many questions need two rules in a row.</p></aside>
 
-<div class="we" data-title="Product rule, then factorise" data-marks="2" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; \dfrac{d}{dx}e^{kx} = ke^{kx}">
+<div class="we" data-title="Product rule, then factorise" data-marks="2">
 <div class="we-q"><p>Differentiate \(y = x^2e^{3x}\) and fully factorise the result.</p></div>
-<div class="we-s"><p>\(u = x^2,\ u' = 2x\); \(v = e^{3x},\ v' = 3e^{3x}\).</p></div>
-<div class="we-a"><p>\(\dfrac{dy}{dx} = 2xe^{3x} + 3x^2e^{3x} = \boldsymbol{xe^{3x}(2 + 3x)}\). Factorised form makes stationary points easy: \(x = 0\) or \(x = -\frac23\).</p></div>
+<div class="we-t"><p>The product rule differentiates a product of two functions: derivative of the first times the second, plus the first times the derivative of the second. Factorising the result makes it easy to find where it's zero.</p></div>
+<div class="we-s" data-f="u = x^2,\ v = e^{3x}"><p>\(u = x^2,\ u' = 2x\); \(v = e^{3x},\ v' = 3e^{3x}\).</p></div>
+<div class="we-a" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27;"><p>\(\dfrac{dy}{dx} = 2xe^{3x} + 3x^2e^{3x} = \boldsymbol{xe^{3x}(2 + 3x)}\). Factorised form makes stationary points easy: \(x = 0\) or \(x = -\frac23\).</p></div>
 </div>
 
-<div class="we" data-title="Chain rule with a log" data-marks="2" data-f="\dfrac{d}{dx}\log_e(g(x)) = \dfrac{g&#x27;(x)}{g(x)}">
+<div class="we" data-title="Chain rule with a log" data-marks="2">
 <div class="we-q"><p>Find \(\dfrac{dy}{dx}\) for (a) \(y = \log_e(x^2 + 1)\), (b) \(y = \log_e(\cos x)\).</p></div>
-<div class="we-s"><p>Use \(\dfrac{d}{dx}\log_e(g(x)) = \dfrac{g'(x)}{g(x)}\).</p></div>
+<div class="we-t"><p>The chain rule applied to a log gives a neat result: the derivative of \(\log_e(g(x))\) is \(g'(x)\) divided by \(g(x)\).</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}\log_e(g(x)) = \dfrac{g&#x27;(x)}{g(x)}"><p>Use \(\dfrac{d}{dx}\log_e(g(x)) = \dfrac{g'(x)}{g(x)}\).</p></div>
 <div class="we-a"><p><strong>(a) \(\dfrac{2x}{x^2 + 1}\); (b) \(\dfrac{-\sin x}{\cos x} = -\tan x\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Quotient rule" data-marks="2" data-f="\dfrac{d}{dx}\left(\dfrac uv\right) = \dfrac{u&#x27;v - uv&#x27;}{v^2}">
+<div class="we" data-title="Quotient rule" data-marks="2">
 <div class="we-q"><p>Differentiate \(f(x) = \dfrac{x}{x + 1}\).</p></div>
-<div class="we-s"><p>\(u = x,\ u' = 1\); \(v = x + 1,\ v' = 1\).</p></div>
-<div class="we-a"><p>\(f'(x) = \dfrac{1\cdot(x + 1) - x\cdot 1}{(x + 1)^2} = \boldsymbol{\dfrac{1}{(x + 1)^2}}\), which is always positive, so \(f\) is increasing on each branch.</p></div>
+<div class="we-t"><p>The quotient rule differentiates a fraction of two functions. Take care with the order in the numerator: \(u'v\) comes first.</p></div>
+<div class="we-s" data-f="u = x,\ v = x + 1"><p>\(u = x,\ u' = 1\); \(v = x + 1,\ v' = 1\).</p></div>
+<div class="we-a" data-f="\dfrac{d}{dx}\left(\dfrac uv\right) = \dfrac{u&#x27;v - uv&#x27;}{v^2}"><p>\(f'(x) = \dfrac{1\cdot(x + 1) - x\cdot 1}{(x + 1)^2} = \boldsymbol{\dfrac{1}{(x + 1)^2}}\), which is always positive, so \(f\) is increasing on each branch.</p></div>
 </div>
 
-<div class="we" data-title="Evaluate a derivative exactly (tech-free)" data-marks="2" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; \dfrac{d}{dx}\sin x = \cos x">
+<div class="we" data-title="Evaluate a derivative exactly (tech-free)" data-marks="2">
 <div class="we-q"><p>Let \(f(x) = x^2\sin x\). Find \(f'\!\left(\frac{\pi}{2}\right)\).</p></div>
-<div class="we-s"><p>\(f'(x) = 2x\sin x + x^2\cos x\).</p></div>
-<div class="we-a"><p>\(f'\!\left(\frac{\pi}{2}\right) = 2\cdot\frac{\pi}{2}\cdot 1 + \frac{\pi^2}{4}\cdot 0 = \boldsymbol{\pi}\).</p></div>
+<div class="we-t"><p>Differentiate with the product rule, then substitute the exact values of sin and cos at \(\frac\pi2\).</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27;"><p>\(f'(x) = 2x\sin x + x^2\cos x\).</p></div>
+<div class="we-a" data-f="\sin\tfrac\pi2 = 1,\ \cos\tfrac\pi2 = 0"><p>\(f'\!\left(\frac{\pi}{2}\right) = 2\cdot\frac{\pi}{2}\cdot 1 + \frac{\pi^2}{4}\cdot 0 = \boldsymbol{\pi}\).</p></div>
 </div>
 
-<div class="we" data-title="Derivatives from a table (Exam 1 style)" data-marks="3" data-f="\dfrac{d}{dx}f(g(x)) = f&#x27;(g(x))\,g&#x27;(x) ;; \dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27;">
+<div class="we" data-title="Derivatives from a table (Exam 1 style)" data-marks="3">
 <div class="we-q"><p>The table gives values of \(f\), \(g\) and their derivatives.</p>
 <div class="tbl"><table><thead><tr><th>\(x\)</th><th>\(f(x)\)</th><th>\(f'(x)\)</th><th>\(g(x)\)</th><th>\(g'(x)\)</th></tr></thead><tbody><tr><td>1</td><td>3</td><td>−2</td><td>2</td><td>5</td></tr><tr><td>2</td><td>4</td><td>7</td><td>1</td><td>−3</td></tr></tbody></table></div>
+<div class="we-t"><p>Exam 1 loves derivative tables: you never see the functions, only values. Apply the rule symbolically first, then read each value off the table, taking care which \(x\) each function is evaluated at.</p></div>
 <p>Find the derivatives of (a) \(f(g(x))\) at \(x = 1\), (b) \(f(x)g(x)\) at \(x = 2\), (c) \([f(x)]^2\) at \(x = 1\).</p></div>
-<div class="we-s"><p>(a) \(f'(g(1))\cdot g'(1) = f'(2)\cdot 5 = 7 \times 5 = 35\).</p></div>
-<div class="we-s"><p>(b) \(f'(2)g(2) + f(2)g'(2) = 7(1) + 4(-3) = -5\).</p></div>
-<div class="we-s"><p>(c) \(2f(1)f'(1) = 2(3)(-2) = -12\).</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}f(g(x)) = f&#x27;(g(x))\,g&#x27;(x)"><p>(a) \(f'(g(1))\cdot g'(1) = f'(2)\cdot 5 = 7 \times 5 = 35\).</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27;"><p>(b) \(f'(2)g(2) + f(2)g'(2) = 7(1) + 4(-3) = -5\).</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}[f(x)]^2 = 2f(x)f&#x27;(x)"><p>(c) \(2f(1)f'(1) = 2(3)(-2) = -12\).</p></div>
 <div class="we-a"><p><strong>(a) 35, (b) −5, (c) −12.</strong> In (a), \(f'\) is evaluated at \(g(1) = 2\), not at 1. That's the trap.</p></div>
 </div>
 

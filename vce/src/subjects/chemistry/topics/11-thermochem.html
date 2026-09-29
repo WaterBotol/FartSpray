@@ -38,30 +38,34 @@ dotpoints: exothermic and endothermic reactions, including energy profile diagra
 <tr><td>add two equations</td><td>adds (this is Hess's law)</td></tr>
 </tbody></table></div>
 
-<div class="we" data-title="Reversing and scaling" data-marks="2" data-f="\Delta H_{\text{reverse}} = -\Delta H_{\text{forward}} ;; \Delta H \propto \text{coefficients}">
+<div class="we" data-title="Reversing and scaling" data-marks="2">
 <div class="we-q"><p>Given \(\ce{2H2(g) + O2(g) -> 2H2O(l)}\), \(\Delta H = -572\ \text{kJ mol}^{-1}\), write the thermochemical equation for the decomposition of 1 mol of liquid water.</p></div>
-<div class="we-s"><p>Reverse (sign flips): \(\ce{2H2O(l) -> 2H2(g) + O2(g)}\), \(\Delta H = +572\ \text{kJ mol}^{-1}\).</p></div>
-<div class="we-a"><p>Halve: <strong>\(\ce{H2O(l) -> H2(g) + 1/2O2(g)}\), \(\Delta H = +286\ \text{kJ mol}^{-1}\).</strong></p></div>
+<div class="we-t"><p>\(\Delta H\) belongs to the equation exactly as written. Reversing an equation reverses the sign of \(\Delta H\); multiplying the coefficients multiplies \(\Delta H\) by the same factor.</p></div>
+<div class="we-s" data-f="\Delta H_{\text{reverse}} = -\Delta H_{\text{forward}}"><p>Reverse (sign flips): \(\ce{2H2O(l) -> 2H2(g) + O2(g)}\), \(\Delta H = +572\ \text{kJ mol}^{-1}\).</p></div>
+<div class="we-a" data-f="\Delta H \propto \text{coefficients}"><p>Halve: <strong>\(\ce{H2O(l) -> H2(g) + 1/2O2(g)}\), \(\Delta H = +286\ \text{kJ mol}^{-1}\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Energy from a mass of fuel" data-marks="2" data-f="n = \dfrac mM ;; E = n \times |\Delta H|">
+<div class="we" data-title="Energy from a mass of fuel" data-marks="2">
 <div class="we-q"><p>Using the methane equation above, calculate the energy released when 10.0 g of methane burns completely.</p></div>
-<div class="we-s"><p>\(n(\ce{CH4}) = \dfrac{10.0}{16.0} = 0.625\text{ mol}\).</p></div>
-<div class="we-a"><p>\(E = 0.625 \times 890 = \) <strong>556 kJ</strong> released.</p></div>
+<div class="we-t"><p>The \(\Delta H\) value is the energy per mole of reaction as written. Find the moles of fuel, then scale the energy by that amount.</p></div>
+<div class="we-s" data-f="n = \dfrac mM"><p>\(n(\ce{CH4}) = \dfrac{10.0}{16.0} = 0.625\text{ mol}\).</p></div>
+<div class="we-a" data-f="E = n \times |\Delta H|"><p>\(E = 0.625 \times 890 = \) <strong>556 kJ</strong> released.</p></div>
 </div>
 
-<div class="we" data-title="Combining equations (Hess's law)" data-marks="3" data-f="\text{Hess&#x27;s law: } \Delta H = \Sigma \Delta H_{\text{steps}} ;; \Delta H_{\text{reverse}} = -\Delta H_{\text{forward}}">
+<div class="we" data-title="Combining equations (Hess's law)" data-marks="3">
 <div class="we-q"><p>Given \(\ce{C(s) + O2(g) -> CO2(g)}\), \(\Delta H = -394\ \text{kJ mol}^{-1}\), and \(\ce{2CO(g) + O2(g) -> 2CO2(g)}\), \(\Delta H = -566\ \text{kJ mol}^{-1}\), find \(\Delta H\) for \(\ce{2C(s) + O2(g) -> 2CO(g)}\).</p></div>
-<div class="we-s"><p>Double the first: \(\ce{2C + 2O2 -> 2CO2}\), \(\Delta H = -788\).</p></div>
-<div class="we-s"><p>Reverse the second: \(\ce{2CO2 -> 2CO + O2}\), \(\Delta H = +566\).</p></div>
-<div class="we-a"><p>Add (the 2CO₂ and one O₂ cancel): \(\ce{2C + O2 -> 2CO}\), <strong>\(\Delta H = -222\ \text{kJ mol}^{-1}\)</strong>. Incomplete combustion releases far less energy than complete combustion (−788 kJ for 2 mol C).</p></div>
+<div class="we-t"><p>Hess's law: the total enthalpy change is the same however you get from reactants to products. Rearrange the given equations (reverse, scale) so they add to the target equation, and do the same to their \(\Delta H\) values.</p></div>
+<div class="we-s" data-f="\Delta H \propto \text{coefficients}"><p>Double the first: \(\ce{2C + 2O2 -> 2CO2}\), \(\Delta H = -788\).</p></div>
+<div class="we-s" data-f="\Delta H_{\text{reverse}} = -\Delta H_{\text{forward}}"><p>Reverse the second: \(\ce{2CO2 -> 2CO + O2}\), \(\Delta H = +566\).</p></div>
+<div class="we-a" data-f="\Delta H = \Sigma \Delta H_{\text{steps}}"><p>Add (the 2CO₂ and one O₂ cancel): \(\ce{2C + O2 -> 2CO}\), <strong>\(\Delta H = -222\ \text{kJ mol}^{-1}\)</strong>. Incomplete combustion releases far less energy than complete combustion (−788 kJ for 2 mol C).</p></div>
 </div>
 
-<div class="we" data-title="Mass of fuel for a given energy" data-marks="3" data-f="E_{\text{needed}} = \dfrac{E_{\text{useful}}}{\text{efficiency}} ;; n = \dfrac{E}{|\Delta H|} ;; m = nM">
-<div class="we-q"><p>Propane burns according to \(\ce{C3H8(g) + 5O2(g) -> 3CO2(g) + 4H2O(l)}\), \(\Delta H = -2220\ \text{kJ mol}^{-1}\). What mass of propane is needed to heat water requiring 5.00 MJ, if only 60.0% of the energy is transferred to the water?</p></div>
-<div class="we-s"><p>Energy that must be released: \(\dfrac{5.00 \times 10^3\text{ kJ}}{0.600} = 8.33 \times 10^3\text{ kJ}\).</p></div>
-<div class="we-s"><p>\(n(\ce{C3H8}) = \dfrac{8333}{2220} = 3.754\text{ mol}\).</p></div>
-<div class="we-a"><p>\(m = 3.754 \times 44.0 = \) <strong>165 g</strong>. Divide by the efficiency (you need <em>more</em> fuel), don't multiply.</p></div>
+<div class="we" data-title="Mass of fuel for a given energy" data-marks="3">
+<div class="we-q"><p>Propane burns according to \(\ce{C3H8(g) + 5O2(g)}\) \(\ce{-> 3CO2(g) + 4H2O(l)}\), \(\Delta H = -2220\ \text{kJ mol}^{-1}\). What mass of propane is needed to heat water requiring 5.00 MJ, if only 60.0% of the energy is transferred to the water?</p></div>
+<div class="we-t"><p>If only part of the released energy is useful, the fuel must release more than you need: divide the required energy by the efficiency. Then convert energy to moles using \(\Delta H\), and moles to mass.</p></div>
+<div class="we-s" data-f="E_{\text{released}} = \dfrac{E_{\text{useful}}}{\text{efficiency}}"><p>Energy that must be released: \(\dfrac{5.00 \times 10^3\text{ kJ}}{0.600} = 8.33 \times 10^3\text{ kJ}\).</p></div>
+<div class="we-s" data-f="n = \dfrac{E}{|\Delta H|}"><p>\(n(\ce{C3H8}) = \dfrac{8333}{2220} = 3.754\text{ mol}\).</p></div>
+<div class="we-a" data-f="m = nM"><p>\(m = 3.754 \times 44.0 = \) <strong>165 g</strong>. Divide by the efficiency (you need <em>more</em> fuel), don't multiply.</p></div>
 </div>
 
 <aside class="c-trap" data-title="Trick alert: ΔH traps">
@@ -105,7 +109,7 @@ dotpoints: exothermic and endothermic reactions, including energy profile diagra
 </div>
 
 <div class="mcq" data-ans="B" data-level="trick">
-<div class="mcq-q"><p>\(\ce{CH4(g) + 2O2(g) -> CO2(g) + 2H2O(g)}\) has \(\Delta H = -802\ \text{kJ mol}^{-1}\), whereas forming liquid water gives −890. The difference is mainly because</p></div>
+<div class="mcq-q"><p>\(\ce{CH4(g) + 2O2(g)}\) \(\ce{-> CO2(g) + 2H2O(g)}\) has \(\Delta H = -802\ \text{kJ mol}^{-1}\), whereas forming liquid water gives −890. The difference is mainly because</p></div>
 <ol><li>gaseous water has stronger bonds</li><li>energy is released when water vapour condenses</li><li>the reaction with liquid water is faster</li><li>a catalyst is used in one reaction</li></ol>
 <div class="mcq-x"><p>Condensation is exothermic, so forming liquid water releases an extra \(2 \times 44 = 88\) kJ.</p></div>
 </div>
@@ -116,7 +120,7 @@ dotpoints: exothermic and endothermic reactions, including energy profile diagra
 </div>
 
 <div class="pq" data-level="hard" data-marks="3" data-f="n = \dfrac{E}{|\Delta H|} ;; V = n \times V_m\ (24.8\ \text{L mol}^{-1})">
-<div class="pq-q"><p>\(\ce{C2H5OH(l) + 3O2(g) -> 2CO2(g) + 3H2O(l)}\), \(\Delta H = -1360\ \text{kJ mol}^{-1}\). Calculate the volume of CO₂ at SLC produced when enough ethanol burns to release 500 kJ.</p></div>
+<div class="pq-q"><p>\(\ce{C2H5OH(l) + 3O2(g)}\) \(\ce{-> 2CO2(g) + 3H2O(l)}\), \(\Delta H = -1360\ \text{kJ mol}^{-1}\). Calculate the volume of CO₂ at SLC produced when enough ethanol burns to release 500 kJ.</p></div>
 <div class="pq-s"><p>\(n(\text{reaction}) = \frac{500}{1360} = 0.3676\text{ mol}\), so \(n(\ce{CO2}) = 2 \times 0.3676 = 0.7353\text{ mol}\). [2]</p><p>\(V = 0.7353 \times 24.8 = 18.2\text{ L}\). [1]</p></div>
 </div>
 
@@ -126,7 +130,7 @@ dotpoints: exothermic and endothermic reactions, including energy profile diagra
 </div>
 
 <div class="pq" data-level="trick" data-marks="2" data-f="\Delta H \propto \text{coefficients}">
-<div class="pq-q"><p>A student writes: “\(\ce{2C8H18 + 25O2 -> 16CO2 + 18H2O}\), \(\Delta H = -5460\ \text{kJ mol}^{-1}\).” What's wrong?</p></div>
+<div class="pq-q"><p>A student writes: “\(\ce{2C8H18 + 25O2}\) \(\ce{-> 16CO2 + 18H2O}\), \(\Delta H = -5460\ \text{kJ mol}^{-1}\).” What's wrong?</p></div>
 <div class="pq-s"><p>\(-5460\ \text{kJ mol}^{-1}\) is for 1 mol of octane. As written (2 mol octane), \(\Delta H = -10\,920\ \text{kJ mol}^{-1}\). States are also missing.</p></div>
 </div>
 

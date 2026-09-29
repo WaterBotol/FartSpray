@@ -346,4 +346,49 @@
       upd();
     });
   };
+  S.standing = function (el) {
+    return K.mount(el, 'Standing waves on a string', 'A wave travels along a string fixed at both ends and reflects. The incident and reflected waves superpose to make a standing wave. Pick a harmonic, slow it down, and show the two travelling waves that add to give it.', ({ body, add }) => {
+      const cv = K.canvas(body, 0.42, { maxH: 300, minH: 200, label: 'Animated standing wave on a string fixed at both ends' });
+      const ctl = K.controls(body);
+      const N = K.slider(ctl, { label: 'Harmonic n', min: 1, max: 6, step: 1, value: 3, fmt: v => 'n = ' + v, onInput: upd });
+      const L = K.slider(ctl, { label: 'String length L', min: 0.5, max: 2.0, step: 0.05, value: 1.2, fmt: v => v.toFixed(2) + ' m', onInput: upd });
+      const V = K.slider(ctl, { label: 'Wave speed v', min: 20, max: 200, step: 5, value: 60, fmt: v => v + ' m/s', onInput: upd });
+      const Sp = K.slider(ctl, { label: 'Animation speed', min: 0, max: 1, step: 0.05, value: 0.35, fmt: v => v === 0 ? 'paused' : Math.round(v * 100) + '%' });
+      const Tr = K.check(ctl, { label: 'Show the two travelling waves', value: false, onChange: () => draw() });
+      const ro = K.readout(body, [['lam', 'Wavelength λ = 2L/n'], ['f', 'Frequency f = nv/2L'], ['nodes', 'Nodes (incl. ends)'], ['anti', 'Antinodes']]);
+      const note = K.note(body);
+      let ph = 0;
+      function upd() {
+        const n = N.get(), l = L.get(), v = V.get(), lam = 2 * l / n;
+        ro.set('lam', lam.toFixed(3) + ' m'); ro.set('f', (v / lam).toFixed(1) + ' Hz');
+        ro.set('nodes', String(n + 1)); ro.set('anti', String(n));
+        note.textContent = 'Node spacing = λ/2 = ' + (lam / 2).toFixed(3) + ' m. Points between neighbouring nodes move together; points on either side of a node move in opposite directions.';
+        draw();
+      }
+      function draw() {
+        const { ctx, W, H } = cv, c = K.col(); K._c = c;
+        K.clear(ctx, W, H, c);
+        const n = N.get(), x0 = 36, x1 = W - 36, y0 = H / 2, A = H * 0.3;
+        ctx.fillStyle = c.muted; ctx.fillRect(x0 - 8, y0 - A - 16, 8, 2 * A + 32); ctx.fillRect(x1, y0 - A - 16, 8, 2 * A + 32);
+        ctx.strokeStyle = c.line2; ctx.setLineDash([4, 4]); ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y0); ctx.stroke(); ctx.setLineDash([]);
+        const k = n * Math.PI, cw = Math.cos(ph);
+        const curve = (fn, col, w) => { ctx.strokeStyle = col; ctx.lineWidth = w; ctx.beginPath(); for (let i = 0; i <= 300; i++) { const u = i / 300, y = fn(u); const px = x0 + u * (x1 - x0), py = y0 - y * A; i ? ctx.lineTo(px, py) : ctx.moveTo(px, py); } ctx.stroke(); };
+        // envelope
+        ctx.globalAlpha = 0.35; curve(u => Math.sin(k * u), c.line2, 1); curve(u => -Math.sin(k * u), c.line2, 1); ctx.globalAlpha = 1;
+        if (Tr.get()) {
+          curve(u => 0.5 * Math.sin(k * u - ph), c.n, 1.6);
+          curve(u => 0.5 * Math.sin(k * u + ph), c.t, 1.6);
+        }
+        curve(u => Math.sin(k * u) * cw, c.acc, 3);
+        for (let j = 0; j <= n; j++) { const px = x0 + j / n * (x1 - x0); ctx.fillStyle = c.bad; ctx.beginPath(); ctx.arc(px, y0, 4.5, 0, 7); ctx.fill(); }
+        for (let j = 0; j < n; j++) { const px = x0 + (j + 0.5) / n * (x1 - x0); K.text(ctx, 'A', px, y0 + A + 16, { align: 'center', size: 11, color: c.muted, bold: true, c }); }
+        K.text(ctx, '● node', x0, 16, { size: 11, color: c.bad, bold: true, c });
+        K.text(ctx, 'A = antinode', x0 + 64, 16, { size: 11, color: c.muted, c });
+        if (Tr.get()) { K.text(ctx, 'incident →', x1 - 150, 16, { size: 11, color: c.n, bold: true, c }); K.text(ctx, '← reflected', x1 - 70, 16, { size: 11, color: c.t, bold: true, c }); }
+      }
+      cv.draw = draw; add(K.onTheme(draw)); add(cv.destroy);
+      if (!K.reduced()) add(K.loop(dt => { const sp = Sp.get(); if (!sp) return; ph += dt * 6 * sp; draw(); }, cv.wrap));
+      upd();
+    });
+  };
 })();

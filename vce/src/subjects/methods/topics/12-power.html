@@ -27,32 +27,36 @@ dotpoints: graphs of power functions y = xⁿ for n ∈ ℤ and n ∈ {1/2, 1/3,
 <div class="eq"><div class="eq-label">Hyperbola, truncus and root in transformed form</div>\[ y = \frac{a}{x - h} + k \qquad y = \frac{a}{(x - h)^2} + k \qquad y = a\sqrt{\pm(x - h)} + k \]<p>For the hyperbola and truncus: asymptotes \(x = h\) and \(y = k\). For the root: the endpoint is \((h, k)\).</p></div>
 <aside class="c-key"><p>For every sketch, find: (1) asymptotes or endpoint, (2) the \(y\)-intercept (put \(x = 0\)), (3) the \(x\)-intercept(s) (put \(y = 0\)), (4) the domain and range. The sign of \(a\) tells you which way the branches go.</p></aside>
 
-<div class="we" data-title="Sketching a hyperbola" data-marks="3" data-f="y = \dfrac{a}{x - h} + k:\ \text{asymptotes } x = h,\ y = k">
+<div class="we" data-title="Sketching a hyperbola" data-marks="3">
 <div class="we-q"><p>Sketch \(y = \dfrac{2}{x - 1} + 3\), labelling asymptotes and intercepts.</p></div>
-<div class="we-s"><p><strong>Asymptotes:</strong> \(x = 1\) and \(y = 3\).</p></div>
-<div class="we-s"><p><strong>\(y\)-intercept:</strong> \(y = \frac{2}{-1} + 3 = 1\), so \((0, 1)\).</p></div>
-<div class="we-s"><p><strong>\(x\)-intercept:</strong> \(0 = \frac{2}{x - 1} + 3 \Rightarrow x - 1 = -\frac23 \Rightarrow x = \frac13\).</p></div>
+<div class="we-t"><p>In \(y = \dfrac{a}{x - h} + k\), the vertical asymptote is where the denominator is zero and the horizontal asymptote is the value \(y\) approaches for large \(|x|\). The sign of \(a\) decides which quadrants the branches sit in.</p></div>
+<div class="we-s" data-f="y = \dfrac{a}{x - h} + k:\ x = h,\ y = k"><p><strong>Asymptotes:</strong> \(x = 1\) and \(y = 3\).</p></div>
+<div class="we-s" data-f="x = 0 \text{ for the } y\text{-intercept}"><p><strong>\(y\)-intercept:</strong> \(y = \frac{2}{-1} + 3 = 1\), so \((0, 1)\).</p></div>
+<div class="we-s" data-f="y = 0 \text{ for the } x\text{-intercept}"><p><strong>\(x\)-intercept:</strong> \(0 = \frac{2}{x - 1} + 3 \Rightarrow x - 1 = -\frac23 \Rightarrow x = \frac13\).</p></div>
 <div class="we-a"><p>Since \(a = 2 > 0\), the branches sit top-right and bottom-left of the asymptote intersection \((1, 3)\). <strong>Asymptotes \(x = 1,\ y = 3\); intercepts \((0, 1)\) and \((\tfrac13, 0)\).</strong> Domain \(\mathbb{R}\setminus\{1\}\), range \(\mathbb{R}\setminus\{3\}\).</p></div>
 </div>
 
-<div class="we" data-title="Sketching a truncus" data-marks="3" data-f="y = \dfrac{a}{(x - h)^2} + k:\ \text{asymptotes } x = h,\ y = k">
+<div class="we" data-title="Sketching a truncus" data-marks="3">
 <div class="we-q"><p>Find the intercepts, asymptotes and range of \(y = -\dfrac{1}{(x + 2)^2} + 4\).</p></div>
-<div class="we-s"><p>Asymptotes \(x = -2\), \(y = 4\). \(a < 0\), so both branches are <em>below</em> \(y = 4\).</p></div>
-<div class="we-s"><p>\(y\)-intercept: \(-\frac14 + 4 = \frac{15}{4}\).</p></div>
-<div class="we-s"><p>\(x\)-intercepts: \((x + 2)^2 = \frac14 \Rightarrow x + 2 = \pm\frac12 \Rightarrow x = -\frac52, -\frac32\).</p></div>
+<div class="we-t"><p>A truncus \(y = \dfrac{a}{(x - h)^2} + k\) has both branches on the same side of the horizontal asymptote, because the squared denominator is always positive. \(a < 0\) puts them below.</p></div>
+<div class="we-s" data-f="y = \dfrac{a}{(x - h)^2} + k:\ x = h,\ y = k"><p>Asymptotes \(x = -2\), \(y = 4\). \(a < 0\), so both branches are <em>below</em> \(y = 4\).</p></div>
+<div class="we-s" data-f="x = 0"><p>\(y\)-intercept: \(-\frac14 + 4 = \frac{15}{4}\).</p></div>
+<div class="we-s" data-f="y = 0"><p>\(x\)-intercepts: \((x + 2)^2 = \frac14 \Rightarrow x + 2 = \pm\frac12 \Rightarrow x = -\frac52, -\frac32\).</p></div>
 <div class="we-a"><p><strong>Intercepts \((-\tfrac52, 0), (-\tfrac32, 0), (0, \tfrac{15}{4})\); range \((-\infty, 4)\).</strong></p></div>
 </div>
 
-<div class="we" data-title="A reflected square root" data-marks="3" data-f="y = a\sqrt{-(x - h)} + k:\ \text{domain } x \le h,\ \text{endpoint } (h, k)">
+<div class="we" data-title="A reflected square root" data-marks="3">
 <div class="we-q"><p>Sketch \(y = 2\sqrt{3 - x} - 4\), stating the domain, range and intercepts.</p></div>
-<div class="we-s"><p>Rewrite as \(y = 2\sqrt{-(x - 3)} - 4\): reflected in the \(y\)-axis, so the graph goes <em>left</em> from the endpoint \((3, -4)\). Domain: \(3 - x \ge 0 \Rightarrow x \le 3\).</p></div>
-<div class="we-s"><p>\(x\)-intercept: \(\sqrt{3 - x} = 2 \Rightarrow 3 - x = 4 \Rightarrow x = -1\). \(y\)-intercept: \(2\sqrt3 - 4 \approx -0.54\).</p></div>
+<div class="we-t"><p>\(\sqrt{-(x - h)}\) is the square-root graph reflected in the \(y\)-axis, so it starts at \((h, k)\) and extends to the left. The domain comes from requiring a non-negative argument.</p></div>
+<div class="we-s" data-f="\sqrt{u} \text{ needs } u \ge 0"><p>Rewrite as \(y = 2\sqrt{-(x - 3)} - 4\): reflected in the \(y\)-axis, so the graph goes <em>left</em> from the endpoint \((3, -4)\). Domain: \(3 - x \ge 0 \Rightarrow x \le 3\).</p></div>
+<div class="we-s" data-f="y = 0 \text{ and } x = 0"><p>\(x\)-intercept: \(\sqrt{3 - x} = 2 \Rightarrow 3 - x = 4 \Rightarrow x = -1\). \(y\)-intercept: \(2\sqrt3 - 4 \approx -0.54\).</p></div>
 <div class="we-a"><p><strong>Domain \((-\infty, 3]\), range \([-4, \infty)\); intercepts \((-1, 0)\) and \((0, 2\sqrt3 - 4)\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Finding a rule from asymptotes and a point" data-marks="2" data-f="y = \dfrac{a}{(x - h)^2} + k">
+<div class="we" data-title="Finding a rule from asymptotes and a point" data-marks="2">
 <div class="we-q"><p>A truncus has asymptotes \(x = -1\) and \(y = 2\) and passes through \((0, 5)\). Find its rule.</p></div>
-<div class="we-s"><p>\(y = \dfrac{a}{(x + 1)^2} + 2\). Substitute \((0, 5)\): \(5 = a + 2\).</p></div>
+<div class="we-t"><p>The asymptotes give \(h\) and \(k\) directly; a single point on the graph then determines \(a\).</p></div>
+<div class="we-s" data-f="y = \dfrac{a}{(x - h)^2} + k"><p>\(y = \dfrac{a}{(x + 1)^2} + 2\). Substitute \((0, 5)\): \(5 = a + 2\).</p></div>
 <div class="we-a"><p><strong>\(a = 3\), so \(y = \dfrac{3}{(x + 1)^2} + 2\).</strong></p></div>
 </div>
 

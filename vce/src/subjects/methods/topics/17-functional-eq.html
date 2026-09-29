@@ -23,30 +23,34 @@ dotpoints: functional equations and the properties of families of functions | od
 
 <aside class="c-exam" data-title="The number-test strategy"><p>In multiple choice, don't do algebra first. Pick easy values (\(x = 1,\ y = 2\), or \(x = y = 0\)) and test each option. Usually three options fail on the first test. Then prove the survivor in your head.</p></aside>
 
-<div class="we" data-title="Which function satisfies f(x + y) = f(x)f(y)?" data-marks="1" data-f="\text{test with } x = y = 0 \text{ and } x = y = 1 ;; e^{a + b} = e^ae^b">
+<div class="we" data-title="Which function satisfies f(x + y) = f(x)f(y)?" data-marks="1">
 <div class="we-q"><p>Which one of \(f(x) = 3x\), \(f(x) = x^3\), \(f(x) = e^{3x}\), \(f(x) = \log_e(3x)\) satisfies \(f(x + y) = f(x)f(y)\) for all real \(x, y\)?</p></div>
-<div class="we-s"><p>Test \(x = y = 0\): we need \(f(0) = f(0)^2\), so \(f(0) = 0\) or 1. \(\log_e(0)\) is undefined, so D is out.</p></div>
-<div class="we-s"><p>Test \(x = y = 1\): \(3x\) gives \(6\) vs \(9\) ✗; \(x^3\) gives \(8\) vs \(1\) ✗; \(e^{3x}\) gives \(e^6\) vs \(e^3 \cdot e^3 = e^6\) ✓.</p></div>
-<div class="we-a"><p><strong>\(f(x) = e^{3x}\):</strong> \(e^{3(x + y)} = e^{3x}e^{3y}\) for all \(x, y\).</p></div>
+<div class="we-t"><p>Testing simple values (like 0 and 1) quickly rules out functions that fail a functional equation. The exponential property \(e^{a + b} = e^ae^b\) is what turns sums into products.</p></div>
+<div class="we-s" data-f="\text{test } x = y = 0"><p>Test \(x = y = 0\): we need \(f(0) = f(0)^2\), so \(f(0) = 0\) or 1. \(\log_e(0)\) is undefined, so D is out.</p></div>
+<div class="we-s" data-f="\text{test } x = y = 1"><p>Test \(x = y = 1\): \(3x\) gives \(6\) vs \(9\) ✗; \(x^3\) gives \(8\) vs \(1\) ✗; \(e^{3x}\) gives \(e^6\) vs \(e^3 \cdot e^3 = e^6\) ✓.</p></div>
+<div class="we-a" data-f="e^{a + b} = e^ae^b"><p><strong>\(f(x) = e^{3x}\):</strong> \(e^{3(x + y)} = e^{3x}e^{3y}\) for all \(x, y\).</p></div>
 </div>
 
-<div class="we" data-title="Finding a parameter" data-marks="2" data-f="e^{a + b} = e^ae^b ;; e^k = 2 \iff k = \log_e 2">
+<div class="we" data-title="Finding a parameter" data-marks="2">
 <div class="we-q"><p>\(f(x) = e^{kx}\) satisfies \(f(x + 1) = 2f(x)\) for all \(x\). Find \(k\).</p></div>
-<div class="we-s"><p>\(e^{k(x + 1)} = e^{kx}e^k\), so the condition is \(e^{kx}e^k = 2e^{kx}\).</p></div>
-<div class="we-a"><p>Divide by \(e^{kx}\) (never 0): \(e^k = 2\), so <strong>\(k = \log_e 2\)</strong>.</p></div>
+<div class="we-t"><p>Use index laws to split the exponential, then divide by the common factor (which is never zero) to isolate the parameter.</p></div>
+<div class="we-s" data-f="e^{a + b} = e^ae^b"><p>\(e^{k(x + 1)} = e^{kx}e^k\), so the condition is \(e^{kx}e^k = 2e^{kx}\).</p></div>
+<div class="we-a" data-f="e^k = 2 \iff k = \log_e 2"><p>Divide by \(e^{kx}\) (never 0): \(e^k = 2\), so <strong>\(k = \log_e 2\)</strong>.</p></div>
 </div>
 
-<div class="we" data-title="Showing a symmetry property" data-marks="2" data-f="f(a + h) = f(a - h) \iff \text{symmetric about } x = a">
+<div class="we" data-title="Showing a symmetry property" data-marks="2">
 <div class="we-q"><p>Let \(f(x) = x^2 - 2x\). Show that \(f(1 + h) = f(1 - h)\) for all \(h\), and interpret this.</p></div>
-<div class="we-s"><p>\(f(1 + h) = (1 + h)^2 - 2(1 + h) = 1 + 2h + h^2 - 2 - 2h = h^2 - 1\).</p></div>
-<div class="we-s"><p>\(f(1 - h) = (1 - h)^2 - 2(1 - h) = 1 - 2h + h^2 - 2 + 2h = h^2 - 1\). Equal. ✓</p></div>
+<div class="we-t"><p>\(f(a + h) = f(a - h)\) for every \(h\) means points equally far either side of \(x = a\) have the same height: the graph is symmetric about \(x = a\).</p></div>
+<div class="we-s" data-f="\text{expand } f(1 + h)"><p>\(f(1 + h) = (1 + h)^2 - 2(1 + h) = 1 + 2h + h^2 - 2 - 2h = h^2 - 1\).</p></div>
+<div class="we-s" data-f="\text{expand } f(1 - h)"><p>\(f(1 - h) = (1 - h)^2 - 2(1 - h) = 1 - 2h + h^2 - 2 + 2h = h^2 - 1\). Equal. ✓</p></div>
 <div class="we-a"><p>Points the same distance either side of \(x = 1\) have the same height: <strong>the graph is symmetric about the line \(x = 1\)</strong> (its axis of symmetry).</p></div>
 </div>
 
-<div class="we" data-title="Linear functions with f(f(x)) = 4x + 3 (hard)" data-marks="3" data-f="\text{equate coefficients}">
+<div class="we" data-title="Linear functions with f(f(x)) = 4x + 3 (hard)" data-marks="3">
 <div class="we-q"><p>Find all linear functions \(f(x) = ax + b\) such that \(f(f(x)) = 4x + 3\) for all \(x\).</p></div>
-<div class="we-s"><p>\(f(f(x)) = a(ax + b) + b = a^2x + ab + b\).</p></div>
-<div class="we-s"><p>Equate coefficients: \(a^2 = 4\) and \(b(a + 1) = 3\).</p></div>
+<div class="we-t"><p>If two polynomials are equal for all \(x\), their corresponding coefficients must be equal. That gives equations for the unknowns.</p></div>
+<div class="we-s" data-f="f(f(x)) = a(ax + b) + b"><p>\(f(f(x)) = a(ax + b) + b = a^2x + ab + b\).</p></div>
+<div class="we-s" data-f="\text{equate coefficients}"><p>Equate coefficients: \(a^2 = 4\) and \(b(a + 1) = 3\).</p></div>
 <div class="we-a"><p>\(a = 2 \Rightarrow b = 1\); \(a = -2 \Rightarrow -b = 3 \Rightarrow b = -3\). <strong>\(f(x) = 2x + 1\) or \(f(x) = -2x - 3\).</strong> Most students miss the second one.</p></div>
 </div>
 

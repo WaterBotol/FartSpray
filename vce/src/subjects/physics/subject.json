@@ -11,7 +11,7 @@
     { "id": "u3a3", "eyebrow": "Unit 3 · AoS 3", "title": "How are fields used in electricity generation?", "quiz": true,
       "topics": ["u3-flux", "u3-lenz", "u3-generators", "u3-ac", "u3-transformers", "u3-transmission", "u3-photovoltaic"] },
     { "id": "u4a1", "eyebrow": "Unit 4 · AoS 1", "title": "How has understanding about the physical world changed?", "quiz": true,
-      "topics": ["u4-emwaves", "u4-interference", "u4-diffraction", "u4-photoelectric", "u4-duality", "u4-matterwaves", "u4-spectra", "u4-sr-postulates", "u4-sr-dilation", "u4-sr-energy"] },
+      "topics": ["u4-emwaves", "u4-standing", "u4-interference", "u4-diffraction", "u4-photoelectric", "u4-duality", "u4-matterwaves", "u4-spectra", "u4-sr-postulates", "u4-sr-dilation", "u4-sr-energy"] },
     { "id": "u4a2", "eyebrow": "Unit 4 · AoS 2", "title": "How is scientific inquiry used to investigate fields, motion or light?", "quiz": true,
       "topics": ["u4-kss", "u4-data", "u4-poster"] },
     { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }

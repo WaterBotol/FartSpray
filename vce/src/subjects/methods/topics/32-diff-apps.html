@@ -8,16 +8,18 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 -->
 <h2>Tangents and normals</h2>
 <div class="eq"><div class="eq-label">Tangent and normal at \(x = a\)</div>\[ \text{tangent: } y - f(a) = f'(a)(x - a) \qquad \text{normal: } y - f(a) = -\frac{1}{f'(a)}(x - a) \]<p>The normal is perpendicular to the tangent: \(m_1 m_2 = -1\).</p></div>
-<div class="we" data-title="Tangent and normal" data-marks="3" data-f="y - y_1 = m(x - x_1) ;; m_{\text{tangent}} = f&#x27;(a) ;; m_{\text{normal}} = -\dfrac{1}{f&#x27;(a)}">
+<div class="we" data-title="Tangent and normal" data-marks="3">
 <div class="we-q"><p>Find the equations of the tangent and the normal to \(y = x^3 - 2x\) at \(x = 1\).</p></div>
-<div class="we-s"><p>Point: \(y(1) = 1 - 2 = -1\), so \((1, -1)\). Gradient: \(y' = 3x^2 - 2\), so \(y'(1) = 1\).</p></div>
-<div class="we-s"><p>Tangent: \(y + 1 = 1(x - 1) \Rightarrow y = x - 2\). Normal gradient \(= -1\): \(y + 1 = -(x - 1) \Rightarrow y = -x\).</p></div>
+<div class="we-t"><p>The tangent touches the curve and has gradient \(f'(a)\). The normal is perpendicular to the tangent, so its gradient is the negative reciprocal. Both pass through the point \((a, f(a))\).</p></div>
+<div class="we-s" data-f="m_{\text{tangent}} = f&#x27;(a)"><p>Point: \(y(1) = 1 - 2 = -1\), so \((1, -1)\). Gradient: \(y' = 3x^2 - 2\), so \(y'(1) = 1\).</p></div>
+<div class="we-s" data-f="y - y_1 = m(x - x_1) ;; m_{\text{normal}} = -\dfrac{1}{f&#x27;(a)}"><p>Tangent: \(y + 1 = 1(x - 1) \Rightarrow y = x - 2\). Normal gradient \(= -1\): \(y + 1 = -(x - 1) \Rightarrow y = -x\).</p></div>
 <div class="we-a"><p><strong>Tangent \(y = x - 2\); normal \(y = -x\).</strong></p></div>
 </div>
-<div class="we" data-title="Tangents through a point not on the curve (hard)" data-marks="4" data-f="\text{tangent at } x = a: y - f(a) = f&#x27;(a)(x - a)">
+<div class="we" data-title="Tangents through a point not on the curve (hard)" data-marks="4">
 <div class="we-q"><p>Find the equations of the tangents to \(y = x^2\) that pass through the point \((1, -3)\).</p></div>
-<div class="we-s"><p>Let the point of contact be \((a, a^2)\). The gradient there is \(2a\), so the tangent is \(y - a^2 = 2a(x - a)\), i.e. \(y = 2ax - a^2\).</p></div>
-<div class="we-s"><p>It must pass through \((1, -3)\): \(-3 = 2a - a^2 \Rightarrow a^2 - 2a - 3 = 0 \Rightarrow (a - 3)(a + 1) = 0\).</p></div>
+<div class="we-t"><p>If the given point isn't on the curve, you don't know where the tangent touches. Call the point of contact \((a, f(a))\), write the tangent in terms of \(a\), then force it through the given point to solve for \(a\).</p></div>
+<div class="we-s" data-f="y - f(a) = f&#x27;(a)(x - a)"><p>Let the point of contact be \((a, a^2)\). The gradient there is \(2a\), so the tangent is \(y - a^2 = 2a(x - a)\), i.e. \(y = 2ax - a^2\).</p></div>
+<div class="we-s" data-f="\text{substitute the external point}"><p>It must pass through \((1, -3)\): \(-3 = 2a - a^2 \Rightarrow a^2 - 2a - 3 = 0 \Rightarrow (a - 3)(a + 1) = 0\).</p></div>
 <div class="we-a"><p>\(a = 3\): <strong>\(y = 6x - 9\)</strong>; \(a = -1\): <strong>\(y = -2x - 1\)</strong>. The external point isn't on the curve, so you can't use it as the point of contact. Use a general point instead.</p></div>
 </div>
 
@@ -34,11 +36,12 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 <tr><td>\(+\ \to\ +\) or \(-\ \to\ -\)</td><td>\(= 0\) (test fails!)</td><td>stationary point of inflection</td></tr>
 </tbody></table></div>
 <aside class="c-trap" data-title="f''(a) = 0 doesn't prove an inflection"><p>\(f(x) = x^4\) has \(f'(0) = 0\) and \(f''(0) = 0\), but \((0, 0)\) is a local <em>minimum</em>. When the second derivative is 0, go back to the sign test.</p></aside>
-<div class="we" data-title="Full curve sketch of a cubic" data-marks="5" data-f="f&#x27;(x) = 0 \text{ at stationary points} ;; f&#x27;&#x27;(a) &lt; 0 \Rightarrow \text{max},\ f&#x27;&#x27;(a) &gt; 0 \Rightarrow \text{min} ;; \text{inflection: } f&#x27;&#x27; \text{ changes sign}">
+<div class="we" data-title="Full curve sketch of a cubic" data-marks="5">
 <div class="we-q"><p>For \(f(x) = x^3 - 3x^2 - 9x + 5\), find the stationary points and their nature, the point of inflection, and the intervals where \(f\) is strictly decreasing.</p></div>
-<div class="we-s"><p>\(f'(x) = 3x^2 - 6x - 9 = 3(x - 3)(x + 1) = 0 \Rightarrow x = -1, 3\).</p></div>
-<div class="we-s"><p>\(f(-1) = -1 - 3 + 9 + 5 = 10\); \(f(3) = 27 - 27 - 27 + 5 = -22\). \(f''(x) = 6x - 6\): \(f''(-1) = -12 &lt; 0\) (max), \(f''(3) = 12 &gt; 0\) (min).</p></div>
-<div class="we-s"><p>Inflection: \(f''(x) = 0 \Rightarrow x = 1\), and \(f''\) changes sign there. \(f(1) = -6\).</p></div>
+<div class="we-t"><p>Stationary points are where \(f'(x) = 0\). The second derivative tells you the concavity there: concave down is a max, concave up is a min. A point of inflection is where the concavity changes, i.e. \(f''\) changes sign.</p></div>
+<div class="we-s" data-f="f&#x27;(x) = 0"><p>\(f'(x) = 3x^2 - 6x - 9 = 3(x - 3)(x + 1) = 0 \Rightarrow x = -1, 3\).</p></div>
+<div class="we-s" data-f="f&#x27;&#x27;(a) &lt; 0 \Rightarrow \text{max} ;; f&#x27;&#x27;(a) &gt; 0 \Rightarrow \text{min}"><p>\(f(-1) = -1 - 3 + 9 + 5 = 10\); \(f(3) = 27 - 27 - 27 + 5 = -22\). \(f''(x) = 6x - 6\): \(f''(-1) = -12 &lt; 0\) (max), \(f''(3) = 12 &gt; 0\) (min).</p></div>
+<div class="we-s" data-f="f&#x27;&#x27;(x) = 0 \text{ and changes sign}"><p>Inflection: \(f''(x) = 0 \Rightarrow x = 1\), and \(f''\) changes sign there. \(f(1) = -6\).</p></div>
 <div class="we-a"><p><strong>Local max \((-1, 10)\), local min \((3, -22)\), inflection \((1, -6)\). Strictly decreasing on \([-1, 3]\).</strong> VCAA includes the endpoints of monotone intervals (the function is still strictly decreasing on the closed interval).</p></div>
 </div>
 <figure class="fig">
@@ -48,10 +51,11 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 
 <h2>Concavity and points of inflection</h2>
 <p>\(f''(x) &gt; 0\): concave up (gradient increasing). \(f''(x) &lt; 0\): concave down. A <strong>point of inflection</strong> is where the concavity changes; it may or may not be stationary. At a non-stationary inflection point the gradient is at a local max or min, so it's where a quantity grows fastest or slowest (a favourite Exam 2 context).</p>
-<div class="we" data-title="Max and inflection of x e^(−x)" data-marks="4" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; f&#x27;(x) = 0 ;; f&#x27;&#x27;(x) = 0 \text{ and changes sign}">
+<div class="we" data-title="Max and inflection of x e^(−x)" data-marks="4">
 <div class="we-q"><p>For \(f(x) = xe^{-x}\), find the coordinates of the stationary point and the point of inflection.</p></div>
-<div class="we-s"><p>\(f'(x) = e^{-x} - xe^{-x} = (1 - x)e^{-x} = 0 \Rightarrow x = 1\). \(f(1) = e^{-1}\); \(f'\) goes \(+ \to -\), so it's a maximum.</p></div>
-<div class="we-s"><p>\(f''(x) = -e^{-x} - (1 - x)e^{-x} = (x - 2)e^{-x} = 0 \Rightarrow x = 2\), and it changes sign.</p></div>
+<div class="we-t"><p>Same routine as any curve sketch, but the product rule is needed at each stage. Factorising out \(e^{-x}\) makes the equations easy to solve, because \(e^{-x}\) is never zero.</p></div>
+<div class="we-s" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; e^{-x} \neq 0"><p>\(f'(x) = e^{-x} - xe^{-x} = (1 - x)e^{-x} = 0 \Rightarrow x = 1\). \(f(1) = e^{-1}\); \(f'\) goes \(+ \to -\), so it's a maximum.</p></div>
+<div class="we-s" data-f="f&#x27;&#x27;(x) = 0 \text{ and changes sign}"><p>\(f''(x) = -e^{-x} - (1 - x)e^{-x} = (x - 2)e^{-x} = 0 \Rightarrow x = 2\), and it changes sign.</p></div>
 <div class="we-a"><p><strong>Local max \(\left(1, \frac1e\right)\); inflection \(\left(2, \frac{2}{e^2}\right)\).</strong></p></div>
 </div>
 

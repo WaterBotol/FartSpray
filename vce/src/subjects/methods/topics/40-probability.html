@@ -16,32 +16,36 @@ dotpoints: conditional probability and independence | the addition and multiplic
 
 <h2>Karnaugh maps (probability tables)</h2>
 <p>A 2 × 2 table with totals is the fastest tool when there are two events. Fill in what you know; every row and column must add up.</p>
-<div class="we" data-title="Karnaugh map and independence" data-marks="3" data-f="P(A) = P(A \cap B) + P(A \cap B&#x27;) ;; \text{independent} \iff P(A \cap B) = P(A)P(B) ;; P(B \mid A) = \dfrac{P(A \cap B)}{P(A)}">
+<div class="we" data-title="Karnaugh map and independence" data-marks="3">
 <div class="we-q"><p>\(P(A) = 0.6\), \(P(B) = 0.3\) and \(P(A \cap B') = 0.45\). (a) Find \(P(A \cap B)\). (b) Are \(A\) and \(B\) independent? (c) Find \(P(B \mid A)\).</p></div>
-<div class="we-s"><div class="tbl"><table><thead><tr><th></th><th>\(B\)</th><th>\(B'\)</th><th>total</th></tr></thead><tbody><tr><td>\(A\)</td><td><strong>0.15</strong></td><td>0.45</td><td>0.6</td></tr><tr><td>\(A'\)</td><td>0.15</td><td>0.25</td><td>0.4</td></tr><tr><td>total</td><td>0.3</td><td>0.7</td><td>1</td></tr></tbody></table></div></div>
-<div class="we-s"><p>(b) \(P(A)P(B) = 0.18 \ne 0.15 = P(A \cap B)\): not independent.</p></div>
-<div class="we-a"><p><strong>(a) 0.15; (b) not independent; (c) \(P(B \mid A) = \frac{0.15}{0.6} = 0.25\).</strong></p></div>
+<div class="we-t"><p>A Karnaugh map (two-way table) makes every probability visible: rows and columns add to their totals. Independence means the joint probability equals the product of the separate ones.</p></div>
+<div class="we-s" data-f="P(A) = P(A \cap B) + P(A \cap B&#x27;)"><div class="tbl"><table><thead><tr><th></th><th>\(B\)</th><th>\(B'\)</th><th>total</th></tr></thead><tbody><tr><td>\(A\)</td><td><strong>0.15</strong></td><td>0.45</td><td>0.6</td></tr><tr><td>\(A'\)</td><td>0.15</td><td>0.25</td><td>0.4</td></tr><tr><td>total</td><td>0.3</td><td>0.7</td><td>1</td></tr></tbody></table></div></div>
+<div class="we-s" data-f="\text{independent} \iff P(A \cap B) = P(A)P(B)"><p>(b) \(P(A)P(B) = 0.18 \ne 0.15 = P(A \cap B)\): not independent.</p></div>
+<div class="we-a" data-f="P(B \mid A) = \dfrac{P(A \cap B)}{P(A)}"><p><strong>(a) 0.15; (b) not independent; (c) \(P(B \mid A) = \frac{0.15}{0.6} = 0.25\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Finding an unknown from independence" data-marks="2" data-f="P(A \cup B) = P(A) + P(B) - P(A \cap B) ;; \text{independent: } P(A \cap B) = P(A)P(B)">
+<div class="we" data-title="Finding an unknown from independence" data-marks="2">
 <div class="we-q"><p>\(A\) and \(B\) are independent, \(P(A) = 0.4\) and \(P(A \cup B) = 0.7\). Find \(P(B)\).</p></div>
-<div class="we-s"><p>\(P(A \cup B) = P(A) + P(B) - P(A)P(B)\): \(0.7 = 0.4 + p - 0.4p\).</p></div>
+<div class="we-t"><p>The addition rule links the union to the intersection, and independence lets you replace the intersection with a product. That leaves one equation in one unknown.</p></div>
+<div class="we-s" data-f="P(A \cup B) = P(A) + P(B) - P(A \cap B) ;; P(A \cap B) = P(A)P(B)"><p>\(P(A \cup B) = P(A) + P(B) - P(A)P(B)\): \(0.7 = 0.4 + p - 0.4p\).</p></div>
 <div class="we-a"><p>\(0.6p = 0.3\), so <strong>\(P(B) = 0.5\)</strong>.</p></div>
 </div>
 
 <h2>Tree diagrams and the law of total probability</h2>
 <div class="eq"><div class="eq-label">Law of total probability</div>\[ P(B) = P(B \mid A)P(A) + P(B \mid A')P(A') \]<p>Multiply along branches; add the branches that give the outcome you want.</p></div>
-<div class="we" data-title="The false-positive problem (hard)" data-marks="4" data-f="P(+) = P(D)P(+ \mid D) + P(D&#x27;)P(+ \mid D&#x27;) ;; P(D \mid +) = \dfrac{P(D \cap +)}{P(+)}">
+<div class="we" data-title="The false-positive problem (hard)" data-marks="4">
 <div class="we-q"><p>2% of a population has a disease. A test gives a positive result for 95% of people with the disease and for 10% of people without it. A randomly chosen person tests positive. Find the probability that they have the disease, correct to four decimal places.</p></div>
-<div class="we-s"><p>Tree: \(P(D \cap +) = 0.02 \times 0.95 = 0.019\); \(P(D' \cap +) = 0.98 \times 0.10 = 0.098\).</p></div>
-<div class="we-s"><p>\(P(+) = 0.019 + 0.098 = 0.117\).</p></div>
-<div class="we-s"><p>\(P(D \mid +) = \dfrac{P(D \cap +)}{P(+)} = \dfrac{0.019}{0.117}\).</p></div>
+<div class="we-t"><p>This is a “reverse conditional”: you know \(P(+ \mid D)\) but want \(P(D \mid +)\). Use the law of total probability to find \(P(+)\) from both branches, then the conditional probability formula.</p></div>
+<div class="we-s" data-f="P(D \cap +) = P(D)P(+ \mid D)"><p>Tree: \(P(D \cap +) = 0.02 \times 0.95 = 0.019\); \(P(D' \cap +) = 0.98 \times 0.10 = 0.098\).</p></div>
+<div class="we-s" data-f="P(+) = P(D \cap +) + P(D&#x27; \cap +)"><p>\(P(+) = 0.019 + 0.098 = 0.117\).</p></div>
+<div class="we-s" data-f="P(D \mid +) = \dfrac{P(D \cap +)}{P(+)}"><p>\(P(D \mid +) = \dfrac{P(D \cap +)}{P(+)} = \dfrac{0.019}{0.117}\).</p></div>
 <div class="we-a"><p><strong>\(\approx 0.1624\).</strong> Only about 16% of positives actually have the disease, because the disease is rare and the false positives swamp the true ones. This is the classic “reverse conditional” and the answer surprises most people.</p></div>
 </div>
 
-<div class="we" data-title="Without replacement" data-marks="2" data-f="\text{without replacement: multiply along branches} ;; \text{add the separate orders}">
+<div class="we" data-title="Without replacement" data-marks="2">
 <div class="we-q"><p>A bag holds 5 red and 3 blue marbles. Two are drawn without replacement. Find the probability of getting one of each colour.</p></div>
-<div class="we-s"><p>\(P(RB) + P(BR) = \frac58 \times \frac37 + \frac38 \times \frac57\).</p></div>
+<div class="we-t"><p>Without replacement, the second probability depends on the first draw, so the denominators drop by one. Multiply along each branch, then add the branches that give the outcome you want.</p></div>
+<div class="we-s" data-f="P(A \cap B) = P(A)P(B \mid A) ;; \text{add the separate orders}"><p>\(P(RB) + P(BR) = \frac58 \times \frac37 + \frac38 \times \frac57\).</p></div>
 <div class="we-a"><p><strong>\(= \frac{30}{56} = \frac{15}{28}\).</strong> Don't forget both orders.</p></div>
 </div>
 

@@ -3,7 +3,7 @@ id: u3-transmission
 title: Transmission of electricity & power loss
 short: Transmission & power loss
 summary: Why electricity is transmitted at high voltage: line current, voltage drop, power loss, and full worked problems with and without transformers, including the classic traps.
-keywords: transmission, transmission lines, power loss, power lines, voltage drop, line resistance, I squared R, high voltage, step up, step down, grid, substation, efficiency, P = VI, wind turbine, farm, remote, power station, transformer, losses, AC advantage, HVDC
+keywords: transmission, series circuit, parallel circuit, series and parallel, resistors in series, resistors in parallel, V = IR, ohm's law, appliances in parallel, transmission lines, power loss, power lines, voltage drop, line resistance, I squared R, high voltage, step up, step down, grid, substation, efficiency, P = VI, wind turbine, farm, remote, power station, transformer, losses, AC advantage, HVDC
 dotpoints: analyse the effects of stepping up or stepping down the voltage in the transmission of electricity using transformers, including: the power transmitted \(P = VI\); the voltage drop across the transmission lines \(V_{\text{drop}} = I_{\text{line}}R_{\text{line}}\); the power loss in the transmission lines \(P_{\text{loss}} = I_{\text{line}}^2R_{\text{line}}\) | analyse transformer action with reference to electromagnetic induction for an ideal transformer
 -->
 <h2>The problem: power lines have resistance</h2>
@@ -37,14 +37,27 @@ dotpoints: analyse the effects of stepping up or stepping down the voltage in th
 <figcaption>Victoria's grid steps generator voltage up for long-distance transmission, then down in stages (zone substations, pole transformers) to 230 V at the home.</figcaption>
 </figure>
 
+<h2>Circuit rules you'll need (from Units 1–2)</h2>
+<p>Transmission, PV and multi-step appliance questions assume the basic circuit rules. The series and parallel formulas are on the formula sheet; knowing when to use each is up to you.</p>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Series</th><th>Parallel</th></tr></thead>
+<tbody>
+<tr><td>Current</td><td>Same through every component</td><td>Splits: branch currents add to the total</td></tr>
+<tr><td>Voltage</td><td>Shared: component voltages add to the total</td><td>Same across every branch</td></tr>
+<tr><td>Resistance</td><td>\(R_T = R_1 + R_2 + \cdots\)</td><td>\(\dfrac{1}{R_T} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \cdots\)</td></tr>
+<tr><td>Everyday example</td><td>Transmission line resistance in series with the load; PV panels in one string</td><td>Household appliances and lamps (each gets the full voltage); several PV strings side by side</td></tr>
+</tbody></table></div>
+<p>For any component: \(V = IR\) and \(P = VI = I^2R = \dfrac{V^2}{R}\). Switching on more appliances in parallel draws more total current, so the voltage drop along the supply lines increases and the voltage at the house falls.</p>
+
 <h2>The classic comparison</h2>
-<div class="we" data-title="With and without transformers" data-marks="6" data-f="I = \dfrac PV ;; V_{\text{drop}} = IR ;; P_{\text{loss}} = I^2R">
+<div class="we" data-title="With and without transformers" data-marks="6">
 <div class="we-q"><p>A generator supplies 100 kW at 250 V to a town through transmission lines with a total resistance of 0.50 Ω.</p><p>(a) Without transformers, find the line current, the voltage drop along the lines, the power lost and the voltage reaching the town. (b) Repeat with an ideal transformer stepping the voltage up to 10 kV at the generator.</p></div>
-<div class="we-s"><p><strong>(a) Line current</strong> (from the power supplied):</p>\[ I = \frac{P}{V} = \frac{100\,000}{250} = 400\ \text{A} \]</div>
-<div class="we-s"><p><strong>Voltage drop and power loss:</strong></p>\[ V_{\text{drop}} = IR = 400 \times 0.50 = 200\ \text{V} \qquad P_{\text{loss}} = I^2R = 400^2 \times 0.50 = 80\ \text{kW} \]</div>
-<div class="we-s"><p><strong>Voltage at the town:</strong> \(250 - 200 = 50\ \text{V}\). Only \(100 - 80 = 20\ \text{kW}\) arrives. Useless.</p></div>
-<div class="we-s"><p><strong>(b) With 10 kV transmission.</strong> The transformer keeps the power at 100 kW:</p>\[ I = \frac{100\,000}{10\,000} = 10\ \text{A} \]</div>
-<div class="we-s"><p><strong>Drop and loss:</strong></p>\[ V_{\text{drop}} = 10 \times 0.50 = 5.0\ \text{V} \qquad P_{\text{loss}} = 10^2 \times 0.50 = 50\ \text{W} \]<p>The town end receives 9995 V (before stepping down) and 99.95 kW.</p></div>
+<div class="we-t"><p>The power to be delivered fixes the line current (\(I = P/V\)). Line losses depend on the current squared (\(I^2R\)), so transmitting at a higher voltage (lower current) slashes the loss.</p></div>
+<div class="we-s" data-f="I = \dfrac PV"><p><strong>(a) Line current</strong> (from the power supplied):</p>\[ I = \frac{P}{V} = \frac{100\,000}{250} = 400\ \text{A} \]</div>
+<div class="we-s" data-f="V_{\text{drop}} = IR,\ P_{\text{loss}} = I^2R"><p><strong>Voltage drop and power loss:</strong></p>\[ V_{\text{drop}} = IR = 400 \times 0.50 = 200\ \text{V} \]\[ P_{\text{loss}} = I^2R = 400^2 \times 0.50 = 80\ \text{kW} \]</div>
+<div class="we-s" data-f="V_{\text{load}} = V_{\text{supply}} - V_{\text{drop}}"><p><strong>Voltage at the town:</strong> \(250 - 200 = 50\ \text{V}\). Only \(100 - 80 = 20\ \text{kW}\) arrives. Useless.</p></div>
+<div class="we-s" data-f="I = \dfrac PV"><p><strong>(b) With 10 kV transmission.</strong> The transformer keeps the power at 100 kW:</p>\[ I = \frac{100\,000}{10\,000} = 10\ \text{A} \]</div>
+<div class="we-s" data-f="V_{\text{drop}} = IR,\ P_{\text{loss}} = I^2R"><p><strong>Drop and loss:</strong></p>\[ V_{\text{drop}} = 10 \times 0.50 = 5.0\ \text{V} \]\[ P_{\text{loss}} = 10^2 \times 0.50 = 50\ \text{W} \]<p>The town end receives 9995 V (before stepping down) and 99.95 kW.</p></div>
 <div class="we-a"><p><strong>(a) 400 A, 200 V drop, 80 kW lost, 50 V arrives (b) 10 A, 5.0 V drop, 50 W lost.</strong> Raising the voltage 40 times cut the loss by \(40^2 = 1600\) times.</p></div>
 </div>
 
@@ -60,17 +73,26 @@ dotpoints: analyse the effects of stepping up or stepping down the voltage in th
 </ol>
 </aside>
 
-<div class="we" data-title="Wind turbine to a farmhouse (exam style)" data-marks="8" data-f="I = \dfrac PV ;; P_{\text{loss}} = I^2R ;; V_{\text{drop}} = IR ;; \dfrac{V_1}{V_2} = \dfrac{N_1}{N_2}">
+<div class="we" data-title="Wind turbine to a farmhouse (exam style)" data-marks="8">
 <div class="we-q"><p>A wind turbine generates 50 kW at 400 V rms. It supplies a farmhouse through lines with a total resistance of 2.0 Ω.</p><p>(a) Find the power delivered to the farmhouse if no transformers are used. (b) An ideal 1:20 step-up transformer is installed at the turbine and an ideal 20:1 step-down transformer at the farmhouse. Find the line current, the power loss, and the voltage supplied to the farmhouse. (c) By what factor did the power loss decrease?</p></div>
-<div class="we-s"><p><strong>(a)</strong> \(I = 50\,000/400 = 125\ \text{A}\); \(P_{\text{loss}} = 125^2 \times 2.0 = 31\,250\ \text{W}\).</p><p>Delivered: \(50\,000 - 31\,250 = 18\,750\ \text{W} \approx 19\ \text{kW}\) (only 38%!). Voltage at the farm: \(400 - 125 \times 2.0 = 150\ \text{V}\).</p></div>
-<div class="we-s"><p><strong>(b) After step-up:</strong> \(V = 400 \times 20 = 8000\ \text{V}\), so</p>\[ I_{\text{line}} = \frac{50\,000}{8000} = 6.25\ \text{A} \]</div>
-<div class="we-s"><p><strong>Loss and drop:</strong></p>\[ P_{\text{loss}} = 6.25^2 \times 2.0 = 78\ \text{W} \qquad V_{\text{drop}} = 6.25 \times 2.0 = 12.5\ \text{V} \]</div>
-<div class="we-s"><p><strong>Voltage arriving at the step-down transformer:</strong> \(8000 - 12.5 = 7987.5\ \text{V}\).</p><p><strong>After stepping down 20:1:</strong> \(7987.5/20 = 399\ \text{V}\).</p></div>
-<div class="we-s"><p><strong>(c)</strong> \(31\,250/78.1 = 400\), which is \(20^2\) because the current dropped by a factor of 20.</p></div>
+<div class="we-t"><p>A step-up transformer at the source raises the voltage, which cuts the line current by the same factor; power loss falls by that factor squared. A step-down transformer at the destination returns the voltage to a usable level.</p></div>
+<div class="we-s" data-f="I = \dfrac PV,\ P_{\text{loss}} = I^2R"><p><strong>(a)</strong> \(I = 50\,000/400 = 125\ \text{A}\); \(P_{\text{loss}} = 125^2 \times 2.0 = 31\,250\ \text{W}\).</p><p>Delivered: \(50\,000 - 31\,250 = 18\,750\ \text{W} \approx 19\ \text{kW}\) (only 38%!). Voltage at the farm: \(400 - 125 \times 2.0 = 150\ \text{V}\).</p></div>
+<div class="we-s" data-f="\dfrac{V_2}{V_1} = \dfrac{N_2}{N_1},\ I = \dfrac PV"><p><strong>(b) After step-up:</strong> \(V = 400 \times 20 = 8000\ \text{V}\), so</p>\[ I_{\text{line}} = \frac{50\,000}{8000} = 6.25\ \text{A} \]</div>
+<div class="we-s" data-f="P_{\text{loss}} = I^2R,\ V_{\text{drop}} = IR"><p><strong>Loss and drop:</strong></p>\[ P_{\text{loss}} = 6.25^2 \times 2.0 = 78\ \text{W} \]\[ V_{\text{drop}} = 6.25 \times 2.0 = 12.5\ \text{V} \]</div>
+<div class="we-s" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2}"><p><strong>Voltage arriving at the step-down transformer:</strong> \(8000 - 12.5 = 7987.5\ \text{V}\).</p><p><strong>After stepping down 20:1:</strong> \(7987.5/20 = 399\ \text{V}\).</p></div>
+<div class="we-s" data-f="P_{\text{loss}} \propto I^2"><p><strong>(c)</strong> \(31\,250/78.1 = 400\), which is \(20^2\) because the current dropped by a factor of 20.</p></div>
 <div class="we-a"><p><strong>(a) 19 kW (b) 6.25 A, 78 W lost, 399 V at the farmhouse (c) 400 times smaller.</strong></p></div>
 </div>
 
 <div class="sim" data-sim="transmission"></div>
+
+<div class="we" data-title="How many lamps can the line supply?" data-marks="4">
+<div class="we-q"><p>A generator provides 240 V RMS. Cables with a total resistance of 4.0 Ω carry the power to a hall, where 60 W lamps are connected in parallel. With the lamps on, the voltage at the hall is 220 V RMS. How many lamps are on?</p></div>
+<div class="we-t"><p>The cables are in series with the hall, so the same current flows through both and the supply voltage is shared between them. The lamps are in parallel, so each gets the full hall voltage and their currents add to the line current.</p></div>
+<div class="we-s" data-f="V_{\text{drop}} = IR"><p>Voltage drop along the cables: \(240 - 220 = 20\ \text{V}\). The cables are in series with the hall, so the line current is \(I = V_{\text{drop}}/R = 20/4.0 = 5.0\ \text{A}\).</p></div>
+<div class="we-s" data-f="P = VI"><p>Each lamp (in parallel, so it gets the full 220 V) draws \(I = P/V = 60/220 = 0.273\ \text{A}\).</p></div>
+<div class="we-a" data-f="I_T = I_1 + I_2 + \cdots"><p>Parallel branch currents add: \(5.0/0.273 = 18.3\), so <strong>18 lamps</strong>. Alternatively, the power delivered to the hall is \(220 \times 5.0 = 1100\ \text{W}\), and \(1100/60 = 18\).</p></div>
+</div>
 
 <h2>AC, DC and the grid</h2>
 <ul>

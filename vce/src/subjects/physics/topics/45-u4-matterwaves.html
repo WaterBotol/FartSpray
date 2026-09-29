@@ -11,10 +11,11 @@ dotpoints: interpret electron diffraction patterns as evidence for the wave-like
 <div class="eq"><div class="eq-label">de Broglie wavelength</div>\[ \lambda = \frac{h}{p} = \frac{h}{mv} \quad (v \ll c) \]</div>
 <p>Faster or heavier particles have shorter wavelengths.</p>
 
-<div class="we" data-title="Electron vs cricket ball" data-marks="3" data-f="\lambda = \dfrac{h}{mv}">
+<div class="we" data-title="Electron vs cricket ball" data-marks="3">
 <div class="we-q"><p>Find the de Broglie wavelength of (a) an electron moving at \(2.0\times10^6\ \text{m s}^{-1}\) and (b) a 0.16 kg cricket ball bowled at 40 m s⁻¹. Comment on whether each would show diffraction.</p></div>
-<div class="we-s"><p><strong>(a)</strong> \(\lambda = \dfrac{h}{mv} = \dfrac{6.63\times10^{-34}}{(9.1\times10^{-31})(2.0\times10^6)} = 3.6\times10^{-10}\ \text{m}\).</p><p>This is similar to the spacing of atoms in a crystal (~\(10^{-10}\) m), so a crystal diffracts electrons strongly (\(\lambda/w \approx 1\)).</p></div>
-<div class="we-s"><p><strong>(b)</strong> \(\lambda = \dfrac{6.63\times10^{-34}}{0.16 \times 40} = 1.0\times10^{-34}\ \text{m}\).</p><p>Nothing has gaps anywhere near that small (a proton is about \(10^{-15}\) m), so \(\lambda/w\) is effectively zero and no wave behaviour can ever be observed.</p></div>
+<div class="we-t"><p>De Broglie: every moving object has a wavelength \(h/p\). Wave behaviour like diffraction only shows up when that wavelength is comparable to the size of a gap or obstacle.</p></div>
+<div class="we-s" data-f="\lambda = \dfrac{h}{mv}"><p><strong>(a)</strong> \(\lambda = \dfrac{h}{mv} = \dfrac{6.63\times10^{-34}}{(9.1\times10^{-31})(2.0\times10^6)} = 3.6\times10^{-10}\ \text{m}\).</p><p>This is similar to the spacing of atoms in a crystal (~\(10^{-10}\) m), so a crystal diffracts electrons strongly (\(\lambda/w \approx 1\)).</p></div>
+<div class="we-s" data-f="\lambda = \dfrac{h}{mv}"><p><strong>(b)</strong> \(\lambda = \dfrac{6.63\times10^{-34}}{0.16 \times 40} = 1.0\times10^{-34}\ \text{m}\).</p><p>Nothing has gaps anywhere near that small (a proton is about \(10^{-15}\) m), so \(\lambda/w\) is effectively zero and no wave behaviour can ever be observed.</p></div>
 <div class="we-a"><p><strong>(a) 0.36 nm, diffracts through crystals (b) \(10^{-34}\) m, no observable diffraction.</strong> All matter has a wavelength; it only matters for tiny masses.</p></div>
 </div>
 
@@ -42,22 +43,24 @@ dotpoints: interpret electron diffraction patterns as evidence for the wave-like
 <h2>Accelerated electrons</h2>
 <p>Electrons in diffraction experiments and electron microscopes are accelerated through a voltage \(V\), gaining \(E_k = eV\). To find their wavelength, get the momentum from the kinetic energy:</p>
 <div class="eq">\[ E_k = \frac{p^2}{2m} \Rightarrow p = \sqrt{2mE_k} = \sqrt{2meV} \qquad \lambda = \frac{h}{\sqrt{2meV}} \]</div>
-<div class="we" data-title="Electrons accelerated through 150 V" data-marks="3" data-f="E_k = qV ;; p = \sqrt{2mE_k} ;; \lambda = \dfrac hp">
+<div class="we" data-title="Electrons accelerated through 150 V" data-marks="3">
 <div class="we-q"><p>Electrons are accelerated from rest through 150 V. Find their de Broglie wavelength.</p></div>
-<div class="we-s"><p><strong>Kinetic energy:</strong> \(E_k = eV = (1.60\times10^{-19})(150) = 2.4\times10^{-17}\ \text{J}\).</p></div>
-<div class="we-s"><p><strong>Momentum:</strong> \(p = \sqrt{2mE_k} = \sqrt{2(9.1\times10^{-31})(2.4\times10^{-17})} = 6.6\times10^{-24}\ \text{kg m s}^{-1}\).</p></div>
-<div class="we-s"><p><strong>Wavelength:</strong> \(\lambda = h/p = 6.63\times10^{-34}/6.6\times10^{-24} = 1.0\times10^{-10}\ \text{m}\).</p></div>
+<div class="we-t"><p>An accelerating voltage gives electrons kinetic energy \(qV\). Momentum follows from kinetic energy, and the de Broglie wavelength from momentum.</p></div>
+<div class="we-s" data-f="E_k = qV"><p><strong>Kinetic energy:</strong> \(E_k = eV = (1.60\times10^{-19})(150) = 2.4\times10^{-17}\ \text{J}\).</p></div>
+<div class="we-s" data-f="p = \sqrt{2mE_k}"><p><strong>Momentum:</strong> \(p = \sqrt{2mE_k} = \sqrt{2(9.1\times10^{-31})(2.4\times10^{-17})} = 6.6\times10^{-24}\ \text{kg m s}^{-1}\).</p></div>
+<div class="we-s" data-f="\lambda = \dfrac hp"><p><strong>Wavelength:</strong> \(\lambda = h/p = 6.63\times10^{-34}/6.6\times10^{-24} = 1.0\times10^{-10}\ \text{m}\).</p></div>
 <div class="we-a"><p><strong>0.10 nm</strong>, about one atomic spacing, which is why a few hundred volts is ideal for electron diffraction by crystals. Increasing the voltage shortens the wavelength (\(\lambda \propto 1/\sqrt{V}\)), so the rings get <em>smaller</em>.</p></div>
 </div>
 
 <h2>Comparing electron and X-ray diffraction</h2>
 <p>If an electron beam and an X-ray beam produce <strong>identical diffraction patterns</strong> from the same crystal, they have the <strong>same wavelength</strong>, and so (from \(\lambda = h/p\)) the <strong>same momentum</strong>. Their energies, however, are very different:</p>
 <div class="eq">\[ \text{photon: } E = pc \qquad\qquad \text{electron: } E_k = \frac{p^2}{2m} \]</div>
-<div class="we" data-title="Same pattern, different energy (hard)" data-marks="4" data-f="p = \dfrac{h}{\lambda} ;; E = pc ;; E_k = \dfrac{p^2}{2m}">
+<div class="we" data-title="Same pattern, different energy (hard)" data-marks="4">
 <div class="we-q"><p>X-rays of wavelength 0.10 nm and an electron beam produce identical diffraction patterns from a metal foil. Find (a) the momentum of each, (b) the energy of each X-ray photon and (c) the kinetic energy of each electron. Give energies in eV.</p></div>
-<div class="we-s"><p><strong>(a) Same pattern → same λ → same momentum:</strong> \(p = h/\lambda = 6.63\times10^{-34}/1.0\times10^{-10} = 6.63\times10^{-24}\ \text{kg m s}^{-1}\) for both.</p></div>
-<div class="we-s"><p><strong>(b) Photon:</strong> \(E = pc = (6.63\times10^{-24})(3.0\times10^8) = 1.99\times10^{-15}\ \text{J} = 1.24\times10^4\ \text{eV}\) (12.4 keV).</p></div>
-<div class="we-s"><p><strong>(c) Electron:</strong> \(E_k = \dfrac{p^2}{2m} = \dfrac{(6.63\times10^{-24})^2}{2(9.1\times10^{-31})} = 2.4\times10^{-17}\ \text{J} = 151\ \text{eV}\).</p></div>
+<div class="we-t"><p>A diffraction pattern depends only on wavelength, so identical patterns mean identical wavelengths and therefore identical momenta. The energies differ because photons (\(E = pc\)) and electrons (\(E_k = p^2/2m\)) relate energy to momentum differently.</p></div>
+<div class="we-s" data-f="p = \dfrac h\lambda"><p><strong>(a) Same pattern → same λ → same momentum:</strong> \(p = h/\lambda = 6.63\times10^{-34}/1.0\times10^{-10} = 6.63\times10^{-24}\ \text{kg m s}^{-1}\) for both.</p></div>
+<div class="we-s" data-f="E = pc"><p><strong>(b) Photon:</strong> \(E = pc = (6.63\times10^{-24})(3.0\times10^8) = 1.99\times10^{-15}\ \text{J} = 1.24\times10^4\ \text{eV}\) (12.4 keV).</p></div>
+<div class="we-s" data-f="E_k = \dfrac{p^2}{2m}"><p><strong>(c) Electron:</strong> \(E_k = \dfrac{p^2}{2m} = \dfrac{(6.63\times10^{-24})^2}{2(9.1\times10^{-31})} = 2.4\times10^{-17}\ \text{J} = 151\ \text{eV}\).</p></div>
 <div class="we-a"><p><strong>Same momentum (\(6.6\times10^{-24}\ \text{kg m s}^{-1}\)); the photon has about 12 keV but the electron only about 150 eV.</strong> This is why electron microscopes can image delicate samples: the same resolving wavelength with far less energy.</p></div>
 </div>
 <aside class="c-trap" data-title="Trick alert: 'same energy' does not mean 'same pattern'">
