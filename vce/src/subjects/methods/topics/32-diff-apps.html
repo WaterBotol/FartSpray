@@ -8,13 +8,13 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 -->
 <h2>Tangents and normals</h2>
 <div class="eq"><div class="eq-label">Tangent and normal at \(x = a\)</div>\[ \text{tangent: } y - f(a) = f'(a)(x - a) \qquad \text{normal: } y - f(a) = -\frac{1}{f'(a)}(x - a) \]<p>The normal is perpendicular to the tangent: \(m_1 m_2 = -1\).</p></div>
-<div class="we" data-title="Tangent and normal" data-marks="3">
+<div class="we" data-title="Tangent and normal" data-marks="3" data-f="y - y_1 = m(x - x_1) ;; m_{\text{tangent}} = f&#x27;(a) ;; m_{\text{normal}} = -\dfrac{1}{f&#x27;(a)}">
 <div class="we-q"><p>Find the equations of the tangent and the normal to \(y = x^3 - 2x\) at \(x = 1\).</p></div>
 <div class="we-s"><p>Point: \(y(1) = 1 - 2 = -1\), so \((1, -1)\). Gradient: \(y' = 3x^2 - 2\), so \(y'(1) = 1\).</p></div>
 <div class="we-s"><p>Tangent: \(y + 1 = 1(x - 1) \Rightarrow y = x - 2\). Normal gradient \(= -1\): \(y + 1 = -(x - 1) \Rightarrow y = -x\).</p></div>
 <div class="we-a"><p><strong>Tangent \(y = x - 2\); normal \(y = -x\).</strong></p></div>
 </div>
-<div class="we" data-title="Tangents through a point not on the curve (hard)" data-marks="4">
+<div class="we" data-title="Tangents through a point not on the curve (hard)" data-marks="4" data-f="\text{tangent at } x = a: y - f(a) = f&#x27;(a)(x - a)">
 <div class="we-q"><p>Find the equations of the tangents to \(y = x^2\) that pass through the point \((1, -3)\).</p></div>
 <div class="we-s"><p>Let the point of contact be \((a, a^2)\). The gradient there is \(2a\), so the tangent is \(y - a^2 = 2a(x - a)\), i.e. \(y = 2ax - a^2\).</p></div>
 <div class="we-s"><p>It must pass through \((1, -3)\): \(-3 = 2a - a^2 \Rightarrow a^2 - 2a - 3 = 0 \Rightarrow (a - 3)(a + 1) = 0\).</p></div>
@@ -34,7 +34,7 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 <tr><td>\(+\ \to\ +\) or \(-\ \to\ -\)</td><td>\(= 0\) (test fails!)</td><td>stationary point of inflection</td></tr>
 </tbody></table></div>
 <aside class="c-trap" data-title="f''(a) = 0 doesn't prove an inflection"><p>\(f(x) = x^4\) has \(f'(0) = 0\) and \(f''(0) = 0\), but \((0, 0)\) is a local <em>minimum</em>. When the second derivative is 0, go back to the sign test.</p></aside>
-<div class="we" data-title="Full curve sketch of a cubic" data-marks="5">
+<div class="we" data-title="Full curve sketch of a cubic" data-marks="5" data-f="f&#x27;(x) = 0 \text{ at stationary points} ;; f&#x27;&#x27;(a) &lt; 0 \Rightarrow \text{max},\ f&#x27;&#x27;(a) &gt; 0 \Rightarrow \text{min} ;; \text{inflection: } f&#x27;&#x27; \text{ changes sign}">
 <div class="we-q"><p>For \(f(x) = x^3 - 3x^2 - 9x + 5\), find the stationary points and their nature, the point of inflection, and the intervals where \(f\) is strictly decreasing.</p></div>
 <div class="we-s"><p>\(f'(x) = 3x^2 - 6x - 9 = 3(x - 3)(x + 1) = 0 \Rightarrow x = -1, 3\).</p></div>
 <div class="we-s"><p>\(f(-1) = -1 - 3 + 9 + 5 = 10\); \(f(3) = 27 - 27 - 27 + 5 = -22\). \(f''(x) = 6x - 6\): \(f''(-1) = -12 &lt; 0\) (max), \(f''(3) = 12 &gt; 0\) (min).</p></div>
@@ -48,7 +48,7 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 
 <h2>Concavity and points of inflection</h2>
 <p>\(f''(x) &gt; 0\): concave up (gradient increasing). \(f''(x) &lt; 0\): concave down. A <strong>point of inflection</strong> is where the concavity changes; it may or may not be stationary. At a non-stationary inflection point the gradient is at a local max or min, so it's where a quantity grows fastest or slowest (a favourite Exam 2 context).</p>
-<div class="we" data-title="Max and inflection of x e^(−x)" data-marks="4">
+<div class="we" data-title="Max and inflection of x e^(−x)" data-marks="4" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; f&#x27;(x) = 0 ;; f&#x27;&#x27;(x) = 0 \text{ and changes sign}">
 <div class="we-q"><p>For \(f(x) = xe^{-x}\), find the coordinates of the stationary point and the point of inflection.</p></div>
 <div class="we-s"><p>\(f'(x) = e^{-x} - xe^{-x} = (1 - x)e^{-x} = 0 \Rightarrow x = 1\). \(f(1) = e^{-1}\); \(f'\) goes \(+ \to -\), so it's a maximum.</p></div>
 <div class="we-s"><p>\(f''(x) = -e^{-x} - (1 - x)e^{-x} = (x - 2)e^{-x} = 0 \Rightarrow x = 2\), and it changes sign.</p></div>
@@ -112,22 +112,22 @@ dotpoints: equations of tangents and normals | average and instantaneous rates o
 <div class="mcq-x"><p>Point \((4, 2)\); tangent gradient \(\frac{1}{2\sqrt4} = \frac14\), so normal gradient \(-4\). Normal: \(y - 2 = -4(x - 4)\). At \(y = 0\): \(x - 4 = \frac12\), so \(x = 4.5\). Option D is where the tangent (not the normal) crosses the axis.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="f&#x27;(x) = 0 \text{ at stationary points} ;; \text{nature: sign of } f&#x27; \text{ or } f&#x27;&#x27;">
 <div class="pq-q"><p>Find the coordinates and nature of the stationary points of \(y = 2x^3 + 3x^2 - 12x\).</p></div>
 <div class="pq-s"><p>\(y' = 6x^2 + 6x - 12 = 6(x + 2)(x - 1) = 0 \Rightarrow x = -2, 1\).</p><p>\(y(-2) = -16 + 12 + 24 = 20\): local max \((-2, 20)\). \(y(1) = 2 + 3 - 12 = -7\): local min \((1, -7)\). (Positive cubic, so max first.)</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{tangent at } x = a: y - f(a) = f&#x27;(a)(x - a) ;; \dfrac{d}{dx}\log_e x = \dfrac1x">
 <div class="pq-q"><p>Find the equation of the tangent to \(y = \log_e x\) that passes through the origin.</p></div>
 <div class="pq-s"><p>Contact point \((a, \log_e a)\), gradient \(\frac1a\). Tangent: \(y - \log_e a = \frac1a(x - a)\). [1]</p><p>Through \((0, 0)\): \(-\log_e a = -1 \Rightarrow a = e\). [1]</p><p>Tangent: \(y = \frac{x}{e}\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="\text{max rate of change: } N&#x27;&#x27;(t) = 0">
 <div class="pq-q"><p>The number of people infected in an outbreak is modelled by \(N(t) = \dfrac{1000}{1 + 99e^{-0.5t}}\), \(t\) in days. Using CAS: (a) find the rate of infection when \(t = 5\); (b) find when the infection rate is greatest and state that rate.</p></div>
 <div class="pq-s"><p>(a) \(N'(5) \approx 48.8\) people per day. [1]</p><p>(b) The rate is greatest at the point of inflection of \(N\): solve \(N''(t) = 0\), giving \(t = 2\log_e 99 \approx 9.19\) days. [2]</p><p>At that time \(N = 500\) and \(N' = 0.5 \times 500 \times \frac{500}{1000} = 125\) people per day. [1]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{inflection needs } f&#x27;&#x27; \text{ to change sign}">
 <div class="pq-q"><p>A student says: “\(f''(0) = 0\) for \(f(x) = x^4\), so \((0, 0)\) is a point of inflection.” Correct them.</p></div>
 <div class="pq-s"><p>\(f''(a) = 0\) is necessary but not sufficient. Concavity must <em>change</em>: \(f''(x) = 12x^2 \ge 0\) on both sides of 0, so there's no change. Sign test on \(f'(x) = 4x^3\): \(- \to +\). It's a local minimum.</p></div>
 </div>

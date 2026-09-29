@@ -14,33 +14,33 @@ dotpoints: the normal distribution N(μ, σ²) and the standard normal distribut
 <tbody><tr><td>Approx. probability</td><td>68%</td><td>95%</td><td>99.7%</td></tr></tbody></table></div>
 <div class="sim" data-sim="normal"></div>
 
-<div class="we" data-title="Probability and percentile" data-marks="3">
+<div class="we" data-title="Probability and percentile" data-marks="3" data-f="Z = \dfrac{X - \mu}{\sigma} ;; x = \mu + z\sigma">
 <div class="we-q"><p>Heights of adult men are \(X \sim \text{N}(170, 8^2)\) cm. Find (a) \(P(X &gt; 180)\), (b) the height exceeded by only 10% of men.</p></div>
 <div class="we-s"><p>(a) \(z = \frac{180 - 170}{8} = 1.25\); \(P(Z &gt; 1.25) \approx 0.1056\).</p></div>
 <div class="we-s"><p>(b) Need \(P(X &gt; h) = 0.1\), i.e. \(P(X &lt; h) = 0.9\). Inverse normal: \(z = 1.2816\), so \(h = 170 + 1.2816 \times 8\).</p></div>
 <div class="we-a"><p><strong>(a) 0.1056, (b) \(h \approx 180.25\) cm.</strong> CAS inverse normal uses the area to the <em>left</em> by default: convert “top 10%” into 0.9.</p></div>
 </div>
 
-<div class="we" data-title="Using the 68–95–99.7 rule (tech-free)" data-marks="2">
+<div class="we" data-title="Using the 68–95–99.7 rule (tech-free)" data-marks="2" data-f="68\%,\ 95\%,\ 99.7\% \text{ within } 1, 2, 3\ \sigma">
 <div class="we-q"><p>\(X \sim \text{N}(50, 16)\). Without technology, estimate \(P(42 &lt; X &lt; 54)\).</p></div>
 <div class="we-s"><p>\(\sigma = 4\). \(42 = \mu - 2\sigma\), \(54 = \mu + \sigma\). By symmetry, \(P(42 &lt; X &lt; 50) \approx \frac{95\%}{2} = 47.5\%\) and \(P(50 &lt; X &lt; 54) \approx \frac{68\%}{2} = 34\%\).</p></div>
 <div class="we-a"><p><strong>\(\approx 0.815\)</strong> (81.5%). Draw the bell and split at the mean.</p></div>
 </div>
 
-<div class="we" data-title="Finding σ" data-marks="2">
+<div class="we" data-title="Finding σ" data-marks="2" data-f="Z = \dfrac{X - \mu}{\sigma}">
 <div class="we-q"><p>The mass of a packet is normally distributed with mean 50 g, and 10% of packets weigh less than 40 g. Find the standard deviation.</p></div>
 <div class="we-s"><p>\(P(X &lt; 40) = 0.1 \Rightarrow \frac{40 - 50}{\sigma} = -1.2816\).</p></div>
 <div class="we-a"><p><strong>\(\sigma = \frac{10}{1.2816} \approx 7.80\) g.</strong></p></div>
 </div>
 
-<div class="we" data-title="Finding μ and σ together (hard)" data-marks="4">
+<div class="we" data-title="Finding μ and σ together (hard)" data-marks="4" data-f="Z = \dfrac{X - \mu}{\sigma} ;; \text{two equations in } \mu, \sigma">
 <div class="we-q"><p>For a normal variable, \(P(X &lt; 30) = 0.2\) and \(P(X &gt; 60) = 0.1\). Find \(\mu\) and \(\sigma\).</p></div>
 <div class="we-s"><p>\(\frac{30 - \mu}{\sigma} = z_{0.2} = -0.8416\) and \(\frac{60 - \mu}{\sigma} = z_{0.9} = 1.2816\).</p></div>
 <div class="we-s"><p>So \(30 = \mu - 0.8416\sigma\) and \(60 = \mu + 1.2816\sigma\). Subtract: \(30 = 2.1232\sigma\).</p></div>
 <div class="we-a"><p><strong>\(\sigma \approx 14.13\), \(\mu \approx 30 + 0.8416 \times 14.13 \approx 41.89\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Conditional normal, then binomial (Exam 2 chain)" data-marks="4">
+<div class="we" data-title="Conditional normal, then binomial (Exam 2 chain)" data-marks="4" data-f="P(A \mid B) = \dfrac{P(A \cap B)}{P(B)} ;; P(Y = y) = \dbinom ny p^y(1 - p)^{n - y}">
 <div class="we-q"><p>Using \(X \sim \text{N}(170, 8^2)\): (a) find \(P(X &gt; 180 \mid X &gt; 170)\); (b) ten men are chosen at random. Find the probability that at least two are taller than 180 cm.</p></div>
 <div class="we-s"><p>(a) \(\frac{P(X &gt; 180)}{P(X &gt; 170)} = \frac{0.1056}{0.5} \approx 0.2113\).</p></div>
 <div class="we-s"><p>(b) \(Y \sim \text{Bi}(10, 0.1056)\): \(P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1)\).</p></div>
@@ -93,22 +93,22 @@ dotpoints: the normal distribution N(μ, σ²) and the standard normal distribut
 <div class="mcq-x"><p>About 32% lies <em>outside</em> \(\mu \pm \sigma\), split between both tails, so \(P(X &gt; \mu + \sigma) \approx 0.16\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="Z = \dfrac{X - \mu}{\sigma}">
 <div class="pq-q"><p>Battery life is normal with mean 400 hours and standard deviation 25 hours. Find the proportion of batteries lasting between 350 and 420 hours.</p></div>
 <div class="pq-s"><p>\(z\)-scores \(-2\) and \(0.8\). \(P(-2 &lt; Z &lt; 0.8) \approx 0.7881 - 0.0228 = 0.7654\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="Z = \dfrac{X - \mu}{\sigma}">
 <div class="pq-q"><p>The time to complete a puzzle is normal with mean 12 minutes. 5% of people take more than 18 minutes. Find the standard deviation and the proportion taking less than 10 minutes.</p></div>
 <div class="pq-s"><p>\(\frac{18 - 12}{\sigma} = 1.6449 \Rightarrow \sigma \approx 3.648\) min. [2]</p><p>\(P(X &lt; 10) = P\left(Z &lt; \frac{-2}{3.648}\right) = P(Z &lt; -0.548) \approx 0.2917\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="Z = \dfrac{X - \mu}{\sigma} ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
 <div class="pq-q"><p>Apples have masses \(M \sim \text{N}(150, 20^2)\) g. Apples under 120 g are rejected. (a) Find the proportion rejected. (b) Is the mean mass of the accepted apples greater or less than 150 g? Give a reason. (c) A box holds 12 apples chosen at random from the accepted apples. Find the probability that at least 11 weigh more than 140 g.</p></div>
 <div class="pq-s"><p>(a) \(P(M &lt; 120) = P(Z &lt; -1.5) \approx 0.0668\). [1]</p><p>(b) Greater: the lightest apples have been removed from the left tail. [1]</p><p>(c) \(P(M &gt; 140 \mid M \ge 120) = \frac{P(M &gt; 140)}{P(M \ge 120)} = \frac{0.6915}{0.9332} \approx 0.7410\). [1] Then \(Y \sim \text{Bi}(12, 0.7410)\): \(P(Y \ge 11) \approx 0.1423\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="P(X &gt; a) = 0.05 \iff P(X &lt; a) = 0.95">
 <div class="pq-q"><p>A student uses invNorm(0.05, 60, 4) to find “the value exceeded by 5% of the population”. What's wrong?</p></div>
 <div class="pq-s"><p>invNorm uses the area to the left, so 0.05 gives the <em>bottom</em> 5% (≈ 53.4). The value exceeded by 5% needs invNorm(0.95, 60, 4) ≈ 66.6.</p></div>
 </div>

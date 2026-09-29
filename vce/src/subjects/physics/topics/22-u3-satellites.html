@@ -22,14 +22,14 @@ dotpoints: apply the concepts of force due to gravity (\(F_g = mg\)) and normal 
 <h2>Kepler's third law</h2>
 <p>Rearranging the orbit equation shows that \(r^3/T^2\) is the same for every satellite of the same central body:</p>
 <div class="eq"><div class="eq-label">Kepler's third law</div>\[ \frac{r^3}{T^2} = \frac{GM}{4\pi^2} = \text{constant} \qquad\Rightarrow\qquad \frac{r_1^3}{T_1^2} = \frac{r_2^3}{T_2^2} \]<p>A graph of \(T^2\) against \(r^3\) is a straight line through the origin with gradient \(4\pi^2/GM\). This is how the mass of a planet is found from its moons.</p></div>
-<div class="we" data-title="Ratio without G" data-marks="2">
+<div class="we" data-title="Ratio without G" data-marks="2" data-f="\dfrac{r^3}{T^2} = \dfrac{GM}{4\pi^2}">
 <div class="we-q"><p>Satellite B orbits a planet at four times the orbital radius of satellite A. If A's period is 2.0 hours, what is B's period?</p></div>
 <div class="we-s">\[ \frac{T_B^2}{T_A^2} = \frac{r_B^3}{r_A^3} = 4^3 = 64 \Rightarrow \frac{T_B}{T_A} = 8 \]</div>
 <div class="we-a"><p><strong>16 hours.</strong> Four times the radius, \(4^{3/2} = 8\) times the period.</p></div>
 </div>
 
 <h2>Low Earth orbit: the ISS</h2>
-<div class="we" data-title="Speed and period of the ISS" data-marks="3">
+<div class="we" data-title="Speed and period of the ISS" data-marks="3" data-f="v = \sqrt{\dfrac{GM}{r}} ;; T = \dfrac{2\pi r}{v}">
 <div class="we-q"><p>The ISS orbits 400 km above Earth's surface. Find its orbital speed and period.</p></div>
 <div class="we-s"><p><strong>Orbital radius:</strong> \(r = 6.37\times10^6 + 4.00\times10^5 = 6.77\times10^6\ \text{m}\).</p></div>
 <div class="we-s"><p><strong>Speed:</strong></p>\[ v = \sqrt{\frac{GM_E}{r}} = \sqrt{\frac{(6.67\times10^{-11})(5.98\times10^{24})}{6.77\times10^6}} = 7.68\times10^3\ \text{m s}^{-1} \]</div>
@@ -44,7 +44,7 @@ dotpoints: apply the concepts of force due to gravity (\(F_g = mg\)) and normal 
   <li>orbit directly above the <strong>equator</strong>;</li>
   <li>travel in the <strong>same direction</strong> as Earth rotates (west to east).</li>
 </ul>
-<div class="we" data-title="Radius and altitude of a geostationary orbit" data-marks="4">
+<div class="we" data-title="Radius and altitude of a geostationary orbit" data-marks="4" data-f="r = \sqrt[3]{\dfrac{GMT^2}{4\pi^2}} ;; v = \dfrac{2\pi r}{T}">
 <div class="we-q"><p>Calculate the orbital radius and altitude of a geostationary satellite, and its orbital speed.</p></div>
 <div class="we-s"><p><strong>Period in seconds:</strong> \(T = 24 \times 3600 = 86\,400\ \text{s}\).</p></div>
 <div class="we-s"><p><strong>Rearrange Kepler's third law for \(r\):</strong></p>\[ r = \sqrt[3]{\frac{GM_ET^2}{4\pi^2}} = \sqrt[3]{\frac{(6.67\times10^{-11})(5.98\times10^{24})(86\,400)^2}{4\pi^2}} = 4.23\times10^7\ \text{m} \]</div>
@@ -58,7 +58,7 @@ dotpoints: apply the concepts of force due to gravity (\(F_g = mg\)) and normal 
 
 <h2>GPS satellites</h2>
 <p>The Global Positioning System uses about 30 satellites at an altitude of about 20 200 km with periods of about 12 hours, in several tilted orbital planes so that at least four are visible from anywhere on Earth. A receiver works out its position from the timing of signals from several satellites. They are <strong>not</strong> geostationary.</p>
-<div class="we" data-title="Checking the GPS altitude" data-marks="3">
+<div class="we" data-title="Checking the GPS altitude" data-marks="3" data-f="r = \sqrt[3]{\dfrac{GMT^2}{4\pi^2}} ;; \dfrac{r_1^3}{T_1^2} = \dfrac{r_2^3}{T_2^2}">
 <div class="we-q"><p>Show that a satellite with a 12.0 hour period orbits at an altitude of about \(2.0\times10^7\ \text{m}\).</p></div>
 <div class="we-s"><p>\(T = 12.0 \times 3600 = 43\,200\ \text{s}\).</p></div>
 <div class="we-s">\[ r = \sqrt[3]{\frac{GM_ET^2}{4\pi^2}} = \sqrt[3]{\frac{(3.99\times10^{14})(43\,200)^2}{4\pi^2}} = 2.66\times10^7\ \text{m} \]</div>
@@ -66,7 +66,7 @@ dotpoints: apply the concepts of force due to gravity (\(F_g = mg\)) and normal 
 </div>
 
 <h2>Finding the mass of a planet or star</h2>
-<div class="we" data-title="Weighing the Earth using the Moon" data-marks="3">
+<div class="we" data-title="Weighing the Earth using the Moon" data-marks="3" data-f="M = \dfrac{4\pi^2 r^3}{GT^2}">
 <div class="we-q"><p>The Moon orbits Earth with a radius of \(3.84\times10^8\ \text{m}\) and a period of 27.3 days. Calculate the mass of Earth.</p></div>
 <div class="we-s"><p><strong>Period in seconds:</strong> \(T = 27.3 \times 86\,400 = 2.36\times10^6\ \text{s}\).</p></div>
 <div class="we-s"><p><strong>Rearrange for \(M\):</strong></p>\[ M = \frac{4\pi^2 r^3}{GT^2} = \frac{4\pi^2(3.84\times10^8)^3}{(6.67\times10^{-11})(2.36\times10^6)^2} = 6.0\times10^{24}\ \text{kg} \]</div>
@@ -120,22 +120,22 @@ dotpoints: apply the concepts of force due to gravity (\(F_g = mg\)) and normal 
 <div class="mcq-x"><p>\(T^2 = \dfrac{4\pi^2}{GM}r^3\): the gradient of \(T^2\) vs \(r^3\) is \(4\pi^2/GM\). If the axes were swapped the gradient would be \(GM/4\pi^2\), so read the axes carefully.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="v = \sqrt{\dfrac{GM}{r}} ;; T = \dfrac{2\pi r}{v}">
 <div class="pq-q"><p>A satellite orbits 2000 km above Earth's surface. Calculate (a) its orbital speed and (b) its period in minutes.</p></div>
 <div class="pq-s"><p>\(r = 6.37\times10^6 + 2.00\times10^6 = 8.37\times10^6\ \text{m}\).</p><p>(a) \(v = \sqrt{(3.99\times10^{14})/(8.37\times10^6)} = 6.90\times10^3\ \text{m s}^{-1}\).</p><p>(b) \(T = 2\pi r/v = 2\pi(8.37\times10^6)/6903 = 7.62\times10^3\ \text{s} = 127\ \text{min}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="M = \dfrac{4\pi^2 r^3}{GT^2}">
 <div class="pq-q"><p>Phobos orbits Mars with a radius of \(9.38\times10^6\ \text{m}\) and a period of 7.65 hours. Calculate the mass of Mars.</p></div>
 <div class="pq-s"><p>\(T = 7.65 \times 3600 = 2.754\times10^4\ \text{s}\).</p><p>\(M = \dfrac{4\pi^2 r^3}{GT^2} = \dfrac{4\pi^2(9.38\times10^6)^3}{(6.67\times10^{-11})(2.754\times10^4)^2} = 6.4\times10^{23}\ \text{kg}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="\dfrac{r_1^3}{T_1^2} = \dfrac{r_2^3}{T_2^2} ;; M = \dfrac{4\pi^2 r^3}{GT^2}">
 <div class="pq-q"><p>Io orbits Jupiter at \(4.22\times10^8\ \text{m}\) with a period of 1.77 days. Callisto orbits at \(1.88\times10^9\ \text{m}\). (a) Use Kepler's third law to predict Callisto's period. (b) Calculate the mass of Jupiter.</p></div>
 <div class="pq-s"><p>(a) \(T_C = T_I\left(\dfrac{r_C}{r_I}\right)^{3/2} = 1.77 \times \left(\dfrac{1.88\times10^9}{4.22\times10^8}\right)^{1.5} = 1.77 \times 9.40 = 16.6\ \text{days}\) (actual: 16.7 days).</p><p>(b) \(T_I = 1.77 \times 86\,400 = 1.529\times10^5\ \text{s}\); \(M = \dfrac{4\pi^2(4.22\times10^8)^3}{(6.67\times10^{-11})(1.529\times10^5)^2} = 1.9\times10^{27}\ \text{kg}\).</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\dfrac{GMm}{r^2} = \dfrac{4\pi^2 mr}{T^2}">
 <div class="pq-q"><p>Explain why all geostationary satellites must be at the same altitude, regardless of their mass.</p></div>
 <div class="pq-s"><p>For a circular orbit, gravity provides the centripetal force: \(\dfrac{GMm}{r^2} = \dfrac{4\pi^2 mr}{T^2}\). [1]</p><p>The satellite mass \(m\) cancels, giving \(r^3 = \dfrac{GMT^2}{4\pi^2}\): radius depends only on Earth's mass and the period. [1]</p><p>All geostationary satellites have the same period (24 h), so they must all have the same orbital radius, \(4.23\times10^7\ \text{m}\) (altitude \(3.59\times10^7\ \text{m}\)). [1]</p></div>
 </div>

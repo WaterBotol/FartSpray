@@ -13,7 +13,7 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 </aside>
 <p>Charge prefixes you'll meet: μC = \(10^{-6}\) C, nC = \(10^{-9}\) C. The charge of one electron is \(-1.60\times10^{-19}\ \text{C}\) and of one proton \(+1.60\times10^{-19}\ \text{C}\).</p>
 
-<div class="we" data-title="Force between two charges" data-marks="2">
+<div class="we" data-title="Force between two charges" data-marks="2" data-f="F = \dfrac{kq_1q_2}{r^2}">
 <div class="we-q"><p>A \(+3.0\ \mu\text{C}\) charge and a \(-5.0\ \mu\text{C}\) charge are 0.20 m apart. Find the force between them.</p></div>
 <div class="we-s">\[ F = \frac{(8.99\times10^9)(3.0\times10^{-6})(5.0\times10^{-6})}{(0.20)^2} = \frac{0.135}{0.040} = 3.4\ \text{N} \]</div>
 <div class="we-a"><p><strong>3.4 N, attractive</strong> (opposite charges). Each charge feels 3.4 N towards the other.</p></div>
@@ -21,7 +21,7 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 
 <h2>Electric field of a point charge</h2>
 <div class="eq"><div class="eq-label">Field strength</div>\[ E = \frac{F}{q} \qquad\qquad E = k\frac{q}{r^2}\ \text{(point charge)} \]<p>Units: N C⁻¹ (equivalently V m⁻¹). Direction: away from a positive source charge, towards a negative one.</p></div>
-<div class="we" data-title="Field near a charged sphere" data-marks="2">
+<div class="we" data-title="Field near a charged sphere" data-marks="2" data-f="E = \dfrac{kq}{r^2} ;; F = qE">
 <div class="we-q"><p>Find the electric field 0.10 m from the centre of a small sphere carrying \(+2.0\ \mu\text{C}\). What force would an electron experience there?</p></div>
 <div class="we-s">\[ E = \frac{(8.99\times10^9)(2.0\times10^{-6})}{(0.10)^2} = 1.8\times10^6\ \text{N C}^{-1}\ \text{(away from the sphere)} \]</div>
 <div class="we-s">\[ F = qE = (1.60\times10^{-19})(1.8\times10^6) = 2.9\times10^{-13}\ \text{N} \]</div>
@@ -30,7 +30,7 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 
 <h3>Fields from two charges (along a line)</h3>
 <p>Fields are vectors, so add them. On the line between two charges, work out each field's size and direction separately, then combine.</p>
-<div class="we" data-title="Where is the field zero? (hard)" data-marks="3">
+<div class="we" data-title="Where is the field zero? (hard)" data-marks="3" data-f="E = \dfrac{kq}{r^2}">
 <div class="we-q"><p>A \(+4.0\ \mu\text{C}\) charge and a \(+1.0\ \mu\text{C}\) charge are 0.30 m apart. Where between them is the electric field zero?</p></div>
 <div class="we-s"><p><strong>Between two like charges the fields point in opposite directions</strong>, so they can cancel. Let \(x\) be the distance from the 4.0 μC charge:</p>\[ \frac{k(4.0)}{x^2} = \frac{k(1.0)}{(0.30 - x)^2} \]</div>
 <div class="we-s"><p><strong>Square-root:</strong> \(\dfrac{2.0}{x} = \dfrac{1.0}{0.30 - x} \Rightarrow 0.60 - 2.0x = x \Rightarrow x = 0.20\ \text{m}\).</p></div>
@@ -43,7 +43,7 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 <aside class="c-trap" data-title="Trick alert: the force is the same everywhere between the plates">
 <p>In a uniform field, a charge experiences exactly the same force next to the positive plate, in the middle, or next to the negative plate. Don't use \(kq/r^2\) for plates: that formula is only for point charges. Doubling the separation at constant voltage <strong>halves</strong> the field and the force.</p>
 </aside>
-<div class="we" data-title="Electron between plates" data-marks="3">
+<div class="we" data-title="Electron between plates" data-marks="3" data-f="E = \dfrac{V}{d} ;; F = qE ;; a = \dfrac{F}{m}">
 <div class="we-q"><p>Two parallel plates 2.0 cm apart are connected to a 500 V supply. Find the field strength, the force on an electron between the plates and its acceleration (\(m_e = 9.1\times10^{-31}\ \text{kg}\)).</p></div>
 <div class="we-s"><p><strong>Field:</strong> \(E = V/d = 500/0.020 = 2.5\times10^4\ \text{V m}^{-1}\).</p></div>
 <div class="we-s"><p><strong>Force:</strong> \(F = qE = (1.60\times10^{-19})(2.5\times10^4) = 4.0\times10^{-15}\ \text{N}\), towards the positive plate.</p></div>
@@ -78,7 +78,7 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 <figcaption>An electron gun (as in a synchrotron's first stage or an old CRT). The field points from anode to cathode; the negative electrons are pushed the other way and gain \(eV\) of kinetic energy.</figcaption>
 </figure>
 
-<div class="we" data-title="Electron gun" data-marks="4">
+<div class="we" data-title="Electron gun" data-marks="4" data-f="E_k = qV ;; E_k = \tfrac12 mv^2">
 <div class="we-q"><p>Electrons start from rest and are accelerated through 2000 V in an electron gun. Find (a) their kinetic energy in eV and in J, and (b) their final speed. (c) What speed would a proton reach through the same voltage?</p></div>
 <div class="we-s"><p><strong>(a)</strong> \(E_k = qV = e(2000) = 2000\ \text{eV} = 2000 \times 1.60\times10^{-19} = 3.2\times10^{-16}\ \text{J}\).</p></div>
 <div class="we-s"><p><strong>(b)</strong> \(\tfrac12 m_ev^2 = 3.2\times10^{-16}\):</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{9.1\times10^{-31}}} = 2.65\times10^7\ \text{m s}^{-1} \]<p>That's under 9% of \(c\), so the non-relativistic formula is fine.</p></div>
@@ -90,7 +90,7 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 </aside>
 
 <h2>Electric vs gravitational forces</h2>
-<div class="we" data-title="Inside a hydrogen atom" data-marks="3">
+<div class="we" data-title="Inside a hydrogen atom" data-marks="3" data-f="F_e = \dfrac{kq_1q_2}{r^2} ;; F_g = \dfrac{Gm_1m_2}{r^2}">
 <div class="we-q"><p>In a hydrogen atom the electron is about \(5.3\times10^{-11}\ \text{m}\) from the proton. Compare the electric and gravitational forces between them.</p></div>
 <div class="we-s">\[ F_e = \frac{(8.99\times10^9)(1.60\times10^{-19})^2}{(5.3\times10^{-11})^2} = 8.2\times10^{-8}\ \text{N} \]</div>
 <div class="we-s">\[ F_g = \frac{(6.67\times10^{-11})(9.1\times10^{-31})(1.67\times10^{-27})}{(5.3\times10^{-11})^2} = 3.6\times10^{-47}\ \text{N} \]</div>
@@ -132,17 +132,17 @@ dotpoints: analyse the use of an electric field to accelerate a charge, includin
 <div class="mcq-x"><p>\(F = qE\), and the charges are equal in size but opposite in sign. \(a = F/m\): the electron's mass is 1835 times smaller, so its acceleration is 1835 times larger.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="W = qV">
 <div class="pq-q"><p>A charge of \(+2.0\ \mu\text{C}\) moves from the negative plate to the positive plate of a pair of plates with a potential difference of 300 V. (a) How much work must be done on it? (b) Does its electric potential energy increase or decrease?</p></div>
 <div class="pq-s"><p>(a) \(W = qV = (2.0\times10^{-6})(300) = 6.0\times10^{-4}\ \text{J}\).</p><p>(b) A positive charge is pushed towards the negative plate by the field; moving it to the positive plate is against the field force, so its electric potential energy <strong>increases</strong> by \(6.0\times10^{-4}\ \text{J}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="qV = \tfrac12 mv^2 ;; s = \tfrac12(u + v)t">
 <div class="pq-q"><p>An electron is accelerated from rest across a 2.0 cm gap between plates with a potential difference of 500 V. Find (a) its final speed using energy, and (b) the time taken to cross the gap.</p></div>
 <div class="pq-s"><p>(a) \(\tfrac12 mv^2 = eV \Rightarrow v = \sqrt{2(1.60\times10^{-19})(500)/9.1\times10^{-31}} = 1.33\times10^7\ \text{m s}^{-1}\).</p><p>(b) Uniform acceleration from rest: \(d = \tfrac12(u + v)t \Rightarrow t = \dfrac{2d}{v} = \dfrac{2(0.020)}{1.33\times10^7} = 3.0\times10^{-9}\ \text{s}\).</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="E_k = qV ;; 1\ \text{eV} = 1.60\times10^{-19}\ \text{J}">
 <div class="pq-q"><p>A student states: “An electron accelerated through 100 V gains 100 J of energy.” Identify the error and give the correct value.</p></div>
 <div class="pq-s"><p>The energy gained is \(qV\), not \(V\). [1]</p><p>\(E_k = (1.60\times10^{-19}\ \text{C})(100\ \text{V}) = 1.6\times10^{-17}\ \text{J}\), [1]</p><p>which is 100 eV. The student confused the electron-volt with the joule. [1]</p></div>
 </div>

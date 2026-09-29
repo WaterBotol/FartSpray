@@ -11,14 +11,14 @@ dotpoints: Newton's method for estimating solutions of equations, including case
 <div class="eq"><div class="eq-label">Newton's method</div>\[ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)} \]<p>Derivation: the tangent \(y - f(x_n) = f'(x_n)(x - x_n)\) crosses \(y = 0\) at \(x = x_n - \frac{f(x_n)}{f'(x_n)}\).</p></div>
 <div class="sim" data-sim="newton"></div>
 
-<div class="we" data-title="Two iterations by hand" data-marks="3">
+<div class="we" data-title="Two iterations by hand" data-marks="3" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
 <div class="we-q"><p>Use Newton's method with \(x_0 = 2\) to find \(x_2\) for \(f(x) = x^3 - 2x - 5\). Give \(x_2\) correct to four decimal places.</p></div>
 <div class="we-s"><p>\(f'(x) = 3x^2 - 2\). \(f(2) = 8 - 4 - 5 = -1\), \(f'(2) = 10\). So \(x_1 = 2 - \frac{-1}{10} = 2.1\).</p></div>
 <div class="we-s"><p>\(f(2.1) = 9.261 - 4.2 - 5 = 0.061\), \(f'(2.1) = 13.23 - 2 = 11.23\). So \(x_2 = 2.1 - \frac{0.061}{11.23} = 2.09457\ldots\)</p></div>
 <div class="we-a"><p><strong>\(x_2 \approx 2.0946\)</strong>. (The true root is 2.094551…: two steps already give four correct decimal places.)</p></div>
 </div>
 
-<div class="we" data-title="Estimating √2" data-marks="2">
+<div class="we" data-title="Estimating √2" data-marks="2" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
 <div class="we-q"><p>Use Newton's method on \(f(x) = x^2 - 2\) with \(x_0 = 1\) to find \(x_1\), \(x_2\) and \(x_3\).</p></div>
 <div class="we-s"><p>\(x_{n+1} = x_n - \frac{x_n^2 - 2}{2x_n}\). \(x_1 = 1 - \frac{-1}{2} = 1.5\).</p></div>
 <div class="we-s"><p>\(x_2 = 1.5 - \frac{0.25}{3} = 1.41\overline{6}\); \(x_3 = 1.41667 - \frac{0.0069444}{2.83333} \approx 1.414216\).</p></div>
@@ -34,7 +34,7 @@ dotpoints: Newton's method for estimating solutions of equations, including case
 <tr><td>Cycling</td><td>Estimates bounce between values forever</td><td>\(x^3 - 2x + 2\) with \(x_0 = 0\): 0, 1, 0, 1, …</td></tr>
 <tr><td>Wrong root</td><td>Converges, but to a different root from the one you wanted</td><td>Starting on the far side of a turning point</td></tr>
 </tbody></table></div>
-<div class="we" data-title="Show that it cycles" data-marks="2">
+<div class="we" data-title="Show that it cycles" data-marks="2" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
 <div class="we-q"><p>Show that Newton's method applied to \(f(x) = x^3 - 2x + 2\) with \(x_0 = 0\) does not converge.</p></div>
 <div class="we-s"><p>\(f'(x) = 3x^2 - 2\). \(x_1 = 0 - \frac{2}{-2} = 1\).</p></div>
 <div class="we-s"><p>\(x_2 = 1 - \frac{1 - 2 + 2}{3 - 2} = 1 - 1 = 0\).</p></div>
@@ -57,7 +57,7 @@ for i from 1 to 3
 end for
 print x</code></pre>
 <p>This prints \(x_3 \approx 2.094551\) (three iterations of Newton's method from \(x_0 = 2\)).</p>
-<div class="we" data-title="Trace a while loop" data-marks="3">
+<div class="we" data-title="Trace a while loop" data-marks="3" data-f="m = \dfrac{a + b}{2} \text{ (bisection)}">
 <div class="we-q"><p>Trace this algorithm and state the output.</p>
 <pre class="code"><code>a ← 1
 b ← 2
@@ -129,12 +129,12 @@ print s</code></pre></div>
 <div class="mcq-x"><p>\(f'(x) = 3x^2 - 3 = 0\) at \(x = \pm1\). At \(x_0 = 1.01\) the tangent is almost flat, so \(x_1 = 1.01 - \frac{f(1.01)}{f'(1.01)} \approx 1.01 - \frac{-0.9997}{0.0603} \approx 17.6\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="f(x) = e^x - 3x ;; x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
 <div class="pq-q"><p>Write the Newton's method rule \(x_{n+1} = \ldots\) for solving \(e^x = 3x\), simplified.</p></div>
 <div class="pq-s"><p>\(f(x) = e^x - 3x\), \(f'(x) = e^x - 3\).</p><p>\(x_{n+1} = x_n - \dfrac{e^{x_n} - 3x_n}{e^{x_n} - 3}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)} ;; \text{stop when } |x_{n+1} - x_n| &lt; \text{tolerance}">
 <div class="pq-q"><p>Complete the missing line so the algorithm prints an estimate of the root of \(f\) once successive estimates differ by less than \(10^{-6}\).</p>
 <pre class="code"><code>x ← 1
 change ← 1
@@ -147,7 +147,7 @@ print x</code></pre></div>
 <div class="pq-s"><p><code>new ← x - f(x) / df(x)</code>, where <code>df</code> is the derivative. The order matters: <code>change</code> must be calculated before \(x\) is overwritten.</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)} ;; f&#x27;(x_0) = 0 \Rightarrow \text{method fails}">
 <div class="pq-q"><p>Let \(f(x) = x^3 - 6x^2 + 9x + 1\). (a) Find the stationary points of \(f\). (b) Explain why \(x_0 = 3\) and \(x_0 = 1\) are poor choices for Newton's method. (c) Using \(x_0 = -0.5\), find \(x_1\) and \(x_2\) correct to three decimal places.</p></div>
 <div class="pq-s"><p>(a) \(f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3)\): stationary points \((1, 5)\) and \((3, 1)\). [1]</p><p>(b) \(f'(1) = f'(3) = 0\), so the formula divides by zero (horizontal tangents). [1]</p><p>(c) \(f(-0.5) = -0.125 - 1.5 - 4.5 + 1 = -5.125\), \(f'(-0.5) = 0.75 + 6 + 9 = 15.75\): \(x_1 = -0.5 + \frac{5.125}{15.75} \approx -0.175\). [1]</p><p>\(f(-0.1746) \approx -0.7597\), \(f'(-0.1746) \approx 11.187\): \(x_2 \approx -0.1746 + 0.0679 \approx -0.107\). [1] (The root is \(x \approx -0.1038\).)</p></div>
 </div>

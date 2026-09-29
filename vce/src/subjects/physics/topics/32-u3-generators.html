@@ -76,7 +76,7 @@ dotpoints: explain the production of DC voltage in DC generators and AC voltage 
 <h3>Average emf over a quarter turn</h3>
 <p>In a quarter turn (time \(T/4\)) the flux goes from \(BA\) to zero (or zero to \(BA\)), so Faraday's law gives the average emf over that quarter:</p>
 <div class="eq">\[ \varepsilon_{\text{avg}} = N\frac{\Delta\Phi}{\Delta t} = N\frac{BA}{T/4} = 4NBAf \]</div>
-<div class="we" data-title="Average emf from a generator coil" data-marks="3">
+<div class="we" data-title="Average emf from a generator coil" data-marks="3" data-f="T = \dfrac1f ;; \varepsilon_{\text{avg}} = N\dfrac{\Delta\Phi}{\Delta t} ;; \Phi = BA">
 <div class="we-q"><p>An alternator coil has 100 turns and an area of 0.020 m². It rotates at 50 revolutions per second in a 0.25 T field. Calculate the average emf during a quarter turn starting from the position where the coil's plane is perpendicular to the field.</p></div>
 <div class="we-s"><p><strong>Time for a quarter turn:</strong> \(T = 1/50 = 0.020\ \text{s}\), so \(\Delta t = 0.020/4 = 0.0050\ \text{s}\).</p></div>
 <div class="we-s"><p><strong>Flux change:</strong> \(BA = 0.25 \times 0.020 = 5.0\times10^{-3}\ \text{Wb}\) to 0.</p></div>
@@ -117,12 +117,12 @@ dotpoints: explain the production of DC voltage in DC generators and AC voltage 
 <div class="mcq-x"><p>emf ∝ negative gradient of flux. At \(t = 0\) the cosine is at its peak (gradient zero), so the emf starts at zero and follows a sine curve.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="\varepsilon_{\text{peak}} \propto NBAf">
 <div class="pq-q"><p>A generator produces a peak emf of 12 V at a frequency of 25 Hz. The number of turns on the coil is doubled and the rotation speed is halved. Give the new peak emf and frequency.</p></div>
 <div class="pq-s"><p>Doubling \(N\) doubles the peak; halving the speed halves the peak and halves the frequency. Net peak: \(12 \times 2 \times \tfrac12 = 12\ \text{V}\). Frequency: \(25/2 = 12.5\ \text{Hz}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\Delta t = \tfrac14 T ;; \varepsilon_{\text{avg}} = N\dfrac{BA}{\Delta t}">
 <div class="pq-q"><p>A 250-turn coil of area 40 cm² rotates at 10 revolutions per second in a 0.15 T field. Find the average emf over a quarter turn, and sketch how the output would look with (a) slip rings and (b) a split-ring commutator.</p></div>
 <div class="pq-s"><p>\(A = 4.0\times10^{-3}\ \text{m}^2\); \(\Delta t = T/4 = 0.10/4 = 0.025\ \text{s}\).</p><p>\(\varepsilon_{\text{avg}} = NBA/\Delta t = 250 \times 0.15 \times 4.0\times10^{-3}/0.025 = 6.0\ \text{V}\).</p><p>(a) A sine wave alternating between + and − peaks, period 0.10 s. (b) The same shape with every negative half flipped positive: humps every 0.050 s, never going below zero.</p></div>
 </div>

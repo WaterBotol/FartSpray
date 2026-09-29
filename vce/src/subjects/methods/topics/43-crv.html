@@ -11,7 +11,7 @@ dotpoints: continuous random variables and probability density functions | proba
 <div class="eq"><div class="eq-label">Conditions for a pdf</div>\[ f(x) \ge 0 \text{ for all } x \qquad \int_{-\infty}^{\infty} f(x)\,dx = 1 \qquad P(a &lt; X &lt; b) = \int_a^b f(x)\,dx \]<p>\(P(X = a) = 0\) for any single value, so \(&lt;\) and \(\le\) give the same probability. (For discrete variables they don't!)</p></div>
 <div class="eq"><div class="eq-label">Summary statistics</div>\[ E(X) = \int x f(x)\,dx \qquad \operatorname{Var}(X) = \int x^2 f(x)\,dx - \mu^2 \qquad \int_{-\infty}^{m} f(x)\,dx = \frac12 \ (\text{median } m) \]<p>The \(p\)th percentile \(q\) satisfies \(\int_{-\infty}^{q} f(x)\,dx = \frac{p}{100}\). \(E(aX + b) = aE(X) + b\) and \(\operatorname{Var}(aX + b) = a^2\operatorname{Var}(X)\), exactly as for discrete variables.</p></div>
 
-<div class="we" data-title="Everything about f(x) = kx² on [0, 3]" data-marks="6">
+<div class="we" data-title="Everything about f(x) = kx² on [0, 3]" data-marks="6" data-f="\int_{-\infty}^{\infty} f(x)\,dx = 1 ;; P(a &lt; X &lt; b) = \int_a^b f(x)\,dx ;; E(X) = \int x f(x)\,dx ;; \int_{-\infty}^{m} f(x)\,dx = \tfrac12 ;; \operatorname{Var}(X) = E(X^2) - [E(X)]^2">
 <div class="we-q"><p>\(f(x) = kx^2\) for \(0 \le x \le 3\), and 0 elsewhere. Find (a) \(k\), (b) \(P(X &lt; 1)\), (c) \(E(X)\), (d) the median, (e) \(\operatorname{Var}(X)\).</p></div>
 <div class="we-s"><p>(a) \(\int_0^3 kx^2\,dx = 9k = 1 \Rightarrow k = \frac19\).</p></div>
 <div class="we-s"><p>(b) \(\int_0^1\frac{x^2}{9}dx = \frac{1}{27}\).</p></div>
@@ -25,7 +25,7 @@ dotpoints: continuous random variables and probability density functions | proba
 <figcaption>\(f(x) = \frac{x^2}{9}\) on \([0, 3]\). The shaded area is \(P(X &lt; 2) = \frac{8}{27}\); the dashed lines mark the mean (2.25) and the median (≈ 2.38).</figcaption>
 </figure>
 
-<div class="we" data-title="A piecewise (triangular) pdf" data-marks="4">
+<div class="we" data-title="A piecewise (triangular) pdf" data-marks="4" data-f="P(a &lt; X &lt; b) = \int_a^b f(x)\,dx ;; E(X) = \text{line of symmetry} ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
 <div class="we-q"><p>\(f(x) = \begin{cases} x, & 0 \le x \le 1 \\ 2 - x, & 1 &lt; x \le 2 \\ 0, & \text{elsewhere} \end{cases}\). Find \(P(X &lt; 0.5)\), \(E(X)\) and \(P(X &gt; 1.5 \mid X &gt; 1)\).</p></div>
 <div class="we-s"><p>\(P(X &lt; 0.5) = \int_0^{0.5}x\,dx = 0.125\).</p></div>
 <div class="we-s"><p>The graph is symmetric about \(x = 1\), so \(E(X) = 1\) (and the median is 1).</p></div>
@@ -33,7 +33,7 @@ dotpoints: continuous random variables and probability density functions | proba
 <div class="we-a"><p><strong>0.125; 1; \(\frac{0.125}{0.5} = 0.25\).</strong> For a piecewise pdf, integrate each piece over its own interval.</p></div>
 </div>
 
-<div class="we" data-title="Exponential-type pdf (CAS)" data-marks="3">
+<div class="we" data-title="Exponential-type pdf (CAS)" data-marks="3" data-f="P(T &gt; a) = \int_a^\infty f(t)\,dt ;; \int_0^m f(t)\,dt = \tfrac12">
 <div class="we-q"><p>The time \(T\) (minutes) between customer arrivals has pdf \(f(t) = 0.5e^{-0.5t}\), \(t \ge 0\). Find \(P(T &gt; 2)\) and the median time.</p></div>
 <div class="we-s"><p>\(P(T &gt; 2) = \int_2^\infty 0.5e^{-0.5t}dt = \left[-e^{-0.5t}\right]_2^\infty = e^{-1}\).</p></div>
 <div class="we-s"><p>Median: \(\int_0^m 0.5e^{-0.5t}dt = 1 - e^{-0.5m} = \frac12 \Rightarrow m = 2\log_e 2\).</p></div>
@@ -86,22 +86,22 @@ dotpoints: continuous random variables and probability density functions | proba
 <div class="mcq-x"><p>\(\int_0^m 2x\,dx = m^2 = \frac12 \Rightarrow m = \frac{1}{\sqrt2} \approx 0.707\). (\(\frac23\) is the mean; \(\frac12\) is halfway along the domain.)</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="E(X) = \int x f(x)\,dx ;; \int_{-\infty}^{q} f(x)\,dx = 0.9">
 <div class="pq-q"><p>\(f(x) = \frac{3}{8}x^2\) for \(0 \le x \le 2\). Find \(E(X)\) and the 90th percentile.</p></div>
 <div class="pq-s"><p>\(E(X) = \int_0^2\frac38x^3\,dx = \frac38 \cdot 4 = 1.5\).</p><p>\(\int_0^q\frac38x^2\,dx = \frac{q^3}{8} = 0.9 \Rightarrow q = \sqrt[3]{7.2} \approx 1.931\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\int f(x)\,dx = 1 ;; P(a &lt; X &lt; b) = \int_a^b f(x)\,dx">
 <div class="pq-q"><p>\(f(x) = \begin{cases} a, & 0 \le x &lt; 1 \\ \frac{a}{x^2}, & 1 \le x \le 4 \\ 0, & \text{elsewhere}\end{cases}\) is a pdf. Find \(a\) and \(P(X &gt; 2)\).</p></div>
 <div class="pq-s"><p>\(a + a\left[-\frac1x\right]_1^4 = a + a\left(1 - \frac14\right) = \frac74a = 1 \Rightarrow a = \frac47\). [2]</p><p>\(P(X &gt; 2) = \frac47\left[-\frac1x\right]_2^4 = \frac47\left(\frac12 - \frac14\right) = \frac17\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="P(T &gt; a) = \int_a^\infty f(t)\,dt ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
 <div class="pq-q"><p>The time \(T\) hours that a battery lasts has pdf \(f(t) = \frac{1}{50}e^{-t/50}\), \(t \ge 0\). (a) Find the probability a battery lasts more than 100 hours. (b) Find the probability that a battery lasts more than 150 hours given that it has already lasted 50 hours. (c) Comment on your answers.</p></div>
 <div class="pq-s"><p>(a) \(P(T &gt; 100) = e^{-2} \approx 0.1353\). [1]</p><p>(b) \(\frac{P(T &gt; 150)}{P(T &gt; 50)} = \frac{e^{-3}}{e^{-1}} = e^{-2} \approx 0.1353\). [2]</p><p>(c) The same: the battery doesn't “remember” it's already been used (the memoryless property of this distribution). [1]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="f(x) \ge 0 ;; \int f(x)\,dx = 1">
 <div class="pq-q"><p>A student says \(f(x) = 3\) on \([0, \frac13]\) can't be a pdf because \(f(x) &gt; 1\). Are they right?</p></div>
 <div class="pq-s"><p>No. \(f(x) \ge 0\) and the total area is \(3 \times \frac13 = 1\), so it's a valid pdf. Density values can exceed 1; probabilities (areas) can't.</p></div>
 </div>

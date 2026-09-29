@@ -18,20 +18,20 @@ dotpoints: random sampling, populations and samples, and sources of bias | the s
 <div class="eq"><div class="eq-label">Sample proportion</div>\[ \hat P = \frac{X}{n},\ X \sim \text{Bi}(n, p) \qquad E(\hat P) = p \qquad \operatorname{sd}(\hat P) = \sqrt{\frac{p(1 - p)}{n}} \]<p>For large \(n\) (a common guide is \(np \ge 10\) and \(n(1 - p) \ge 10\)), \(\hat P\) is approximately \(\text{N}\!\left(p, \frac{p(1 - p)}{n}\right)\).</p></div>
 <aside class="c-key"><p>Quadrupling the sample size <strong>halves</strong> the standard deviation of \(\hat P\) (because of the \(\sqrt{n}\)). Diminishing returns: going from \(n = 100\) to \(n = 400\) helps as much as going from 400 to 1600.</p></aside>
 
-<div class="we" data-title="Mean and sd of p̂" data-marks="2">
+<div class="we" data-title="Mean and sd of p̂" data-marks="2" data-f="E(\hat P) = p ;; \operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}">
 <div class="we-q"><p>30% of a town's households own a dog. Random samples of 100 households are taken. Find the mean and standard deviation of \(\hat P\).</p></div>
 <div class="we-s"><p>\(E(\hat P) = p = 0.3\).</p></div>
 <div class="we-a"><p><strong>\(\operatorname{sd}(\hat P) = \sqrt{\frac{0.3 \times 0.7}{100}} \approx 0.0458\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Exact vs approximate (a favourite trap)" data-marks="4">
+<div class="we" data-title="Exact vs approximate (a favourite trap)" data-marks="4" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p) ;; Z = \dfrac{\hat p - p}{\operatorname{sd}(\hat P)}">
 <div class="we-q"><p>With \(p = 0.3\) and \(n = 100\), find \(P(\hat P &gt; 0.35)\) (a) exactly, using the binomial distribution, and (b) using the normal approximation.</p></div>
 <div class="we-s"><p>(a) \(\hat P &gt; 0.35 \iff X &gt; 35 \iff X \ge 36\). With \(X \sim \text{Bi}(100, 0.3)\): \(P(X \ge 36) \approx 0.1161\).</p></div>
 <div class="we-s"><p>(b) \(\hat P \approx \text{N}(0.3, 0.0458^2)\): \(P(\hat P &gt; 0.35) = P(Z &gt; 1.091) \approx 0.1376\).</p></div>
 <div class="we-a"><p><strong>(a) 0.1161 (exact); (b) 0.1376 (approximate).</strong> Read which one the question asks for. For the exact version, the strict “\(&gt;\)” matters: \(X \ge 36\), not \(X \ge 35\).</p></div>
 </div>
 
-<div class="we" data-title="Exact distribution of p̂ for a small sample (tech-free)" data-marks="3">
+<div class="we" data-title="Exact distribution of p̂ for a small sample (tech-free)" data-marks="3" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p)">
 <div class="we-q"><p>A fair coin is tossed 4 times and \(\hat P\) is the proportion of heads. Find \(P(\hat P \ge 0.75)\).</p></div>
 <div class="we-s"><p>\(\hat P \ge 0.75 \iff X \ge 3\) with \(X \sim \text{Bi}(4, \frac12)\).</p></div>
 <div class="we-s"><p>\(P(X = 3) + P(X = 4) = \frac{4}{16} + \frac{1}{16}\).</p></div>
@@ -78,17 +78,17 @@ dotpoints: random sampling, populations and samples, and sources of bias | the s
 <div class="mcq-x"><p>Parameters describe populations (fixed, usually unknown); statistics come from samples (random).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="E(\hat P) = p ;; \operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}">
 <div class="pq-q"><p>In a large population, 60% of people prefer brand A. For random samples of size 150, find the mean and standard deviation of \(\hat P\), to 4 decimal places.</p></div>
 <div class="pq-s"><p>\(E(\hat P) = 0.6\); \(\operatorname{sd}(\hat P) = \sqrt{\frac{0.6 \times 0.4}{150}} = \sqrt{0.0016} = 0.04\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}} ;; Z = \dfrac{\hat p - p}{\operatorname{sd}(\hat P)}">
 <div class="pq-q"><p>\(p = 0.6\), \(n = 150\). Using the normal approximation, find the probability that the sample proportion is within 0.05 of the population proportion.</p></div>
 <div class="pq-s"><p>\(P(0.55 &lt; \hat P &lt; 0.65)\) with \(\operatorname{sd} = 0.04\): \(z = \pm1.25\). [1]</p><p>\(P(-1.25 &lt; Z &lt; 1.25) \approx 0.7887\). [2]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}">
 <div class="pq-q"><p>A survey of \(n\) people is planned for a population with \(p = 0.4\). Find the smallest \(n\) for which \(\operatorname{sd}(\hat P) \le 0.02\).</p></div>
 <div class="pq-s"><p>\(\sqrt{\frac{0.24}{n}} \le 0.02 \Rightarrow \frac{0.24}{n} \le 0.0004\). [1]</p><p>\(n \ge 600\). [1] So \(n = 600\). [1]</p></div>
 </div>

@@ -16,14 +16,14 @@ dotpoints: conditional probability and independence | the addition and multiplic
 
 <h2>Karnaugh maps (probability tables)</h2>
 <p>A 2 × 2 table with totals is the fastest tool when there are two events. Fill in what you know; every row and column must add up.</p>
-<div class="we" data-title="Karnaugh map and independence" data-marks="3">
+<div class="we" data-title="Karnaugh map and independence" data-marks="3" data-f="P(A) = P(A \cap B) + P(A \cap B&#x27;) ;; \text{independent} \iff P(A \cap B) = P(A)P(B) ;; P(B \mid A) = \dfrac{P(A \cap B)}{P(A)}">
 <div class="we-q"><p>\(P(A) = 0.6\), \(P(B) = 0.3\) and \(P(A \cap B') = 0.45\). (a) Find \(P(A \cap B)\). (b) Are \(A\) and \(B\) independent? (c) Find \(P(B \mid A)\).</p></div>
 <div class="we-s"><div class="tbl"><table><thead><tr><th></th><th>\(B\)</th><th>\(B'\)</th><th>total</th></tr></thead><tbody><tr><td>\(A\)</td><td><strong>0.15</strong></td><td>0.45</td><td>0.6</td></tr><tr><td>\(A'\)</td><td>0.15</td><td>0.25</td><td>0.4</td></tr><tr><td>total</td><td>0.3</td><td>0.7</td><td>1</td></tr></tbody></table></div></div>
 <div class="we-s"><p>(b) \(P(A)P(B) = 0.18 \ne 0.15 = P(A \cap B)\): not independent.</p></div>
 <div class="we-a"><p><strong>(a) 0.15; (b) not independent; (c) \(P(B \mid A) = \frac{0.15}{0.6} = 0.25\).</strong></p></div>
 </div>
 
-<div class="we" data-title="Finding an unknown from independence" data-marks="2">
+<div class="we" data-title="Finding an unknown from independence" data-marks="2" data-f="P(A \cup B) = P(A) + P(B) - P(A \cap B) ;; \text{independent: } P(A \cap B) = P(A)P(B)">
 <div class="we-q"><p>\(A\) and \(B\) are independent, \(P(A) = 0.4\) and \(P(A \cup B) = 0.7\). Find \(P(B)\).</p></div>
 <div class="we-s"><p>\(P(A \cup B) = P(A) + P(B) - P(A)P(B)\): \(0.7 = 0.4 + p - 0.4p\).</p></div>
 <div class="we-a"><p>\(0.6p = 0.3\), so <strong>\(P(B) = 0.5\)</strong>.</p></div>
@@ -31,7 +31,7 @@ dotpoints: conditional probability and independence | the addition and multiplic
 
 <h2>Tree diagrams and the law of total probability</h2>
 <div class="eq"><div class="eq-label">Law of total probability</div>\[ P(B) = P(B \mid A)P(A) + P(B \mid A')P(A') \]<p>Multiply along branches; add the branches that give the outcome you want.</p></div>
-<div class="we" data-title="The false-positive problem (hard)" data-marks="4">
+<div class="we" data-title="The false-positive problem (hard)" data-marks="4" data-f="P(+) = P(D)P(+ \mid D) + P(D&#x27;)P(+ \mid D&#x27;) ;; P(D \mid +) = \dfrac{P(D \cap +)}{P(+)}">
 <div class="we-q"><p>2% of a population has a disease. A test gives a positive result for 95% of people with the disease and for 10% of people without it. A randomly chosen person tests positive. Find the probability that they have the disease, correct to four decimal places.</p></div>
 <div class="we-s"><p>Tree: \(P(D \cap +) = 0.02 \times 0.95 = 0.019\); \(P(D' \cap +) = 0.98 \times 0.10 = 0.098\).</p></div>
 <div class="we-s"><p>\(P(+) = 0.019 + 0.098 = 0.117\).</p></div>
@@ -39,7 +39,7 @@ dotpoints: conditional probability and independence | the addition and multiplic
 <div class="we-a"><p><strong>\(\approx 0.1624\).</strong> Only about 16% of positives actually have the disease, because the disease is rare and the false positives swamp the true ones. This is the classic “reverse conditional” and the answer surprises most people.</p></div>
 </div>
 
-<div class="we" data-title="Without replacement" data-marks="2">
+<div class="we" data-title="Without replacement" data-marks="2" data-f="\text{without replacement: multiply along branches} ;; \text{add the separate orders}">
 <div class="we-q"><p>A bag holds 5 red and 3 blue marbles. Two are drawn without replacement. Find the probability of getting one of each colour.</p></div>
 <div class="we-s"><p>\(P(RB) + P(BR) = \frac58 \times \frac37 + \frac38 \times \frac57\).</p></div>
 <div class="we-a"><p><strong>\(= \frac{30}{56} = \frac{15}{28}\).</strong> Don't forget both orders.</p></div>
@@ -97,22 +97,22 @@ dotpoints: conditional probability and independence | the addition and multiplic
 <div class="mcq-x"><p>\(0.5 \times 0.4 = 0.2\), so \(A, B\) are independent, which means \(A, B'\) are too: \(P(A \cap B') = 0.3 = 0.5 \times 0.6\) ✓. \(P(A \mid B') = \frac{0.3}{0.6} = 0.5\), and \(P(A \cup B) = 0.7\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="P(B \mid C) = \dfrac{P(B \cap C)}{P(C)}">
 <div class="pq-q"><p>A class has 30 students: 18 study Chemistry, 12 study Biology and 5 study both. A student is chosen at random. Find the probability that they study Biology given that they study Chemistry.</p></div>
 <div class="pq-s"><p>\(P(B \mid C) = \frac{5}{18}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="P(R) = \Sigma P(\text{box})P(R \mid \text{box}) ;; P(\text{box 1} \mid R) = \dfrac{P(\text{box 1} \cap R)}{P(R)}">
 <div class="pq-q"><p>Box 1 holds 3 red and 2 green balls; box 2 holds 1 red and 4 green. A fair coin chooses the box (heads: box 1) and one ball is drawn. Given that the ball is red, find the probability that it came from box 1.</p></div>
 <div class="pq-s"><p>\(P(R) = \frac12 \times \frac35 + \frac12 \times \frac15 = \frac{3}{10} + \frac{1}{10} = \frac25\). [2]</p><p>\(P(\text{box 1} \mid R) = \frac{3/10}{2/5} = \frac34\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="P(A \cup B) = P(A) + P(B) - P(A \cap B) ;; \text{mutually exclusive: } P(A \cap B) = 0 ;; \text{independent: } P(A \cap B) = P(A)P(B)">
 <div class="pq-q"><p>For events \(A\) and \(B\), \(P(A) = p\), \(P(B) = 0.5\) and \(P(A \cup B) = 0.8\). (a) Find \(p\) if \(A\) and \(B\) are mutually exclusive. (b) Find \(p\) if \(A\) and \(B\) are independent. (c) Find the range of possible values of \(p\).</p></div>
 <div class="pq-s"><p>(a) \(p + 0.5 = 0.8 \Rightarrow p = 0.3\). [1]</p><p>(b) \(p + 0.5 - 0.5p = 0.8 \Rightarrow p = 0.6\). [1]</p><p>(c) \(P(A \cap B) = p + 0.5 - 0.8 = p - 0.3\), which must be between 0 and \(\min(p, 0.5)\). So \(p \ge 0.3\) and \(p - 0.3 \le 0.5 \Rightarrow p \le 0.8\). \(p \in [0.3, 0.8]\). [2]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="P(D \mid +) = \dfrac{P(D \cap +)}{P(+)}">
 <div class="pq-q"><p>“95% of people who have the disease test positive, so a positive test means a 95% chance of having it.” Using the disease example, explain why this is wrong.</p></div>
 <div class="pq-s"><p>95% is \(P(+ \mid D)\), but the question is about \(P(D \mid +)\), which is only about 0.16 here. Because the disease is rare, most positive results come from the large healthy group (false positives).</p></div>
 </div>

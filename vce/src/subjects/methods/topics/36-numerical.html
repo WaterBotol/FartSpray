@@ -11,7 +11,7 @@ dotpoints: numerical approximation of definite integrals using the trapezium rul
 <div class="eq"><div class="eq-label">The three estimates</div>\[ L = h\big[f(x_0) + f(x_1) + \cdots + f(x_{n-1})\big] \qquad R = h\big[f(x_1) + \cdots + f(x_n)\big] \]\[ T = \frac{h}{2}\big[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)\big] = \frac{L + R}{2} \]<p>The trapezium rule is on the formula sheet. \(L\) and \(R\) aren't, but they're easy: left uses every height except the last, right every height except the first.</p></div>
 <div class="sim" data-sim="trapezium"></div>
 
-<div class="we" data-title="All three estimates for x² on [0, 2]" data-marks="3">
+<div class="we" data-title="All three estimates for x² on [0, 2]" data-marks="3" data-f="h = \dfrac{b - a}{n} ;; L = h\,[f(x_0) + \cdots + f(x_{n-1})] ;; R = h\,[f(x_1) + \cdots + f(x_n)] ;; T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + 2f(x_{n-1}) + f(x_n)]">
 <div class="we-q"><p>Estimate \(\int_0^2 x^2\,dx\) with four strips using (a) left rectangles, (b) right rectangles, (c) the trapezium rule. Compare with the exact value.</p></div>
 <div class="we-s"><p>\(h = 0.5\). Heights at \(x = 0, 0.5, 1, 1.5, 2\): \(0, 0.25, 1, 2.25, 4\).</p></div>
 <div class="we-s"><p>(a) \(L = 0.5(0 + 0.25 + 1 + 2.25) = 1.75\). (b) \(R = 0.5(0.25 + 1 + 2.25 + 4) = 3.75\).</p></div>
@@ -30,14 +30,14 @@ dotpoints: numerical approximation of definite integrals using the trapezium rul
 </tbody></table></div>
 <aside class="c-key"><p>Picture the tops: a trapezium's slanted top is a chord. Chords lie <em>above</em> a concave-up curve and <em>below</em> a concave-down one.</p></aside>
 
-<div class="we" data-title="Trapezium rule for ln 3" data-marks="3">
+<div class="we" data-title="Trapezium rule for ln 3" data-marks="3" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)] ;; f&#x27;&#x27; &gt; 0 \Rightarrow \text{trapezium overestimates}">
 <div class="we-q"><p>Use the trapezium rule with two strips to estimate \(\int_1^3\frac1x\,dx\). Is it an over- or under-estimate?</p></div>
 <div class="we-s"><p>\(h = 1\); heights \(f(1) = 1,\ f(2) = \frac12,\ f(3) = \frac13\).</p></div>
 <div class="we-s"><p>\(T = \frac12\left(1 + 2 \times \frac12 + \frac13\right) = \frac12 \times \frac73 = \frac76 \approx 1.167\).</p></div>
 <div class="we-a"><p><strong>\(\frac76\), an overestimate</strong>: \(\frac1x\) is concave up for \(x &gt; 0\) (\(f''(x) = \frac{2}{x^3} &gt; 0\)). The exact value is \(\log_e 3 \approx 1.099\).</p></div>
 </div>
 
-<div class="we" data-title="From a table of data" data-marks="2">
+<div class="we" data-title="From a table of data" data-marks="2" data-f="\text{distance} = \int v\,dt ;; T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)]">
 <div class="we-q"><p>A car's speed (m/s) is recorded every 2 seconds: \(t = 0, 2, 4, 6, 8\); \(v = 0, 6, 10, 12, 13\). Estimate the distance travelled in 8 s using the trapezium rule.</p></div>
 <div class="we-s"><p>\(h = 2\): \(T = \frac22\big(0 + 2(6 + 10 + 12) + 13\big) = 56 + 13\).</p></div>
 <div class="we-a"><p><strong>About 69 m.</strong> Distance is the area under a speed–time graph.</p></div>
@@ -83,17 +83,17 @@ dotpoints: numerical approximation of definite integrals using the trapezium rul
 <div class="mcq-x"><p>\(T = \frac12(0 + 2 \times 1 + 8) = 5\). Error \(\frac{5 - 4}{4} = 25\%\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)] ;; f&#x27;&#x27; &lt; 0 \Rightarrow \text{trapezium underestimates}">
 <div class="pq-q"><p>Use the trapezium rule with 4 strips to estimate \(\int_0^2(4 - x^2)\,dx\). Is it an over- or under-estimate?</p></div>
 <div class="pq-s"><p>Heights \(4, 3.75, 3, 1.75, 0\): \(T = 0.25\big(4 + 2(3.75 + 3 + 1.75) + 0\big) = 0.25 \times 21 = 5.25\).</p><p>\(4 - x^2\) is concave down, so it's an underestimate (exact \(\frac{16}{3} \approx 5.33\)).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="L = h\,[f(x_0) + \cdots + f(x_{n-1})] ;; 1 + 2 + \cdots + k = \dfrac{k(k + 1)}{2}">
 <div class="pq-q"><p>Find, in terms of \(n\), the left-endpoint rectangle estimate of \(\int_0^1 x\,dx\) using \(n\) equal strips, and show that it approaches the exact value as \(n \to \infty\).</p></div>
 <div class="pq-s"><p>\(h = \frac1n\), left heights \(0, \frac1n, \ldots, \frac{n - 1}{n}\). \(L = \frac1n\cdot\frac{0 + 1 + \cdots + (n - 1)}{n} = \frac{1}{n^2}\cdot\frac{(n - 1)n}{2}\). [2]</p><p>\(L = \frac{n - 1}{2n} = \frac12 - \frac{1}{2n} \to \frac12\) as \(n \to \infty\), which is the exact value. [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="T = \dfrac h2[f(x_0) + 2f(x_1) + \cdots + f(x_n)] ;; \text{flow rate} = \text{area} \times \text{speed}">
 <div class="pq-q"><p>A river is 20 m wide. Depths (m) measured every 5 m across it are 0, 1.8, 3.2, 2.6, 0. (a) Estimate the cross-sectional area using the trapezium rule. (b) If the water flows at 0.8 m/s, estimate the volume passing per second.</p></div>
 <div class="pq-s"><p>(a) \(\frac52\big(0 + 2(1.8 + 3.2 + 2.6) + 0\big) = 2.5 \times 15.2 = 38\) m². [2]</p><p>(b) \(38 \times 0.8 = 30.4\) m³/s. [1]</p></div>
 </div>

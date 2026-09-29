@@ -10,7 +10,7 @@ dotpoints: discrete random variables and their probability distributions | expec
 <p>A discrete random variable \(X\) takes separate values \(x_1, x_2, \ldots\) with probabilities \(p_1, p_2, \ldots\). Every probability satisfies \(0 \le p_i \le 1\), and together they sum to 1.</p>
 <div class="eq"><div class="eq-label">Mean, variance, standard deviation</div>\[ E(X) = \mu = \sum x\,p(x) \qquad \operatorname{Var}(X) = E\big[(X - \mu)^2\big] = E(X^2) - \mu^2 \qquad \operatorname{sd}(X) = \sqrt{\operatorname{Var}(X)} \]\[ E(aX + b) = aE(X) + b \qquad \operatorname{Var}(aX + b) = a^2\operatorname{Var}(X) \]</div>
 
-<div class="we" data-title="Full workout on a distribution table" data-marks="4">
+<div class="we" data-title="Full workout on a distribution table" data-marks="4" data-f="E(X) = \Sigma x\,p(x) ;; \operatorname{Var}(X) = E(X^2) - [E(X)]^2 ;; E(aX + b) = aE(X) + b ;; \operatorname{Var}(aX + b) = a^2\operatorname{Var}(X)">
 <div class="we-q"><div class="tbl"><table><thead><tr><th>\(x\)</th><th>0</th><th>1</th><th>2</th><th>3</th></tr></thead><tbody><tr><td>\(P(X = x)\)</td><td>0.1</td><td>0.3</td><td>0.4</td><td>0.2</td></tr></tbody></table></div><p>Find \(E(X)\), \(\operatorname{Var}(X)\), \(\operatorname{sd}(X)\), and the mean and standard deviation of \(Y = 3X - 2\).</p></div>
 <div class="we-s"><p>\(E(X) = 0 + 0.3 + 0.8 + 0.6 = 1.7\).</p></div>
 <div class="we-s"><p>\(E(X^2) = 0 + 0.3 + 1.6 + 1.8 = 3.7\), so \(\operatorname{Var}(X) = 3.7 - 1.7^2 = 0.81\) and \(\operatorname{sd}(X) = 0.9\).</p></div>
@@ -18,21 +18,21 @@ dotpoints: discrete random variables and their probability distributions | expec
 <div class="we-a"><p><strong>\(E(X) = 1.7,\ \operatorname{Var}(X) = 0.81,\ \operatorname{sd}(X) = 0.9\); \(E(Y) = 3.1,\ \operatorname{sd}(Y) = 2.7\).</strong> The \(-2\) shifts the mean but doesn't change the spread.</p></div>
 </div>
 
-<div class="we" data-title="Unknown probabilities" data-marks="3">
+<div class="we" data-title="Unknown probabilities" data-marks="3" data-f="\Sigma p(x) = 1 ;; E(X) = \Sigma x\,p(x)">
 <div class="we-q"><p>\(P(X = x) = kx\) for \(x = 1, 2, 3, 4\). Find \(k\), \(E(X)\) and \(P(X &gt; E(X))\).</p></div>
 <div class="we-s"><p>\(k(1 + 2 + 3 + 4) = 1 \Rightarrow k = 0.1\). Probabilities: 0.1, 0.2, 0.3, 0.4.</p></div>
 <div class="we-s"><p>\(E(X) = 0.1 + 0.4 + 0.9 + 1.6 = 3\).</p></div>
 <div class="we-a"><p><strong>\(k = 0.1\), \(E(X) = 3\), \(P(X &gt; 3) = P(X = 4) = 0.4\).</strong> “Greater than” is strict: don't include \(X = 3\).</p></div>
 </div>
 
-<div class="we" data-title="Drawing without replacement" data-marks="3">
+<div class="we" data-title="Drawing without replacement" data-marks="3" data-f="\Sigma p(x) = 1 ;; E(X) = \Sigma x\,p(x)">
 <div class="we-q"><p>Two balls are drawn without replacement from a bag with 3 red and 2 blue balls. \(X\) is the number of red balls drawn. Find the distribution of \(X\) and \(E(X)\).</p></div>
 <div class="we-s"><p>\(P(X = 0) = \frac25 \cdot \frac14 = \frac{1}{10}\); \(P(X = 2) = \frac35 \cdot \frac24 = \frac{3}{10}\).</p></div>
 <div class="we-s"><p>\(P(X = 1) = 1 - \frac{1}{10} - \frac{3}{10} = \frac{6}{10}\) (or \(2 \times \frac35 \times \frac24\)).</p></div>
 <div class="we-a"><p><strong>\(E(X) = 0.6 + 0.6 = 1.2\)</strong> (which is \(2 \times \frac35\), as intuition says).</p></div>
 </div>
 
-<div class="we" data-title="Is the game fair?" data-marks="3">
+<div class="we" data-title="Is the game fair?" data-marks="3" data-f="E(X) = \Sigma x\,p(x) ;; E(X - b) = E(X) - b">
 <div class="we-q"><p>It costs $5 to play a game: roll a fair die; a 6 pays $20, a 5 pays $5, anything else pays nothing. Find the expected profit per game.</p></div>
 <div class="we-s"><p>Let \(W\) = amount won. \(E(W) = 20 \cdot \frac16 + 5 \cdot \frac16 + 0 \cdot \frac46 = \frac{25}{6} \approx 4.17\).</p></div>
 <div class="we-s"><p>Profit \(= W - 5\), so \(E(\text{profit}) = \frac{25}{6} - 5 = -\frac56\).</p></div>
@@ -85,22 +85,22 @@ dotpoints: discrete random variables and their probability distributions | expec
 <div class="mcq-x"><p>\(E(\text{gain}) = 10(0.3) - 4(0.7) = 3 - 2.8 = 0.2\) per game. \(\frac{20}{0.2} = 100\) games.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="E(X) = \Sigma x\,p(x) ;; \operatorname{Var}(X) = E(X^2) - [E(X)]^2">
 <div class="pq-q"><p>\(P(X = 0) = 0.4,\ P(X = 1) = 0.35,\ P(X = 2) = 0.25\). Find \(E(X)\) and \(\operatorname{Var}(X)\).</p></div>
 <div class="pq-s"><p>\(E(X) = 0.35 + 0.5 = 0.85\). \(E(X^2) = 0.35 + 1 = 1.35\). \(\operatorname{Var}(X) = 1.35 - 0.7225 = 0.6275\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\Sigma p(x) = 1 ;; E(X) = \Sigma x\,p(x) ;; \operatorname{Var}(X) = E(X^2) - [E(X)]^2">
 <div class="pq-q"><p>A discrete random variable has \(P(X = -1) = a\), \(P(X = 0) = b\), \(P(X = 2) = 0.3\), and \(E(X) = 0.4\). Find \(a\) and \(b\), and \(\operatorname{Var}(X)\).</p></div>
 <div class="pq-s"><p>\(-a + 0.6 = 0.4 \Rightarrow a = 0.2\); \(b = 1 - 0.2 - 0.3 = 0.5\). [2]</p><p>\(E(X^2) = 0.2 + 1.2 = 1.4\); \(\operatorname{Var} = 1.4 - 0.16 = 1.24\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="E(aX + b) = aE(X) + b ;; \operatorname{sd}(aX + b) = |a|\operatorname{sd}(X)">
 <div class="pq-q"><p>A café sells 0, 1, 2 or 3 cakes per hour with probabilities 0.1, 0.4, 0.3, 0.2. Each cake makes $6 profit, and the café pays a fixed $4 per hour to display them. (a) Find the expected number of cakes sold per hour. (b) Find the mean and standard deviation of the hourly profit \(P = 6X - 4\).</p></div>
 <div class="pq-s"><p>(a) \(E(X) = 0.4 + 0.6 + 0.6 = 1.6\). [1]</p><p>(b) \(E(P) = 6(1.6) - 4 = \$5.60\). [1] \(E(X^2) = 0.4 + 1.2 + 1.8 = 3.4\), \(\operatorname{Var}(X) = 3.4 - 2.56 = 0.84\). [1] \(\operatorname{sd}(P) = 6\sqrt{0.84} \approx \$5.50\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="\operatorname{Var}(X) = E(X^2) - [E(X)]^2 \ge 0">
 <div class="pq-q"><p>A student computes \(\operatorname{Var}(X) = E(X^2) - E(X)^2\) and gets \(-0.4\). What does this tell you?</p></div>
 <div class="pq-s"><p>They've made an arithmetic error. Variance is an average of squared deviations, so it can never be negative. (Common causes: probabilities that don't sum to 1, or using \(E(X)\) instead of \(E(X^2)\).)</p></div>
 </div>

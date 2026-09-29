@@ -78,7 +78,7 @@ dotpoints: investigate and apply theoretically Newton's second law to circular m
 <p>If the loop starts at ground level, its highest point is at height \(2r\) (the diameter), not \(r\). Using \(r\) is the single most common error in rollercoaster energy questions.</p>
 </aside>
 
-<div class="we" data-title="Rollercoaster: speed and forces around a loop" data-marks="7">
+<div class="we" data-title="Rollercoaster: speed and forces around a loop" data-marks="7" data-f="mg\Delta h = \tfrac12 mv^2 ;; v_{\min} = \sqrt{gr} ;; \text{top: } N + mg = \dfrac{mv^2}{r}">
 <div class="we-q"><p>A rollercoaster cart starts from rest at the top of a hill 30 m above the ground and rolls down into a circular loop of radius 10 m whose lowest point is at ground level. Ignore friction. A 60 kg rider sits in the cart.</p><p>(a) Find the speed at the bottom of the loop. (b) Find the speed at the top of the loop. (c) Show that the cart stays on the track. (d) Find the force of the seat on the rider at the top and at the bottom, and express each as a g-force.</p></div>
 <div class="we-s"><p><strong>(a) Energy conservation, top of hill → bottom of loop</strong> (drop of 30 m):</p>\[ mgh = \tfrac12 mv_b^2 \Rightarrow v_b = \sqrt{2gh} = \sqrt{2(9.8)(30)} = 24.2\ \text{m s}^{-1} \]</div>
 <div class="we-s"><p><strong>(b) Top of the loop</strong> is at \(2r = 20\ \text{m}\), a net drop of \(30 - 20 = 10\ \text{m}\) from the start:</p>\[ v_t = \sqrt{2g(10)} = \sqrt{196} = 14.0\ \text{m s}^{-1} \]</div>
@@ -92,7 +92,7 @@ dotpoints: investigate and apply theoretically Newton's second law to circular m
 <p>The circular loop above gives a painful 7 g at the bottom but only 1 g at the top. Real coasters use a <strong>clothoid</strong> (teardrop) loop: a tight radius at the top, where the cart is slow, and a large radius at the bottom, where it is fast. Since \(N\) depends on \(v^2/r\), making \(r\) large where \(v\) is large keeps the g-force survivable. It's a nice example of using \(F = mv^2/r\) in design.</p>
 </aside>
 
-<div class="we" data-title="Minimum release height for a loop" data-marks="3">
+<div class="we" data-title="Minimum release height for a loop" data-marks="3" data-f="v_{\min} = \sqrt{gr} ;; mgh = mg(2r) + \tfrac12 mv^2">
 <div class="we-q"><p>Show that a frictionless cart released from rest must start at least \(2.5r\) above the bottom of a loop of radius \(r\) to get around it.</p></div>
 <div class="we-s"><p><strong>Condition at the top:</strong> the minimum speed is \(v_t^2 = gr\).</p></div>
 <div class="we-s"><p><strong>Energy from release height \(h\) to the top (height \(2r\)):</strong></p>\[ mgh = mg(2r) + \tfrac12 m v_t^2 = mg(2r) + \tfrac12 m(gr) \]</div>
@@ -102,7 +102,7 @@ dotpoints: investigate and apply theoretically Newton's second law to circular m
 
 <div class="sim" data-sim="loop"></div>
 
-<div class="we" data-title="Car over a hump" data-marks="3">
+<div class="we" data-title="Car over a hump" data-marks="3" data-f="mg - N = \dfrac{mv^2}{r} ;; v_{\max} = \sqrt{gr}">
 <div class="we-q"><p>A 1200 kg car drives over a hump in the road whose top is part of a circle of radius 20 m. (a) Find the normal force on the car at the top if its speed is 10 m s⁻¹. (b) Find the maximum speed at which the car keeps contact with the road.</p></div>
 <div class="we-s"><p><strong>(a)</strong> On top of the hump, weight points to the centre (down) and \(N\) points away (up):</p>\[ N = m\left(g - \frac{v^2}{r}\right) = 1200\left(9.8 - \frac{100}{20}\right) = 5.76\times10^3\ \text{N} \]</div>
 <div class="we-s"><p><strong>(b)</strong> Contact is lost when \(N = 0\):</p>\[ v_{\max} = \sqrt{gr} = \sqrt{9.8 \times 20} = 14\ \text{m s}^{-1} \]</div>
@@ -113,7 +113,7 @@ dotpoints: investigate and apply theoretically Newton's second law to circular m
 <p>Replace \(N\) with tension \(T\). The string pulls towards the centre at both the top and the bottom.</p>
 <div class="eq">\[ \text{Top: } T + mg = \frac{mv_t^2}{r} \qquad \text{Bottom: } T - mg = \frac{mv_b^2}{r} \]<p>Tension is always greatest at the bottom (highest speed, and gravity works against it) and least at the top. This is why a string whirled vertically breaks at the bottom.</p></div>
 
-<div class="we" data-title="Ball on a string (hard)" data-marks="5">
+<div class="we" data-title="Ball on a string (hard)" data-marks="5" data-f="\text{top: } T + mg = \dfrac{mv^2}{r} ;; \text{bottom: } T - mg = \dfrac{mv^2}{r} ;; \tfrac12 mv_b^2 = \tfrac12 mv_t^2 + mg(2r)">
 <div class="we-q"><p>A 0.30 kg ball on a 0.60 m string is whirled in a vertical circle. At the top its speed is 4.0 m s⁻¹. Find (a) the tension at the top, (b) the speed at the bottom and (c) the tension at the bottom. Ignore air resistance.</p></div>
 <div class="we-s"><p><strong>(a) Top:</strong></p>\[ T_t = \frac{mv_t^2}{r} - mg = \frac{0.30(16)}{0.60} - 0.30(9.8) = 8.00 - 2.94 = 5.06\ \text{N} \]</div>
 <div class="we-s"><p><strong>(b) Energy, top → bottom</strong> (drop of \(2r = 1.2\ \text{m}\)):</p>\[ v_b^2 = v_t^2 + 2g(2r) = 16 + 2(9.8)(1.2) = 39.5 \Rightarrow v_b = 6.29\ \text{m s}^{-1} \]</div>
@@ -158,17 +158,17 @@ dotpoints: investigate and apply theoretically Newton's second law to circular m
 <div class="mcq-x"><p>“4 g” means \(N = 4mg\). Net force \(= N - mg = 3mg\) upward, so \(a = 3g\) upward (towards the centre).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\text{bottom: } N - mg = \dfrac{mv^2}{r}">
 <div class="pq-q"><p>A 500 kg cart passes the bottom of a loop of radius 12 m at 20 m s⁻¹. Calculate the normal force on the cart and the g-force experienced.</p></div>
 <div class="pq-s"><p>\(N = m(g + v^2/r) = 500(9.8 + 400/12) = 500(43.1) = 2.16\times10^4\ \text{N}\) upward.</p><p>g-force \(= 43.1/9.8 = 4.4\) g.</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="v_{\min} = \sqrt{gr} ;; \text{top: } N + mg = \dfrac{mv^2}{r}">
 <div class="pq-q"><p>A bucket of water is swung in a vertical circle of radius 0.90 m. (a) What is the minimum speed at the top so the water stays in? (b) If the bucket instead moves at 4.0 m s⁻¹ at the top, what force does the bucket base exert on 1.5 kg of water there?</p></div>
 <div class="pq-s"><p>(a) Water stays in if the bucket is still pushing on it, i.e. \(N \geq 0\): \(v_{\min} = \sqrt{gr} = \sqrt{9.8 \times 0.90} = 3.0\ \text{m s}^{-1}\).</p><p>(b) At the top: \(N + mg = mv^2/r \Rightarrow N = 1.5(16/0.90 - 9.8) = 1.5(17.8 - 9.8) = 12\ \text{N}\) downward (the base is above the water at the top).</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="6">
+<div class="pq" data-level="exam" data-marks="6" data-f="mg\Delta h - W_{\text{friction}} = \tfrac12 mv^2 ;; v_{\min} = \sqrt{gr} ;; \text{top: } N + mg = \dfrac{mv^2}{r}">
 <div class="pq-q"><p>A cart (with rider, total 400 kg) is released from rest at point A, 25 m above the bottom of a circular loop of radius 8.0 m. Friction does 20 kJ of work against the cart between A and the top of the loop.</p><p>(a) Calculate the speed at the top of the loop. (b) Determine whether the cart stays on the track. (c) Calculate the normal force at the top.</p></div>
 <div class="pq-s"><p>(a) Height of the top of the loop: \(2r = 16\ \text{m}\), so the drop from A is 9.0 m. [1]</p><p>Energy: \(mg\Delta h - W_{\text{friction}} = \tfrac12 mv^2\): \(400(9.8)(9.0) - 20\,000 = 35\,280 - 20\,000 = 15\,280\ \text{J}\). [1]</p><p>\(v = \sqrt{2(15\,280)/400} = 8.74\ \text{m s}^{-1}\). [1]</p><p>(b) \(v_{\min} = \sqrt{9.8 \times 8.0} = 8.85\ \text{m s}^{-1}\). Since \(8.74 < 8.85\), the cart would <strong>not</strong> stay on the track by itself (it relies on the under-rail wheels). [2]</p><p>(c) \(N = m(v^2/r - g) = 400(76.4/8.0 - 9.8) = 400(9.55 - 9.8) = -100\ \text{N}\). The negative sign confirms the track would have to <em>pull</em> the cart towards the centre (about 100 N): the safety wheels do this. [1]</p></div>
 </div>

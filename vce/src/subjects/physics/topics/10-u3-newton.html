@@ -87,7 +87,7 @@ dotpoints: investigate and apply theoretically and practically Newton's three la
 <div class="eq">\[ \text{along the slope: } mg\sin\theta \qquad \text{into the slope: } mg\cos\theta \]\[ \text{frictionless slope: } a = g\sin\theta, \qquad N = mg\cos\theta \]</div>
 <aside class="c-key"><p>Sanity-check sin vs cos with extreme angles. At \(\theta = 0^\circ\) (flat) the along-slope component must be zero, and \(\sin 0^\circ = 0\). At \(\theta = 90^\circ\) (vertical) the object free-falls, and \(g\sin 90^\circ = g\).</p></aside>
 
-<div class="we" data-title="Pulling a box with an angled rope" data-marks="4">
+<div class="we" data-title="Pulling a box with an angled rope" data-marks="4" data-f="F_x = F\cos\theta,\ F_y = F\sin\theta ;; F_{\text{net}} = ma ;; \Sigma F_y = 0">
 <div class="we-q"><p>A 12 kg box is dragged across a horizontal floor by a rope angled 30° above the horizontal. The tension in the rope is 50 N and friction on the box is 20 N.</p><p>(a) Calculate the acceleration of the box. (b) Calculate the normal force on the box.</p></div>
 <div class="we-s"><p><strong>Resolve the tension.</strong> Only the horizontal component drags the box forward:</p>\[ T_x = 50\cos 30^\circ = 43.3\ \text{N}, \qquad T_y = 50\sin 30^\circ = 25\ \text{N (upward)} \]</div>
 <div class="we-s"><p><strong>Horizontal: apply \(F_{\text{net}} = ma\).</strong></p>\[ a = \frac{T_x - F_f}{m} = \frac{43.3 - 20}{12} = 1.94\ \text{m s}^{-2} \]</div>
@@ -95,7 +95,7 @@ dotpoints: investigate and apply theoretically and practically Newton's three la
 <div class="we-a"><p><strong>(a) \(a \approx 1.9\ \text{m s}^{-2}\) in the direction of the pull. (b) \(N \approx 93\ \text{N}\) upward.</strong> The normal force is less than \(mg\) because the rope carries some of the weight.</p></div>
 </div>
 
-<div class="we" data-title="Block sliding down a ramp" data-marks="4">
+<div class="we" data-title="Block sliding down a ramp" data-marks="4" data-f="F_\parallel = mg\sin\theta ;; N = mg\cos\theta ;; F_{\text{net}} = ma">
 <div class="we-q"><p>A 5.0 kg block slides down a ramp inclined at 25° to the horizontal.</p><p>(a) Find its acceleration if the ramp is frictionless. (b) Find the normal force. (c) Find the acceleration if a constant friction force of 8.0 N acts.</p></div>
 <div class="we-s"><p><strong>Weight component along the slope:</strong></p>\[ mg\sin\theta = 5.0 \times 9.8 \times \sin 25^\circ = 20.7\ \text{N} \]</div>
 <div class="we-s"><p><strong>(a) Frictionless:</strong> this is the only force along the slope.</p>\[ a = \frac{20.7}{5.0} = 4.14\ \text{m s}^{-2} \quad (= g\sin 25^\circ) \]</div>
@@ -143,7 +143,7 @@ dotpoints: investigate and apply theoretically and practically Newton's three la
 <p>A lift <em>moving downward but slowing down</em> is accelerating <strong>upward</strong>, so you feel <strong>heavier</strong>. A lift moving upward at constant speed has \(a = 0\), so the scale reads your true weight. Always ask “which way is the acceleration?”, never “which way is it moving?”.</p>
 </aside>
 
-<div class="we" data-title="Scales in a lift" data-marks="3">
+<div class="we" data-title="Scales in a lift" data-marks="3" data-f="N - mg = ma ;; N = m(g + a)">
 <div class="we-q"><p>A 60 kg student stands on bathroom scales in a lift. The lift is <em>moving downward</em> and <em>slowing down</em> at 1.5 m s⁻². What reading (in newtons, and in the “kg” the scale displays) do the scales show?</p></div>
 <div class="we-s"><p><strong>Direction of acceleration.</strong> Moving down and slowing means the acceleration is opposite to the velocity: <strong>upward</strong>, so \(a = +1.5\ \text{m s}^{-2}\).</p></div>
 <div class="we-s"><p><strong>Apply \(N = m(g + a)\):</strong></p>\[ N = 60(9.8 + 1.5) = 678\ \text{N} \]</div>
@@ -198,22 +198,22 @@ dotpoints: investigate and apply theoretically and practically Newton's three la
 <div class="mcq-x"><p>With no net force the spanner keeps its velocity (first law). The force from her hand acted only while she was in contact. Things only “naturally stop” on Earth because friction and drag act.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="F_\parallel = mg\sin\theta ;; F_{\text{net}} = ma">
 <div class="pq-q"><p>A 1500 kg car brakes while travelling down a hill inclined at 10° to the horizontal. The braking (friction) force is 6000 N. Ignoring air resistance, calculate the car's deceleration.</p></div>
 <div class="pq-s"><p>Take down the slope as positive. Weight component down the slope: \(mg\sin 10^\circ = 1500 \times 9.8 \times 0.174 = 2.55\times10^3\ \text{N}\).</p><p>Braking acts up the slope: \(F_{\text{net}} = 2553 - 6000 = -3447\ \text{N}\).</p><p>\(a = \dfrac{-3447}{1500} = -2.3\ \text{m s}^{-2}\), so the car decelerates at <strong>2.3 m s⁻²</strong>. Common error: forgetting that gravity helps the car down the hill, giving 4.0 m s⁻².</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="F_{\text{net}} = ma ;; N - mg = ma">
 <div class="pq-q"><p>A lift cable snaps and the lift falls freely. Use Newton's second law to explain why a passenger standing on scales in the lift would read zero, even though gravity still acts on them.</p></div>
 <div class="pq-s"><p>In free fall the passenger's acceleration is \(g\) downward. Newton's second law (up positive): \(N - mg = m(-g)\), so \(N = 0\).</p><p>Gravity (weight \(mg\)) still acts: it provides <em>all</em> of the passenger's acceleration, so the scales don't need to push. The scales read the normal force, so they read zero. The passenger experiences <strong>apparent weightlessness</strong>, not an absence of gravity.</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="F_\parallel = mg\sin\theta ;; F_{\text{net}} = ma">
 <div class="pq-q"><p>A 40 kg crate is pushed up a rough ramp inclined at 20° by a force of 250 N acting <em>parallel to the ramp</em>. Friction on the crate is 60 N.</p><p>(a) Calculate the acceleration of the crate. (b) The push is removed while the crate is still moving up the ramp. Calculate its acceleration now.</p></div>
 <div class="pq-s"><p>Weight component down the ramp: \(mg\sin 20^\circ = 40 \times 9.8 \times 0.342 = 134\ \text{N}\).</p><p>(a) Moving up the ramp, friction acts down the ramp. \(F_{\text{net}} = 250 - 134 - 60 = 56\ \text{N}\), so \(a = 56/40 = 1.4\ \text{m s}^{-2}\) up the ramp.</p><p>(b) Still moving up, so friction <strong>still acts down</strong> the ramp: \(F_{\text{net}} = -134 - 60 = -194\ \text{N}\), so \(a = -194/40 = -4.9\ \text{m s}^{-2}\), i.e. 4.9 m s⁻² down the ramp (slowing it). Trap: friction opposes the <em>direction of sliding</em>, so it flips only once the crate starts sliding back down.</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="F_{\text{net}} = ma">
 <div class="pq-q"><p>A student claims: “When I push a heavy box and it doesn't move, it is because the box pushes back on me with an equal force, so the forces cancel.” Evaluate this claim using Newton's laws.</p></div>
 <div class="pq-s"><p>The claim is incorrect. The box pushing back on the student is the third-law partner of the student's push, but it acts on the <strong>student</strong>, not on the box, so it cannot cancel a force on the box. [1]</p><p>The box stays still because the forces <strong>on the box</strong> are balanced: the student's push is matched by static friction from the floor on the box (first law, \(F_{\text{net}} = 0\)). [1]</p><p>Third-law pairs act on different objects and so never cancel; balanced forces act on the same object. [1]</p></div>
 </div>

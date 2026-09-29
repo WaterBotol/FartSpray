@@ -52,14 +52,14 @@ dotpoints: analyse transformer action with reference to electromagnetic inductio
   <li>Power is never “stepped up”. A transformer trades voltage for current.</li>
 </ul>
 
-<div class="we" data-title="A phone charger" data-marks="4">
+<div class="we" data-title="A phone charger" data-marks="4" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2} ;; V_1I_1 = V_2I_2">
 <div class="we-q"><p>A phone charger contains a transformer that steps 230 V rms mains down to 5.0 V rms. Its primary has 2300 turns. (a) How many turns are on the secondary? (b) If the phone draws 2.0 A, what current flows in the primary? Assume the transformer is ideal.</p></div>
 <div class="we-s"><p><strong>(a) Turns ratio equals voltage ratio:</strong></p>\[ \frac{N_1}{N_2} = \frac{V_1}{V_2} \Rightarrow N_2 = 2300 \times \frac{5.0}{230} = 50\ \text{turns} \]</div>
 <div class="we-s"><p><strong>(b) Power in = power out:</strong> \(P = V_2I_2 = 5.0 \times 2.0 = 10\ \text{W}\).</p>\[ I_1 = \frac{P}{V_1} = \frac{10}{230} = 0.043\ \text{A} \]</div>
 <div class="we-a"><p><strong>(a) 50 turns (b) 0.043 A (43 mA).</strong> Check with the current ratio: \(I_1 = I_2 \times N_2/N_1 = 2.0 \times 50/2300 = 0.043\ \text{A}\) ✓.</p></div>
 </div>
 
-<div class="we" data-title="A power station step-up transformer" data-marks="3">
+<div class="we" data-title="A power station step-up transformer" data-marks="3" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2} = \dfrac{I_2}{I_1}">
 <div class="we-q"><p>A power station generator produces 22 kV. A transformer steps this up to 500 kV for transmission. If the generator supplies 1000 A, what current flows in the transmission line?</p></div>
 <div class="we-s"><p><strong>Voltage ratio:</strong> \(V_2/V_1 = 500/22 = 22.7\).</p></div>
 <div class="we-s"><p><strong>Current goes down by the same factor:</strong> \(I_2 = 1000 \times \dfrac{22}{500} = 44\ \text{A}\).</p></div>
@@ -105,17 +105,17 @@ dotpoints: analyse transformer action with reference to electromagnetic inductio
 <div class="mcq-x"><p>The insulation between sheets breaks up the loops in which eddy currents would flow, reducing heating of the core.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="\dfrac{V_1}{V_2} = \dfrac{N_1}{N_2} ;; V_1I_1 = V_2I_2">
 <div class="pq-q"><p>A model train set needs 16 V rms from 230 V rms mains, drawing 1.5 A. For an ideal transformer, find the turns ratio \(N_1:N_2\) and the primary current.</p></div>
 <div class="pq-s"><p>\(N_1/N_2 = 230/16 = 14.4\), so about 14.4 : 1.</p><p>\(P = 16 \times 1.5 = 24\ \text{W}\); \(I_1 = 24/230 = 0.10\ \text{A}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="I = \dfrac VR ;; P = VI ;; \text{efficiency} = \dfrac{P_{\text{out}}}{P_{\text{in}}}">
 <div class="pq-q"><p>A transformer's primary is connected to 230 V rms. Its secondary supplies 11.5 V rms to a 4.6 Ω resistor. The transformer is 92% efficient. Find the primary current.</p></div>
 <div class="pq-s"><p>Output current: \(I_2 = 11.5/4.6 = 2.5\ \text{A}\); output power \(= 11.5 \times 2.5 = 28.75\ \text{W}\).</p><p>Input power \(= 28.75/0.92 = 31.25\ \text{W}\).</p><p>\(I_1 = 31.25/230 = 0.136\ \text{A}\) (compared with 0.125 A if it were ideal).</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}">
 <div class="pq-q"><p>Explain how an alternating voltage in the primary coil of a transformer produces an alternating voltage in the secondary coil, even though the coils are not electrically connected.</p></div>
 <div class="pq-s"><p>The alternating current in the primary produces a continuously changing magnetic field (flux) in the iron core. [1]</p><p>The core channels this changing flux through the secondary coil. [1]</p><p>By Faraday's law, a changing flux through the secondary induces an emf in it (\(\varepsilon = -N\Delta\Phi/\Delta t\)); as the flux alternates, so does the induced voltage. [1]</p></div>
 </div>

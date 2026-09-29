@@ -381,6 +381,11 @@
     $$('dl.gloss dt', root).forEach(dt => { dt.id = 'a-term-' + slug(texToText(dt.textContent)); });
     $$('.fs-card', root).forEach(c => { const h = c.querySelector('h4'); if (h) c.id = 'a-fs-' + slug(h.textContent); });
   }
+  function formulaBox(str) {
+    const fs = (str || '').split(';;').map(x => x.trim()).filter(Boolean);
+    if (!fs.length) return null;
+    return el('aside', 'fx', '<div class="fx-h">Formulas used</div><ul>' + fs.map(f => '<li>\\(' + esc(f) + '\\)</li>').join('') + '</ul>');
+  }
   function enhanceWorked(root) {
     $$('.we', root).forEach((we, i) => {
       we.id = 'a-we-' + (i + 1);
@@ -397,6 +402,8 @@
       const bReset = el('button', 'btn ghost', 'Hide solution'); bReset.type = 'button';
       const cnt = el('span', 'step-count');
       ctl.append(bNext, bAll, bReset, cnt); we.appendChild(ctl);
+      const fx = formulaBox(we.dataset.f);
+      if (fx) { we.classList.add('has-f'); const q = $(':scope > .we-q', we); if (q) q.after(fx); else wrap.before(fx); }
       let shown = 0;
       const upd = () => {
         steps.forEach((s, k) => { s.hidden = k >= shown; });
@@ -452,6 +459,12 @@
       const level = q.dataset.level || 'core', marks = q.dataset.marks;
       q.prepend(el('div', 'pq-h', '<span class="pq-tag">Question ' + n + '</span><span class="lvl lvl-' + level + '">' + (LEVEL[level] || level) + '</span>' + (marks ? '<span class="marks">' + marks + ' mark' + (marks === '1' ? '' : 's') + '</span>' : '')));
       const sols = $$(':scope > .pq-s', q); sols.forEach(s => { s.hidden = true; });
+      const fx = formulaBox(q.dataset.f);
+      if (fx && sols.length) {
+        const sw = el('div', 'pq-sw has-f'), inner = el('div', 'pq-sols');
+        sols[0].before(sw); sols.forEach(s => inner.appendChild(s)); sw.append(inner, fx); fx.hidden = true;
+        sols.push(fx);
+      }
       const ctl = el('div', 'pq-ctl');
       const bShow = el('button', 'btn primary', 'Reveal solution'); bShow.type = 'button';
       const sm = el('div', 'selfmark', '<span>How did you go?</span>');

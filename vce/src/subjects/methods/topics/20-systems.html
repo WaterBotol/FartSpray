@@ -11,7 +11,7 @@ dotpoints: solution of systems of simultaneous linear equations, including consi
 <div class="eq"><div class="eq-label">The parameter test</div>\[ \begin{aligned} ax + by &= e \\ cx + dy &= f \end{aligned} \qquad \text{unique solution} \iff ad - bc \ne 0 \]<p>If \(ad - bc = 0\) the lines have the same gradient. Then check the constants: if one equation is a multiple of the other, there are infinitely many solutions; otherwise there are none.</p></div>
 <aside class="c-key"><p>\(ad - bc\) is the determinant of the coefficient matrix \(\begin{bmatrix} a & b \\ c & d \end{bmatrix}\). You don't need matrix theory. Just remember “unique ⇔ determinant ≠ 0”, then test the special values by substituting them back in.</p></aside>
 
-<div class="we" data-title="Classifying by a parameter" data-marks="4">
+<div class="we" data-title="Classifying by a parameter" data-marks="4" data-f="\text{no unique solution} \iff \text{determinant } a_1b_2 - a_2b_1 = 0 ;; \text{then test for infinitely many vs none}">
 <div class="we-q"><p>Consider \(\begin{aligned} ax + 3y &= 3 \\ x + (a - 2)y &= 1 \end{aligned}\). Find the values of \(a\) for which the system has (a) a unique solution, (b) no solution, (c) infinitely many solutions.</p></div>
 <div class="we-s"><p>Determinant: \(a(a - 2) - 3 \cdot 1 = a^2 - 2a - 3 = (a - 3)(a + 1)\). Zero when \(a = 3\) or \(a = -1\).</p></div>
 <div class="we-s"><p>\(a = 3\): \(3x + 3y = 3\) and \(x + y = 1\). The first is 3 × the second, so they're the same line: infinitely many solutions.</p></div>
@@ -21,14 +21,14 @@ dotpoints: solution of systems of simultaneous linear equations, including consi
 
 <h2>Three equations, three unknowns</h2>
 <p>Use elimination to reduce to two equations in two unknowns, or use CAS in Exam 2 (solve the three equations together). Geometrically each equation is a plane; they may meet at a point, along a line (infinitely many solutions) or not at all.</p>
-<div class="we" data-title="A 3 × 3 system by elimination (tech-free)" data-marks="3">
+<div class="we" data-title="A 3 × 3 system by elimination (tech-free)" data-marks="3" data-f="\text{elimination}">
 <div class="we-q"><p>Solve \(\ x + y + z = 6,\quad 2x - y + z = 3,\quad x + 2y - z = 2\).</p></div>
 <div class="we-s"><p>Add equations 1 and 3: \(2x + 3y = 8\). Add equations 2 and 3: \(3x + y = 5\).</p></div>
 <div class="we-s"><p>From \(3x + y = 5\): \(y = 5 - 3x\). Substitute: \(2x + 15 - 9x = 8 \Rightarrow x = 1\), so \(y = 2\).</p></div>
 <div class="we-a"><p>Then \(z = 6 - 1 - 2 = 3\). <strong>\((x, y, z) = (1, 2, 3)\)</strong>. Check in equation 2: \(2 - 2 + 3 = 3\). ✓</p></div>
 </div>
 
-<div class="we" data-title="Infinitely many solutions in 3D (Exam 2 style)" data-marks="4">
+<div class="we" data-title="Infinitely many solutions in 3D (Exam 2 style)" data-marks="4" data-f="\text{elimination} ;; \text{infinitely many: } 0 = 0 \text{ row} ;; \text{none: } 0 = k \ne 0">
 <div class="we-q"><p>For the system \(\ x + y + z = 1,\quad x + 2y + 3z = 2,\quad x + 4y + kz = c\): (a) find \(k\) for which there is no unique solution; (b) for that \(k\), find \(c\) so there are infinitely many solutions and give them in terms of a parameter.</p></div>
 <div class="we-s"><p>(a) Subtract: (2) − (1) gives \(y + 2z = 1\); (3) − (1) gives \(3y + (k - 1)z = c - 1\).</p></div>
 <div class="we-s"><p>Triple the first: \(3y + 6z = 3\). The two equations have the same left side when \(k - 1 = 6\), i.e. \(k = 7\).</p></div>
@@ -38,7 +38,7 @@ dotpoints: solution of systems of simultaneous linear equations, including consi
 
 <h2>Lines meeting curves: the discriminant</h2>
 <p>Substitute the line into the curve to get a quadratic. Its discriminant \(\Delta = b^2 - 4ac\) counts the intersections: \(\Delta > 0\) two, \(\Delta = 0\) one (the line is a <strong>tangent</strong>), \(\Delta < 0\) none.</p>
-<div class="we" data-title="Tangent line condition" data-marks="3">
+<div class="we" data-title="Tangent line condition" data-marks="3" data-f="\text{tangent} \iff \Delta = b^2 - 4ac = 0">
 <div class="we-q"><p>Find the values of \(m\) for which the line \(y = mx + 1\) is a tangent to \(y = x^2 + 2x + 2\).</p></div>
 <div class="we-s"><p>Equate: \(x^2 + 2x + 2 = mx + 1 \Rightarrow x^2 + (2 - m)x + 1 = 0\).</p></div>
 <div class="we-s"><p>Tangent ⇔ \(\Delta = 0\): \((2 - m)^2 - 4 = 0 \Rightarrow 2 - m = \pm2\).</p></div>
@@ -94,22 +94,22 @@ dotpoints: solution of systems of simultaneous linear equations, including consi
 <div class="mcq-x"><p>\(x^2 - kx + 4 = 0\): \(\Delta = k^2 - 16 &gt; 0 \Rightarrow |k| &gt; 4\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\text{elimination}">
 <div class="pq-q"><p>Solve simultaneously: \(3x - 2y = 12\) and \(x + 4y = -10\).</p></div>
 <div class="pq-s"><p>Double the first: \(6x - 4y = 24\). Add to the second: \(7x = 14 \Rightarrow x = 2\). Then \(4y = -12 \Rightarrow y = -3\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{determinant } a_1b_2 - a_2b_1 = 0 ;; \text{parallel, distinct lines} \Rightarrow \text{no solution}">
 <div class="pq-q"><p>For what values of \(p\) does \(\ (p + 1)x + 2y = 4,\quad 3x + py = 6\ \) have no solution?</p></div>
 <div class="pq-s"><p>\(\det = p(p + 1) - 6 = p^2 + p - 6 = (p + 3)(p - 2) = 0 \Rightarrow p = -3\) or \(2\). [1]</p><p>\(p = 2\): \(3x + 2y = 4\) and \(3x + 2y = 6\): parallel, no solution. [1]</p><p>\(p = -3\): \(-2x + 2y = 4\) and \(3x - 3y = 6\), i.e. \(x - y = -2\) and \(x - y = 2\): also no solution. [1] <strong>Answer: \(p = -3\) or \(p = 2\).</strong></p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\text{tangent} \iff \Delta = 0 ;; \Delta = b^2 - 4ac">
 <div class="pq-q"><p>Find the exact values of \(c\) for which the line \(y = 2x + c\) is a tangent to the curve \(y = \dfrac{1}{x}\), and give the points of contact.</p></div>
 <div class="pq-s"><p>\(\frac{1}{x} = 2x + c \Rightarrow 2x^2 + cx - 1 = 0\) (\(x \ne 0\)). [1]</p><p>\(\Delta = c^2 + 8 &gt; 0\) always, so this line is <em>never</em> a tangent: it always cuts the hyperbola twice. [1]</p><p>Reason: \(\frac{dy}{dx} = -\frac{1}{x^2} &lt; 0\), so no tangent to \(y = \frac1x\) can have a positive gradient. There are no such values of \(c\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{determinant } = 0 \Rightarrow \text{none or infinitely many}">
 <div class="pq-q"><p>A student says: “The determinant of \(\ 2x + 6y = 5,\ x + 3y = k\ \) is 0, so there is no solution.” Is that always true?</p></div>
 <div class="pq-s"><p>No. The determinant \(2 \cdot 3 - 6 \cdot 1 = 0\) only means the lines are parallel <em>or</em> coincident. If \(k = \frac52\), the second equation is half the first: infinitely many solutions. For \(k \ne \frac52\) there are none.</p></div>
 </div>

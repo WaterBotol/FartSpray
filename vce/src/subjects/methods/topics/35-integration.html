@@ -10,14 +10,14 @@ dotpoints: the fundamental theorem of calculus and evaluation of definite integr
 <div class="eq"><div class="eq-label">Fundamental theorem of calculus</div>\[ \int_a^b f(x)\,dx = F(b) - F(a) \quad\text{where } F' = f \qquad\qquad \frac{d}{dx}\int_a^x f(t)\,dt = f(x) \]<p>The definite integral gives the <strong>signed area</strong> between the graph and the \(x\)-axis: area above counts positive, area below counts negative.</p></div>
 <div class="eq"><div class="eq-label">Properties</div>\[ \int_a^a f = 0 \qquad \int_b^a f = -\int_a^b f \qquad \int_a^b f + \int_b^c f = \int_a^c f \qquad \int_a^b (kf + g) = k\!\int_a^b f + \int_a^b g \]<p>Constants integrate to (constant) × (interval width): \(\int_a^b k\,dx = k(b - a)\).</p></div>
 
-<div class="we" data-title="Using properties (Exam 1 classic)" data-marks="2">
+<div class="we" data-title="Using properties (Exam 1 classic)" data-marks="2" data-f="\int_a^b (kf + g) = k\int_a^b f + \int_a^b g">
 <div class="we-q"><p>Given \(\int_1^4 f(x)\,dx = 5\), find \(\displaystyle\int_1^4\big(2f(x) + 1\big)\,dx\) and \(\displaystyle\int_4^1 f(x)\,dx\).</p></div>
 <div class="we-s"><p>\(2\int_1^4 f + \int_1^4 1\,dx = 2(5) + (4 - 1) = 13\).</p></div>
 <div class="we-a"><p><strong>13 and \(-5\).</strong> The common error is \(2(5) + 1 = 11\): the 1 must be integrated over an interval of width 3.</p></div>
 </div>
 
 <h2>Signed area vs actual area</h2>
-<div class="we" data-title="When part of the region is below the axis" data-marks="3">
+<div class="we" data-title="When part of the region is below the axis" data-marks="3" data-f="\int_a^b f(x)\,dx = F(b) - F(a) ;; \text{area below the axis counts as } -\int">
 <div class="we-q"><p>For \(f(x) = x^2 - 1\) on \([0, 2]\), find (a) \(\int_0^2 f(x)\,dx\) and (b) the total area between the graph and the \(x\)-axis.</p></div>
 <div class="we-s"><p>(a) \(\left[\frac{x^3}{3} - x\right]_0^2 = \frac83 - 2 = \frac23\).</p></div>
 <div class="we-s"><p>(b) The graph crosses at \(x = 1\). Area \(= -\int_0^1(x^2 - 1)\,dx + \int_1^2(x^2 - 1)\,dx = \frac23 + \frac43\).</p></div>
@@ -30,18 +30,18 @@ dotpoints: the fundamental theorem of calculus and evaluation of definite integr
 
 <h2>Area between curves</h2>
 <div class="eq"><div class="eq-label">Area between curves</div>\[ A = \int_a^b\big(\text{upper} - \text{lower}\big)\,dx \]<p>Find the intersection points first. If the curves swap over, split the integral where they cross. Upper − lower works whether the region is above or below the axis.</p></div>
-<div class="we" data-title="Area enclosed by y = x and y = x²" data-marks="2">
+<div class="we" data-title="Area enclosed by y = x and y = x²" data-marks="2" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx">
 <div class="we-q"><p>Find the area of the region enclosed by \(y = x\) and \(y = x^2\).</p></div>
 <div class="we-s"><p>Intersections: \(x = x^2 \Rightarrow x = 0, 1\). On \((0, 1)\), \(x &gt; x^2\).</p></div>
 <div class="we-a"><p>\(A = \int_0^1(x - x^2)\,dx = \frac12 - \frac13 = \boldsymbol{\frac16}\) square units.</p></div>
 </div>
-<div class="we" data-title="Between sin and cos (tech-free)" data-marks="3">
+<div class="we" data-title="Between sin and cos (tech-free)" data-marks="3" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx ;; \int \sin x\,dx = -\cos x,\ \int \cos x\,dx = \sin x">
 <div class="we-q"><p>Find the area enclosed between \(y = \sin x\) and \(y = \cos x\) from \(x = \frac{\pi}{4}\) to \(x = \frac{5\pi}{4}\).</p></div>
 <div class="we-s"><p>They meet at \(\frac{\pi}{4}\) and \(\frac{5\pi}{4}\) (where \(\tan x = 1\)); in between, \(\sin x \ge \cos x\).</p></div>
 <div class="we-s"><p>\(\int_{\pi/4}^{5\pi/4}(\sin x - \cos x)\,dx = \big[-\cos x - \sin x\big]_{\pi/4}^{5\pi/4} = \left(\frac{\sqrt2}{2} + \frac{\sqrt2}{2}\right) - \left(-\frac{\sqrt2}{2} - \frac{\sqrt2}{2}\right)\).</p></div>
 <div class="we-a"><p><strong>\(2\sqrt2\) square units.</strong></p></div>
 </div>
-<div class="we" data-title="A symmetric region (CAS)" data-marks="3">
+<div class="we" data-title="A symmetric region (CAS)" data-marks="3" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx ;; \text{split at each intersection}">
 <div class="we-q"><p>Find the total area enclosed between \(y = x^3 - x\) and \(y = 3x\).</p></div>
 <div class="we-s"><p>Intersections: \(x^3 - x = 3x \Rightarrow x(x^2 - 4) = 0 \Rightarrow x = -2, 0, 2\).</p></div>
 <div class="we-s"><p>On \((0, 2)\), \(3x\) is on top; on \((-2, 0)\), the cubic is on top. By symmetry (both are odd functions), the two regions are equal.</p></div>
@@ -50,7 +50,7 @@ dotpoints: the fundamental theorem of calculus and evaluation of definite integr
 
 <h2>Average value</h2>
 <div class="eq"><div class="eq-label">Average value of \(f\) on \([a, b]\)</div>\[ f_{\text{avg}} = \frac{1}{b - a}\int_a^b f(x)\,dx \]<p>The height of the rectangle on \([a, b]\) with the same (signed) area as the region under \(f\).</p></div>
-<div class="we" data-title="Average value of eˣ" data-marks="2">
+<div class="we" data-title="Average value of eˣ" data-marks="2" data-f="\text{average value} = \dfrac{1}{b - a}\int_a^b f(x)\,dx">
 <div class="we-q"><p>Find the average value of \(f(x) = e^x\) on \([0, 2]\).</p></div>
 <div class="we-s"><p>\(\frac{1}{2}\int_0^2 e^x\,dx = \frac12\big[e^x\big]_0^2\).</p></div>
 <div class="we-a"><p><strong>\(\dfrac{e^2 - 1}{2} \approx 3.19\).</strong> This is not the same as the average of \(f(0)\) and \(f(2)\) (≈ 4.19).</p></div>
@@ -112,22 +112,22 @@ dotpoints: the fundamental theorem of calculus and evaluation of definite integr
 <div class="mcq-x"><p>Fundamental theorem: \(F'(x) = \log_e(x^2 + 1)\), so \(F'(2) = \log_e 5\). No integration needed.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\int e^{kx}\,dx = \dfrac1k e^{kx} ;; \int_a^b f(x)\,dx = F(b) - F(a)">
 <div class="pq-q"><p>Evaluate \(\displaystyle\int_0^1\big(e^{2x} + 3\big)\,dx\).</p></div>
 <div class="pq-s"><p>\(\left[\frac12e^{2x} + 3x\right]_0^1 = \frac12e^2 + 3 - \frac12 = \frac{e^2 + 5}{2}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx">
 <div class="pq-q"><p>Find the area enclosed between \(y = x^2 - 2x\) and \(y = x\).</p></div>
 <div class="pq-s"><p>Intersections: \(x^2 - 2x = x \Rightarrow x(x - 3) = 0\), so \(x = 0, 3\). The line is on top. [1]</p><p>\(A = \int_0^3\big(x - x^2 + 2x\big)\,dx = \int_0^3(3x - x^2)\,dx = \left[\frac{3x^2}{2} - \frac{x^3}{3}\right]_0^3\). [1]</p><p>\(= \frac{27}{2} - 9 = \frac92\) square units. [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="\text{total} = \int_a^b R(t)\,dt ;; \text{average} = \dfrac{1}{b - a}\int_a^b R(t)\,dt">
 <div class="pq-q"><p>Water flows out of a tank at \(R(t) = 5 + 4\sin\!\left(\frac{\pi t}{12}\right)\) litres per hour, \(0 \le t \le 24\). (a) Find the total volume that flows out in 24 hours. (b) Find the average flow rate over the first 6 hours, exactly.</p></div>
 <div class="pq-s"><p>(a) \(\int_0^{24}R\,dt = \left[5t - \frac{48}{\pi}\cos\frac{\pi t}{12}\right]_0^{24} = 120 - \frac{48}{\pi}(1 - 1) = 120\) L. [2]</p><p>(b) \(\frac16\int_0^6 R\,dt = \frac16\left(30 - \frac{48}{\pi}(0 - 1)\right) = \frac16\left(30 + \frac{48}{\pi}\right) = 5 + \frac{8}{\pi}\) L/h. [2]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{area} = \int |f(x)|\,dx \text{ (split where } f \text{ changes sign)}">
 <div class="pq-q"><p>A student finds the area between \(y = \sin x\) and the \(x\)-axis for \(0 \le x \le 2\pi\) by evaluating \(\int_0^{2\pi}\sin x\,dx\). What do they get, and what is the correct area?</p></div>
 <div class="pq-s"><p>They get \([-\cos x]_0^{2\pi} = -1 + 1 = 0\). The correct area is \(2\int_0^{\pi}\sin x\,dx = 2 \times 2 = 4\).</p></div>
 </div>

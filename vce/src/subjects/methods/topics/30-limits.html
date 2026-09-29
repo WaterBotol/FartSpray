@@ -8,7 +8,7 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 -->
 <h2>Limits</h2>
 <p>\(\displaystyle\lim_{x \to a} f(x) = L\) means \(f(x)\) gets as close as we like to \(L\) as \(x\) gets close to \(a\) (from both sides). It doesn't matter what happens <em>at</em> \(x = a\) itself.</p>
-<div class="we" data-title="Removing a 0/0 hole" data-marks="1">
+<div class="we" data-title="Removing a 0/0 hole" data-marks="1" data-f="\text{factorise and cancel before substituting}">
 <div class="we-q"><p>Evaluate \(\displaystyle\lim_{x \to 3} \frac{x^2 - 9}{x - 3}\).</p></div>
 <div class="we-s"><p>Direct substitution gives \(\frac00\): factorise. \(\frac{(x - 3)(x + 3)}{x - 3} = x + 3\) for \(x \ne 3\).</p></div>
 <div class="we-a"><p><strong>\(\lim = 3 + 3 = 6\).</strong> The graph is the line \(y = x + 3\) with a hole at \((3, 6)\).</p></div>
@@ -18,7 +18,7 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 <h2>The derivative from first principles</h2>
 <div class="eq"><div class="eq-label">Definition of the derivative</div>\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \]<p>The fraction is the gradient of the <strong>secant</strong> through \((x, f(x))\) and \((x + h, f(x + h))\). As \(h \to 0\), the secant becomes the <strong>tangent</strong>.</p></div>
 <div class="sim" data-sim="tangent"></div>
-<div class="we" data-title="First principles (Exam 1 favourite)" data-marks="3">
+<div class="we" data-title="First principles (Exam 1 favourite)" data-marks="3" data-f="f&#x27;(x) = \lim_{h\to 0}\dfrac{f(x + h) - f(x)}{h}">
 <div class="we-q"><p>Use first principles to find the derivative of \(f(x) = x^2 - 3x\).</p></div>
 <div class="we-s"><p>\(f(x + h) = (x + h)^2 - 3(x + h) = x^2 + 2xh + h^2 - 3x - 3h\).</p></div>
 <div class="we-s"><p>\(f(x + h) - f(x) = 2xh + h^2 - 3h\), so \(\dfrac{f(x + h) - f(x)}{h} = 2x + h - 3\) (for \(h \ne 0\)).</p></div>
@@ -41,14 +41,14 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 </tbody></table></div>
 <aside class="c-exam"><p>VCAA convention: a function is differentiable on an <strong>open</strong> interval. When asked for the domain of \(f'\), exclude endpoints and every corner, cusp, jump and vertical tangent.</p></aside>
 
-<div class="we" data-title="A smooth join (continuous and differentiable)" data-marks="3">
+<div class="we" data-title="A smooth join (continuous and differentiable)" data-marks="3" data-f="\text{continuous: pieces meet} ;; \text{differentiable: gradients match}">
 <div class="we-q"><p>Find \(a\) and \(b\) such that \(f(x) = \begin{cases} ax^2 + b, & x \le 1 \\ 4x - 1, & x &gt; 1 \end{cases}\) is differentiable at \(x = 1\).</p></div>
 <div class="we-s"><p><strong>Continuous:</strong> \(a(1)^2 + b = 4(1) - 1 \Rightarrow a + b = 3\).</p></div>
 <div class="we-s"><p><strong>Gradients match:</strong> left derivative \(2ax\) at \(x = 1\) is \(2a\); right derivative is 4. So \(2a = 4\).</p></div>
 <div class="we-a"><p><strong>\(a = 2,\ b = 1\).</strong> Both conditions are needed. Matching gradients without continuity doesn't make the function differentiable.</p></div>
 </div>
 
-<div class="we" data-title="Domain of the derivative" data-marks="2">
+<div class="we" data-title="Domain of the derivative" data-marks="2" data-f="|u| \text{ not differentiable where } u = 0 \text{ (sharp point)}">
 <div class="we-q"><p>State the domain of \(f'\) for \(f: [-3, 3] \to \mathbb{R},\ f(x) = |x^2 - 4|\).</p></div>
 <div class="we-s"><p>Corners where the graph is reflected: \(x^2 - 4 = 0 \Rightarrow x = \pm2\). Endpoints \(\pm3\) are also excluded.</p></div>
 <div class="we-a"><p><strong>\((-3, -2) \cup (-2, 2) \cup (2, 3)\).</strong></p></div>
@@ -100,22 +100,22 @@ dotpoints: the concept of a limit and the derivative as the limit of the gradien
 <div class="mcq-x"><p>Each modulus makes a corner where its inside is zero. As a hybrid: gradient −2, then 0, then 2, which change at \(x = -1\) and \(x = 2\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="f&#x27;(x) = \lim_{h\to 0}\dfrac{f(x + h) - f(x)}{h}">
 <div class="pq-q"><p>Use first principles to show that the derivative of \(f(x) = 5 - 2x^2\) is \(-4x\).</p></div>
 <div class="pq-s"><p>\(f(x + h) - f(x) = 5 - 2(x^2 + 2xh + h^2) - 5 + 2x^2 = -4xh - 2h^2\).</p><p>\(f'(x) = \displaystyle\lim_{h \to 0}\frac{-4xh - 2h^2}{h} = \lim_{h \to 0}(-4x - 2h) = -4x\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{continuous: pieces meet} ;; \text{differentiable: gradients match}">
 <div class="pq-q"><p>Find \(p\) and \(q\) so that \(f(x) = \begin{cases} px^3 + q, & x &lt; 2 \\ 6x - 4, & x \ge 2 \end{cases}\) is differentiable for all real \(x\).</p></div>
 <div class="pq-s"><p>Gradient: \(3px^2 = 6\) at \(x = 2 \Rightarrow 12p = 6 \Rightarrow p = \frac12\). [1]</p><p>Continuity: \(\frac12(8) + q = 12 - 4 = 8 \Rightarrow q = 4\). [1]</p><p>\(p = \frac12,\ q = 4\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="2">
+<div class="pq" data-level="exam" data-marks="2" data-f="|u| \text{ not differentiable where } u = 0 \text{ (sharp point)}">
 <div class="pq-q"><p>Let \(f: [0, 2\pi] \to \mathbb{R},\ f(x) = |\sin x|\). State the domain of \(f'\).</p></div>
 <div class="pq-s"><p>Corner at \(x = \pi\) (where \(\sin x\) changes sign) plus the endpoints 0 and \(2\pi\).</p><p>\((0, \pi) \cup (\pi, 2\pi)\).</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{differentiable} \Rightarrow \text{continuous}">
 <div class="pq-q"><p>A student says: “\(h(x) = \begin{cases} x^2 + 1, & x &lt; 0 \\ x^2, & x \ge 0 \end{cases}\) has \(h'(x) = 2x\) for both pieces, so \(h\) is differentiable at 0.” Explain the error.</p></div>
 <div class="pq-s"><p>At \(x = 0\) the pieces give 1 and 0: \(h\) is not continuous there (a jump). A function that isn't continuous at a point can't be differentiable there, even if the gradient formulas match.</p></div>
 </div>

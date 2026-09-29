@@ -38,7 +38,7 @@ dotpoints: analyse the effects of stepping up or stepping down the voltage in th
 </figure>
 
 <h2>The classic comparison</h2>
-<div class="we" data-title="With and without transformers" data-marks="6">
+<div class="we" data-title="With and without transformers" data-marks="6" data-f="I = \dfrac PV ;; V_{\text{drop}} = IR ;; P_{\text{loss}} = I^2R">
 <div class="we-q"><p>A generator supplies 100 kW at 250 V to a town through transmission lines with a total resistance of 0.50 Ω.</p><p>(a) Without transformers, find the line current, the voltage drop along the lines, the power lost and the voltage reaching the town. (b) Repeat with an ideal transformer stepping the voltage up to 10 kV at the generator.</p></div>
 <div class="we-s"><p><strong>(a) Line current</strong> (from the power supplied):</p>\[ I = \frac{P}{V} = \frac{100\,000}{250} = 400\ \text{A} \]</div>
 <div class="we-s"><p><strong>Voltage drop and power loss:</strong></p>\[ V_{\text{drop}} = IR = 400 \times 0.50 = 200\ \text{V} \qquad P_{\text{loss}} = I^2R = 400^2 \times 0.50 = 80\ \text{kW} \]</div>
@@ -60,7 +60,7 @@ dotpoints: analyse the effects of stepping up or stepping down the voltage in th
 </ol>
 </aside>
 
-<div class="we" data-title="Wind turbine to a farmhouse (exam style)" data-marks="8">
+<div class="we" data-title="Wind turbine to a farmhouse (exam style)" data-marks="8" data-f="I = \dfrac PV ;; P_{\text{loss}} = I^2R ;; V_{\text{drop}} = IR ;; \dfrac{V_1}{V_2} = \dfrac{N_1}{N_2}">
 <div class="we-q"><p>A wind turbine generates 50 kW at 400 V rms. It supplies a farmhouse through lines with a total resistance of 2.0 Ω.</p><p>(a) Find the power delivered to the farmhouse if no transformers are used. (b) An ideal 1:20 step-up transformer is installed at the turbine and an ideal 20:1 step-down transformer at the farmhouse. Find the line current, the power loss, and the voltage supplied to the farmhouse. (c) By what factor did the power loss decrease?</p></div>
 <div class="we-s"><p><strong>(a)</strong> \(I = 50\,000/400 = 125\ \text{A}\); \(P_{\text{loss}} = 125^2 \times 2.0 = 31\,250\ \text{W}\).</p><p>Delivered: \(50\,000 - 31\,250 = 18\,750\ \text{W} \approx 19\ \text{kW}\) (only 38%!). Voltage at the farm: \(400 - 125 \times 2.0 = 150\ \text{V}\).</p></div>
 <div class="we-s"><p><strong>(b) After step-up:</strong> \(V = 400 \times 20 = 8000\ \text{V}\), so</p>\[ I_{\text{line}} = \frac{50\,000}{8000} = 6.25\ \text{A} \]</div>
@@ -106,17 +106,17 @@ dotpoints: analyse the effects of stepping up or stepping down the voltage in th
 <div class="mcq-x"><p>The voltage arriving at the transformer is \(11\,000 - 500 = 10\,500\ \text{V}\); \(10\,500/50 = 210\ \text{V}\). Dividing 11 kV by 50 ignores the drop.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="I = \dfrac PV ;; V_{\text{drop}} = IR ;; P_{\text{loss}} = I^2R">
 <div class="pq-q"><p>A generator delivers 5.0 kW at 240 V to a shed through lines of total resistance 0.40 Ω. Find the line current, the voltage at the shed and the percentage of power lost.</p></div>
 <div class="pq-s"><p>\(I = 5000/240 = 20.8\ \text{A}\). \(V_{\text{drop}} = 20.8 \times 0.40 = 8.3\ \text{V}\), so the shed receives \(240 - 8.3 = 232\ \text{V}\).</p><p>\(P_{\text{loss}} = 20.8^2 \times 0.40 = 174\ \text{W}\), which is \(174/5000 = 3.5\%\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="P_{\text{loss}} = I^2R ;; V = \dfrac PI">
 <div class="pq-q"><p>A town needs 2.0 MW. It is supplied through lines of total resistance 5.0 Ω. The power company wants to keep line losses below 1% of the power supplied. What is the minimum transmission voltage? (Assume the 2.0 MW is the power entering the lines.)</p></div>
 <div class="pq-s"><p>Maximum loss: \(0.01 \times 2.0\times10^6 = 2.0\times10^4\ \text{W}\).</p><p>\(I^2R \leq 2.0\times10^4 \Rightarrow I \leq \sqrt{2.0\times10^4/5.0} = 63.2\ \text{A}\).</p><p>\(V = P/I \geq 2.0\times10^6/63.2 = 3.2\times10^4\ \text{V}\): at least about <strong>32 kV</strong>.</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="I = \dfrac PV ;; P_{\text{loss}} = I^2R">
 <div class="pq-q"><p>A student suggests that, to reduce transmission losses, the power company should use a step-<em>down</em> transformer at the power station “so that less voltage is lost”. Explain why this is wrong.</p></div>
 <div class="pq-s"><p>For a fixed power, stepping the voltage down increases the line current (\(I = P/V\)). [1]</p><p>Power loss is \(I^2R\), so a larger current increases the losses (by the square of the factor), and the voltage drop \(IR\) also increases. [1]</p><p>The correct approach is to step the voltage <em>up</em> for transmission (reducing \(I\)), then step it down near the consumer. [1]</p></div>
 </div>

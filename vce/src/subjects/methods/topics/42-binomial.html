@@ -17,7 +17,7 @@ dotpoints: Bernoulli trials and the binomial distribution Bi(n, p) | mean and va
 <div class="eq"><div class="eq-label">Binomial distribution</div>\[ P(X = x) = \binom{n}{x}p^x(1 - p)^{n - x},\quad x = 0, 1, \ldots, n \qquad E(X) = np \qquad \operatorname{Var}(X) = np(1 - p) \]<p>\(\binom{n}{x} = \frac{n!}{x!(n - x)!}\) counts the arrangements of \(x\) successes among \(n\) trials. For example \(\binom{5}{2} = 10\).</p></div>
 <div class="sim" data-sim="binomial"></div>
 
-<div class="we" data-title="Exactly, at least, at most" data-marks="4">
+<div class="we" data-title="Exactly, at least, at most" data-marks="4" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x} ;; P(X \ge a) = 1 - P(X \le a - 1) ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
 <div class="we-q"><p>30% of customers buy a coffee. Ten customers are chosen at random. Find the probability that (a) exactly 3 buy coffee, (b) at least 3 buy coffee, (c) given at least one buys coffee, at least 3 do.</p></div>
 <div class="we-s"><p>(a) \(\binom{10}{3}(0.3)^3(0.7)^7 = 120 \times 0.027 \times 0.0823543 \approx 0.2668\).</p></div>
 <div class="we-s"><p>(b) \(P(X \ge 3) = 1 - P(X \le 2) \approx 1 - 0.3828 = 0.6172\) (CAS: binomCdf).</p></div>
@@ -25,14 +25,14 @@ dotpoints: Bernoulli trials and the binomial distribution Bi(n, p) | mean and va
 <div class="we-a"><p><strong>(a) 0.2668, (b) 0.6172, (c) 0.6352.</strong> In (c), “at least 3” is already inside “at least 1”, so the intersection is just \(P(X \ge 3)\).</p></div>
 </div>
 
-<div class="we" data-title="Find the smallest n (Exam 2 staple)" data-marks="3">
+<div class="we" data-title="Find the smallest n (Exam 2 staple)" data-marks="3" data-f="P(X \ge 1) = 1 - (1 - p)^n">
 <div class="we-q"><p>A machine produces faulty items with probability 0.1. How many items must be tested so that the probability of finding at least one faulty item exceeds 0.95?</p></div>
 <div class="we-s"><p>\(P(X \ge 1) = 1 - 0.9^n &gt; 0.95 \Rightarrow 0.9^n &lt; 0.05\).</p></div>
 <div class="we-s"><p>\(n &gt; \dfrac{\log_e 0.05}{\log_e 0.9} \approx 28.43\). (The inequality flips because \(\log_e 0.9 &lt; 0\).)</p></div>
 <div class="we-a"><p><strong>\(n = 29\).</strong> Always round <em>up</em> for “smallest \(n\)”. Check: \(1 - 0.9^{28} \approx 0.948\) (too small), \(1 - 0.9^{29} \approx 0.953\) ✓.</p></div>
 </div>
 
-<div class="we" data-title="Find n and p from the mean and variance" data-marks="2">
+<div class="we" data-title="Find n and p from the mean and variance" data-marks="2" data-f="E(X) = np ;; \operatorname{Var}(X) = np(1 - p)">
 <div class="we-q"><p>\(X \sim \text{Bi}(n, p)\) with \(E(X) = 6\) and \(\operatorname{Var}(X) = 4.2\). Find \(n\) and \(p\).</p></div>
 <div class="we-s"><p>Divide: \(\dfrac{np(1 - p)}{np} = \dfrac{4.2}{6} \Rightarrow 1 - p = 0.7\).</p></div>
 <div class="we-a"><p><strong>\(p = 0.3\), \(n = \frac{6}{0.3} = 20\).</strong></p></div>
@@ -90,27 +90,27 @@ dotpoints: Bernoulli trials and the binomial distribution Bi(n, p) | mean and va
 <div class="mcq-x"><p>\(n\left(\frac12\right)^n = \frac{3}{32}\). Test: \(n = 6\): \(\frac{6}{64} = \frac{3}{32}\) ✓.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x} ;; P(X \ge 2) = 1 - P(X = 0) - P(X = 1)">
 <div class="pq-q"><p>A multiple-choice test has 8 questions, each with 4 options. A student guesses every answer. Find the probability that they get at least 2 correct.</p></div>
 <div class="pq-s"><p>\(X \sim \text{Bi}(8, 0.25)\). \(P(X \ge 2) = 1 - P(X = 0) - P(X = 1) = 1 - 0.75^8 - 8(0.25)(0.75)^7 \approx 0.6329\).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x}">
 <div class="pq-q"><p>Show that \(P(X = 2)\) for \(X \sim \text{Bi}(4, p)\) is \(6p^2(1 - p)^2\), and find its value when \(p = \frac12\).</p></div>
 <div class="pq-s"><p>\(\binom42 = 6\), so \(P(X = 2) = 6p^2(1 - p)^2\). At \(p = \frac12\): \(6 \times \frac{1}{16} = \frac38\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x} ;; \dfrac{d}{dp}(uv) = u&#x27;v + uv&#x27;">
 <div class="pq-q"><p>For \(X \sim \text{Bi}(4, p)\), find the value of \(p\) that maximises \(P(X = 2)\).</p></div>
 <div class="pq-s"><p>Let \(g(p) = 6p^2(1 - p)^2\). \(g'(p) = 12p(1 - p)^2 - 12p^2(1 - p) = 12p(1 - p)(1 - 2p)\). [2]</p><p>For \(0 &lt; p &lt; 1\): \(g' = 0 \Rightarrow p = \frac12\) (a maximum, \(g = \frac38\)). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x} ;; P(X \ge 2) = 1 - P(X = 0) - P(X = 1)">
 <div class="pq-q"><p>Seeds germinate independently with probability 0.85. (a) In a tray of 20 seeds, find the probability that at least 18 germinate. (b) A gardener buys 5 trays. Find the probability that at least 2 trays have at least 18 seeds germinating.</p></div>
 <div class="pq-s"><p>(a) \(X \sim \text{Bi}(20, 0.85)\): \(P(X \ge 18) \approx 0.4049\). [2]</p><p>(b) \(Y \sim \text{Bi}(5, 0.4049)\): \(P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1) \approx 1 - 0.0746 - 0.2539 \approx 0.6714\). [2] Two binomial distributions, one nested in the other: a VCAA favourite.</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{binomial needs: fixed } n,\ \text{independent trials, constant } p">
 <div class="pq-q"><p>Three cards are drawn from a standard deck <em>without replacement</em>, and \(X\) counts the hearts. Explain why \(X\) is not binomial.</p></div>
 <div class="pq-s"><p>The trials aren't independent and \(p\) changes: \(P(\text{heart}) = \frac{13}{52}\) on the first draw, but \(\frac{12}{51}\) on the second if the first was a heart. (With replacement it would be \(\text{Bi}(3, \frac14)\).)</p></div>
 </div>

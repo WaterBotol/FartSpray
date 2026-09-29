@@ -23,27 +23,27 @@ dotpoints: functional equations and the properties of families of functions | od
 
 <aside class="c-exam" data-title="The number-test strategy"><p>In multiple choice, don't do algebra first. Pick easy values (\(x = 1,\ y = 2\), or \(x = y = 0\)) and test each option. Usually three options fail on the first test. Then prove the survivor in your head.</p></aside>
 
-<div class="we" data-title="Which function satisfies f(x + y) = f(x)f(y)?" data-marks="1">
+<div class="we" data-title="Which function satisfies f(x + y) = f(x)f(y)?" data-marks="1" data-f="\text{test with } x = y = 0 \text{ and } x = y = 1 ;; e^{a + b} = e^ae^b">
 <div class="we-q"><p>Which one of \(f(x) = 3x\), \(f(x) = x^3\), \(f(x) = e^{3x}\), \(f(x) = \log_e(3x)\) satisfies \(f(x + y) = f(x)f(y)\) for all real \(x, y\)?</p></div>
 <div class="we-s"><p>Test \(x = y = 0\): we need \(f(0) = f(0)^2\), so \(f(0) = 0\) or 1. \(\log_e(0)\) is undefined, so D is out.</p></div>
 <div class="we-s"><p>Test \(x = y = 1\): \(3x\) gives \(6\) vs \(9\) ✗; \(x^3\) gives \(8\) vs \(1\) ✗; \(e^{3x}\) gives \(e^6\) vs \(e^3 \cdot e^3 = e^6\) ✓.</p></div>
 <div class="we-a"><p><strong>\(f(x) = e^{3x}\):</strong> \(e^{3(x + y)} = e^{3x}e^{3y}\) for all \(x, y\).</p></div>
 </div>
 
-<div class="we" data-title="Finding a parameter" data-marks="2">
+<div class="we" data-title="Finding a parameter" data-marks="2" data-f="e^{a + b} = e^ae^b ;; e^k = 2 \iff k = \log_e 2">
 <div class="we-q"><p>\(f(x) = e^{kx}\) satisfies \(f(x + 1) = 2f(x)\) for all \(x\). Find \(k\).</p></div>
 <div class="we-s"><p>\(e^{k(x + 1)} = e^{kx}e^k\), so the condition is \(e^{kx}e^k = 2e^{kx}\).</p></div>
 <div class="we-a"><p>Divide by \(e^{kx}\) (never 0): \(e^k = 2\), so <strong>\(k = \log_e 2\)</strong>.</p></div>
 </div>
 
-<div class="we" data-title="Showing a symmetry property" data-marks="2">
+<div class="we" data-title="Showing a symmetry property" data-marks="2" data-f="f(a + h) = f(a - h) \iff \text{symmetric about } x = a">
 <div class="we-q"><p>Let \(f(x) = x^2 - 2x\). Show that \(f(1 + h) = f(1 - h)\) for all \(h\), and interpret this.</p></div>
 <div class="we-s"><p>\(f(1 + h) = (1 + h)^2 - 2(1 + h) = 1 + 2h + h^2 - 2 - 2h = h^2 - 1\).</p></div>
 <div class="we-s"><p>\(f(1 - h) = (1 - h)^2 - 2(1 - h) = 1 - 2h + h^2 - 2 + 2h = h^2 - 1\). Equal. ✓</p></div>
 <div class="we-a"><p>Points the same distance either side of \(x = 1\) have the same height: <strong>the graph is symmetric about the line \(x = 1\)</strong> (its axis of symmetry).</p></div>
 </div>
 
-<div class="we" data-title="Linear functions with f(f(x)) = 4x + 3 (hard)" data-marks="3">
+<div class="we" data-title="Linear functions with f(f(x)) = 4x + 3 (hard)" data-marks="3" data-f="\text{equate coefficients}">
 <div class="we-q"><p>Find all linear functions \(f(x) = ax + b\) such that \(f(f(x)) = 4x + 3\) for all \(x\).</p></div>
 <div class="we-s"><p>\(f(f(x)) = a(ax + b) + b = a^2x + ab + b\).</p></div>
 <div class="we-s"><p>Equate coefficients: \(a^2 = 4\) and \(b(a + 1) = 3\).</p></div>
@@ -102,22 +102,22 @@ dotpoints: functional equations and the properties of families of functions | od
 <div class="mcq-x"><p>\(f(f(x)) = 5 - (5 - x) = x\). Its graph is a line perpendicular to \(y = x\), so reflecting it in \(y = x\) gives the same line.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\text{even: } f(-x) = f(x) ;; \sin(-x) = -\sin x">
 <div class="pq-q"><p>Show that \(f(x) = x\sin x\) is even.</p></div>
 <div class="pq-s"><p>\(f(-x) = (-x)\sin(-x) = (-x)(-\sin x) = x\sin x = f(x)\). An odd function times an odd function is even.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\log_e(x^n) = n\log_e x\ (x &gt; 0)">
 <div class="pq-q"><p>Let \(g(x) = \log_e x\). Show that \(g(x^2) - 2g(x) = 0\) for \(x > 0\). Why does the result fail for \(x < 0\)?</p></div>
 <div class="pq-s"><p>\(g(x^2) = \log_e x^2 = 2\log_e x = 2g(x)\) for \(x > 0\).</p><p>For \(x < 0\), \(g(x^2)\) is defined but \(g(x)\) is not, so the equation has no meaning there.</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{substitute } x = y = 0,\ \text{then } y = -x ;; \text{odd: } f(-x) = -f(x)">
 <div class="pq-q"><p>A function satisfies \(f(x + y) = f(x) + f(y)\) for all real \(x\) and \(y\). Show that (a) \(f(0) = 0\), and (b) \(f\) is odd.</p></div>
 <div class="pq-s"><p>(a) Let \(x = y = 0\): \(f(0) = 2f(0) \Rightarrow f(0) = 0\). [1]</p><p>(b) Let \(y = -x\): \(f(0) = f(x) + f(-x)\), so \(0 = f(x) + f(-x)\) and \(f(-x) = -f(x)\). [2]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\text{odd: } f(-x) = -f(x) ;; e^{\log_e a} = a">
 <div class="pq-q"><p>Let \(h(x) = \dfrac{e^x - e^{-x}}{2}\). (a) Show that \(h\) is odd. (b) Show that \(h(2x) = 2h(x)\sqrt{1 + h(x)^2}\) when \(x = 0\) and \(x = \log_e 2\).</p></div>
 <div class="pq-s"><p>(a) \(h(-x) = \frac{e^{-x} - e^x}{2} = -h(x)\). [1]</p><p>(b) \(x = 0\): both sides are 0. \(x = \log_e 2\): \(h(\log_e 2) = \frac{2 - \frac12}{2} = \frac34\), and \(h(2\log_e 2) = h(\log_e 4) = \frac{4 - \frac14}{2} = \frac{15}{8}\). [1]</p><p>RHS \(= 2 \cdot \frac34 \sqrt{1 + \frac{9}{16}} = \frac32 \cdot \frac54 = \frac{15}{8}\). ✓ [1]</p></div>
 </div>

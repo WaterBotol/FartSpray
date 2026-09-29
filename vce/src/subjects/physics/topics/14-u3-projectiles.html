@@ -61,7 +61,7 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 
 <h2>Horizontal launch</h2>
 <p>A ball rolled off a table or a package dropped from a moving plane starts with \(u_y = 0\). The time to fall depends only on the height.</p>
-<div class="we" data-title="Ball rolling off a table" data-marks="5">
+<div class="we" data-title="Ball rolling off a table" data-marks="5" data-f="s = ut + \tfrac12 at^2 ;; s_x = u_x t ;; v = u + at">
 <div class="we-q"><p>A ball rolls off a 1.8 m high bench at 3.0 m s⁻¹. Find (a) the time to reach the floor, (b) how far from the bench it lands, and (c) its velocity just before landing.</p></div>
 <div class="we-s"><p><strong>(a) Vertical motion</strong> (down positive): \(u_y = 0\), \(a = 9.8\), \(s = 1.8\).</p>\[ s = \tfrac12 at^2 \Rightarrow t = \sqrt{\frac{2(1.8)}{9.8}} = 0.606\ \text{s} \]</div>
 <div class="we-s"><p><strong>(b) Horizontal motion</strong> (constant velocity):</p>\[ s_x = u_x t = 3.0 \times 0.606 = 1.82\ \text{m} \]</div>
@@ -83,7 +83,7 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
   <li>It lands with the same speed it was launched with, at the same angle below the horizontal.</li>
 </ul>
 
-<div class="we" data-title="Kicked ball on a level field" data-marks="5">
+<div class="we" data-title="Kicked ball on a level field" data-marks="5" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta ;; v = u + at ;; v^2 = u^2 + 2as ;; s_x = u_x t">
 <div class="we-q"><p>A ball is kicked from the ground at 25 m s⁻¹ at 40° above the horizontal. Ignoring air resistance, find (a) the time of flight, (b) the maximum height and (c) the range.</p></div>
 <div class="we-s"><p><strong>Components:</strong></p>\[ u_x = 25\cos 40^\circ = 19.2\ \text{m s}^{-1}, \qquad u_y = 25\sin 40^\circ = 16.1\ \text{m s}^{-1} \]</div>
 <div class="we-s"><p><strong>(a) Time to the top</strong> (\(v_y = 0\)), up positive:</p>\[ 0 = 16.07 - 9.8t \Rightarrow t_{\text{up}} = 1.64\ \text{s}, \qquad t_{\text{flight}} = 3.28\ \text{s} \]</div>
@@ -98,7 +98,7 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 
 <h2>Launching from a height</h2>
 <p>When the launch and landing heights differ, the flight is no longer symmetric. Write the vertical displacement equation with the correct sign and solve the quadratic, or split the flight into “up to the top” and “down from the top”.</p>
-<div class="we" data-title="Stone thrown from a cliff (hard)" data-marks="6">
+<div class="we" data-title="Stone thrown from a cliff (hard)" data-marks="6" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta ;; s = ut + \tfrac12 at^2 ;; \tfrac12 mv^2 = \tfrac12 mu^2 + mgh">
 <div class="we-q"><p>A stone is thrown at 15 m s⁻¹ at 30° above the horizontal from the top of a 40 m cliff. Find (a) the time until it hits the ground below, (b) how far from the base of the cliff it lands and (c) its speed on impact.</p></div>
 <div class="we-s"><p><strong>Components:</strong> \(u_x = 15\cos 30^\circ = 12.99\ \text{m s}^{-1}\), \(u_y = 15\sin 30^\circ = 7.5\ \text{m s}^{-1}\) (up).</p></div>
 <div class="we-s"><p><strong>(a) Vertical displacement</strong> (up positive): the stone ends 40 m <em>below</em> its start, so \(s_y = -40\ \text{m}\).</p>\[ -40 = 7.5t - 4.9t^2 \Rightarrow 4.9t^2 - 7.5t - 40 = 0 \]</div>
@@ -112,7 +112,7 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 <p>The 45° rule only holds when launch and landing heights are equal and air resistance is ignored. Launching from a height (a shot-putter's hand, a cliff), the best angle is <strong>less than 45°</strong>. With air resistance, it is also less than 45°.</p>
 </aside>
 
-<div class="we" data-title="Does the ball clear the bar?" data-marks="4">
+<div class="we" data-title="Does the ball clear the bar?" data-marks="4" data-f="u_x = u\cos\theta,\ u_y = u\sin\theta ;; t = \dfrac{s_x}{u_x} ;; s = ut + \tfrac12 at^2">
 <div class="we-q"><p>A footballer kicks a ball from the ground at 20 m s⁻¹ at 35° above the horizontal towards goal posts 30 m away. The crossbar is 3.0 m high. Does the ball go over?</p></div>
 <div class="we-s"><p><strong>Components:</strong> \(u_x = 20\cos 35^\circ = 16.38\ \text{m s}^{-1}\), \(u_y = 20\sin 35^\circ = 11.47\ \text{m s}^{-1}\).</p></div>
 <div class="we-s"><p><strong>Time to travel 30 m horizontally:</strong> \(t = 30/16.38 = 1.83\ \text{s}\).</p></div>
@@ -169,17 +169,17 @@ dotpoints: investigate and analyse theoretically and practically the motion of p
 <div class="mcq-x"><p>Without gravity, the dart would travel in a straight line to the monkey's original position. With gravity, both the dart and the monkey fall the same distance \(\tfrac12 gt^2\) below their gravity-free paths in the same time, so they meet (as long as the dart reaches that horizontal position before the monkey hits the ground).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="s = ut + \tfrac12 at^2 ;; s_x = u_x t">
 <div class="pq-q"><p>A package is dropped from a plane flying horizontally at 60 m s⁻¹ at an altitude of 500 m. How far ahead of the target (horizontally) should it be released? Ignore air resistance.</p></div>
 <div class="pq-s"><p>Vertical: \(500 = \tfrac12(9.8)t^2 \Rightarrow t = 10.1\ \text{s}\).</p><p>Horizontal: the package keeps the plane's 60 m s⁻¹: \(s_x = 60 \times 10.1 = 606\ \text{m}\), so release it about <strong>610 m</strong> before the target. (The package stays directly below the plane all the way down.)</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="s = ut + \tfrac12 at^2 ;; s_x = u_x t ;; v = u + at">
 <div class="pq-q"><p>A ball is thrown horizontally from the top of a building and lands 24 m from the base 2.5 s later. Find (a) the height of the building, (b) the launch speed and (c) the angle of the velocity to the horizontal just before impact.</p></div>
 <div class="pq-s"><p>(a) \(h = \tfrac12 gt^2 = 4.9(2.5)^2 = 30.6\ \text{m}\).</p><p>(b) \(u_x = 24/2.5 = 9.6\ \text{m s}^{-1}\).</p><p>(c) \(v_y = 9.8 \times 2.5 = 24.5\ \text{m s}^{-1}\); \(\tan\alpha = 24.5/9.6 \Rightarrow \alpha = 69^\circ\) below the horizontal.</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="3">
+<div class="pq" data-level="trick" data-marks="3" data-f="\tfrac12 mv^2 = \tfrac12 mu^2 + mgh">
 <div class="pq-q"><p>Two identical balls are thrown from the top of a 20 m building at 15 m s⁻¹, one straight up and one straight down. Ignoring air resistance, compare their speeds as they hit the ground, and explain.</p></div>
 <div class="pq-s"><p>They hit the ground with the <strong>same speed</strong>. By energy conservation \(\tfrac12 v^2 = \tfrac12 u^2 + gh\) for both: \(v = \sqrt{15^2 + 2(9.8)(20)} = 24.8\ \text{m s}^{-1}\).</p><p>The ball thrown up returns past the roof moving down at 15 m s⁻¹, so from then on its motion is identical to the other ball's. It just takes longer.</p></div>
 </div>

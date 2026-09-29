@@ -13,7 +13,7 @@ dotpoints: sums, differences, products and composites of functions, and conditio
 <div class="eq"><div class="eq-label">Composite</div>\[ (f \circ g)(x) = f\big(g(x)\big) \]<p>\(f \circ g\) exists if and only if \(\text{ran}\, g \subseteq \text{dom}\, f\). Then \(\text{dom}(f \circ g) = \text{dom}\, g\).</p></div>
 <aside class="c-key"><p>Think of \(g\) as the first machine and \(f\) as the second. Every output of \(g\) must be an acceptable input for \(f\). If it isn't, restrict the domain of \(g\) until it is.</p></aside>
 
-<div class="we" data-title="Does the composite exist?" data-marks="4">
+<div class="we" data-title="Does the composite exist?" data-marks="4" data-f="f \circ g \text{ exists} \iff \text{ran } g \subseteq \text{dom } f ;; \text{dom}(f \circ g) = \text{dom } g">
 <div class="we-q"><p>Let \(f(x) = \sqrt{x}\) (maximal domain) and \(g: \mathbb{R} \to \mathbb{R},\ g(x) = x^2 - 4\). (a) Explain why \(f \circ g\) does not exist. (b) Find the maximal domain of \(g\) for which \(f \circ g\) exists. (c) Does \(g \circ f\) exist? If so, state its rule and domain.</p></div>
 <div class="we-s"><p>(a) \(\text{ran}\, g = [-4, \infty)\) but \(\text{dom}\, f = [0, \infty)\). Since \([-4, \infty) \not\subseteq [0, \infty)\), \(f \circ g\) does not exist.</p></div>
 <div class="we-s"><p>(b) Need \(g(x) \ge 0\): \(x^2 \ge 4 \Rightarrow x \le -2\) or \(x \ge 2\).</p></div>
@@ -25,7 +25,7 @@ dotpoints: sums, differences, products and composites of functions, and conditio
 <p>Only <strong>one-to-one</strong> functions have inverse functions. To find \(f^{-1}\): swap \(x\) and \(y\), make \(y\) the subject, and pick the correct branch using the range of \(f^{-1}\).</p>
 <div class="eq"><div class="eq-label">Inverse facts</div>\[ \text{dom}\, f^{-1} = \text{ran}\, f \qquad \text{ran}\, f^{-1} = \text{dom}\, f \qquad f\big(f^{-1}(x)\big) = x \]<p>The graph of \(f^{-1}\) is the reflection of \(f\) in the line \(y = x\).</p></div>
 
-<div class="we" data-title="Restrict, then invert" data-marks="4">
+<div class="we" data-title="Restrict, then invert" data-marks="4" data-f="\text{one-to-one needed for an inverse} ;; \text{inverse: swap } x \text{ and } y ;; \text{ran } f^{-1} = \text{dom } f">
 <div class="we-q"><p>Let \(f: (-\infty, a] \to \mathbb{R},\ f(x) = (x - 2)^2 - 3\). (a) Find the largest value of \(a\) for which \(f^{-1}\) exists. (b) With this \(a\), find \(f^{-1}\) and its domain.</p></div>
 <div class="we-s"><p>(a) The turning point is at \(x = 2\). To the left of it, \(f\) is one-to-one (decreasing). So \(a = 2\).</p></div>
 <div class="we-s"><p>(b) Swap: \(x = (y - 2)^2 - 3 \Rightarrow (y - 2)^2 = x + 3 \Rightarrow y - 2 = \pm\sqrt{x + 3}\).</p></div>
@@ -35,7 +35,7 @@ dotpoints: sums, differences, products and composites of functions, and conditio
 
 <h2>Where does a function meet its inverse?</h2>
 <p>If \(f\) is <strong>increasing</strong>, every intersection of \(y = f(x)\) and \(y = f^{-1}(x)\) lies on \(y = x\), so you can solve \(f(x) = x\) instead. That's much easier.</p>
-<div class="we" data-title="The decreasing-function trap" data-marks="3">
+<div class="we" data-title="The decreasing-function trap" data-marks="3" data-f="f \text{ and } f^{-1} \text{ meet on } y = x \text{ (if increasing)} ;; \text{also check } f(a) = b,\ f(b) = a">
 <div class="we-q"><p>Find all points of intersection of \(f(x) = 1 - x^3\) and \(y = f^{-1}(x)\).</p></div>
 <div class="we-s"><p>Solving \(f(x) = x\): \(1 - x^3 = x\), which has one real solution \(x \approx 0.682\). That's one point, \((0.682, 0.682)\).</p></div>
 <div class="we-s"><p>But \(f\) is <em>decreasing</em>, so there can be intersections off the line \(y = x\). Look for pairs with \(f(a) = b\) and \(f(b) = a\): \(f(0) = 1\) and \(f(1) = 0\).</p></div>
@@ -98,22 +98,22 @@ dotpoints: sums, differences, products and composites of functions, and conditio
 <div class="mcq-x"><p>\(\text{ran}\, f = \mathbb{R}\setminus\{0\} \subseteq \mathbb{R}\), so \(g \circ f\) exists. \(\text{ran}\, g = [1, \infty)\) contains 1, which isn't in \(\text{dom}\, f\), so \(f \circ g\) doesn't exist (\(g(0) = 1\) would give \(\frac10\)).</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="\text{inverse: swap } x \text{ and } y ;; \text{dom } f^{-1} = \text{ran } f">
 <div class="pq-q"><p>Find the inverse of \(f(x) = \dfrac{2x + 1}{x - 3}\), stating its domain.</p></div>
 <div class="pq-s"><p>Rewrite: \(f(x) = 2 + \dfrac{7}{x - 3}\), so \(\text{ran}\, f = \mathbb{R}\setminus\{2\}\).</p><p>Swap: \(x = 2 + \dfrac{7}{y - 3} \Rightarrow y - 3 = \dfrac{7}{x - 2}\).</p><p>\(f^{-1}(x) = 3 + \dfrac{7}{x - 2}\), domain \(\mathbb{R}\setminus\{2\}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="f(x) = f^{-1}(x) \text{ on } y = x \text{ for increasing } f ;; x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}">
 <div class="pq-q"><p>Let \(f: [2, \infty) \to \mathbb{R},\ f(x) = x^2 - 4x + 1\). Find the exact coordinates of the point where \(y = f(x)\) meets \(y = f^{-1}(x)\).</p></div>
 <div class="pq-s"><p>\(f\) is increasing on \([2, \infty)\), so intersections lie on \(y = x\). [1]</p><p>\(x^2 - 4x + 1 = x \Rightarrow x^2 - 5x + 1 = 0 \Rightarrow x = \frac{5 \pm \sqrt{21}}{2}\). [1]</p><p>Only \(\frac{5 + \sqrt{21}}{2} \approx 4.79\) is in \([2, \infty)\). Point \(\left(\frac{5 + \sqrt{21}}{2}, \frac{5 + \sqrt{21}}{2}\right)\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="f \circ g \text{ exists} \iff \text{ran } g \subseteq \text{dom } f ;; e^{\log_e u} = u">
 <div class="pq-q"><p>Let \(f(x) = e^{x} - 2\) and \(g(x) = \log_e(x + 3)\), each with maximal domain. (a) Show that \(g \circ f\) exists and find its rule. (b) Explain why \(f \circ g\) exists and find its rule and domain.</p></div>
 <div class="pq-s"><p>(a) \(\text{ran}\, f = (-2, \infty)\) and \(\text{dom}\, g = (-3, \infty)\). Since \((-2, \infty) \subseteq (-3, \infty)\), \(g \circ f\) exists. \(g(f(x)) = \log_e(e^x + 1)\), domain \(\mathbb{R}\). [2]</p><p>(b) \(\text{ran}\, g = \mathbb{R} = \text{dom}\, f\), so \(f \circ g\) exists. \(f(g(x)) = e^{\log_e(x + 3)} - 2 = x + 1\), domain \((-3, \infty)\). [2]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="f(f(x)) = x \iff f^{-1} = f">
 <div class="pq-q"><p>Show that \(f(x) = \dfrac{x + 3}{x - 1}\) is its own inverse. What does this mean for its graph?</p></div>
 <div class="pq-s"><p>\(f(f(x)) = \dfrac{\frac{x + 3}{x - 1} + 3}{\frac{x + 3}{x - 1} - 1} = \dfrac{x + 3 + 3x - 3}{x + 3 - x + 1} = \dfrac{4x}{4} = x\). So \(f^{-1} = f\).</p><p>The graph is symmetric about the line \(y = x\).</p></div>
 </div>

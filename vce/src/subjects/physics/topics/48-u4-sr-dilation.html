@@ -66,7 +66,7 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 <p>For a trip to a star, the astronaut measures the <strong>proper time</strong> but a <strong>contracted distance</strong>; Earth measures the <strong>proper distance</strong> but a <strong>dilated time</strong>. Neither observer has both “proper” quantities. Mixing \(t_0\) with \(L_0\) in one speed calculation is a very common error.</p>
 </aside>
 
-<div class="we" data-title="A trip to a star (hard)" data-marks="6">
+<div class="we" data-title="A trip to a star (hard)" data-marks="6" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; t = \gamma t_0 ;; L = \dfrac{L_0}{\gamma}">
 <div class="we-q"><p>A spaceship travels at \(0.80c\) from Earth to a star 12 light-years away (as measured from Earth). Ignore acceleration.</p><p>(a) How long does the trip take according to Earth observers? (b) How long does it take according to the astronaut? (c) How far is it to the star according to the astronaut? (d) Show that both observers agree on the relative speed.</p></div>
 <div class="we-s"><p><strong>\(\gamma\):</strong> \(\gamma = 1/\sqrt{1 - 0.64} = 1/0.6 = 1.667\).</p></div>
 <div class="we-s"><p><strong>(a) Earth frame:</strong> distance 12 ly at \(0.80c\): \(t = \dfrac{12\ \text{ly}}{0.80c} = 15\ \text{years}\). (A light-year is the distance light travels in a year, so ly ÷ c gives years.)</p></div>
@@ -76,7 +76,7 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 <div class="we-a"><p><strong>(a) 15 years (b) 9.0 years (c) 7.2 ly (d) both get \(0.80c\).</strong> Time dilation (Earth's view) and length contraction (the astronaut's view) are two descriptions of the same physics.</p></div>
 </div>
 
-<div class="we" data-title="Length of a moving spaceship" data-marks="2">
+<div class="we" data-title="Length of a moving spaceship" data-marks="2" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; L = \dfrac{L_0}{\gamma}">
 <div class="we-q"><p>A spaceship is 100 m long when measured by its crew. What length does an observer on a space station measure as it passes at \(0.60c\)? What does the crew measure for the ship's length?</p></div>
 <div class="we-s"><p>\(\gamma = 1/\sqrt{1 - 0.36} = 1.25\). The crew measure proper length (100 m).</p></div>
 <div class="we-s"><p>Station: \(L = L_0/\gamma = 100/1.25 = 80\ \text{m}\).</p></div>
@@ -85,7 +85,7 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 
 <h2>Evidence: muon decay</h2>
 <p><strong>Muons</strong> are unstable particles created when cosmic rays hit the upper atmosphere, about 10 km up. At rest, a muon's mean lifetime is 2.2 μs. They are created moving at about \(0.998c\).</p>
-<div class="we" data-title="Why do muons reach the ground? (classic)" data-marks="6">
+<div class="we" data-title="Why do muons reach the ground? (classic)" data-marks="6" data-f="d = vt ;; \gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; t = \gamma t_0 ;; L = \dfrac{L_0}{\gamma}">
 <div class="we-q"><p>Muons are created 10 km above the ground moving at \(0.998c\). Their mean lifetime at rest is 2.2 μs. (a) Classically, how far would a typical muon travel before decaying? (b) Explain, from Earth's frame, why many reach the ground. (c) Explain the same result from the muon's frame.</p></div>
 <div class="we-s"><p><strong>(a) Classical:</strong> \(d = vt = (0.998)(3.0\times10^8)(2.2\times10^{-6}) = 660\ \text{m}\). Almost none should reach the ground 10 km below.</p></div>
 <div class="we-s"><p><strong>\(\gamma\) at \(0.998c\):</strong> \(\gamma = 1/\sqrt{1 - 0.998^2} = 15.8\).</p></div>
@@ -107,7 +107,7 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 </ul>
 <h3>GPS satellites</h3>
 <p>GPS receivers find position by timing signals from satellites, so the satellites' atomic clocks must agree with ground clocks to within nanoseconds. A GPS satellite orbits at about 3.9 km s⁻¹, so special relativity makes its clock run slow, relative to the ground, by about 7 μs per day. (General relativity, which isn't in the course, makes it run fast by about 45 μs per day, so the net effect is about 38 μs fast per day.) Uncorrected, 38 μs of timing error corresponds to \(c \times 38\ \mu\text{s} \approx 11\ \text{km}\) of position error building up every day, so the satellite clocks are deliberately adjusted.</p>
-<div class="we" data-title="Special-relativity drift of a GPS clock" data-marks="3">
+<div class="we" data-title="Special-relativity drift of a GPS clock" data-marks="3" data-f="\gamma - 1 \approx \tfrac12\left(\dfrac vc\right)^2 ;; t = \gamma t_0">
 <div class="we-q"><p>A GPS satellite moves at \(3.87\times10^3\ \text{m s}^{-1}\). Using \(\gamma - 1 \approx \tfrac12\left(\frac{v}{c}\right)^2\) for small speeds, estimate how far its clock falls behind a ground clock in one day because of special relativity alone.</p></div>
 <div class="we-s"><p>\(\frac{v}{c} = \frac{3.87\times10^3}{3.0\times10^8} = 1.29\times10^{-5}\), so \(\gamma - 1 \approx \tfrac12(1.29\times10^{-5})^2 = 8.3\times10^{-11}\).</p></div>
 <div class="we-s"><p>In one day (86 400 s) the difference is \(86\,400 \times 8.3\times10^{-11} = 7.2\times10^{-6}\ \text{s}\).</p></div>
@@ -148,17 +148,17 @@ dotpoints: describe proper time (\(t_0\)) as the time interval between two event
 <div class="mcq-x"><p>Classically most would decay within about 660 m. In their own frame their lifetime is the normal 2.2 μs; it's Earth observers who measure it dilated.</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} ;; t = \gamma t_0 ;; d = vt">
 <div class="pq-q"><p>A particle with a proper lifetime of \(2.6\times10^{-8}\ \text{s}\) moves through a lab at \(0.95c\). Find its lifetime as measured in the lab and the distance it travels in the lab before decaying.</p></div>
 <div class="pq-s"><p>\(\gamma = 1/\sqrt{1 - 0.9025} = 3.20\).</p><p>\(t = \gamma t_0 = 3.20 \times 2.6\times10^{-8} = 8.3\times10^{-8}\ \text{s}\).</p><p>\(d = vt = 0.95 \times 3.0\times10^8 \times 8.3\times10^{-8} = 24\ \text{m}\) (classically only 7.4 m).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="L = \dfrac{L_0}{\gamma} ;; v = \dfrac{L}{t_0} ;; \gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}">
 <div class="pq-q"><p>How fast must a spaceship travel so that its crew measure a journey to a star 20 ly away (Earth frame) as taking only 10 years?</p></div>
 <div class="pq-s"><p>In the crew's frame the distance is \(L = 20/\gamma\) ly and the time is 10 y, so \(v = \dfrac{20/\gamma}{10}c = \dfrac{2}{\gamma}c\), i.e. \(\beta = 2\sqrt{1 - \beta^2}\).</p><p>Square: \(\beta^2 = 4(1 - \beta^2) \Rightarrow 5\beta^2 = 4 \Rightarrow \beta = 0.894\).</p><p>\(v = 0.89c\) (check: \(\gamma = 2.24\), distance 8.94 ly, time 8.94/0.894 = 10 y ✓).</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="t = \gamma t_0 ;; L = \dfrac{L_0}{\gamma}">
 <div class="pq-q"><p>Explain how the detection of large numbers of muons at sea level supports special relativity. Refer to the frames of reference of both an Earth observer and the muon.</p></div>
 <div class="pq-s"><p>Muons are produced ~10 km up with a proper mean lifetime of about 2.2 μs; classically, even at nearly \(c\), they'd travel only ~660 m before decaying, so very few should reach sea level. [1]</p><p>Earth frame: the muon's lifetime is proper time in its own frame; Earth observers measure it dilated (\(t = \gamma t_0\), about 35 μs for \(\gamma \approx 16\)), long enough to travel ~10 km. [1]</p><p>Muon frame: the atmosphere's thickness is proper length in Earth's frame; the muon measures it contracted (\(L = L_0/\gamma\), ~630 m), which it can cross within its normal 2.2 μs lifetime. [1]</p><p>Both frames predict that many muons reach the ground, which matches observation and contradicts classical physics. [1]</p></div>
 </div>

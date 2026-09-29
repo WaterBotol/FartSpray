@@ -9,79 +9,79 @@ dotpoints: mixed practice across all areas of study without technology
 <aside class="c-exam" data-title="How to use this set"><p>Exam 1 is 1 hour (plus 15 min reading) for 40 marks: short-answer, tech-free, exact answers. Allow about 1.5 minutes per mark. Do these under those conditions with no CAS or calculator, then mark yourself strictly against the solutions: VCAA awards method marks (M) and answer marks (A) separately. The questions start routine and finish with the kinds that usually have the lowest average scores.</p></aside>
 
 <h2>Section 1: routine (aim for full marks)</h2>
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; \dfrac{d}{dx}\log_e x = \dfrac1x">
 <div class="pq-q"><p><strong>Q1.</strong> Let \(y = x^3\log_e x\). Find \(\dfrac{dy}{dx}\), and evaluate it at \(x = e\).</p></div>
 <div class="pq-s"><p>\(\dfrac{dy}{dx} = 3x^2\log_e x + x^3\cdot\dfrac1x = 3x^2\log_e x + x^2\). [1]</p><p>At \(x = e\): \(3e^2 + e^2 = 4e^2\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="\int \cos(kx)\,dx = \dfrac1k\sin(kx) + c">
 <div class="pq-q"><p><strong>Q2.</strong> Evaluate \(\displaystyle\int_0^{\pi/6}\cos(3x)\,dx\).</p></div>
 <div class="pq-s"><p>\(\left[\frac13\sin(3x)\right]_0^{\pi/6} = \frac13\sin\frac{\pi}{2} - 0 = \frac13\). [2]</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="n\log_a x = \log_a x^n ;; \log_a m - \log_a n = \log_a\dfrac mn ;; \log_a x = y \iff x = a^y">
 <div class="pq-q"><p><strong>Q3.</strong> Solve \(2\log_3 x - \log_3(x + 6) = 1\).</p></div>
 <div class="pq-s"><p>\(\log_3\dfrac{x^2}{x + 6} = 1 \Rightarrow x^2 = 3(x + 6)\). [1]</p><p>\(x^2 - 3x - 18 = 0 \Rightarrow (x - 6)(x + 3) = 0\). [1]</p><p>\(x = 6\) (reject \(x = -3\), since \(\log_3(-3)\) is undefined). [1]</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="2">
+<div class="pq" data-level="core" data-marks="2" data-f="x_{n+1} = x_n - \dfrac{f(x_n)}{f&#x27;(x_n)}">
 <div class="pq-q"><p><strong>Q4.</strong> Use Newton's method with \(x_0 = 2\) to find \(x_1\) for \(f(x) = x^3 - 5\).</p></div>
 <div class="pq-s"><p>\(f'(x) = 3x^2\). \(x_1 = 2 - \dfrac{8 - 5}{12} = 2 - \dfrac14 = \dfrac74\). [2]</p></div>
 </div>
 
 <h2>Section 2: standard</h2>
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\sin\theta = \dfrac{\sqrt3}{2} \Rightarrow \theta = \dfrac\pi3, \dfrac{2\pi}{3} + 2n\pi">
 <div class="pq-q"><p><strong>Q5.</strong> Solve \(2\sin(2x) = \sqrt3\) for \(x \in [-\pi, \pi]\).</p></div>
 <div class="pq-s"><p>\(\sin(2x) = \frac{\sqrt3}{2}\), with \(2x \in [-2\pi, 2\pi]\). [1]</p><p>\(2x = \frac{\pi}{3}, \frac{2\pi}{3}, -\frac{5\pi}{3}, -\frac{4\pi}{3}\). [1]</p><p>\(x = -\frac{5\pi}{6}, -\frac{2\pi}{3}, \frac{\pi}{6}, \frac{\pi}{3}\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="4">
+<div class="pq" data-level="hard" data-marks="4" data-f="\dfrac{d}{dx}(uv) = u&#x27;v + uv&#x27; ;; f&#x27;(x) = 0 \text{ at stationary points}">
 <div class="pq-q"><p><strong>Q6.</strong> Let \(f(x) = x^2e^{-x}\). (a) Show that \(f'(x) = x(2 - x)e^{-x}\). (b) Find the coordinates and nature of the stationary points.</p></div>
 <div class="pq-s"><p>(a) \(f'(x) = 2xe^{-x} - x^2e^{-x} = x(2 - x)e^{-x}\). [1]</p><p>(b) \(f'(x) = 0 \Rightarrow x = 0\) or \(x = 2\) (as \(e^{-x} \ne 0\)). [1]</p><p>Sign of \(f'\): \(-\), \(+\), \(-\). So \((0, 0)\) is a local minimum [1] and \(\left(2, \frac{4}{e^2}\right)\) is a local maximum. [1]</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x} ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
 <div class="pq-q"><p><strong>Q7.</strong> \(X \sim \text{Bi}\left(3, \frac13\right)\). Find \(P(X = 2 \mid X \ge 1)\).</p></div>
 <div class="pq-s"><p>\(P(X \ge 1) = 1 - \left(\frac23\right)^3 = \frac{19}{27}\). [1]</p><p>\(P(X = 2) = 3\left(\frac13\right)^2\left(\frac23\right) = \frac{6}{27}\). [1]</p><p>\(P(X = 2 \mid X \ge 1) = \frac{6/27}{19/27} = \frac{6}{19}\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\int f(x)\,dx = 1 ;; \int \sin(kx)\,dx = -\dfrac1k\cos(kx)">
 <div class="pq-q"><p><strong>Q8.</strong> A continuous random variable has pdf \(f(x) = k\sin(\pi x)\) for \(0 \le x \le 1\) (0 elsewhere). Find \(k\) and \(P\left(X &lt; \frac13\right)\).</p></div>
 <div class="pq-s"><p>\(k\left[-\frac{\cos(\pi x)}{\pi}\right]_0^1 = \frac{2k}{\pi} = 1 \Rightarrow k = \frac{\pi}{2}\). [1]</p><p>\(P\left(X &lt; \frac13\right) = \frac{\pi}{2}\cdot\frac1\pi\left[-\cos(\pi x)\right]_0^{1/3} = \frac12\left(1 - \frac12\right) = \frac14\). [2]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\text{area} = \int |f(x)|\,dx \text{ (split at } x\text{-intercepts)}">
 <div class="pq-q"><p><strong>Q9.</strong> Find the total area enclosed between the graph of \(y = x^2 - 2x\) and the \(x\)-axis for \(0 \le x \le 3\).</p></div>
 <div class="pq-s"><p>Intercepts at \(x = 0, 2\); the graph is below the axis on \((0, 2)\). [1]</p><p>\(-\int_0^2(x^2 - 2x)\,dx = \frac43\) and \(\int_2^3(x^2 - 2x)\,dx = \left[\frac{x^3}{3} - x^2\right]_2^3 = 0 - \left(-\frac43\right) = \frac43\). [1]</p><p>Total \(\frac83\) square units. [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="2">
+<div class="pq" data-level="exam" data-marks="2" data-f="\hat p \pm z\sqrt{\dfrac{\hat p(1 - \hat p)}{n}}">
 <div class="pq-q"><p><strong>Q10.</strong> In a random sample of 100 people, 20 are left-handed. Using \(z \approx 2\), find an approximate 95% confidence interval for the proportion of left-handed people.</p></div>
 <div class="pq-s"><p>\(\hat p = 0.2\); SE \(= \sqrt{\frac{0.2 \times 0.8}{100}} = 0.04\). [1]</p><p>\(0.2 \pm 2(0.04)\): \((0.12, 0.28)\). [1]</p></div>
 </div>
 
 <h2>Section 3: the hardest styles</h2>
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{tangent at } x = a: y - f(a) = f&#x27;(a)(x - a) ;; \dfrac{d}{dx}e^{kx} = ke^{kx}">
 <div class="pq-q"><p><strong>Q11.</strong> Find the equation of the tangent to \(y = e^{2x}\) that passes through the origin.</p></div>
 <div class="pq-s"><p>Contact point \((a, e^{2a})\), gradient \(2e^{2a}\). Tangent: \(y - e^{2a} = 2e^{2a}(x - a)\). [1]</p><p>Through \((0, 0)\): \(-e^{2a} = -2ae^{2a} \Rightarrow a = \frac12\). [1]</p><p>Gradient \(2e\), so the tangent is \(y = 2ex\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="trick" data-marks="2">
+<div class="pq" data-level="trick" data-marks="2" data-f="f \circ g \text{ exists} \iff \text{ran } g \subseteq \text{dom } f">
 <div class="pq-q"><p><strong>Q12.</strong> Let \(f(x) = \sqrt{4 - x}\) (maximal domain) and \(g: [-a, a] \to \mathbb{R},\ g(x) = x^2\). Find the largest value of \(a\) for which \(f \circ g\) exists.</p></div>
 <div class="pq-s"><p>Need \(\text{ran}\, g = [0, a^2] \subseteq \text{dom}\, f = (-\infty, 4]\). [1]</p><p>\(a^2 \le 4 \Rightarrow a = 2\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="(x, y) \to (ax + b, cy + d) ;; \int \text{ under dilation by } a \text{ from the } y\text{-axis scales by } a">
 <div class="pq-q"><p><strong>Q13.</strong> Given \(\int_0^2 f(x)\,dx = 5\), the graph of \(y = f(x)\) is transformed by \((x, y) \to (2x - 1,\ 3 - y)\). Find the integral of the image function from \(x = -1\) to \(x = 3\).</p></div>
 <div class="pq-s"><p>Image: \(x' = 2x - 1,\ y' = 3 - y \Rightarrow y' = 3 - f\!\left(\frac{x' + 1}{2}\right)\). [1]</p><p>\(\int_{-1}^{3}\left(3 - f\!\left(\frac{x + 1}{2}\right)\right)dx = 3 \times 4 - 2\int_0^2 f(u)\,du\) (the horizontal dilation by 2 doubles the area). [1]</p><p>\(= 12 - 10 = 2\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="f&#x27;(x) = 0 \text{ at stationary points} ;; \text{three roots: max above, min below the } x\text{-axis}">
 <div class="pq-q"><p><strong>Q14.</strong> Let \(f(x) = x^3 - 3x^2 + k\). (a) Find the values of \(k\) for which \(f(x) = 0\) has three distinct real solutions. (b) For \(k = 4\), factorise \(f(x)\).</p></div>
 <div class="pq-s"><p>(a) \(f'(x) = 3x(x - 2)\); local max \(f(0) = k\), local min \(f(2) = k - 4\). [1] Three solutions need \(k &gt; 0\) and \(k - 4 &lt; 0\): \(0 &lt; k &lt; 4\). [1]</p><p>(b) \(k = 4\): \(f(2) = 0\) and \(x = 2\) is a turning point, so \((x - 2)^2\) is a factor. [1] \(x^3 - 3x^2 + 4 = (x - 2)^2(x + 1)\). [1]</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="4">
+<div class="pq" data-level="exam" data-marks="4" data-f="\text{continuous: pieces meet} ;; \text{differentiable: gradients match} ;; \int_a^b f(x)\,dx = F(b) - F(a)">
 <div class="pq-q"><p><strong>Q15.</strong> \(f(x) = \begin{cases} ax^2 + bx, & x \le 1 \\ \log_e x + 2, & x &gt; 1\end{cases}\) is differentiable at \(x = 1\). Find \(a\) and \(b\), then find the exact area under \(y = f(x)\) from \(x = 0\) to \(x = 1\).</p></div>
 <div class="pq-s"><p>Continuity: \(a + b = \log_e 1 + 2 = 2\). [1] Gradient: \(2a + b = \frac11 = 1\). [1]</p><p>Subtract: \(a = -1\), \(b = 3\). [1]</p><p>\(\int_0^1(-x^2 + 3x)\,dx = -\frac13 + \frac32 = \frac76\) (the parabola is positive on \((0, 1]\)). [1]</p></div>
 </div>

@@ -33,7 +33,7 @@ dotpoints: calculate magnetic flux when the magnetic field is perpendicular to t
 <aside class="c-trap" data-title="Trick alert: 'perpendicular to the field' means what, exactly?">
 <p>Read carefully whether the question says the <strong>plane of the coil</strong> or the <strong>normal / axis of the coil</strong> is perpendicular to the field. Plane perpendicular to \(B\) → maximum flux. Axis (normal) perpendicular to \(B\) → the plane is parallel, so zero flux.</p>
 </aside>
-<div class="we" data-title="Flux through a loop" data-marks="2">
+<div class="we" data-title="Flux through a loop" data-marks="2" data-f="\Phi = BA_\perp">
 <div class="we-q"><p>A rectangular loop 20 cm × 10 cm sits with its plane perpendicular to a uniform 0.50 T field. Find the flux through it. What is the flux after it rotates 90°?</p></div>
 <div class="we-s"><p><strong>Area:</strong> \(A = 0.20 \times 0.10 = 0.020\ \text{m}^2\). <strong>Flux:</strong> \(\Phi = BA = 0.50 \times 0.020 = 0.010\ \text{Wb}\).</p></div>
 <div class="we-s"><p><strong>After 90°</strong> the plane is parallel to the field, so \(\Phi = 0\).</p></div>
@@ -55,21 +55,21 @@ dotpoints: calculate magnetic flux when the magnetic field is perpendicular to t
 <div class="eq"><div class="eq-label">Faraday's law of induction</div>\[ \varepsilon = -N\frac{\Delta\Phi_B}{\Delta t} \]<p>\(\varepsilon\) = average induced emf (V), \(N\) = number of turns in the coil, \(\Delta\Phi_B/\Delta t\) = rate of change of flux through <em>one</em> turn (Wb s⁻¹). The minus sign expresses Lenz's law (the direction opposes the change; see the <a href="#u3-lenz">next page</a>). For magnitudes, drop it.</p></div>
 <p>To get a bigger induced emf: more turns, a bigger change in flux (stronger field, larger area) or a faster change (shorter time).</p>
 
-<div class="we" data-title="Switching off an electromagnet" data-marks="3">
+<div class="we" data-title="Switching off an electromagnet" data-marks="3" data-f="\Delta\Phi = \Phi_f - \Phi_i ;; \varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}">
 <div class="we-q"><p>A 200-turn coil of area \(4.0\times10^{-3}\ \text{m}^2\) is perpendicular to a 0.60 T magnetic field. The field is switched off, falling to zero in 0.050 s. Find the average emf induced in the coil.</p></div>
 <div class="we-s"><p><strong>Change in flux</strong> through one turn:</p>\[ \Delta\Phi = \Phi_f - \Phi_i = 0 - (0.60)(4.0\times10^{-3}) = -2.4\times10^{-3}\ \text{Wb} \]</div>
 <div class="we-s"><p><strong>Faraday's law:</strong></p>\[ |\varepsilon| = N\frac{|\Delta\Phi|}{\Delta t} = 200 \times \frac{2.4\times10^{-3}}{0.050} = 9.6\ \text{V} \]</div>
 <div class="we-a"><p><strong>9.6 V.</strong> Forgetting \(N\) (giving 0.048 V) is the most common error.</p></div>
 </div>
 
-<div class="we" data-title="Rotating a coil through a quarter turn" data-marks="3">
+<div class="we" data-title="Rotating a coil through a quarter turn" data-marks="3" data-f="\Phi = BA_\perp ;; \varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}">
 <div class="we-q"><p>A 50-turn coil of area 0.010 m² is rotated from a position where its plane is perpendicular to a 0.40 T field to a position where its plane is parallel to the field, in 0.020 s. Find the average emf.</p></div>
 <div class="we-s"><p><strong>Flux change:</strong> from \(BA = 0.40 \times 0.010 = 4.0\times10^{-3}\ \text{Wb}\) to 0.</p></div>
 <div class="we-s">\[ |\varepsilon| = 50 \times \frac{4.0\times10^{-3}}{0.020} = 10\ \text{V} \]</div>
 <div class="we-a"><p><strong>10 V</strong> (average over the quarter turn). This “quarter turn” calculation is how VCE calculates the average emf of a generator.</p></div>
 </div>
 
-<div class="we" data-title="A loop moving into a field" data-marks="3">
+<div class="we" data-title="A loop moving into a field" data-marks="3" data-f="\Phi = BA_\perp ;; \varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}">
 <div class="we-q"><p>A single square loop of side 10 cm moves at a constant 2.0 m s⁻¹ into a region of uniform 0.50 T field perpendicular to the loop. Find the emf while it is entering. What is the emf once the loop is completely inside the field?</p></div>
 <div class="we-s"><p><strong>Time to enter completely:</strong> \(\Delta t = 0.10/2.0 = 0.050\ \text{s}\).</p></div>
 <div class="we-s"><p><strong>Flux change:</strong> from 0 to \(BA = 0.50 \times 0.010 = 5.0\times10^{-3}\ \text{Wb}\). \(\varepsilon = 5.0\times10^{-3}/0.050 = 0.10\ \text{V}\).</p></div>
@@ -132,17 +132,17 @@ dotpoints: calculate magnetic flux when the magnetic field is perpendicular to t
 <div class="mcq-x"><p>\(\varepsilon = N\Delta\Phi/\Delta t\) doesn't depend on wire thickness. (Thicker wire has less resistance, so the <em>current</em> would be larger, but the emf is the same.)</p></div>
 </div>
 
-<div class="pq" data-level="core" data-marks="3">
+<div class="pq" data-level="core" data-marks="3" data-f="\Delta\Phi = \Delta B \times A ;; \varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}">
 <div class="pq-q"><p>A 300-turn coil of area 25 cm² sits in a magnetic field perpendicular to its plane. The field increases uniformly from 0.10 T to 0.50 T in 0.20 s. Find the average emf.</p></div>
 <div class="pq-s"><p>\(A = 25\ \text{cm}^2 = 2.5\times10^{-3}\ \text{m}^2\).</p><p>\(\Delta\Phi = \Delta B \times A = 0.40 \times 2.5\times10^{-3} = 1.0\times10^{-3}\ \text{Wb}\).</p><p>\(\varepsilon = 300 \times 1.0\times10^{-3}/0.20 = 1.5\ \text{V}\).</p></div>
 </div>
 
-<div class="pq" data-level="hard" data-marks="3">
+<div class="pq" data-level="hard" data-marks="3" data-f="\Phi = BA_\perp ;; \varepsilon = -N\dfrac{\Delta\Phi}{\Delta t}">
 <div class="pq-q"><p>A 40-turn coil with area 0.050 m² sits with its plane perpendicular to a 0.30 T field. It is flipped over (rotated 180°) in 0.10 s. Find the average emf.</p></div>
 <div class="pq-s"><p>Initial flux \(+BA = +0.015\ \text{Wb}\). After a 180° flip the same field lines pass through it from the other side: \(-0.015\ \text{Wb}\).</p><p>\(|\Delta\Phi| = 0.030\ \text{Wb}\) (not zero, and not 0.015!).</p><p>\(\varepsilon = 40 \times 0.030/0.10 = 12\ \text{V}\).</p></div>
 </div>
 
-<div class="pq" data-level="exam" data-marks="3">
+<div class="pq" data-level="exam" data-marks="3" data-f="\varepsilon = -N \times \text{gradient of } \Phi\text{–}t">
 <div class="pq-q"><p>Sketch the emf–time graph for a coil whose flux–time graph is a straight line rising from 0 to \(\Phi_{\max}\) in time \(t_1\), then remains constant. Explain the shape.</p></div>
 <div class="pq-s"><p>A constant (non-zero) emf from 0 to \(t_1\), of size \(N\Phi_{\max}/t_1\) (negative by Faraday's sign convention), then zero after \(t_1\). [1]</p><p>From 0 to \(t_1\) the flux changes at a constant rate (constant gradient), so the induced emf is constant. [1]</p><p>After \(t_1\) the flux is constant, so its rate of change (and the emf) is zero, even though the flux itself is at its maximum. [1]</p></div>
 </div>
