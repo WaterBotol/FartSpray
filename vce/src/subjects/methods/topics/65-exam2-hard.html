@@ -1,303 +1,409 @@
 <!--
 id: exam2-hard
-title: Exam 2 practice paper (harder)
+title: Real VCAA questions: harder paper
 short: Exam 2 · harder
 special: exam
-summary: A full technology-active Exam 2 pitched above VCAA: a log function and its inverse, a two-term trig function with a stationary inflection, a fish-length normal/binomial/DRV mix, and a tangent-triangle optimisation with a Newton’s method algorithm.
-keywords: practice exam, trial exam, full exam, hard exam, assessor report, marking guide, methods exam 2, CAS, technology active, practice exam 2, hard methods exam
+summary: A full-length Mathematical Methods Exam 2 paper built only from real VCAA exam questions, chosen because Victorian students found them the hardest: ranked by the published state results. Each question links to the official exam, with the real percentage correct or state average, a marking guide and notes from the examiners’ reports.
+keywords: real exam questions, past exam questions, vcaa questions, ranked by difficulty, state average, cohort results, examiners report, harder questions, practice exam
 -->
-<div class="ex-meta" data-level="hard" data-reading="15" data-writing="120"></div>
-<div class="ex-cover"><h3>Mathematical Methods · Exam 2 practice (harder)</h3>
-<ul><li>Reading time: 15 minutes. Writing time: 2 hours. CAS calculator and one bound reference allowed.</li>
-<li><strong>Section A</strong>: 20 multiple-choice questions (20 marks). <strong>Section B</strong>: 4 extended-response questions (60 marks).</li>
-<li>This paper is harder than a real Exam 2. 55/80 is a strong score. Show your setup, and give exact answers where asked.</li></ul></div>
+<div class="ex-meta" data-level="hard" data-reading="15" data-writing="120" data-real="1" data-state="34.0"></div>
+<div class="ex-cover"><h3>Mathematical Methods Exam 2 · real exam questions, harder</h3><p>Every question here is a <strong>real VCAA exam question</strong>. They were chosen by ranking every question from the exams below by how Victorian students actually scored on it: percentage correct for multiple choice, and state average ÷ marks for written questions. This paper takes the <strong>lowest</strong> band. The questions themselves are in the official PDFs (VCAA copyright), so open each one with its link. Answer here, then mark yourself against the guide.</p><p><strong>How the state went on these exact questions:</strong> an average of <strong>34 / 84 (41%)</strong>. Beat that.</p><ul class="src-list"><li><a href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf" target="_blank" rel="noopener">2023 Exam 2 exam (PDF)</a> · <a href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023mathmethods2-report.docx" target="_blank" rel="noopener">examiners’ report</a></li><li><a href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf" target="_blank" rel="noopener">2024 Exam 2 exam (PDF)</a> · <a href="https://www.vcaa.vic.edu.au/sites/default/files/2025-10/2024mathematicalmethods2-report.docx" target="_blank" rel="noopener">examiners’ report</a></li><li><a href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf" target="_blank" rel="noopener">2025 Exam 2 exam (PDF)</a> · <a href="https://www.vcaa.vic.edu.au/sites/default/files/2026-02/2025-MathematicalMethods2-report_0.docx" target="_blank" rel="noopener">examiners’ report</a></li></ul></div>
 <h2>Section A – Multiple-choice questions</h2>
-<div class="ex-inst"><p>Answer all questions. Choose the response that is correct for the question. A correct answer scores 1; an incorrect answer scores 0. No marks are deducted for incorrect answers.</p></div>
-<div class="mcq" data-ans="A" data-t="functions">
-<div class="mcq-q"><p>The maximal domain of \(f(x) = \sqrt{x^2 - 4} + \ln(5 - x)\) is</p></div>
-<ol><li>\((-\infty, -2] \cup [2, 5)\)</li><li>\([2, 5)\)</li><li>\((-\infty, 5)\)</li><li>\([-2, 2]\)</li></ol>
-<div class="mcq-x"><p>\(x^2 \ge 4\) gives \(x \le -2\) or \(x \ge 2\), and the log needs \(x < 5\).</p></div>
+<div class="ex-inst"><p>Open each question in the exam PDF, then choose A–D here. One mark each.</p></div>
+<div class="mcq" data-ans="C" data-t="circular" data-fac="42">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 9</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=5" target="_blank" rel="noopener">Open in the exam PDF (p. 5) ↗</a></p><p>Value of a that makes a tan/sin hybrid continuous and smooth at x = 2π</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Continuity needs \(\sin(2\pi a) = 0\). Smoothness needs \(a\cos(2\pi a) = \frac12\) (the gradient of \(\tan\frac x2\) there). So \(a = -\frac12\).</p></div>
+<div class="ex-rep"><p><strong>42% of Victorian students got this right.</strong> Choices: A 7% · B 9% · C 42% · D 31% · E 10%. The most popular wrong answer was D (31%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="polynomials">
-<div class="mcq-q"><p>A cubic touches the \(x\)-axis at \(x = -1\), crosses it at \(x = 3\) and passes through \((0, 6)\). Its rule is</p></div>
-<ol><li>\(y = -2(x + 1)^2(x - 3)\)</li><li>\(y = 2(x + 1)^2(x - 3)\)</li><li>\(y = -2(x - 1)^2(x + 3)\)</li><li>\(y = 2(x + 1)(x - 3)^2\)</li></ol>
-<div class="mcq-x"><p>\(y = a(x + 1)^2(x - 3)\), and at \(x = 0\): \(-3a = 6\), so \(a = -2\).</p></div>
+<div class="mcq" data-ans="E" data-t="diff-rules" data-fac="22">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 11</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=5" target="_blank" rel="noopener">Open in the exam PDF (p. 5) ↗</a></p><p>Gradient of f × g at x = −2 from given values</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Product rule: \(3 \times 8 + (-7) \times 2 = 10\).</p></div>
+<div class="ex-rep"><p><strong>22% of Victorian students got this right.</strong> Choices: A 6% · B 13% · C 8% · D 51% · E 22%. The most popular wrong answer was D (51%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="transformations">
-<div class="mcq-q"><p>The graph of \(y = 2f(3 - x)\) can be obtained from the graph of \(y = f(x)\) by</p></div>
-<ol><li>a reflection in the \(y\)-axis, then a translation 3 units right, then a dilation by a factor of 2 from the \(x\)-axis</li><li>a translation 3 units right, then a reflection in the \(y\)-axis, then a dilation by a factor of 2 from the \(x\)-axis</li><li>a reflection in the \(x\)-axis, then a translation 3 units left, then a dilation by a factor of 2 from the \(y\)-axis</li><li>a translation 3 units left, then a reflection in the \(y\)-axis, then a dilation by a factor of 2 from the \(y\)-axis</li></ol>
-<div class="mcq-x"><p>\(f(3 - x) = f(-(x - 3))\): reflect (\(x \to -x\)), then translate (\(x \to x - 3\)). Multiplying \(f\) by 2 is a dilation from the \(x\)-axis.</p></div>
-<div class="ex-rep"><p>B is a sequence that gives \(f(-x - 3)\), not \(f(3 - x)\). Check by tracking a point.</p></div>
+<div class="mcq" data-ans="E" data-t="drv" data-fac="29">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 12</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=6" target="_blank" rel="noopener">Open in the exam PDF (p. 6) ↗</a></p><p>Maximum possible mean of a pmf with parameter k</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>All probabilities must lie in [0, 1], so \(0 \le k \le \sqrt5 - 2\). The mean \(-3k^2 - 7k + 2\) is largest at k = 0, giving 2.</p></div>
+<div class="ex-rep"><p><strong>29% of Victorian students got this right.</strong> Choices: A 11% · B 14% · C 26% · D 18% · E 29%. The most popular wrong answer was C (26%).</p></div>
 </div>
-<div class="mcq" data-ans="C" data-t="circular">
-<div class="mcq-q"><p>The number of solutions of \(2\sin(3x) = 1\) for \(x \in [0, 2\pi]\) is</p></div>
-<ol><li>2</li><li>3</li><li>6</li><li>9</li></ol>
-<div class="mcq-x"><p>\(3x \in [0, 6\pi]\), which is three periods, each with 2 solutions.</p></div>
+<div class="mcq" data-ans="D" data-t="diff-apps" data-fac="29">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 14</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=7" target="_blank" rel="noopener">Open in the exam PDF (p. 7) ↗</a></p><p>Number of tangents to a cubic that pass through its positive x-intercept</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Set up the tangent at a general point and require it to pass through \(\left(\frac13, 0\right)\). The resulting cubic in the tangent point has 3 real solutions.</p></div>
+<div class="ex-rep"><p><strong>29% of Victorian students got this right.</strong> Choices: A 6% · B 33% · C 22% · D 29% · E 10%. The most popular wrong answer was B (33%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="explog">
-<div class="mcq-q"><p>The equation \(e^x = kx\) has exactly one solution for \(x > 0\) when \(k\) equals</p></div>
-<ol><li>1</li><li>\(e\)</li><li>\(e^2\)</li><li>\(\frac1e\)</li></ol>
-<div class="mcq-x"><p>The line must be tangent to \(y = e^x\): \(e^x = kx\) and \(e^x = k\) together give \(x = 1\) and \(k = e\).</p></div>
+<div class="mcq" data-ans="B" data-t="optimisation" data-fac="28">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 17</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=8" target="_blank" rel="noopener">Open in the exam PDF (p. 8) ↗</a></p><p>Volume of a cylinder cut from a sheet, in terms of x and y</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>The circumference \(y = 2\pi r\) and \(h = x - 4r\), so \(V = \pi r^2 h = \frac{\pi xy^2 - 2y^3}{4\pi^2}\).</p></div>
+<div class="ex-rep"><p><strong>28% of Victorian students got this right.</strong> Choices: A 6% · B 28% · C 26% · D 26% · E 13%. The most popular wrong answer was C (26%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="systems">
-<div class="mcq-q"><p>The system \((k - 1)x + 2y = 4\), \(3x + ky = 6\) has a unique solution when</p></div>
-<ol><li>\(k \in \mathbb{R} \setminus \{-2, 3\}\)</li><li>\(k \in \mathbb{R} \setminus \{3\}\)</li><li>\(k = 3\)</li><li>\(k \in \mathbb{R} \setminus \{2, -3\}\)</li></ol>
-<div class="mcq-x"><p>The determinant is \(k(k - 1) - 6 = (k - 3)(k + 2)\). A unique solution needs it to be non-zero.</p></div>
+<div class="mcq" data-ans="E" data-t="circular" data-fac="29">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 18</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=9" target="_blank" rel="noopener">Open in the exam PDF (p. 9) ↗</a></p><p>Number of local minima of \(\sin(ax)\) on \([-a\pi, a\pi]\)</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Interval length \(2a\pi\) ÷ period \(\frac{2\pi}{a}\) = \(a^2\) periods, each with one minimum.</p></div>
+<div class="ex-rep"><p><strong>29% of Victorian students got this right.</strong> Choices: A 12% · B 9% · C 22% · D 26% · E 29%. The most popular wrong answer was D (26%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="functional-eq">
-<div class="mcq-q"><p>A function satisfies \(f(xy) = f(x) + f(y)\) for all \(x, y > 0\), and \(f(2) = 3\). The value of \(f(8)\) is</p></div>
-<ol><li>6</li><li>9</li><li>24</li><li>3</li></ol>
-<div class="mcq-x"><p>\(f(8) = f(2 \cdot 4) = f(2) + f(4) = f(2) + f(2) + f(2) = 9\).</p></div>
+<div class="mcq" data-ans="D" data-t="polynomials" data-fac="32">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 19</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=9" target="_blank" rel="noopener">Open in the exam PDF (p. 9) ↗</a></p><p>Values of k giving one positive and one negative root of a quadratic</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Opposite signs need the product of the roots to be negative: \(4k^2 - \frac94 < 0\), so \(-\frac34 < k < \frac34\).</p></div>
+<div class="ex-rep"><p><strong>32% of Victorian students got this right.</strong> Choices: A 27% · B 11% · C 13% · D 32% · E 16%. The most popular wrong answer was A (27%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="composite-inverse">
-<div class="mcq-q"><p>Let \(f(x) = x^2 + 2x\) and \(g(x) = \sqrt{x + 1}\), each with its maximal domain. Then \(g(f(x))\) equals</p></div>
-<ol><li>\(x + 1\) for all real \(x\)</li><li>\(|x + 1|\) for all real \(x\)</li><li>\(x + 1\) for \(x \ge -1\) only</li><li>\(\sqrt{x^2 + 2x}\)</li></ol>
-<div class="mcq-x"><p>\(g(f(x)) = \sqrt{x^2 + 2x + 1} = \sqrt{(x + 1)^2} = |x + 1|\). The range of \(f\) is \([-1, \infty)\), which lies inside the domain of \(g\), so it is defined for all \(x\).</p></div>
-<div class="ex-rep"><p>A forgets that \(\sqrt{u^2} = |u|\).</p></div>
+<div class="mcq" data-ans="A" data-t="composite-inverse" data-fac="30">
+<div class="mcq-q"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section A · Question 20</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=9" target="_blank" rel="noopener">Open in the exam PDF (p. 9) ↗</a></p><p>Largest interval where both \(f \circ g\) and \(g \circ f\) exist (log and sine)</p></div>
+<ol><li></li><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>\(g \circ f\) needs \(x > -\frac{1}{\sqrt2}\). \(f \circ g\) needs \(\sin x > -\frac{1}{\sqrt2}\), i.e. \(x < \frac{5\pi}{4}\) here. Combined: \(\left(-\frac{1}{\sqrt2}, \frac{5\pi}{4}\right)\).</p></div>
+<div class="ex-rep"><p><strong>30% of Victorian students got this right.</strong> Choices: A 30% · B 19% · C 26% · D 14% · E 9%. The most popular wrong answer was C (26%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="limits">
-<div class="mcq-q"><p>The function \(f(x) = \begin{cases} ax^2 + b, & x \le 1 \\ 4\sqrt{x}, & x > 1 \end{cases}\) is differentiable at \(x = 1\) when</p></div>
-<ol><li>\(a = 1,\ b = 3\)</li><li>\(a = 2,\ b = 2\)</li><li>\(a = 4,\ b = 0\)</li><li>\(a = 1,\ b = 4\)</li></ol>
-<div class="mcq-x"><p>Continuity: \(a + b = 4\). Equal gradients: \(2a = \frac{4}{2\sqrt1} = 2\), so \(a = 1\) and \(b = 3\).</p></div>
+<div class="mcq" data-ans="B" data-t="diff-apps" data-fac="38">
+<div class="mcq-q"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section A · Question 10</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=4" target="_blank" rel="noopener">Open in the exam PDF (p. 4) ↗</a></p><p>What must be true if \(f^{\prime}(2) < 0\) and \(f^{\prime}(4) > 0\)</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>\(f^{\prime}\) is continuous and changes sign, so f is not one-to-one on [0, 5] and has no inverse. The others might not hold.</p></div>
+<div class="ex-rep"><p><strong>38% of Victorian students got this right.</strong> Choices: A 26% · B 38% · C 16% · D 20%. The most popular wrong answer was A (26%).</p></div>
 </div>
-<div class="mcq" data-ans="C" data-t="diff-rules">
-<div class="mcq-q"><p>If \(f(x) = g(x^2)\) and \(g'(4) = 3\), then \(f'(2)\) equals</p></div>
-<ol><li>3</li><li>6</li><li>12</li><li>48</li></ol>
-<div class="mcq-x"><p>Chain rule: \(f'(x) = 2x\,g'(x^2)\), so \(f'(2) = 4 \times g'(4) = 12\).</p></div>
+<div class="mcq" data-ans="B" data-t="probability" data-fac="40">
+<div class="mcq-q"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section A · Question 11</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=5" target="_blank" rel="noopener">Open in the exam PDF (p. 5) ↗</a></p><p>Choosing 3 of 12 students: probability exactly two are from the front row of seven</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>\(\frac{\binom72\binom51}{\binom{12}{3}} = \frac{105}{220} = \frac{21}{44}\)</p></div>
+<div class="ex-rep"><p><strong>40% of Victorian students got this right.</strong> Choices: A 12% · B 40% · C 10% · D 37%. The most popular wrong answer was D (37%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="diff-apps">
-<div class="mcq-q"><p>The tangent to \(y = \ln x\) that passes through the origin has gradient</p></div>
-<ol><li>1</li><li>\(\frac1e\)</li><li>\(e\)</li><li>2</li></ol>
-<div class="mcq-x"><p>The tangent at \(x = a\) is \(y = \frac{x}{a} + \ln a - 1\). For it to pass through the origin, \(\ln a = 1\), so \(a = e\) and the gradient is \(\frac1e\).</p></div>
+<div class="mcq" data-ans="A" data-t="transformations" data-fac="45">
+<div class="mcq-q"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section A · Question 13</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=7" target="_blank" rel="noopener">Open in the exam PDF (p. 7) ↗</a></p><p>Local minimum of \(f(x) = \frac{x}{2} + \frac{2}{x}\) after dilation ×3 from the y-axis and a shift down 1</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>f has its minimum at (2, 2). The dilation gives (6, 2), and the shift gives (6, 1).</p></div>
+<div class="ex-rep"><p><strong>45% of Victorian students got this right.</strong> Choices: A 45% · B 24% · C 17% · D 14%. The most popular wrong answer was B (24%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="optimisation">
-<div class="mcq-q"><p>A closed cylinder has volume \(250\pi\ \text{cm}^3\). The radius that minimises its surface area is</p></div>
-<ol><li>2.5 cm</li><li>5 cm</li><li>10 cm</li><li>\(\sqrt[3]{250}\) cm</li></ol>
-<div class="mcq-x"><p>\(S = 2\pi r^2 + \frac{500\pi}{r}\), and \(S' = 4\pi r - \frac{500\pi}{r^2} = 0\) gives \(r^3 = 125\).</p></div>
+<div class="mcq" data-ans="D" data-t="diff-rules" data-fac="36">
+<div class="mcq-q"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section A · Question 16</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=8" target="_blank" rel="noopener">Open in the exam PDF (p. 8) ↗</a></p><p>Gradient of \(y = \sqrt{f(x)}\) at x = 4 given f(4) = 25 and \(f^{\prime}(4) = 15\)</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>\(\frac{f^{\prime}}{2\sqrt f} = \frac{15}{10} = \frac32\).</p></div>
+<div class="ex-rep"><p><strong>36% of Victorian students got this right.</strong> Choices: A 22% · B 14% · C 27% · D 36%. The most popular wrong answer was C (27%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="antidiff">
-<div class="mcq-q"><p>If \(f'(x) = \dfrac{1}{2x + 1}\) and \(f(0) = 2\), then \(f(1)\) equals</p></div>
-<ol><li>\(\frac12\ln 3 + 2\)</li><li>\(\ln 3 + 2\)</li><li>\(2\ln 3 + 2\)</li><li>\(\frac12\ln 3\)</li></ol>
-<div class="mcq-x"><p>\(f(x) = \frac12\ln(2x + 1) + c\), and \(f(0) = c = 2\).</p></div>
+<div class="mcq" data-ans="D" data-t="polynomials" data-fac="27">
+<div class="mcq-q"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section A · Question 17</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=9" target="_blank" rel="noopener">Open in the exam PDF (p. 9) ↗</a></p><p>Output of an algorithm that searches for integer roots of a cubic</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>The roots are 3, −3 and 2. The loop counts c down from 18, checking c then −c, so it prints 3, −3, 2.</p></div>
+<div class="ex-rep"><p><strong>27% of Victorian students got this right.</strong> Choices: A 14% · B 26% · C 32% · D 27%. The most popular wrong answer was C (32%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="integration">
-<div class="mcq-q"><p>For \(0 < k < \pi\), \(\int_0^k \sin x\,dx = \frac12\) when \(k\) equals</p></div>
-<ol><li>\(\frac{\pi}{6}\)</li><li>\(\frac{\pi}{3}\)</li><li>\(\frac{\pi}{2}\)</li><li>\(\frac{2\pi}{3}\)</li></ol>
-<div class="mcq-x"><p>\(1 - \cos k = \frac12\), so \(\cos k = \frac12\) and \(k = \frac{\pi}{3}\).</p></div>
+<div class="mcq" data-ans="C" data-t="integration" data-fac="41">
+<div class="mcq-q"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section A · Question 20</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=10" target="_blank" rel="noopener">Open in the exam PDF (p. 10) ↗</a></p><p>\(\int_2^6 f(x)\,dx\) for a period-2 function with average value k on [0, 2]</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Each period contributes 2k, and [2, 6] is two periods, so 4k.</p></div>
+<div class="ex-rep"><p><strong>41% of Victorian students got this right.</strong> Choices: A 20% · B 23% · C 41% · D 14%. The most popular wrong answer was B (23%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="integration">
-<div class="mcq-q"><p>The area enclosed between the graphs of \(y = x^2\) and \(y = x^3\) is</p></div>
-<ol><li>\(\frac1{12}\)</li><li>\(\frac17\)</li><li>\(\frac13\)</li><li>\(\frac14\)</li></ol>
-<div class="mcq-x"><p>On \([0, 1]\), \(x^2 \ge x^3\): \(\int_0^1 (x^2 - x^3)\,dx = \frac13 - \frac14 = \frac1{12}\).</p></div>
+<div class="mcq" data-ans="C" data-t="composite-inverse" data-fac="45">
+<div class="mcq-q"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section A · Question 13</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=8" target="_blank" rel="noopener">Open in the exam PDF (p. 8) ↗</a></p><p>Graph of \(g(f(x))\) given sketches of a line f and an even function g</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>f is \(y = -x\) and g is even, so \(g(-x) = g(x)\). The composite looks just like g.</p></div>
+<div class="ex-rep"><p><strong>45% of Victorian students got this right.</strong> Choices: A 12% · B 17% · C 45% · D 25%. The most popular wrong answer was D (25%).</p></div>
 </div>
-<div class="mcq" data-ans="C" data-t="numerical">
-<div class="mcq-q"><p>Using four left-endpoint rectangles of equal width, the approximation to \(\int_1^3 \frac1x\,dx\) is closest to</p></div>
-<ol><li>0.95</li><li>1.10</li><li>1.28</li><li>1.18</li></ol>
-<div class="mcq-x"><p>\(0.5\left(1 + \frac23 + \frac12 + \frac25\right) \approx 1.283\). This overestimates \(\ln 3 \approx 1.099\), because \(\frac1x\) is decreasing.</p></div>
-<div class="ex-rep"><p>A uses right endpoints.</p></div>
+<div class="mcq" data-ans="B" data-t="transformations" data-fac="44">
+<div class="mcq-q"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section A · Question 15</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=9" target="_blank" rel="noopener">Open in the exam PDF (p. 9) ↗</a></p><p>Image of the point (1, 3) on \(y = 1 - g(2x - 3)\)</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>You need \(2x - 3 = 1\), so \(x = 2\) and \(y = 1 - 3 = -2\).</p></div>
+<div class="ex-rep"><p><strong>44% of Victorian students got this right.</strong> Choices: A 25% · B 44% · C 22% · D 8%. The most popular wrong answer was A (25%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="drv">
-<div class="mcq-q"><p>For a random variable \(X\), \(\text{E}(X) = 2\) and \(\text{E}(X^2) = 7\). The standard deviation of \(X\) is</p></div>
-<ol><li>3</li><li>\(\sqrt3\)</li><li>\(\sqrt7\)</li><li>5</li></ol>
-<div class="mcq-x"><p>\(\text{Var}(X) = 7 - 4 = 3\).</p></div>
+<div class="mcq" data-ans="D" data-t="diff-rules" data-fac="18">
+<div class="mcq-q"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section A · Question 16</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=9" target="_blank" rel="noopener">Open in the exam PDF (p. 9) ↗</a></p><p>Conditions on a, b if \(h(x) = a\log_e(bx)\) has \(h^{\prime}(x) > 0\) everywhere</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>\(h^{\prime}(x) = \frac{a}{x}\), with domain \(bx > 0\). If b > 0 then x > 0 and you need a > 0. If b < 0 then x < 0 and you need a < 0. Either way ab > 0.</p></div>
+<div class="ex-rep"><p><strong>18% of Victorian students got this right.</strong> Choices: A 20% · B 16% · C 46% · D 18%. The most popular wrong answer was C (46%).</p></div>
 </div>
-<div class="mcq" data-ans="B" data-t="binomial">
-<div class="mcq-q"><p>\(X \sim \text{Bi}(n, 0.2)\). The smallest \(n\) for which \(\Pr(X \ge 1) > 0.95\) is</p></div>
-<ol><li>13</li><li>14</li><li>15</li><li>20</li></ol>
-<div class="mcq-x"><p>\(0.8^n < 0.05\) gives \(n > 13.4\).</p></div>
+<div class="mcq" data-ans="A" data-t="integration" data-fac="38">
+<div class="mcq-q"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section A · Question 17</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=10" target="_blank" rel="noopener">Open in the exam PDF (p. 10) ↗</a></p><p>Which graph fits \(\int_1^2 f\,dx > \int_1^3 f\,dx\)</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>The condition means \(\int_2^3 f(x)\,dx < 0\), so f must be mostly below the axis on [2, 3].</p></div>
+<div class="ex-rep"><p><strong>38% of Victorian students got this right.</strong> Choices: A 38% · B 20% · C 17% · D 24%. The most popular wrong answer was D (24%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="sampling">
-<div class="mcq-q"><p>For samples of size 50 from a population with \(p = 0.3\), the sample proportion is \(\hat P\). Using the normal approximation, \(\Pr(\hat P > 0.4)\) is closest to</p></div>
-<ol><li>0.061</li><li>0.048</li><li>0.100</li><li>0.939</li></ol>
-<div class="mcq-x"><p>\(\text{sd}(\hat P) = \sqrt{\frac{0.21}{50}} = 0.0648\), and \(\Pr\left(Z > \frac{0.1}{0.0648}\right) = \Pr(Z > 1.54) \approx 0.061\).</p></div>
-<div class="ex-rep"><p>B is the exact binomial value, \(\Pr(X \ge 21)\). Read which method the question asks for.</p></div>
+<div class="mcq" data-ans="D" data-t="optimisation" data-fac="14">
+<div class="mcq-q"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section A · Question 19</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=12" target="_blank" rel="noopener">Open in the exam PDF (p. 12) ↗</a></p><p>Value of c when the shortest distance from \(y = x + c\) to \(y = \log_e(x-1)\) is \(\sqrt2\)</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>The closest point on the curve has gradient 1: (2, 0). Distance \(\frac{|2 + c|}{\sqrt2} = \sqrt2\) gives c = 0 or −4, but c = −4 cuts the curve (distance 0), so c = 0.</p></div>
+<div class="ex-rep"><p><strong>14% of Victorian students got this right.</strong> Choices: A 35% · B 25% · C 24% · D 14%. The most popular wrong answer was A (35%).</p></div>
 </div>
-<div class="mcq" data-ans="A" data-t="crv">
-<div class="mcq-q"><p>A continuous random variable has pdf \(f(x) = 3x^2\) for \(0 \le x \le 1\). Its variance is</p></div>
-<ol><li>\(\frac3{80}\)</li><li>\(\frac34\)</li><li>\(\frac35\)</li><li>\(\frac3{16}\)</li></ol>
-<div class="mcq-x"><p>\(\text{E}(X) = \frac34\) and \(\text{E}(X^2) = \frac35\), so \(\text{Var}(X) = \frac35 - \frac9{16} = \frac3{80}\).</p></div>
+<div class="mcq" data-ans="C" data-t="transformations" data-fac="36">
+<div class="mcq-q"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section A · Question 20</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=12" target="_blank" rel="noopener">Open in the exam PDF (p. 12) ↗</a></p><p>Which transformation sequence does not map \(a^x\) to \(a^{2x+2}\)</p></div>
+<ol><li></li><li></li><li></li><li></li></ol>
+<div class="mcq-x"><p>Apply each sequence in order. The sequence “dilate by a from the x-axis, dilate by ½ from the y-axis, then translate 1 right” gives \(a^{2x-1}\).</p></div>
+<div class="ex-rep"><p><strong>36% of Victorian students got this right.</strong> Choices: A 24% · B 18% · C 36% · D 21%. The most popular wrong answer was A (24%).</p></div>
 </div>
 <h2>Section B – Extended-response questions</h2>
-<div class="ex-inst"><p>Answer all questions. In questions where more than one mark is available, appropriate working must be shown. Where an exact answer is required, a decimal approximation will not be accepted.</p></div>
-<div class="exq" data-t="composite-inverse">
-<div class="exq-stem"><p>Let \(f: (-1, \infty) \to \mathbb{R}\), \(f(x) = 2\ln(x + 1)\).</p></div>
-<div class="exp" data-marks="2" data-part="a">
-<div class="exp-q"><p>Find the rule and domain of \(f^{-1}\).</p></div>
-<ul class="mk"><li>\(f^{-1}(x) = e^{x/2} - 1\)</li><li>Domain \(\mathbb{R}\)</li></ul>
-<div class="exp-a"><p>\(x = 2\ln(y + 1)\), so \(f^{-1}(x) = e^{x/2} - 1\), with domain \(\mathbb{R}\) (the range of \(f\)).</p></div>
-</div>
-<div class="exp" data-marks="2" data-part="b">
-<div class="exp-q"><p>The graphs of \(f\) and \(f^{-1}\) intersect at two points. Find their \(x\)-coordinates, correct to three decimal places where appropriate.</p></div>
-<ul class="mk"><li>Since \(f\) is increasing, solve \(f(x) = x\): \(2\ln(x + 1) = x\)</li><li>\(x = 0\) and \(x \approx 2.513\)</li></ul>
-<div class="exp-a"><p>\(x = 0\) and \(x \approx 2.513\).</p></div>
-</div>
-<div class="exp" data-marks="3" data-part="c" data-t="integration">
-<div class="exp-q"><p>Find the area of the region enclosed by the graphs of \(f\) and \(f^{-1}\), correct to three decimal places.</p></div>
-<ul class="mk"><li>Uses symmetry about \(y = x\): area \(= 2\int_0^{b} (f(x) - x)\,dx\), where \(b \approx 2.513\)</li><li>Correct integral with accurate upper limit</li><li>\(\approx 1.289\)</li></ul>
-<div class="exp-a"><p>\(2\int_0^{2.5129} (2\ln(x + 1) - x)\,dx \approx 1.289\)</p></div>
-<div class="ex-rep"><p>Using a rounded upper limit (2.5) changed the third decimal place. Store the intersection value in your CAS.</p></div>
-</div>
-<div class="exp" data-marks="2" data-part="d" data-t="diff-apps">
-<div class="exp-q"><p>Find the value of \(k > 0\) for which the graphs of \(y = k\ln(x + 1)\) and \(y = x\) have exactly one point of intersection.</p></div>
-<ul class="mk"><li>Both pass through the origin, so a single intersection needs \(y = x\) to be tangent there</li><li>Gradient of \(k\ln(x + 1)\) at 0 is \(k\), so \(k = 1\)</li></ul>
-<div class="exp-a"><p>Both graphs pass through the origin. For \(k \ne 1\) they also cross at a second point (to the right if \(k > 1\), in \((-1, 0)\) if \(k < 1\)). Only when \(y = x\) is the tangent at the origin, \(k = 1\), is there exactly one intersection.</p></div>
-<div class="ex-rep"><p>The hardest part of the paper. Very few considered what happens for \(k < 1\).</p></div>
-</div>
-<div class="exp" data-marks="3" data-part="e" data-t="integration">
-<div class="exp-q"><p>Find the exact average value of \(f\) over the interval \([0, e^2 - 1]\).</p></div>
-<ul class="mk"><li>\(\frac{1}{e^2 - 1}\int_0^{e^2 - 1} 2\ln(x + 1)\,dx\)</li><li>Antiderivative \(2\left[(x + 1)\ln(x + 1) - (x + 1)\right]\)</li><li>\(\frac{2(e^2 + 1)}{e^2 - 1}\)</li></ul>
-<div class="exp-a"><p>\(\frac{2}{e^2 - 1}\left[(x + 1)\ln(x + 1) - x\right]_0^{e^2 - 1} = \frac{2(2e^2 - e^2 + 1)}{e^2 - 1} = \frac{2(e^2 + 1)}{e^2 - 1} \approx 2.626\)</p></div>
-</div>
-<div class="exp" data-marks="1" data-part="f" data-t="transformations">
-<div class="exp-q"><p>Describe a sequence of transformations that maps the graph of \(y = \ln x\) onto the graph of \(y = f(x)\).</p></div>
-<ul class="mk"><li>Translation 1 unit left, then dilation by a factor of 2 from the \(x\)-axis (either order)</li></ul>
-<div class="exp-a"><p>A translation of 1 unit in the negative \(x\) direction and a dilation by a factor of 2 from the \(x\)-axis.</p></div>
-</div>
-<div class="exp" data-marks="2" data-part="g" data-t="diff-apps">
-<div class="exp-q"><p>Find the gradient of the graph of \(f\) at the point where \(f(x) = 2\).</p></div>
-<ul class="mk"><li>\(x = e - 1\)</li><li>\(f'(e - 1) = \frac{2}{e}\)</li></ul>
-<div class="exp-a"><p>\(2\ln(x + 1) = 2\) gives \(x = e - 1\). \(f'(x) = \frac{2}{x + 1}\), so the gradient is \(\frac2e\).</p></div>
-</div>
-</div>
+<div class="ex-inst"><p>Open each question in the exam PDF and answer every part here. Show working where more than one mark is available. After finishing, tick the marking points you earned. The state average for each part is shown with the marking guide.</p></div>
 <div class="exq" data-t="circular">
-<div class="exq-stem"><p>Let \(f: [0, 2\pi] \to \mathbb{R}\), \(f(x) = 2\sin(x) + \sin(2x)\).</p></div>
-<div class="exp" data-marks="1" data-part="a" data-t="diff-rules">
-<div class="exp-q"><p>Find \(f'(x)\).</p></div>
-<ul class="mk"><li>\(f'(x) = 2\cos x + 2\cos 2x\)</li></ul>
-<div class="exp-a"><p>\(f'(x) = 2\cos x + 2\cos(2x)\)</p></div>
+<div class="exq-stem"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section B · Question 2</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=12" target="_blank" rel="noopener">Open in the exam PDF (p. 12) ↗</a></p><p>Observation wheel modelled by h(t) = −60cos(bt) + c; then it stops and restarts at double speed</p><p class="ln">State average for the whole question: 4.9 / 11 (45%).</p></div>
+<div class="exp" data-marks="2" data-part="a" data-avg="1.5">
+<div class="exp-q"><p>Show \(b = \frac{\pi}{15}\) and \(c = 75\)</p></div>
+<ul class="mk"><li>Period 30: \(\frac{2\pi}{b} = 30 \Rightarrow b = \frac{\pi}{15}\)</li><li>\(h(0) = -60 + c = 15 \Rightarrow c = 75\)</li></ul>
+<div class="exp-a"><p>Use the period and the lowest height.</p></div>
+<div class="ex-rep"><p><strong>State average 1.5 / 2 (75%)</strong>; 66% scored full marks.</p><p class="ln">Mark distribution: 0: 16% · 1: 18% · 2: 66%</p></div>
 </div>
-<div class="exp" data-marks="3" data-part="b" data-t="diff-apps">
-<div class="exp-q"><p>Find the exact values of \(x\) for which \(f'(x) = 0\).</p></div>
-<ul class="mk"><li>Uses \(\cos 2x = 2\cos^2 x - 1\): \(2\cos^2 x + \cos x - 1 = 0\)</li><li>\((2\cos x - 1)(\cos x + 1) = 0\)</li><li>\(x = \frac{\pi}{3}, \pi, \frac{5\pi}{3}\)</li></ul>
-<div class="exp-a"><p>\(\cos x = \frac12\) gives \(x = \frac{\pi}{3}, \frac{5\pi}{3}\), and \(\cos x = -1\) gives \(x = \pi\).</p></div>
-<div class="ex-rep"><p>Most students found \(\frac{\pi}{3}\) and \(\frac{5\pi}{3}\) with CAS but missed \(x = \pi\). The factorisation shows all three.</p></div>
+<div class="exp" data-marks="2" data-part="b" data-avg="0.9">
+<div class="exp-q"><p>Average height from A (bottom) to B (level with the centre) (2 d.p.)</p></div>
+<ul class="mk"><li>\(\frac{1}{7.5}\int_0^{7.5} h(t)\,dt\)</li><li>\(= 75 - \frac{120}{\pi} \approx 36.80\) m</li></ul>
+<div class="exp-a"><p>A quarter turn takes 7.5 minutes. ≈ 36.80 m</p></div>
+<div class="ex-rep"><p><strong>State average 0.9 / 2 (45%)</strong>; 42% scored full marks.</p><p class="ln">Mark distribution: 0: 54% · 1: 3% · 2: 42%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="c">
-<div class="exp-q"><p>Find the exact maximum and minimum values of \(f\).</p></div>
-<ul class="mk"><li>Maximum \(\frac{3\sqrt3}{2}\) at \(x = \frac{\pi}{3}\)</li><li>Minimum \(-\frac{3\sqrt3}{2}\) at \(x = \frac{5\pi}{3}\)</li></ul>
-<div class="exp-a"><p>\(f\left(\frac{\pi}{3}\right) = \sqrt3 + \frac{\sqrt3}{2} = \frac{3\sqrt3}{2}\), and by symmetry the minimum is \(-\frac{3\sqrt3}{2}\).</p></div>
+<div class="exp" data-marks="1" data-part="c" data-avg="0.5">
+<div class="exp-q"><p>Average rate of change of height from A to B</p></div>
+<ul class="mk"><li>\(\frac{75 - 15}{7.5} = 8\) m/min</li></ul>
+<div class="exp-a"><p>8 m/min</p></div>
+<div class="ex-rep"><p><strong>State average 0.5 / 1 (50%)</strong>; 55% scored full marks.</p><p class="ln">Mark distribution: 0: 45% · 1: 55%</p></div>
 </div>
-<div class="exp" data-marks="1" data-part="d" data-t="diff-apps">
-<div class="exp-q"><p>State the nature of the stationary point at \(x = \pi\), with a reason.</p></div>
-<ul class="mk"><li>Stationary point of inflection: \(f'(x) = 2(\cos x + 1)(2\cos x - 1) \le 0\) on both sides of \(\pi\)</li></ul>
-<div class="exp-a"><p>\(f'(x) = 2(\cos x + 1)(2\cos x - 1)\). Near \(\pi\), \(\cos x + 1 \ge 0\) and \(2\cos x - 1 < 0\), so \(f' \le 0\) on both sides: a stationary point of inflection.</p></div>
+<div class="exp" data-marks="1" data-part="d.i" data-avg="0.4">
+<div class="exp-q"><p>k and m in the piecewise model</p></div>
+<ul class="mk"><li>\(k = 135,\ m = 2\)</li></ul>
+<div class="exp-a"><p>It stops at the top (135 m) and restarts at double speed.</p></div>
+<div class="ex-rep"><p><strong>State average 0.4 / 1 (40%)</strong>; 40% scored full marks.</p><p class="ln">Mark distribution: 0: 60% · 1: 40%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="e" data-t="integration">
-<div class="exp-q"><p>Find the area enclosed by the graph of \(f\) and the \(x\)-axis for \(0 \le x \le \pi\).</p></div>
-<ul class="mk"><li>\(f(x) = 2\sin x(1 + \cos x) \ge 0\) on \([0, \pi]\), so area \(= \int_0^\pi f(x)\,dx\)</li><li>4</li></ul>
-<div class="exp-a"><p>\(\left[-2\cos x - \frac12\cos 2x\right]_0^\pi = \left(2 - \frac12\right) - \left(-2 - \frac12\right) = 4\)</p></div>
+<div class="exp" data-marks="2" data-part="d.ii" data-avg="0.4">
+<div class="exp-q"><p>All possible values of n</p></div>
+<ul class="mk"><li>Continuity at t = 20: \(h(40 + n) = 135\), so \(\cos\left(\frac{\pi(40 + n)}{15}\right) = -1\)</li><li>\(n = 30j - 25,\ j \in Z\)</li></ul>
+<div class="exp-a"><p>\(n = 5 + 30j\) for integer j. A general solution was required.</p></div>
+<div class="ex-rep"><p><strong>State average 0.4 / 2 (20%)</strong>; 12% scored full marks.</p><p class="ln">Mark distribution: 0: 76% · 1: 12% · 2: 12%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="f">
-<div class="exp-q"><p>Find the values of \(k\) for which \(f(x) = k\) has exactly two solutions.</p></div>
-<ul class="mk"><li>\(0 < |k| < \frac{3\sqrt3}{2}\)</li><li>Excludes \(k = 0\) (three solutions: 0, π, 2π)</li></ul>
-<div class="exp-a"><p>\(k \in \left(-\frac{3\sqrt3}{2}, 0\right) \cup \left(0, \frac{3\sqrt3}{2}\right)\). At \(k = 0\) there are three solutions, and at \(\pm\frac{3\sqrt3}{2}\) there is one.</p></div>
-</div>
-<div class="exp" data-marks="2" data-part="g" data-t="diff-apps">
-<div class="exp-q"><p>Find the \(x\)-intercept of the tangent to the graph of \(f\) at \(x = \frac{\pi}{2}\).</p></div>
-<ul class="mk"><li>\(f\left(\frac{\pi}{2}\right) = 2\), \(f'\left(\frac{\pi}{2}\right) = -2\): tangent \(y = -2x + \pi + 2\)</li><li>\(x = \frac{\pi + 2}{2}\)</li></ul>
-<div class="exp-a"><p>\(y = -2\left(x - \frac{\pi}{2}\right) + 2\) crosses the \(x\)-axis at \(x = \frac{\pi}{2} + 1\).</p></div>
-</div>
-<div class="exp" data-marks="2" data-part="h" data-t="integration">
-<div class="exp-q"><p>Find the exact average value of \(f\) over \(\left[0, \frac{\pi}{2}\right]\).</p></div>
-<ul class="mk"><li>\(\frac{2}{\pi}\int_0^{\pi/2} f(x)\,dx\)</li><li>\(\frac{6}{\pi}\)</li></ul>
-<div class="exp-a"><p>\(\frac2\pi\left[-2\cos x - \frac12\cos 2x\right]_0^{\pi/2} = \frac2\pi \times 3 = \frac6\pi\)</p></div>
+<div class="exp" data-marks="3" data-part="d.iii" data-avg="1.2">
+<div class="exp-q"><p>Sketch w with the coordinates of the endpoints</p></div>
+<ul class="mk"><li>Rising cosine from \((0, 15)\) to \((15, 135)\)</li><li>Flat from \((15, 135)\) to \((20, 135)\)</li><li>Half a (faster) cycle down to \((27.5, 15)\)</li></ul>
+<div class="exp-a"><p>Three pieces joined continuously, with endpoints (0, 15) and (27.5, 15).</p></div>
+<div class="ex-rep"><p><strong>State average 1.2 / 3 (40%)</strong>; 24% scored full marks.</p><p class="ln">Mark distribution: 0: 39% · 1: 25% · 2: 12% · 3: 24%</p></div>
 </div>
 </div>
-<div class="exq" data-t="normal">
-<div class="exq-stem"><p>The lengths of fish in a lake, \(X\) cm, are normally distributed. 10% of fish are longer than 30 cm, and 20% are shorter than 20 cm. Fish shorter than 20 cm are “undersized” and must be released.</p></div>
-<div class="exp" data-marks="3" data-part="a">
-<div class="exp-q"><p>Find the mean and standard deviation of the fish lengths, correct to two decimal places.</p></div>
-<ul class="mk"><li>\(\frac{30 - \mu}{\sigma} = 1.2816\) and \(\frac{20 - \mu}{\sigma} = -0.8416\)</li><li>Solves simultaneously</li><li>\(\mu \approx 23.96\), \(\sigma \approx 4.71\)</li></ul>
-<div class="exp-a"><p>\(\mu \approx 23.96\) cm, \(\sigma \approx 4.71\) cm</p></div>
+<div class="exq" data-t="explog">
+<div class="exq-stem"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section B · Question 3</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=16" target="_blank" rel="noopener">Open in the exam PDF (p. 16) ↗</a></p><p>\(g(x) = 2^x + 5\): limit, derivative, tangents through the origin; \(h(x) = 2^x - x^2\): inflection, decreasing interval, Newton’s method</p><p class="ln">State average for the whole question: 5.3 / 12 (44%).</p></div>
+<div class="exp" data-marks="1" data-part="a" data-avg="0.7">
+<div class="exp-q"><p>\(\lim_{x \to -\infty} g(x)\)</p></div>
+<ul class="mk"><li>\(5\)</li></ul>
+<div class="exp-a"><p>5</p></div>
+<div class="ex-rep"><p><strong>State average 0.7 / 1 (70%)</strong>; 75% scored full marks.</p><p class="ln">Mark distribution: 0: 25% · 1: 75%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="b" data-t="probability">
-<div class="exp-q"><p>Find the probability that a fish kept by an angler (i.e. not undersized) is longer than 30 cm.</p></div>
-<ul class="mk"><li>\(\frac{\Pr(X > 30)}{\Pr(X \ge 20)} = \frac{0.1}{0.8}\)</li><li>\(0.125\)</li></ul>
-<div class="exp-a"><p>\(\frac{0.1}{0.8} = 0.125\)</p></div>
+<div class="exp" data-marks="1" data-part="b" data-avg="0.9">
+<div class="exp-q"><p>k with \(g^{\prime}(x) = k \times 2^x\)</p></div>
+<ul class="mk"><li>\(k = \log_e 2\)</li></ul>
+<div class="exp-a"><p>\(k = \log_e 2\)</p></div>
+<div class="ex-rep"><p><strong>State average 0.9 / 1 (90%)</strong>; 85% scored full marks.</p><p class="ln">Mark distribution: 0: 15% · 1: 85%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="c" data-t="binomial">
-<div class="exp-q"><p>An angler catches 12 fish. Find the probability that more than 2 are undersized, correct to four decimal places.</p></div>
-<ul class="mk"><li>\(U \sim \text{Bi}(12, 0.2)\), \(1 - \Pr(U \le 2)\)</li><li>\(0.4417\)</li></ul>
-<div class="exp-a"><p>\(1 - \Pr(U \le 2) = 0.4417\)</p></div>
+<div class="exp" data-marks="1" data-part="c.i" data-avg="0.5">
+<div class="exp-q"><p>Tangent at \((a, g(a))\)</p></div>
+<ul class="mk"><li>\(y = 2^a\log_e 2\,(x - a) + 2^a + 5\)</li></ul>
+<div class="exp-a"><p>Point–gradient form.</p></div>
+<div class="ex-rep"><p><strong>State average 0.5 / 1 (50%)</strong>; 52% scored full marks.</p><p class="ln">Mark distribution: 0: 48% · 1: 52%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="d" data-t="drv">
-<div class="exp-q"><p>The number of fish caught per hour, \(N\), has \(\Pr(N = 0) = 0.3\), \(\Pr(N = 1) = 0.4\), \(\Pr(N = 2) = 0.2\), \(\Pr(N = 3) = 0.1\). Find \(\text{E}(N)\) and \(\text{sd}(N)\), correct to three decimal places.</p></div>
-<ul class="mk"><li>\(\text{E}(N) = 1.1\)</li><li>\(\text{Var}(N) = 2.1 - 1.21 = 0.89\), so \(\text{sd} \approx 0.943\)</li></ul>
-<div class="exp-a"><p>\(\text{E}(N) = 1.1\) and \(\text{sd}(N) = \sqrt{0.89} \approx 0.943\).</p></div>
+<div class="exp" data-marks="2" data-part="c.ii" data-avg="0.6">
+<div class="exp-q"><p>Tangent to g through the origin (3 d.p.)</p></div>
+<ul class="mk"><li>Sets \(0 = -a\,2^a\log_e 2 + 2^a + 5\), giving \(a \approx 2.618\)</li><li>\(y \approx 4.255x\)</li></ul>
+<div class="exp-a"><p>Substitute (0, 0) into the general tangent, solve for a, then find the gradient.</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 2 (30%)</strong>; 15% scored full marks.</p><p class="ln">Mark distribution: 0: 52% · 1: 34% · 2: 15%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="e" data-t="drv">
-<div class="exp-q"><p>Find the probability that exactly 3 fish are caught in two independent hours.</p></div>
-<ul class="mk"><li>Cases: (0, 3), (3, 0), (1, 2), (2, 1)</li><li>\(2(0.3)(0.1) + 2(0.4)(0.2) = 0.22\)</li></ul>
-<div class="exp-a"><p>\(0.06 + 0.16 = 0.22\)</p></div>
+<div class="exp" data-marks="1" data-part="d" data-avg="0.6">
+<div class="exp-q"><p>Point of inflection of h (2 d.p.)</p></div>
+<ul class="mk"><li>\(\approx (2.06, -0.07)\)</li></ul>
+<div class="exp-a"><p>\(h^{\prime\prime}(x) = (\log_e 2)^2 2^x - 2 = 0\)</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 1 (60%)</strong>; 58% scored full marks.</p><p class="ln">Mark distribution: 0: 42% · 1: 58%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="f" data-t="ci">
-<div class="exp-q"><p>A survey claims that 20% of fish are undersized. In a random sample of 200 fish, 55 are undersized. Find an approximate 95% confidence interval for the proportion undersized, correct to three decimal places.</p></div>
-<ul class="mk"><li>\(\hat p = 0.275\), \(\text{se} = \sqrt{\frac{0.275 \times 0.725}{200}}\)</li><li>\((0.213, 0.337)\)</li></ul>
-<div class="exp-a"><p>\(0.275 \pm 1.96 \times 0.0316 = (0.213, 0.337)\)</p></div>
+<div class="exp" data-marks="1" data-part="e" data-avg="0.4">
+<div class="exp-q"><p>Largest interval on which h is strictly decreasing (2 d.p.)</p></div>
+<ul class="mk"><li>\([0.49, 3.21]\)</li></ul>
+<div class="exp-a"><p>Between the two roots of h′, with square brackets (the endpoints are included).</p></div>
+<div class="ex-rep"><p><strong>State average 0.4 / 1 (40%)</strong>; 35% scored full marks.</p><p class="ln">Mark distribution: 0: 65% · 1: 35%</p></div>
 </div>
-<div class="exp" data-marks="1" data-part="g" data-t="ci">
-<div class="exp-q"><p>Comment on the survey’s claim in light of this interval.</p></div>
-<ul class="mk"><li>0.2 lies outside the interval, so the sample provides evidence that the proportion undersized is higher than 20%</li></ul>
-<div class="exp-a"><p>0.2 is below the interval, which suggests the true proportion undersized is greater than 20%.</p></div>
+<div class="exp" data-marks="2" data-part="f" data-avg="1.2">
+<div class="exp-q"><p>Newton’s method from \(x_0 = 0\): \(x_1, x_2, x_3\) (3 d.p.)</p></div>
+<ul class="mk"><li>\(x_1 \approx -1.443\)</li><li>\(x_2 \approx -0.897,\ x_3 \approx -0.773\)</li></ul>
+<div class="exp-a"><p>−1.443, −0.897, −0.773</p></div>
+<div class="ex-rep"><p><strong>State average 1.2 / 2 (60%)</strong>; 54% scored full marks.</p><p class="ln">Mark distribution: 0: 36% · 1: 10% · 2: 54%</p></div>
 </div>
-<div class="exp" data-marks="1" data-part="h" data-t="sampling">
-<div class="exp-q"><p>For random samples of 10 fish, with \(p = 0.2\), find the exact probability that the sample proportion undersized is at least 0.3, correct to four decimal places.</p></div>
-<ul class="mk"><li>\(\Pr(\hat P \ge 0.3) = \Pr(Y \ge 3)\) with \(Y \sim \text{Bi}(10, 0.2)\): \(0.3222\)</li></ul>
-<div class="exp-a"><p>\(\Pr(Y \ge 3) = 0.3222\)</p></div>
-<div class="ex-rep"><p>For small samples, VCAA expects the exact binomial distribution of \(\hat P\), not a normal approximation.</p></div>
+<div class="exp" data-marks="1" data-part="g" data-avg="0.2">
+<div class="exp-q"><p>Why a solution of \(\log_e(2)2^x - 2x = 0\) is a bad starting point</p></div>
+<ul class="mk"><li>That equation is \(h^{\prime}(x) = 0\), so the tangent is horizontal and Newton’s formula divides by zero</li></ul>
+<div class="exp-a"><p>A stationary point makes the tangent horizontal, so it never meets the x-axis.</p></div>
+<div class="ex-rep"><p><strong>State average 0.2 / 1 (20%)</strong>; 21% scored full marks.</p><p class="ln">Mark distribution: 0: 79% · 1: 21%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="h" data-avg="0.2">
+<div class="exp-q"><p>Positive n for which \(n^x - x^n\) has a local minimum on the x-axis</p></div>
+<ul class="mk"><li>Requires \(f(x) = 0\) and \(f^{\prime}(x) = 0\) at the same x, giving \(x = \frac{n}{\log_e n}\)</li><li>\(n = e\)</li></ul>
+<div class="exp-a"><p>\(n = e\): the curve \(e^x - x^e\) touches the axis at x = e. An exact answer was required.</p></div>
+<div class="ex-rep"><p><strong>State average 0.2 / 2 (10%)</strong>; 3% scored full marks.</p><p class="ln">Mark distribution: 0: 86% · 1: 12% · 2: 3%</p></div>
 </div>
 </div>
-<div class="exq" data-t="optimisation">
-<div class="exq-stem"><p>Consider the curve \(y = e^{-x}\).</p></div>
-<div class="exp" data-marks="2" data-part="a" data-t="diff-apps">
-<div class="exp-q"><p>Show that the tangent at \(x = a\) has equation \(y = e^{-a}(1 + a - x)\).</p></div>
-<ul class="mk"><li>Gradient \(-e^{-a}\) at the point \((a, e^{-a})\)</li><li>\(y - e^{-a} = -e^{-a}(x - a)\), which rearranges to the given form</li></ul>
-<div class="exp-a"><p>\(y = -e^{-a}(x - a) + e^{-a} = e^{-a}(1 + a - x)\)</p></div>
+<div class="exq" data-t="composite-inverse">
+<div class="exq-stem"><p class="src"><span class="src-tag">2023 VCAA Exam 2 · Section B · Question 5</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023MM2-w.pdf#page=21" target="_blank" rel="noopener">Open in the exam PDF (p. 21) ↗</a></p><p>\(g(x) = \frac12 f(2 - x)\) with \(f(x) = e^x + e^{-x}\): transformations, restricted inverses, areas with inverses, a family of curves</p><p class="ln">State average for the whole question: 3.8 / 11 (35%).</p></div>
+<div class="exp" data-marks="2" data-part="a" data-avg="1.2">
+<div class="exp-q"><p>Complete the sequence of transformations from f to g</p></div>
+<ul class="mk"><li>Reflection in the y-axis</li><li>Then translation 2 units right (or just translate 2 right, since f is even)</li></ul>
+<div class="exp-a"><p>Dilation ½ from the x-axis, reflect in the y-axis, then translate right 2. Order matters.</p></div>
+<div class="ex-rep"><p><strong>State average 1.2 / 2 (60%)</strong>; 35% scored full marks.</p><p class="ln">Mark distribution: 0: 18% · 1: 48% · 2: 35%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="b">
-<div class="exp-q"><p>For \(a > -1\), show that the tangent and the coordinate axes enclose a triangle of area \(A(a) = \frac12(a + 1)^2e^{-a}\).</p></div>
-<ul class="mk"><li>Intercepts: \(x = a + 1\) and \(y = e^{-a}(1 + a)\)</li><li>\(A = \frac12(a + 1) \cdot e^{-a}(a + 1)\)</li></ul>
-<div class="exp-a"><p>The \(x\)-intercept is \(a + 1\) and the \(y\)-intercept is \((1 + a)e^{-a}\), both positive for \(a > -1\). \(A = \frac12(a + 1)^2e^{-a}\).</p></div>
+<div class="exp" data-marks="2" data-part="b" data-avg="1">
+<div class="exp-q"><p>Domain and range of the inverse of the increasing branch \(g_1\)</p></div>
+<ul class="mk"><li>Domain \([1, \infty)\)</li><li>Range \([2, \infty)\)</li></ul>
+<div class="exp-a"><p>The domain and range of the inverse are swapped from g₁ (turning point (2, 1)).</p></div>
+<div class="ex-rep"><p><strong>State average 1 / 2 (50%)</strong>; 39% scored full marks.</p><p class="ln">Mark distribution: 0: 40% · 1: 21% · 2: 39%</p></div>
 </div>
-<div class="exp" data-marks="3" data-part="c">
-<div class="exp-q"><p>Find the value of \(a\) that maximises \(A\), and the exact maximum area.</p></div>
-<ul class="mk"><li>\(A'(a) = \frac12e^{-a}(a + 1)(1 - a)\)</li><li>\(a = 1\) (sign change from + to −)</li><li>\(A_{max} = \frac2e\)</li></ul>
-<div class="exp-a"><p>\(A'(a) = \frac12 e^{-a}(a + 1)(1 - a) = 0\) at \(a = 1\) for \(a > -1\), and \(A'\) changes from positive to negative there. \(A(1) = \frac12 \times 4 \times e^{-1} = \frac2e\).</p></div>
+<div class="exp" data-marks="1" data-part="c.i" data-avg="0.6">
+<div class="exp-q"><p>Coordinates of P and Q (2 d.p.)</p></div>
+<ul class="mk"><li>\(P \approx (1.27, 1.27),\ Q \approx (4.09, 4.09)\)</li></ul>
+<div class="exp-a"><p>Solve g(x) = x. Both points lie on y = x.</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 1 (60%)</strong>; 55% scored full marks.</p><p class="ln">Mark distribution: 0: 45% · 1: 55%</p></div>
 </div>
-<div class="exp" data-marks="3" data-part="d" data-t="integration">
-<div class="exp-q"><p>Find the exact area of the region bounded by the curve, the tangent at \(a = 1\) and the \(y\)-axis.</p></div>
-<ul class="mk"><li>Tangent at \(a = 1\): \(y = e^{-1}(2 - x)\), which lies below the convex curve</li><li>\(\int_0^1 \left(e^{-x} - e^{-1}(2 - x)\right) dx\)</li><li>\(1 - \frac{5}{2e}\)</li></ul>
-<div class="exp-a"><p>\(\left[-e^{-x}\right]_0^1 - e^{-1}\left[2x - \frac{x^2}{2}\right]_0^1 = 1 - e^{-1} - \frac32e^{-1} = 1 - \frac{5}{2e} \approx 0.080\)</p></div>
+<div class="exp" data-marks="2" data-part="c.ii" data-avg="0.6">
+<div class="exp-q"><p>Area bounded by g and the two inverses (2 d.p.)</p></div>
+<ul class="mk"><li>\(2\int_{1.27}^{4.09}\left(x - g(x)\right)dx\)</li><li>\(\approx 5.56\)</li></ul>
+<div class="exp-a"><p>Use the symmetry about y = x: double the area between y = x and g. Forgetting the 2 gives 2.78.</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 2 (30%)</strong>; 29% scored full marks.</p><p class="ln">Mark distribution: 0: 65% · 1: 6% · 2: 29%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="e" data-t="newton">
-<div class="exp-q"><p>This algorithm applies Newton’s method to solve \(e^{-x} = x\).<pre>x ← 0<br>repeat 2 times<br>    x ← x − (e^(−x) − x) / (−e^(−x) − 1)<br>end repeat<br>print x</pre>State the value printed, correct to four decimal places.</p></div>
-<ul class="mk"><li>First iteration: \(x = 0.5\)</li><li>Second iteration: \(x \approx 0.5663\)</li></ul>
-<div class="exp-a"><p>\(x_1 = 0 - \frac{1}{-2} = 0.5\), then \(x_2 = 0.5 - \frac{e^{-0.5} - 0.5}{-e^{-0.5} - 1} \approx 0.5663\).</p></div>
+<div class="exp" data-marks="1" data-part="d" data-avg="0.1">
+<div class="exp-q"><p>Integer n such that the turning point of h always lies on y = 2xⁿ</p></div>
+<ul class="mk"><li>\(n = -1\)</li></ul>
+<div class="exp-a"><p>The turning point is \(\left(k, \frac2k\right)\), and \(\frac2k = 2k^{-1}\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.1 / 1 (10%)</strong>; 13% scored full marks.</p><p class="ln">Mark distribution: 0: 87% · 1: 13%</p></div>
 </div>
-<div class="exp" data-marks="2" data-part="f" data-t="systems">
-<div class="exp-q"><p>The tangents at \(x = 0\) and \(x = 1\) intersect at the point \(P\). Find the exact coordinates of \(P\).</p></div>
-<ul class="mk"><li>Tangents: \(y = 1 - x\) and \(y = e^{-1}(2 - x)\)</li><li>\(P = \left(\frac{e - 2}{e - 1}, \frac{1}{e - 1}\right)\)</li></ul>
-<div class="exp-a"><p>\(1 - x = \frac{2 - x}{e}\) gives \(x(e - 1) = e - 2\), so \(P = \left(\frac{e - 2}{e - 1}, \frac{1}{e - 1}\right)\).</p></div>
+<div class="exp" data-marks="1" data-part="e" data-avg="0">
+<div class="exp-q"><p>Smallest k for which h meets the inverse of \(h_1\) (2 d.p.)</p></div>
+<ul class="mk"><li>\(k \approx 1.27\)</li></ul>
+<div class="exp-a"><p>Find the k where the curves just touch (a tangency condition). The state averaged 0.0/1.</p></div>
+<div class="ex-rep"><p><strong>State average 0 / 1 (0%)</strong>; 4% scored full marks.</p><p class="ln">Mark distribution: 0: 96% · 1: 4%</p></div>
 </div>
-<div class="exp" data-marks="1" data-part="g">
-<div class="exp-q"><p>Explain why the condition \(a > -1\) is needed in part b.</p></div>
-<ul class="mk"><li>For \(a \le -1\), the intercept \(a + 1 \le 0\), so no triangle is formed in the first quadrant (or it degenerates at \(a = -1\))</li></ul>
-<div class="exp-a"><p>If \(a \le -1\), the intercepts \(a + 1\) and \((1 + a)e^{-a}\) are not positive, so the triangle degenerates or isn’t formed as described.</p></div>
+<div class="exp" data-marks="2" data-part="f" data-avg="0.3">
+<div class="exp-q"><p>Area between h and the inverse of \(h_1\) when k = 5 (2 d.p.)</p></div>
+<ul class="mk"><li>Intersections at x ≈ 1.45 and x ≈ 8.78</li><li>Area \(\approx 43.91\)</li></ul>
+<div class="exp-a"><p>Integrate \(|h - h_1^{-1}|\) between the two intersection points.</p></div>
+<div class="ex-rep"><p><strong>State average 0.3 / 2 (15%)</strong>; 12% scored full marks.</p><p class="ln">Mark distribution: 0: 86% · 1: 2% · 2: 12%</p></div>
+</div>
+</div>
+<div class="exq" data-t="composite-inverse">
+<div class="exq-stem"><p class="src"><span class="src-tag">2024 VCAA Exam 2 · Section B · Question 5</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2024/2024MM2-w.pdf#page=24" target="_blank" rel="noopener">Open in the exam PDF (p. 24) ↗</a></p><p>Composites of \(\sin x\) and \(\sin 2x\): maxima, ranges, derivatives, stationary points, area between them, domain of a composite</p><p class="ln">State average for the whole question: 4.9 / 11 (45%).</p></div>
+<div class="exp" data-marks="1" data-part="a.i" data-avg="0.7">
+<div class="exp-q"><p>Local maximum of \(g \circ f\) in \([0, \frac{\pi}{2}]\) (1 d.p.)</p></div>
+<ul class="mk"><li>\((0.9, 1)\)</li></ul>
+<div class="exp-a"><p>\(\sin(2\sin x) = 1\) when \(\sin x = \frac{\pi}{4}\): \(x \approx 0.9\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.7 / 1 (70%)</strong>; 69% scored full marks.</p><p class="ln">Mark distribution: 0: 31% · 1: 69%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="a.ii" data-avg="0.6">
+<div class="exp-q"><p>Range of \(g \circ f\) on \([0, 2\pi]\)</p></div>
+<ul class="mk"><li>\([-1, 1]\)</li></ul>
+<div class="exp-a"><p>\(2\sin x\) covers [−2, 2], which contains \(\pm\frac{\pi}{2}\), so the full \([-1, 1]\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 1 (60%)</strong>; 63% scored full marks.</p><p class="ln">Mark distribution: 0: 37% · 1: 63%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b.i" data-avg="0.8">
+<div class="exp-q"><p>Derivative of \(f \circ g\)</p></div>
+<ul class="mk"><li>\(2\cos(2x)\cos(\sin 2x)\)</li></ul>
+<div class="exp-a"><p>Chain rule.</p></div>
+<div class="ex-rep"><p><strong>State average 0.8 / 1 (80%)</strong>; 82% scored full marks.</p><p class="ln">Mark distribution: 0: 18% · 1: 82%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b.ii" data-avg="0.8">
+<div class="exp-q"><p>Show \(\cos(\sin 2x) = 0\) has no real solutions</p></div>
+<ul class="mk"><li>It would need \(\sin 2x = \frac{\pi}{2} + k\pi\)</li><li>But \(|\sin 2x| \le 1 < \frac{\pi}{2}\), so there are no solutions</li></ul>
+<div class="exp-a"><p>The sine can’t reach ±π/2.</p></div>
+<div class="ex-rep"><p><strong>State average 0.8 / 2 (40%)</strong>; 34% scored full marks.</p><p class="ln">Mark distribution: 0: 57% · 1: 9% · 2: 34%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b.iii" data-avg="0.5">
+<div class="exp-q"><p>x-values of the stationary points of \(f \circ g\) on \([0, 2\pi]\)</p></div>
+<ul class="mk"><li>\(x = \frac{\pi}{4}, \frac{3\pi}{4}, \frac{5\pi}{4}, \frac{7\pi}{4}\)</li></ul>
+<div class="exp-a"><p>Only \(\cos 2x = 0\) contributes (by part ii).</p></div>
+<div class="ex-rep"><p><strong>State average 0.5 / 1 (50%)</strong>; 47% scored full marks.</p><p class="ln">Mark distribution: 0: 53% · 1: 47%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b.iv" data-avg="0.4">
+<div class="exp-q"><p>Range of \(f \circ g\)</p></div>
+<ul class="mk"><li>\([-\sin 1, \sin 1]\)</li></ul>
+<div class="exp-a"><p>\(\sin(\sin 2x)\) with \(\sin 2x \in [-1, 1]\)</p></div>
+<div class="ex-rep"><p><strong>State average 0.4 / 1 (40%)</strong>; 34% scored full marks.</p><p class="ln">Mark distribution: 0: 66% · 1: 34%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="c.i" data-avg="0.3">
+<div class="exp-q"><p>Single definite integral for the area between the two composites on [0, 2π]</p></div>
+<ul class="mk"><li>\(\int_0^{2\pi}\left|\sin(\sin 2x) - \sin(2\sin x)\right|dx\)</li></ul>
+<div class="exp-a"><p>Use the absolute value so one integral covers every region.</p></div>
+<div class="ex-rep"><p><strong>State average 0.3 / 1 (30%)</strong>; 32% scored full marks.</p><p class="ln">Mark distribution: 0: 68% · 1: 32%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="c.ii" data-avg="0.5">
+<div class="exp-q"><p>That area (2 d.p.)</p></div>
+<ul class="mk"><li>\(\approx 4.97\)</li></ul>
+<div class="exp-a"><p>≈ 4.97</p></div>
+<div class="ex-rep"><p><strong>State average 0.5 / 1 (50%)</strong>; 45% scored full marks.</p><p class="ln">Mark distribution: 0: 55% · 1: 45%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="d" data-avg="0.3">
+<div class="exp-q"><p>x in \((0, 2\pi)\) for which \(f_1 \circ g\) is defined, \(f_1\) having domain \((0, 2\pi)\)</p></div>
+<ul class="mk"><li>Requires \(\sin 2x > 0\) (range of g inside the domain of \(f_1\))</li><li>\(x \in \left(0, \frac{\pi}{2}\right) \cup \left(\pi, \frac{3\pi}{2}\right)\)</li></ul>
+<div class="exp-a"><p>The range of g must sit inside (0, 2π), so \(0 < \sin 2x\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.3 / 2 (15%)</strong>; 9% scored full marks.</p><p class="ln">Mark distribution: 0: 80% · 1: 11% · 2: 9%</p></div>
+</div>
+</div>
+<div class="exq" data-t="diff-apps">
+<div class="exq-stem"><p class="src"><span class="src-tag">2025 VCAA Exam 2 · Section B · Question 4</span> <a class="src-link" href="https://www.vcaa.vic.edu.au/sites/default/files/2025-11/2025-MathMethods2.pdf#page=23" target="_blank" rel="noopener">Open in the exam PDF (p. 23) ↗</a></p><p>\(f(x) = \sin x + 1\) on \([0, \frac{5\pi}{2}]\): values, periodicity, tangents, Newton’s method, a family of tangents, matching a polynomial</p><p class="ln">State average for the whole question: 8.5 / 19 (45%).</p></div>
+<div class="exp" data-marks="1" data-part="a" data-avg="0.9">
+<div class="exp-q"><p>\(f\left(\frac{2\pi}{3}\right)\)</p></div>
+<ul class="mk"><li>\(\frac{\sqrt3}{2} + 1\)</li></ul>
+<div class="exp-a"><p>\(\frac{\sqrt3}{2} + 1\)</p></div>
+<div class="ex-rep"><p><strong>State average 0.9 / 1 (90%)</strong>; 93% scored full marks.</p><p class="ln">Mark distribution: 0: 7% · 1: 93%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b" data-avg="0.8">
+<div class="exp-q"><p>Exact x with \(f(x) = \frac32\)</p></div>
+<ul class="mk"><li>\(x = \frac{\pi}{6}, \frac{5\pi}{6}, \frac{13\pi}{6}\)</li></ul>
+<div class="exp-a"><p>\(\sin x = \frac12\). Three solutions lie in the domain.</p></div>
+<div class="ex-rep"><p><strong>State average 0.8 / 1 (80%)</strong>; 78% scored full marks.</p><p class="ln">Mark distribution: 0: 22% · 1: 78%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c" data-avg="0.6">
+<div class="exp-q"><p>k and the largest a with f(x + k) = f(x) on [0, a]</p></div>
+<ul class="mk"><li>\(k = 2\pi\)</li><li>Largest \(a = \frac{\pi}{2}\)</li></ul>
+<div class="exp-a"><p>The period is \(2\pi\), and \(x + 2\pi\) must stay within \(\frac{5\pi}{2}\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 2 (30%)</strong>; 15% scored full marks.</p><p class="ln">Mark distribution: 0: 59% · 1: 26% · 2: 15%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="d" data-avg="0.7">
+<div class="exp-q"><p>Tangent at \(x = \frac{2\pi}{3}\)</p></div>
+<ul class="mk"><li>\(y = -\frac{x}{2} + \frac{\pi}{3} + \frac{\sqrt3}{2} + 1\)</li></ul>
+<div class="exp-a"><p>Gradient \(\cos\frac{2\pi}{3} = -\frac12\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.7 / 1 (70%)</strong>; 70% scored full marks.</p><p class="ln">Mark distribution: 0: 30% · 1: 70%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="e.i" data-avg="0.6">
+<div class="exp-q"><p>Newton’s method from \(x_0 = \frac{2\pi}{3}\): \(x_2\) to 1 d.p.</p></div>
+<ul class="mk"><li>\(x_2 \approx 5.2\)</li></ul>
+<div class="exp-a"><p>\(x_1 = \frac{2\pi}{3} + \sqrt3 + 2 \approx 5.83\), then \(x_2 \approx 5.2\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.6 / 1 (60%)</strong>; 65% scored full marks.</p><p class="ln">Mark distribution: 0: 35% · 1: 65%</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="e.ii" data-avg="0.3">
+<div class="exp-q"><p>Draw the tangent at \(x = x_1\) on the graph</p></div>
+<ul class="mk"><li>Tangent at \(x_1 \approx 5.83\) drawn, meeting the x-axis at \(x_2 \approx 5.2\)</li></ul>
+<div class="exp-a"><p>The tangent at \(x_1\) should cut the x-axis at about 5.2.</p></div>
+<div class="ex-rep"><p><strong>State average 0.3 / 1 (30%)</strong>; 28% scored full marks.</p><p class="ln">Mark distribution: 0: 72% · 1: 28%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="f.i" data-avg="1.1">
+<div class="exp-q"><p>Show the tangent at \(x = p\) is \(t(x) = \cos(p)(x - p) + \sin(p) + 1\)</p></div>
+<ul class="mk"><li>Gradient \(f^{\prime}(p) = \cos p\) through \((p, \sin p + 1)\)</li><li>Correct point–gradient form rearranged</li></ul>
+<div class="exp-a"><p>\(y - (\sin p + 1) = \cos p\,(x - p)\)</p></div>
+<div class="ex-rep"><p><strong>State average 1.1 / 2 (55%)</strong>; 49% scored full marks.</p><p class="ln">Mark distribution: 0: 34% · 1: 17% · 2: 49%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="f.ii" data-avg="0.5">
+<div class="exp-q"><p>Minimum and maximum y-intercepts of t for \(p \in (0, \frac{5\pi}{2})\)</p></div>
+<ul class="mk"><li>y-intercept \(= \sin p - p\cos p + 1\), derivative \(p\sin p\), stationary at \(\pi, 2\pi\)</li><li>Minimum \(1 - 2\pi\), maximum \(1 + \pi\)</li></ul>
+<div class="exp-a"><p>At \(p = 2\pi\): \(1 - 2\pi\). At \(p = \pi\): \(1 + \pi\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.5 / 2 (25%)</strong>; 23% scored full marks.</p><p class="ln">Mark distribution: 0: 72% · 1: 5% · 2: 23%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="f.iii" data-avg="0.4">
+<div class="exp-q"><p>p for which t has a unique x-intercept equal to f’s x-intercept (2 d.p.)</p></div>
+<ul class="mk"><li>Requires \(t\left(\frac{3\pi}{2}\right) = 0\) with \(p \ne \frac{3\pi}{2}\) (horizontal tangent excluded)</li><li>\(p \approx 2.38\) and \(p \approx 7.04\)</li></ul>
+<div class="exp-a"><p>Solve \(\cos p\left(\frac{3\pi}{2} - p\right) + \sin p + 1 = 0\): p ≈ 2.38, 7.04.</p></div>
+<div class="ex-rep"><p><strong>State average 0.4 / 2 (20%)</strong>; 10% scored full marks.</p><p class="ln">Mark distribution: 0: 65% · 1: 25% · 2: 10%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="g.i" data-avg="1.4">
+<div class="exp-q"><p>Show c = 1 and d = 1 given \(g(0) = f(0)\), \(g^{\prime}(0) = f^{\prime}(0)\)</p></div>
+<ul class="mk"><li>\(g(0) = d = f(0) = 1\)</li><li>\(g^{\prime}(0) = c = \cos 0 = 1\)</li></ul>
+<div class="exp-a"><p>Direct substitution.</p></div>
+<div class="ex-rep"><p><strong>State average 1.4 / 2 (70%)</strong>; 68% scored full marks.</p><p class="ln">Mark distribution: 0: 27% · 1: 5% · 2: 68%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="g.ii" data-avg="0.7">
+<div class="exp-q"><p>Area between f and g on \([0, 2\pi]\) when they also match at \(2\pi\) (2 d.p.)</p></div>
+<ul class="mk"><li>Solves for \(a = \frac{1}{2\pi^2}\), \(b = -\frac{3}{2\pi}\)</li><li>Area \(\approx 1.53\)</li></ul>
+<div class="exp-a"><p>Use \(\int_0^{2\pi}|f - g|\,dx \approx 1.53\).</p></div>
+<div class="ex-rep"><p><strong>State average 0.7 / 2 (35%)</strong>; 29% scored full marks.</p><p class="ln">Mark distribution: 0: 63% · 1: 8% · 2: 29%</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="g.iii" data-avg="0.5">
+<div class="exp-q"><p>b and r with \(g(r) = f(r)\), \(g^{\prime}(r) = f^{\prime}(r)\) when a = 0, c = d = 1</p></div>
+<ul class="mk"><li>Sets up \(br^2 + r = \sin r\) and \(2br + 1 = \cos r\)</li><li>\(r = \pi,\ b = -\frac{1}{\pi}\)</li></ul>
+<div class="exp-a"><p>\(r = \pi\) gives \(b = -\frac{1}{\pi}\) (the other solution lies outside the domain).</p></div>
+<div class="ex-rep"><p><strong>State average 0.5 / 2 (25%)</strong>; 14% scored full marks.</p><p class="ln">Mark distribution: 0: 67% · 1: 19% · 2: 14%</p></div>
 </div>
 </div>
 <h2>Assessor’s report</h2>
-<div class="ex-report"><h3>General comments</h3>
-<p>This paper was pitched above a typical Exam 2. CAS could do most of the arithmetic, but each question needed an insight CAS can’t supply: that intersections of an increasing function and its inverse lie on \(y = x\), that \(x = \pi\) is a hidden stationary point, that a single intersection means tangency, that the two stationary points of \(A(a)\) must be checked against \(a > -1\). A median of about 45/80 is expected. 60+ is outstanding.</p>
-<h3>What separated the top scripts</h3>
-<ul><li><strong>Algebra before CAS.</strong> Factorising \(f'(x)\) in 2b revealed all three stationary points. CAS’s solve command (depending on settings) missed one.</li>
-<li><strong>Precision.</strong> Storing intersection values instead of retyping rounded ones kept the area in 1c accurate.</li>
-<li><strong>Reasoning with limiting cases.</strong> In 1d, the strongest answers explained why \(k > 1\) and \(k < 1\) both give two intersections.</li>
-<li><strong>Exact vs approximate.</strong> The top students gave exact answers wherever asked (\(\frac2e\), \(1 - \frac{5}{2e}\), \(\frac{2(e^2 + 1)}{e^2 - 1}\)).</li></ul>
-<h3>Common errors</h3>
-<ul><li>\(\sqrt{(x + 1)^2}\) simplified to \(x + 1\) (MC 8).</li>
-<li>Reading transformations from \(f(3 - x)\) in the wrong order (MC 3).</li>
-<li>Using a normal approximation when the exact binomial was asked for (3h), or vice versa (MC 19).</li>
-<li>Counting \(k = 0\) as giving two solutions in 2f.</li>
-<li>Tracing the pseudocode loop only once.</li></ul>
-<h3>Advice</h3>
-<p>Below 40: redo the medium paper and practise writing algebraic setups before using CAS. Above 55: your technique is exam-ready. Keep your timing sharp with full papers under exam conditions.</p></div>
+<div class="ex-report"><h3>How Victoria went on this paper</h3><p>These statistics are the real published results for each question in the year it was set, compiled from the VCAA examiners’ reports. A student scoring at the state average on every question would get <strong>34 / 84 (41%)</strong> on this paper (multiple choice 33% correct on average, written 43%).</p><h3>Where Victorian students lost the most marks</h3><ul><li><strong>2025 Exam 2 MC Q19</strong> (Value of c when the shortest distance from \(y = x + c\) to \(y = \log_e(x-1)\) is \(\sqrt2\)): 14% correct</li><li><strong>2025 Exam 2 MC Q16</strong> (Conditions on a, b if \(h(x) = a\log_e(bx)\) has \(h^{\prime}(x) > 0\) everywhere): 18% correct</li><li><strong>2023 Exam 2 MC Q11</strong> (Gradient of f × g at x = −2 from given values): 22% correct</li><li><strong>2024 Exam 2 MC Q17</strong> (Output of an algorithm that searches for integer roots of a cubic): 27% correct</li><li><strong>2023 Exam 2 MC Q17</strong> (Volume of a cylinder cut from a sheet, in terms of x and y): 28% correct</li><li><strong>2023 Exam 2 MC Q12</strong> (Maximum possible mean of a pmf with parameter k): 29% correct</li></ul><h3>What most students got right</h3><ul><li><strong>2024 Exam 2 MC Q13</strong> (Local minimum of \(f(x) = \frac{x}{2} + \frac{2}{x}\) after dilation ×3 from the y-axis and a shift down 1): 45%</li><li><strong>2025 Exam 2 MC Q13</strong> (Graph of \(g(f(x))\) given sketches of a line f and an even function g): 45%</li><li><strong>2025 Exam 2 Q4</strong> (\(f(x) = \sin x + 1\) on \([0, \frac{5\pi}{2}]\): values, periodicity, tangents, Newton’s method, a family of tangents, matching a polynomial): 45%</li><li><strong>2023 Exam 2 Q2</strong> (Observation wheel modelled by h(t) = −60cos(bt) + c; then it stops and restarts at double speed): 45%</li></ul><p>The per-question notes above paraphrase the examiners’ comments on common errors. For the full commentary and sample answers, read the official reports: <a href="https://www.vcaa.vic.edu.au/sites/default/files/Documents/exams/mathematics/2023/2023mathmethods2-report.docx" target="_blank" rel="noopener">2023 Exam 2 report</a>, <a href="https://www.vcaa.vic.edu.au/sites/default/files/2025-10/2024mathematicalmethods2-report.docx" target="_blank" rel="noopener">2024 Exam 2 report</a>, <a href="https://www.vcaa.vic.edu.au/sites/default/files/2026-02/2025-MathematicalMethods2-report_0.docx" target="_blank" rel="noopener">2025 Exam 2 report</a>.</p><details><summary>Every question on this paper, hardest first</summary><div class="tbl"><table><thead><tr><th>Question</th><th>Topic</th><th>Marks</th><th>State result</th></tr></thead><tbody><tr><td>2025 Exam 2 MC Q19</td><td>Value of c when the shortest distance from \(y = x + c\) to \(y = \log_e(x-1)\) is \(\sqrt2\)</td><td>1</td><td>14%</td></tr><tr><td>2025 Exam 2 MC Q16</td><td>Conditions on a, b if \(h(x) = a\log_e(bx)\) has \(h^{\prime}(x) > 0\) everywhere</td><td>1</td><td>18%</td></tr><tr><td>2023 Exam 2 MC Q11</td><td>Gradient of f × g at x = −2 from given values</td><td>1</td><td>22%</td></tr><tr><td>2024 Exam 2 MC Q17</td><td>Output of an algorithm that searches for integer roots of a cubic</td><td>1</td><td>27%</td></tr><tr><td>2023 Exam 2 MC Q17</td><td>Volume of a cylinder cut from a sheet, in terms of x and y</td><td>1</td><td>28%</td></tr><tr><td>2023 Exam 2 MC Q12</td><td>Maximum possible mean of a pmf with parameter k</td><td>1</td><td>29%</td></tr><tr><td>2023 Exam 2 MC Q14</td><td>Number of tangents to a cubic that pass through its positive x-intercept</td><td>1</td><td>29%</td></tr><tr><td>2023 Exam 2 MC Q18</td><td>Number of local minima of \(\sin(ax)\) on \([-a\pi, a\pi]\)</td><td>1</td><td>29%</td></tr><tr><td>2023 Exam 2 MC Q20</td><td>Largest interval where both \(f \circ g\) and \(g \circ f\) exist (log and sine)</td><td>1</td><td>30%</td></tr><tr><td>2023 Exam 2 MC Q19</td><td>Values of k giving one positive and one negative root of a quadratic</td><td>1</td><td>32%</td></tr><tr><td>2023 Exam 2 Q5</td><td>\(g(x) = \frac12 f(2 - x)\) with \(f(x) = e^x + e^{-x}\): transformations, restricted inverses, areas with inverses, a family of curves</td><td>11</td><td>35%</td></tr><tr><td>2024 Exam 2 MC Q16</td><td>Gradient of \(y = \sqrt{f(x)}\) at x = 4 given f(4) = 25 and \(f^{\prime}(4) = 15\)</td><td>1</td><td>36%</td></tr><tr><td>2025 Exam 2 MC Q20</td><td>Which transformation sequence does not map \(a^x\) to \(a^{2x+2}\)</td><td>1</td><td>36%</td></tr><tr><td>2024 Exam 2 MC Q10</td><td>What must be true if \(f^{\prime}(2) < 0\) and \(f^{\prime}(4) > 0\)</td><td>1</td><td>38%</td></tr><tr><td>2025 Exam 2 MC Q17</td><td>Which graph fits \(\int_1^2 f\,dx > \int_1^3 f\,dx\)</td><td>1</td><td>38%</td></tr><tr><td>2024 Exam 2 MC Q11</td><td>Choosing 3 of 12 students: probability exactly two are from the front row of seven</td><td>1</td><td>40%</td></tr><tr><td>2024 Exam 2 MC Q20</td><td>\(\int_2^6 f(x)\,dx\) for a period-2 function with average value k on [0, 2]</td><td>1</td><td>41%</td></tr><tr><td>2023 Exam 2 MC Q9</td><td>Value of a that makes a tan/sin hybrid continuous and smooth at x = 2π</td><td>1</td><td>42%</td></tr><tr><td>2025 Exam 2 MC Q15</td><td>Image of the point (1, 3) on \(y = 1 - g(2x - 3)\)</td><td>1</td><td>44%</td></tr><tr><td>2023 Exam 2 Q3</td><td>\(g(x) = 2^x + 5\): limit, derivative, tangents through the origin; \(h(x) = 2^x - x^2\): inflection, decreasing interval, Newton’s method</td><td>12</td><td>44%</td></tr><tr><td>2023 Exam 2 Q2</td><td>Observation wheel modelled by h(t) = −60cos(bt) + c; then it stops and restarts at double speed</td><td>11</td><td>45%</td></tr><tr><td>2024 Exam 2 Q5</td><td>Composites of \(\sin x\) and \(\sin 2x\): maxima, ranges, derivatives, stationary points, area between them, domain of a composite</td><td>11</td><td>45%</td></tr><tr><td>2025 Exam 2 Q4</td><td>\(f(x) = \sin x + 1\) on \([0, \frac{5\pi}{2}]\): values, periodicity, tangents, Newton’s method, a family of tangents, matching a polynomial</td><td>19</td><td>45%</td></tr><tr><td>2024 Exam 2 MC Q13</td><td>Local minimum of \(f(x) = \frac{x}{2} + \frac{2}{x}\) after dilation ×3 from the y-axis and a shift down 1</td><td>1</td><td>45%</td></tr><tr><td>2025 Exam 2 MC Q13</td><td>Graph of \(g(f(x))\) given sketches of a line f and an even function g</td><td>1</td><td>45%</td></tr></tbody></table></div></details><p><strong>Next step:</strong> this band separates the top students. Anything above the state average here is excellent. Use the hardest-first table to target the topics that cost you.</p></div>
