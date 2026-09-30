@@ -1,0 +1,159 @@
+<!--
+id: exam1-medium
+title: Exam 1 practice paper (medium)
+short: Exam 1 · medium
+special: exam
+summary: A full technology-free Exam 1 (40 marks, 1 hour) at VCAA standard: quotient rule, integration by recognition, log equations with domain checks, inverse and composite domains, a normal line, a without-replacement distribution, a pdf and sample proportions.
+keywords: practice exam, trial exam, full exam, medium exam, assessor report, marking guide, methods exam 1, technology free, no calculator, practice exam 1, medium methods exam
+-->
+<div class="ex-meta" data-level="medium" data-reading="15" data-writing="60"></div>
+<div class="ex-cover"><h3>Mathematical Methods · Exam 1 practice (medium)</h3>
+<ul><li>Reading time: 15 minutes. Writing time: 1 hour. <strong>No calculators or notes</strong>. Only the <a href="#formula-sheet">formula sheet</a> is allowed.</li>
+<li>10 questions, 40 marks. Give exact answers.</li>
+<li>In questions worth more than 1 mark, appropriate working must be shown.</li></ul></div>
+<h2>Questions (40 marks)</h2>
+<div class="ex-inst"><p>Answer all questions in the spaces provided. No calculators. In questions where more than one mark is available, appropriate working must be shown.</p></div>
+<div class="exq" data-t="diff-rules">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Let \(y = \dfrac{2x + 1}{x - 3}\). Find \(\dfrac{dy}{dx}\) in simplest form.</p></div>
+<ul class="mk"><li>Quotient rule: \(\frac{2(x - 3) - (2x + 1)}{(x - 3)^2}\)</li><li>\(-\frac{7}{(x - 3)^2}\)</li></ul>
+<div class="exp-a"><p>\(\dfrac{dy}{dx} = \dfrac{2(x - 3) - 1(2x + 1)}{(x - 3)^2} = -\dfrac{7}{(x - 3)^2}\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Let \(f(x) = e^{-x}\sin(2x)\). Evaluate \(f'(0)\).</p></div>
+<ul class="mk"><li>\(f'(x) = -e^{-x}\sin 2x + 2e^{-x}\cos 2x\)</li><li>\(f'(0) = 2\)</li></ul>
+<div class="exp-a"><p>\(f'(0) = -1 \times 0 + 2 \times 1 \times 1 = 2\)</p></div>
+</div>
+</div>
+<div class="exq" data-t="integration">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Evaluate \(\displaystyle\int_1^e \left(\frac{2}{x} + 1\right) dx\).</p></div>
+<ul class="mk"><li>\(\left[2\ln x + x\right]_1^e\)</li><li>\(e + 1\)</li></ul>
+<div class="exp-a"><p>\((2 + e) - (0 + 1) = e + 1\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b" data-t="antidiff">
+<div class="exp-q"><p>Given that \(\dfrac{d}{dx}(x\ln x) = \ln x + 1\), find \(\displaystyle\int \ln x\, dx\).</p></div>
+<ul class="mk"><li>\(\int(\ln x + 1)\,dx = x\ln x\), so \(\int \ln x\,dx = x\ln x - \int 1\,dx\)</li><li>\(x\ln x - x + c\)</li></ul>
+<div class="exp-a"><p>Integrate both sides: \(x\ln x = \int \ln x\,dx + x\), so \(\int \ln x\,dx = x\ln x - x + c\).</p></div>
+<div class="ex-rep"><p>Integration by recognition appears every year. Integrate the given derivative, then rearrange.</p></div>
+</div>
+</div>
+<div class="exq" data-t="explog">
+<div class="exp" data-marks="3">
+<div class="exp-q"><p>Solve \(2\log_3(x) - \log_3(x + 6) = 1\) for \(x\).</p></div>
+<ul class="mk"><li>Log laws: \(\log_3\frac{x^2}{x + 6} = 1\)</li><li>\(x^2 = 3x + 18\), so \((x - 6)(x + 3) = 0\)</li><li>\(x = 6\) only (\(x = -3\) rejected)</li></ul>
+<div class="exp-a"><p>\(\frac{x^2}{x + 6} = 3\), so \(x^2 - 3x - 18 = 0\) and \(x = 6\) or \(-3\). The log requires \(x > 0\), so \(x = 6\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="circular">
+<div class="exp" data-marks="3">
+<div class="exp-q"><p>Solve \(2\cos(2x) + 1 = 0\) for \(x \in [0, \pi]\).</p></div>
+<ul class="mk"><li>\(\cos 2x = -\frac12\), with \(2x \in [0, 2\pi]\)</li><li>\(2x = \frac{2\pi}{3}, \frac{4\pi}{3}\)</li><li>\(x = \frac{\pi}{3}, \frac{2\pi}{3}\)</li></ul>
+<div class="exp-a"><p>\(2x = \frac{2\pi}{3}\) or \(\frac{4\pi}{3}\) (quadrants 2 and 3), so \(x = \frac{\pi}{3}\) or \(\frac{2\pi}{3}\).</p></div>
+<div class="ex-rep"><p>Adjust the domain for \(2x\) first. Students who solved for \(x\) directly usually lost one solution.</p></div>
+</div>
+</div>
+<div class="exq" data-t="composite-inverse">
+<div class="exq-stem"><p>Let \(f: \mathbb{R} \to \mathbb{R}\), \(f(x) = 2e^{x - 1} + 3\).</p></div>
+<div class="exp" data-marks="1" data-part="a" data-t="functions">
+<div class="exp-q"><p>State the range of \(f\).</p></div>
+<ul class="mk"><li>\((3, \infty)\)</li></ul>
+<div class="exp-a"><p>\((3, \infty)\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find the rule and domain of \(f^{-1}\).</p></div>
+<ul class="mk"><li>\(f^{-1}(x) = 1 + \ln\left(\frac{x - 3}{2}\right)\)</li><li>Domain \((3, \infty)\)</li></ul>
+<div class="exp-a"><p>\(x = 2e^{y - 1} + 3\), so \(y = 1 + \ln\frac{x - 3}{2}\), with domain \((3, \infty)\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Let \(h(x) = \ln(x - 5)\). Find the maximal domain of \(h(f(x))\).</p></div>
+<ul class="mk"><li>Need \(f(x) > 5\): \(2e^{x - 1} > 2\)</li><li>\(x > 1\), i.e. \((1, \infty)\)</li></ul>
+<div class="exp-a"><p>\(h(f(x))\) requires \(f(x) > 5\), so \(e^{x - 1} > 1\) and \(x > 1\). The domain is \((1, \infty)\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="diff-apps">
+<div class="exq-stem"><p>Let \(y = xe^{-x}\).</p></div>
+<div class="exp" data-marks="3" data-part="a">
+<div class="exp-q"><p>Find the coordinates of the stationary point, and show that it is a local maximum.</p></div>
+<ul class="mk"><li>\(\frac{dy}{dx} = e^{-x}(1 - x)\)</li><li>Stationary point \(\left(1, \frac1e\right)\)</li><li>Gradient changes from positive (\(x < 1\)) to negative (\(x > 1\)), since \(e^{-x} > 0\): a local maximum</li></ul>
+<div class="exp-a"><p>'\(y' = e^{-x} - xe^{-x} = e^{-x}(1 - x) = 0\) at \(x = 1\), where \(y = \frac1e\). Since \(e^{-x} > 0\), the sign of \(y'\) is the sign of \(1 - x\): positive then negative, so it is a maximum.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find the equation of the normal to the curve at the origin.</p></div>
+<ul class="mk"><li>Tangent gradient at \(x = 0\) is 1, so the normal gradient is \(-1\)</li><li>\(y = -x\)</li></ul>
+<div class="exp-a"><p>\(y = -x\)</p></div>
+</div>
+</div>
+<div class="exq" data-t="drv">
+<div class="exq-stem"><p>A bag contains 3 red balls and 2 blue balls. Two balls are drawn at random without replacement. Let X be the number of red balls drawn.</p></div>
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Complete the probability distribution of \(X\).</p></div>
+<ul class="mk"><li>\(\Pr(X = 0) = \frac{1}{10}\), \(\Pr(X = 2) = \frac{3}{10}\)</li><li>\(\Pr(X = 1) = \frac{6}{10}\)</li></ul>
+<div class="exp-a"><p>\(\Pr(0) = \frac25 \cdot \frac14 = \frac1{10}\); \(\Pr(2) = \frac35 \cdot \frac24 = \frac3{10}\); \(\Pr(1) = 1 - \frac4{10} = \frac6{10}\).</p></div>
+<div class="ex-rep"><p>Treating the draws as independent (with replacement) gave \(\frac9{25}\) for two reds. That is the key error in without-replacement problems.</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find \(\text{E}(X)\).</p></div>
+<ul class="mk"><li>\(\frac{6}{5}\)</li></ul>
+<div class="exp-a"><p>\(0 + \frac{6}{10} + \frac{6}{10} = \frac65\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c" data-t="probability">
+<div class="exp-q"><p>Given that at least one red ball is drawn, find the probability that both are red.</p></div>
+<ul class="mk"><li>\(\frac{\Pr(X = 2)}{\Pr(X \ge 1)}\)</li><li>\(\frac{3/10}{9/10} = \frac13\)</li></ul>
+<div class="exp-a"><p>\(\frac{3/10}{9/10} = \frac13\)</p></div>
+</div>
+</div>
+<div class="exq" data-t="crv">
+<div class="exq-stem"><p>A continuous random variable \(X\) has probability density function \(f(x) = k(4 - x^2)\) for \(0 \le x \le 2\), and 0 elsewhere.</p></div>
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Find \(k\).</p></div>
+<ul class="mk"><li>\(k\int_0^2 (4 - x^2)\,dx = \frac{16k}{3} = 1\)</li><li>\(k = \frac{3}{16}\)</li></ul>
+<div class="exp-a"><p>\(k\left[4x - \frac{x^3}{3}\right]_0^2 = \frac{16k}{3} = 1\), so \(k = \frac{3}{16}\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find \(\Pr(X < 1)\).</p></div>
+<ul class="mk"><li>\(\frac{3}{16}\left[4x - \frac{x^3}{3}\right]_0^1\)</li><li>\(\frac{11}{16}\)</li></ul>
+<div class="exp-a"><p>\(\frac{3}{16} \times \frac{11}{3} = \frac{11}{16}\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="c">
+<div class="exp-q"><p>Is the median of \(X\) less than 1? Justify your answer.</p></div>
+<ul class="mk"><li>Yes: \(\Pr(X < 1) = \frac{11}{16} > \frac12\)</li></ul>
+<div class="exp-a"><p>Yes. More than half the probability lies below 1, so the median is less than 1.</p></div>
+</div>
+</div>
+<div class="exq" data-t="sampling">
+<div class="exq-stem"><p>In a large population, 20% of people are left-handed. Random samples of 100 people are taken, and \(\hat P\) is the sample proportion of left-handers.</p></div>
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Find the mean and standard deviation of \(\hat P\).</p></div>
+<ul class="mk"><li>\(\text{E}(\hat P) = 0.2\)</li><li>\(\text{sd}(\hat P) = \sqrt{\frac{0.2 \times 0.8}{100}} = 0.04\)</li></ul>
+<div class="exp-a"><p>Mean 0.2; standard deviation \(\sqrt{0.0016} = 0.04\).</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Using a normal approximation, estimate \(\Pr(\hat P > 0.28)\).</p></div>
+<ul class="mk"><li>0.28 is 2 standard deviations above the mean, so \(\approx 0.025\)</li></ul>
+<div class="exp-a"><p>\(\frac{0.28 - 0.2}{0.04} = 2\), so \(\Pr \approx \frac{1 - 0.95}{2} = 0.025\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="integration">
+<div class="exp" data-marks="3">
+<div class="exp-q"><p>Find the area of the region enclosed by the graphs of \(y = x^2\) and \(y = 2x\).</p></div>
+<ul class="mk"><li>Intersections at \(x = 0\) and \(x = 2\)</li><li>\(\int_0^2 (2x - x^2)\,dx\) (line above the parabola)</li><li>\(\frac43\)</li></ul>
+<div class="exp-a"><p>\(\int_0^2 (2x - x^2)\,dx = 4 - \frac83 = \frac43\)</p></div>
+</div>
+</div>
+<h2>Assessor’s report</h2>
+<div class="ex-report"><h3>General comments</h3>
+<p>This paper matched a typical VCAA Exam 1. Each question had one step that separated the students who understood the idea from those running a memorised routine: the domain of a composite, rejecting a log solution, adjusting the domain for \(2x\), recognising without replacement.</p>
+<h3>Question-type patterns</h3>
+<ul><li><strong>Integration by recognition (2b).</strong> Integrate the given derivative result, then rearrange. It is examined almost every year.</li>
+<li><strong>Composite domains (5c).</strong> For \(h(f(x))\), the range of \(f\) must fit inside the domain of \(h\). Write the inequality \(f(x) > 5\) and solve it.</li>
+<li><strong>Justifying the nature of a stationary point (6a).</strong> The factor \(e^{-x} > 0\) is what makes the sign argument work. Say so.</li>
+<li><strong>Conditional probability (7c).</strong> The condition goes in the denominator. Write the fraction with probability notation first.</li>
+<li><strong>Sample proportions (9).</strong> Tech-free questions use the 68–95–99.7 rule. Know it.</li></ul>
+<h3>Common errors</h3>
+<ul><li>Sign errors in the quotient rule. Write \(\frac{vu' - uv'}{v^2}\) before substituting.</li>
+<li>Keeping \(x = -3\) in the log equation.</li>
+<li>Using the tangent gradient for the normal.</li>
+<li>Forgetting \(k\) when calculating a probability from the pdf.</li></ul>
+<h3>Advice</h3>
+<p>32/40 or more is a strong result at this level. The top students finished with 10 minutes to spare and used it to check domains and signs.</p></div>

@@ -1,0 +1,170 @@
+<!--
+id: exam1-easy
+title: Exam 1 practice paper (easier)
+short: Exam 1 · easier
+special: exam
+summary: A full technology-free Exam 1 (40 marks, 1 hour) pitched a notch below VCAA: standard derivatives and integrals, exponential and trig equations, inverses, stationary points and probability, each with a marking guide and assessor comments.
+keywords: practice exam, trial exam, full exam, easy exam, assessor report, marking guide, methods exam 1, technology free, no calculator, practice exam 1, easy methods exam
+-->
+<div class="ex-meta" data-level="easy" data-reading="15" data-writing="60"></div>
+<div class="ex-cover"><h3>Mathematical Methods · Exam 1 practice (easier)</h3>
+<ul><li>Reading time: 15 minutes. Writing time: 1 hour. <strong>No calculators or notes</strong>. Only the <a href="#formula-sheet">formula sheet</a> is allowed.</li>
+<li>9 questions, 40 marks. Give exact answers unless told otherwise.</li>
+<li>In questions worth more than 1 mark, appropriate working must be shown.</li></ul></div>
+<h2>Questions (40 marks)</h2>
+<div class="ex-inst"><p>Answer all questions in the spaces provided. No calculators. In questions where more than one mark is available, appropriate working must be shown. Unless otherwise indicated, diagrams are not drawn to scale.</p></div>
+<div class="exq" data-t="diff-rules">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Let \(y = x^3 e^{2x}\). Find \(\dfrac{dy}{dx}\).</p></div>
+<ul class="mk"><li>Product rule applied: \(3x^2e^{2x} + x^3 \cdot 2e^{2x}\)</li><li>Correct answer, e.g. \(x^2e^{2x}(3 + 2x)\)</li></ul>
+<div class="exp-a"><p>\(\dfrac{dy}{dx} = 3x^2e^{2x} + 2x^3e^{2x} = x^2e^{2x}(2x + 3)\)</p></div>
+<div class="ex-rep"><p>Forgetting the chain-rule factor 2 on \(e^{2x}\) was the most common slip.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Let \(f(x) = \sin(3x)\). Evaluate \(f'\!\left(\frac{\pi}{9}\right)\).</p></div>
+<ul class="mk"><li>\(f'(x) = 3\cos(3x)\)</li><li>\(f'\!\left(\frac{\pi}{9}\right) = 3\cos\frac{\pi}{3} = \frac32\)</li></ul>
+<div class="exp-a"><p>\(f'(x) = 3\cos(3x)\), so \(f'\!\left(\frac{\pi}{9}\right) = 3 \times \frac12 = \frac32\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="antidiff">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Find \(\displaystyle\int \left(6x^2 - \frac{2}{x}\right) dx\), for \(x > 0\).</p></div>
+<ul class="mk"><li>\(2x^3\)</li><li>\(-2\ln x\) (constant of integration optional here)</li></ul>
+<div class="exp-a"><p>\(2x^3 - 2\ln(x) + c\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b" data-t="integration">
+<div class="exp-q"><p>Evaluate \(\displaystyle\int_0^1 e^{2x}\, dx\).</p></div>
+<ul class="mk"><li>Antiderivative \(\frac12 e^{2x}\)</li><li>\(\frac{e^2 - 1}{2}\)</li></ul>
+<div class="exp-a"><p>\(\left[\frac12 e^{2x}\right]_0^1 = \frac12 e^2 - \frac12 = \frac{e^2 - 1}{2}\)</p></div>
+<div class="ex-rep"><p>Many forgot that \(e^0 = 1\), not 0.</p></div>
+</div>
+</div>
+<div class="exq" data-t="explog">
+<div class="exp" data-marks="3" data-part="a">
+<div class="exp-q"><p>Solve \(e^{2x} - 5e^{x} + 6 = 0\) for \(x\).</p></div>
+<ul class="mk"><li>Recognises a quadratic in \(e^x\): \((e^x - 2)(e^x - 3) = 0\)</li><li>\(e^x = 2\) or \(e^x = 3\)</li><li>\(x = \ln 2\) or \(x = \ln 3\)</li></ul>
+<div class="exp-a"><p>Let \(u = e^x\): \(u^2 - 5u + 6 = 0\), so \(u = 2\) or \(3\). Therefore \(x = \ln 2\) or \(x = \ln 3\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Solve \(\log_2(x) + \log_2(x - 2) = 3\) for \(x\).</p></div>
+<ul class="mk"><li>\(x(x - 2) = 8\), so \(x^2 - 2x - 8 = 0\)</li><li>\(x = 4\) only (\(x = -2\) rejected, as the logs are undefined)</li></ul>
+<div class="exp-a"><p>\(\log_2(x(x-2)) = 3\), so \(x^2 - 2x - 8 = 0\) and \((x - 4)(x + 2) = 0\). Since \(x > 2\) is needed, \(x = 4\).</p></div>
+<div class="ex-rep"><p>Leaving in \(x = -2\) cost a mark. Always check the domain of a log.</p></div>
+</div>
+</div>
+<div class="exq" data-t="circular">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Solve \(2\sin(x) = \sqrt{3}\) for \(x \in [0, 2\pi]\).</p></div>
+<ul class="mk"><li>Reference angle \(\frac{\pi}{3}\)</li><li>\(x = \frac{\pi}{3}, \frac{2\pi}{3}\)</li></ul>
+<div class="exp-a"><p>\(\sin x = \frac{\sqrt3}{2}\), which is positive in quadrants 1 and 2: \(x = \frac{\pi}{3}\) or \(\frac{2\pi}{3}\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>For \(y = 3\cos(2x) + 1\), state the amplitude, the period and the range.</p></div>
+<ul class="mk"><li>Amplitude 3, period \(\pi\)</li><li>Range \([-2, 4]\)</li></ul>
+<div class="exp-a"><p>Amplitude 3; period \(\frac{2\pi}{2} = \pi\); range \([1 - 3, 1 + 3] = [-2, 4]\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="composite-inverse">
+<div class="exq-stem"><p>Let \(f(x) = 2x + 1\) and \(g(x) = x^2\), both with domain \(\mathbb{R}\).</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Find \(g(f(x))\).</p></div>
+<ul class="mk"><li>\((2x + 1)^2\)</li></ul>
+<div class="exp-a"><p>\(g(f(x)) = (2x + 1)^2\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find \(f^{-1}(x)\).</p></div>
+<ul class="mk"><li>\(f^{-1}(x) = \frac{x - 1}{2}\)</li></ul>
+<div class="exp-a"><p>Swap \(x\) and \(y\): \(x = 2y + 1\), so \(f^{-1}(x) = \frac{x - 1}{2}\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Let \(h: [0, \infty) \to \mathbb{R}\), \(h(x) = \sqrt{x} + 2\). Find the rule and domain of \(h^{-1}\).</p></div>
+<ul class="mk"><li>Rule: \(h^{-1}(x) = (x - 2)^2\)</li><li>Domain \([2, \infty)\) (the range of \(h\))</li></ul>
+<div class="exp-a"><p>\(x = \sqrt y + 2\), so \(y = (x - 2)^2\). The domain of \(h^{-1}\) is the range of \(h\): \([2, \infty)\).</p></div>
+<div class="ex-rep"><p>The rule alone earned only 1 mark. The domain of the inverse is the range of the original function, and it was missing from more than half the scripts.</p></div>
+</div>
+</div>
+<div class="exq" data-t="diff-apps">
+<div class="exq-stem"><p>Let \(f(x) = x^3 - 3x^2 + 2\).</p></div>
+<div class="exp" data-marks="3" data-part="a">
+<div class="exp-q"><p>Find the coordinates of the stationary points of the graph of \(f\), and state their nature.</p></div>
+<ul class="mk"><li>\(f'(x) = 3x^2 - 6x = 3x(x - 2)\)</li><li>Stationary points at \((0, 2)\) and \((2, -2)\)</li><li>\((0, 2)\) local maximum, \((2, -2)\) local minimum (sign diagram or shape of positive cubic)</li></ul>
+<div class="exp-a"><p>\(f'(x) = 3x(x - 2) = 0\) gives \(x = 0\) or \(2\). \(f(0) = 2\) and \(f(2) = -2\). For a positive cubic, \((0, 2)\) is a local maximum and \((2, -2)\) is a local minimum.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find the equation of the tangent to the graph of \(f\) at \(x = 1\).</p></div>
+<ul class="mk"><li>\(f(1) = 0\) and \(f'(1) = -3\)</li><li>\(y = -3x + 3\)</li></ul>
+<div class="exp-a"><p>\(y - 0 = -3(x - 1)\), so \(y = -3x + 3\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="drv">
+<div class="exq-stem"><p>A discrete random variable \(X\) has \(\Pr(X = 0) = 0.2\), \(\Pr(X = 1) = 0.5\) and \(\Pr(X = 2) = k\).</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Find \(k\).</p></div>
+<ul class="mk"><li>\(k = 0.3\)</li></ul>
+<div class="exp-a"><p>The probabilities sum to 1: \(k = 1 - 0.7 = 0.3\).</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find \(\text{E}(X)\).</p></div>
+<ul class="mk"><li>\(1.1\)</li></ul>
+<div class="exp-a"><p>\(0(0.2) + 1(0.5) + 2(0.3) = 1.1\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Find \(\text{Var}(X)\).</p></div>
+<ul class="mk"><li>\(\text{E}(X^2) = 0.5 + 1.2 = 1.7\)</li><li>\(\text{Var}(X) = 1.7 - 1.1^2 = 0.49\)</li></ul>
+<div class="exp-a"><p>\(\text{Var}(X) = \text{E}(X^2) - [\text{E}(X)]^2 = 1.7 - 1.21 = 0.49\)</p></div>
+<div class="ex-rep"><p>Squaring the probabilities instead of the values of \(X\) was a common error.</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="d">
+<div class="exp-q"><p>Two independent observations of \(X\) are made. Find the probability that their sum is 1.</p></div>
+<ul class="mk"><li>\(2 \times 0.2 \times 0.5 = 0.2\)</li></ul>
+<div class="exp-a"><p>Sum = 1 means (0, 1) or (1, 0): \(2 \times 0.2 \times 0.5 = 0.2\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="probability">
+<div class="exq-stem"><p>For events \(A\) and \(B\), \(\Pr(A) = 0.4\), \(\Pr(B) = 0.5\) and \(\Pr(A \cap B) = 0.2\).</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Find \(\Pr(A \cup B)\).</p></div>
+<ul class="mk"><li>\(0.7\)</li></ul>
+<div class="exp-a"><p>\(0.4 + 0.5 - 0.2 = 0.7\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Are \(A\) and \(B\) independent? Justify your answer.</p></div>
+<ul class="mk"><li>Yes: \(\Pr(A)\Pr(B) = 0.2 = \Pr(A \cap B)\)</li></ul>
+<div class="exp-a"><p>Yes, because \(\Pr(A)\Pr(B) = 0.4 \times 0.5 = 0.2 = \Pr(A \cap B)\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Find \(\Pr(A \mid B')\).</p></div>
+<ul class="mk"><li>\(\Pr(A \cap B') = 0.4 - 0.2 = 0.2\) and \(\Pr(B') = 0.5\)</li><li>\(0.4\)</li></ul>
+<div class="exp-a"><p>\(\Pr(A \mid B') = \frac{0.2}{0.5} = 0.4\). This equals \(\Pr(A)\), as expected for independent events.</p></div>
+</div>
+</div>
+<div class="exq" data-t="crv">
+<div class="exq-stem"><p>A continuous random variable \(X\) has probability density function \(f(x) = kx\) for \(0 \le x \le 2\), and \(f(x) = 0\) elsewhere.</p></div>
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Show that \(k = \frac12\).</p></div>
+<ul class="mk"><li>\(\int_0^2 kx\,dx = 1\)</li><li>\(2k = 1\), so \(k = \frac12\)</li></ul>
+<div class="exp-a"><p>\(\left[\frac{kx^2}{2}\right]_0^2 = 2k = 1\), so \(k = \frac12\).</p></div>
+<div class="ex-rep"><p>A “show that” needs the equation set up and solved. Stating \(k = \frac12\) with no working scores 0.</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find \(\Pr(X < 1)\).</p></div>
+<ul class="mk"><li>\(\frac14\)</li></ul>
+<div class="exp-a"><p>\(\int_0^1 \frac{x}{2}\,dx = \frac14\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Find \(\text{E}(X)\).</p></div>
+<ul class="mk"><li>\(\int_0^2 x \cdot \frac{x}{2}\,dx\)</li><li>\(\frac43\)</li></ul>
+<div class="exp-a"><p>\(\int_0^2 \frac{x^2}{2}\,dx = \left[\frac{x^3}{6}\right]_0^2 = \frac86 = \frac43\)</p></div>
+</div>
+</div>
+<h2>Assessor’s report</h2>
+<div class="ex-report"><h3>General comments</h3>
+<p>This paper covered the core Exam 1 skills at a gentler level than VCAA. Every question was a standard routine: product rule, chain rule, a hidden quadratic, a log equation with a domain check, an inverse with its domain, stationary points, a DRV table and a simple pdf. Students who wrote each step clearly lost very few marks.</p>
+<h3>Where marks were lost</h3>
+<ul><li><strong>Domains.</strong> Rejecting \(x = -2\) in the log equation (3b) and giving the domain of \(h^{-1}\) (5c) accounted for more lost marks than any calculus.</li>
+<li><strong>Chain-rule factors.</strong> \(\frac{d}{dx}e^{2x} = 2e^{2x}\) and \(\frac{d}{dx}\sin 3x = 3\cos 3x\). Forgetting the inner derivative is the most common Exam 1 error every year.</li>
+<li><strong>Exact values.</strong> \(\cos\frac{\pi}{3} = \frac12\), \(e^0 = 1\). Know the unit circle cold.</li>
+<li><strong>“Show that” questions.</strong> The given answer is worth nothing on its own. Show the integral set equal to 1.</li>
+<li><strong>Stating the nature.</strong> Stationary points need a reason for the nature: a sign diagram, the second derivative or the cubic’s shape.</li></ul>
+<h3>Advice</h3>
+<p>Aim for 34/40 or more. Exam 1 rewards speed and accuracy on routines, so if you ran out of time, drill differentiation and exact values until they are automatic, then try the medium paper.</p></div>

@@ -1,0 +1,306 @@
+<!--
+id: exam2-medium
+title: Exam 2 practice paper (medium)
+short: Exam 2 · medium
+special: exam
+summary: A full technology-active Exam 2 at VCAA standard: a drug-concentration model with a second dose, a Ferris wheel, a café probability question mixing normal, binomial and a pdf, and a cubic family with a parameter.
+keywords: practice exam, trial exam, full exam, medium exam, assessor report, marking guide, methods exam 2, CAS, technology active, practice exam 2, medium methods exam
+-->
+<div class="ex-meta" data-level="medium" data-reading="15" data-writing="120"></div>
+<div class="ex-cover"><h3>Mathematical Methods · Exam 2 practice (medium)</h3>
+<ul><li>Reading time: 15 minutes. Writing time: 2 hours. CAS calculator and one bound reference allowed.</li>
+<li><strong>Section A</strong>: 20 multiple-choice questions (20 marks). <strong>Section B</strong>: 4 extended-response questions (60 marks).</li>
+<li>Show the setup for every CAS step. Give exact answers where asked.</li></ul></div>
+<h2>Section A – Multiple-choice questions</h2>
+<div class="ex-inst"><p>Answer all questions. Choose the response that is correct for the question. A correct answer scores 1; an incorrect answer scores 0. No marks are deducted for incorrect answers.</p></div>
+<div class="mcq" data-ans="A" data-t="functions">
+<div class="mcq-q"><p>The range of \(f: [0, \infty) \to \mathbb{R}\), \(f(x) = 3 - 2e^{-x}\), is</p></div>
+<ol><li>\([1, 3)\)</li><li>\((1, 3]\)</li><li>\([1, \infty)\)</li><li>\((-\infty, 3)\)</li></ol>
+<div class="mcq-x"><p>\(f(0) = 1\), and \(f\) increases towards the asymptote \(y = 3\) without reaching it.</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="polynomials">
+<div class="mcq-q"><p>\(x - 2\) is a factor of \(x^3 + kx^2 - 4x - 4\) when \(k\) equals</p></div>
+<ol><li>−1</li><li>1</li><li>2</li><li>4</li></ol>
+<div class="mcq-x"><p>\(P(2) = 8 + 4k - 8 - 4 = 0\), so \(k = 1\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="transformations">
+<div class="mcq-q"><p>The graph of \(y = \ln(2x - 4)\) can be obtained from the graph of \(y = \ln x\) by</p></div>
+<ol><li>a dilation by a factor of \(\frac12\) from the \(y\)-axis, then a translation 2 units right</li><li>a dilation by a factor of 2 from the \(y\)-axis, then a translation 4 units right</li><li>a translation 4 units right, then a dilation by a factor of 2 from the \(x\)-axis</li><li>a dilation by a factor of \(\frac12\) from the \(y\)-axis, then a translation 4 units right</li></ol>
+<div class="mcq-x"><p>\(\ln(2x - 4) = \ln(2(x - 2))\): replace \(x\) with \(2x\) (a dilation of factor \(\frac12\) from the \(y\)-axis), then with \(x - 2\).</p></div>
+<div class="ex-rep"><p>D is correct only if you translate first, then dilate. Factor out the coefficient of \(x\) before reading off the translation.</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="circular">
+<div class="mcq-q"><p>A function \(y = a\sin(bx) + d\) with \(a, b > 0\) has a maximum of 7, a minimum of 1 and a period of 4. The values of \(a\), \(b\) and \(d\) are</p></div>
+<ol><li>\(a = 3,\ b = \frac{\pi}{2},\ d = 4\)</li><li>\(a = 6,\ b = \frac{\pi}{2},\ d = 1\)</li><li>\(a = 3,\ b = 4,\ d = 4\)</li><li>\(a = 3,\ b = \frac{\pi}{4},\ d = 4\)</li></ol>
+<div class="mcq-x"><p>Amplitude \(\frac{7 - 1}{2} = 3\), centre \(d = 4\), and \(\frac{2\pi}{b} = 4\) gives \(b = \frac{\pi}{2}\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="explog">
+<div class="mcq-q"><p>The \(x\)-intercept of \(y = \log_2(x - 1) + 3\) is</p></div>
+<ol><li>\(\frac98\)</li><li>\(\frac78\)</li><li>9</li><li>−2</li></ol>
+<div class="mcq-x"><p>\(\log_2(x - 1) = -3\), so \(x - 1 = \frac18\).</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="systems">
+<div class="mcq-q"><p>The system \(kx + y = 2\), \(4x + ky = 4\) has no solution when \(k\) equals</p></div>
+<ol><li>2</li><li>−2</li><li>±2</li><li>0</li></ol>
+<div class="mcq-x"><p>The determinant \(k^2 - 4 = 0\) gives \(k = \pm 2\). When \(k = 2\) the equations are multiples of each other (infinitely many solutions). When \(k = -2\) the lines are parallel and distinct (no solution).</p></div>
+<div class="ex-rep"><p>C forgets to test each value. A zero determinant means either no solution or infinitely many.</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="functional-eq">
+<div class="mcq-q"><p>Which function satisfies \(f(x + y) = f(x)f(y)\) for all real \(x\) and \(y\)?</p></div>
+<ol><li>\(f(x) = 2x\)</li><li>\(f(x) = e^{2x}\)</li><li>\(f(x) = \ln x\)</li><li>\(f(x) = x^2\)</li></ol>
+<div class="mcq-x"><p>\(e^{2(x + y)} = e^{2x}e^{2y}\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="composite-inverse">
+<div class="mcq-q"><p>Let \(f: [1, \infty) \to \mathbb{R}\), \(f(x) = (x - 1)^2 + 2\). The inverse function is</p></div>
+<ol><li>\(f^{-1}(x) = 1 + \sqrt{x - 2}\), \(x \ge 2\)</li><li>\(f^{-1}(x) = 1 - \sqrt{x - 2}\), \(x \ge 2\)</li><li>\(f^{-1}(x) = 1 + \sqrt{x - 2}\), \(x \ge 1\)</li><li>\(f^{-1}(x) = \sqrt{x - 1} + 2\), \(x \ge 1\)</li></ol>
+<div class="mcq-x"><p>Take the positive root because \(f^{-1}\) must return values \(\ge 1\). The domain is the range of \(f\), \([2, \infty)\).</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="limits">
+<div class="mcq-q"><p>The function \(f(x) = \begin{cases} x^2 + a, & x < 1 \\ 2x + 1, & x \ge 1 \end{cases}\) is continuous at \(x = 1\) when \(a\) equals</p></div>
+<ol><li>1</li><li>2</li><li>3</li><li>0</li></ol>
+<div class="mcq-x"><p>The two pieces must meet at \(x = 1\): \(1 + a = 3\), so \(a = 2\). (The gradients also match there, so \(f\) is differentiable too.)</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="diff-rules">
+<div class="mcq-q"><p>\(\dfrac{d}{dx}\sin^2(3x)\) is</p></div>
+<ol><li>\(2\sin(3x)\)</li><li>\(6\sin(3x)\cos(3x)\)</li><li>\(2\sin(3x)\cos(3x)\)</li><li>\(3\sin^2(3x)\cos(3x)\)</li></ol>
+<div class="mcq-x"><p>Chain rule twice: \(2\sin(3x) \times \cos(3x) \times 3\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="diff-apps">
+<div class="mcq-q"><p>The function \(f(x) = x^3 - 12x\) is strictly decreasing for</p></div>
+<ol><li>\(x \in [-2, 2]\)</li><li>\(x \in (-\infty, -2]\)</li><li>\(x \in [0, 2]\)</li><li>\(x \in [-2\sqrt3, 2\sqrt3]\)</li></ol>
+<div class="mcq-x"><p>\(f'(x) = 3x^2 - 12 \le 0\) for \(-2 \le x \le 2\). VCAA includes the endpoints for strictly decreasing.</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="optimisation">
+<div class="mcq-q"><p>The point on the curve \(y = \sqrt{x}\) closest to the point \((2, 0)\) has \(x\)-coordinate</p></div>
+<ol><li>1</li><li>1.5</li><li>2</li><li>0.5</li></ol>
+<div class="mcq-x"><p>Minimise \(D^2 = (x - 2)^2 + x = x^2 - 3x + 4\), which has its minimum at \(x = 1.5\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="antidiff">
+<div class="mcq-q"><p>If \(f'(x) = 6x^2 - 2\) and \(f(1) = 3\), then \(f(x)\) is</p></div>
+<ol><li>\(2x^3 - 2x + 3\)</li><li>\(2x^3 - 2x\)</li><li>\(12x\)</li><li>\(2x^3 - 2x + 1\)</li></ol>
+<div class="mcq-x"><p>\(f(x) = 2x^3 - 2x + c\), and \(f(1) = c = 3\).</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="integration">
+<div class="mcq-q"><p>If \(\int_1^3 f(x)\,dx = 5\), then \(\int_1^3 (2f(x) + 1)\,dx\) equals</p></div>
+<ol><li>11</li><li>12</li><li>10</li><li>7</li></ol>
+<div class="mcq-x"><p>\(2 \times 5 + \int_1^3 1\,dx = 10 + 2 = 12\).</p></div>
+<div class="ex-rep"><p>A adds 1 instead of integrating 1 over an interval of length 2.</p></div>
+</div>
+<div class="mcq" data-ans="C" data-t="integration">
+<div class="mcq-q"><p>The total area enclosed between \(y = \sin x\) and the \(x\)-axis for \(0 \le x \le 2\pi\) is</p></div>
+<ol><li>0</li><li>2</li><li>4</li><li>\(2\pi\)</li></ol>
+<div class="mcq-x"><p>\(\int_0^{\pi}\sin x\,dx - \int_{\pi}^{2\pi}\sin x\,dx = 2 + 2 = 4\). The signed integral over the whole interval is 0.</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="numerical">
+<div class="mcq-q"><p>The trapezium rule with two strips of equal width is used to approximate \(\int_0^2 e^x\,dx\). The approximation is closest to</p></div>
+<ol><li>6.39</li><li>6.91</li><li>8.39</li><li>11.4</li></ol>
+<div class="mcq-x"><p>\(\frac12\left[e^0 + 2e^1 + e^2\right] \approx 6.91\). The exact value is \(e^2 - 1 \approx 6.39\). The trapezium rule overestimates for a concave-up function.</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="drv">
+<div class="mcq-q"><p>If \(\text{E}(X) = 4\) and \(\text{Var}(X) = 3\), then \(\text{E}(2X + 3)\) and \(\text{Var}(2X + 3)\) are respectively</p></div>
+<ol><li>11 and 6</li><li>11 and 12</li><li>8 and 9</li><li>11 and 9</li></ol>
+<div class="mcq-x"><p>\(\text{E}(aX + b) = a\text{E}(X) + b\) and \(\text{Var}(aX + b) = a^2\text{Var}(X)\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="binomial">
+<div class="mcq-q"><p>A binomial random variable has mean 6 and variance 4.2. The values of \(n\) and \(p\) are</p></div>
+<ol><li>\(n = 20,\ p = 0.3\)</li><li>\(n = 10,\ p = 0.6\)</li><li>\(n = 15,\ p = 0.4\)</li><li>\(n = 20,\ p = 0.7\)</li></ol>
+<div class="mcq-x"><p>\(1 - p = \frac{4.2}{6} = 0.7\), so \(p = 0.3\) and \(n = \frac{6}{0.3} = 20\).</p></div>
+</div>
+<div class="mcq" data-ans="A" data-t="normal">
+<div class="mcq-q"><p>For a normal random variable \(X\), \(\Pr(X < 10) = 0.8\) and \(\Pr(X < 5) = 0.3\). The mean and standard deviation are closest to</p></div>
+<ol><li>\(\mu = 6.92,\ \sigma = 3.66\)</li><li>\(\mu = 7.5,\ \sigma = 2.5\)</li><li>\(\mu = 6.92,\ \sigma = 13.4\)</li><li>\(\mu = 8.0,\ \sigma = 3.66\)</li></ol>
+<div class="mcq-x"><p>Solve \(\mu + 0.8416\sigma = 10\) and \(\mu - 0.5244\sigma = 5\) simultaneously.</p></div>
+</div>
+<div class="mcq" data-ans="B" data-t="ci">
+<div class="mcq-q"><p>To halve the width of an approximate 95% confidence interval for a proportion (with the sample proportion unchanged), the sample size should be</p></div>
+<ol><li>doubled</li><li>multiplied by 4</li><li>halved</li><li>multiplied by √2</li></ol>
+<div class="mcq-x"><p>The width is proportional to \(\frac{1}{\sqrt n}\), so halving it needs \(4n\).</p></div>
+</div>
+<h2>Section B – Extended-response questions</h2>
+<div class="ex-inst"><p>Answer all questions. In questions where more than one mark is available, appropriate working must be shown. Where an exact answer is required, a decimal approximation will not be accepted.</p></div>
+<div class="exq" data-t="diff-apps">
+<div class="exq-stem"><p>The concentration of a drug in a patient’s blood, \(C\) mg/L, \(t\) hours after a single dose is modelled by \(C(t) = 20te^{-0.5t}\), \(t \ge 0\).</p></div>
+<div class="exp" data-marks="2" data-part="a" data-t="diff-rules">
+<div class="exp-q"><p>Find \(C'(t)\).</p></div>
+<ul class="mk"><li>Product rule applied</li><li>\(C'(t) = 20e^{-0.5t}(1 - 0.5t)\) (or equivalent, e.g. \(10(2 - t)e^{-0.5t}\))</li></ul>
+<div class="exp-a"><p>\(C'(t) = 20e^{-0.5t} - 10te^{-0.5t} = 10(2 - t)e^{-0.5t}\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find the maximum concentration and when it occurs. Give the exact maximum.</p></div>
+<ul class="mk"><li>\(t = 2\) hours</li><li>\(C_{max} = \frac{40}{e}\) mg/L (≈ 14.7)</li></ul>
+<div class="exp-a"><p>\(C'(t) = 0\) at \(t = 2\), so \(C(2) = 40e^{-1} = \frac{40}{e}\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>The drug is effective when \(C \ge 10\). Find the time interval during which the drug is effective, correct to two decimal places.</p></div>
+<ul class="mk"><li>Solves \(20te^{-0.5t} = 10\): \(t \approx 0.71\) and \(4.31\)</li><li>\(0.71 \le t \le 4.31\)</li></ul>
+<div class="exp-a"><p>\(0.71 \le t \le 4.31\) hours (about 3.6 hours).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="d">
+<div class="exp-q"><p>Find when the concentration is decreasing most rapidly, and the rate at that time, correct to two decimal places.</p></div>
+<ul class="mk"><li>\(C''(t) = 0\) at \(t = 4\)</li><li>\(C'(4) = -20e^{-2} \approx -2.71\) mg/L per hour</li></ul>
+<div class="exp-a"><p>\(C''(t) = 5(t - 4)e^{-0.5t} = 0\) at \(t = 4\), where \(C'(4) = -\frac{20}{e^2} \approx -2.71\).</p></div>
+<div class="ex-rep"><p>The most rapid decrease is where \(C\) has its minimum gradient: the point of inflection, not the maximum.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="e" data-t="integration">
+<div class="exp-q"><p>Find the average concentration over the first 6 hours, correct to two decimal places.</p></div>
+<ul class="mk"><li>\(\frac16\int_0^6 C(t)\,dt\)</li><li>\(\approx 10.68\) mg/L</li></ul>
+<div class="exp-a"><p>\(\frac16\int_0^6 20te^{-0.5t}\,dt \approx 10.68\)</p></div>
+</div>
+<div class="exp" data-marks="3" data-part="f">
+<div class="exp-q"><p>A second, identical dose is given at \(t = 6\), so for \(t \ge 6\) the concentration is \(C(t) + C(t - 6)\). Find the maximum concentration for \(6 \le t \le 12\), and when it occurs, each correct to two decimal places.</p></div>
+<ul class="mk"><li>Correct model: \(D(t) = 20te^{-0.5t} + 20(t - 6)e^{-0.5(t - 6)}\)</li><li>Solves \(D'(t) = 0\) on \([6, 12]\): \(t \approx 7.72\)</li><li>Maximum \(\approx 17.81\) mg/L</li></ul>
+<div class="exp-a"><p>Maximum ≈ 17.81 mg/L at \(t \approx 7.72\) hours. It is higher than after the first dose because some of the first dose remains.</p></div>
+<div class="ex-rep"><p>Many forgot that the first dose is still present, and so simply repeated part b.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="g" data-t="newton">
+<div class="exp-q"><p>After a single dose, the drug is undetectable once \(C < 2\). Use Newton’s method with \(t_0 = 10\) on the function \(g(t) = C(t) - 2\) to find \(t_1\), correct to two decimal places.</p></div>
+<ul class="mk"><li>\(t_1 = t_0 - \frac{g(t_0)}{g'(t_0)} = 10 - \frac{C(10) - 2}{C'(10)}\)</li><li>\(t_1 \approx 8.79\)</li></ul>
+<div class="exp-a"><p>\(g(10) = 200e^{-5} - 2 \approx -0.652\) and \(g'(10) = -80e^{-5} \approx -0.539\), so \(t_1 = 10 - \frac{-0.652}{-0.539} \approx 8.79\). (The actual root is about 9.00.)</p></div>
+</div>
+</div>
+<div class="exq" data-t="circular">
+<div class="exq-stem"><p>The height above the ground, \(h\) metres, of a car on a Ferris wheel \(t\) minutes after it passes the lowest point is \(h(t) = 22 - 20\cos\left(\frac{\pi t}{10}\right)\), \(0 \le t \le 40\).</p></div>
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>State the maximum height, the minimum height and the time for one revolution.</p></div>
+<ul class="mk"><li>Maximum 42 m, minimum 2 m</li><li>Period 20 minutes</li></ul>
+<div class="exp-a"><p>Maximum 42 m, minimum 2 m, and one revolution takes 20 minutes.</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find the height when \(t = 5\).</p></div>
+<ul class="mk"><li>22 m</li></ul>
+<div class="exp-a"><p>\(22 - 20\cos\frac{\pi}{2} = 22\) m</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c" data-t="diff-apps">
+<div class="exp-q"><p>Find the rate at which the height is changing when \(t = 5\).</p></div>
+<ul class="mk"><li>\(h'(t) = 2\pi\sin\left(\frac{\pi t}{10}\right)\)</li><li>\(2\pi \approx 6.28\) m/min</li></ul>
+<div class="exp-a"><p>\(h'(5) = 2\pi\) m/min.</p></div>
+</div>
+<div class="exp" data-marks="3" data-part="d">
+<div class="exp-q"><p>Find the fraction of each revolution for which the car is more than 32 m above the ground.</p></div>
+<ul class="mk"><li>\(\cos\frac{\pi t}{10} < -\frac12\)</li><li>\(\frac{20}{3} < t < \frac{40}{3}\) in the first revolution</li><li>Duration \(\frac{20}{3}\) min out of 20: \(\frac13\)</li></ul>
+<div class="exp-a"><p>\(\frac{\pi t}{10} \in \left(\frac{2\pi}{3}, \frac{4\pi}{3}\right)\), so \(t \in \left(\frac{20}{3}, \frac{40}{3}\right)\). That is \(\frac{20}{3}\) minutes of each 20, or one third.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="e">
+<div class="exp-q"><p>Another car, a quarter of a revolution behind, has height \(h_2(t) = 22 - 20\cos\left(\frac{\pi(t - 5)}{10}\right)\). Find the first time \(t > 0\) at which the two cars are at the same height.</p></div>
+<ul class="mk"><li>\(\cos\theta = \cos\left(\theta - \frac{\pi}{2}\right) = \sin\theta\), where \(\theta = \frac{\pi t}{10}\)</li><li>\(\tan\theta = 1\), so \(\theta = \frac{\pi}{4}\) and \(t = 2.5\) min</li></ul>
+<div class="exp-a"><p>Setting the heights equal gives \(\cos\theta = \sin\theta\), so \(\theta = \frac{\pi}{4}\) and \(t = 2.5\) minutes.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="f" data-t="integration">
+<div class="exp-q"><p>Find the exact average height of the car during the first 5 minutes.</p></div>
+<ul class="mk"><li>\(\frac15\int_0^5 h(t)\,dt\)</li><li>\(22 - \frac{40}{\pi}\) m</li></ul>
+<div class="exp-a"><p>\(\frac15\left[22t - \frac{200}{\pi}\sin\frac{\pi t}{10}\right]_0^5 = 22 - \frac{40}{\pi} \approx 9.27\) m</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="g">
+<div class="exp-q"><p>Find the total vertical distance travelled by the car in the first 20 minutes.</p></div>
+<ul class="mk"><li>80 m</li></ul>
+<div class="exp-a"><p>It rises 40 m (2 → 42) and falls 40 m: 80 m.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="h" data-t="transformations">
+<div class="exp-q"><p>A new wheel has a maximum height of 50 m, a minimum height of 4 m and takes 15 minutes per revolution. Its height is modelled by \(h(t) = a - b\cos(nt)\), with \(a, b, n > 0\). Find \(a\), \(b\) and \(n\).</p></div>
+<ul class="mk"><li>\(a = 27\), \(b = 23\)</li><li>\(n = \frac{2\pi}{15}\)</li></ul>
+<div class="exp-a"><p>Centre \(a = \frac{50 + 4}{2} = 27\), amplitude \(b = 23\), and \(n = \frac{2\pi}{15}\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="normal">
+<div class="exq-stem"><p>At a café, the time taken to serve a coffee, \(T\) minutes, is normally distributed with mean 4 and standard deviation 0.8. Each customer independently buys a pastry with probability 0.35.</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Find the probability that a coffee takes more than 5 minutes, correct to four decimal places.</p></div>
+<ul class="mk"><li>0.1056</li></ul>
+<div class="exp-a"><p>\(\Pr(T > 5) = 0.1056\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b" data-t="probability">
+<div class="exp-q"><p>Given that a coffee takes less than 4 minutes, find the probability that it takes less than 3 minutes, correct to four decimal places.</p></div>
+<ul class="mk"><li>\(\frac{\Pr(T < 3)}{\Pr(T < 4)} = \frac{0.1056}{0.5}\)</li><li>\(0.2113\)</li></ul>
+<div class="exp-a"><p>\(\frac{0.10565}{0.5} = 0.2113\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="c">
+<div class="exp-q"><p>Find the time within which 90% of coffees are served, correct to two decimal places.</p></div>
+<ul class="mk"><li>5.03 minutes</li></ul>
+<div class="exp-a"><p>\(4 + 1.2816 \times 0.8 = 5.03\) minutes</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="d" data-t="binomial">
+<div class="exp-q"><p>Find the probability that at least 10 of the next 20 customers buy a pastry, correct to four decimal places.</p></div>
+<ul class="mk"><li>\(Y \sim \text{Bi}(20, 0.35)\), \(\Pr(Y \ge 10)\)</li><li>\(0.1218\)</li></ul>
+<div class="exp-a"><p>\(\Pr(Y \ge 10) = 0.1218\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="e" data-t="binomial">
+<div class="exp-q"><p>Find the smallest number of customers needed for the probability that at least one buys a pastry to exceed 0.99.</p></div>
+<ul class="mk"><li>\(1 - 0.65^n > 0.99\)</li><li>\(n = 11\)</li></ul>
+<div class="exp-a"><p>\(0.65^n < 0.01\) gives \(n > 10.69\), so \(n = 11\).</p></div>
+</div>
+<div class="exp" data-marks="4" data-part="f" data-t="crv">
+<div class="exp-q"><p>The time a customer waits for a table, \(W\) minutes, has probability density function \(f(w) = \frac12 e^{-w/2}\) for \(w \ge 0\). Find \(\Pr(W > 3)\), the exact median of \(W\), and \(\text{E}(W)\).</p></div>
+<ul class="mk"><li>\(\Pr(W > 3) = e^{-1.5} \approx 0.2231\)</li><li>Median: \(\int_0^m \frac12 e^{-w/2}\,dw = \frac12\)</li><li>\(m = 2\ln 2\)</li><li>\(\text{E}(W) = \int_0^\infty \frac{w}{2}e^{-w/2}\,dw = 2\)</li></ul>
+<div class="exp-a"><p>\(\Pr(W > 3) = e^{-3/2} \approx 0.2231\). Median: \(1 - e^{-m/2} = \frac12\), so \(m = 2\ln 2\). \(\text{E}(W) = 2\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="g" data-t="ci">
+<div class="exp-q"><p>In a sample of 150 customers, 60 bought a pastry. Find an approximate 95% confidence interval for the proportion of customers who buy a pastry, correct to three decimal places.</p></div>
+<ul class="mk"><li>\(\hat p = 0.4\), \(\text{se} = \sqrt{\frac{0.4 \times 0.6}{150}}\)</li><li>\((0.322, 0.478)\)</li></ul>
+<div class="exp-a"><p>\(0.4 \pm 1.96 \times 0.04 = (0.322, 0.478)\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="h" data-t="ci">
+<div class="exp-q"><p>Is the café owner’s belief that p = 0.35 consistent with this interval? Explain.</p></div>
+<ul class="mk"><li>Yes: 0.35 lies within the interval</li></ul>
+<div class="exp-a"><p>Yes. 0.35 is inside the interval, so the data are consistent with it.</p></div>
+</div>
+</div>
+<div class="exq" data-t="polynomials">
+<div class="exq-stem"><p>Let \(f(x) = x(x - a)^2\), where \(a > 0\).</p></div>
+<div class="exp" data-marks="3" data-part="a" data-t="diff-apps">
+<div class="exp-q"><p>Find the coordinates of the stationary points in terms of \(a\), and state their nature.</p></div>
+<ul class="mk"><li>\(f'(x) = (x - a)(3x - a)\)</li><li>\(\left(\frac a3, \frac{4a^3}{27}\right)\) local maximum</li><li>\((a, 0)\) local minimum</li></ul>
+<div class="exp-a"><p>\(f'(x) = (x - a)^2 + 2x(x - a) = (x - a)(3x - a)\). Local maximum at \(\left(\frac a3, \frac{4a^3}{27}\right)\) and local minimum at \((a, 0)\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b" data-t="integration">
+<div class="exp-q"><p>Show that the area enclosed by the graph of \(f\) and the \(x\)-axis is \(\frac{a^4}{12}\).</p></div>
+<ul class="mk"><li>\(\int_0^a x(x - a)^2\,dx\) set up</li><li>Evaluated to \(\frac{a^4}{12}\)</li></ul>
+<div class="exp-a"><p>\(\int_0^a (x^3 - 2ax^2 + a^2x)\,dx = \frac{a^4}{4} - \frac{2a^4}{3} + \frac{a^4}{2} = \frac{a^4}{12}\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="c" data-t="integration">
+<div class="exp-q"><p>Find the value of \(a\) for which this area is 12.</p></div>
+<ul class="mk"><li>\(a = \sqrt{12} = 2\sqrt3\)</li></ul>
+<div class="exp-a"><p>\(a^4 = 144\), so \(a = 2\sqrt3\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="d" data-t="diff-apps">
+<div class="exp-q"><p>Find the coordinates of the point where the tangent at the origin meets the graph of \(f\) again.</p></div>
+<ul class="mk"><li>Tangent at origin: \(y = a^2x\)</li><li>\(x(x - a)^2 = a^2x\) gives \(x = 2a\): the point \((2a, 2a^3)\)</li></ul>
+<div class="exp-a"><p>\(f'(0) = a^2\), so the tangent is \(y = a^2x\). Solving \(x(x - a)^2 = a^2x\) gives \(x = 0\) or \(x = 2a\), at the point \((2a, 2a^3)\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="e" data-t="integration">
+<div class="exp-q"><p>Find the area enclosed between the graph of \(f\) and this tangent.</p></div>
+<ul class="mk"><li>\(\int_0^{2a} \left(a^2x - x(x - a)^2\right) dx\)</li><li>\(\frac{4a^4}{3}\)</li></ul>
+<div class="exp-a"><p>\(\int_0^{2a} (2ax^2 - x^3)\,dx = \frac{16a^4}{3} - 4a^4 = \frac{4a^4}{3}\)</p></div>
+<div class="ex-rep"><p>Deciding which graph is on top is essential. The tangent lies above the cubic on \((0, 2a)\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="f" data-t="transformations">
+<div class="exp-q"><p>Let \(g(x) = f(x + a)\). Describe the transformation, and give the \(x\)-coordinate of the local maximum of \(g\).</p></div>
+<ul class="mk"><li>Translation of \(a\) units to the left (negative \(x\) direction)</li><li>\(x = \frac a3 - a = -\frac{2a}{3}\)</li></ul>
+<div class="exp-a"><p>A translation \(a\) units left, which moves the maximum to \(x = -\frac{2a}{3}\).</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="g" data-t="diff-apps">
+<div class="exp-q"><p>For \(a = 3\), find the average rate of change of \(f\) over \([0, 3]\).</p></div>
+<ul class="mk"><li>0</li></ul>
+<div class="exp-a"><p>\(\frac{f(3) - f(0)}{3} = 0\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="h" data-t="numerical">
+<div class="exp-q"><p>For \(a = 3\), use the trapezium rule with three strips of width 1 to estimate the area in part b, and state whether it is an over- or underestimate.</p></div>
+<ul class="mk"><li>\(\frac12[f(0) + 2f(1) + 2f(2) + f(3)] = \frac12[0 + 8 + 4 + 0] = 6\)</li><li>Underestimate (exact \(\frac{81}{12} = 6.75\))</li></ul>
+<div class="exp-a"><p>\(6\), which is an underestimate of the exact \(6.75\).</p></div>
+</div>
+</div>
+<h2>Assessor’s report</h2>
+<div class="ex-report"><h3>General comments</h3>
+<p>This paper was at the standard of a typical VCAA Exam 2. Each extended question climbed from routine to demanding, finishing with a part that needed a model or an idea rather than a button press: the second dose, the lagging Ferris-wheel car, the tangent meeting the cubic again.</p>
+<h3>Question-type patterns</h3>
+<ul><li><strong>Maximum rate of change.</strong> “Decreasing most rapidly” (1d) means the minimum of \(C'\), found where \(C'' = 0\).</li>
+<li><strong>Superposition.</strong> A second dose adds a shifted copy of the model (1f). Define the new function before using CAS.</li>
+<li><strong>Trig inequalities.</strong> Solve the equation, then use the graph to pick the interval (2d). Give durations as a fraction of the period.</li>
+<li><strong>Parameters.</strong> Question 4 kept \(a\) general. CAS handles it, but you must write answers in terms of \(a\) and check the conditions (\(a > 0\)).</li>
+<li><strong>Conditional normal probability (3b).</strong> The same fraction method as for discrete variables.</li></ul>
+<h3>Common errors</h3>
+<ul><li>Solving \(C = 10\) and giving only one time.</li>
+<li>Stating the lagging car meets the first at \(t = 5\) without solving.</li>
+<li>Integrating the pdf from \(-\infty\) in 3f. It is zero for \(w < 0\).</li>
+<li>Reversing the order of transformations in MC 3.</li></ul>
+<h3>Advice</h3>
+<p>60/80 or more is a strong result. If you lost marks on setup lines rather than on the mathematics, practise writing “Solve … for t” or “\(\int_0^6 \dots\)” before every CAS answer.</p></div>

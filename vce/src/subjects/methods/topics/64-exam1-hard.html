@@ -1,0 +1,174 @@
+<!--
+id: exam1-hard
+title: Exam 1 practice paper (harder)
+short: Exam 1 · harder
+special: exam
+summary: A full technology-free Exam 1 (40 marks, 1 hour) pitched above VCAA: “show that” derivatives, disguised quadratics, trig equations on shifted domains, inverse-function intersections, tangents through external points, and tricky probability.
+keywords: practice exam, trial exam, full exam, hard exam, assessor report, marking guide, methods exam 1, technology free, no calculator, practice exam 1, hard methods exam
+-->
+<div class="ex-meta" data-level="hard" data-reading="15" data-writing="60"></div>
+<div class="ex-cover"><h3>Mathematical Methods · Exam 1 practice (harder)</h3>
+<ul><li>Reading time: 15 minutes. Writing time: 1 hour. <strong>No calculators or notes</strong>. Only the <a href="#formula-sheet">formula sheet</a> is allowed.</li>
+<li>9 questions, 40 marks. Give exact answers.</li>
+<li>This paper is harder than a real Exam 1. 28/40 is a strong score. Keep moving: don’t sink ten minutes into one part.</li></ul></div>
+<h2>Questions (40 marks)</h2>
+<div class="ex-inst"><p>Answer all questions in the spaces provided. No calculators. In questions where more than one mark is available, appropriate working must be shown.</p></div>
+<div class="exq" data-t="diff-rules">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Differentiate \(y = \sqrt{1 + e^{2x}}\) with respect to \(x\).</p></div>
+<ul class="mk"><li>Chain rule: \(\frac12(1 + e^{2x})^{-1/2} \times 2e^{2x}\)</li><li>\(\frac{e^{2x}}{\sqrt{1 + e^{2x}}}\)</li></ul>
+<div class="exp-a"><p>\(\dfrac{dy}{dx} = \dfrac{e^{2x}}{\sqrt{1 + e^{2x}}}\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Let \(g(x) = \dfrac{\sin x}{1 + \cos x}\). Show that \(g'(x) = \dfrac{1}{1 + \cos x}\).</p></div>
+<ul class="mk"><li>Quotient rule: \(\frac{\cos x(1 + \cos x) + \sin^2 x}{(1 + \cos x)^2}\)</li><li>Uses \(\sin^2 x + \cos^2 x = 1\) to simplify to \(\frac{1 + \cos x}{(1 + \cos x)^2} = \frac{1}{1 + \cos x}\)</li></ul>
+<div class="exp-a"><p>\(g'(x) = \dfrac{\cos x + \cos^2 x + \sin^2 x}{(1 + \cos x)^2} = \dfrac{1 + \cos x}{(1 + \cos x)^2} = \dfrac{1}{1 + \cos x}\)</p></div>
+<div class="ex-rep"><p>Most students applied the quotient rule correctly but didn’t spot the Pythagorean identity. In a “show that” question, the given answer tells you what to aim for.</p></div>
+</div>
+</div>
+<div class="exq" data-t="integration">
+<div class="exp" data-marks="2" data-part="a" data-t="antidiff">
+<div class="exp-q"><p>Find \(\displaystyle\int \frac{1}{(2x - 1)^2}\,dx\).</p></div>
+<ul class="mk"><li>Writes it as \((2x - 1)^{-2}\) and divides by the inner derivative, 2</li><li>\(-\frac{1}{2(2x - 1)} + c\)</li></ul>
+<div class="exp-a"><p>\(\frac{(2x - 1)^{-1}}{-1 \times 2} + c = -\frac{1}{2(2x - 1)} + c\)</p></div>
+<div class="ex-rep"><p>Writing \(\ln(2x - 1)^2\) was a very common error. The log rule only applies to \(\frac{1}{ax + b}\).</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find \(a > 0\) such that \(\int_0^a (2x + 1)\,dx = 6\).</p></div>
+<ul class="mk"><li>\(a^2 + a = 6\), so \(a = 2\)</li></ul>
+<div class="exp-a"><p>\(a^2 + a - 6 = 0\), so \(a = 2\) (reject \(-3\)).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Given \(\int_1^3 f(x)\,dx = 4\), evaluate \(\int_1^3 (3 - 2f(x))\,dx + \int_3^1 f(x)\,dx\).</p></div>
+<ul class="mk"><li>\(\int_1^3 (3 - 2f)\,dx = 6 - 8 = -2\)</li><li>\(\int_3^1 f\,dx = -4\), total \(-6\)</li></ul>
+<div class="exp-a"><p>\((6 - 8) + (-4) = -6\)</p></div>
+</div>
+</div>
+<div class="exq" data-t="explog">
+<div class="exp" data-marks="2" data-part="a">
+<div class="exp-q"><p>Solve \(3^{2x} - 3^{x + 1} - 10 = 0\) for \(x\).</p></div>
+<ul class="mk"><li>\((3^x)^2 - 3 \cdot 3^x - 10 = 0\), so \((3^x - 5)(3^x + 2) = 0\)</li><li>\(x = \log_3 5\) (as \(3^x = -2\) has no solution)</li></ul>
+<div class="exp-a"><p>Let \(u = 3^x\): \(u^2 - 3u - 10 = 0\), so \(u = 5\) or \(-2\). Since \(3^x > 0\), \(x = \log_3 5\).</p></div>
+<div class="ex-rep"><p>Spotting \(3^{x + 1} = 3 \cdot 3^x\) was the key step.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Solve \(2\ln(x) = \ln(x + 2) + \ln 3\) for \(x\).</p></div>
+<ul class="mk"><li>\(x^2 = 3(x + 2)\), so \(x^2 - 3x - 6 = 0\)</li><li>\(x = \frac{3 + \sqrt{33}}{2}\) only</li></ul>
+<div class="exp-a"><p>\(x = \frac{3 \pm \sqrt{33}}{2}\). The negative root is rejected because \(\ln x\) needs \(x > 0\), so \(x = \frac{3 + \sqrt{33}}{2}\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="circular">
+<div class="exp" data-marks="3" data-part="a">
+<div class="exp-q"><p>Solve \(\sin(2x) = \sqrt3\cos(2x)\) for \(x \in \left[-\frac{\pi}{2}, \frac{\pi}{2}\right]\).</p></div>
+<ul class="mk"><li>\(\tan(2x) = \sqrt3\), with \(2x \in [-\pi, \pi]\)</li><li>\(2x = \frac{\pi}{3}\) or \(2x = \frac{\pi}{3} - \pi = -\frac{2\pi}{3}\)</li><li>\(x = \frac{\pi}{6}, -\frac{\pi}{3}\)</li></ul>
+<div class="exp-a"><p>\(\tan 2x = \sqrt3\), so \(2x = \frac{\pi}{3} + k\pi\). For \(2x \in [-\pi, \pi]\): \(2x = -\frac{2\pi}{3}, \frac{\pi}{3}\), so \(x = -\frac{\pi}{3}, \frac{\pi}{6}\).</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find the sum of the solutions in part a.</p></div>
+<ul class="mk"><li>\(-\frac{\pi}{6}\)</li></ul>
+<div class="exp-a"><p>\(\frac{\pi}{6} - \frac{\pi}{3} = -\frac{\pi}{6}\)</p></div>
+</div>
+</div>
+<div class="exq" data-t="composite-inverse">
+<div class="exq-stem"><p>Let \(f: (-\infty, a] \to \mathbb{R}\), \(f(x) = (x - 1)^2 - 4\).</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Find the largest value of \(a\) for which \(f\) has an inverse function.</p></div>
+<ul class="mk"><li>\(a = 1\)</li></ul>
+<div class="exp-a"><p>\(f\) is one-to-one to the left of its turning point, so \(a = 1\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Let \(a = 1\). Find the rule and domain of \(f^{-1}\).</p></div>
+<ul class="mk"><li>\(f^{-1}(x) = 1 - \sqrt{x + 4}\) (negative root, since \(f^{-1}(x) \le 1\))</li><li>Domain \([-4, \infty)\)</li></ul>
+<div class="exp-a"><p>\(x = (y - 1)^2 - 4\), so \(y = 1 \pm \sqrt{x + 4}\). The range of \(f^{-1}\) is \((-\infty, 1]\), so take the negative root: \(f^{-1}(x) = 1 - \sqrt{x + 4}\), \(x \ge -4\).</p></div>
+<div class="ex-rep"><p>Taking the positive root was the most common error. The range of the inverse decides the sign.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Find the coordinates of the point of intersection of the graphs of \(f\) and \(f^{-1}\).</p></div>
+<ul class="mk"><li>Solves \(f(x) = x\) on the line \(y = x\): \(x^2 - 3x - 3 = 0\)</li><li>\(x = \frac{3 - \sqrt{21}}{2}\) (the other root exceeds 1): point \(\left(\frac{3 - \sqrt{21}}{2}, \frac{3 - \sqrt{21}}{2}\right)\)</li></ul>
+<div class="exp-a"><p>\(x = \frac{3 \pm \sqrt{21}}{2}\), and only \(\frac{3 - \sqrt{21}}{2}\) is in the domain. (For a decreasing function, intersections off the line \(y = x\) are possible in general. Here the only other candidate lies outside the domain.)</p></div>
+</div>
+</div>
+<div class="exq" data-t="diff-apps">
+<div class="exp" data-marks="3" data-part="a">
+<div class="exp-q"><p>The tangent to the curve \(y = x^3\) at the point where \(x = a\) passes through the point \((0, -2)\). Find \(a\) and the equation of the tangent.</p></div>
+<ul class="mk"><li>Tangent: \(y = 3a^2(x - a) + a^3 = 3a^2x - 2a^3\)</li><li>Substitutes \((0, -2)\): \(-2a^3 = -2\), so \(a = 1\)</li><li>\(y = 3x - 2\)</li></ul>
+<div class="exp-a"><p>The tangent at \(x = a\) is \(y = 3a^2x - 2a^3\). Through \((0, -2)\): \(a^3 = 1\), so \(a = 1\) and the tangent is \(y = 3x - 2\).</p></div>
+<div class="ex-rep"><p>Many tried to use \((0, -2)\) as the point of tangency. It isn’t on the curve. Write the general tangent first.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find the coordinates of the other point where this tangent meets the curve.</p></div>
+<ul class="mk"><li>\(x^3 - 3x + 2 = 0\), which has a double root at \(x = 1\): \((x - 1)^2(x + 2) = 0\)</li><li>\((-2, -8)\)</li></ul>
+<div class="exp-a"><p>Since the tangent touches at \(x = 1\), \((x - 1)^2\) is a factor: \((x - 1)^2(x + 2) = 0\). The point is \((-2, -8)\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="drv">
+<div class="exq-stem"><p>A discrete random variable \(X\) has \(\Pr(X = x) = k(x + 1)\) for \(x \in \{0, 1, 2, 3\}\).</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Find \(k\).</p></div>
+<ul class="mk"><li>\(k = \frac{1}{10}\)</li></ul>
+<div class="exp-a"><p>\(k(1 + 2 + 3 + 4) = 1\), so \(k = \frac1{10}\).</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="b">
+<div class="exp-q"><p>Find \(\text{E}(X)\).</p></div>
+<ul class="mk"><li>2</li></ul>
+<div class="exp-a"><p>\(\frac{0 + 2 + 6 + 12}{10} = 2\)</p></div>
+</div>
+<div class="exp" data-marks="1" data-part="c">
+<div class="exp-q"><p>Find \(\text{Var}(X)\).</p></div>
+<ul class="mk"><li>1</li></ul>
+<div class="exp-a"><p>\(\text{E}(X^2) = \frac{0 + 2 + 12 + 36}{10} = 5\), so \(\text{Var}(X) = 5 - 4 = 1\).</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="d">
+<div class="exp-q"><p>Two independent observations \(X_1\) and \(X_2\) are taken. Find \(\Pr(X_1 > X_2)\).</p></div>
+<ul class="mk"><li>\(\Pr(X_1 = X_2) = \frac{1 + 4 + 9 + 16}{100} = \frac{30}{100}\)</li><li>By symmetry, \(\Pr(X_1 > X_2) = \frac{1 - 0.3}{2} = 0.35\)</li></ul>
+<div class="exp-a"><p>\(\Pr(X_1 = X_2) = 0.3\), and by symmetry the remaining 0.7 is split equally: \(0.35\).</p></div>
+<div class="ex-rep"><p>The symmetry argument saves listing ten cases. The top students spotted it.</p></div>
+</div>
+</div>
+<div class="exq" data-t="crv">
+<div class="exq-stem"><p>Let \(f(x) = \frac12\sin(x)\) for \(0 \le x \le \pi\), and \(f(x) = 0\) elsewhere.</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>Show that \(f\) is a probability density function.</p></div>
+<ul class="mk"><li>\(f(x) \ge 0\) on \([0, \pi]\), and \(\int_0^\pi \frac12\sin x\,dx = \frac12[-\cos x]_0^\pi = 1\)</li></ul>
+<div class="exp-a"><p>\(\sin x \ge 0\) on \([0, \pi]\), and \(\frac12[-\cos x]_0^\pi = \frac12(1 + 1) = 1\).</p></div>
+<div class="ex-rep"><p>Both conditions (non-negative, and total area 1) are needed for the mark.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Find \(\Pr\left(X \le \frac{\pi}{3}\right)\).</p></div>
+<ul class="mk"><li>\(\frac12\left[-\cos x\right]_0^{\pi/3}\)</li><li>\(\frac14\)</li></ul>
+<div class="exp-a"><p>\(\frac12\left(1 - \frac12\right) = \frac14\)</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="c">
+<div class="exp-q"><p>Find \(a\) such that \(\Pr(X > a) = \frac14\).</p></div>
+<ul class="mk"><li>\(\frac12(1 + \cos a) = \frac14\), so \(\cos a = -\frac12\)</li><li>\(a = \frac{2\pi}{3}\)</li></ul>
+<div class="exp-a"><p>\(\frac12[-\cos x]_a^\pi = \frac12(1 + \cos a) = \frac14\), so \(\cos a = -\frac12\) and \(a = \frac{2\pi}{3}\). This matches the symmetry of the pdf about \(\frac{\pi}{2}\).</p></div>
+</div>
+</div>
+<div class="exq" data-t="ci">
+<div class="exq-stem"><p>An approximate 95% confidence interval for a population proportion \(p\), calculated from a random sample, is \((0.35, 0.45)\).</p></div>
+<div class="exp" data-marks="1" data-part="a">
+<div class="exp-q"><p>State the sample proportion \(\hat p\).</p></div>
+<ul class="mk"><li>0.4</li></ul>
+<div class="exp-a"><p>0.4, the midpoint of the interval.</p></div>
+</div>
+<div class="exp" data-marks="2" data-part="b">
+<div class="exp-q"><p>Taking \(z \approx 2\), find the sample size.</p></div>
+<ul class="mk"><li>\(2\sqrt{\frac{0.4 \times 0.6}{n}} = 0.05\)</li><li>\(n = 384\)</li></ul>
+<div class="exp-a"><p>\(\sqrt{\frac{0.24}{n}} = 0.025\), so \(\frac{0.24}{n} = 0.000625\) and \(n = 384\).</p></div>
+</div>
+</div>
+<h2>Assessor’s report</h2>
+<div class="ex-report"><h3>General comments</h3>
+<p>This paper was pitched above a typical Exam 1. The techniques were all standard, but most questions needed an idea on top: a Pythagorean identity to finish a “show that”, a disguised quadratic in \(3^x\), a general tangent through an external point, a symmetry argument in probability. A median of about 24/40 is expected. 30+ is excellent.</p>
+<h3>What separated the top scripts</h3>
+<ul><li><strong>Working in general before substituting.</strong> In Question 6a, the students who wrote the tangent at a general point \(x = a\) solved it in three lines. Those who guessed points ran out of time.</li>
+<li><strong>Domain discipline.</strong> The sign of the root in \(f^{-1}\) (5b), rejecting negative log arguments (3b) and the adjusted interval for \(2x\) (4a) were all decided by domains.</li>
+<li><strong>Using structure.</strong> The double root at the point of tangency (6b), symmetry in 7d and the symmetric pdf in 8c each turned long calculations into short ones.</li></ul>
+<h3>Common errors</h3>
+<ul><li>\(\int (2x - 1)^{-2}\,dx\) written as a logarithm.</li>
+<li>Reversing the limits of an integral without changing its sign (2c).</li>
+<li>\(3^{x + 1}\) treated as \(3^x + 1\).</li>
+<li>Giving only the solution in the first quadrant for \(\tan 2x = \sqrt3\).</li>
+<li>Showing only one of the two pdf conditions in 8a.</li></ul>
+<h3>Advice</h3>
+<p>If you scored under 20, return to the medium paper and aim for 34/40. If you scored 28+, you are ready for the hardest Exam 1 questions VCAA sets. Keep your speed up with 20-minute mixed drills.</p></div>
