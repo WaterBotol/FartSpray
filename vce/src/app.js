@@ -565,7 +565,7 @@
     const st = Object.assign({ phase: 'idle', t0: 0, timed: true, mcq: {}, resp: {}, ticks: {}, marked: false }, store.get(KEY, {}));
     const persist = () => store.set(KEY, st);
     const reading = +(meta.dataset.reading || 15), writing = +(meta.dataset.writing || 150);
-    const LV = { easy: 'Easier', medium: 'Medium', hard: 'Harder' }, level = meta.dataset.level || 'medium';
+    const LV = { easy: 'Easier', medium: 'Medium', hard: 'Harder' }, level = meta.dataset.level || 'medium', real = !!meta.dataset.real;
     const topicName = id => { const x = byId[P + id]; return x ? (x.short || x.title) : id; };
     // ---- MCQs
     const mcqs = $$('.mcq', prose).map((m, i) => {
@@ -577,9 +577,10 @@
         const L = String.fromCharCode(65 + j), b = el('button', 'opt', '<span class="L">' + L + '</span><span>' + li.innerHTML + '</span>');
         b.type = 'button'; b.dataset.l = L; opts.appendChild(b); return b;
       });
-      if (ol) ol.replaceWith(opts);
+      if (ol) { if (btns.every(b => !b.textContent.replace(/^[A-E]/, '').trim())) opts.classList.add('letters'); ol.replaceWith(opts); }
       if (x) { x.hidden = true; m.appendChild(x); }
       if (rep) { rep.hidden = true; m.appendChild(rep); }
+      const fac = m.dataset.fac !== undefined ? +m.dataset.fac / 100 : null;
       const verdict = el('div', 'mcq-verdict'); if (x) x.prepend(verdict);
       const paint = () => btns.forEach(b => b.classList.toggle('sel', st.mcq[n] === b.dataset.l));
       btns.forEach(b => b.addEventListener('click', () => {
@@ -587,7 +588,7 @@
         st.mcq[n] = st.mcq[n] === b.dataset.l ? undefined : b.dataset.l; persist(); paint(); bar();
       }));
       paint();
-      return { n, ans, btns, x, rep, verdict, t: m.dataset.t || '' };
+      return { n, ans, btns, x, rep, verdict, fac, t: m.dataset.t || '' };
     });
     // ---- written questions
     let qn = 0; const parts = [];
@@ -618,10 +619,10 @@
           box.append(el('div', 'ex-mark-h', '<span>Marking guide · tick what you earned</span><span class="ex-mark-s"></span>'), list);
           mk.remove();
         }
-        if (ans) { ans.classList.add('ex-ans'); ans.prepend(el('div', 'ex-lbl', 'Sample answer')); box.appendChild(ans); }
-        if (rep) { rep.prepend(el('div', 'ex-lbl', 'Assessor’s comment')); box.appendChild(rep); }
+        if (ans) { ans.classList.add('ex-ans'); ans.prepend(el('div', 'ex-lbl', real ? 'Answer' : 'Sample answer')); box.appendChild(ans); }
+        if (rep) { rep.prepend(el('div', 'ex-lbl', real ? 'How Victoria went' : 'Assessor’s comment')); box.appendChild(rep); }
         p.appendChild(box);
-        parts.push({ id, marks, items, box, ta, t: p.dataset.t || q.dataset.t || '' });
+        parts.push({ id, marks, items, box, ta, avg: p.dataset.avg !== undefined ? +p.dataset.avg : null, t: p.dataset.t || q.dataset.t || '' });
       });
     });
     const report = $('.ex-report', prose), repH = report && report.previousElementSibling && report.previousElementSibling.tagName === 'H2' ? report.previousElementSibling : null;
@@ -630,7 +631,7 @@
     const fmt = mins => (mins >= 60 ? Math.floor(mins / 60) + ' h ' + (mins % 60 ? (mins % 60) + ' min' : '') : mins + ' min').trim();
     const cover = el('div', 'ex-start', '<div class="ex-badges"><span class="lvl-b lvl-b-' + level + '">' + (LV[level] || level) + '</span><span class="chip"><b>' + grand + '</b> marks</span><span class="chip">Reading <b>' + fmt(reading) + '</b></span><span class="chip">Writing <b>' + fmt(writing) + '</b></span>' + (mcqTotal ? '<span class="chip"><b>' + mcqTotal + '</b> multiple choice</span>' : '') + (qn ? '<span class="chip"><b>' + qn + '</b> written questions</span>' : '') + '</div>' +
       '<div class="ex-go"><button class="btn primary" type="button" data-go="timed">Start exam (timed)</button><button class="btn" type="button" data-go="free">Start untimed</button><button class="btn ghost" type="button" data-go="peek">Skip to solutions &amp; report</button></div>' +
-      '<p class="ln">Timed mode gives you reading time first (you can read, not answer), then writing time. Your answers save in this browser. After you finish, you mark the written answers yourself against the marking guide, then the assessor’s report unlocks.</p>');
+      (real ? '<p class="ln">Real VCAA questions: open each one in the official exam PDF (link on every question) and answer here. Timed mode gives reading time first, then writing time. Your answers save in this browser. When you finish, mark your written answers against the guide, then compare with the state results.</p>' : '') + (real ? '' : '<p class="ln">Timed mode gives you reading time first (you can read, not answer), then writing time. Your answers save in this browser. After you finish, you mark the written answers yourself against the marking guide, then the assessor’s report unlocks.</p>'));
     const cv = $('.ex-cover', prose); (cv || meta).after(cover);
     const barEl = el('div', 'ex-bar'); barEl.hidden = true; cover.after(barEl);
     const res = el('div', 'ex-results'); res.hidden = true; barEl.after(res);
@@ -691,8 +692,10 @@
       const tot = mcGot + got, pct = grand ? Math.round(100 * tot / grand) : 0;
       if (st.marked) { st.score = tot; st.of = grand; persist(); }
       const weak = Object.entries(per).filter(([, v]) => v[1] >= 2).map(([k, v]) => [k, v, v[0] / v[1]]).sort((a, b) => a[2] - b[2]);
+      const stateTot = mcqs.reduce((x, m) => x + (m.fac || 0), 0) + parts.reduce((x, p) => x + (p.avg || 0), 0);
+      const bench = real && stateTot ? '<div class="ex-bench">State average on these same questions: <b>' + stateTot.toFixed(0) + ' / ' + grand + '</b> (' + Math.round(100 * stateTot / grand) + '%). ' + (tot >= stateTot ? 'You beat the state average.' : 'You are ' + Math.round(stateTot - tot) + ' mark' + (Math.round(stateTot - tot) === 1 ? '' : 's') + ' below it (tick your written marks first).') + '</div>' : '';
       res.innerHTML = '<div class="ex-score"><div><span class="ex-big">' + tot + '</span><span class="ex-of">/ ' + grand + '</span></div><div class="ex-pct">' + pct + '%</div></div>' +
-        '<div class="ex-split">' + (mcqTotal ? '<span>Multiple choice <b>' + mcGot + '/' + mcqTotal + '</b></span>' : '') + (parts.length ? '<span>Written (self-marked) <b>' + got + '/' + wTotal + '</b></span>' : '') + '</div>' +
+        '<div class="ex-split">' + (mcqTotal ? '<span>Multiple choice <b>' + mcGot + '/' + mcqTotal + '</b></span>' : '') + (parts.length ? '<span>Written (self-marked) <b>' + got + '/' + wTotal + '</b></span>' : '') + '</div>' + bench +
         (weak.length ? '<div class="ex-weak"><h4>By topic, weakest first</h4><ul>' + weak.slice(0, 10).map(([k, v, r]) => '<li><a href="#' + P + k + '">' + esc(topicName(k)) + '</a><span class="ex-bar-mini"><i style="width:' + Math.round(r * 100) + '%"></i></span><b>' + v[0] + '/' + v[1] + '</b></li>').join('') + '</ul></div>' : '') +
         '<p class="ln">Written marks only count once you tick the marking points under each answer. Be as strict as a VCAA assessor: the idea has to be clearly there, in your own words. Then read the assessor’s report at the end.</p>';
     }
@@ -703,7 +706,7 @@
         m.btns.forEach(b => { b.disabled = true; b.classList.remove('sel'); if (b.dataset.l === m.ans) b.classList.add('correct'); else if (b.dataset.l === c) b.classList.add('wrong'); });
         m.verdict.className = 'mcq-verdict ' + (c === m.ans ? 'ok' : 'no');
         m.verdict.textContent = !c ? 'Not answered. The answer is ' + m.ans + '.' : c === m.ans ? 'Correct: ' + m.ans + '.' : 'You chose ' + c + '; the answer is ' + m.ans + '.';
-        if (m.x) m.x.hidden = false; if (m.rep) { m.rep.hidden = false; if (!$('.ex-lbl', m.rep)) m.rep.prepend(el('div', 'ex-lbl', 'Assessor’s comment')); }
+        if (m.x) m.x.hidden = false; if (m.rep) { m.rep.hidden = false; if (!$('.ex-lbl', m.rep)) m.rep.prepend(el('div', 'ex-lbl', real ? 'How Victoria went' : 'Assessor’s comment')); }
       });
       parts.forEach(p => { p.box.hidden = false; p.ta.readOnly = true; if (!p.ta.value.trim()) p.ta.classList.add('empty'); });
       if (report) { report.hidden = false; if (repH) repH.hidden = false; }
