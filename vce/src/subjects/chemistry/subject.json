@@ -1,21 +1,118 @@
 {
-  "id": "chemistry", "prefix": "ch", "name": "Chemistry", "short": "Chemistry",
+  "id": "chemistry",
+  "prefix": "ch",
+  "name": "Chemistry",
+  "short": "Chemistry",
   "design": "Study design 2024–2027",
   "blurb": "Fuels, energy and electrochemistry; rates, equilibrium and electrolysis; food as fuel and bioethanol; organic structure, reactions and analysis; medicinal chemistry.",
   "groups": [
-    { "id": "start", "eyebrow": "Start here", "title": "", "map": false, "topics": ["home", "exam-technique", "data-book"] },
-    { "id": "u3a1", "eyebrow": "Unit 3 · AoS 1", "title": "What are the current and future options for supplying energy?", "quiz": true,
-      "topics": ["fuels", "food-fuels", "thermochem", "calorimetry", "gases", "redox", "galvanic", "fuel-cells"] },
-    { "id": "u3a2", "eyebrow": "Unit 3 · AoS 2", "title": "How can the rate and yield of chemical reactions be optimised?", "quiz": true,
-      "topics": ["rates", "equilibrium", "le-chatelier", "electrolysis", "faraday"] },
-    { "id": "u4a1", "eyebrow": "Unit 4 · AoS 1", "title": "How are organic compounds categorised and synthesised?", "quiz": true,
-      "topics": ["nomenclature", "isomers", "organic-reactions", "pathways"] },
-    { "id": "u4a2", "eyebrow": "Unit 4 · AoS 2", "title": "How are organic compounds analysed and used?", "quiz": true,
-      "topics": ["lab-analysis", "ir-ms", "nmr", "chromatography", "volumetric", "food", "enzymes", "medicines"] },
-    { "id": "u4a3", "eyebrow": "Unit 4 · AoS 3", "title": "How is scientific inquiry used to investigate the sustainable production of energy and/or materials?", "quiz": true,
-      "topics": ["key-skills", "investigation"] },
-    { "id": "exam", "eyebrow": "Exam practice", "title": "Mixed exam-style questions", "quiz": true,
-      "topics": ["exam-mcq", "exam-extended"] },
-    { "id": "ref", "eyebrow": "Reference", "title": "", "map": false, "topics": ["glossary"] }
+    {
+      "id": "start",
+      "eyebrow": "Start here",
+      "title": "",
+      "map": false,
+      "topics": [
+        "home",
+        "exam-technique",
+        "data-book"
+      ]
+    },
+    {
+      "id": "u3a1",
+      "eyebrow": "Unit 3 · AoS 1",
+      "title": "What are the current and future options for supplying energy?",
+      "quiz": true,
+      "topics": [
+        "fuels",
+        "food-fuels",
+        "thermochem",
+        "calorimetry",
+        "gases",
+        "redox",
+        "galvanic",
+        "fuel-cells"
+      ]
+    },
+    {
+      "id": "u3a2",
+      "eyebrow": "Unit 3 · AoS 2",
+      "title": "How can the rate and yield of chemical reactions be optimised?",
+      "quiz": true,
+      "topics": [
+        "rates",
+        "equilibrium",
+        "le-chatelier",
+        "electrolysis",
+        "faraday"
+      ]
+    },
+    {
+      "id": "u4a1",
+      "eyebrow": "Unit 4 · AoS 1",
+      "title": "How are organic compounds categorised and synthesised?",
+      "quiz": true,
+      "topics": [
+        "nomenclature",
+        "isomers",
+        "organic-reactions",
+        "pathways"
+      ]
+    },
+    {
+      "id": "u4a2",
+      "eyebrow": "Unit 4 · AoS 2",
+      "title": "How are organic compounds analysed and used?",
+      "quiz": true,
+      "topics": [
+        "lab-analysis",
+        "ir-ms",
+        "nmr",
+        "chromatography",
+        "volumetric",
+        "food",
+        "enzymes",
+        "medicines"
+      ]
+    },
+    {
+      "id": "u4a3",
+      "eyebrow": "Unit 4 · AoS 3",
+      "title": "How is scientific inquiry used to investigate the sustainable production of energy and/or materials?",
+      "quiz": true,
+      "topics": [
+        "key-skills",
+        "investigation"
+      ]
+    },
+    {
+      "id": "exam",
+      "eyebrow": "Exam practice",
+      "title": "Mixed exam-style questions",
+      "quiz": true,
+      "topics": [
+        "exam-mcq",
+        "exam-extended"
+      ]
+    },
+    {
+      "id": "exams",
+      "eyebrow": "Exam practice",
+      "title": "Full practice exams: easier → medium → harder",
+      "map": false,
+      "topics": [
+        "exam-easy",
+        "exam-medium",
+        "exam-hard"
+      ]
+    },
+    {
+      "id": "ref",
+      "eyebrow": "Reference",
+      "title": "",
+      "map": false,
+      "topics": [
+        "glossary"
+      ]
+    }
   ]
 }

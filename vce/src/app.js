@@ -368,7 +368,7 @@
       });
     }
     h += '<div class="nav-group"><div class="nav-eyebrow" style="padding:4px 6px">General</div><ul>' +
-      ['home', 'notes', 'gauntlet', 'review'].map(id => byId[id] ? '<li><a href="#' + id + '" class="' + (id === activeId ? 'active' : '') + '"><span class="nav-dot" style="border-style:dashed"></span><span>' + esc(byId[id].short) + '</span></a></li>' : '').join('') + '</ul></div>';
+      ['home', 'notes', 'gauntlet', 'exams', 'past-papers', 'review'].map(id => byId[id] ? '<li><a href="#' + id + '" class="' + (id === activeId ? 'active' : '') + '"><span class="nav-dot" style="border-style:dashed"></span><span>' + esc(byId[id].short) + '</span></a></li>' : '').join('') + '</ul></div>';
     nav.innerHTML = h;
     $$('.subj-btn', nav).forEach(b => b.addEventListener('click', () => {
       const sid = b.dataset.s;
@@ -554,6 +554,181 @@
     });
   }
 
+  /* ------------------------------------------------------------ practice exams (special: exam) */
+  // Markup: .ex-meta (data-level/reading/writing), .ex-cover, h2 sections, .ex-inst, .ex-stim,
+  // .mcq (data-ans, data-t topic), .exq > .exq-stem + .exp (data-marks, data-part, data-t) > .exp-q, ul.mk, .exp-a, .ex-rep;
+  // h2 + .ex-report at the end is the assessor's general report (shown after marking).
+  function enhanceExam(root, t) {
+    const prose = $('#prose', root), meta = $('.ex-meta', prose);
+    if (!prose || !meta) return;
+    const KEY = 'ex:' + t.id, P = t.subj ? t.subj.prefix + '-' : '';
+    const st = Object.assign({ phase: 'idle', t0: 0, timed: true, mcq: {}, resp: {}, ticks: {}, marked: false }, store.get(KEY, {}));
+    const persist = () => store.set(KEY, st);
+    const reading = +(meta.dataset.reading || 15), writing = +(meta.dataset.writing || 150);
+    const LV = { easy: 'Easier', medium: 'Medium', hard: 'Harder' }, level = meta.dataset.level || 'medium';
+    const topicName = id => { const x = byId[P + id]; return x ? (x.short || x.title) : id; };
+    // ---- MCQs
+    const mcqs = $$('.mcq', prose).map((m, i) => {
+      const n = i + 1, ans = (m.dataset.ans || 'A').toUpperCase(), ol = $(':scope > ol', m), x = $('.mcq-x', m), rep = $(':scope > .ex-rep', m);
+      m.classList.add('ex-mcq'); m.id = 'a-mcq' + n;
+      m.prepend(el('div', 'pq-h', '<span class="pq-tag">Question ' + n + '</span><span class="marks">1 mark</span>'));
+      const opts = el('div', 'mcq-opts');
+      const btns = (ol ? $$(':scope > li', ol) : []).map((li, j) => {
+        const L = String.fromCharCode(65 + j), b = el('button', 'opt', '<span class="L">' + L + '</span><span>' + li.innerHTML + '</span>');
+        b.type = 'button'; b.dataset.l = L; opts.appendChild(b); return b;
+      });
+      if (ol) ol.replaceWith(opts);
+      if (x) { x.hidden = true; m.appendChild(x); }
+      if (rep) { rep.hidden = true; m.appendChild(rep); }
+      const verdict = el('div', 'mcq-verdict'); if (x) x.prepend(verdict);
+      const paint = () => btns.forEach(b => b.classList.toggle('sel', st.mcq[n] === b.dataset.l));
+      btns.forEach(b => b.addEventListener('click', () => {
+        if (st.marked || !canWrite()) { if (!st.marked) toast(st.phase === 'reading' ? 'Reading time: you can read but not answer yet' : 'Press Start to begin'); return; }
+        st.mcq[n] = st.mcq[n] === b.dataset.l ? undefined : b.dataset.l; persist(); paint(); bar();
+      }));
+      paint();
+      return { n, ans, btns, x, rep, verdict, t: m.dataset.t || '' };
+    });
+    // ---- written questions
+    let qn = 0; const parts = [];
+    $$('.exq', prose).forEach(q => {
+      qn++; q.id = 'a-exq' + qn;
+      const ps = $$(':scope > .exp', q), total = ps.reduce((a, p) => a + (+p.dataset.marks || 0), 0);
+      q.prepend(el('div', 'exq-h', '<span class="pq-tag">Question ' + qn + '</span><span class="marks">' + total + ' mark' + (total === 1 ? '' : 's') + '</span>'));
+      ps.forEach((p, j) => {
+        const lab = ps.length > 1 ? (p.dataset.part || String.fromCharCode(97 + j)) : '';
+        const id = qn + lab, marks = +p.dataset.marks || 0;
+        const mk = $(':scope > ul.mk', p), ans = $(':scope > .exp-a', p), rep = $(':scope > .ex-rep', p);
+        p.prepend(el('div', 'exp-h', (lab ? '<span class="exp-l">' + lab + '.</span>' : '') + '<span class="marks">' + marks + ' mark' + (marks === 1 ? '' : 's') + '</span>'));
+        const ta = el('textarea', 'ex-ta'); ta.rows = Math.max(2, Math.min(10, marks * 2)); ta.placeholder = 'Write your answer here (' + marks + ' mark' + (marks === 1 ? '' : 's') + '). Working counts for multi-mark questions.';
+        ta.value = st.resp[id] || '';
+        let tm; ta.addEventListener('input', () => { clearTimeout(tm); tm = setTimeout(() => { st.resp[id] = ta.value; persist(); }, 350); });
+        const qEl = $(':scope > .exp-q', p); (qEl || p.firstChild).after(ta);
+        const box = el('div', 'ex-mark'); box.hidden = true;
+        let items = [];
+        if (mk) {
+          items = $$(':scope > li', mk).map((li, k) => ({ li, k, m: +(li.dataset.m || 1) }));
+          const list = el('ol', 'mk-list');
+          items.forEach(it => {
+            const row = el('li', 'mk-row', '<label><input type="checkbox"> <span class="mk-m">' + it.m + '</span><span class="mk-t">' + it.li.innerHTML + '</span></label>');
+            const cb = $('input', row); cb.checked = (st.ticks[id] || []).includes(it.k);
+            cb.addEventListener('change', () => { const s = new Set(st.ticks[id] || []); cb.checked ? s.add(it.k) : s.delete(it.k); st.ticks[id] = [...s]; persist(); tally(); });
+            it.cb = cb; list.appendChild(row);
+          });
+          box.append(el('div', 'ex-mark-h', '<span>Marking guide · tick what you earned</span><span class="ex-mark-s"></span>'), list);
+          mk.remove();
+        }
+        if (ans) { ans.classList.add('ex-ans'); ans.prepend(el('div', 'ex-lbl', 'Sample answer')); box.appendChild(ans); }
+        if (rep) { rep.prepend(el('div', 'ex-lbl', 'Assessor’s comment')); box.appendChild(rep); }
+        p.appendChild(box);
+        parts.push({ id, marks, items, box, ta, t: p.dataset.t || q.dataset.t || '' });
+      });
+    });
+    const report = $('.ex-report', prose), repH = report && report.previousElementSibling && report.previousElementSibling.tagName === 'H2' ? report.previousElementSibling : null;
+    const mcqTotal = mcqs.length, wTotal = parts.reduce((a, p) => a + p.marks, 0), grand = mcqTotal + wTotal;
+    // ---- cover + sticky bar + results
+    const fmt = mins => (mins >= 60 ? Math.floor(mins / 60) + ' h ' + (mins % 60 ? (mins % 60) + ' min' : '') : mins + ' min').trim();
+    const cover = el('div', 'ex-start', '<div class="ex-badges"><span class="lvl-b lvl-b-' + level + '">' + (LV[level] || level) + '</span><span class="chip"><b>' + grand + '</b> marks</span><span class="chip">Reading <b>' + fmt(reading) + '</b></span><span class="chip">Writing <b>' + fmt(writing) + '</b></span>' + (mcqTotal ? '<span class="chip"><b>' + mcqTotal + '</b> multiple choice</span>' : '') + (qn ? '<span class="chip"><b>' + qn + '</b> written questions</span>' : '') + '</div>' +
+      '<div class="ex-go"><button class="btn primary" type="button" data-go="timed">Start exam (timed)</button><button class="btn" type="button" data-go="free">Start untimed</button><button class="btn ghost" type="button" data-go="peek">Skip to solutions &amp; report</button></div>' +
+      '<p class="ln">Timed mode gives you reading time first (you can read, not answer), then writing time. Your answers save in this browser. After you finish, you mark the written answers yourself against the marking guide, then the assessor’s report unlocks.</p>');
+    const cv = $('.ex-cover', prose); (cv || meta).after(cover);
+    const barEl = el('div', 'ex-bar'); barEl.hidden = true; cover.after(barEl);
+    const res = el('div', 'ex-results'); res.hidden = true; barEl.after(res);
+    const body = []; let node = res.nextElementSibling;
+    while (node) { if (node !== report && node !== repH) body.push(node); node = node.nextElementSibling; }
+    const setBody = on => body.forEach(n => { n.hidden = !on; });
+    const canWrite = () => st.phase === 'writing' || st.phase === 'free';
+    let tick = null;
+    const left = () => {
+      if (!st.timed || !st.t0) return null;
+      const s = (Date.now() - st.t0) / 1000, r = reading * 60, w = writing * 60;
+      if (s < r) return { phase: 'reading', s: r - s };
+      if (s < r + w) return { phase: 'writing', s: r + w - s };
+      return { phase: 'over', s: 0 };
+    };
+    const mmss = s => { s = Math.max(0, Math.round(s)); const h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), x = s % 60; return (h ? h + ':' + String(m).padStart(2, '0') : m) + ':' + String(x).padStart(2, '0'); };
+    const lockInputs = () => parts.forEach(p => { p.ta.readOnly = st.marked || !canWrite(); });
+    barEl.innerHTML = '<div class="ex-clock"></div><div class="ex-prog"></div><button class="btn" type="button" data-act=""></button>';
+    const bClock = $('.ex-clock', barEl), bProg = $('.ex-prog', barEl), bBtn = $('button', barEl);
+    // two-step confirm (modal dialogs can be blocked inside embedded frames)
+    const arm = (btn, msg, fn) => {
+      if (btn.dataset.armed) { delete btn.dataset.armed; clearTimeout(btn._t); fn(); return; }
+      btn.dataset.armed = '1'; btn._lbl = btn.innerHTML; btn.innerHTML = 'Click again to confirm'; btn.classList.add('armed'); toast(msg);
+      btn._t = setTimeout(() => { delete btn.dataset.armed; btn.innerHTML = btn._lbl; btn.classList.remove('armed'); }, 4000);
+    };
+    function bar() {
+      if (st.phase === 'idle') { barEl.hidden = true; return; }
+      barEl.hidden = false;
+      const answered = mcqs.filter(m => st.mcq[m.n]).length, written = parts.filter(p => (st.resp[p.id] || '').trim()).length;
+      let clock = '';
+      if (st.marked) clock = '<span class="ex-ph done">Marked</span>';
+      else if (st.timed) { const l = left(); clock = l.phase === 'reading' ? '<span class="ex-ph read">Reading time</span><b>' + mmss(l.s) + '</b>' : l.phase === 'writing' ? '<span class="ex-ph">Writing time</span><b>' + mmss(l.s) + '</b>' : '<span class="ex-ph over">Time’s up</span>'; }
+      else clock = '<span class="ex-ph">Untimed</span>';
+      bClock.innerHTML = clock;
+      bProg.innerHTML = (mcqTotal ? 'MC <b>' + answered + '/' + mcqTotal + '</b>' : '') + (parts.length ? (mcqTotal ? ' · ' : '') + 'Written <b>' + written + '/' + parts.length + '</b>' : '');
+      const act = st.marked ? 'reset' : 'finish';
+      if (bBtn.dataset.act !== act && !bBtn.dataset.armed) { bBtn.dataset.act = act; bBtn.className = 'btn ' + (act === 'finish' ? 'primary' : 'ghost'); bBtn.innerHTML = act === 'finish' ? 'Finish &amp; mark' : 'Reset exam'; }
+    }
+    const startClock = () => {
+      clearInterval(tick);
+      tick = setInterval(() => {
+        if (!document.body.contains(barEl)) { clearInterval(tick); return; }
+        if (st.timed && !st.marked) { const l = left(), ph = l.phase === 'over' ? 'writing' : l.phase; if (ph !== st.phase) { st.phase = ph; persist(); lockInputs(); if (ph === 'writing') toast('Reading time over: start writing'); } if (l.phase === 'over' && !st.warned) { st.warned = true; persist(); toast('Time’s up. Finish and mark when ready.'); } }
+        bar();
+      }, 1000);
+      cleanups.push(() => clearInterval(tick));
+    };
+    function tally() {
+      let got = 0; const per = {};
+      const add = (tp, g, of) => { if (!tp) return; tp.split(/\s+/).forEach(x => { per[x] = per[x] || [0, 0]; per[x][0] += g; per[x][1] += of; }); };
+      const mcGot = mcqs.filter(m => st.mcq[m.n] === m.ans).length;
+      mcqs.forEach(m => add(m.t, st.mcq[m.n] === m.ans ? 1 : 0, 1));
+      parts.forEach(p => {
+        const g = Math.min(p.marks, p.items.filter(it => it.cb && it.cb.checked).reduce((a, it) => a + it.m, 0));
+        got += g; add(p.t, g, p.marks);
+        const s = $('.ex-mark-s', p.box); if (s) s.textContent = g + ' / ' + p.marks;
+      });
+      const tot = mcGot + got, pct = grand ? Math.round(100 * tot / grand) : 0;
+      if (st.marked) { st.score = tot; st.of = grand; persist(); }
+      const weak = Object.entries(per).filter(([, v]) => v[1] >= 2).map(([k, v]) => [k, v, v[0] / v[1]]).sort((a, b) => a[2] - b[2]);
+      res.innerHTML = '<div class="ex-score"><div><span class="ex-big">' + tot + '</span><span class="ex-of">/ ' + grand + '</span></div><div class="ex-pct">' + pct + '%</div></div>' +
+        '<div class="ex-split">' + (mcqTotal ? '<span>Multiple choice <b>' + mcGot + '/' + mcqTotal + '</b></span>' : '') + (parts.length ? '<span>Written (self-marked) <b>' + got + '/' + wTotal + '</b></span>' : '') + '</div>' +
+        (weak.length ? '<div class="ex-weak"><h4>By topic, weakest first</h4><ul>' + weak.slice(0, 10).map(([k, v, r]) => '<li><a href="#' + P + k + '">' + esc(topicName(k)) + '</a><span class="ex-bar-mini"><i style="width:' + Math.round(r * 100) + '%"></i></span><b>' + v[0] + '/' + v[1] + '</b></li>').join('') + '</ul></div>' : '') +
+        '<p class="ln">Written marks only count once you tick the marking points under each answer. Be as strict as a VCAA assessor: the idea has to be clearly there, in your own words. Then read the assessor’s report at the end.</p>';
+    }
+    function mark() {
+      st.marked = true; st.phase = 'marked'; persist();
+      mcqs.forEach(m => {
+        const c = st.mcq[m.n];
+        m.btns.forEach(b => { b.disabled = true; b.classList.remove('sel'); if (b.dataset.l === m.ans) b.classList.add('correct'); else if (b.dataset.l === c) b.classList.add('wrong'); });
+        m.verdict.className = 'mcq-verdict ' + (c === m.ans ? 'ok' : 'no');
+        m.verdict.textContent = !c ? 'Not answered. The answer is ' + m.ans + '.' : c === m.ans ? 'Correct: ' + m.ans + '.' : 'You chose ' + c + '; the answer is ' + m.ans + '.';
+        if (m.x) m.x.hidden = false; if (m.rep) { m.rep.hidden = false; if (!$('.ex-lbl', m.rep)) m.rep.prepend(el('div', 'ex-lbl', 'Assessor’s comment')); }
+      });
+      parts.forEach(p => { p.box.hidden = false; p.ta.readOnly = true; if (!p.ta.value.trim()) p.ta.classList.add('empty'); });
+      if (report) { report.hidden = false; if (repH) repH.hidden = false; }
+      setBody(true); res.hidden = false; tally(); bar(); buildToc(); renderMath(prose);
+    }
+    function begin(mode) {
+      if (mode === 'peek') { st.phase = 'free'; st.timed = false; mark(); return; }
+      st.timed = mode === 'timed'; st.t0 = Date.now(); st.phase = st.timed ? (reading ? 'reading' : 'writing') : 'free';
+      persist(); cover.hidden = true; setBody(true); lockInputs(); bar(); startClock(); buildToc();
+      barEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    cover.addEventListener('click', e => { const b = e.target.closest('[data-go]'); if (!b) return; if (b.dataset.go === 'peek') arm(b, 'This shows every answer and ends the attempt', () => begin('peek')); else begin(b.dataset.go); });
+    bBtn.addEventListener('click', () => {
+      if (bBtn.dataset.act === 'finish') {
+        const un = mcqs.filter(m => !st.mcq[m.n]).length;
+        arm(bBtn, (un ? un + ' multiple-choice unanswered. ' : '') + 'Finishing shows the marking guide.', () => { mark(); res.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+      } else if (bBtn.dataset.act === 'reset') arm(bBtn, 'This clears all your answers and marks for this exam', () => { store.set(KEY, {}); render(t); });
+    });
+    // ---- initial state
+    if (report) { report.hidden = true; if (repH) repH.hidden = true; }
+    if (st.marked) { cover.hidden = true; mark(); }
+    else if (st.phase === 'idle') setBody(false);
+    else { cover.hidden = true; setBody(true); lockInputs(); bar(); startClock(); }
+  }
+
   let cleanups = [];
   function mountSims(root) {
     $$('.sim[data-sim]', root).forEach(s => {
@@ -568,7 +743,7 @@
   let tocObs = null;
   function buildToc() {
     if (tocObs) { tocObs.disconnect(); tocObs = null; }
-    const hs = $$('.prose > h2', main);
+    const hs = $$('.prose > h2', main).filter(h => !h.hidden);
     if (hs.length < 2) { toc.innerHTML = ''; return; }
     toc.innerHTML = '<h4>On this page</h4>' + hs.map(h => '<a href="#" data-id="' + h.id + '"></a>').join('');
     $$('a', toc).forEach((a, i) => {
@@ -586,6 +761,7 @@
   /* ------------------------------------------------------------ topic render */
   function chipsFor(t) {
     const c = t.counts || {}, out = [];
+    if (t.special === 'exam') return '';
     if (c.we) out.push('<span class="chip"><b>' + c.we + '</b> worked example' + (c.we > 1 ? 's' : '') + '</span>');
     if (c.pq || c.mcq) out.push('<span class="chip"><b>' + (c.pq + c.mcq) + '</b> practice questions</span>');
     if (c.trick) out.push('<span class="chip trap"><b>' + c.trick + '</b> traps flagged</span>');
@@ -618,7 +794,7 @@
     if (t.subject) setSubject(t.subject);
     const bare = t.special === 'home' || t.special === 'overview';
     main.innerHTML = bare ? '<div class="home-wrap"><div class="prose" id="prose">' + t.html + '</div></div>' + (t.special === 'overview' ? footHTML(t) : '') : headHTML(t) + '<div class="prose" id="prose">' + t.html + '</div>' + footHTML(t);
-    enhanceHeadings(main, t); enhanceCallouts(main); enhanceWorked(main); enhanceQuestions(main, t); fillSlots(main, t);
+    enhanceHeadings(main, t); enhanceCallouts(main); enhanceWorked(main); if (t.special === 'exam') enhanceExam(main, t); else enhanceQuestions(main, t); fillSlots(main, t);
     renderMath(main); mountSims(main); buildToc(); renderNav(t.id);
     document.title = t.special === 'home' ? SITE : (t.short || t.title).replace(/<[^>]+>/g, '') + (t.subj ? ' · ' + t.subj.short : '') + ' · ' + SITE;
     if (t.subject) { S.last[t.subject] = t.id; S.last._ = t.id; save('last'); }
@@ -648,6 +824,7 @@
       else if (k === 'subjects-mini') s.innerHTML = subjectsMiniHTML();
       else if (k === 'gauntlet') mountGauntlet(s);
       else if (k === 'notes') mountNotes(s);
+      else if (k === 'exams') mountExams(s);
       else if (k === 'review') mountReview(s);
       else if (k === 'resume') s.innerHTML = resumeHTML(sid);
     });
@@ -690,6 +867,29 @@
   }
   function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 
+  function mountExams(slot) {
+    const LV = { easy: ['Easier', 1], medium: ['Medium', 2], hard: ['Harder', 3] };
+    const info = t => {
+      const lv = (t.html.match(/class="ex-meta"[^>]*data-level="(\w+)"/) || [])[1] || 'medium';
+      const w = +((t.html.match(/class="ex-meta"[^>]*data-writing="(\d+)"/) || [])[1] || 0);
+      const mc = (t.html.match(/class="mcq"/g) || []).length;
+      const wm = (t.html.match(/class="exp"[^>]*data-marks="(\d+)"/g) || []).reduce((a, x) => a + +x.match(/(\d+)"$/)[1], 0);
+      return { lv, w, marks: mc + wm };
+    };
+    let h = '';
+    G.subjects.forEach(s => {
+      const ex = s.order.filter(t => t.special === 'exam');
+      if (!ex.length) return;
+      h += '<h3 class="ex-hub-h" data-s="' + s.id + '">' + esc(s.name) + '</h3><div class="ex-hub">';
+      ex.forEach(t => {
+        const i = info(t), st = store.get('ex:' + t.id, {});
+        const status = st.marked && st.of ? 'Scored <b>' + st.score + '/' + st.of + '</b> (' + Math.round(100 * st.score / st.of) + '%)' : st.phase && st.phase !== 'idle' ? 'In progress' : 'Not started';
+        h += '<a class="ex-card" href="#' + t.id + '"><span class="lvl-b lvl-b-' + i.lv + '">' + (LV[i.lv] ? LV[i.lv][0] : i.lv) + '</span><span class="ex-card-t">' + esc(t.short || t.title) + '</span><span class="ex-card-m">' + i.marks + ' marks' + (i.w ? ' · ' + (i.w >= 60 ? Math.floor(i.w / 60) + ' h' + (i.w % 60 ? ' ' + i.w % 60 + ' min' : '') : i.w + ' min') : '') + '</span><span class="ex-card-s">' + status + '</span></a>';
+      });
+      h += '</div>';
+    });
+    slot.innerHTML = h || '<p class="ln">No practice exams yet.</p>';
+  }
   function mountGauntlet(slot) {
     const allGroups = G.subjects.flatMap(s => s.groups.filter(g => g.quiz));
     const def = { groups: SUBJ[S.subject] ? SUBJ[S.subject].groups.filter(g => g.quiz).map(g => g.key) : [], mode: 'trick', n: 10 };
