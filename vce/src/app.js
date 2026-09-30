@@ -600,7 +600,7 @@
         const id = qn + lab, marks = +p.dataset.marks || 0;
         const mk = $(':scope > ul.mk', p), ans = $(':scope > .exp-a', p), rep = $(':scope > .ex-rep', p);
         p.prepend(el('div', 'exp-h', (lab ? '<span class="exp-l">' + lab + '.</span>' : '') + '<span class="marks">' + marks + ' mark' + (marks === 1 ? '' : 's') + '</span>'));
-        const ta = el('textarea', 'ex-ta'); ta.rows = Math.max(2, Math.min(10, marks * 2)); ta.placeholder = 'Write your answer here (' + marks + ' mark' + (marks === 1 ? '' : 's') + '). Working counts for multi-mark questions.';
+        const ta = el('textarea', 'ex-ta'); ta.rows = marks >= 10 ? 18 : Math.max(2, Math.min(10, marks * 2)); ta.placeholder = marks >= 10 ? 'Write your full response here (' + marks + ' marks). Plan first, then write in paragraphs.' : 'Write your answer here (' + marks + ' mark' + (marks === 1 ? '' : 's') + ').' + (marks > 1 ? ' Show your working or reasoning.' : '');
         ta.value = st.resp[id] || '';
         let tm; ta.addEventListener('input', () => { clearTimeout(tm); tm = setTimeout(() => { st.resp[id] = ta.value; persist(); }, 350); });
         const qEl = $(':scope > .exp-q', p); (qEl || p.firstChild).after(ta);
