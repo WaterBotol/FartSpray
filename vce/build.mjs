@@ -108,6 +108,15 @@ const bodyHtml = readFileSync(src('body.html'), 'utf8');
 const appJs = readFileSync(src('app.js'), 'utf8');
 const simsJs = readdirSync(src('sims')).filter(f => f.endsWith('.js')).sort().map(f => `/* ---- ${f} ---- */\n` + readFileSync(src('sims', f), 'utf8')).join('\n');
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
+// CAS calculator: nerdamer (MIT) wrapped in a factory so it is only compiled when the calculator opens,
+// and a fresh copy can be made if one gets into a bad state
+const nerdamerPath = join(here, 'node_modules/nerdamer/all.min.js');
+const NERDAMER_VERSION = JSON.parse(readFileSync(join(here, 'node_modules/nerdamer/package.json'), 'utf8')).version;
+const nerdamerLicense = readFileSync(join(here, 'node_modules/nerdamer/license.txt'), 'utf8').trim().replace(/\*\//g, '* /');
+const nerdamerFactory = `/*! nerdamer ${NERDAMER_VERSION} (bundled for the CAS calculator)\n${nerdamerLicense}\n*/\n` +
+  'window.__nerdamerFactory=function(){var module,define,exports,require;\n' + readFileSync(nerdamerPath, 'utf8') + '\nreturn nerdamer;};';
+const casJs = readFileSync(src('cas', 'engine.js'), 'utf8') + '\n' + readFileSync(src('cas', 'ui.js'), 'utf8');
+const casCss = readFileSync(src('cas', 'cas.css'), 'utf8');
 
 const TITLE = 'VCE 3/4 Field Guide';
 const DESC = 'Free interactive study guide for VCE Units 3 & 4 Mathematical Methods, Physics, Chemistry, Biology and English Language: explanations, worked solutions, exam-style questions, simulations and search.';
@@ -126,7 +135,8 @@ const full = `<!doctype html>
 <meta name="theme-color" content="#0b7f78">
 ${FONTS}
 <style>${katexCss}</style>
-<style>${styles}</style>
+<style>${styles}
+${casCss}</style>
 </head>
 <body>
 ${bodyHtml}
@@ -137,6 +147,8 @@ ${bodyHtml}
 <script>${safe(autoRenderJs)}</script>
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
+<script>${safe(nerdamerFactory)}</script>
+<script>${safe(casJs)}</script>
 </body>
 </html>
 `;
@@ -150,7 +162,8 @@ if (out) {
   const frag = `<title>${TITLE}</title>
 ${FONTS}
 <style>${katexCss}</style>
-<style>${styles}</style>
+<style>${styles}
+${casCss}</style>
 ${bodyHtml}
 <script id="guide-data" type="application/json">${dataJson}</script>
 <script src="${cdn}/katex.min.js"></script>
@@ -158,6 +171,8 @@ ${bodyHtml}
 <script src="${cdn}/contrib/auto-render.min.js"></script>
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
+<script>${safe(nerdamerFactory)}</script>
+<script>${safe(casJs)}</script>
 `;
   writeFileSync(out, frag);
   console.log(`✓ artifact fragment ${(frag.length / 1024).toFixed(0)} KB -> ${out}`);
