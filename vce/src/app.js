@@ -10,6 +10,20 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const main = $('#main'), nav = $('#nav'), toc = $('#toc');
+
+  // Editable-PDF downloads. Inside a claude.ai Artifact frame, plain download links are sandboxed,
+  // so hand the file to the viewer through the `downloads` capability; on the normal site the link works as is.
+  let DL = null;
+  try { if (window.claude && typeof window.claude.use === 'function') window.claude.use('downloads').then(x => { DL = x; }, () => {}); } catch (e) { /* no runtime */ }
+  document.addEventListener('click', ev => {
+    const a = ev.target && ev.target.closest ? ev.target.closest('a[href$=".pdf"]') : null;
+    if (!a || !/^pdf\//.test(a.getAttribute('href') || '') || !DL) return;
+    ev.preventDefault();
+    const href = a.getAttribute('href'), name = href.split('/').pop();
+    fetch(href).then(r => { if (!r.ok) throw new Error(r.status); return r.blob(); })
+      .then(blob => DL.save({ filename: name, data: blob }))
+      .catch(err => { if (!err || err.code !== 'declined') window.open(a.href, '_blank', 'noopener'); });
+  });
   const SITE = 'VCE 3/4 Field Guide';
 
   /* ------------------------------------------------------------ storage */
