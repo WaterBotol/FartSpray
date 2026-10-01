@@ -879,3 +879,9 @@ a.src-link { font-size: 13px; font-weight: 600; }
 .ex-bench { margin: 10px 0 4px; padding: 10px 12px; border-radius: var(--radius-sm); background: var(--accent-soft); font-size: 14.5px; }
 .ex-report details { margin-top: 12px; }
 .ex-report summary { cursor: pointer; font-weight: 600; }
+
+.ex-pdfs { margin: 8px 0 18px; font-size: 14px; color: var(--muted); }
+.ex-pdfs a { font-weight: 600; }
+.ex-cover p.dl { margin: 10px 0; padding: 10px 12px; border-radius: var(--radius-sm); border: 1px dashed var(--line); font-size: 14.5px; }
+.ex-cover p.dl a { font-weight: 700; }
+.el-prompts { margin: 6px 0 4px 18px; padding: 0; } .el-prompts li { margin: 4px 0; }

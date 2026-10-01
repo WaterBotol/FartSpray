@@ -890,6 +890,7 @@
         h += '<a class="ex-card" href="#' + t.id + '"><span class="lvl-b lvl-b-' + i.lv + '">' + (LV[i.lv] ? LV[i.lv][0] : i.lv) + '</span><span class="ex-card-t">' + esc(t.short || t.title) + '</span><span class="ex-card-m">' + i.marks + ' marks' + (i.w ? ' · ' + (i.w >= 60 ? Math.floor(i.w / 60) + ' h' + (i.w % 60 ? ' ' + i.w % 60 + ' min' : '') : i.w + ' min') : '') + '</span><span class="ex-card-s">' + status + '</span></a>';
       });
       h += '</div>';
+      h += '<p class="ex-pdfs">Editable PDFs' + (s.id === 'methods' ? ' (Exam 1 and Exam 2 in one file)' : '') + ': ' + ['easier', 'medium', 'harder'].map(l => '<a href="pdf/' + s.id + '-' + l + '.pdf" download>' + l + ' paper</a>').join(' · ') + '</p>';
     });
     slot.innerHTML = h || '<p class="ln">No practice exams yet.</p>';
   }
