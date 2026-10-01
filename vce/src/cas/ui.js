@@ -207,7 +207,7 @@
     const graphable = !r.error && /\bx\b/.test(r.text || '') && !/[=<>≤≥]|^\{|^\[|Done/.test(r.text || '');
     return '<li class="cas-item' + (r.error ? ' err' : '') + '" data-i="' + i + '">' +
       '<button type="button" class="cas-in" title="Edit this again">' + esc(h.in) + '</button>' +
-      '<button type="button" class="cas-out" title="Insert this result">' + K(r.tex || '\\text{' + (r.text || '') + '}') + '</button>' +
+      '<button type="button" class="cas-out" title="Insert this result">' + (window.katex ? K(r.tex || '\\text{' + (r.text || '') + '}') : '<span class="cas-plain">' + esc(r.text || '') + '</span>') + '</button>' +
       (r.approx && r.approx !== r.text ? '<div class="cas-apx">≈ ' + esc(String(r.approx).replace(/≈/g, '=')) + '</div>' : '') +
       (r.note ? '<div class="cas-note">' + esc(r.note) + '</div>' : '') +
       (graphable ? '<button type="button" class="cas-graphit" title="Graph this">Graph</button>' : '') +
