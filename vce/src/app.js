@@ -329,7 +329,7 @@
     if (e.key === 'ArrowDown') { e.preventDefault(); moveSel(1); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); moveSel(-1); }
     else if (e.key === 'Enter') { e.preventDefault(); const a = $$('.r', resEl)[sel]; if (a) go(a.getAttribute('href')); }
-    else if (e.key === 'Escape') { if (qEl.value) { qEl.value = ''; closeSearch(); } else { qEl.blur(); closeSearch(); } }
+    else if (e.key === 'Escape') { if (qEl.value) { qEl.value = ''; closeSearch(); } else cancelSearch(); }
   });
   resEl.addEventListener('click', e => { const a = e.target.closest('.r'); if (!a) return; e.preventDefault(); go(a.getAttribute('href')); });
   document.addEventListener('click', e => { if (!e.target.closest('.search')) closeSearch(); });
@@ -338,7 +338,10 @@
     const typing = /INPUT|TEXTAREA|SELECT/.test(tag) || (document.activeElement && document.activeElement.isContentEditable);
     if ((e.key === '/' && !typing) || ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k')) { e.preventDefault(); qEl.focus(); qEl.select(); }
   });
-  function go(href) { closeSearch(); qEl.blur(); closeNav(); if (location.hash === href) route(); else location.hash = href; }
+  function go(href) { closeSearch(); qEl.blur(); closeNav(); body.classList.remove('search-open'); if (location.hash === href) route(); else location.hash = href; }
+  function openSearch() { body.classList.add('search-open'); closeNav(); qEl.focus(); qEl.select(); }
+  function cancelSearch() { qEl.value = ''; closeSearch(); qEl.blur(); body.classList.remove('search-open'); }
+  $('#searchCancel').addEventListener('click', cancelSearch);
 
   /* ------------------------------------------------------------ nav drawer */
   const body = document.body;
@@ -358,7 +361,7 @@
     const qb = list.reduce((a, t) => a + t.counts.mcq + t.counts.pq, 0);
     return { done, total: list.length, answered: mk.length, correct, review, qb };
   }
-  function updateReviewCount() { const p = progress(); $('#reviewCount').textContent = p.review ? String(p.review) : ''; }
+  function updateReviewCount() { const p = progress(), n = p.review ? String(p.review) : ''; $('#reviewCount').textContent = n; const tb = $('#tabReviewCount'); if (tb) tb.textContent = n; }
 
   /* ------------------------------------------------------------ sidebar */
   function renderNav(activeId) {
@@ -369,7 +372,9 @@
       const p = progress(s.id);
       h += '<a class="nav-subj-title" href="#' + (s.order[0] ? s.order[0].id : 'home') + '">' + esc(s.name) + '</a>';
       h += '<div class="nav-progress"><div class="lbl"><span>Topics completed</span><b>' + p.done + ' / ' + p.total + '</b></div><div class="bar"><i style="width:' + (p.total ? 100 * p.done / p.total : 0).toFixed(1) + '%"></i></div></div>';
-      s.groups.forEach(g => {
+      const isExamGroup = g => g.topics.length && g.topics.every(id => byId[id] && byId[id].special === 'exam');
+      const groups = s.groups.slice(0, 1).concat(s.groups.filter(isExamGroup), s.groups.slice(1).filter(g => !isExamGroup(g)));
+      groups.forEach(g => {
         const collapsed = S.collapsed[g.key];
         h += '<div class="nav-group' + (collapsed ? ' collapsed' : '') + '" data-g="' + g.key + '"><button class="nav-group-h" aria-expanded="' + (!collapsed) + '"><span class="nav-eyebrow"><span>' + esc(g.eyebrow) + '</span><span class="chev">▾</span></span>' +
           (g.title ? '<span class="nav-gtitle">' + esc(g.title) + '</span>' : '') + '</button><ul>';
@@ -811,6 +816,7 @@
     if (t.subject) setSubject(t.subject);
     const bare = t.special === 'home' || t.special === 'overview';
     main.innerHTML = bare ? '<div class="home-wrap"><div class="prose" id="prose">' + t.html + '</div></div>' + (t.special === 'overview' ? footHTML(t) : '') : headHTML(t) + '<div class="prose" id="prose">' + t.html + '</div>' + footHTML(t);
+    if (t.special === 'overview' && t.subj) { const hero = $('.hero', main), cta = examCtaHTML(t.subj); if (hero && cta) hero.insertAdjacentHTML('beforeend', cta); }
     enhanceHeadings(main, t); enhanceCallouts(main); enhanceWorked(main); if (t.special === 'exam') enhanceExam(main, t); else enhanceQuestions(main, t); fillSlots(main, t);
     renderMath(main); mountSims(main); buildToc(); renderNav(t.id);
     document.title = t.special === 'home' ? SITE : (t.short || t.title).replace(/<[^>]+>/g, '') + (t.subj ? ' · ' + t.subj.short : '') + ' · ' + SITE;
@@ -884,27 +890,44 @@
   }
   function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 
-  function mountExams(slot) {
-    const LV = { easy: ['Easier', 1], medium: ['Medium', 2], hard: ['Harder', 3] };
-    const info = t => {
-      const lv = (t.html.match(/class="ex-meta"[^>]*data-level="(\w+)"/) || [])[1] || 'medium';
-      const w = +((t.html.match(/class="ex-meta"[^>]*data-writing="(\d+)"/) || [])[1] || 0);
-      const mc = (t.html.match(/class="mcq"/g) || []).length;
-      const wm = (t.html.match(/class="exp"[^>]*data-marks="(\d+)"/g) || []).reduce((a, x) => a + +x.match(/(\d+)"$/)[1], 0);
-      return { lv, w, marks: mc + wm };
+  const EXLV = { easy: 'Easier', medium: 'Medium', hard: 'Harder' };
+  function examInfo(t) {
+    const meta = k => (t.html.match(new RegExp('class="ex-meta"[^>]*data-' + k + '="([\\w.]+)"')) || [])[1];
+    const mc = (t.html.match(/class="mcq"/g) || []).length;
+    const wm = (t.html.match(/class="exp"[^>]*data-marks="(\d+)"/g) || []).reduce((a, x) => a + +x.match(/(\d+)"$/)[1], 0);
+    const w = +(meta('writing') || 0), marks = mc + wm, state = +(meta('state') || 0);
+    const st = store.get('ex:' + t.id, {});
+    return {
+      lv: meta('level') || 'medium', marks, state: marks && state ? Math.round(100 * state / marks) : 0,
+      time: w ? (w >= 60 ? Math.floor(w / 60) + ' h' + (w % 60 ? ' ' + w % 60 + ' min' : '') : w + ' min') : '',
+      status: st.marked && st.of ? 'Scored <b>' + st.score + '/' + st.of + '</b> (' + Math.round(100 * st.score / st.of) + '%)' : st.phase && st.phase !== 'idle' ? 'In progress' : 'Not started'
     };
+  }
+  const pdfLinks = s => '<p class="ex-pdfs">Editable PDFs' + (s.id === 'methods' ? ' (Exam 1 and Exam 2 in one file)' : '') + ': ' + ['easier', 'medium', 'harder'].map(l => '<a href="pdf/' + s.id + '-' + l + '.pdf" download>' + l + ' paper</a>').join(' · ') + '</p>';
+  // big practice-exam buttons at the top of each subject's overview page
+  function examCtaHTML(s) {
+    const ex = s.order.filter(t => t.special === 'exam');
+    if (!ex.length) return '';
+    const rows = [];
+    ex.forEach(t => { const k = ((t.short || '').match(/^Exam \d/) || [''])[0]; let r = rows.find(x => x.k === k); if (!r) rows.push(r = { k, ts: [] }); r.ts.push(t); });
+    return '<section class="ex-cta" aria-label="Practice exams"><div class="ex-cta-head"><div><h2 class="ex-cta-t">Practice exams</h2><p>Real VCAA questions, sorted by how the state actually went. Timed, with marking guides.</p></div><a class="btn" href="#exams">All exams</a></div>' +
+      rows.map(r => (r.k ? '<div class="ex-cta-row">' + esc(r.k) + '</div>' : '') + '<div class="ex-cta-grid">' + r.ts.map(t => {
+        const i = examInfo(t);
+        return '<a class="ex-tile lv-' + i.lv + '" href="#' + t.id + '"><span class="ex-tile-lv">' + (EXLV[i.lv] || i.lv) + '</span>' +
+          '<span class="ex-tile-m">' + i.marks + ' marks' + (i.time ? ' · ' + i.time : '') + '</span><span class="ex-tile-s">' + i.status + (i.state ? ' · state avg ' + i.state + '%' : '') + '</span><span class="ex-tile-go" aria-hidden="true">›</span></a>';
+      }).join('') + '</div>').join('') + pdfLinks(s) + '</section>';
+  }
+  function mountExams(slot) {
     let h = '';
-    G.subjects.forEach(s => {
+    G.subjects.slice().sort((a, b) => (b.id === S.subject) - (a.id === S.subject)).forEach(s => {
       const ex = s.order.filter(t => t.special === 'exam');
       if (!ex.length) return;
       h += '<h3 class="ex-hub-h" data-s="' + s.id + '">' + esc(s.name) + '</h3><div class="ex-hub">';
       ex.forEach(t => {
-        const i = info(t), st = store.get('ex:' + t.id, {});
-        const status = st.marked && st.of ? 'Scored <b>' + st.score + '/' + st.of + '</b> (' + Math.round(100 * st.score / st.of) + '%)' : st.phase && st.phase !== 'idle' ? 'In progress' : 'Not started';
-        h += '<a class="ex-card" href="#' + t.id + '"><span class="lvl-b lvl-b-' + i.lv + '">' + (LV[i.lv] ? LV[i.lv][0] : i.lv) + '</span><span class="ex-card-t">' + esc(t.short || t.title) + '</span><span class="ex-card-m">' + i.marks + ' marks' + (i.w ? ' · ' + (i.w >= 60 ? Math.floor(i.w / 60) + ' h' + (i.w % 60 ? ' ' + i.w % 60 + ' min' : '') : i.w + ' min') : '') + '</span><span class="ex-card-s">' + status + '</span></a>';
+        const i = examInfo(t);
+        h += '<a class="ex-card" href="#' + t.id + '"><span class="lvl-b lvl-b-' + i.lv + '">' + (EXLV[i.lv] || i.lv) + '</span><span class="ex-card-t">' + esc(t.short || t.title) + '</span><span class="ex-card-m">' + i.marks + ' marks' + (i.time ? ' · ' + i.time : '') + '</span><span class="ex-card-s">' + i.status + '</span></a>';
       });
-      h += '</div>';
-      h += '<p class="ex-pdfs">Editable PDFs' + (s.id === 'methods' ? ' (Exam 1 and Exam 2 in one file)' : '') + ': ' + ['easier', 'medium', 'harder'].map(l => '<a href="pdf/' + s.id + '-' + l + '.pdf" download>' + l + ' paper</a>').join(' · ') + '</p>';
+      h += '</div>' + pdfLinks(s);
     });
     slot.innerHTML = h || '<p class="ln">No practice exams yet.</p>';
   }
@@ -1103,9 +1126,16 @@
       if (target) { target.scrollIntoView({ block: 'start' }); target.classList.add('flash'); setTimeout(() => target.classList.remove('flash'), 1700); return; }
     }
     currentId = topic.id;
-    render(topic, a);
+    render(topic, a); syncTabs(topic);
     if (!a) main.focus({ preventScroll: true });
   }
+  function syncTabs(t) {
+    const tab = t.id === 'home' ? 'home' : (t.id === 'exams' || t.special === 'exam') ? 'exams' : t.id === 'review' ? 'review' : t.subject ? 'topics' : '';
+    $$('#tabbar [data-tab]').forEach(b => { const on = b.dataset.tab === tab; b.classList.toggle('on', on); if (b.tagName === 'A') { if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); } });
+  }
+  $('#tabbar [data-tab="topics"]').addEventListener('click', () => { body.classList.remove('search-open'); body.classList.contains('nav-open') ? closeNav() : openNav(); });
+  $('#tabbar [data-tab="search"]').addEventListener('click', openSearch);
+  $$('#tabbar a').forEach(a => a.addEventListener('click', () => { body.classList.remove('search-open'); closeNav(); }));
   window.addEventListener('hashchange', route);
   window.GUIDE_APP = { go, renderMath, toast, isDark, store };
   updateReviewCount();

@@ -111,7 +111,7 @@ const safe = s => s.replace(/<\/script/gi, '<\\/script');
 
 const TITLE = 'VCE 3/4 Field Guide';
 const DESC = 'Free interactive study guide for VCE Units 3 & 4 Mathematical Methods, Physics, Chemistry, Biology and English Language: explanations, worked solutions, exam-style questions, simulations and search.';
-const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">';
+const FONTS = '<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">';
 
 const full = `<!doctype html>
 <html lang="en-AU">
@@ -123,7 +123,8 @@ const full = `<!doctype html>
 <meta property="og:title" content="${TITLE}">
 <meta property="og:description" content="${DESC}">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0b7f78">
+<meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
 ${FONTS}
 <style>${katexCss}</style>
 <style>${styles}</style>
