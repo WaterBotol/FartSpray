@@ -428,34 +428,69 @@
       stem: stem ? A.htmlText(stem) : '', part: pq ? A.htmlText(pq) : '', rows, model: ans ? A.htmlText(ans) : '', answer: ($('.ex-ta', exp) || {}).value || '' };
   }
   function markPrompt(subj, list) {
-    return 'You are an experienced, strict but fair VCAA assessor marking a Year 12 student’s practice-exam answers for VCE ' + (subj || '') + ' Units 3 & 4.\n' +
-      'For each part, compare the student’s answer with the marking guide and award each marking point only if that idea is clearly and correctly in the student’s answer. Equivalent wording, valid alternative methods and correct follow-through from an earlier error are fine. Vague, contradictory, unsupported or merely restated answers do not earn the point. Calculations need correct working and a correct final answer, with units where the guide expects them. If a part needs a diagram or graph, mark only what the student describes in words and say so. Never award more than the part is worth.\n\n' +
-      'Reply with JSON only, in exactly this shape:\n{"parts":[{"id":"<part id>","points":[true,false],"score":<number>,"feedback":"<2 to 4 sentences to the student: what earned marks and what was missing or wrong>","improve":"<one concrete sentence: what to write next time for full marks>"}]}\n' +
-      '"points" has exactly one true or false per marking point, in the order given (an empty list if the part has no marking points). "score" is the marks you award. Use Australian spelling and LaTeX between \\( and \\) for any maths.\n\nPARTS\n\n' +
+    return 'You are a senior VCAA assessor marking a Year 12 student’s practice-exam answers for VCE ' + (subj || '') + ' Units 3 & 4. Mark strictly, exactly as VCAA assessors do. A generous mark is worse than useless to this student: it hides marks they would lose in the real exam.\n\n' +
+      'Rules:\n' +
+      '1. Award a marking point only when the student’s answer itself clearly and correctly states that idea. Never award it for what the student probably meant, for a key term without the reasoning around it, or for restating the question.\n' +
+      '2. No benefit of the doubt. If the answer is ambiguous or incomplete, or you would have to read it generously, the point is not met.\n' +
+      '3. A wrong or contradictory statement next to the right one cancels that point.\n' +
+      '4. "Explain" and "justify" points need the cause-and-effect link stated, not just the right terms. "Describe" and "identify" points need the specific feature, not a general statement.\n' +
+      '5. "Show that" parts: the working must lead to the given value. Writing the given value without working earns nothing.\n' +
+      '6. Calculations: a method point needs the correct relationship with the correct values substituted; an answer point needs the correct value, with correct units where the guide expects them. A wrong value carried forward from an earlier part and used correctly can earn the later marks (consequential marking); a wrong method never does.\n' +
+      '7. For every point you award, quote the exact words from the student’s answer that earn it, copied character for character (3 to 20 words). If you cannot find words to quote, the point is not met.\n' +
+      '8. If a part needs a diagram or graph, mark only what the student writes in words, and say the diagram could not be marked.\n' +
+      '9. A part with no itemised points is marked holistically out of its marks, just as strictly.\n\n' +
+      'Reply with JSON only, in exactly this shape:\n{"parts":[{"id":"<part id>","points":[{"met":true,"quote":"<exact words from the student’s answer>","why":"<under 15 words>"},{"met":false,"quote":"","why":"<what is missing or wrong, under 15 words>"}],"score":<number>,"feedback":"<2 to 4 sentences to the student: what earned marks and what lost them>","improve":"<one concrete sentence: what to write next time for full marks>"}]}\n' +
+      '"points" has exactly one entry per marking point, in the order given (an empty list if the part has no itemised points). "score" is the total you award. Use Australian spelling and LaTeX between \\( and \\) for any maths outside the quotes.\n\nPARTS\n\n' +
       list.map(p => '### Part id "' + p.pid + '" (Question ' + p.label + ', ' + p.marks + ' mark' + (p.marks === 1 ? '' : 's') + ')\n' +
         (p.stem ? 'Question context: ' + clip(p.stem, 3000) + '\n' : '') + (p.part ? 'This part: ' + p.part + '\n' : '') +
         (p.rows.length ? 'Marking guide (marks for each point in brackets):\n' + p.rows.map((r, i) => (i + 1) + '. [' + r.m + '] ' + r.text).join('\n') + '\n' : 'No itemised marking points: mark it holistically out of ' + p.marks + '.\n') +
         (p.model ? 'Guide’s answer notes: ' + clip(p.model, 2500) + '\n' : '') +
         'Student’s answer:\n"""\n' + clip(p.answer.trim(), 9000) + '\n"""\n').join('\n');
   }
+  // the evidence check: a point only stands if the words Claude quotes are really in the answer
+  const words = s => String(s || '').toLowerCase().replace(/\\[a-z]+/g, ' ').replace(/[^a-z0-9.]+/g, ' ').replace(/(^|\s)\.+|\.+(\s|$)/g, ' ').trim();
+  function quoted(quote, answer) {
+    const q = words(quote), a = words(answer);
+    if (!q) return false;
+    if ((' ' + a + ' ').includes(' ' + q + ' ') || a.includes(q)) return true;
+    const qs = q.split(' '), as = new Set(a.split(' '));
+    return qs.length >= 3 && qs.filter(w => as.has(w)).length / qs.length >= 0.8;
+  }
+  function checkPoints(info, r) {
+    const raw = Array.isArray(r.points) ? r.points : [];
+    let removed = 0;
+    const pts = info.rows.map((row, i) => {
+      const p = raw[i], o = p && typeof p === 'object' ? { met: !!p.met, quote: String(p.quote || ''), why: String(p.why || '') } : { met: !!p, quote: '', why: '', old: true };
+      if (o.met && !o.old && !quoted(o.quote, info.answer)) { o.met = false; o.why = 'Claude couldn’t quote where your answer says this, so no mark.'; o.removed = true; removed++; }
+      return o;
+    });
+    const score = info.rows.length ? Math.min(info.marks, pts.reduce((a, p, i) => a + (p.met ? info.rows[i].m : 0), 0)) : Math.max(0, Math.min(info.marks, Math.round(+r.score || 0)));
+    return { pts, score, removed };
+  }
   function showMark(exp, r, info) {
-    let out = $('.ai-mk-out', exp);
+    const out = $('.ai-mk-out', exp);
     if (!out) return;
-    const sc = Math.max(0, Math.min(info.marks, Math.round(+r.score || 0)));
+    const { pts, score, removed } = checkPoints(info, r);
+    $$('.ai-pt', exp).forEach(x => x.remove());
+    info.rows.forEach((row, i) => {
+      const p = pts[i], li = row.cb && row.cb.closest('.mk-row');
+      if (!li || !p || (!p.quote && !p.why)) return;
+      li.insertAdjacentHTML('beforeend', '<div class="ai-pt ' + (p.met ? 'ok' : 'no') + '">' + (p.met ? '✓ ' : '✗ ') + (p.met && p.quote ? '<q>' + esc(p.quote) + '</q>' + (p.why ? ' · ' : '') : '') + esc(p.why) + '</div>');
+    });
     out.hidden = false;
-    out.innerHTML = '<div class="ai-mk-h">' + SPARK + '<span>Claude’s marking</span><b>' + sc + ' / ' + info.marks + '</b></div><div class="md"></div>' +
-      '<p class="ai-mk-tip">' + (info.rows.length ? 'Claude ticked the points above. You’re the final judge: change any tick you disagree with.' : 'This part has no itemised points, so Claude’s mark isn’t added to your total.') + '</p>';
+    out.innerHTML = '<div class="ai-mk-h">' + SPARK + '<span>Claude’s marking</span><b>' + score + ' / ' + info.marks + '</b></div><div class="md"></div>' +
+      (removed ? '<p class="ai-mk-cut">' + removed + ' point' + (removed === 1 ? '' : 's') + ' removed: Claude couldn’t quote the words in your answer that earn ' + (removed === 1 ? 'it' : 'them') + '.</p>' : '') +
+      '<p class="ai-mk-tip">' + (info.rows.length ? 'Strict VCAA-style marking: a point only counts if Claude can quote the words that earn it. You’re still the final judge, so change any tick you disagree with.' : 'This part has no itemised points, so Claude’s mark isn’t added to your total.') + '</p>';
     paint($('.md', out), (r.feedback || '') + (r.improve ? '\n\n**Next time:** ' + r.improve : ''));
+    return pts;
   }
   function applyMark(info, r, persist) {
-    if (info.rows.length && Array.isArray(r.points)) {
-      info.rows.forEach((row, i) => { const v = !!r.points[i]; if (row.cb && row.cb.checked !== v) { row.cb.checked = v; row.cb.dispatchEvent(new Event('change', { bubbles: true })); } });
-    }
-    showMark(info.exp, r, info);
+    const pts = showMark(info.exp, r, info) || [];
+    info.rows.forEach((row, i) => { const v = !!(pts[i] && pts[i].met); if (row.cb && row.cb.checked !== v) { row.cb.checked = v; row.cb.dispatchEvent(new Event('change', { bubbles: true })); } });
     if (persist) {
       const t = A.current(); if (!t) return;
       const all = store.get(MKEY(t.id), {});
-      all[info.pid] = { points: r.points || [], score: r.score, feedback: r.feedback || '', improve: r.improve || '', a: info.answer, t: Date.now() };
+      all[info.pid] = { points: Array.isArray(r.points) ? r.points : [], score: r.score, feedback: r.feedback || '', improve: r.improve || '', a: info.answer, t: Date.now() };
       store.set(MKEY(t.id), all);
     }
   }
@@ -541,7 +576,7 @@
       });
       const res = $('.ex-results', scope);
       if (res && $('.exp[data-pid]', scope) && !$('.ai-markall', scope)) {
-        res.insertAdjacentHTML('afterend', '<div class="ai-markall ai-only"><span class="ai-ic" aria-hidden="true">' + SPARK + '</span><div class="ai-ma-t"><b>Mark my written answers with Claude</b><p>Claude reads each answer against the marking guide, ticks the points you earned and tells you what to fix. You can change any tick.</p><p class="ai-ma-s" aria-live="polite"></p></div><button class="btn primary" type="button" data-ai-markall>' + SPARK + '<span>Mark all</span></button></div>');
+        res.insertAdjacentHTML('afterend', '<div class="ai-markall ai-only"><span class="ai-ic" aria-hidden="true">' + SPARK + '</span><div class="ai-ma-t"><b>Mark my written answers with Claude</b><p>Claude marks like a strict VCAA assessor: a point only counts if it can quote the words in your answer that earn it. It ticks what you earned and tells you what lost marks. You can change any tick.</p><p class="ai-ma-s" aria-live="polite"></p></div><button class="btn primary" type="button" data-ai-markall>' + SPARK + '<span>Mark all</span></button></div>');
       }
     }
   }

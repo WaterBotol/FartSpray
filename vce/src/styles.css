@@ -1448,3 +1448,10 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
 .ai-notes .prose h2 { font-size: 21px; margin: 1.6rem 0 0.5rem; }
 .ai-notes .prose h3 { font-size: 17.5px; margin: 1.2rem 0 0.4rem; }
 .ai-notes .prose h2 .anchor, .ai-notes .prose h3 .anchor { display: none; }
+.ai-pt { margin: -2px 12px 2px 46px; padding: 0 0 8px; font-size: 13px; line-height: 1.4; color: var(--muted); }
+.ai-pt.ok { color: var(--good); }
+.ai-pt.no { color: var(--bad); }
+.ai-pt q { color: var(--ink-2); font-style: italic; }
+.mk-row:has(.ai-pt) label { padding-bottom: 4px; }
+.mk-row:has(.ai-pt) { border-radius: 12px; background: var(--surface-2); }
+.ai-mk-cut { margin: 8px 0 0; font-size: 13px; color: var(--warn); }
