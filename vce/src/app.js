@@ -370,7 +370,7 @@
   function renderNav(activeId) {
     const s = SUBJ[S.subject];
     let h = '<div class="subj-switch" role="tablist" aria-label="Subjects">' + G.subjects.map(x =>
-      '<button type="button" role="tab" class="subj-btn" data-s="' + x.id + '" aria-selected="' + (x.id === S.subject) + '">' + esc(x.short) + '</button>').join('') + '</div>';
+      '<button type="button" role="tab" class="subj-btn" data-s="' + x.id + '" aria-selected="' + (x.id === S.subject) + '" aria-label="' + esc(x.name) + '">' + subjIcon(x.id) + '<span>' + esc(x.short.split(' ')[0]) + '</span></button>').join('') + '</div>';
     if (s) {
       const p = progress(s.id);
       h += '<a class="nav-subj-title" href="#' + (s.order[0] ? s.order[0].id : 'home') + '">' + esc(s.name) + '</a>';
@@ -418,6 +418,15 @@
     def: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>',
     deep: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M11 8v6M8 11h6"/></svg>'
   };
+  // subject app icons (white glyph on the subject's colour)
+  const SICON = {
+    methods: '<path d="M2.5 12c2.4-7 5.4-7 7.8 0s5.4 7 7.8 0c.8-2.3 2-3.7 3.4-4.2"/>',
+    physics: '<ellipse cx="12" cy="12" rx="9.6" ry="3.7"/><ellipse cx="12" cy="12" rx="9.6" ry="3.7" transform="rotate(60 12 12)"/><ellipse cx="12" cy="12" rx="9.6" ry="3.7" transform="rotate(120 12 12)"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/>',
+    chemistry: '<path d="M9 3h6M10 3v6.4l-5.5 9.3A1.5 1.5 0 0 0 5.8 21h12.4a1.5 1.5 0 0 0 1.3-2.3L14 9.4V3"/><path d="M7.4 15.5h9.2"/>',
+    biology: '<path d="M5 19.5C4.6 10 10 4.5 20 4c-.3 10-6 15.6-15 15.5z"/><path d="M5 19.5l8.5-8.5"/>',
+    english: '<path d="M4.5 5h15a1 1 0 0 1 1 1v9.5a1 1 0 0 1-1 1H10L5.5 20v-3.5h-1a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M8 9.3h8M8 12.6h5"/>'
+  };
+  const subjIcon = (sid, cls) => '<span class="s-ic' + (cls ? ' ' + cls : '') + '" data-s="' + sid + '" aria-hidden="true"><svg viewBox="0 0 24 24">' + (SICON[sid] || '') + '</svg></span>';
   const CALLOUT = { 'c-key': ['key', 'Key idea'], 'c-trap': ['trap', 'Trick alert'], 'c-exam': ['exam', 'Exam tip'], 'c-def': ['def', 'Definition'], 'c-deep': ['deep', 'Going deeper'] };
   const LEVEL = { core: 'Core', hard: 'Hard', trick: 'Trick', exam: 'Exam-style' };
 
@@ -645,7 +654,7 @@
         }
         if (ans) { ans.classList.add('ex-ans'); ans.prepend(el('div', 'ex-lbl', real ? 'Answer' : 'Sample answer')); box.appendChild(ans); }
         if (rep) { rep.prepend(el('div', 'ex-lbl', real ? 'How Victoria went' : 'Assessor’s comment')); box.appendChild(rep); }
-        p.appendChild(box);
+        p.appendChild(box); p.dataset.pid = id;
         parts.push({ id, marks, items, box, ta, avg: p.dataset.avg !== undefined ? +p.dataset.avg : null, t: p.dataset.t || q.dataset.t || '' });
       });
     });
@@ -821,7 +830,11 @@
     if (t.subject) setSubject(t.subject);
     const bare = t.special === 'home' || t.special === 'overview';
     main.innerHTML = bare ? '<div class="home-wrap"><div class="prose" id="prose">' + t.html + '</div></div>' + (t.special === 'overview' ? footHTML(t) : '') : headHTML(t) + '<div class="prose" id="prose">' + t.html + '</div>' + footHTML(t);
-    if (t.special === 'overview' && t.subj) { const hero = $('.hero', main), cta = examCtaHTML(t.subj); if (hero && cta) hero.insertAdjacentHTML('beforeend', cta); }
+    if (t.special === 'overview' && t.subj) {
+      const hero = $('.hero', main), cta = examCtaHTML(t.subj), eb = hero && $('.eyebrow', hero);
+      if (eb) eb.insertAdjacentHTML('beforebegin', subjIcon(t.subj.id, 'hero-ic'));
+      if (hero && cta) hero.insertAdjacentHTML('beforeend', cta);
+    }
     enhanceHeadings(main, t); enhanceCallouts(main); enhanceWorked(main); if (t.special === 'exam') enhanceExam(main, t); else enhanceQuestions(main, t); fillSlots(main, t);
     renderMath(main); mountSims(main); buildToc(); renderNav(t.id);
     document.title = t.special === 'home' ? SITE : (t.short || t.title).replace(/<[^>]+>/g, '') + (t.subj ? ' · ' + t.subj.short : '') + ' · ' + SITE;
@@ -869,13 +882,13 @@
     return s && s.order[0] ? '<a class="btn primary" href="#' + s.order[0].id + '">Start with ' + esc(s.name) + ' →</a>' : '';
   }
   function subjectsMiniHTML() {
-    return '<div class="subj-mini">' + G.subjects.map(s => { const p = progress(s.id); return '<a class="subj-mini-card" data-s="' + s.id + '" href="#' + (s.order[0] ? s.order[0].id : 'home') + '"><span class="sm-name">' + esc(s.name) + '</span><span class="sm-meta">' + s.study.length + ' topics · ' + p.qb + ' questions</span><span class="bar"><i style="width:' + (p.total ? 100 * p.done / p.total : 0) + '%"></i></span></a>'; }).join('') + '</div>';
+    return '<div class="subj-mini">' + G.subjects.map(s => { const p = progress(s.id); return '<a class="subj-mini-card" data-s="' + s.id + '" href="#' + (s.order[0] ? s.order[0].id : 'home') + '"><span class="sm-name">' + subjIcon(s.id) + esc(s.name) + '</span><span class="sm-meta">' + s.study.length + ' topics · ' + p.qb + ' questions</span><span class="bar"><i style="width:' + (p.total ? 100 * p.done / p.total : 0) + '%"></i></span></a>'; }).join('') + '</div>';
   }
   function subjectsHTML() {
     return '<div class="subj-grid">' + G.subjects.map(s => {
       const p = progress(s.id);
       const sims = s.study.reduce((a, t) => a + t.counts.sims, 0) + s.order.filter(t => t.special).reduce((a, t) => a + t.counts.sims, 0);
-      return '<div class="subj-card" data-s="' + s.id + '"><div class="eyebrow">' + esc(s.design || '') + '</div><h3><a href="#' + (s.order[0] ? s.order[0].id : 'home') + '">' + esc(s.name) + '</a></h3><p>' + esc(s.blurb || '') + '</p>' +
+      return '<div class="subj-card" data-s="' + s.id + '"><div class="eyebrow">' + esc(s.design || '') + '</div><h3>' + subjIcon(s.id) + '<a href="#' + (s.order[0] ? s.order[0].id : 'home') + '">' + esc(s.name) + '</a></h3><p>' + esc(s.blurb || '') + '</p>' +
         '<div class="chips"><span class="chip"><b>' + s.study.length + '</b> topics</span><span class="chip"><b>' + p.qb + '</b> questions</span>' + (sims ? '<span class="chip"><b>' + sims + '</b> interactives</span>' : '') + '</div>' +
         '<div class="bar" title="' + p.done + ' of ' + p.total + ' complete"><i style="width:' + (p.total ? 100 * p.done / p.total : 0) + '%"></i></div>' +
         '<div class="subj-links">' + s.groups.filter(g => g.map !== false).map(g => '<a href="#' + g.topics[0] + '">' + esc(g.eyebrow) + '</a>').join('') + '</div></div>';
@@ -918,7 +931,7 @@
     return '<section class="ex-cta" aria-label="Practice exams"><div class="ex-cta-head"><div><h2 class="ex-cta-t">Practice exams</h2><p>Real VCAA questions, sorted by how the state actually went. Timed, with marking guides.</p></div><a class="btn" href="#exams">All exams</a></div>' +
       rows.map(r => (r.k ? '<div class="ex-cta-row">' + esc(r.k) + '</div>' : '') + '<div class="ex-cta-grid">' + r.ts.map(t => {
         const i = examInfo(t);
-        return '<a class="ex-tile lv-' + i.lv + '" href="#' + t.id + '"><span class="ex-tile-lv">' + (EXLV[i.lv] || i.lv) + '</span>' +
+        return '<a class="ex-tile lv-' + i.lv + '" href="#' + t.id + '"><span class="ex-tile-ic" aria-hidden="true"><i></i><i></i><i></i></span><span class="ex-tile-lv">' + (EXLV[i.lv] || i.lv) + '</span>' +
           '<span class="ex-tile-m">' + i.marks + ' marks' + (i.time ? ' · ' + i.time : '') + '</span><span class="ex-tile-s">' + i.status + (i.state ? ' · state avg ' + i.state + '%' : '') + '</span><span class="ex-tile-go" aria-hidden="true">›</span></a>';
       }).join('') + '</div>').join('') + pdfLinks(s) + '</section>';
   }
@@ -927,7 +940,7 @@
     G.subjects.slice().sort((a, b) => (b.id === S.subject) - (a.id === S.subject)).forEach(s => {
       const ex = s.order.filter(t => t.special === 'exam');
       if (!ex.length) return;
-      h += '<h3 class="ex-hub-h" data-s="' + s.id + '">' + esc(s.name) + '</h3><div class="ex-hub">';
+      h += '<h3 class="ex-hub-h" data-s="' + s.id + '">' + subjIcon(s.id) + '<span>' + esc(s.name) + '</span></h3><div class="ex-hub">';
       ex.forEach(t => {
         const i = examInfo(t);
         h += '<a class="ex-card" href="#' + t.id + '"><span class="lvl-b lvl-b-' + i.lv + '">' + (EXLV[i.lv] || i.lv) + '</span><span class="ex-card-t">' + esc(t.short || t.title) + '</span><span class="ex-card-m">' + i.marks + ' marks' + (i.time ? ' · ' + i.time : '') + '</span><span class="ex-card-s">' + i.status + '</span></a>';
@@ -1066,6 +1079,7 @@
           '<button class="btn nt-more" type="button" aria-expanded="false">Full notes</button><div class="nt-full" hidden></div></article>';
       }).join('');
       enhanceCallouts(list); renderMath(list);
+      if (window.GUIDE_AI) window.GUIDE_AI.decorate(list);
     };
     slot.addEventListener('change', e => {
       const sj = e.target.dataset && e.target.dataset.subj;
@@ -1084,6 +1098,45 @@
     draw();
   }
 
+  // a practice question as plain text (LaTeX kept), for previews and for Claude
+  const AI_SPARK = '<svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c.5 4.6 2.9 7 7.5 7.5v.1c-4.6.5-7 2.9-7.5 7.5h-.1c-.5-4.6-2.9-7-7.5-7.5V10c4.6-.5 7-2.9 7.5-7.5z" fill="currentColor"/><path d="M19 15.5c.2 1.8 1.1 2.7 2.9 2.9-1.8.2-2.7 1.1-2.9 2.9-.2-1.8-1.1-2.7-2.9-2.9 1.8-.2 2.7-1.1 2.9-2.9z" fill="currentColor"/></svg>';
+  function htmlText(node) {
+    let out = '';
+    const walk = n => {
+      if (n.nodeType === 3) { out += n.nodeValue.replace(/\s+/g, ' '); return; }
+      if (n.nodeType !== 1) return;
+      const tg = n.tagName, cl = n.classList;
+      if (cl.contains('katex-display')) { const a = n.querySelector('annotation'); out += '\n\\[' + (a ? a.textContent : n.textContent) + '\\]\n'; return; }
+      if (cl.contains('katex')) { const a = n.querySelector('annotation'); out += '\\(' + (a ? a.textContent : n.textContent) + '\\)'; return; }
+      if (tg === 'SCRIPT' || tg === 'STYLE' || tg === 'BUTTON' || tg === 'TEXTAREA' || cl.contains('c-label') || cl.contains('ex-lbl')) return;
+      if (tg === 'svg' || tg === 'CANVAS' || tg === 'IMG') { out += ' [figure] '; return; }
+      if (cl.contains('sim')) { out += '\n[interactive simulation]\n'; return; }
+      const block = /^(P|DIV|LI|H[1-6]|TR|UL|OL|TABLE|ASIDE|SECTION|ARTICLE|BLOCKQUOTE|FIGURE|DETAILS|SUMMARY|PRE)$/.test(tg);
+      if (block) out += '\n';
+      if (tg === 'LI') out += '- ';
+      if (tg === 'TD' || tg === 'TH') out += ' | ';
+      n.childNodes.forEach(walk);
+      if (block) out += '\n';
+    };
+    walk(node);
+    return out.replace(/[ \t]+\n/g, '\n').replace(/\n[ \t]+/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+  }
+  function question(key) {
+    const [tid, qn] = String(key).split(':'), t = byId[tid], n = parseInt((qn || '').slice(1), 10);
+    if (!t || !n) return null;
+    const tp = document.createElement('template'); tp.innerHTML = t.html;
+    const q = tp.content.querySelectorAll('.mcq, .pq')[n - 1];
+    if (!q) return null;
+    const mcq = q.classList.contains('mcq'), c = q.cloneNode(true);
+    const take = sel => Array.from(c.querySelectorAll(sel)).map(x => { x.remove(); return htmlText(x); }).join('\n\n');
+    const solution = take(mcq ? '.mcq-x' : '.pq-s');
+    let options = [];
+    if (mcq) { const ol = c.querySelector(':scope > ol'); if (ol) { options = Array.from(ol.children).map((li, i) => String.fromCharCode(65 + i) + '. ' + htmlText(li).replace(/^- /, '')); ol.remove(); } }
+    const ans = mcq ? (q.dataset.ans || 'A').trim().toUpperCase() : '';
+    const firstP = c.querySelector('p');
+    return { key, topic: t, n, mcq, stemHTML: firstP ? firstP.innerHTML : '', level: q.dataset.level || 'core', marks: q.dataset.marks || (mcq ? '1' : ''), stem: htmlText(c), options, answer: ans, solution, formulas: q.dataset.f || '',
+      chosen: mcq && S.mcq[key] ? S.mcq[key].c : '' };
+  }
   function mountReview(slot) {
     const items = [];
     Object.entries(S.pq).forEach(([k, v]) => { if (v === 'review') items.push({ k, type: 'Short answer' }); });
@@ -1097,12 +1150,18 @@
       const ts = s.order.filter(t => byTopic[t.id]); if (!ts.length) return;
       h += '<h2>' + esc(s.name) + '</h2>';
       ts.forEach(t => {
-        h += '<h3>' + esc(t.short || t.title) + '</h3><div class="rv-list">' + byTopic[t.id].sort((a, b) => parseInt(a.qn.slice(1)) - parseInt(b.qn.slice(1))).map(it =>
-          '<div class="rv-item"><a href="#' + t.id + '~' + it.qn + '">Question ' + it.qn.slice(1) + '</a><span class="meta">' + it.type + '</span><button class="btn" type="button" data-k="' + it.k + '">Clear</button></div>').join('') + '</div>';
+        h += '<h3>' + esc(t.short || t.title) + '</h3><div class="rv-list">' + byTopic[t.id].sort((a, b) => parseInt(a.qn.slice(1)) - parseInt(b.qn.slice(1))).map(it => {
+          const q = question(it.k), prev = q ? (q.stemHTML || esc(q.stem.slice(0, 300))) : '';
+          return '<div class="rv-item"><div class="rv-main"><a href="#' + t.id + '~' + it.qn + '">Question ' + it.qn.slice(1) + '</a><span class="meta">' + it.type + '</span>' +
+            (prev ? '<p class="rv-q">' + prev + '</p>' : '') + '</div>' +
+            '<div class="rv-acts"><button class="btn rv-notes" type="button" data-notes="' + t.id + '">' + ICON.def + '<span>Notes</span></button>' +
+            '<button class="btn ai-only ai-ask" type="button" data-ask-q="' + it.k + '">' + AI_SPARK + '<span>Ask Claude</span></button>' +
+            '<button class="btn ghost" type="button" data-k="' + it.k + '">Clear</button></div></div>';
+        }).join('') + '</div>';
       });
     });
     h += '<div style="margin-top:18px"><button class="btn ghost" type="button" id="rvClearAll">Clear the whole list</button></div>';
-    slot.innerHTML = h;
+    slot.innerHTML = h; renderMath(slot);
     slot.onclick = e => {
       const b = e.target.closest('button[data-k]');
       if (b) { const k = b.dataset.k; if (S.pq[k] === 'review') { delete S.pq[k]; save('pq'); } if (S.mcq[k] && !S.mcq[k].ok) { delete S.mcq[k]; save('mcq'); } updateReviewCount(); mountReview(slot); }
@@ -1161,7 +1220,11 @@
   $('#tabbar [data-tab="search"]').addEventListener('click', openSearch);
   $$('#tabbar a').forEach(a => a.addEventListener('click', () => { body.classList.remove('search-open'); closeNav(); }));
   window.addEventListener('hashchange', route);
-  window.GUIDE_APP = { go, renderMath, toast, isDark, store };
+  window.GUIDE_APP = {
+    go, renderMath, toast, isDark, store, esc, copyText, noteParts, question, htmlText, subjIcon, AI_SPARK,
+    topic: id => byId[id], current: () => byId[currentId],
+    enhance: root => { enhanceCallouts(root); enhanceWorked(root); renderMath(root); }
+  };
   updateReviewCount();
   route();
   setTimeout(idleIndex, 900);

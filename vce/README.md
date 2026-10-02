@@ -24,12 +24,22 @@ The whole site is one self-contained file, `index.html`. It needs no server, no 
 
 Progress (completed topics, self-marks, quiz answers) is stored in the browser's `localStorage` only.
 
+## Claude in the guide
+
+When the guide is opened as an Artifact on claude.ai, it can call Claude through the Artifact `sample` capability:
+
+- **Ask Claude** on any practice question, topic, quick-notes card or review-list item. It explains the theory behind the question, quizzes you on it one step at a time, or explains why your multiple-choice pick was wrong. Answers can be saved to **My notes** for that topic.
+- **Mark with Claude** on practice exams. After you finish, Claude reads each written answer against the marking guide, ticks the points you earned (you can change any tick), and says what to fix.
+
+Each call uses the viewer's own Claude usage, and the first one asks their permission. Opened anywhere else (GitHub Pages, a saved file), the Claude controls stay hidden and everything else works the same. The **Notes** pop-out on the review list works everywhere.
+
 ## Editing the content
 
 - `src/subjects.json`: subject order.
 - `src/subjects/<subject>/subject.json`: id, topic-id prefix, name, study design and course-map groups.
 - `src/subjects/<subject>/topics/*.html`: one file per page, with a metadata comment at the top (`id`, `title`, `short`, `summary`, `keywords`, `dotpoints`, optional `special: overview|reference`). Links like `href="#id"` are prefixed with the subject automatically. Maths uses `\( … \)` and `\[ … \]` (KaTeX, with mhchem `\ce{}`).
 - `src/app.js`, `src/styles.css`, `src/body.html`, `src/hub/`: the app shell (hub, router, search, quiz, review, theme).
+- `src/motion.js`: spring animations and gestures. `src/ai.js`: the Claude features (chat sheet, notes pop-out, exam marking).
 - `src/sims/*.js`: the simulations (shared toolkit in `00-kit.js`).
 
 Component markup (worked examples, practice questions, MCQs, callouts, sims) is the same as in `../physics/README.md`.

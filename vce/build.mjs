@@ -107,6 +107,7 @@ const styles = readFileSync(src('styles.css'), 'utf8');
 const bodyHtml = readFileSync(src('body.html'), 'utf8');
 const appJs = readFileSync(src('app.js'), 'utf8');
 const motionJs = readFileSync(src('motion.js'), 'utf8');
+const aiJs = readFileSync(src('ai.js'), 'utf8');
 const simsJs = readdirSync(src('sims')).filter(f => f.endsWith('.js')).sort().map(f => `/* ---- ${f} ---- */\n` + readFileSync(src('sims', f), 'utf8')).join('\n');
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
 
@@ -140,6 +141,7 @@ ${bodyHtml}
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
 <script>${safe(motionJs)}</script>
+<script>${safe(aiJs)}</script>
 </body>
 </html>
 `;
@@ -162,6 +164,7 @@ ${bodyHtml}
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
 <script>${safe(motionJs)}</script>
+<script>${safe(aiJs)}</script>
 `;
   writeFileSync(out, frag);
   console.log(`✓ artifact fragment ${(frag.length / 1024).toFixed(0)} KB -> ${out}`);

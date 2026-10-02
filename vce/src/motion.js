@@ -149,6 +149,7 @@
     if (barTitle) barTitle.textContent = h1 ? h1.textContent.replace(/\s+/g, ' ').trim() : '';
     reveal(); countUp(); fillIn(main); onScroll();
   }
+  window.GUIDE_MOTION = { spring, calm, rubber: d => { const lim = 60; return lim * (1 - 1 / (d / lim * 0.55 + 1)); } };
   window.addEventListener('guide:render', () => requestAnimationFrame(settlePage));
   settlePage();
 })();
