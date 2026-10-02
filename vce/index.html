@@ -296,7 +296,7 @@ hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
   overflow-y: auto; padding: 14px 12px 40px 18px;
   scrollbar-width: thin;
 }
-.main { min-width: 0; padding: 28px 40px 80px; outline: none; }
+.main { min-width: 0; padding: 28px 40px 80px; outline: none; overflow-x: clip; }
 .toc {
   position: sticky; top: var(--head-space);
   height: calc(100vh - var(--head-space));
@@ -735,7 +735,7 @@ dl.gloss dt:last-of-type, dl.gloss dd:last-of-type { border-bottom: 0; }
   dl.gloss dt { border-bottom: 0; padding-bottom: 2px; }
   /* floating glass tab bar */
   .tabbar {
-    display: grid; grid-template-columns: repeat(5, 1fr); align-items: stretch; gap: 2px;
+    display: grid; grid-template-columns: repeat(5, 1fr); align-items: stretch; gap: 0;
     position: fixed; z-index: 44; left: 50%; transform: translateX(-50%);
     bottom: calc(10px + env(safe-area-inset-bottom, 0px)); width: min(460px, calc(100% - 20px)); height: 64px;
     padding: 5px; border-radius: 32px;
@@ -747,7 +747,7 @@ dl.gloss dt:last-of-type, dl.gloss dd:last-of-type { border-bottom: 0; }
   }
   .tabbar a:hover { text-decoration: none; color: var(--ink); }
   .tabbar svg { width: 23px; height: 23px; }
-  .tabbar .on { color: var(--accent); background: var(--fill); }
+  .tabbar .on { color: var(--accent); }
   .tabbar a:active, .tabbar button:active { transform: scale(0.94); }
   .tab-badge { position: absolute; top: 4px; left: calc(50% + 6px); min-width: 17px; height: 17px; padding: 0 5px; border-radius: 9px; background: var(--bad); color: #fff; font-style: normal; font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; font-variant-numeric: tabular-nums; }
   .tab-badge:empty { display: none; }
@@ -1063,6 +1063,174 @@ a.src-link { font-size: 13px; font-weight: 600; }
   .ex-tile { min-height: 0; padding: 13px 40px 12px 16px; border-radius: 18px; }
   .ex-tile-lv { font-size: 21px; }
 }
+
+/* ==========================================================================
+   Motion (iOS style): three curves used everywhere
+   --ease-ios: UIKit's navigation / sheet curve. --ease-out: soft settle.
+   --spring: a stiff spring with a hint of overshoot (presses, switches, lens).
+   Reduced-motion users get none of it (see the rule near the top of the file).
+   ========================================================================== */
+:root {
+  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --spring: cubic-bezier(0.34, 1.36, 0.64, 1);
+  --switch-on: #34c759;
+}
+:root[data-theme="dark"] { --switch-on: #30d158; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --switch-on: #30d158; } }
+
+/* page push: new content slides in from the direction you moved (next topic from the right, previous from the left) */
+.main > * { animation: page-in 0.55s var(--ease-ios) backwards; }
+.main > :nth-child(2) { animation-delay: 0.04s; }
+.main > :nth-child(3) { animation-delay: 0.08s; }
+@keyframes page-in { from { opacity: 0; transform: translate3d(var(--dx, 0px), 10px, 0); } }
+
+/* cards ease up as they reach the screen (motion.js adds .rv only to cards below the fold) */
+.rv { opacity: 0; transform: translate3d(0, 22px, 0); }
+.rv.rv-in { opacity: 1; transform: none; transition: opacity 0.6s var(--ease-out), transform 0.75s var(--ease-ios); }
+
+/* exam tiles arrive in a short cascade */
+.ex-tile { animation: tile-in 0.6s var(--ease-ios) backwards; }
+.ex-cta-grid > .ex-tile:nth-child(2) { animation-delay: 0.06s; }
+.ex-cta-grid > .ex-tile:nth-child(3) { animation-delay: 0.12s; }
+@keyframes tile-in { from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.97); } }
+
+/* progress bars fill in */
+.main .bar > i, .ex-bar-mini i { transform-origin: left center; animation: bar-grow 1s var(--ease-out) 0.15s backwards; }
+@keyframes bar-grow { from { transform: scaleX(0); } }
+
+/* presses: quick squeeze down, spring back on release */
+.btn, .tbtn, .icon-btn, .subj-btn, .pill, .ex-tile, .ex-card, .subj-mini-card, .pn a, .tabbar a, .tabbar button, .search-cancel {
+  transition: transform 0.5s var(--spring), background-color 0.2s, color 0.2s, box-shadow 0.3s var(--ease-out), opacity 0.2s;
+}
+.btn:active:not([disabled]), .tbtn:active, .icon-btn:active, .subj-btn:active, .pill:active, .search-cancel:active { transform: scale(0.94); transition-duration: 0.09s; }
+.ex-tile:active, .ex-card:active, .subj-mini-card:active, .pn a:active { transform: scale(0.97); transition-duration: 0.1s; }
+.tabbar a:active, .tabbar button:active { transform: scale(0.9); transition-duration: 0.09s; }
+@media (hover: hover) {
+  .ex-tile:hover, .ex-card:hover, .subj-mini-card:hover, .pn a:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -20px rgba(0, 0, 0, 0.35); }
+}
+.opt { transition: transform 0.5s var(--spring), background-color 0.2s, box-shadow 0.25s; }
+.opt:active:not([disabled]) { transform: scale(0.985); transition-duration: 0.08s; }
+/* list rows highlight rather than squeeze, as in Settings */
+.nav-group li a { transition: background-color 0.35s; }
+.nav-group li a:active { background: var(--fill-2); transition-duration: 0s; }
+.nav-group li a.active { animation: fade-in 0.35s var(--ease-out); }
+
+/* answers: right one pops, wrong one shakes like a wrong passcode */
+.opt.correct.just { animation: pop 0.5s var(--spring); }
+.opt.wrong.just { animation: shake 0.45s var(--ease-out); }
+@keyframes pop { 45% { transform: scale(1.03); } }
+@keyframes shake { 15% { transform: translateX(-8px); } 30% { transform: translateX(7px); } 45% { transform: translateX(-5px); } 60% { transform: translateX(3px); } 75% { transform: translateX(-1px); } }
+
+/* things that unfold: steps, solutions, explanations, marking guides */
+.mcq-x:not([hidden]), .pq-s:not([hidden]), .we-s:not([hidden]), .we-a:not([hidden]), .we-t:not([hidden]), .fx-under:not([hidden]), .ex-ans:not([hidden]), .ex-rep:not([hidden]), .nt-full:not([hidden]) {
+  animation: unfold 0.45s var(--ease-ios) backwards;
+}
+@keyframes unfold { from { opacity: 0; transform: translate3d(0, -6px, 0); } }
+
+/* popovers, sheets, toasts */
+.results:not([hidden]) { transform-origin: 50% 0; animation: pop-in 0.32s var(--ease-ios); }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-6px) scale(0.96); } }
+.scrim:not([hidden]) { animation: fade-in 0.35s var(--ease-out); }
+@keyframes fade-in { from { opacity: 0; } }
+.toast { transition: opacity 0.25s var(--ease-out), transform 0.55s var(--spring); }
+.dotpoints summary::before { transition: transform 0.35s var(--spring); }
+.nav-eyebrow .chev { transition: transform 0.35s var(--spring); }
+
+/* bars gain depth once content is underneath them */
+.topbar { transition: box-shadow 0.35s var(--ease-out), background-color 0.35s var(--ease-out); }
+body:not(.scrolled) .topbar { box-shadow: var(--glass-hi), 0 1px 3px rgba(0, 0, 0, 0.05); }
+/* scroll-edge effect: content softens and blurs as it slides under the bar */
+body::before {
+  content: ""; position: fixed; left: 0; right: 0; top: 0; z-index: 39; pointer-events: none;
+  height: var(--head-space);
+  background: linear-gradient(color-mix(in srgb, var(--bg) 72%, transparent), transparent);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent);
+  opacity: 0; transition: opacity 0.35s var(--ease-out);
+}
+body.scrolled::before { opacity: 1; }
+
+/* large title collapses into the bar (phones, where the bar has room) */
+.brand-text { position: relative; display: block; }
+.brand-name, .bar-title { transition: opacity 0.3s var(--ease-out), transform 0.45s var(--ease-ios); }
+.bar-title { display: none; }
+
+/* theme switch crossfade */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.5s; animation-timing-function: var(--ease-out); }
+
+/* iOS switches for on/off settings in the interactives */
+.ctl-check input[type="checkbox"] {
+  -webkit-appearance: none; appearance: none; position: relative; flex-shrink: 0; margin: 0; cursor: pointer;
+  width: 46px; height: 28px; border-radius: 14px; background: var(--fill-2); transition: background-color 0.25s var(--ease-out);
+}
+.ctl-check input[type="checkbox"]::after {
+  content: ""; position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; border-radius: 50%; background: #fff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.4s var(--spring), width 0.2s var(--ease-out);
+}
+.ctl-check input[type="checkbox"]:active::after { width: 28px; }
+.ctl-check input[type="checkbox"]:checked { background: var(--switch-on); }
+.ctl-check input[type="checkbox"]:checked::after { transform: translateX(18px); }
+.ctl-check input[type="checkbox"]:checked:active::after { transform: translateX(14px); }
+
+/* iOS sliders: thin track filled to a white thumb */
+.ctl input[type="range"] { -webkit-appearance: none; appearance: none; height: 28px; background: transparent; cursor: pointer; }
+.ctl input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px; border-radius: 2px;
+  background: linear-gradient(var(--accent), var(--accent)) 0 / var(--p, 50%) 100% no-repeat, var(--fill-2);
+}
+.ctl input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; width: 26px; height: 26px; margin-top: -11px; border-radius: 50%; background: #fff;
+  box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.12), 0 6px 13px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s var(--spring);
+}
+.ctl input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.12); }
+.ctl input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--fill-2); }
+.ctl input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--accent); }
+.ctl input[type="range"]::-moz-range-thumb {
+  width: 26px; height: 26px; border: 0; border-radius: 50%; background: #fff;
+  box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.12), 0 6px 13px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 720px) {
+  /* large title -> bar title */
+  .bar-title {
+    display: block; position: absolute; left: 0; top: 50%; max-width: calc(100vw - 190px);
+    font-family: var(--font-display); font-size: 16px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none;
+    opacity: 0; transform: translateY(calc(-50% + 10px));
+  }
+  body.title-collapsed .brand-name { opacity: 0; transform: translateY(-10px); }
+  body.title-collapsed .bar-title { opacity: 1; transform: translateY(-50%); }
+  /* the selection lens glides between tabs */
+  .tab-lens {
+    position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; width: calc((100% - 10px) / 5); border-radius: 26px;
+    background: var(--fill); opacity: 0; pointer-events: none;
+    transform: translateX(calc(var(--i, 0) * 100%)); transition: transform 0.6s var(--spring), opacity 0.25s;
+  }
+  .tabbar.has-on .tab-lens { opacity: 1; }
+  .tabbar a, .tabbar button { z-index: 1; }
+  /* the tab bar tucks in while you read and comes back when you scroll up */
+  .tabbar { transition: width 0.55s var(--spring), height 0.55s var(--spring), border-radius 0.55s var(--spring), box-shadow 0.3s; }
+  .tabbar a > span, .tabbar button > span { display: block; max-height: 14px; overflow: hidden; transition: opacity 0.2s var(--ease-out), max-height 0.4s var(--ease-ios); }
+  .tabbar svg { transition: width 0.4s var(--ease-ios), height 0.4s var(--ease-ios); }
+  body.bar-min .tabbar { height: 50px; width: min(300px, calc(100% - 80px)); border-radius: 25px; }
+  body.bar-min .tabbar a > span, body.bar-min .tabbar button > span { opacity: 0; max-height: 0; }
+  body.bar-min .tabbar svg { width: 21px; height: 21px; }
+  body.bar-min .tab-lens { border-radius: 20px; }
+  body.search-open .search { animation: search-in 0.35s var(--ease-ios); transform-origin: left center; }
+  @keyframes search-in { from { opacity: 0; transform: scaleX(0.92); } }
+  /* soft blur under the tab bar too */
+  body::after {
+    content: ""; position: fixed; left: 0; right: 0; bottom: 0; z-index: 43; pointer-events: none;
+    height: calc(100px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(transparent, color-mix(in srgb, var(--bg) 60%, transparent));
+    -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px);
+    -webkit-mask-image: linear-gradient(transparent, #000 60%); mask-image: linear-gradient(transparent, #000 60%);
+  }
+}
+@media print { .rv { opacity: 1 !important; transform: none !important; } body::before, body::after { display: none !important; } }
 </style>
 </head>
 <body>
@@ -1078,7 +1246,7 @@ a.src-link { font-size: 13px; font-weight: 600; }
       <path d="M16 15.5 v6" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
       <path d="M13.8 19.6 L16 22 L18.2 19.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="brand-name">VCE 3/4<br><em>Field Guide</em></span>
+    <span class="brand-text"><span class="brand-name">VCE 3/4<br><em>Field Guide</em></span><span class="bar-title" aria-hidden="true"></span></span>
   </a>
   <div class="search" role="search">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -1112,6 +1280,7 @@ a.src-link { font-size: 13px; font-weight: 600; }
 </div>
 <div class="scrim" id="scrim" hidden></div>
 <nav class="tabbar" id="tabbar" aria-label="Main">
+  <span class="tab-lens" aria-hidden="true"></span>
   <a href="#home" data-tab="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/></svg><span>Home</span></a>
   <button type="button" data-tab="topics" aria-controls="sidebar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg><span>Topics</span></button>
   <a href="#exams" data-tab="exams"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg><span>Exams</span></a>
@@ -4542,9 +4711,11 @@ a.src-link { font-size: 13px; font-weight: 600; }
     return !!(mq && mq.matches);
   }
   function emitTheme() { window.dispatchEvent(new CustomEvent('guide:theme')); }
+  const calmMotion = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   $('#themeBtn').addEventListener('click', () => {
     const next = isDark() ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next); store.set('theme', next); emitTheme();
+    const apply = () => { document.documentElement.setAttribute('data-theme', next); store.set('theme', next); emitTheme(); };
+    if (document.startViewTransition && !calmMotion()) document.startViewTransition(apply); else apply();
   });
   if (mq) { try { mq.addEventListener('change', emitTheme); } catch (e) { mq.addListener && mq.addListener(emitTheme); } }
   try { new MutationObserver(emitTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) { /* noop */ }
@@ -4931,6 +5102,8 @@ a.src-link { font-size: 13px; font-weight: 600; }
     };
     btns.forEach(b => b.addEventListener('click', () => {
       const ok = reveal(b.dataset.l);
+      const fresh = btns.filter(x => x === b || x.dataset.l === ans);
+      fresh.forEach(x => x.classList.add('just')); setTimeout(() => fresh.forEach(x => x.classList.remove('just')), 700);
       if (key) { S.mcq[key] = { ok, c: b.dataset.l, t: Date.now() }; save('mcq'); updateReviewCount(); }
       if (onAnswer) onAnswer(ok, b.dataset.l);
     }));
@@ -5516,15 +5689,21 @@ a.src-link { font-size: 13px; font-weight: 600; }
     const topic = byId[t] || byId.home;
     if (topic.id === currentId && a) {
       const target = document.getElementById('a-' + a);
-      if (target) { target.scrollIntoView({ block: 'start' }); target.classList.add('flash'); setTimeout(() => target.classList.remove('flash'), 1700); return; }
+      if (target) { target.scrollIntoView({ block: 'start', behavior: calmMotion() ? 'auto' : 'smooth' }); target.classList.add('flash'); setTimeout(() => target.classList.remove('flash'), 1700); return; }
     }
+    const prev = byId[currentId], o = topic.subj && prev && prev.subj === topic.subj ? topic.subj.order : null;
+    const dir = o ? Math.sign(o.indexOf(topic) - o.indexOf(prev)) : 0;
+    main.style.setProperty('--dx', dir * (window.innerWidth <= 720 ? 14 : 22) + 'px');
     currentId = topic.id;
     render(topic, a); syncTabs(topic);
+    window.dispatchEvent(new CustomEvent('guide:render', { detail: { id: topic.id, dir } }));
     if (!a) main.focus({ preventScroll: true });
   }
   function syncTabs(t) {
     const tab = t.id === 'home' ? 'home' : (t.id === 'exams' || t.special === 'exam') ? 'exams' : t.id === 'review' ? 'review' : t.subject ? 'topics' : '';
-    $$('#tabbar [data-tab]').forEach(b => { const on = b.dataset.tab === tab; b.classList.toggle('on', on); if (b.tagName === 'A') { if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); } });
+    const tabs = $$('#tabbar [data-tab]'), idx = tabs.findIndex(b => b.dataset.tab === tab), tb = $('#tabbar');
+    tabs.forEach((b, i) => { const on = i === idx; b.classList.toggle('on', on); if (b.tagName === 'A') { if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); } });
+    tb.style.setProperty('--i', Math.max(idx, 0)); tb.classList.toggle('has-on', idx >= 0);
   }
   $('#tabbar [data-tab="topics"]').addEventListener('click', () => { body.classList.remove('search-open'); body.classList.contains('nav-open') ? closeNav() : openNav(); });
   $('#tabbar [data-tab="search"]').addEventListener('click', openSearch);
@@ -5534,6 +5713,119 @@ a.src-link { font-size: 13px; font-weight: 600; }
   updateReviewCount();
   route();
   setTimeout(idleIndex, 900);
+})();
+</script>
+<script>/* ==========================================================================
+   Motion, iOS style. Small and quiet on purpose:
+   - large page title collapses into the glass bar as you scroll (phones)
+   - bars gain depth once content scrolls under them; the tab bar shrinks while
+     you scroll down and comes back when you scroll up
+   - cards ease up into place as they reach the screen; stats count up
+   - iOS-style slider fill; swipe the course-map sheet left to dismiss it
+   Everything is skipped when the system asks for reduced motion.
+   ========================================================================== */
+(function () {
+  'use strict';
+  const doc = document, body = doc.body, main = doc.getElementById('main');
+  if (!main) return;
+  const rm = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  const calm = () => !!(rm && rm.matches);
+  const topbar = doc.querySelector('.topbar'), barTitle = doc.querySelector('.bar-title');
+  const IO = 'IntersectionObserver' in window;
+
+  /* ---- scroll: bar depth + tab bar minimise */
+  let lastY = window.scrollY, down = 0, up = 0, ticking = false;
+  function onScroll() {
+    ticking = false;
+    const y = window.scrollY, dy = y - lastY; lastY = y;
+    body.classList.toggle('scrolled', y > 4);
+    if (dy > 0) { down += dy; up = 0; } else { up -= dy; down = 0; }
+    if (y < 120 || up > 18 || body.classList.contains('nav-open') || body.classList.contains('search-open')) body.classList.remove('bar-min');
+    else if (down > 28 && !calm()) body.classList.add('bar-min');
+  }
+  window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+
+  /* ---- large title -> inline title in the bar */
+  let titleObs = null;
+  function watchTitle() {
+    if (titleObs) titleObs.disconnect();
+    body.classList.remove('title-collapsed');
+    const h1 = main.querySelector('.t-head h1, .hero h1, h1');
+    if (!h1 || !barTitle || !IO) return;
+    barTitle.textContent = h1.textContent.replace(/\s+/g, ' ').trim();
+    const top = topbar ? Math.round(topbar.getBoundingClientRect().bottom) : 70;
+    titleObs = new IntersectionObserver(([e]) => {
+      body.classList.toggle('title-collapsed', !e.isIntersecting && e.boundingClientRect.top < top);
+    }, { rootMargin: '-' + top + 'px 0px 0px 0px' });
+    titleObs.observe(h1);
+  }
+
+  /* ---- cards ease into place as they reach the screen */
+  const REVEAL = '.we, .pq, .mcq, .sim-panel, .fig, .tbl, .eq, aside[class^="c-"], .exq, .ex-card, .map-card, .stat, .nt-card, .fs-card, .mstep, .legend > div, .subj-card, .rv-item, .complete-card, .pn, .ex-report, .sample, .transcript';
+  let revealObs = null;
+  function settle(el) {
+    el.classList.add('rv-in');
+    const done = () => { el.classList.remove('rv', 'rv-in'); el.removeEventListener('transitionend', done); };
+    el.addEventListener('transitionend', done); setTimeout(done, 900);
+  }
+  function reveal() {
+    if (revealObs) revealObs.disconnect();
+    if (calm() || !IO) return;
+    const fold = window.innerHeight * 0.92;
+    revealObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { revealObs.unobserve(e.target); settle(e.target); } }), { rootMargin: '0px 0px -5% 0px' });
+    main.querySelectorAll(REVEAL).forEach(el => {
+      if (el.closest('.rv')) return;                                 // already inside a revealing card
+      const r = el.getBoundingClientRect();
+      if (!r.height || r.top < fold) return;                         // hidden, or on screen now (the page-in animation covers it)
+      el.classList.add('rv'); revealObs.observe(el);
+    });
+  }
+
+  /* ---- numbers count up, like the Fitness and Health summaries */
+  function countUp() {
+    if (calm()) return;
+    main.querySelectorAll('.stat b').forEach(b => {
+      const m = b.textContent.match(/^(\d+)(.*)$/); if (!m || !+m[1]) return;
+      const end = +m[1], rest = m[2], t0 = performance.now(), dur = Math.min(900, 420 + end * 3);
+      const step = t => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); b.textContent = Math.round(end * e) + rest; if (k < 1) requestAnimationFrame(step); };
+      b.textContent = '0' + rest; requestAnimationFrame(step);
+    });
+  }
+
+  /* ---- iOS slider: filled track up to the thumb (WebKit/Blink need a CSS variable; Firefox draws it natively) */
+  function fillRange(r) {
+    const min = r.min === '' ? 0 : +r.min, max = r.max === '' ? 100 : +r.max;
+    r.style.setProperty('--p', Math.max(0, Math.min(100, (+r.value - min) / ((max - min) || 1) * 100)).toFixed(2) + '%');
+  }
+  const fillIn = root => { if (root.querySelectorAll) root.querySelectorAll('input[type="range"]').forEach(fillRange); };
+  doc.addEventListener('input', e => { if (e.target.matches && e.target.matches('input[type="range"]')) fillRange(e.target); }, true);
+  doc.addEventListener('click', e => { const p = e.target.closest && e.target.closest('.sim-panel'); if (p) requestAnimationFrame(() => fillIn(p)); }, true);
+  if ('MutationObserver' in window) new MutationObserver(ms => {
+    if (ms.some(m => [...m.addedNodes].some(n => n.nodeType === 1 && (n.matches('input[type="range"]') || n.querySelector('input[type="range"]'))))) requestAnimationFrame(() => fillIn(main));
+  }).observe(main, { childList: true, subtree: true });
+
+  /* ---- swipe the course-map sheet left to dismiss it */
+  const sheet = doc.getElementById('sidebar'), scrim = doc.getElementById('scrim');
+  if (sheet && scrim) {
+    let sx = 0, sy = 0, dx = 0, decided = false, drag = false;
+    const active = () => body.classList.contains('nav-open') && window.innerWidth <= 960;
+    sheet.addEventListener('touchstart', e => { if (!active()) return; sx = e.touches[0].clientX; sy = e.touches[0].clientY; dx = 0; decided = drag = false; }, { passive: true });
+    sheet.addEventListener('touchmove', e => {
+      if (!active()) return;
+      const mx = e.touches[0].clientX - sx, my = e.touches[0].clientY - sy;
+      if (!decided) { if (Math.abs(mx) < 8 && Math.abs(my) < 8) return; decided = true; drag = mx < 0 && Math.abs(mx) > Math.abs(my); if (drag) sheet.style.transition = 'none'; }
+      if (!drag) return;
+      dx = Math.min(0, mx); sheet.style.transform = 'translateX(' + dx + 'px)';
+    }, { passive: true });
+    const end = () => { if (!drag) return; drag = false; sheet.style.transition = ''; sheet.style.transform = ''; if (dx < -70) scrim.click(); };
+    sheet.addEventListener('touchend', end); sheet.addEventListener('touchcancel', end);
+  }
+
+  /* ---- every page */
+  function settlePage() { watchTitle(); reveal(); countUp(); fillIn(main); onScroll(); }
+  window.addEventListener('guide:render', () => requestAnimationFrame(settlePage));
+  window.addEventListener('resize', () => { if (titleObs) watchTitle(); });
+  settlePage();
 })();
 </script>
 </body>

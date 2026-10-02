@@ -106,6 +106,7 @@ const autoRenderJs = readFileSync(join(katexDir, 'contrib/auto-render.min.js'), 
 const styles = readFileSync(src('styles.css'), 'utf8');
 const bodyHtml = readFileSync(src('body.html'), 'utf8');
 const appJs = readFileSync(src('app.js'), 'utf8');
+const motionJs = readFileSync(src('motion.js'), 'utf8');
 const simsJs = readdirSync(src('sims')).filter(f => f.endsWith('.js')).sort().map(f => `/* ---- ${f} ---- */\n` + readFileSync(src('sims', f), 'utf8')).join('\n');
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
 
@@ -138,6 +139,7 @@ ${bodyHtml}
 <script>${safe(autoRenderJs)}</script>
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
+<script>${safe(motionJs)}</script>
 </body>
 </html>
 `;
@@ -159,6 +161,7 @@ ${bodyHtml}
 <script src="${cdn}/contrib/auto-render.min.js"></script>
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
+<script>${safe(motionJs)}</script>
 `;
   writeFileSync(out, frag);
   console.log(`✓ artifact fragment ${(frag.length / 1024).toFixed(0)} KB -> ${out}`);

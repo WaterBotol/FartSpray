@@ -149,9 +149,11 @@
     return !!(mq && mq.matches);
   }
   function emitTheme() { window.dispatchEvent(new CustomEvent('guide:theme')); }
+  const calmMotion = () => !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   $('#themeBtn').addEventListener('click', () => {
     const next = isDark() ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next); store.set('theme', next); emitTheme();
+    const apply = () => { document.documentElement.setAttribute('data-theme', next); store.set('theme', next); emitTheme(); };
+    if (document.startViewTransition && !calmMotion()) document.startViewTransition(apply); else apply();
   });
   if (mq) { try { mq.addEventListener('change', emitTheme); } catch (e) { mq.addListener && mq.addListener(emitTheme); } }
   try { new MutationObserver(emitTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] }); } catch (e) { /* noop */ }
@@ -538,6 +540,8 @@
     };
     btns.forEach(b => b.addEventListener('click', () => {
       const ok = reveal(b.dataset.l);
+      const fresh = btns.filter(x => x === b || x.dataset.l === ans);
+      fresh.forEach(x => x.classList.add('just')); setTimeout(() => fresh.forEach(x => x.classList.remove('just')), 700);
       if (key) { S.mcq[key] = { ok, c: b.dataset.l, t: Date.now() }; save('mcq'); updateReviewCount(); }
       if (onAnswer) onAnswer(ok, b.dataset.l);
     }));
@@ -1123,15 +1127,21 @@
     const topic = byId[t] || byId.home;
     if (topic.id === currentId && a) {
       const target = document.getElementById('a-' + a);
-      if (target) { target.scrollIntoView({ block: 'start' }); target.classList.add('flash'); setTimeout(() => target.classList.remove('flash'), 1700); return; }
+      if (target) { target.scrollIntoView({ block: 'start', behavior: calmMotion() ? 'auto' : 'smooth' }); target.classList.add('flash'); setTimeout(() => target.classList.remove('flash'), 1700); return; }
     }
+    const prev = byId[currentId], o = topic.subj && prev && prev.subj === topic.subj ? topic.subj.order : null;
+    const dir = o ? Math.sign(o.indexOf(topic) - o.indexOf(prev)) : 0;
+    main.style.setProperty('--dx', dir * (window.innerWidth <= 720 ? 14 : 22) + 'px');
     currentId = topic.id;
     render(topic, a); syncTabs(topic);
+    window.dispatchEvent(new CustomEvent('guide:render', { detail: { id: topic.id, dir } }));
     if (!a) main.focus({ preventScroll: true });
   }
   function syncTabs(t) {
     const tab = t.id === 'home' ? 'home' : (t.id === 'exams' || t.special === 'exam') ? 'exams' : t.id === 'review' ? 'review' : t.subject ? 'topics' : '';
-    $$('#tabbar [data-tab]').forEach(b => { const on = b.dataset.tab === tab; b.classList.toggle('on', on); if (b.tagName === 'A') { if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); } });
+    const tabs = $$('#tabbar [data-tab]'), idx = tabs.findIndex(b => b.dataset.tab === tab), tb = $('#tabbar');
+    tabs.forEach((b, i) => { const on = i === idx; b.classList.toggle('on', on); if (b.tagName === 'A') { if (on) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current'); } });
+    tb.style.setProperty('--i', Math.max(idx, 0)); tb.classList.toggle('has-on', idx >= 0);
   }
   $('#tabbar [data-tab="topics"]').addEventListener('click', () => { body.classList.remove('search-open'); body.classList.contains('nav-open') ? closeNav() : openNav(); });
   $('#tabbar [data-tab="search"]').addEventListener('click', openSearch);
