@@ -6659,14 +6659,14 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
     const lbl = btn ? btn.innerHTML : '';
     if (btn) { btn.innerHTML = '<span>Stop</span>'; btn.classList.add('stop'); btn.onclick = ev => { ev.stopPropagation(); ctl.abort(); }; }
     todo.forEach(p => { const o = $('.ai-mk-out', p.exp); if (o) { o.hidden = false; o.innerHTML = '<span class="ai-think">Claude is marking…</span>'; } });
-    const BATCH = 6;
+    const BATCH = 4;
     let done = 0, failed = '';
     try {
       for (let i = 0; i < todo.length; i += BATCH) {
         const chunk = todo.slice(i, i + BATCH);
         say(todo.length > 1 ? 'Marking ' + (i + 1) + (chunk.length > 1 ? '–' + (i + chunk.length) : '') + ' of ' + todo.length + '…' : 'Marking…');
         let res;
-        try { res = await sample.json(markPrompt(subj, chunk), { signal: ctl.signal, cache: false }); }
+        try { res = await sample.json(markPrompt(subj, chunk), { signal: ctl.signal, cache: false, modelTier: 'complex' }); }   // the most capable tier: marking accuracy matters more than speed
         catch (e) {
           const f = failCopy(e);
           chunk.concat(todo.slice(i + BATCH)).forEach(p => { const o = $('.ai-mk-out', p.exp); if (o && o.querySelector('.ai-think')) { o.innerHTML = ''; o.hidden = true; } });
