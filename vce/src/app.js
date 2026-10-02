@@ -348,7 +348,8 @@
   /* ------------------------------------------------------------ nav drawer */
   const body = document.body;
   function openNav() { body.classList.add('nav-open'); $('#scrim').hidden = false; $('#menuBtn').setAttribute('aria-expanded', 'true'); }
-  function closeNav() { body.classList.remove('nav-open'); $('#scrim').hidden = true; $('#menuBtn').setAttribute('aria-expanded', 'false'); }
+  let navClosedAt = 0;
+  function closeNav() { if (body.classList.contains('nav-open')) navClosedAt = Date.now(); body.classList.remove('nav-open'); $('#scrim').hidden = true; $('#menuBtn').setAttribute('aria-expanded', 'false'); }
   $('#menuBtn').addEventListener('click', () => body.classList.contains('nav-open') ? closeNav() : openNav());
   $('#scrim').addEventListener('click', closeNav);
 
@@ -1131,11 +1132,24 @@
     }
     const prev = byId[currentId], o = topic.subj && prev && prev.subj === topic.subj ? topic.subj.order : null;
     const dir = o ? Math.sign(o.indexOf(topic) - o.indexOf(prev)) : 0;
-    main.style.setProperty('--dx', dir * (window.innerWidth <= 720 ? 14 : 22) + 'px');
+    // old page slides out while the new one slides in (View Transitions); otherwise the new page eases in alone
+    const vt = !!document.startViewTransition && !calmMotion() && !a && prev && Date.now() - navClosedAt > 450;
+    const update = () => {
+      main.classList.toggle('vt', vt);
+      main.style.setProperty('--dx', dir * (window.innerWidth <= 720 ? 14 : 22) + 'px');
+      currentId = topic.id;
+      render(topic, a); syncTabs(topic);
+      window.dispatchEvent(new CustomEvent('guide:render', { detail: { id: topic.id, dir } }));
+      if (!a) main.focus({ preventScroll: true });
+    };
+    if (!vt) { update(); return; }
+    const rootEl = document.documentElement;
+    rootEl.style.setProperty('--vt-out', dir ? 'translateX(' + (-dir * 7) + '%)' : 'scale(0.985)');
+    rootEl.style.setProperty('--vt-in', dir ? 'translateX(' + (dir * 12) + '%)' : 'translateY(18px)');
+    rootEl.classList.add('vt-nav');
     currentId = topic.id;
-    render(topic, a); syncTabs(topic);
-    window.dispatchEvent(new CustomEvent('guide:render', { detail: { id: topic.id, dir } }));
-    if (!a) main.focus({ preventScroll: true });
+    const tr = document.startViewTransition(update), done = () => rootEl.classList.remove('vt-nav');
+    tr.ready.catch(() => {}); tr.finished.then(done, done);
   }
   function syncTabs(t) {
     const tab = t.id === 'home' ? 'home' : (t.id === 'exams' || t.special === 'exam') ? 'exams' : t.id === 'review' ? 'review' : t.subject ? 'topics' : '';

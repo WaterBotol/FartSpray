@@ -677,7 +677,7 @@ dl.gloss dt:last-of-type, dl.gloss dd:last-of-type { border-bottom: 0; }
     z-index: 50; width: min(340px, calc(100vw - 2 * var(--bar-gap))); height: auto; border-radius: 28px;
     background: var(--glass-strong); -webkit-backdrop-filter: var(--glass-blur); backdrop-filter: var(--glass-blur);
     border: 1px solid var(--glass-edge); box-shadow: var(--glass-hi), var(--shadow);
-    transform: translateX(calc(-100% - 2 * var(--bar-gap))); transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+    transform: translateX(calc(-100% - 2 * var(--bar-gap))); transition: transform var(--dur-smooth) var(--ease-smooth);
     padding: 18px 12px 28px 14px;
   }
   body.nav-open .sidebar { transform: none; }
@@ -1022,7 +1022,6 @@ a.src-link { font-size: 13px; font-weight: 600; }
 .ex-tile {
   position: relative; display: grid; align-content: start; gap: 3px; min-height: 108px; padding: 16px 40px 14px 18px;
   border-radius: 22px; text-decoration: none; color: var(--ink); background: var(--tile-bg);
-  transition: transform 0.18s cubic-bezier(0.32, 0.72, 0, 1), box-shadow 0.18s;
 }
 .ex-tile:hover { color: var(--ink); text-decoration: none; transform: translateY(-2px); box-shadow: 0 10px 24px -14px var(--tile-fg); }
 .ex-tile:active { transform: scale(0.98); }
@@ -1048,163 +1047,193 @@ a.src-link { font-size: 13px; font-weight: 600; }
 }
 
 /* ==========================================================================
-   Motion (iOS style): three curves used everywhere
-   --ease-ios: UIKit's navigation / sheet curve. --ease-out: soft settle.
-   --spring: a stiff spring with a hint of overshoot (presses, switches, lens).
-   Reduced-motion users get none of it (see the rule near the top of the file).
+   Motion, iOS style
+   Real damped springs (SwiftUI's response / damping model) expressed as CSS
+   linear() easings, so the curve has the long soft tail Apple's animations
+   have. Bézier fallbacks for browsers without linear().
+     smooth: response 0.5 s, no bounce       -> navigation, sheets, reveals
+     snappy: response 0.34 s, ~1.5% overshoot -> presses, lens, switches
+     bouncy: response 0.45 s, ~8% overshoot   -> small celebratory pops
+   Motion tied to scrolling or a finger is driven continuously from motion.js.
+   Reduced-motion users get none of it (rule near the top of the file).
    ========================================================================== */
 :root {
-  --ease-ios: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-smooth: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-snappy: cubic-bezier(0.34, 1.3, 0.64, 1);
+  --ease-bouncy: cubic-bezier(0.34, 1.56, 0.64, 1);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --spring: cubic-bezier(0.34, 1.36, 0.64, 1);
+  --dur-smooth: 0.7s;
+  --dur-snappy: 0.45s;
+  --dur-bouncy: 0.72s;
   --switch-on: #34c759;
+}
+@supports (transition-timing-function: linear(0, 1)) {
+  :root {
+    --ease-smooth: linear(0, 0.0011 0.54%, 0.0067 1.37%, 0.0189 2.37%, 0.0385 3.49%, 0.0657 4.72%, 0.0998 6.04%, 0.14 7.43%, 0.1851 8.9%, 0.2341 10.44%, 0.2857 12.03%, 0.3387 13.68%, 0.3921 15.39%, 0.4449 17.15%, 0.4964 18.95%, 0.5459 20.8%, 0.593 22.69%, 0.6372 24.63%, 0.6783 26.6%, 0.7163 28.62%, 0.751 30.67%, 0.7824 32.76%, 0.8108 34.88%, 0.8362 37.04%, 0.8588 39.23%, 0.8788 41.45%, 0.8963 43.71%, 0.9117 45.99%, 0.9251 48.3%, 0.9366 50.65%, 0.9466 53.02%, 0.9551 55.42%, 0.9624 57.85%, 0.9687 60.3%, 0.9739 62.78%, 0.9784 65.29%, 0.9821 67.82%, 0.9853 70.37%, 0.9879 72.95%, 0.9901 75.55%, 0.9919 78.18%, 0.9934 80.83%, 0.9946 83.5%, 0.9956 86.2%, 0.9965 88.92%, 0.9971 91.66%, 0.9977 94.42%, 0.9982 97.2%, 1);
+    --ease-snappy: linear(0, 0.001 0.54%, 0.0061 1.37%, 0.0175 2.37%, 0.0361 3.49%, 0.0624 4.72%, 0.0962 6.04%, 0.1369 7.43%, 0.1837 8.9%, 0.2355 10.44%, 0.2911 12.03%, 0.3493 13.68%, 0.4089 15.39%, 0.4687 17.15%, 0.5276 18.95%, 0.5848 20.8%, 0.6394 22.69%, 0.6908 24.63%, 0.7385 26.6%, 0.7822 28.62%, 0.8216 30.67%, 0.8567 32.76%, 0.8875 34.88%, 0.9142 37.04%, 0.9369 39.23%, 0.9559 41.45%, 0.9716 43.71%, 0.9842 45.99%, 0.9941 48.3%, 1.0017 50.65%, 1.0072 53.02%, 1.011 55.42%, 1.0134 57.85%, 1.0147 60.3%, 1.0152 62.78%, 1.0149 65.29%, 1.0142 67.82%, 1.0131 70.37%, 1.0118 72.95%, 1.0105 75.55%, 1.0091 78.18%, 1.0077 80.83%, 1.0064 83.5%, 1.0052 86.2%, 1.0042 88.92%, 1.0033 91.66%, 1.0025 94.42%, 1.0018 97.2%, 1);
+    --ease-bouncy: linear(0, 0.0014 0.54%, 0.009 1.37%, 0.0256 2.37%, 0.053 3.49%, 0.0917 4.72%, 0.1413 6.04%, 0.2008 7.43%, 0.2686 8.9%, 0.3429 10.44%, 0.4214 12.03%, 0.502 13.68%, 0.5824 15.39%, 0.6606 17.15%, 0.7348 18.95%, 0.8035 20.8%, 0.8654 22.69%, 0.9197 24.63%, 0.9659 26.6%, 1.0038 28.62%, 1.0337 30.67%, 1.0558 32.76%, 1.071 34.88%, 1.0799 37.04%, 1.0834 39.23%, 1.0825 41.45%, 1.0782 43.71%, 1.0713 45.99%, 1.0628 48.3%, 1.0533 50.65%, 1.0436 53.02%, 1.0341 55.42%, 1.0253 57.85%, 1.0174 60.3%, 1.0106 62.78%, 1.005 65.29%, 1.0006 67.82%, 0.9973 70.37%, 0.9951 72.95%, 0.9937 75.55%, 0.9931 78.18%, 0.9931 80.83%, 0.9935 83.5%, 0.9942 86.2%, 0.995 88.92%, 0.996 91.66%, 0.9969 94.42%, 0.9977 97.2%, 1);
+  }
 }
 :root[data-theme="dark"] { --switch-on: #30d158; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --switch-on: #30d158; } }
+button, a, input, select, summary, .opt { touch-action: manipulation; }
 
-/* page push: new content slides in from the direction you moved (next topic from the right, previous from the left) */
-.main > * { animation: page-in 0.55s var(--ease-ios) backwards; }
-.main > :nth-child(2) { animation-delay: 0.04s; }
-.main > :nth-child(3) { animation-delay: 0.08s; }
-@keyframes page-in { from { opacity: 0; transform: translate3d(var(--dx, 0px), 10px, 0); } }
+/* ---- page changes
+   Browsers with View Transitions: the old page slides out while the new one slides in (motion.js / app.js set
+   --vt-out / --vt-in for the direction travelled); the bars stay put and keep their live content.
+   Other browsers: the new page eases in on its own. */
+.main > * { animation: page-in var(--dur-smooth) var(--ease-smooth) backwards; }
+.main > :nth-child(2) { animation-delay: 0.03s; }
+.main > :nth-child(3) { animation-delay: 0.06s; }
+.main.vt > * { animation: none; }
+@keyframes page-in { from { opacity: 0; transform: translate3d(var(--dx, 0px), 12px, 0); } }
+.topbar { view-transition-name: topbar; }
+.tabbar { view-transition-name: tabbar; }
+@media (min-width: 961px) { .sidebar { view-transition-name: sidebar; } }
+html.vt-nav::view-transition-old(root) { animation: vt-move-out var(--dur-smooth) var(--ease-smooth) both, vt-fade-out 0.22s var(--ease-out) both; }
+html.vt-nav::view-transition-new(root) { animation: vt-move-in var(--dur-smooth) var(--ease-smooth) both, vt-fade-in 0.32s var(--ease-out) 0.04s both; }
+html.vt-nav::view-transition-group(topbar), html.vt-nav::view-transition-group(tabbar) { animation: none; }
+html.vt-nav::view-transition-old(topbar), html.vt-nav::view-transition-old(tabbar) { display: none; }
+html.vt-nav::view-transition-new(topbar), html.vt-nav::view-transition-new(tabbar) { animation: none; }
+html.vt-nav::view-transition-group(sidebar) { animation-duration: 0.28s; }
+html.vt-nav .topbar, html.vt-nav .tabbar { background: var(--glass-strong); }   /* snapshots can't carry backdrop blur */
+@keyframes vt-move-out { to { transform: var(--vt-out, scale(0.985)); } }
+@keyframes vt-move-in { from { transform: var(--vt-in, translateY(16px)); } }
+@keyframes vt-fade-out { to { opacity: 0; } }
+@keyframes vt-fade-in { from { opacity: 0; } }
+/* theme switch: plain crossfade */
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.45s; animation-timing-function: var(--ease-out); }
 
-/* cards ease up as they reach the screen (motion.js adds .rv only to cards below the fold) */
-.rv { opacity: 0; transform: translate3d(0, 22px, 0); }
-.rv.rv-in { opacity: 1; transform: none; transition: opacity 0.6s var(--ease-out), transform 0.75s var(--ease-ios); }
+/* ---- cards settle into place as they reach the screen (motion.js adds .rv only below the fold) */
+.rv { opacity: 0; transform: translate3d(0, 26px, 0); }
+.rv.rv-in { opacity: 1; transform: none; transition: opacity 0.5s var(--ease-out), transform var(--dur-smooth) var(--ease-smooth); }
 
-/* exam tiles arrive in a short cascade */
-.ex-tile { animation: tile-in 0.6s var(--ease-ios) backwards; }
-.ex-cta-grid > .ex-tile:nth-child(2) { animation-delay: 0.06s; }
-.ex-cta-grid > .ex-tile:nth-child(3) { animation-delay: 0.12s; }
-@keyframes tile-in { from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.97); } }
+/* exam tiles arrive in a short cascade, with a touch of spring */
+.ex-tile { animation: tile-in var(--dur-bouncy) var(--ease-bouncy) backwards; }
+.ex-cta-grid > .ex-tile:nth-child(2) { animation-delay: 0.05s; }
+.ex-cta-grid > .ex-tile:nth-child(3) { animation-delay: 0.1s; }
+@keyframes tile-in { from { opacity: 0; transform: translate3d(0, 16px, 0) scale(0.96); } }
 
-/* progress bars fill in */
-.main .bar > i, .ex-bar-mini i { transform-origin: left center; animation: bar-grow 1s var(--ease-out) 0.15s backwards; }
+/* progress bars fill */
+.main .bar > i, .ex-bar-mini i { transform-origin: left center; animation: bar-grow 0.9s var(--ease-smooth) 0.12s backwards; }
 @keyframes bar-grow { from { transform: scaleX(0); } }
 
-/* presses: quick squeeze down, spring back on release */
-.btn, .tbtn, .icon-btn, .subj-btn, .pill, .ex-tile, .ex-card, .subj-mini-card, .pn a, .tabbar a, .tabbar button, .search-cancel {
-  transition: transform 0.5s var(--spring), background-color 0.2s, color 0.2s, box-shadow 0.3s var(--ease-out), opacity 0.2s;
+/* ---- touch: press down fast, release on a spring (iOS needs a touch listener for :active; motion.js adds one) */
+.btn, .tbtn, .icon-btn, .subj-btn, .pill, .ex-tile, .ex-card, .subj-mini-card, .pn a, .tabbar a, .tabbar button, .search-cancel, .opt {
+  transition: transform var(--dur-snappy) var(--ease-snappy), background-color 0.25s var(--ease-out), color 0.25s var(--ease-out), box-shadow 0.4s var(--ease-out), opacity 0.25s var(--ease-out);
 }
-.btn:active:not([disabled]), .tbtn:active, .icon-btn:active, .subj-btn:active, .pill:active, .search-cancel:active { transform: scale(0.94); transition-duration: 0.09s; }
-.ex-tile:active, .ex-card:active, .subj-mini-card:active, .pn a:active { transform: scale(0.97); transition-duration: 0.1s; }
-.tabbar a:active, .tabbar button:active { transform: scale(0.9); transition-duration: 0.09s; }
+.btn:active:not([disabled]), .tbtn:active, .icon-btn:active, .subj-btn:active, .pill:active, .search-cancel:active { transform: scale(0.94); transition: transform 0.12s var(--ease-out), background-color 0.12s; }
+.ex-tile:active, .ex-card:active, .subj-mini-card:active, .pn a:active { transform: scale(0.97); transition: transform 0.14s var(--ease-out); }
+.opt:active:not([disabled]) { transform: scale(0.985); transition: transform 0.12s var(--ease-out); }
+.tabbar a:active, .tabbar button:active { transform: scale(0.88); transition: transform 0.12s var(--ease-out); }
 @media (hover: hover) {
   .ex-tile:hover, .ex-card:hover, .subj-mini-card:hover, .pn a:hover { transform: translateY(-3px); box-shadow: 0 18px 36px -20px rgba(0, 0, 0, 0.35); }
 }
-.opt { transition: transform 0.5s var(--spring), background-color 0.2s, box-shadow 0.25s; }
-.opt:active:not([disabled]) { transform: scale(0.985); transition-duration: 0.08s; }
-/* list rows highlight rather than squeeze, as in Settings */
-.nav-group li a { transition: background-color 0.35s; }
-.nav-group li a:active { background: var(--fill-2); transition-duration: 0s; }
-.nav-group li a.active { animation: fade-in 0.35s var(--ease-out); }
+/* list rows highlight rather than squeeze, as in Settings; the highlight fades out slowly */
+.nav-group li a { transition: background-color 0.45s var(--ease-out); }
+.nav-group li a:active { background: var(--fill-2); transition: none; }
+.nav-group li a.active { animation: fade-in 0.4s var(--ease-out); }
 
-/* answers: right one pops, wrong one shakes like a wrong passcode */
-.opt.correct.just { animation: pop 0.5s var(--spring); }
-.opt.wrong.just { animation: shake 0.45s var(--ease-out); }
-@keyframes pop { 45% { transform: scale(1.03); } }
-@keyframes shake { 15% { transform: translateX(-8px); } 30% { transform: translateX(7px); } 45% { transform: translateX(-5px); } 60% { transform: translateX(3px); } 75% { transform: translateX(-1px); } }
+/* ---- answers: the right one pops, a wrong one shakes like a wrong passcode */
+.opt.correct.just { animation: pop var(--dur-bouncy) var(--ease-bouncy); }
+.opt.wrong.just { animation: shake 0.5s var(--ease-out); }
+@keyframes pop { 0% { transform: scale(0.97); } }
+@keyframes shake { 12% { transform: translateX(-9px); } 28% { transform: translateX(8px); } 44% { transform: translateX(-5px); } 60% { transform: translateX(3px); } 76% { transform: translateX(-1px); } }
 
-/* things that unfold: steps, solutions, explanations, marking guides */
+/* ---- things that unfold: steps, solutions, explanations, marking guides */
 .mcq-x:not([hidden]), .pq-s:not([hidden]), .we-s:not([hidden]), .we-a:not([hidden]), .we-t:not([hidden]), .fx-under:not([hidden]), .ex-ans:not([hidden]), .ex-rep:not([hidden]), .nt-full:not([hidden]) {
-  animation: unfold 0.45s var(--ease-ios) backwards;
+  transform-origin: 50% 0; animation: unfold var(--dur-smooth) var(--ease-smooth) backwards;
 }
-@keyframes unfold { from { opacity: 0; transform: translate3d(0, -6px, 0); } }
+@keyframes unfold { from { opacity: 0; transform: translate3d(0, -8px, 0) scale(0.99); } }
 
-/* popovers, sheets, toasts */
-.results:not([hidden]) { transform-origin: 50% 0; animation: pop-in 0.32s var(--ease-ios); }
-@keyframes pop-in { from { opacity: 0; transform: translateY(-6px) scale(0.96); } }
-.scrim:not([hidden]) { animation: fade-in 0.35s var(--ease-out); }
+/* ---- popovers, sheets, toasts */
+.results:not([hidden]) { transform-origin: 50% 0; animation: pop-in var(--dur-snappy) var(--ease-snappy); }
+@keyframes pop-in { from { opacity: 0; transform: translateY(-8px) scale(0.95); } }
+.scrim:not([hidden]) { animation: fade-in 0.4s var(--ease-out); }
 @keyframes fade-in { from { opacity: 0; } }
-.toast { transition: opacity 0.25s var(--ease-out), transform 0.55s var(--spring); }
-.dotpoints summary::before { transition: transform 0.35s var(--spring); }
-.nav-eyebrow .chev { transition: transform 0.35s var(--spring); }
+.toast { transition: opacity 0.25s var(--ease-out), transform var(--dur-bouncy) var(--ease-bouncy); }
+.dotpoints summary::before, .nav-eyebrow .chev { transition: transform var(--dur-snappy) var(--ease-snappy); }
 
-/* bars gain depth once content is underneath them */
-.topbar { transition: box-shadow 0.35s var(--ease-out), background-color 0.35s var(--ease-out); }
-body:not(.scrolled) .topbar { box-shadow: var(--glass-hi), 0 1px 3px rgba(0, 0, 0, 0.05); }
-/* scroll-edge effect: content softens and blurs as it slides under the bar */
+/* ---- bars: depth and the scroll-edge blur grow with how far you've scrolled (--sp, 0 to 1, from motion.js) */
+.topbar { box-shadow: var(--glass-hi), 0 1px 3px rgba(0, 0, 0, 0.05); transition: background-color 0.35s var(--ease-out); }
+.topbar::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; box-shadow: var(--glass-shadow); opacity: var(--sp, 0); pointer-events: none; }
 body::before {
   content: ""; position: fixed; left: 0; right: 0; top: 0; z-index: 39; pointer-events: none;
   height: var(--head-space);
   background: linear-gradient(color-mix(in srgb, var(--bg) 72%, transparent), transparent);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
   -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent);
-  opacity: 0; transition: opacity 0.35s var(--ease-out);
+  opacity: var(--sp, 0);
 }
-body.scrolled::before { opacity: 1; }
 
-/* large title collapses into the bar (phones, where the bar has room) */
+.sidebar.dragging { transition: none !important; }
+
+/* ---- large title -> inline bar title (phones), tracked continuously with scroll (--tp, 0 to 1) */
 .brand-text { position: relative; display: block; }
-.brand-name, .bar-title { transition: opacity 0.3s var(--ease-out), transform 0.45s var(--ease-ios); }
+.brand-text .brand-name { display: block; }
 .bar-title { display: none; }
 
-/* theme switch crossfade */
-::view-transition-old(root), ::view-transition-new(root) { animation-duration: 0.5s; animation-timing-function: var(--ease-out); }
-
-/* iOS switches for on/off settings in the interactives */
+/* ---- iOS switches */
 .ctl-check input[type="checkbox"] {
   -webkit-appearance: none; appearance: none; position: relative; flex-shrink: 0; margin: 0; cursor: pointer;
-  width: 46px; height: 28px; border-radius: 14px; background: var(--fill-2); transition: background-color 0.25s var(--ease-out);
+  width: 46px; height: 28px; border-radius: 14px; background: var(--fill-2); transition: background-color 0.3s var(--ease-out);
 }
 .ctl-check input[type="checkbox"]::after {
-  content: ""; position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; border-radius: 50%; background: #fff;
+  content: ""; position: absolute; top: 2px; left: 2px; width: 24px; height: 24px; border-radius: 12px; background: #fff;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15), 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 0.5px rgba(0, 0, 0, 0.04);
-  transition: transform 0.4s var(--spring), width 0.2s var(--ease-out);
+  transition: transform var(--dur-snappy) var(--ease-snappy), width var(--dur-snappy) var(--ease-snappy);
 }
-.ctl-check input[type="checkbox"]:active::after { width: 28px; }
+.ctl-check input[type="checkbox"]:active::after { width: 30px; }
 .ctl-check input[type="checkbox"]:checked { background: var(--switch-on); }
 .ctl-check input[type="checkbox"]:checked::after { transform: translateX(18px); }
-.ctl-check input[type="checkbox"]:checked:active::after { transform: translateX(14px); }
+.ctl-check input[type="checkbox"]:checked:active::after { transform: translateX(12px); }
 
-/* iOS sliders: thin track filled to a white thumb */
-.ctl input[type="range"] { -webkit-appearance: none; appearance: none; height: 28px; background: transparent; cursor: pointer; }
+/* ---- iOS sliders: thin track filled to a white thumb */
+.ctl input[type="range"] { -webkit-appearance: none; appearance: none; height: 30px; background: transparent; cursor: pointer; touch-action: pan-y; }
 .ctl input[type="range"]::-webkit-slider-runnable-track {
   height: 4px; border-radius: 2px;
   background: linear-gradient(var(--accent), var(--accent)) 0 / var(--p, 50%) 100% no-repeat, var(--fill-2);
 }
 .ctl input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none; width: 26px; height: 26px; margin-top: -11px; border-radius: 50%; background: #fff;
+  -webkit-appearance: none; width: 27px; height: 27px; margin-top: -11.5px; border-radius: 50%; background: #fff;
   box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.12), 0 6px 13px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
-  transition: transform 0.35s var(--spring);
+  transition: transform var(--dur-snappy) var(--ease-snappy);
 }
-.ctl input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.12); }
+.ctl input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.15); transition-duration: 0.15s; }
 .ctl input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--fill-2); }
 .ctl input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--accent); }
 .ctl input[type="range"]::-moz-range-thumb {
-  width: 26px; height: 26px; border: 0; border-radius: 50%; background: #fff;
+  width: 27px; height: 27px; border: 0; border-radius: 50%; background: #fff;
   box-shadow: 0 0.5px 4px rgba(0, 0, 0, 0.12), 0 6px 13px rgba(0, 0, 0, 0.12), 0 0 0 0.5px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 720px) {
-  /* large title -> bar title */
   .bar-title {
     display: block; position: absolute; left: 0; top: 50%; max-width: calc(100vw - 190px);
     font-family: var(--font-display); font-size: 16px; font-weight: 600; letter-spacing: -0.02em; color: var(--ink);
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis; pointer-events: none;
-    opacity: 0; transform: translateY(calc(-50% + 10px));
+    opacity: var(--tp, 0); transform: translateY(calc(-50% + (1 - var(--tp, 0)) * 12px));
   }
-  body.title-collapsed .brand-name { opacity: 0; transform: translateY(-10px); }
-  body.title-collapsed .bar-title { opacity: 1; transform: translateY(-50%); }
-  /* the selection lens glides between tabs */
+  .brand-name { display: block; opacity: calc(1 - var(--tp, 0)); transform: translateY(calc(var(--tp, 0) * -12px)); }
+  /* the selection lens glides between tabs on a spring */
   .tab-lens {
     position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; width: calc((100% - 10px) / 5); border-radius: 26px;
     background: var(--fill); opacity: 0; pointer-events: none;
-    transform: translateX(calc(var(--i, 0) * 100%)); transition: transform 0.6s var(--spring), opacity 0.25s;
+    transform: translateX(calc(var(--i, 0) * 100%)); transition: transform var(--dur-snappy) var(--ease-snappy), opacity 0.25s;
   }
   .tabbar.has-on .tab-lens { opacity: 1; }
   .tabbar a, .tabbar button { z-index: 1; }
-  /* the tab bar tucks in while you read and comes back when you scroll up */
-  .tabbar { transition: width 0.55s var(--spring), height 0.55s var(--spring), border-radius 0.55s var(--spring), box-shadow 0.3s; }
-  .tabbar a > span, .tabbar button > span { display: block; max-height: 14px; overflow: hidden; transition: opacity 0.2s var(--ease-out), max-height 0.4s var(--ease-ios); }
-  .tabbar svg { transition: width 0.4s var(--ease-ios), height 0.4s var(--ease-ios); }
-  body.bar-min .tabbar { height: 50px; width: min(300px, calc(100% - 80px)); border-radius: 25px; }
-  body.bar-min .tabbar a > span, body.bar-min .tabbar button > span { opacity: 0; max-height: 0; }
-  body.bar-min .tabbar svg { width: 21px; height: 21px; }
-  body.bar-min .tab-lens { border-radius: 20px; }
-  body.search-open .search { animation: search-in 0.35s var(--ease-ios); transform-origin: left center; }
-  @keyframes search-in { from { opacity: 0; transform: scaleX(0.92); } }
-  /* soft blur under the tab bar too */
+  /* the tab bar tucks in while you read: transform-only, so it stays on the compositor and never janks */
+  .tabbar { transform-origin: 50% 100%; transition: transform var(--dur-smooth) var(--ease-smooth); }
+  .tabbar a > span, .tabbar button > span { display: block; transition: opacity 0.2s var(--ease-out), transform var(--dur-smooth) var(--ease-smooth); }
+  .tabbar svg { transition: transform var(--dur-smooth) var(--ease-smooth); }
+  body.bar-min .tabbar { transform: translateX(-50%) translateY(4px) scale(0.84); }
+  body.bar-min .tabbar a > span, body.bar-min .tabbar button > span { opacity: 0; transform: translateY(6px) scale(0.9); }
+  body.bar-min .tabbar svg { transform: translateY(7px) scale(1.1); }
+  body.bar-min .tab-badge { transform: translateY(6px); }
+  .tab-badge { transition: transform var(--dur-smooth) var(--ease-smooth); }
+  body.search-open .search { animation: search-in var(--dur-snappy) var(--ease-snappy); transform-origin: left center; }
+  @keyframes search-in { from { opacity: 0; transform: scaleX(0.9); } }
   body::after {
     content: ""; position: fixed; left: 0; right: 0; bottom: 0; z-index: 43; pointer-events: none;
     height: calc(100px + env(safe-area-inset-bottom, 0px));
