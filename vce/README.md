@@ -28,7 +28,7 @@ Progress (completed topics, self-marks, quiz answers, the review queue) is store
 
 - **Spaced review queue.** Every question you flag ("Review later"), get wrong in multiple choice, or send from a practice exam joins a queue. Get it right and it comes back after 1 day, then 3, 7 and 14; right again after 14 days and it's mastered. Get it wrong and it starts again tomorrow. **Start review** runs the due questions one at a time, inline.
 - **Practice-exam mistakes.** Wrong multiple-choice answers join the queue when you finish a paper. After marking, written parts you answered but scored under half on can be sent with one button.
-- **Blurt.** On any topic or quick-notes card: write everything you remember with the page hidden, then check it against the topic's key points. With Claude, each point is marked got / partly / missed (a "got" has to quote your words) plus anything you got wrong. Without Claude, you tick the points yourself. Gaps can be saved to My notes.
+- **Blurt.** On any topic or quick-notes card: write everything you remember with the page hidden, then check it against the topic's key points. With Claude, each point is marked got / partly / missed (a "got" has to quote your words) plus anything you got wrong. Without Claude, you tick the points yourself. Gaps can be saved to My notes. Every attempt is kept (your text and each point's result). **Blurt history**, on the quick-notes bar and the review page, lists them by day, so you can open an old attempt or redo a whole day's topics in a row (or just the ones under 80%) and see how you've moved since last time.
 
 ## Claude in the guide
 

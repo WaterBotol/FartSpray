@@ -1596,6 +1596,42 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
 .bl-text { white-space: pre-wrap; padding-bottom: 12px; font-size: 14.5px; color: var(--ink-2); }
 /* blurt hides the page behind it, on every screen size */
 .ai-scrim.modal { display: block; background: color-mix(in srgb, var(--bg) 86%, transparent); -webkit-backdrop-filter: blur(22px) saturate(1.1); backdrop-filter: blur(22px) saturate(1.1); }
+
+/* blurt history */
+.bl-link { border: 0; padding: 0; background: none; color: var(--accent); font: inherit; font-weight: 600; cursor: pointer; }
+.bl-delta { margin: 4px 0 0; font-size: 13.5px; font-weight: 600; color: var(--muted); }
+.bl-delta[hidden] { display: none; }
+.bl-delta.up { color: var(--good); }
+.bl-delta.down { color: var(--bad); }
+.bl-pts.plain .bl-ic { display: none; }
+.bh-ic { background: linear-gradient(180deg, color-mix(in srgb, var(--sys-indigo) 80%, #fff), var(--sys-indigo)); }
+.bh-ic .pen { width: 18px; height: 18px; color: #fff; }
+.bh-empty { margin: 4px 0; font-size: 15.5px; color: var(--ink-2); }
+.bh-day + .bh-day { margin-top: 22px; }
+.bh-day-h { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; margin-bottom: 8px; }
+.bh-day-t { display: grid; }
+.bh-day-t b { font-size: 18px; letter-spacing: -0.02em; }
+.bh-day-t span { font-size: 13px; color: var(--muted); }
+.bh-acts { display: flex; flex-wrap: wrap; gap: 6px; }
+.bh-acts .btn { height: 32px; padding: 0 12px; font-size: 13.5px; }
+.bh-list { list-style: none; margin: 0; padding: 0; border-radius: 16px; background: var(--surface-2); overflow: hidden; }
+.bh-item { display: flex; align-items: center; gap: 4px; padding-right: 8px; }
+.bh-item + .bh-item { border-top: 1px solid var(--line); }
+.bh-open { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; padding: 10px 6px 10px 12px; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.bh-open:hover .bh-tt b { color: var(--accent); }
+.bh-open .s-ic { --sz: 28px; }
+.bh-tt { flex: 1; min-width: 0; display: grid; }
+.bh-tt b { font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bh-tt small { font-size: 12.5px; color: var(--muted); }
+.bh-cov { flex-shrink: 0; min-width: 46px; padding: 2px 8px; border-radius: 99px; font-size: 13px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; color: #fff; }
+.bh-cov.hi { background: var(--sys-green); } .bh-cov.mid { background: var(--sys-orange); } .bh-cov.lo { background: var(--sys-red); }
+.bh-item > .btn { height: 30px; padding: 0 10px; font-size: 13px; flex-shrink: 0; }
+.bh-row { display: flex; align-items: center; gap: 12px; max-width: 760px; margin: 0 auto 18px; padding: 12px 14px; border-radius: 18px; background: var(--surface); border: 1px solid var(--card-edge); box-shadow: var(--card-shadow); }
+.bh-row .ai-ic { width: 34px; height: 34px; }
+.bh-row-t { flex: 1; min-width: 0; display: grid; }
+.bh-row-t b { font-size: 15.5px; }
+.bh-row-t span { font-size: 13px; color: var(--muted); }
+.nt-bar .bl-btn { gap: 6px; }
 </style>
 </head>
 <body>
@@ -7059,17 +7095,37 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
 
 
   /* ---------------------------------------------------------------- blurt (free recall) */
-  // notes hidden, write everything you remember, then see exactly which key points you missed
+  // notes hidden, write everything you remember, then see exactly which key points you missed.
+  // Every attempt is kept (your text and each point's result), so any day's blurts can be looked at or redone.
   const BL = 'blurts';
   function keyPoints(t) {
     const box = doc.createElement('div'); box.innerHTML = A.noteParts(t).summary || '';
     let items = $$('li', box).filter(li => !li.parentElement.closest('li'));
     if (!items.length) items = $$('p', box);
-    return items.map(li => ({ html: li.innerHTML, text: A.htmlText(li).replace(/^- /, '') })).filter(x => x.text);
+    return items.map(li => ({ html: li.innerHTML, text: A.htmlText(li).replace(/^- /, '').replace(/\s+/g, ' ').trim() })).filter(x => x.text);
+  }
+  const dayKey = t => { const d = new Date(t); d.setHours(0, 0, 0, 0); return d.getTime(); };
+  const dayLabel = k => { const diff = Math.round((dayKey(Date.now()) - k) / 864e5); return diff === 0 ? 'Today' : diff === 1 ? 'Yesterday' : new Date(k).toLocaleDateString('en-AU', { weekday: 'short', day: 'numeric', month: 'short' }); };
+  const clock = t => new Date(t).toLocaleTimeString('en-AU', { hour: 'numeric', minute: '2-digit' });
+  const covCls = c => (c >= 80 ? 'hi' : c >= 50 ? 'mid' : 'lo');
+  const attempts = tid => (store.get(BL, {})[tid] || []);
+  function allAttempts() {
+    const all = store.get(BL, {}), out = [];
+    Object.keys(all).forEach(tid => { if (A.topic(tid)) (all[tid] || []).forEach(e => out.push(Object.assign({ tid }, e))); });
+    return out.sort((a, b) => b.t - a.t);
+  }
+  function saveAttempt(tid, e) {
+    const all = store.get(BL, {});
+    all[tid] = [e].concat(all[tid] || []).slice(0, 20);
+    const every = Object.keys(all).flatMap(k => all[k].map(x => [k, x.t])).sort((a, b) => b[1] - a[1]);
+    every.slice(300).forEach(([k, t]) => { all[k] = all[k].filter(x => x.t !== t); if (!all[k].length) delete all[k]; });   // keep the newest 300
+    store.set(BL, all);
+    $$('[data-bl-last="' + tid + '"]').forEach(x => { x.textContent = lastBlurt(tid); x.hidden = false; });
+    refreshHistRow();
   }
   function lastBlurt(tid) {
-    const h = (store.get(BL, {})[tid] || [])[0]; if (!h) return '';
-    const d = Math.floor((Date.now() - h.t) / 864e5);
+    const h = attempts(tid)[0]; if (!h) return '';
+    const d = Math.round((dayKey(Date.now()) - dayKey(h.t)) / 864e5);
     return 'Last blurt ' + h.cov + '% · ' + (d < 1 ? 'today' : d === 1 ? 'yesterday' : d + ' days ago');
   }
   function blurtPrompt(t, pts, text) {
@@ -7081,18 +7137,68 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
       '"points" has exactly one entry per key point, in the order given. For a missed point, "note" says in a few words what the idea is.\n\n' +
       'KEY POINTS\n' + pts.map((p, i) => (i + 1) + '. ' + p.text).join('\n') + '\n\nTHE STUDENT’S BLURT\n"""\n' + clip(text, 12000) + '\n"""';
   }
-  function openBlurt(tid) {
+
+  // the result view, shared by a fresh check and a look back at an old attempt
+  function resultShell(s, pts, text) {
+    s.body.innerHTML = '<div class="bl-score"><div class="bl-ring"><b>–</b><span>recalled</span></div><div class="bl-score-t"><b class="bl-head"></b><p class="bl-sub"></p><p class="bl-delta" hidden></p></div></div>' +
+      '<ol class="bl-pts">' + pts.map((p, i) => '<li class="bl-pt" data-i="' + i + '"><span class="bl-ic" aria-hidden="true"></span><div class="bl-pt-b"><div class="bl-pt-t">' + p.html + '</div><div class="bl-note"></div></div></li>').join('') + '</ol>' +
+      '<div class="bl-wrong" hidden></div><p class="bl-tip" hidden></p>' + (text ? '<details class="bl-mine"><summary>Your blurt</summary><div class="bl-text"></div></details>' : '');
+    if (text) $('.bl-text', s.body).textContent = text;
+    A.renderMath(s.body);
+  }
+  function ringOn(s, cov, label) {
+    const r = $('.bl-ring', s.body); if (!r) return;
+    r.style.setProperty('--p', cov); r.className = 'bl-ring ' + covCls(cov);
+    $('b', r).textContent = cov + '%';
+    if (label) $('.bl-head', s.body).textContent = label;
+  }
+  const verdictFor = c => (c >= 80 ? 'Strong recall' : c >= 50 ? 'Getting there' : 'Big gaps: worth another go');
+  function paintResult(s, pts, e, prev) {
+    const st = e.st || [], n = k => st.filter(x => x.s === k).length;
+    st.forEach((x, i) => {
+      const li = $('.bl-pt[data-i="' + i + '"]', s.body); if (!li) return;
+      li.classList.add(x.s);
+      $('.bl-ic', li).textContent = x.s === 'got' ? '✓' : x.s === 'partial' ? '½' : '✗';
+      $('.bl-note', li).innerHTML = (x.q ? '<q>' + esc(x.q) + '</q>' + (x.n ? ' · ' : '') : '') + esc(x.n || '');
+    });
+    ringOn(s, e.cov, verdictFor(e.cov));
+    $('.bl-sub', s.body).textContent = e.by === 'self' ? n('got') + ' of ' + pts.length + ' key points ticked (you checked this one yourself).' : n('got') + ' got · ' + n('partial') + ' partly · ' + n('missed') + ' missed, out of ' + pts.length + ' key points.';
+    if (prev) {
+      const d = e.cov - prev.cov, el = $('.bl-delta', s.body);
+      el.hidden = false; el.className = 'bl-delta ' + (d > 0 ? 'up' : d < 0 ? 'down' : '');
+      const when = dayLabel(dayKey(prev.t));
+      el.textContent = 'Last time ' + prev.cov + '% (' + (/^(Today|Yesterday)$/.test(when) ? when.toLowerCase() : when) + ') · ' + (d > 0 ? '+' + d + ' points' : d < 0 ? d + ' points' : 'no change');
+    }
+    const wrong = (e.wrong || []).filter(w => w && (w.claim || w.fix));
+    if (wrong.length) {
+      const w = $('.bl-wrong', s.body); w.hidden = false;
+      w.innerHTML = '<div class="bl-wrong-h">Things you got wrong</div><ul>' + wrong.map(x => '<li>' + (x.claim ? '<q>' + esc(String(x.claim)) + '</q>' : '') + '<div class="md"></div></li>').join('') + '</ul>';
+      $$('.md', w).forEach((d, i) => paint(d, String(wrong[i].fix || '')));
+    }
+    if (e.tip) { const tp = $('.bl-tip', s.body); tp.hidden = false; tp.innerHTML = '<b>Next:</b> '; tp.appendChild(doc.createTextNode(String(e.tip))); }
+  }
+  function gapsText(pts, e) {
+    const st = e.st || [];
+    const g = st.map((x, i) => (x.s === 'got' || !pts[i]) ? '' : '- ' + (x.s === 'partial' ? '(partly) ' : '') + pts[i].text).filter(Boolean)
+      .concat((e.wrong || []).map(x => '- Wrong: “' + (x.claim || '') + '” → ' + (x.fix || '')));
+    return g.length ? '**Gaps from my blurt (' + e.cov + '%)**\n' + g.join('\n') : '';
+  }
+
+  // seq: redoing a set of topics from one day, one after another ({ list, i, label })
+  function openBlurt(tid, seq) {
     const t = A.topic(tid); if (!t) return;
     const pts = keyPoints(t);
     if (!pts.length) { A.toast('This page has no summary to check a blurt against'); return; }
-    const s = openSheet({ title: 'Blurt: ' + esc(tTitle(t)), sub: esc((t.subj ? t.subj.name + ' · ' : '') + 'write it all from memory'), icon: t.subj ? A.subjIcon(t.subj.id) : '', cls: 'ai-blurt', modal: true });   // the page is blurred out: no peeking
-    const draftKey = 'blurtDraft:' + tid, last = lastBlurt(tid);
-    let ctl = null, iv = 0;
+    const sub = seq ? 'Redo · ' + seq.label + ' · ' + (seq.i + 1) + ' of ' + seq.list.length : (t.subj ? t.subj.name + ' · ' : '') + 'write it all from memory';
+    const s = openSheet({ title: 'Blurt: ' + esc(tTitle(t)), sub: esc(sub), icon: t.subj ? A.subjIcon(t.subj.id) : '', cls: 'ai-blurt', modal: true });   // the page is blurred out: no peeking
+    const draftKey = 'blurtDraft:' + tid, prev = attempts(tid)[0] || null, hasHist = allAttempts().length > 0;
+    let ctl = null, iv = 0, entry = null;
     s.onClose = () => { clearInterval(iv); if (ctl) ctl.abort(); };
-    s.body.innerHTML = '<div class="bl-intro"><p>Write down <b>everything</b> you remember about <b>' + esc(tTitle(t)) + '</b>: the key ideas, formulas, definitions, how they connect, and the traps. Bullet points are fine. No peeking at the notes.</p>' + (last ? '<p class="bl-last">' + last + '</p>' : '') + '</div>' +
+    s.body.innerHTML = '<div class="bl-intro"><p>Write down <b>everything</b> you remember about <b>' + esc(tTitle(t)) + '</b>: the key ideas, formulas, definitions, how they connect, and the traps. Bullet points are fine. No peeking at the notes.</p>' +
+      (prev || hasHist ? '<p class="bl-last">' + (prev ? esc(lastBlurt(tid)) + (hasHist ? ' · ' : '') : '') + (hasHist ? '<button class="bl-link" type="button" data-bh-open>Blurt history</button>' : '') + '</p>' : '') + '</div>' +
       '<textarea class="bl-ta" placeholder="Start typing everything you know…" aria-label="Your blurt"></textarea>' +
       '<div class="bl-meta"><span class="bl-wc">0 words</span><span class="bl-time">0:00</span></div>';
-    s.foot.innerHTML = '<div class="np-acts"><button class="btn primary" type="button" data-bl-check>Done, check it</button></div>';
+    s.foot.innerHTML = '<div class="np-acts">' + (seq && seq.i + 1 < seq.list.length ? '<button class="btn" type="button" data-bl-skip>Skip</button>' : '') + '<button class="btn primary" type="button" data-bl-check>Done, check it</button></div>';
     const ta = $('.bl-ta', s.body), wc = $('.bl-wc', s.body), tm = $('.bl-time', s.body), t0 = Date.now();
     ta.value = store.get(draftKey, '') || '';
     iv = setInterval(() => { const sec = Math.floor((Date.now() - t0) / 1000); tm.textContent = Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0'); }, 1000);
@@ -7100,61 +7206,52 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
     let dt; ta.addEventListener('input', () => { count(); clearTimeout(dt); dt = setTimeout(() => store.set(draftKey, ta.value), 400); });
     count();
     if (!phone()) setTimeout(() => ta.focus({ preventScroll: true }), 120);
+    const skip = $('[data-bl-skip]', s.foot);
+    if (skip) skip.addEventListener('click', () => openBlurt(seq.list[seq.i + 1], Object.assign({}, seq, { i: seq.i + 1 })));
     $('[data-bl-check]', s.foot).addEventListener('click', () => {
       if (count() < 5) { A.toast('Write a bit more first'); ta.focus(); return; }
       clearInterval(iv); clearTimeout(dt); store.set(draftKey, ta.value);
-      results(ta.value);
+      const text = ta.value, secs = Math.round((Date.now() - t0) / 1000);
+      resultShell(s, pts, text);
+      s.foot.innerHTML = '';
+      if (sample) withClaude(text, secs); else selfCheck(text, secs, false);
     });
 
-    function record(cov) {
-      const all = store.get(BL, {});
-      all[tid] = [{ t: Date.now(), cov }].concat(all[tid] || []).slice(0, 10);
-      store.set(BL, all); store.set(draftKey, '');
-      $$('[data-bl-last="' + tid + '"]').forEach(x => { x.textContent = lastBlurt(tid); x.hidden = false; });
-    }
-    function ring(cov, label) {
-      const r = $('.bl-ring', s.body); if (!r) return;
-      r.style.setProperty('--p', cov);
-      r.className = 'bl-ring ' + (cov >= 80 ? 'hi' : cov >= 50 ? 'mid' : 'lo');
-      $('b', r).textContent = cov + '%';
-      if (label) $('.bl-head', s.body).textContent = label;
-    }
-    function results(text) {
-      s.body.innerHTML = '<div class="bl-score"><div class="bl-ring"><b>–</b><span>recalled</span></div><div class="bl-score-t"><b class="bl-head"></b><p class="bl-sub"></p></div></div>' +
-        '<ol class="bl-pts">' + pts.map((p, i) => '<li class="bl-pt" data-i="' + i + '"><span class="bl-ic" aria-hidden="true"></span><div class="bl-pt-b"><div class="bl-pt-t">' + p.html + '</div><div class="bl-note"></div></div></li>').join('') + '</ol>' +
-        '<div class="bl-wrong" hidden></div><p class="bl-tip" hidden></p><details class="bl-mine"><summary>Your blurt</summary><div class="bl-text"></div></details>';
-      $('.bl-text', s.body).textContent = text;
-      A.renderMath(s.body);
-      s.foot.innerHTML = '';
-      if (sample) withClaude(text); else selfCheck(false);
-    }
+    const keep = e => { entry = e; saveAttempt(tid, e); store.set(draftKey, ''); };
     function footer(extra) {
-      s.foot.innerHTML = '<div class="np-acts"><button class="btn" type="button" data-bl-notes>Open the notes</button><button class="btn" type="button" data-bl-again>Blurt again</button>' + (extra || '') + '</div>';
+      const nextBtn = seq ? (seq.i + 1 < seq.list.length ? '<button class="btn primary" type="button" data-bl-next>Next topic →</button>' : '<button class="btn primary" type="button" data-bh-open>Back to history</button>') : '';
+      s.foot.innerHTML = '<div class="np-acts"><button class="btn" type="button" data-bl-notes>Open the notes</button><button class="btn" type="button" data-bl-again>Blurt again</button>' + (extra || '') + nextBtn + '</div>';
       $('[data-bl-notes]', s.foot).addEventListener('click', () => openNotes(tid));
-      $('[data-bl-again]', s.foot).addEventListener('click', () => openBlurt(tid));
+      $('[data-bl-again]', s.foot).addEventListener('click', () => openBlurt(tid, seq));
+      const nx = $('[data-bl-next]', s.foot);
+      if (nx) nx.addEventListener('click', () => openBlurt(seq.list[seq.i + 1], Object.assign({}, seq, { i: seq.i + 1 })));
     }
-    function selfCheck(failed) {
+    function gapsButton() {
+      const txt = entry && gapsText(pts, entry);
+      if (!txt || $('[data-bl-gaps]', s.foot)) return;
+      const b = doc.createElement('button'); b.type = 'button'; b.className = 'btn'; b.dataset.blGaps = '1'; b.textContent = 'Save gaps to my notes';
+      b.addEventListener('click', () => { saveNote(tid, 'Blurt gaps (' + entry.cov + '%)', txt); b.textContent = 'Saved ✓'; b.disabled = true; });
+      const acts = $('.np-acts', s.foot), nx = $('[data-bl-next], .np-acts > [data-bh-open]', s.foot);
+      if (nx) acts.insertBefore(b, nx); else acts.appendChild(b);
+    }
+    function selfCheck(text, secs, failed) {
       $('.bl-head', s.body).textContent = 'Tick the points you had';
       $('.bl-sub', s.body).textContent = (failed ? 'Claude couldn’t check it, so check it yourself. ' : '') + 'Compare your blurt (at the bottom) with each key point, and only tick it if you actually wrote the idea.';
-      $$('.bl-pt', s.body).forEach(li => { li.classList.add('self'); const ic = $('.bl-ic', li); const cb = doc.createElement('input'); cb.type = 'checkbox'; cb.className = 'bl-cb'; cb.setAttribute('aria-label', 'I had this'); ic.replaceWith(cb); });
+      $$('.bl-pt', s.body).forEach(li => { li.classList.add('self'); const cb = doc.createElement('input'); cb.type = 'checkbox'; cb.className = 'bl-cb'; cb.setAttribute('aria-label', 'I had this'); $('.bl-ic', li).replaceWith(cb); });
       $('.bl-mine', s.body).open = true;
-      const upd = () => ring(Math.round(100 * $$('.bl-cb:checked', s.body).length / pts.length));
+      const upd = () => ringOn(s, Math.round(100 * $$('.bl-cb:checked', s.body).length / pts.length));
       s.body.addEventListener('change', upd); upd();
       footer('<button class="btn primary" type="button" data-bl-save>Save result</button>');
-      $('[data-bl-save]', s.foot).addEventListener('click', e => {
-        const n = $$('.bl-cb:checked', s.body).length, cov = Math.round(100 * n / pts.length);
-        record(cov); e.target.textContent = 'Saved ✓'; e.target.disabled = true;
-        const miss = $$('.bl-pt', s.body).filter(li => !$('.bl-cb', li).checked).map(li => '- ' + pts[+li.dataset.i].text);
-        if (miss.length) gapsButton('**Missed in my blurt (' + cov + '%)**\n' + miss.join('\n'), cov);
+      $('[data-bl-save]', s.foot).addEventListener('click', ev => {
+        const st = $$('.bl-pt', s.body).map(li => ({ s: $('.bl-cb', li).checked ? 'got' : 'missed' }));
+        const cov = Math.round(100 * st.filter(x => x.s === 'got').length / pts.length);
+        keep({ t: Date.now(), cov, by: 'self', text, secs, st });
+        ev.target.textContent = 'Saved ✓'; ev.target.disabled = true; ev.target.classList.remove('primary');
+        if (prev) { const d = cov - prev.cov, el = $('.bl-delta', s.body); el.hidden = false; el.className = 'bl-delta ' + (d > 0 ? 'up' : d < 0 ? 'down' : ''); el.textContent = 'Last time ' + prev.cov + '% · ' + (d > 0 ? '+' + d + ' points' : d < 0 ? d + ' points' : 'no change'); }
+        gapsButton();
       });
     }
-    function gapsButton(text, cov) {
-      if ($('[data-bl-gaps]', s.foot)) return;
-      const b = doc.createElement('button'); b.type = 'button'; b.className = 'btn'; b.dataset.blGaps = '1'; b.textContent = 'Save gaps to my notes';
-      b.addEventListener('click', () => { saveNote(tid, 'Blurt gaps (' + cov + '%)', text); b.textContent = 'Saved ✓'; b.disabled = true; });
-      $('.np-acts', s.foot).appendChild(b);
-    }
-    async function withClaude(text) {
+    async function withClaude(text, secs) {
       $('.bl-head', s.body).innerHTML = '<span class="ai-think">Claude is checking your blurt…</span>';
       $('.bl-sub', s.body).textContent = 'Every point it says you got has to be quoted from what you wrote.';
       ctl = new AbortController();
@@ -7163,38 +7260,76 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
       catch (e) {
         if (e && e.code === 'cancelled') return;
         const f = failCopy(e); if (f.msg) A.toast(f.msg);
-        selfCheck(true); return;
+        selfCheck(text, secs, true); return;
       } finally { ctl = null; }
       const got = res && Array.isArray(res.points) ? res.points : [];
       const st = pts.map((p, i) => {
         const r = got[i] || {};
         let status = ['got', 'partial', 'missed'].includes(r.status) ? r.status : 'missed', note = String(r.note || ''), quote = String(r.quote || '');
         if (status !== 'missed' && !quoted(quote, text)) { status = 'missed'; note = 'Claude couldn’t find this in what you wrote.'; quote = ''; }
-        return { status, note, quote: status === 'missed' ? '' : quote };
+        return { s: status, q: status === 'missed' ? '' : quote, n: note };
       });
-      const n = k => st.filter(x => x.status === k).length;
-      const cov = Math.round(100 * (n('got') + 0.5 * n('partial')) / pts.length);
-      st.forEach((x, i) => {
-        const li = $('.bl-pt[data-i="' + i + '"]', s.body);
-        li.classList.add(x.status);
-        $('.bl-ic', li).textContent = x.status === 'got' ? '✓' : x.status === 'partial' ? '½' : '✗';
-        $('.bl-note', li).innerHTML = (x.quote ? '<q>' + esc(x.quote) + '</q>' + (x.note ? ' · ' : '') : '') + esc(x.note);
-      });
-      ring(cov, cov >= 80 ? 'Strong recall' : cov >= 50 ? 'Getting there' : 'Big gaps: worth another go');
-      $('.bl-sub', s.body).textContent = n('got') + ' got · ' + n('partial') + ' partly · ' + n('missed') + ' missed, out of ' + pts.length + ' key points.';
-      const wrong = (res && Array.isArray(res.wrong) ? res.wrong : []).filter(w => w && (w.claim || w.fix));
-      if (wrong.length) {
-        const w = $('.bl-wrong', s.body); w.hidden = false;
-        w.innerHTML = '<div class="bl-wrong-h">Things you got wrong</div><ul>' + wrong.map(x => '<li>' + (x.claim ? '<q>' + esc(String(x.claim)) + '</q>' : '') + '<div class="md"></div></li>').join('') + '</ul>';
-        $$('.md', w).forEach((d, i) => paint(d, String(wrong[i].fix || '')));
-      }
-      if (res && res.tip) { const tp = $('.bl-tip', s.body); tp.hidden = false; tp.innerHTML = '<b>Next:</b> '; tp.appendChild(doc.createTextNode(String(res.tip))); }
-      record(cov);
-      footer();
-      const gaps = st.map((x, i) => x.status === 'got' ? '' : '- ' + (x.status === 'partial' ? '(partly) ' : '') + pts[i].text).filter(Boolean)
-        .concat(wrong.map(x => '- Wrong: “' + (x.claim || '') + '” → ' + (x.fix || '')));
-      if (gaps.length) gapsButton('**Gaps from my blurt (' + cov + '%)**\n' + gaps.join('\n'), cov);
+      const cov = Math.round(100 * st.reduce((a, x) => a + (x.s === 'got' ? 1 : x.s === 'partial' ? 0.5 : 0), 0) / pts.length);
+      const wrong = (res && Array.isArray(res.wrong) ? res.wrong : []).filter(w => w && (w.claim || w.fix)).map(w => ({ claim: String(w.claim || ''), fix: String(w.fix || '') }));
+      const e = { t: Date.now(), cov, by: 'claude', text, secs, st, wrong, tip: res && res.tip ? String(res.tip) : '' };
+      paintResult(s, pts, e, prev);
+      keep(e);
+      footer(); gapsButton();
     }
+  }
+
+  // look back at one old attempt
+  function viewBlurt(e) {
+    const t = A.topic(e.tid); if (!t) return;
+    const pts = keyPoints(t);
+    const s = openSheet({ title: esc(tTitle(t)), sub: esc('Blurt · ' + dayLabel(dayKey(e.t)) + ', ' + clock(e.t) + (e.by === 'self' ? ' · self-checked' : '')), icon: t.subj ? A.subjIcon(t.subj.id) : '', cls: 'ai-blurt' });
+    resultShell(s, pts, e.text || '');
+    if (e.st) {
+      const older = attempts(e.tid).filter(x => x.t < e.t)[0];
+      paintResult(s, pts, e, older);
+    } else {
+      ringOn(s, e.cov, verdictFor(e.cov));
+      $('.bl-sub', s.body).textContent = 'Only the score was kept for this one (it’s from before blurt history existed).';
+      $('.bl-pts', s.body).classList.add('plain');
+    }
+    if ($('.bl-mine', s.body)) $('.bl-mine', s.body).open = !e.st;
+    s.foot.innerHTML = '<div class="np-acts"><button class="btn" type="button" data-bh-open>Back to history</button><button class="btn primary" type="button" data-bl-redo>Redo this topic</button></div>';
+    $('[data-bl-redo]', s.foot).addEventListener('click', () => openBlurt(e.tid));
+  }
+
+  // every attempt, by day
+  function openBlurtHistory() {
+    const list = allAttempts();
+    const s = openSheet({ title: 'Blurt history', sub: list.length ? list.length + ' blurt' + (list.length === 1 ? '' : 's') + ' · redo any day' : 'Nothing yet', icon: '<span class="ai-ic bh-ic" aria-hidden="true">' + PEN + '</span>', cls: 'ai-bhist' });
+    if (!list.length) { s.body.innerHTML = '<p class="bh-empty">No blurts yet. Hit <b>Blurt</b> on any topic page or quick-notes card. Every attempt lands here by day, so you can look back at it or redo the lot.</p>'; return; }
+    const days = [];
+    list.forEach(e => { const k = dayKey(e.t); let d = days.find(x => x.k === k); if (!d) days.push(d = { k, items: [] }); d.items.push(e); });
+    const topicsOf = (d, weakOnly) => [...new Set(d.items.slice().reverse().map(e => e.tid))].filter(tid => !weakOnly || d.items.find(e => e.tid === tid).cov < 80);
+    s.body.innerHTML = days.map((d, di) => {
+      const tids = topicsOf(d), weak = topicsOf(d, true), avg = Math.round(d.items.reduce((a, e) => a + e.cov, 0) / d.items.length);
+      return '<section class="bh-day"><div class="bh-day-h"><div class="bh-day-t"><b>' + dayLabel(d.k) + '</b><span>' + tids.length + ' topic' + (tids.length === 1 ? '' : 's') + ' · average ' + avg + '%</span></div>' +
+        '<div class="bh-acts">' + (weak.length && weak.length < tids.length ? '<button class="btn" type="button" data-bh-weak="' + di + '">Under 80% · ' + weak.length + '</button>' : '') +
+        '<button class="btn primary" type="button" data-bh-day="' + di + '">' + (tids.length > 1 ? 'Redo all ' + tids.length : 'Redo') + '</button></div></div>' +
+        '<ul class="bh-list">' + d.items.map((e, ii) => {
+          const t = A.topic(e.tid);
+          return '<li class="bh-item"><button class="bh-open" type="button" data-bh-view="' + di + ':' + ii + '">' + (t.subj ? A.subjIcon(t.subj.id) : '') +
+            '<span class="bh-tt"><b>' + esc(tTitle(t)) + '</b><small>' + esc((t.subj ? t.subj.short.split(' ')[0] + ' · ' : '') + clock(e.t) + (e.by === 'self' ? ' · self-checked' : '')) + '</small></span>' +
+            '<span class="bh-cov ' + covCls(e.cov) + '">' + e.cov + '%</span></button><button class="btn ghost" type="button" data-bh-redo="' + e.tid + '">Redo</button></li>';
+        }).join('') + '</ul></section>';
+    }).join('');
+    s.body.addEventListener('click', ev => {
+      const day = ev.target.closest('[data-bh-day]'), weak = ev.target.closest('[data-bh-weak]'), view = ev.target.closest('[data-bh-view]'), redo = ev.target.closest('[data-bh-redo]');
+      if (day || weak) {
+        const d = days[+(day ? day.dataset.bhDay : weak.dataset.bhWeak)], tids = topicsOf(d, !!weak);
+        if (tids.length) openBlurt(tids[0], { list: tids, i: 0, label: dayLabel(d.k) + (weak ? ' (under 80%)' : '') });
+      } else if (view) { const [di, ii] = view.dataset.bhView.split(':').map(Number); viewBlurt(days[di].items[ii]); }
+      else if (redo) openBlurt(redo.dataset.bhRedo);
+    });
+  }
+  function refreshHistRow() {
+    const row = $('.bh-row'); if (!row) return;
+    const list = allAttempts(), days = new Set(list.map(e => dayKey(e.t))).size;
+    $('.bh-row-s', row).textContent = list.length + ' blurt' + (list.length === 1 ? '' : 's') + ' over ' + days + ' day' + (days === 1 ? '' : 's');
   }
 
   /* ---------------------------------------------------------------- put the controls on the page */
@@ -7229,6 +7364,14 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
       const slot = doc.createElement('div'); slot.dataset.mineSlot = tid; slot.innerHTML = mineHTML(tid);
       (more || c.lastChild).before(slot); fillMine(slot);
     });
+    // blurt history: on the quick-notes bar and above the review queue
+    const ntBar = $('.nt-bar', scope);
+    if (ntBar && !$('[data-bh-open]', ntBar)) ntBar.insertAdjacentHTML('beforeend', '<button class="btn bl-btn" type="button" data-bh-open>' + PEN + '<span>Blurt history</span></button>');
+    const rvSlot = $('[data-slot="review"]', scope);
+    if (rvSlot && !$('.bh-row', scope) && allAttempts().length) {
+      rvSlot.insertAdjacentHTML('beforebegin', '<div class="bh-row"><span class="ai-ic bh-ic" aria-hidden="true">' + PEN + '</span><div class="bh-row-t"><b>Blurt history</b><span class="bh-row-s"></span></div><button class="btn" type="button" data-bh-open>Open</button></div>');
+      refreshHistRow();
+    }
     // practice exams: mark each written part, or all of them
     if (t && t.special === 'exam') {
       const saved = store.get(MKEY(t.id), {});
@@ -7249,12 +7392,13 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
 
   /* ---------------------------------------------------------------- clicks */
   doc.addEventListener('click', e => {
-    const b = e.target.closest('[data-blurt], [data-notes], [data-ask-q], [data-ask-topic], [data-ai-mark], [data-ai-markall], #aiBtn, [data-copy-note], [data-drop-note]');
+    const b = e.target.closest('[data-bh-open], [data-blurt], [data-notes], [data-ask-q], [data-ask-topic], [data-ai-mark], [data-ai-markall], #aiBtn, [data-copy-note], [data-drop-note]');
     if (!b) return;
     if (b.matches('[data-notes]')) { const it = b.closest('.rv-item'), q = it && $('[data-ask-q]', it); openNotes(b.dataset.notes, b.dataset.from || (q ? q.dataset.askQ : null), !!b.dataset.from); return; }
     if (b.matches('[data-ask-q]')) { askQuestion(b.dataset.askQ); return; }
     if (b.matches('[data-ask-topic]')) { askTopic(b.dataset.askTopic); return; }
     if (b.matches('[data-blurt]')) { openBlurt(b.dataset.blurt); return; }
+    if (b.matches('[data-bh-open]')) { openBlurtHistory(); return; }
     if (b.matches('#aiBtn')) { askPage(); return; }
     if (b.matches('[data-ai-mark]')) { const exp = b.closest('.exp'); markParts([exp], $('.ai-mk-s', exp), null); return; }
     if (b.matches('[data-ai-markall]')) { if (b.classList.contains('stop')) return; const exps = $$('#main .exp[data-pid]'), wrap = b.closest('.ai-markall'); markParts(exps, $('.ai-ma-s', wrap), b); return; }
@@ -7267,7 +7411,7 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
     else { b.dataset.armed = '1'; b.textContent = 'Tap again to delete'; setTimeout(() => { if (doc.contains(b)) { delete b.dataset.armed; b.textContent = 'Delete'; } }, 3000); }
   });
 
-  window.GUIDE_AI = { decorate, openNotes, openBlurt, askQuestion, askTopic, md };
+  window.GUIDE_AI = { decorate, openNotes, openBlurt, openBlurtHistory, askQuestion, askTopic, md };
   window.addEventListener('guide:render', () => decorate());
   decorate();
 })();
