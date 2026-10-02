@@ -97,12 +97,12 @@
   // wider screens: an inspector panel on the right; the page stays usable beside it
   let cur = null;
   const X_ICON = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>';
-  function openSheet({ title, sub, icon, cls }) {
+  function openSheet({ title, sub, icon, cls, modal }) {
     closeSheet(true);
-    const scrim = doc.createElement('div'); scrim.className = 'ai-scrim';
+    const scrim = doc.createElement('div'); scrim.className = 'ai-scrim' + (modal ? ' modal' : '');
     const el = doc.createElement('section');
     el.className = 'ai-sheet' + (cls ? ' ' + cls : '');
-    el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', phone() ? 'true' : 'false'); el.setAttribute('aria-labelledby', 'aiSheetT');
+    el.setAttribute('role', 'dialog'); el.setAttribute('aria-modal', phone() || modal ? 'true' : 'false'); el.setAttribute('aria-labelledby', 'aiSheetT');
     el.innerHTML = '<div class="ai-grab" aria-hidden="true"></div><header class="ai-head">' + (icon || '') + '<div class="ai-tt"><b id="aiSheetT">' + title + '</b>' + (sub ? '<small>' + sub + '</small>' : '') + '</div>' +
       '<button class="ai-x" type="button" aria-label="Close">' + X_ICON + '</button></header><div class="ai-body"></div><div class="ai-foot"></div>';
     body.append(scrim, el);
@@ -110,7 +110,7 @@
     cur = s;
     void el.offsetWidth;
     el.classList.add('open'); scrim.classList.add('open');
-    if (phone()) root.classList.add('sheet-lock');
+    if (phone() || modal) root.classList.add('sheet-lock');
     $('.ai-x', el).addEventListener('click', () => closeSheet());
     scrim.addEventListener('click', () => closeSheet());
     dragToDismiss(s);
@@ -168,6 +168,7 @@
   window.addEventListener('hashchange', () => { if (cur && !cur.keep) closeSheet(); });
 
   const aiIcon = '<span class="ai-ic" aria-hidden="true">' + SPARK + '</span>';
+  const PEN = '<svg class="pen" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>';
 
   /* ---------------------------------------------------------------- saved notes */
   const NOTES = 'mynotes';
@@ -332,20 +333,20 @@
   function questionText(q) {
     const t = q.topic;
     return 'Subject: ' + (t.subj ? t.subj.name : '') + '\nTopic: ' + tTitle(t) + '\n\n' +
-      'Practice question ' + q.n + ' (' + (q.mcq ? 'multiple choice' : 'short answer') + (q.marks ? ', ' + q.marks + ' mark' + (q.marks === '1' ? '' : 's') : '') + ', level: ' + q.level + '):\n' + q.stem + '\n' +
+      (q.exam ? 'Practice-exam question ' + q.label.replace('Question ', '') + ' (from “' + tTitle(t) + '”, ' + (q.mcq ? 'multiple choice' : 'written') : 'Practice question ' + q.n + ' (' + (q.mcq ? 'multiple choice' : 'short answer')) + (q.marks ? ', ' + q.marks + ' mark' + (q.marks === '1' ? '' : 's') : '') + ', level: ' + q.level + '):\n' + q.stem + '\n' +
       (q.options.length ? '\nOptions:\n' + q.options.join('\n') + '\n' : '') +
       (q.mcq ? '\nCorrect answer: ' + q.answer + '\n' : '') +
       (q.chosen && q.chosen !== q.answer ? 'The student chose ' + q.chosen + ', which is wrong.\n' : '') +
       (q.formulas ? '\nFormulas the guide lists for it: ' + q.formulas + '\n' : '') +
       (q.solution ? '\nThe guide’s solution:\n' + q.solution + '\n' : '');
   }
-  const qCard = q => '<div class="ai-card-h">' + (q.topic.subj ? A.subjIcon(q.topic.subj.id) : '') + '<span>Question ' + q.n + ' · ' + esc(tTitle(q.topic)) + '</span></div>' +
+  const qCard = q => '<div class="ai-card-h">' + (q.topic.subj ? A.subjIcon(q.topic.subj.id) : '') + '<span>' + esc(q.label) + ' · ' + esc(tTitle(q.topic)) + '</span></div>' +
     '<div class="ai-card-q md">' + md(q.stem.length > 700 ? q.stem.slice(0, 700) + ' …' : q.stem) + (q.options.length ? '<ol class="ai-opts" type="A">' + q.options.map(o => '<li>' + md(o.replace(/^[A-Z]\.\s*/, '')).replace(/^<p>|<\/p>$/g, '') + '</li>').join('') + '</ol>' : '') + '</div>';
 
   function askQuestion(key) {
     const q = A.question(key);
     if (!q) { A.toast('Couldn’t find that question any more'); return; }
-    const t = q.topic, wrong = q.chosen && q.chosen !== q.answer;
+    const t = q.topic, wrong = q.chosen && q.chosen !== q.answer, bg = A.topic(q.notesTid);
     const starters = [
       { label: 'Explain the theory behind it', primary: true, prompt: 'Explain the theory behind this question. Cover: the core concept or principle it is really testing; why that principle is true (from first principles, briefly); how the method in the solution follows from it, step by step; how to recognise this kind of question in an exam; and the trap or misconception it is designed to catch. Finish with one quick check question for me, and wait for my answer.' },
       { label: 'Quiz me on the theory', prompt: 'Quiz me on the theory behind this question, one question at a time, Socratic style. Start with the most basic idea it depends on. After each of my answers, tell me straight whether I’m right, fix any misconception in a sentence or two, then ask the next question, building up to the full question. Don’t give the full solution away. Ask your first question now.' }
@@ -356,9 +357,9 @@
       { label: 'Give me a similar question', prompt: 'Write one new exam-style question that tests the same theory in a different context or with different numbers, with a mark allocation. Don’t show the answer: let me try it first and wait for my answer, then mark it.' }
     );
     openChat({
-      title: 'Ask Claude', sub: esc((t.subj ? t.subj.short + ' · ' : '') + 'Question ' + q.n + ' · ' + tTitle(t)),
-      subject: t.subj && t.subj.name, tid: t.id, noteTitle: 'Q' + q.n,
-      context: questionText(q) + '\n\nBackground from the topic:\n' + topicText(t, 6000),
+      title: 'Ask Claude', sub: esc((t.subj ? t.subj.short + ' · ' : '') + q.label + ' · ' + tTitle(t)),
+      subject: t.subj && t.subj.name, tid: q.notesTid || t.id, noteTitle: (q.exam ? tTitle(t) + ' ' : '') + 'Q' + q.label.replace('Question ', ''),
+      context: questionText(q) + (bg && !bg.special ? '\n\nBackground from the topic:\n' + topicText(bg, 6000) : ''),
       card: qCard(q), cardMath: true, starters, placeholder: 'Ask about this question…'
     });
   }
@@ -395,7 +396,7 @@
   }
 
   /* ---------------------------------------------------------------- notes pop-out */
-  function openNotes(tid, fromKey) {
+  function openNotes(tid, fromKey, inSession) {
     const t = A.topic(tid);
     if (!t) return;
     const np = A.noteParts(t);
@@ -414,7 +415,8 @@
       }
       full.hidden = !on; more.textContent = on ? 'Hide full notes' : 'Full notes'; more.setAttribute('aria-expanded', on);
     });
-    s.foot.innerHTML = '<div class="np-acts"><a class="btn" href="#' + t.id + (fromKey ? '~' + fromKey.split(':')[1] : '') + '">' + (fromKey ? 'Go to the question' : 'Open the topic') + '</a>' +
+    const fq = fromKey && A.question(fromKey);
+    s.foot.innerHTML = '<div class="np-acts">' + (inSession ? '' : '<a class="btn" href="#' + (fq ? fq.topic.id + '~' + fq.anchor : t.id) + '">' + (fq ? 'Go to the question' : 'Open the topic') + '</a>') +
       (fromKey ? '<button class="btn primary ai-only" type="button" data-ask-q="' + fromKey + '">' + SPARK + '<span>Ask Claude about it</span></button>' : '<button class="btn primary ai-only" type="button" data-ask-topic="' + t.id + '">' + SPARK + '<span>Ask Claude</span></button>') + '</div>';
   }
 
@@ -536,6 +538,146 @@
     if (done) A.toast('Claude marked ' + done + ' part' + (done === 1 ? '' : 's'));
   }
 
+
+  /* ---------------------------------------------------------------- blurt (free recall) */
+  // notes hidden, write everything you remember, then see exactly which key points you missed
+  const BL = 'blurts';
+  function keyPoints(t) {
+    const box = doc.createElement('div'); box.innerHTML = A.noteParts(t).summary || '';
+    let items = $$('li', box).filter(li => !li.parentElement.closest('li'));
+    if (!items.length) items = $$('p', box);
+    return items.map(li => ({ html: li.innerHTML, text: A.htmlText(li).replace(/^- /, '') })).filter(x => x.text);
+  }
+  function lastBlurt(tid) {
+    const h = (store.get(BL, {})[tid] || [])[0]; if (!h) return '';
+    const d = Math.floor((Date.now() - h.t) / 864e5);
+    return 'Last blurt ' + h.cov + '% · ' + (d < 1 ? 'today' : d === 1 ? 'yesterday' : d + ' days ago');
+  }
+  function blurtPrompt(t, pts, text) {
+    return 'A Year 12 student studying VCE ' + (t.subj ? t.subj.name : '') + ' Units 3 & 4 did a "blurt": with their notes closed, they wrote everything they could remember about the topic “' + tTitle(t) + '”. Check it against the guide’s key points.\n\n' +
+      'For each key point decide:\n- "got": the blurt states this idea correctly (different wording is fine)\n- "partial": some of it is there, or it is vague or missing an important detail\n- "missed": it is not there\n' +
+      'Be strict. A key term on its own, without the idea behind it, is "partial" at best. Something the student did not write is "missed", even if they probably know it. For "got" and "partial", quote the exact words from the blurt that show it, copied character for character (2 to 20 words).\n' +
+      'Then list anything in the blurt that is wrong: misconceptions, wrong formulas, wrong units or definitions. Ignore spelling and style.\n\n' +
+      'Reply with JSON only:\n{"points":[{"status":"got","quote":"<exact words from the blurt>","note":"<under 15 words>"}],"wrong":[{"claim":"<their words>","fix":"<one sentence, LaTeX between \\( and \\) for maths>"}],"tip":"<one sentence: what to focus on next>"}\n' +
+      '"points" has exactly one entry per key point, in the order given. For a missed point, "note" says in a few words what the idea is.\n\n' +
+      'KEY POINTS\n' + pts.map((p, i) => (i + 1) + '. ' + p.text).join('\n') + '\n\nTHE STUDENT’S BLURT\n"""\n' + clip(text, 12000) + '\n"""';
+  }
+  function openBlurt(tid) {
+    const t = A.topic(tid); if (!t) return;
+    const pts = keyPoints(t);
+    if (!pts.length) { A.toast('This page has no summary to check a blurt against'); return; }
+    const s = openSheet({ title: 'Blurt: ' + esc(tTitle(t)), sub: esc((t.subj ? t.subj.name + ' · ' : '') + 'write it all from memory'), icon: t.subj ? A.subjIcon(t.subj.id) : '', cls: 'ai-blurt', modal: true });   // the page is blurred out: no peeking
+    const draftKey = 'blurtDraft:' + tid, last = lastBlurt(tid);
+    let ctl = null, iv = 0;
+    s.onClose = () => { clearInterval(iv); if (ctl) ctl.abort(); };
+    s.body.innerHTML = '<div class="bl-intro"><p>Write down <b>everything</b> you remember about <b>' + esc(tTitle(t)) + '</b>: the key ideas, formulas, definitions, how they connect, and the traps. Bullet points are fine. No peeking at the notes.</p>' + (last ? '<p class="bl-last">' + last + '</p>' : '') + '</div>' +
+      '<textarea class="bl-ta" placeholder="Start typing everything you know…" aria-label="Your blurt"></textarea>' +
+      '<div class="bl-meta"><span class="bl-wc">0 words</span><span class="bl-time">0:00</span></div>';
+    s.foot.innerHTML = '<div class="np-acts"><button class="btn primary" type="button" data-bl-check>Done, check it</button></div>';
+    const ta = $('.bl-ta', s.body), wc = $('.bl-wc', s.body), tm = $('.bl-time', s.body), t0 = Date.now();
+    ta.value = store.get(draftKey, '') || '';
+    iv = setInterval(() => { const sec = Math.floor((Date.now() - t0) / 1000); tm.textContent = Math.floor(sec / 60) + ':' + String(sec % 60).padStart(2, '0'); }, 1000);
+    const count = () => { const n = (ta.value.match(/\S+/g) || []).length; wc.textContent = n + ' word' + (n === 1 ? '' : 's'); return n; };
+    let dt; ta.addEventListener('input', () => { count(); clearTimeout(dt); dt = setTimeout(() => store.set(draftKey, ta.value), 400); });
+    count();
+    if (!phone()) setTimeout(() => ta.focus({ preventScroll: true }), 120);
+    $('[data-bl-check]', s.foot).addEventListener('click', () => {
+      if (count() < 5) { A.toast('Write a bit more first'); ta.focus(); return; }
+      clearInterval(iv); clearTimeout(dt); store.set(draftKey, ta.value);
+      results(ta.value);
+    });
+
+    function record(cov) {
+      const all = store.get(BL, {});
+      all[tid] = [{ t: Date.now(), cov }].concat(all[tid] || []).slice(0, 10);
+      store.set(BL, all); store.set(draftKey, '');
+      $$('[data-bl-last="' + tid + '"]').forEach(x => { x.textContent = lastBlurt(tid); x.hidden = false; });
+    }
+    function ring(cov, label) {
+      const r = $('.bl-ring', s.body); if (!r) return;
+      r.style.setProperty('--p', cov);
+      r.className = 'bl-ring ' + (cov >= 80 ? 'hi' : cov >= 50 ? 'mid' : 'lo');
+      $('b', r).textContent = cov + '%';
+      if (label) $('.bl-head', s.body).textContent = label;
+    }
+    function results(text) {
+      s.body.innerHTML = '<div class="bl-score"><div class="bl-ring"><b>–</b><span>recalled</span></div><div class="bl-score-t"><b class="bl-head"></b><p class="bl-sub"></p></div></div>' +
+        '<ol class="bl-pts">' + pts.map((p, i) => '<li class="bl-pt" data-i="' + i + '"><span class="bl-ic" aria-hidden="true"></span><div class="bl-pt-b"><div class="bl-pt-t">' + p.html + '</div><div class="bl-note"></div></div></li>').join('') + '</ol>' +
+        '<div class="bl-wrong" hidden></div><p class="bl-tip" hidden></p><details class="bl-mine"><summary>Your blurt</summary><div class="bl-text"></div></details>';
+      $('.bl-text', s.body).textContent = text;
+      A.renderMath(s.body);
+      s.foot.innerHTML = '';
+      if (sample) withClaude(text); else selfCheck(false);
+    }
+    function footer(extra) {
+      s.foot.innerHTML = '<div class="np-acts"><button class="btn" type="button" data-bl-notes>Open the notes</button><button class="btn" type="button" data-bl-again>Blurt again</button>' + (extra || '') + '</div>';
+      $('[data-bl-notes]', s.foot).addEventListener('click', () => openNotes(tid));
+      $('[data-bl-again]', s.foot).addEventListener('click', () => openBlurt(tid));
+    }
+    function selfCheck(failed) {
+      $('.bl-head', s.body).textContent = 'Tick the points you had';
+      $('.bl-sub', s.body).textContent = (failed ? 'Claude couldn’t check it, so check it yourself. ' : '') + 'Compare your blurt (at the bottom) with each key point, and only tick it if you actually wrote the idea.';
+      $$('.bl-pt', s.body).forEach(li => { li.classList.add('self'); const ic = $('.bl-ic', li); const cb = doc.createElement('input'); cb.type = 'checkbox'; cb.className = 'bl-cb'; cb.setAttribute('aria-label', 'I had this'); ic.replaceWith(cb); });
+      $('.bl-mine', s.body).open = true;
+      const upd = () => ring(Math.round(100 * $$('.bl-cb:checked', s.body).length / pts.length));
+      s.body.addEventListener('change', upd); upd();
+      footer('<button class="btn primary" type="button" data-bl-save>Save result</button>');
+      $('[data-bl-save]', s.foot).addEventListener('click', e => {
+        const n = $$('.bl-cb:checked', s.body).length, cov = Math.round(100 * n / pts.length);
+        record(cov); e.target.textContent = 'Saved ✓'; e.target.disabled = true;
+        const miss = $$('.bl-pt', s.body).filter(li => !$('.bl-cb', li).checked).map(li => '- ' + pts[+li.dataset.i].text);
+        if (miss.length) gapsButton('**Missed in my blurt (' + cov + '%)**\n' + miss.join('\n'), cov);
+      });
+    }
+    function gapsButton(text, cov) {
+      if ($('[data-bl-gaps]', s.foot)) return;
+      const b = doc.createElement('button'); b.type = 'button'; b.className = 'btn'; b.dataset.blGaps = '1'; b.textContent = 'Save gaps to my notes';
+      b.addEventListener('click', () => { saveNote(tid, 'Blurt gaps (' + cov + '%)', text); b.textContent = 'Saved ✓'; b.disabled = true; });
+      $('.np-acts', s.foot).appendChild(b);
+    }
+    async function withClaude(text) {
+      $('.bl-head', s.body).innerHTML = '<span class="ai-think">Claude is checking your blurt…</span>';
+      $('.bl-sub', s.body).textContent = 'Every point it says you got has to be quoted from what you wrote.';
+      ctl = new AbortController();
+      let res;
+      try { res = await sample.json(blurtPrompt(t, pts, text), { signal: ctl.signal, cache: false }); }
+      catch (e) {
+        if (e && e.code === 'cancelled') return;
+        const f = failCopy(e); if (f.msg) A.toast(f.msg);
+        selfCheck(true); return;
+      } finally { ctl = null; }
+      const got = res && Array.isArray(res.points) ? res.points : [];
+      const st = pts.map((p, i) => {
+        const r = got[i] || {};
+        let status = ['got', 'partial', 'missed'].includes(r.status) ? r.status : 'missed', note = String(r.note || ''), quote = String(r.quote || '');
+        if (status !== 'missed' && !quoted(quote, text)) { status = 'missed'; note = 'Claude couldn’t find this in what you wrote.'; quote = ''; }
+        return { status, note, quote: status === 'missed' ? '' : quote };
+      });
+      const n = k => st.filter(x => x.status === k).length;
+      const cov = Math.round(100 * (n('got') + 0.5 * n('partial')) / pts.length);
+      st.forEach((x, i) => {
+        const li = $('.bl-pt[data-i="' + i + '"]', s.body);
+        li.classList.add(x.status);
+        $('.bl-ic', li).textContent = x.status === 'got' ? '✓' : x.status === 'partial' ? '½' : '✗';
+        $('.bl-note', li).innerHTML = (x.quote ? '<q>' + esc(x.quote) + '</q>' + (x.note ? ' · ' : '') : '') + esc(x.note);
+      });
+      ring(cov, cov >= 80 ? 'Strong recall' : cov >= 50 ? 'Getting there' : 'Big gaps: worth another go');
+      $('.bl-sub', s.body).textContent = n('got') + ' got · ' + n('partial') + ' partly · ' + n('missed') + ' missed, out of ' + pts.length + ' key points.';
+      const wrong = (res && Array.isArray(res.wrong) ? res.wrong : []).filter(w => w && (w.claim || w.fix));
+      if (wrong.length) {
+        const w = $('.bl-wrong', s.body); w.hidden = false;
+        w.innerHTML = '<div class="bl-wrong-h">Things you got wrong</div><ul>' + wrong.map(x => '<li>' + (x.claim ? '<q>' + esc(String(x.claim)) + '</q>' : '') + '<div class="md"></div></li>').join('') + '</ul>';
+        $$('.md', w).forEach((d, i) => paint(d, String(wrong[i].fix || '')));
+      }
+      if (res && res.tip) { const tp = $('.bl-tip', s.body); tp.hidden = false; tp.innerHTML = '<b>Next:</b> '; tp.appendChild(doc.createTextNode(String(res.tip))); }
+      record(cov);
+      footer();
+      const gaps = st.map((x, i) => x.status === 'got' ? '' : '- ' + (x.status === 'partial' ? '(partly) ' : '') + pts[i].text).filter(Boolean)
+        .concat(wrong.map(x => '- Wrong: “' + (x.claim || '') + '” → ' + (x.fix || '')));
+      if (gaps.length) gapsButton('**Gaps from my blurt (' + cov + '%)**\n' + gaps.join('\n'), cov);
+    }
+  }
+
   /* ---------------------------------------------------------------- put the controls on the page */
   function decorate(scope) {
     scope = scope || $('#main');
@@ -545,7 +687,9 @@
     const head = $('.t-head', scope);
     if (head && t && t.subject && !t.special && !$('.t-ai', head)) {
       const n = mine(t.id).length;
-      head.insertAdjacentHTML('beforeend', '<div class="t-ai"><button class="btn ai-only ai-ask" type="button" data-ask-topic="' + t.id + '">' + SPARK + '<span>Ask Claude about this topic</span></button>' +
+      const canBlurt = keyPoints(t).length > 0;
+      head.insertAdjacentHTML('beforeend', '<div class="t-ai">' + (canBlurt ? '<button class="btn bl-btn" type="button" data-blurt="' + t.id + '">' + PEN + '<span>Blurt this topic</span></button>' : '') +
+        '<button class="btn ai-only ai-ask" type="button" data-ask-topic="' + t.id + '">' + SPARK + '<span>Ask Claude about this topic</span></button>' +
         (n ? '<button class="btn" type="button" data-notes="' + t.id + '">My notes · ' + n + '</button>' : '') + '</div>');
     }
     // practice questions on topic pages
@@ -559,7 +703,10 @@
     $$('.nt-card', scope).forEach(c => {
       if ($('.nt-ai', c)) return;
       const tid = c.dataset.t, more = $('.nt-more', c);
-      if (more) more.insertAdjacentHTML('afterend', '<button class="btn ai-only ai-ask nt-ai" type="button" data-ask-topic="' + tid + '">' + SPARK + '<span>Ask Claude</span></button>');
+      const lb = lastBlurt(tid);
+      if (more) more.insertAdjacentHTML('afterend', '<button class="btn bl-btn nt-ai" type="button" data-blurt="' + tid + '">' + PEN + '<span>Blurt</span></button>' +
+        '<button class="btn ai-only ai-ask nt-ai" type="button" data-ask-topic="' + tid + '">' + SPARK + '<span>Ask Claude</span></button>' +
+        '<span class="bl-last-chip" data-bl-last="' + tid + '"' + (lb ? '' : ' hidden') + '>' + esc(lb) + '</span>');
       const slot = doc.createElement('div'); slot.dataset.mineSlot = tid; slot.innerHTML = mineHTML(tid);
       (more || c.lastChild).before(slot); fillMine(slot);
     });
@@ -583,11 +730,12 @@
 
   /* ---------------------------------------------------------------- clicks */
   doc.addEventListener('click', e => {
-    const b = e.target.closest('[data-notes], [data-ask-q], [data-ask-topic], [data-ai-mark], [data-ai-markall], #aiBtn, [data-copy-note], [data-drop-note]');
+    const b = e.target.closest('[data-blurt], [data-notes], [data-ask-q], [data-ask-topic], [data-ai-mark], [data-ai-markall], #aiBtn, [data-copy-note], [data-drop-note]');
     if (!b) return;
-    if (b.matches('[data-notes]')) { const it = b.closest('.rv-item'), q = it && $('[data-ask-q]', it); openNotes(b.dataset.notes, q ? q.dataset.askQ : null); return; }
+    if (b.matches('[data-notes]')) { const it = b.closest('.rv-item'), q = it && $('[data-ask-q]', it); openNotes(b.dataset.notes, b.dataset.from || (q ? q.dataset.askQ : null), !!b.dataset.from); return; }
     if (b.matches('[data-ask-q]')) { askQuestion(b.dataset.askQ); return; }
     if (b.matches('[data-ask-topic]')) { askTopic(b.dataset.askTopic); return; }
+    if (b.matches('[data-blurt]')) { openBlurt(b.dataset.blurt); return; }
     if (b.matches('#aiBtn')) { askPage(); return; }
     if (b.matches('[data-ai-mark]')) { const exp = b.closest('.exp'); markParts([exp], $('.ai-mk-s', exp), null); return; }
     if (b.matches('[data-ai-markall]')) { if (b.classList.contains('stop')) return; const exps = $$('#main .exp[data-pid]'), wrap = b.closest('.ai-markall'); markParts(exps, $('.ai-ma-s', wrap), b); return; }
@@ -600,7 +748,7 @@
     else { b.dataset.armed = '1'; b.textContent = 'Tap again to delete'; setTimeout(() => { if (doc.contains(b)) { delete b.dataset.armed; b.textContent = 'Delete'; } }, 3000); }
   });
 
-  window.GUIDE_AI = { decorate, openNotes, askQuestion, askTopic, md };
+  window.GUIDE_AI = { decorate, openNotes, openBlurt, askQuestion, askTopic, md };
   window.addEventListener('guide:render', () => decorate());
   decorate();
 })();

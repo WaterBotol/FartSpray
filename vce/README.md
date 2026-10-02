@@ -22,7 +22,13 @@ The whole site is one self-contained file, `index.html`. It needs no server, no 
 | Biology | 24 | Nucleic acids and proteins, DNA tools, enzymes, photosynthesis and respiration, immunity, disease, evolution; translation/mutation, gel, enzyme, photosynthesis and genetic drift simulations |
 | English Language | 20 | Metalanguage, informal and formal language, Australian English and its varieties, identity; Section A/B/C practice with original transcripts, a model commentary and essay plans; HCE vowel chart and feature-spotting drill |
 
-Progress (completed topics, self-marks, quiz answers) is stored in the browser's `localStorage` only.
+Progress (completed topics, self-marks, quiz answers, the review queue) is stored in the browser's `localStorage` only.
+
+## Review queue and blurting
+
+- **Spaced review queue.** Every question you flag ("Review later"), get wrong in multiple choice, or send from a practice exam joins a queue. Get it right and it comes back after 1 day, then 3, 7 and 14; right again after 14 days and it's mastered. Get it wrong and it starts again tomorrow. **Start review** runs the due questions one at a time, inline.
+- **Practice-exam mistakes.** Wrong multiple-choice answers join the queue when you finish a paper. After marking, written parts you answered but scored under half on can be sent with one button.
+- **Blurt.** On any topic or quick-notes card: write everything you remember with the page hidden, then check it against the topic's key points. With Claude, each point is marked got / partly / missed (a "got" has to quote your words) plus anything you got wrong. Without Claude, you tick the points yourself. Gaps can be saved to My notes.
 
 ## Claude in the guide
 

@@ -34,7 +34,8 @@
   };
   const S = {
     done: store.get('done', {}), pq: store.get('pq', {}), mcq: store.get('mcq', {}),
-    collapsed: store.get('collapsed', {}), subject: store.get('subject', null), last: store.get('last', {})
+    collapsed: store.get('collapsed', {}), subject: store.get('subject', null), last: store.get('last', {}),
+    srs: store.get('srs', {}), srsDone: store.get('srsDone', 0)
   };
   const save = k => store.set(k, S[k]);
 
@@ -360,11 +361,12 @@
     const inS = k => !sid || (byId[k.split(':')[0]] && byId[k.split(':')[0]].subject === sid);
     const mk = Object.keys(S.mcq).filter(inS);
     const correct = mk.filter(k => S.mcq[k].ok).length;
-    const review = Object.keys(S.pq).filter(k => S.pq[k] === 'review' && inS(k)).length + mk.filter(k => !S.mcq[k].ok).length;
+    const queue = Object.keys(S.srs).filter(k => byId[k.split(':')[0]] && inS(k)), now = Date.now();
+    const review = queue.length, due = queue.filter(k => S.srs[k].due <= now).length;
     const qb = list.reduce((a, t) => a + t.counts.mcq + t.counts.pq, 0);
-    return { done, total: list.length, answered: mk.length, correct, review, qb };
+    return { done, total: list.length, answered: mk.length, correct, review, due, qb };
   }
-  function updateReviewCount() { const p = progress(), n = p.review ? String(p.review) : ''; $('#reviewCount').textContent = n; const tb = $('#tabReviewCount'); if (tb) tb.textContent = n; }
+  function updateReviewCount() { const p = progress(), n = p.due ? String(p.due) : ''; $('#reviewCount').textContent = n; const tb = $('#tabReviewCount'); if (tb) tb.textContent = n; }
 
   /* ------------------------------------------------------------ sidebar */
   function renderNav(activeId) {
@@ -552,7 +554,7 @@
       const ok = reveal(b.dataset.l);
       const fresh = btns.filter(x => x === b || x.dataset.l === ans);
       fresh.forEach(x => x.classList.add('just')); setTimeout(() => fresh.forEach(x => x.classList.remove('just')), 700);
-      if (key) { S.mcq[key] = { ok, c: b.dataset.l, t: Date.now() }; save('mcq'); updateReviewCount(); }
+      if (key) { S.mcq[key] = { ok, c: b.dataset.l, t: Date.now() }; save('mcq'); if (!ok) srsAdd(key, 'topic'); updateReviewCount(); }
       if (onAnswer) onAnswer(ok, b.dataset.l);
     }));
     if (key && !onAnswer) {
@@ -581,7 +583,12 @@
       const paint = () => { const st = S.pq[key]; bOk.classList.toggle('on-good', st === 'ok'); bRv.classList.toggle('on-bad', st === 'review'); q.classList.toggle('state-ok', st === 'ok'); q.classList.toggle('state-review', st === 'review'); };
       let open = false;
       bShow.addEventListener('click', () => { open = !open; sols.forEach(s => { s.hidden = !open; }); bShow.textContent = open ? 'Hide solution' : 'Reveal solution'; bShow.classList.toggle('primary', !open); });
-      const setSt = v => { if (S.pq[key] === v) delete S.pq[key]; else S.pq[key] = v; save('pq'); paint(); updateReviewCount(); };
+      const setSt = v => {
+        if (S.pq[key] === v) delete S.pq[key]; else S.pq[key] = v;
+        save('pq'); paint();
+        if (S.pq[key] === 'review') srsAdd(key, 'topic'); else if (S.srs[key]) { delete S.srs[key]; save('srs'); }
+        updateReviewCount();
+      };
       bOk.addEventListener('click', () => setSt('ok')); bRv.addEventListener('click', () => setSt('review'));
       paint();
     });
@@ -712,6 +719,34 @@
       }, 1000);
       cleanups.push(() => clearInterval(tick));
     };
+    // practice-exam mistakes feed the spaced review queue: wrong multiple choice as soon as you finish,
+    // written parts under half marks once you've marked them
+    const partGot = p => Math.min(p.marks, p.items.filter(it => it.cb && it.cb.checked).reduce((a, it) => a + it.m, 0));
+    const weakParts = () => parts.filter(p => p.items.length && (st.resp[p.id] || '').trim() && partGot(p) < p.marks / 2 && !(st.queuedW || []).includes(p.id));
+    function queueMcq() {
+      if (st.peek) return;
+      const wrong = mcqs.filter(m => st.mcq[m.n] && st.mcq[m.n] !== m.ans);
+      wrong.forEach(m => srsAdd(t.id + ':m' + m.n, 'exam'));
+      st.queuedM = wrong.length; persist(); tally();
+      if (wrong.length) toast(wrong.length + ' multiple-choice mistake' + (wrong.length === 1 ? '' : 's') + ' added to your review queue');
+    }
+    function queueHTML() {
+      if (st.peek || !st.marked) return '';
+      let h = st.queuedM ? '<p class="ex-queue-done">✓ ' + st.queuedM + ' multiple-choice mistake' + (st.queuedM === 1 ? '' : 's') + ' went to your <a href="#review">review queue</a>.</p>' : '';
+      if (!parts.length) return h;
+      const ticked = parts.some(p => p.items.some(it => it.cb && it.cb.checked)), weak = weakParts();
+      if (weak.length && ticked) h += '<div class="ex-queue"><p><b>' + weak.length + ' written part' + (weak.length === 1 ? '' : 's') + '</b> scored under half marks. Send ' + (weak.length === 1 ? 'it' : 'them') + ' to your review queue so ' + (weak.length === 1 ? 'it comes' : 'they come') + ' back on a spaced schedule.</p><button class="btn primary" type="button" data-ex-queue>Send to review</button></div>';
+      else if (!ticked) h += '<p class="ex-queue-done muted">Mark your written answers first (tick the points, or use Claude), then you can send the weak ones to your review queue.</p>';
+      else if ((st.queuedW || []).length) h += '<p class="ex-queue-done">✓ Your weak written answers are in your <a href="#review">review queue</a>.</p>';
+      return h;
+    }
+    res.addEventListener('click', e => {
+      if (!e.target.closest('[data-ex-queue]')) return;
+      const weak = weakParts();
+      weak.forEach(p => srsAdd(t.id + ':w' + p.id, 'exam'));
+      st.queuedW = [...new Set((st.queuedW || []).concat(weak.map(p => p.id)))]; persist(); tally();
+      toast(weak.length + ' written part' + (weak.length === 1 ? '' : 's') + ' added to your review queue');
+    });
     function tally() {
       let got = 0; const per = {};
       const add = (tp, g, of) => { if (!tp) return; tp.split(/\s+/).forEach(x => { per[x] = per[x] || [0, 0]; per[x][0] += g; per[x][1] += of; }); };
@@ -728,7 +763,7 @@
       const stateTot = mcqs.reduce((x, m) => x + (m.fac || 0), 0) + parts.reduce((x, p) => x + (p.avg || 0), 0);
       const bench = real && stateTot ? '<div class="ex-bench">State average on these same questions: <b>' + stateTot.toFixed(0) + ' / ' + grand + '</b> (' + Math.round(100 * stateTot / grand) + '%). ' + (tot >= stateTot ? 'You beat the state average.' : 'You are ' + Math.round(stateTot - tot) + ' mark' + (Math.round(stateTot - tot) === 1 ? '' : 's') + ' below it (tick your written marks first).') + '</div>' : '';
       res.innerHTML = '<div class="ex-score"><div><span class="ex-big">' + tot + '</span><span class="ex-of">/ ' + grand + '</span></div><div class="ex-pct">' + pct + '%</div></div>' +
-        '<div class="ex-split">' + (mcqTotal ? '<span>Multiple choice <b>' + mcGot + '/' + mcqTotal + '</b></span>' : '') + (parts.length ? '<span>Written (self-marked) <b>' + got + '/' + wTotal + '</b></span>' : '') + '</div>' + bench +
+        '<div class="ex-split">' + (mcqTotal ? '<span>Multiple choice <b>' + mcGot + '/' + mcqTotal + '</b></span>' : '') + (parts.length ? '<span>Written (self-marked) <b>' + got + '/' + wTotal + '</b></span>' : '') + '</div>' + bench + queueHTML() +
         (weak.length ? '<div class="ex-weak"><h4>By topic, weakest first</h4><ul>' + weak.slice(0, 10).map(([k, v, r]) => '<li><a href="#' + P + k + '">' + esc(topicName(k)) + '</a><span class="ex-bar-mini"><i style="width:' + Math.round(r * 100) + '%"></i></span><b>' + v[0] + '/' + v[1] + '</b></li>').join('') + '</ul></div>' : '') +
         '<p class="ln">Written marks only count once you tick the marking points under each answer. Be as strict as a VCAA assessor: the idea has to be clearly there, in your own words. Then read the assessor’s report at the end.</p>';
     }
@@ -746,7 +781,7 @@
       setBody(true); res.hidden = false; tally(); bar(); buildToc(); renderMath(prose);
     }
     function begin(mode) {
-      if (mode === 'peek') { st.phase = 'free'; st.timed = false; mark(); return; }
+      if (mode === 'peek') { st.phase = 'free'; st.timed = false; st.peek = true; mark(); return; }
       st.timed = mode === 'timed'; st.t0 = Date.now(); st.phase = st.timed ? (reading ? 'reading' : 'writing') : 'free';
       persist(); cover.hidden = true; setBody(true); lockInputs(); bar(); startClock(); buildToc();
       barEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -755,7 +790,7 @@
     bBtn.addEventListener('click', () => {
       if (bBtn.dataset.act === 'finish') {
         const un = mcqs.filter(m => !st.mcq[m.n]).length;
-        arm(bBtn, (un ? un + ' multiple-choice unanswered. ' : '') + 'Finishing shows the marking guide.', () => { mark(); res.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+        arm(bBtn, (un ? un + ' multiple-choice unanswered. ' : '') + 'Finishing shows the marking guide.', () => { mark(); queueMcq(); res.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
       } else if (bBtn.dataset.act === 'reset') arm(bBtn, 'This clears all your answers and marks for this exam', () => { store.set(KEY, {}); render(t); });
     });
     // ---- initial state
@@ -904,7 +939,7 @@
   }
   function statsHTML(sid) {
     const p = progress(sid), acc = p.answered ? Math.round(100 * p.correct / p.answered) + '%' : '–';
-    return '<div class="stats"><div class="stat"><span>Topics complete</span><b>' + p.done + '/' + p.total + '</b></div><div class="stat"><span>MCQs answered</span><b>' + p.answered + '</b></div><div class="stat"><span>MCQ accuracy</span><b>' + acc + '</b></div><div class="stat"><span>Flagged for review</span><b>' + p.review + '</b></div><div class="stat"><span>Question bank</span><b>' + p.qb + '</b></div></div>';
+    return '<div class="stats"><div class="stat"><span>Topics complete</span><b>' + p.done + '/' + p.total + '</b></div><div class="stat"><span>MCQs answered</span><b>' + p.answered + '</b></div><div class="stat"><span>MCQ accuracy</span><b>' + acc + '</b></div><div class="stat"><span>In review queue</span><b>' + p.review + '</b></div><div class="stat"><span>Question bank</span><b>' + p.qb + '</b></div></div>';
   }
   function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 
@@ -1121,53 +1156,218 @@
     walk(node);
     return out.replace(/[ \t]+\n/g, '\n').replace(/\n[ \t]+/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
   }
+  const tplOf = t => t._tp || (t._tp = (() => { const tp = document.createElement('template'); tp.innerHTML = t.html; return tp.content; })());
+  function examPart(root, pid) {
+    let qn = 0;
+    for (const q of root.querySelectorAll('.exq')) {
+      qn++;
+      const ps = Array.from(q.querySelectorAll(':scope > .exp'));
+      for (let j = 0; j < ps.length; j++) { const lab = ps.length > 1 ? (ps[j].dataset.part || String.fromCharCode(97 + j)) : ''; if (qn + lab === pid) return { q, p: ps[j], qn, lab }; }
+    }
+    return null;
+  }
+  // keys: topic question tid:qN · exam multiple choice tid:mN · exam written part tid:wPID (e.g. w2a)
   function question(key) {
-    const [tid, qn] = String(key).split(':'), t = byId[tid], n = parseInt((qn || '').slice(1), 10);
-    if (!t || !n) return null;
-    const tp = document.createElement('template'); tp.innerHTML = t.html;
-    const q = tp.content.querySelectorAll('.mcq, .pq')[n - 1];
+    const [tid, qk] = String(key).split(':'), t = byId[tid], kind = (qk || '').charAt(0), rest = (qk || '').slice(1);
+    if (!t || !rest) return null;
+    const root = tplOf(t), P = t.subj ? t.subj.prefix + '-' : '';
+    const topicFor = dt => { const id = P + String(dt || '').split(/\s+/)[0]; return dt && byId[id] ? id : ''; };
+    if (kind === 'w') {
+      const f = examPart(root, rest); if (!f) return null;
+      const stemEl = f.q.querySelector(':scope > .exq-stem'), qEl = f.p.querySelector(':scope > .exp-q'), mk = f.p.querySelector(':scope > ul.mk'), ansEl = f.p.querySelector(':scope > .exp-a');
+      const points = mk ? Array.from(mk.children).map(li => ({ m: +(li.dataset.m || 1), html: li.innerHTML, text: htmlText(li).replace(/^- /, '') })) : [];
+      return { key, topic: t, kind: 'written', exam: true, mcq: false, n: f.qn, label: 'Question ' + f.qn + f.lab, anchor: 'exq' + f.qn, level: 'exam', marks: f.p.dataset.marks || '',
+        stem: (stemEl ? htmlText(stemEl) + '\n\n' : '') + (qEl ? htmlText(qEl) : ''), stemHTML: qEl ? qEl.innerHTML : '', contextHTML: stemEl ? stemEl.innerHTML : '',
+        points, answerHTML: ansEl ? ansEl.innerHTML : '', options: [], answer: '', formulas: '', chosen: '',
+        solution: (points.length ? 'Marking guide:\n' + points.map((x, i) => (i + 1) + '. [' + x.m + '] ' + x.text).join('\n') : '') + (ansEl ? '\n\nAnswer notes: ' + htmlText(ansEl) : ''),
+        notesTid: topicFor(f.p.dataset.t || f.q.dataset.t) };
+    }
+    const n = parseInt(rest, 10), exam = kind === 'm';
+    if (!n || (kind !== 'q' && !exam)) return null;
+    const q = root.querySelectorAll(exam ? '.mcq' : '.mcq, .pq')[n - 1];
     if (!q) return null;
     const mcq = q.classList.contains('mcq'), c = q.cloneNode(true);
+    c.querySelectorAll('.ex-rep').forEach(x => x.remove());
     const take = sel => Array.from(c.querySelectorAll(sel)).map(x => { x.remove(); return htmlText(x); }).join('\n\n');
     const solution = take(mcq ? '.mcq-x' : '.pq-s');
     let options = [];
     if (mcq) { const ol = c.querySelector(':scope > ol'); if (ol) { options = Array.from(ol.children).map((li, i) => String.fromCharCode(65 + i) + '. ' + htmlText(li).replace(/^- /, '')); ol.remove(); } }
     const ans = mcq ? (q.dataset.ans || 'A').trim().toUpperCase() : '';
     const firstP = c.querySelector('p');
-    return { key, topic: t, n, mcq, stemHTML: firstP ? firstP.innerHTML : '', level: q.dataset.level || 'core', marks: q.dataset.marks || (mcq ? '1' : ''), stem: htmlText(c), options, answer: ans, solution, formulas: q.dataset.f || '',
-      chosen: mcq && S.mcq[key] ? S.mcq[key].c : '' };
+    const chosen = !mcq ? '' : exam ? ((store.get('ex:' + tid, {}).mcq || {})[n] || '') : (S.mcq[key] ? S.mcq[key].c : '');
+    return { key, topic: t, kind: mcq ? 'mcq' : 'pq', exam, mcq, n, node: q, label: 'Question ' + n, anchor: (exam ? 'mcq' : 'q') + n,
+      stemHTML: firstP ? firstP.innerHTML : '', level: q.dataset.level || (exam ? 'exam' : 'core'), marks: q.dataset.marks || (mcq ? '1' : ''), stem: htmlText(c), options, answer: ans, solution,
+      formulas: q.dataset.f || '', chosen, notesTid: exam ? topicFor(q.dataset.t) : t.id };
   }
+
+  /* ------------------------------------------------------------ spaced review */
+  // Every flagged or missed question joins a queue. A right answer pushes it out 1, then 3, 7 and 14 days;
+  // right again at 14 days and it's mastered (out of the queue). A wrong answer starts it again tomorrow.
+  const DAY = 864e5, IVL = [1, 3, 7, 14];
+  const day0 = () => { const d = new Date(); d.setHours(0, 0, 0, 0); return d.getTime(); };
+  function srsAdd(key, src) {
+    const e = S.srs[key];
+    if (e) { e.step = 0; e.due = Math.min(e.due, Date.now()); }
+    else S.srs[key] = { due: Date.now(), step: 0, t: Date.now(), src: src || 'topic' };
+    save('srs'); updateReviewCount();
+  }
+  function clearFlags(key) {
+    if (S.pq[key] === 'review') { delete S.pq[key]; save('pq'); }
+    if (S.mcq[key] && !S.mcq[key].ok) { delete S.mcq[key]; save('mcq'); }
+  }
+  function srsDrop(key) { if (S.srs[key]) { delete S.srs[key]; save('srs'); } clearFlags(key); updateReviewCount(); }
+  function srsGrade(key, ok) {
+    const e = S.srs[key]; if (!e) return null;
+    e.n = (e.n || 0) + 1; e.last = Date.now();
+    let r;
+    if (ok && e.step >= IVL.length) { delete S.srs[key]; clearFlags(key); S.srsDone++; save('srsDone'); r = { mastered: true }; }
+    else if (ok) { e.due = day0() + IVL[e.step] * DAY; e.step++; r = { days: IVL[e.step - 1] }; }
+    else { e.step = 0; e.miss = (e.miss || 0) + 1; e.due = day0() + DAY; r = { days: 1, miss: true }; }
+    save('srs'); updateReviewCount();
+    return r;
+  }
+  // questions flagged before the queue existed join it, due now
+  (() => {
+    let n = 0;
+    const join = k => { if (!S.srs[k] && byId[k.split(':')[0]]) { S.srs[k] = { due: Date.now(), step: 0, t: Date.now(), src: 'topic' }; n++; } };
+    Object.keys(S.pq).forEach(k => { if (S.pq[k] === 'review') join(k); });
+    Object.keys(S.mcq).forEach(k => { if (!S.mcq[k].ok) join(k); });
+    if (n) save('srs');
+  })();
+  const whenTxt = due => { const d = Math.round((due - day0()) / DAY); return due <= Date.now() ? 'Due now' : d <= 1 ? 'Tomorrow' : 'In ' + d + ' days'; };
+  const boxDots = step => '<span class="sr-box" title="Box ' + (step + 1) + ' of 5">' + [0, 1, 2, 3, 4].map(i => '<i' + (i <= step ? ' class="on"' : '') + '></i>').join('') + '</span>';
+  const kindTxt = q => q.exam ? (q.mcq ? 'Exam · multiple choice' : 'Exam · written') : q.mcq ? 'Multiple choice' : 'Short answer';
+
+  // one question to redo: multiple choice marks itself; written ones reveal the solution and you mark yourself
+  function reviewCard(q, onGrade) {
+    const wrap = el('div', 'sr-q');
+    let done = false;
+    const grade = ok => { if (!done) { done = true; onGrade(ok); } };
+    const selfMark = after => {
+      const row = el('div', 'sr-self', '<span>Did you get it?</span><button class="btn" type="button" data-g="0">Not yet</button><button class="btn primary" type="button" data-g="1">Got it</button>');
+      row.hidden = true; after.after(row);
+      row.addEventListener('click', e => { const b = e.target.closest('[data-g]'); if (!b || done) return; $$('button', row).forEach(x => { x.disabled = true; }); b.classList.add(b.dataset.g === '1' ? 'on-good' : 'on-bad'); grade(b.dataset.g === '1'); });
+      return row;
+    };
+    if (q.mcq) {
+      const m = q.node.cloneNode(true); m.removeAttribute('id');
+      const rep = $(':scope > .ex-rep', m), x = $(':scope > .mcq-x', m);
+      if (rep) { if (x) x.appendChild(rep); else rep.remove(); }
+      wrap.appendChild(m);
+      enhanceMCQ(m, q.label, null, ok => grade(ok));
+      if (q.exam) $('.lvl', m) && $('.lvl', m).remove();
+    } else if (q.kind === 'pq') {
+      const p = q.node.cloneNode(true); p.removeAttribute('id');
+      const level = p.dataset.level || 'core';
+      p.prepend(el('div', 'pq-h', '<span class="pq-tag">' + q.label + '</span><span class="lvl lvl-' + level + '">' + (LEVEL[level] || level) + '</span>' + (q.marks ? '<span class="marks">' + q.marks + ' mark' + (q.marks === '1' ? '' : 's') + '</span>' : '')));
+      const sols = $$(':scope > .pq-s', p); sols.forEach(x => { x.hidden = true; });
+      const fx = formulaBox(p.dataset.f);
+      if (fx && sols.length) { fx.classList.add('fx-under'); sols[sols.length - 1].after(fx); fx.hidden = true; sols.push(fx); }
+      const ctl = el('div', 'pq-ctl'), bShow = el('button', 'btn primary', 'Reveal solution'); bShow.type = 'button';
+      ctl.appendChild(bShow); p.appendChild(ctl); wrap.appendChild(p);
+      const row = selfMark(ctl);
+      bShow.addEventListener('click', () => { sols.forEach(x => { x.hidden = false; }); ctl.remove(); row.hidden = false; });
+    } else {
+      const box = el('div', 'pq sr-written',
+        '<div class="pq-h"><span class="pq-tag">' + q.label + '</span>' + (q.marks ? '<span class="marks">' + q.marks + ' mark' + (q.marks === '1' ? '' : 's') + '</span>' : '') + '</div>' +
+        (q.contextHTML ? '<div class="ex-stim">' + q.contextHTML + '</div>' : '') + '<div class="sr-part">' + q.stemHTML + '</div>' +
+        '<textarea class="ex-ta" rows="4" placeholder="Answer it again here first (it isn’t saved), then check the marking guide."></textarea>' +
+        '<div class="sr-guide" hidden>' + (q.points.length ? '<div class="ex-lbl">Marking guide</div><ol class="mk-list">' + q.points.map(x => '<li class="mk-row"><label><span class="mk-m">' + x.m + '</span><span class="mk-t">' + x.html + '</span></label></li>').join('') + '</ol>' : '') +
+        (q.answerHTML ? '<div class="ex-ans"><div class="ex-lbl">Answer</div>' + q.answerHTML + '</div>' : '') + '</div>' +
+        '<div class="pq-ctl"><button class="btn primary" type="button">Check the marking guide</button></div>');
+      wrap.appendChild(box);
+      const ctl = $('.pq-ctl', box), guide = $('.sr-guide', box), row = selfMark(ctl);
+      $('button', ctl).addEventListener('click', () => { guide.hidden = false; ctl.remove(); row.hidden = false; });
+    }
+    return wrap;
+  }
+
   function mountReview(slot) {
-    const items = [];
-    Object.entries(S.pq).forEach(([k, v]) => { if (v === 'review') items.push({ k, type: 'Short answer' }); });
-    Object.entries(S.mcq).forEach(([k, v]) => { if (!v.ok) items.push({ k, type: 'Multiple choice (answered wrong)' }); });
-    const valid = items.filter(it => byId[it.k.split(':')[0]]);
-    if (!valid.length) { slot.innerHTML = '<aside class="c-key"><div class="c-label">' + ICON.key + '<span>Nothing flagged yet</span></div><p>When you press <strong>Review later</strong> on a practice question, or get a multiple-choice question wrong, it lands here so you can come back to it before the exam.</p></aside>'; return; }
-    const byTopic = {};
-    valid.forEach(it => { const [tid, qn] = it.k.split(':'); (byTopic[tid] = byTopic[tid] || []).push(Object.assign(it, { tid, qn })); });
-    let h = '<p>' + valid.length + ' question' + (valid.length > 1 ? 's' : '') + ' flagged. Redo each one without looking at the solution, then clear it.</p>';
-    G.subjects.forEach(s => {
-      const ts = s.order.filter(t => byTopic[t.id]); if (!ts.length) return;
-      h += '<h2>' + esc(s.name) + '</h2>';
-      ts.forEach(t => {
-        h += '<h3>' + esc(t.short || t.title) + '</h3><div class="rv-list">' + byTopic[t.id].sort((a, b) => parseInt(a.qn.slice(1)) - parseInt(b.qn.slice(1))).map(it => {
-          const q = question(it.k), prev = q ? (q.stemHTML || esc(q.stem.slice(0, 300))) : '';
-          return '<div class="rv-item"><div class="rv-main"><a href="#' + t.id + '~' + it.qn + '">Question ' + it.qn.slice(1) + '</a><span class="meta">' + it.type + '</span>' +
+    const now = Date.now(), keys = Object.keys(S.srs).filter(k => byId[k.split(':')[0]]);
+    if (!keys.length) {
+      slot.innerHTML = '<aside class="c-key"><div class="c-label">' + ICON.key + '<span>Nothing in your review queue</span></div><p>Questions land here when you press <strong>Review later</strong>, get a multiple-choice question wrong, or send your mistakes from a practice exam. Each one then comes back on a spaced schedule (1, 3, 7 and 14 days) until you’ve nailed it.</p>' +
+        (S.srsDone ? '<p>You’ve mastered <strong>' + S.srsDone + '</strong> so far.</p>' : '') + '</aside>';
+      return;
+    }
+    const subjOf = k => byId[k.split(':')[0]].subject;
+    const due = keys.filter(k => S.srs[k].due <= now);
+    const later = keys.filter(k => S.srs[k].due > now).sort((a, b) => S.srs[a].due - S.srs[b].due);
+    const nextWhen = later.length ? whenTxt(S.srs[later[0]].due) : '', nextDay = later.filter(k => whenTxt(S.srs[k].due) === nextWhen).length;
+    const dueSubj = G.subjects.map(sb => ({ sb, n: due.filter(k => subjOf(k) === sb.id).length })).filter(x => x.n);
+    let h = '<section class="sr-hero"><div class="sr-num' + (due.length ? '' : ' clear') + '"><b>' + (due.length || '✓') + '</b><span>' + (due.length ? 'due' : 'clear') + '</span></div><div class="sr-hero-t">' +
+      '<h2>' + (due.length ? due.length + ' question' + (due.length === 1 ? '' : 's') + ' due' : 'All caught up') + '</h2>' +
+      '<p>Get one right and it comes back in 1 day, then 3, 7 and 14. Right again after 14 days and it’s mastered. Get it wrong and it starts again tomorrow.</p>' +
+      (due.length ? '<div class="sr-go"><button class="btn primary" type="button" data-sr="">Start review</button>' + (dueSubj.length > 1 ? dueSubj.map(x => '<button class="btn" type="button" data-sr="' + x.sb.id + '">' + subjIcon(x.sb.id) + '<span>' + esc(x.sb.short.split(' ')[0]) + ' · ' + x.n + '</span></button>').join('') : '') + '</div>' : '') +
+      '<div class="chips"><span class="chip"><b>' + keys.length + '</b> in your queue</span>' + (later.length ? '<span class="chip">Next: <b>' + nextWhen.toLowerCase() + '</b> (' + nextDay + ')</span>' : '') + (S.srsDone ? '<span class="chip"><b>' + S.srsDone + '</b> mastered</span>' : '') + '</div></div></section>';
+    h += '<div class="sr-list"><h2>Your queue</h2>';
+    G.subjects.forEach(sb => {
+      const ks = keys.filter(k => subjOf(k) === sb.id); if (!ks.length) return;
+      h += '<h3 class="sr-subj">' + subjIcon(sb.id) + '<span>' + esc(sb.name) + '</span></h3>';
+      sb.order.forEach(t => {
+        const tk = ks.filter(k => k.split(':')[0] === t.id); if (!tk.length) return;
+        const qs = tk.map(question).filter(Boolean).sort((a, b) => (S.srs[a.key].due - S.srs[b.key].due) || (a.n - b.n));
+        h += '<h4 class="sr-topic">' + esc(t.short || t.title) + '</h4><div class="rv-list">' + qs.map(q => {
+          const e = S.srs[q.key], prev = q.stemHTML || esc(q.stem.slice(0, 300));
+          return '<div class="rv-item' + (e.due <= now ? ' is-due' : '') + '"><div class="rv-main"><a href="#' + t.id + '~' + q.anchor + '">' + q.label + '</a><span class="meta">' + kindTxt(q) + '</span>' +
+            '<span class="sr-due">' + whenTxt(e.due) + '</span>' + boxDots(e.step) +
             (prev ? '<p class="rv-q">' + prev + '</p>' : '') + '</div>' +
-            '<div class="rv-acts"><button class="btn rv-notes" type="button" data-notes="' + t.id + '">' + ICON.def + '<span>Notes</span></button>' +
-            '<button class="btn ai-only ai-ask" type="button" data-ask-q="' + it.k + '">' + AI_SPARK + '<span>Ask Claude</span></button>' +
-            '<button class="btn ghost" type="button" data-k="' + it.k + '">Clear</button></div></div>';
+            '<div class="rv-acts">' + (q.notesTid ? '<button class="btn rv-notes" type="button" data-notes="' + q.notesTid + '">' + ICON.def + '<span>Notes</span></button>' : '') +
+            '<button class="btn ai-only ai-ask" type="button" data-ask-q="' + q.key + '">' + AI_SPARK + '<span>Ask Claude</span></button>' +
+            '<button class="btn ghost" type="button" data-k="' + q.key + '">Clear</button></div></div>';
         }).join('') + '</div>';
       });
     });
-    h += '<div style="margin-top:18px"><button class="btn ghost" type="button" id="rvClearAll">Clear the whole list</button></div>';
+    h += '<div style="margin-top:18px"><button class="btn ghost" type="button" id="rvClearAll">Clear the whole queue</button></div></div>';
     slot.innerHTML = h; renderMath(slot);
+    const hero = $('.sr-hero', slot), list = $('.sr-list', slot);
+
+    function session(sid) {
+      const ks = shuffle(due.filter(k => !sid || subjOf(k) === sid));
+      let i = 0, right = 0, wrong = 0, mastered = 0;
+      const box = el('section', 'sr-session');
+      hero.replaceWith(box); list.hidden = true;
+      box.scrollIntoView({ block: 'start' });
+      const finish = () => {
+        box.innerHTML = '<div class="sr-done"><div class="sr-num clear"><b>' + right + '</b><span>right</span></div><div><h2>' + (i >= ks.length ? 'Session done' : 'Session ended') + '</h2><p>' +
+          right + ' right' + (mastered ? ' (' + mastered + ' mastered and out of the queue)' : '') + ' · ' + wrong + ' back tomorrow' + (i < ks.length ? ' · ' + (ks.length - i) + ' still due' : '') + '.</p>' +
+          '<button class="btn primary" type="button" data-sr-back>Back to the queue</button></div></div>';
+        $('[data-sr-back]', box).addEventListener('click', () => { mountReview(slot); slot.scrollIntoView({ block: 'start' }); });
+      };
+      const show = () => {
+        if (i >= ks.length) { finish(); return; }
+        const k = ks[i], q = question(k), e = S.srs[k];
+        if (!q || !e) { i++; show(); return; }
+        const t = q.topic;
+        box.innerHTML = '<div class="sr-top"><div class="sr-prog"><i style="width:' + (100 * i / ks.length).toFixed(1) + '%"></i></div><span class="sr-count">' + (i + 1) + ' of ' + ks.length + '</span><button class="btn ghost" type="button" data-sr-end>End</button></div>' +
+          '<div class="sr-meta">' + (t.subj ? subjIcon(t.subj.id) : '') + '<span>' + esc((t.subj ? t.subj.short + ' · ' : '') + (t.short || t.title)) + '</span>' + boxDots(e.step) + '</div><div class="sr-body"></div>' +
+          '<div class="sr-foot">' + (q.notesTid ? '<button class="btn rv-notes" type="button" data-notes="' + q.notesTid + '" data-from="' + k + '">' + ICON.def + '<span>Notes</span></button>' : '') +
+          '<button class="btn ai-only ai-ask" type="button" data-ask-q="' + k + '">' + AI_SPARK + '<span>Ask Claude</span></button>' +
+          '<span class="sr-verdict" aria-live="polite"></span><button class="btn primary sr-next" type="button" hidden>' + (i + 1 < ks.length ? 'Next' : 'Finish') + ' →</button></div>';
+        const verdict = $('.sr-verdict', box), next = $('.sr-next', box);
+        $('.sr-body', box).appendChild(reviewCard(q, ok => {
+          const r = srsGrade(k, ok);
+          if (ok) right++; else wrong++;
+          if (r && r.mastered) mastered++;
+          verdict.className = 'sr-verdict ' + (ok ? 'ok' : 'no');
+          verdict.textContent = !r ? '' : r.mastered ? 'Mastered: out of your queue' : ok ? 'Back in ' + r.days + (r.days === 1 ? ' day' : ' days') : 'Back tomorrow';
+          next.hidden = false; next.focus({ preventScroll: true });
+        }));
+        renderMath(box);
+      };
+      box.addEventListener('click', e => {
+        if (e.target.closest('.sr-next')) { i++; show(); box.scrollIntoView({ block: 'start', behavior: calmMotion() ? 'auto' : 'smooth' }); }
+        else if (e.target.closest('[data-sr-end]')) finish();
+      });
+      show();
+    }
     slot.onclick = e => {
+      const st = e.target.closest('[data-sr]');
+      if (st) { session(st.dataset.sr || null); return; }
       const b = e.target.closest('button[data-k]');
-      if (b) { const k = b.dataset.k; if (S.pq[k] === 'review') { delete S.pq[k]; save('pq'); } if (S.mcq[k] && !S.mcq[k].ok) { delete S.mcq[k]; save('mcq'); } updateReviewCount(); mountReview(slot); }
+      if (b) { srsDrop(b.dataset.k); mountReview(slot); return; }
       if (e.target.id === 'rvClearAll') {
         const b2 = e.target;
-        if (b2.dataset.confirm) { Object.keys(S.pq).forEach(k => { if (S.pq[k] === 'review') delete S.pq[k]; }); Object.keys(S.mcq).forEach(k => { if (!S.mcq[k].ok) delete S.mcq[k]; }); save('pq'); save('mcq'); updateReviewCount(); mountReview(slot); }
+        if (b2.dataset.confirm) { Object.keys(S.srs).forEach(clearFlags); S.srs = {}; save('srs'); updateReviewCount(); mountReview(slot); }
         else { b2.dataset.confirm = '1'; b2.textContent = 'Press again to confirm'; b2.classList.add('on-bad'); }
       }
     };
