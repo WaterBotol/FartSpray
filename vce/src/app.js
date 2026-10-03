@@ -903,6 +903,7 @@
       else if (k === 'exams') mountExams(s);
       else if (k === 'review') mountReview(s);
       else if (k === 'resume') s.innerHTML = resumeHTML(sid);
+      else if (k === 'transfer') mountTransfer(s);
     });
   }
   function resumeHTML(sid) {
@@ -1282,6 +1283,33 @@
     return wrap;
   }
 
+  // progress lives per device and per copy of the guide: a code carries it from one copy to another
+  function mountTransfer(slot) {
+    slot.innerHTML = '<div class="xfer"><div class="xfer-row"><button class="btn primary" type="button" data-x="copy">Copy my progress code</button><button class="btn" type="button" data-x="paste">Paste a code</button></div>' +
+      '<div class="xfer-in" hidden><textarea class="ex-ta" rows="3" placeholder="Paste the progress code from the other copy here"></textarea><div class="xfer-row"><button class="btn primary" type="button" data-x="import">Bring it in</button><span class="xfer-msg"></span></div></div></div>';
+    const mine = k => k && k.indexOf(NS) === 0;
+    const dump = () => { const o = {}; try { for (let i = 0; i < localStorage.length; i++) { const k = localStorage.key(i); if (mine(k)) o[k] = localStorage.getItem(k); } } catch (e) { /* blocked */ } return o; };
+    const enc = o => 'VCEGUIDE1:' + btoa(unescape(encodeURIComponent(JSON.stringify(o))));
+    const dec = str => { const m = String(str).replace(/\s+/g, '').match(/VCEGUIDE1:([A-Za-z0-9+/=]+)/); if (!m) throw new Error('no code'); return JSON.parse(decodeURIComponent(escape(atob(m[1])))); };
+    const msg = t => { $('.xfer-msg', slot).textContent = t; };
+    slot.addEventListener('click', e => {
+      const b = e.target.closest('[data-x]'); if (!b) return;
+      if (b.dataset.x === 'copy') {
+        const o = dump(), n = Object.keys(o).length;
+        if (!n) { toast('Nothing saved on this device yet'); return; }
+        copyText(enc(o), 'Progress code copied: paste it into the other copy');
+      } else if (b.dataset.x === 'paste') { $('.xfer-in', slot).hidden = false; $('textarea', slot).focus(); }
+      else if (b.dataset.x === 'import') {
+        let o;
+        try { o = dec($('textarea', slot).value); } catch (err) { msg('That isn’t a progress code. Copy it again from the other copy.'); return; }
+        const keys = Object.keys(o).filter(mine);
+        if (!keys.length) { msg('That code has no progress in it.'); return; }
+        if (!b.dataset.armed) { b.dataset.armed = '1'; b.textContent = 'Tap again to bring in ' + keys.length + ' items'; msg('Anything saved here for the same things gets replaced.'); return; }
+        try { keys.forEach(k => localStorage.setItem(k, o[k])); } catch (err) { msg('Couldn’t save it on this device (storage is blocked).'); return; }
+        toast('Progress moved in'); setTimeout(() => location.reload(), 700);
+      }
+    });
+  }
   function mountReview(slot) {
     const now = Date.now(), keys = Object.keys(S.srs).filter(k => byId[k.split(':')[0]]);
     if (!keys.length) {

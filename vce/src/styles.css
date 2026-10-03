@@ -1631,3 +1631,11 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vq-img canvas { filter: brightness(0.92); } }
 :root[data-theme="dark"] .vq-img canvas { filter: brightness(0.92); }
 .ex-stim .vq, .sr-q .vq { margin-top: 8px; }
+
+/* move progress between copies */
+.xfer { display: grid; gap: 10px; padding: 14px 16px; border-radius: 18px; background: var(--surface); border: 1px solid var(--card-edge); box-shadow: var(--card-shadow); }
+.xfer-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.xfer-in[hidden] { display: none; }
+.xfer-in { display: grid; gap: 8px; }
+.xfer-in .ex-ta { margin: 0; font-family: var(--font-mono); font-size: 13px; }
+.xfer-msg { font-size: 13.5px; color: var(--muted); }

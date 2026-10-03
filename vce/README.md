@@ -22,7 +22,7 @@ The whole site is one self-contained file, `index.html`. It needs no server, no 
 | Biology | 24 | Nucleic acids and proteins, DNA tools, enzymes, photosynthesis and respiration, immunity, disease, evolution; translation/mutation, gel, enzyme, photosynthesis and genetic drift simulations |
 | English Language | 20 | Metalanguage, informal and formal language, Australian English and its varieties, identity; Section A/B/C practice with original transcripts, a model commentary and essay plans; HCE vowel chart and feature-spotting drill |
 
-Progress (completed topics, self-marks, quiz answers, the review queue) is stored in the browser's `localStorage` only.
+Progress (completed topics, self-marks, quiz answers, the review queue) is stored in the browser's `localStorage` only, per device and per copy of the guide. **Move your progress** on the home page copies it to another copy as a code.
 
 ## Review queue and blurting
 
@@ -36,6 +36,10 @@ When the guide is opened as an Artifact on claude.ai, it can call Claude through
 
 - **Ask Claude** on any practice question, topic, quick-notes card or review-list item. It explains the theory behind the question, quizzes you on it one step at a time, or explains why your multiple-choice pick was wrong. Answers can be saved to **My notes** for that topic.
 - **Mark with Claude** on practice exams. After you finish, Claude reads each written answer against the marking guide, ticks the points you earned (you can change any tick), and says what to fix.
+
+## Official questions inline (private copy)
+
+The practice papers use real VCAA questions, which aren't reproduced here: each links to the official exam PDF. In the owner's private copy of the guide (a private claude.ai Artifact), the 21 official papers sit in the artifact's own storage, and `src/papers.js` draws each question straight from its paper, cropped to that question (options, graphs and diagrams included), on the practice exams and in review cards. Claude's marking and "Ask Claude" get the same crop. `papers.json` holds only numbers: each question's crop box (from the paper's text layer, or OCR where it has none) and where each paper is stored in that private artifact. The public `index.html` never includes it and keeps linking out. Build a public Artifact with `--no-papers`.
 
 Each call uses the viewer's own Claude usage, and the first one asks their permission. Opened anywhere else (GitHub Pages, a saved file), the Claude controls stay hidden and everything else works the same. The **Notes** pop-out on the review list works everywhere.
 
@@ -54,7 +58,7 @@ Component markup (worked examples, practice questions, MCQs, callouts, sims) is 
 cd vce
 npm install        # once, fetches KaTeX
 node build.mjs     # writes index.html (checks tag balance, maths delimiters and MCQ answers)
-node build.mjs --artifact out.html [--artifact-url <url>]   # CDN-KaTeX fragment for claude.ai Artifacts
+node build.mjs --artifact out.html [--artifact-url <url>] [--no-papers]   # CDN-KaTeX fragment for claude.ai Artifacts (--no-papers for a public one)
 ```
 
 ## Sources

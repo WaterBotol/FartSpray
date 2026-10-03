@@ -1,6 +1,7 @@
 // Build script: bundles every subject into ONE self-contained HTML file.
 //   node build.mjs                          -> ./index.html (works offline, host anywhere)
-//   node build.mjs --artifact <out.html> [--artifact-url <url>]  -> fragment for claude.ai Artifacts
+//   node build.mjs --artifact <out.html> [--artifact-url <url>] [--no-papers]  -> fragment for claude.ai Artifacts
+//     (includes papers.json, the private copy's official-paper map, unless --no-papers)
 // Sources: src/hub/*.html (global pages) and src/subjects/<id>/{subject.json,topics/*.html}.
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
@@ -157,7 +158,7 @@ if (out) {
   // the private artifact holds the official VCAA papers in its own storage: papers.json maps each paper to its
   // stored copy plus the crop box of every linked question (numbers only). The public index.html never gets it.
   const papersMap = existsSync(join(here, 'papers.json')) ? readFileSync(join(here, 'papers.json'), 'utf8') : '';
-  const papersOk = papersMap && Object.keys(JSON.parse(papersMap).papers || {}).length > 0;
+  const papersOk = !process.argv.includes('--no-papers') && papersMap && Object.keys(JSON.parse(papersMap).papers || {}).length > 0;   // --no-papers for a public copy
   const frag = `<title>${TITLE}</title>
 ${FONTS}
 <style>${katexCss}</style>
