@@ -108,6 +108,7 @@ const bodyHtml = readFileSync(src('body.html'), 'utf8');
 const appJs = readFileSync(src('app.js'), 'utf8');
 const motionJs = readFileSync(src('motion.js'), 'utf8');
 const aiJs = readFileSync(src('ai.js'), 'utf8');
+const papersJs = readFileSync(src('papers.js'), 'utf8');
 const simsJs = readdirSync(src('sims')).filter(f => f.endsWith('.js')).sort().map(f => `/* ---- ${f} ---- */\n` + readFileSync(src('sims', f), 'utf8')).join('\n');
 const safe = s => s.replace(/<\/script/gi, '<\\/script');
 
@@ -140,6 +141,7 @@ ${bodyHtml}
 <script>${safe(autoRenderJs)}</script>
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
+<script>${safe(papersJs)}</script>
 <script>${safe(motionJs)}</script>
 <script>${safe(aiJs)}</script>
 </body>
@@ -152,17 +154,23 @@ console.log(`✓ index.html ${(full.length / 1024).toFixed(0)} KB · ${subjects.
 const out = arg('--artifact');
 if (out) {
   const cdn = `https://cdn.jsdelivr.net/npm/katex@${KATEX_VERSION}/dist`;
+  // the private artifact holds the official VCAA papers in its own storage: papers.json maps each paper to its
+  // stored copy plus the crop box of every linked question (numbers only). The public index.html never gets it.
+  const papersMap = existsSync(join(here, 'papers.json')) ? readFileSync(join(here, 'papers.json'), 'utf8') : '';
+  const papersOk = papersMap && Object.keys(JSON.parse(papersMap).papers || {}).length > 0;
   const frag = `<title>${TITLE}</title>
 ${FONTS}
 <style>${katexCss}</style>
 <style>${styles}</style>
 ${bodyHtml}
 <script id="guide-data" type="application/json">${dataJson}</script>
+${papersOk ? '<script>window.VCAA_PAPERS = ' + safe(papersMap.trim()) + ';</script>' : ''}
 <script src="${cdn}/katex.min.js"></script>
 <script src="${cdn}/contrib/mhchem.min.js"></script>
 <script src="${cdn}/contrib/auto-render.min.js"></script>
 <script>${safe(simsJs)}</script>
 <script>${safe(appJs)}</script>
+<script>${safe(papersJs)}</script>
 <script>${safe(motionJs)}</script>
 <script>${safe(aiJs)}</script>
 `;

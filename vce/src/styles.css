@@ -1615,3 +1615,19 @@ html.sheet-lock, html.sheet-lock body { overflow: hidden; }
 .bh-row-t b { font-size: 15.5px; }
 .bh-row-t span { font-size: 13px; color: var(--muted); }
 .nt-bar .bl-btn { gap: 6px; }
+
+/* ==========================================================================
+   Official VCAA question, drawn from the paper (private copy only)
+   ========================================================================== */
+.vq { margin: 10px 0 4px; border-radius: 14px; background: #fff; box-shadow: inset 0 0 0 1px var(--line); overflow: hidden; }
+.vq-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 8px 7px 13px; background: var(--surface-2); }
+.vq-t { font-size: 12.5px; font-weight: 600; color: var(--muted); }
+.vq-tog { height: 26px; padding: 0 10px; border: 0; border-radius: 99px; background: var(--fill); color: var(--accent); font: 600 12.5px/1 var(--font-body); cursor: pointer; }
+.vq-img { min-height: 60px; }
+.vq-img canvas { display: block; width: 100%; height: auto; }
+.vq-load { padding: 16px; font-size: 13.5px; color: #6e6e73; }
+.vq-break { padding: 4px 13px; font-size: 11.5px; font-weight: 600; color: #6e6e73; background: #f2f2f7; border-top: 1px dashed #c7c7cc; border-bottom: 1px dashed #c7c7cc; }
+.vq.off .vq-img { display: none; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .vq-img canvas { filter: brightness(0.92); } }
+:root[data-theme="dark"] .vq-img canvas { filter: brightness(0.92); }
+.ex-stim .vq, .sr-q .vq { margin-top: 8px; }

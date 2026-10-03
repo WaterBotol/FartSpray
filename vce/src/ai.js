@@ -203,6 +203,26 @@
     $$('[data-mine-slot]').forEach(slot => { slot.innerHTML = mineHTML(slot.dataset.mineSlot); fillMine(slot); });
   }
 
+  /* ---------------------------------------------------------------- the official question, for Claude */
+  // In the private copy, real VCAA questions come from the official paper: Claude gets the cropped question as an
+  // image (when this view can send images) and any text the paper carries, instead of only the guide's summary.
+  let imgMax = null;
+  async function imageCap() {
+    if (imgMax !== null || !sample) return imgMax || 0;
+    try { const l = await sample.limits(); imgMax = l && l.images ? l.images.maxCount : 0; } catch (e) { imgMax = 0; }
+    return imgMax;
+  }
+  const offCache = new WeakMap();
+  function official(root) {
+    const G = window.GUIDE_PAPERS;
+    if (!G || !root || !G.has(root)) return Promise.resolve(null);
+    if (offCache.has(root)) return offCache.get(root);
+    const p = Promise.all([imageCap().then(n => (n ? G.imageFor(root).catch(() => null) : null)), G.textFor(root).catch(() => '')])
+      .then(([img, text]) => (img || text ? { img, text } : null));
+    offCache.set(root, p);
+    return p;
+  }
+
   /* ---------------------------------------------------------------- chat */
   const preamble = subj => 'You’re Claude, built into a VCE study guide as a tutor for ' + (subj ? subj + ' Units 3 & 4' : 'VCE Units 3 & 4') + ' (Victoria, Australia). The student is in Year 12, preparing for the end-of-year VCAA exam.\n' +
     'How to answer:\n' +
@@ -238,7 +258,9 @@
       send.setAttribute('aria-label', on ? 'Stop' : 'Send');
       send.innerHTML = on ? '<i></i>' : '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
     };
-    const firstTurn = text => preamble(cfg.subject) + (cfg.context ? '\n\nHere is what the student is looking at in the guide:\n<context>\n' + clip(cfg.context, MAX_CTX) + '\n</context>' : '') + '\n\n' + text;
+    let extra = '', images = null;
+    const ready = cfg.prep ? cfg.prep.then(o => { if (o) { extra = o.text || ''; images = o.images || null; } }, () => {}) : Promise.resolve();
+    const firstTurn = text => preamble(cfg.subject) + (cfg.context ? '\n\nHere is what the student is looking at in the guide:\n<context>\n' + clip(cfg.context + extra, MAX_CTX) + '\n</context>' : '') + '\n\n' + text;
     const fit = list => {   // keep the opening turn (it carries the context) and the most recent ones
       let out = list.slice(), size = () => out.reduce((a, t) => a + t.content.length, 0);
       while (size() > 180000 && out.length > 3) out.splice(1, 2);
@@ -255,17 +277,18 @@
       if (!sample) { A.toast('Claude isn’t available here'); return; }
       starters.hidden = true;
       const u = bubble('user', esc(label || prompt).replace(/\n/g, '<br>'));
-      turns.push({ role: 'user', content: turns.length ? prompt : firstTurn(prompt) });
       const m = bubble('assistant'), out = $('.md', m), acts = $('.ai-msg-acts', m);
       out.innerHTML = '<span class="ai-think">Thinking…</span>';
       toBottom();
       setBusy(true);
+      await ready;
+      turns.push({ role: 'user', content: turns.length ? prompt : firstTurn(prompt) });
       ctl = new AbortController();
       let shown = '', raf = 0;
       const draw = () => { raf = 0; const stick = nearBottom(); paint(out, shown); if (stick) toBottom(); };
       try {
         const res = await sample(fit(turns), {
-          signal: ctl.signal, cache: false,
+          signal: ctl.signal, cache: false, ...(images ? { images } : {}),
           onText: ({ text }) => { shown = text; if (!raf) raf = requestAnimationFrame(draw); }
         });
         if (raf) cancelAnimationFrame(raf);
@@ -360,6 +383,11 @@
       title: 'Ask Claude', sub: esc((t.subj ? t.subj.short + ' · ' : '') + q.label + ' · ' + tTitle(t)),
       subject: t.subj && t.subj.name, tid: q.notesTid || t.id, noteTitle: (q.exam ? tTitle(t) + ' ' : '') + 'Q' + q.label.replace('Question ', ''),
       context: questionText(q) + (bg && !bg.special ? '\n\nBackground from the topic:\n' + topicText(bg, 6000) : ''),
+      prep: q.exam ? official(q.mcq ? q.node : (window.GUIDE_PAPERS ? window.GUIDE_PAPERS.fromHTML(q.contextHTML) : null)).then(o => o && {
+        images: o.img ? [o.img] : null,
+        text: (o.img ? '\n\nThe official VCAA question is attached as an image: read the full question, options and any diagram from it.' : '') +
+          (o.text ? '\n\nThe official question text, extracted from the VCAA paper (layout may be imperfect):\n' + clip(o.text, 6000) : '')
+      }) : null,
       card: qCard(q), cardMath: true, starters, placeholder: 'Ask about this question…'
     });
   }
@@ -426,7 +454,7 @@
     const q = exp.closest('.exq'), stem = q && $('.exq-stem', q), qn = q ? ($('.exq-h .pq-tag', q) || {}).textContent || '' : '';
     const pq = $(':scope > .exp-q', exp), ans = $(':scope > .ex-mark .ex-ans', exp) || $('.ex-ans', exp);
     const rows = $$('.mk-row', exp).map(r => ({ cb: $('input', r), m: +(($('.mk-m', r) || {}).textContent || 1), text: A.htmlText($('.mk-t', r)) }));
-    return { pid: exp.dataset.pid, exp, label: qn.replace('Question ', '') + ((($('.exp-l', exp) || {}).textContent || '').replace('.', '')), marks: +exp.dataset.marks || 0,
+    return { pid: exp.dataset.pid, exp, qroot: q, label: qn.replace('Question ', '') + ((($('.exp-l', exp) || {}).textContent || '').replace('.', '')), marks: +exp.dataset.marks || 0,
       stem: stem ? A.htmlText(stem) : '', part: pq ? A.htmlText(pq) : '', rows, model: ans ? A.htmlText(ans) : '', answer: ($('.ex-ta', exp) || {}).value || '' };
   }
   function markPrompt(subj, list) {
@@ -444,7 +472,10 @@
       'Reply with JSON only, in exactly this shape:\n{"parts":[{"id":"<part id>","points":[{"met":true,"quote":"<exact words from the student’s answer>","why":"<under 15 words>"},{"met":false,"quote":"","why":"<what is missing or wrong, under 15 words>"}],"score":<number>,"feedback":"<2 to 4 sentences to the student: what earned marks and what lost them>","improve":"<one concrete sentence: what to write next time for full marks>"}]}\n' +
       '"points" has exactly one entry per marking point, in the order given (an empty list if the part has no itemised points). "score" is the total you award. Use Australian spelling and LaTeX between \\( and \\) for any maths outside the quotes.\n\nPARTS\n\n' +
       list.map(p => '### Part id "' + p.pid + '" (Question ' + p.label + ', ' + p.marks + ' mark' + (p.marks === 1 ? '' : 's') + ')\n' +
-        (p.stem ? 'Question context: ' + clip(p.stem, 3000) + '\n' : '') + (p.part ? 'This part: ' + p.part + '\n' : '') +
+        (p.stem ? 'Question context: ' + clip(p.stem, 3000) + '\n' : '') +
+        (p.imgNo ? 'The official question is attached as image ' + p.imgNo + ': read the full question and any diagram from it.\n' : '') +
+        (p.offText ? 'Official question text from the VCAA paper (extracted, layout may be imperfect): ' + clip(p.offText, 4000) + '\n' : '') +
+        (p.part ? 'This part: ' + p.part + '\n' : '') +
         (p.rows.length ? 'Marking guide (marks for each point in brackets):\n' + p.rows.map((r, i) => (i + 1) + '. [' + r.m + '] ' + r.text).join('\n') + '\n' : 'No itemised marking points: mark it holistically out of ' + p.marks + '.\n') +
         (p.model ? 'Guide’s answer notes: ' + clip(p.model, 2500) + '\n' : '') +
         'Student’s answer:\n"""\n' + clip(p.answer.trim(), 9000) + '\n"""\n').join('\n');
@@ -515,7 +546,15 @@
         const chunk = todo.slice(i, i + BATCH);
         say(todo.length > 1 ? 'Marking ' + (i + 1) + (chunk.length > 1 ? '–' + (i + chunk.length) : '') + ' of ' + todo.length + '…' : 'Marking…');
         let res;
-        try { res = await sample.json(markPrompt(subj, chunk), { signal: ctl.signal, cache: false, modelTier: 'complex' }); }   // the most capable tier: marking accuracy matters more than speed
+        // attach each question's official crop once, as far as this view's image limit allows
+        const cap = await imageCap(), imgs = [], seen = new Map();
+        for (const p of chunk) {
+          const o = await official(p.qroot);
+          p.offText = o && o.text && !seen.has(p.qroot) ? o.text : ''; p.imgNo = 0;
+          if (o && o.img) { if (!seen.has(p.qroot) && imgs.length < cap) { imgs.push(o.img); seen.set(p.qroot, imgs.length); } p.imgNo = seen.get(p.qroot) || 0; }
+          else if (!seen.has(p.qroot)) seen.set(p.qroot, 0);
+        }
+        try { res = await sample.json(markPrompt(subj, chunk), { signal: ctl.signal, cache: false, modelTier: 'complex', ...(imgs.length ? { images: imgs } : {}) }); }   // the most capable tier: marking accuracy matters more than speed
         catch (e) {
           const f = failCopy(e);
           chunk.concat(todo.slice(i + BATCH)).forEach(p => { const o = $('.ai-mk-out', p.exp); if (o && o.querySelector('.ai-think')) { o.innerHTML = ''; o.hidden = true; } });
