@@ -1,0 +1,109 @@
+<!--
+id: sampling
+title: Sampling & sample proportions
+short: Sample proportions
+summary: Populations and samples, random sampling and bias, the sample proportion p̂ as a random variable, its mean and standard deviation, the exact (binomial) distribution vs the normal approximation, and how sample size affects variability.
+keywords: sample, population, parameter, statistic, random sample, bias, sample proportion, p hat, population proportion, sampling distribution, standard deviation of p hat, standard error, normal approximation, binomial exact, sample size, simulation, variability
+dotpoints: random sampling, populations and samples, and sources of bias | the sample proportion p̂ as a random variable; its mean and standard deviation | the approximate normality of the distribution of p̂ for large samples, and the exact distribution via the binomial
+-->
+<h2>Populations, samples and bias</h2>
+<p>A <strong>parameter</strong> describes a population (e.g. the true proportion \(p\) of voters who support a policy). A <strong>statistic</strong> is calculated from a sample (e.g. the sample proportion \(\hat p\)). Different samples give different \(\hat p\) values, so \(\hat p\) is a random variable.</p>
+<ul>
+  <li><strong>Simple random sample:</strong> every group of \(n\) members is equally likely to be chosen.</li>
+  <li><strong>Bias</strong> is a systematic tendency to over- or under-estimate. Examples: surveying only people at a gym about exercise habits (selection bias); voluntary online polls (self-selection bias); leading questions.</li>
+  <li>A bigger sample reduces random variability, but it <em>doesn't</em> fix bias.</li>
+</ul>
+
+<h2>The distribution of \(\hat p\)</h2>
+<div class="eq"><div class="eq-label">Sample proportion</div>\[ \hat P = \frac{X}{n},\ X \sim \text{Bi}(n, p) \qquad E(\hat P) = p \qquad \operatorname{sd}(\hat P) = \sqrt{\frac{p(1 - p)}{n}} \]<p>For large \(n\) (a common guide is \(np \ge 10\) and \(n(1 - p) \ge 10\)), \(\hat P\) is approximately \(\text{N}\!\left(p, \frac{p(1 - p)}{n}\right)\).</p></div>
+<aside class="c-key"><p>Quadrupling the sample size <strong>halves</strong> the standard deviation of \(\hat P\) (because of the \(\sqrt{n}\)). Diminishing returns: going from \(n = 100\) to \(n = 400\) helps as much as going from 400 to 1600.</p></aside>
+
+<div class="we" data-title="Mean and sd of p̂" data-marks="2">
+<div class="we-q"><p>30% of a town's households own a dog. Random samples of 100 households are taken. Find the mean and standard deviation of \(\hat P\).</p></div>
+<div class="we-t"><p>The sample proportion \(\hat P\) varies from sample to sample. Its mean is the population proportion \(p\), and its spread shrinks as the sample size grows.</p></div>
+<div class="we-s" data-f="E(\hat P) = p"><p>\(E(\hat P) = p = 0.3\).</p></div>
+<div class="we-a" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}"><p><strong>\(\operatorname{sd}(\hat P) = \sqrt{\frac{0.3 \times 0.7}{100}} \approx 0.0458\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Exact vs approximate (a favourite trap)" data-marks="4">
+<div class="we-q"><p>With \(p = 0.3\) and \(n = 100\), find \(P(\hat P &gt; 0.35)\) (a) exactly, using the binomial distribution, and (b) using the normal approximation.</p></div>
+<div class="we-t"><p>\(\hat P = \frac Xn\) with \(X\) binomial, so exact probabilities come from the binomial count. For large \(n\), \(\hat P\) is approximately normal, which gives an approximate answer.</p></div>
+<div class="we-s" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p)"><p>(a) \(\hat P &gt; 0.35 \iff X &gt; 35 \iff X \ge 36\). With \(X \sim \text{Bi}(100, 0.3)\): \(P(X \ge 36) \approx 0.1161\).</p></div>
+<div class="we-s" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}} ;; Z = \dfrac{\hat p - p}{\operatorname{sd}(\hat P)}"><p>(b) \(\hat P \approx \text{N}(0.3, 0.0458^2)\): \(P(\hat P &gt; 0.35) = P(Z &gt; 1.091) \approx 0.1376\).</p></div>
+<div class="we-a"><p><strong>(a) 0.1161 (exact); (b) 0.1376 (approximate).</strong> Read which one the question asks for. For the exact version, the strict “\(&gt;\)” matters: \(X \ge 36\), not \(X \ge 35\).</p></div>
+</div>
+
+<div class="we" data-title="Exact distribution of p̂ for a small sample (tech-free)" data-marks="3">
+<div class="we-q"><p>A fair coin is tossed 4 times and \(\hat P\) is the proportion of heads. Find \(P(\hat P \ge 0.75)\).</p></div>
+<div class="we-t"><p>For a small sample, the normal approximation is poor. Convert the proportion into a count \(X = n\hat P\) and use the binomial distribution directly.</p></div>
+<div class="we-s" data-f="\hat P = \dfrac Xn,\ X \sim \text{Bi}(n, p)"><p>\(\hat P \ge 0.75 \iff X \ge 3\) with \(X \sim \text{Bi}(4, \frac12)\).</p></div>
+<div class="we-s" data-f="P(X = x) = \dbinom nx p^x(1 - p)^{n - x}"><p>\(P(X = 3) + P(X = 4) = \frac{4}{16} + \frac{1}{16}\).</p></div>
+<div class="we-a"><p><strong>\(\frac{5}{16}\).</strong> Small samples: convert to a count and use the binomial.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: sampling traps">
+<ul>
+  <li><strong>\(p\) vs \(\hat p\):</strong> the formula for \(\operatorname{sd}(\hat P)\) uses the population \(p\) when it's known.</li>
+  <li><strong>Convert proportions to counts carefully:</strong> \(\hat P \le 0.2\) with \(n = 50\) is \(X \le 10\).</li>
+  <li><strong>Bigger samples don't remove bias.</strong> A huge biased sample is still biased.</li>
+  <li><strong>sd of \(\hat P\) depends on \(\sqrt{n}\)</strong>, not \(n\).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>For samples of size 400 from a population with \(p = 0.5\), the standard deviation of \(\hat P\) is</p></div>
+<ol><li>0.05</li><li>0.00125</li><li>0.025</li><li>0.25</li></ol>
+<div class="mcq-x"><p>\(\sqrt{\frac{0.25}{400}} = \frac{0.5}{20} = 0.025\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>To halve the standard deviation of \(\hat P\), the sample size must be</p></div>
+<ol><li>multiplied by 4</li><li>doubled</li><li>halved</li><li>multiplied by \(\sqrt2\)</li></ol>
+<div class="mcq-x"><p>\(\operatorname{sd} \propto \frac{1}{\sqrt n}\): \(\frac{1}{\sqrt{4n}} = \frac12 \cdot \frac{1}{\sqrt n}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Which is most likely to produce a biased estimate of the proportion of Year 12 students who drink coffee daily?</p></div>
+<ol><li>A random sample of 50 Year 12 students from the school roll</li><li>A random sample of 200 Year 12 students from the state</li><li>A random sample of 5 classes, surveying every student in them</li><li>Surveying students in the queue at the school café</li></ol>
+<div class="mcq-x"><p>People in a café queue are more likely than average to drink coffee: selection bias.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>\(p = 0.2\) and \(n = 50\). Using the binomial distribution, \(P(\hat P \le 0.1)\) is closest to</p></div>
+<ol><li>0.0185</li><li>0.0480</li><li>0.0788</li><li>0.1</li></ol>
+<div class="mcq-x"><p>\(\hat P \le 0.1 \iff X \le 5\) with \(X \sim \text{Bi}(50, 0.2)\): \(P(X \le 5) \approx 0.0480\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>A statistic is</p></div>
+<ol><li>a fixed number describing the whole population</li><li>always equal to the parameter</li><li>a value calculated from a sample, which varies between samples</li><li>the standard deviation of the population</li></ol>
+<div class="mcq-x"><p>Parameters describe populations (fixed, usually unknown); statistics come from samples (random).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="E(\hat P) = p ;; \operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}">
+<div class="pq-q"><p>In a large population, 60% of people prefer brand A. For random samples of size 150, find the mean and standard deviation of \(\hat P\), to 4 decimal places.</p></div>
+<div class="pq-s"><p>\(E(\hat P) = 0.6\); \(\operatorname{sd}(\hat P) = \sqrt{\frac{0.6 \times 0.4}{150}} = \sqrt{0.0016} = 0.04\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}} ;; Z = \dfrac{\hat p - p}{\operatorname{sd}(\hat P)}">
+<div class="pq-q"><p>\(p = 0.6\), \(n = 150\). Using the normal approximation, find the probability that the sample proportion is within 0.05 of the population proportion.</p></div>
+<div class="pq-s"><p>\(P(0.55 &lt; \hat P &lt; 0.65)\) with \(\operatorname{sd} = 0.04\): \(z = \pm1.25\). [1]</p><p>\(P(-1.25 &lt; Z &lt; 1.25) \approx 0.7887\). [2]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="\operatorname{sd}(\hat P) = \sqrt{\dfrac{p(1 - p)}{n}}">
+<div class="pq-q"><p>A survey of \(n\) people is planned for a population with \(p = 0.4\). Find the smallest \(n\) for which \(\operatorname{sd}(\hat P) \le 0.02\).</p></div>
+<div class="pq-s"><p>\(\sqrt{\frac{0.24}{n}} \le 0.02 \Rightarrow \frac{0.24}{n} \le 0.0004\). [1]</p><p>\(n \ge 600\). [1] So \(n = 600\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A news website runs a poll: 12 000 readers vote and 78% say taxes are too high. Someone claims the huge sample makes the result very accurate. Respond.</p></div>
+<div class="pq-s"><p>It's a self-selected sample, not a random one. People with strong opinions (and readers of that site) are more likely to vote, so it's biased. A large sample reduces random error, not bias.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(E(\hat P) = p\), \(\operatorname{sd}(\hat P) = \sqrt{\frac{p(1 - p)}{n}}\).</li>
+  <li>Large \(n\): approximately normal. Exact: convert to counts and use \(\text{Bi}(n, p)\).</li>
+  <li>Random sampling controls bias; sample size controls variability.</li>
+</ul>

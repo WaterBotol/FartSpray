@@ -1,0 +1,125 @@
+<!--
+id: evidence
+title: Evidence of relatedness & phylogenetic trees
+short: Evidence & phylogeny
+summary: Using comparative genomics (DNA and amino acid sequences, conserved genes) and structural morphology (homologous, analogous and vestigial structures) as evidence of relatedness, divergent and convergent evolution, and building and reading phylogenetic trees.
+keywords: evidence for evolution, comparative genomics, DNA sequence, amino acid sequence, cytochrome c, conserved gene, molecular clock, mitochondrial DNA, structural morphology, comparative anatomy, homologous structure, pentadactyl limb, analogous structure, vestigial structure, divergent evolution, convergent evolution, phylogenetic tree, cladogram, common ancestor, node, branch, clade, relatedness, biogeography
+dotpoints: evidence of relatedness between species: structural morphology (homologous and vestigial structures) and molecular homology (comparative genomics, conserved genes) | the use and interpretation of phylogenetic trees as evidence for the relatedness between species
+-->
+<h2>Molecular evidence: comparative genomics</h2>
+<p>Closely related species share a recent common ancestor, so there has been less time for mutations to accumulate: their DNA (and protein) sequences are more similar. Comparing sequences gives a measure of relatedness.</p>
+<ul>
+  <li><strong>Conserved genes</strong> (essential genes that change slowly, e.g. those for cytochrome c, ribosomal RNA, histones) allow comparison of even very distantly related organisms.</li>
+  <li><strong>DNA comparisons</strong> are more sensitive than amino acid comparisons, because silent mutations change DNA without changing the protein.</li>
+  <li><strong>Molecular clock</strong>: if mutations accumulate at a roughly constant rate, the number of differences estimates the time since two lineages diverged (calibrated with fossil dates).</li>
+  <li><strong>Mitochondrial DNA</strong> (inherited maternally, mutates relatively fast) is used for recent divergences such as human migrations.</li>
+</ul>
+<div class="tbl"><table>
+<thead><tr><th>Organism</th><th>Amino acid differences from human cytochrome c (approx.)</th></tr></thead>
+<tbody>
+<tr><td>Chimpanzee</td><td>0</td></tr><tr><td>Rhesus monkey</td><td>1</td></tr><tr><td>Horse</td><td>12</td></tr><tr><td>Chicken</td><td>13</td></tr><tr><td>Tuna</td><td>21</td></tr><tr><td>Yeast</td><td>44</td></tr>
+</tbody></table></div>
+<p class="ln">Commonly quoted textbook values for this 104-amino-acid protein.</p>
+
+<h2>Structural evidence</h2>
+<div class="tbl"><table>
+<thead><tr><th>Type</th><th>Definition</th><th>Example</th><th>Indicates</th></tr></thead>
+<tbody>
+<tr><td>Homologous</td><td>Same underlying structure (common ancestry), possibly different functions</td><td>Pentadactyl limb: human arm, whale flipper, bat wing</td><td><strong>Divergent evolution</strong> from a common ancestor</td></tr>
+<tr><td>Analogous</td><td>Same function, different structure and origin</td><td>Wings of birds and insects; streamlined bodies of sharks and dolphins</td><td><strong>Convergent evolution</strong> under similar selection pressures (not close relatedness)</td></tr>
+<tr><td>Vestigial</td><td>Reduced structures with little or no function, functional in ancestors</td><td>Human coccyx and appendix; pelvic bones in whales and some snakes</td><td>Descent from ancestors that used them</td></tr>
+</tbody></table></div>
+
+<h2>Phylogenetic trees</h2>
+<figure class="fig">
+<svg viewBox="0 0 440 232" width="440" role="img" aria-label="Phylogenetic tree of five species">
+<line x1="30" y1="205" x2="410" y2="205" class="s-mut"/>
+<text x="220" y="224" text-anchor="middle" class="t-sm t-mut">time → (present day at the right)</text>
+<g class="s-acc" style="stroke-width:2.2;fill:none">
+<path d="M40 110 H120 V60 H200 V35 H400 M200 60 V85 H400 M120 110 V160 H260 V135 H400 M260 160 V185 H400"/>
+</g>
+<circle cx="120" cy="110" r="4" class="f-ink"/><circle cx="200" cy="60" r="4" class="f-ink"/><circle cx="260" cy="160" r="4" class="f-ink"/><circle cx="40" cy="110" r="4" class="f-ink"/>
+<text x="406" y="39" class="t-sm t-b">A</text><text x="406" y="89" class="t-sm t-b">B</text><text x="406" y="139" class="t-sm t-b">C</text><text x="406" y="189" class="t-sm t-b">D</text>
+<text x="196" y="54" text-anchor="end" class="t-sm t-mut">X</text><text x="256" y="154" text-anchor="end" class="t-sm t-mut">Y</text><text x="116" y="104" text-anchor="end" class="t-sm t-mut">Z</text>
+</svg>
+<figcaption>Each node (X, Y, Z) is a common ancestor. A and B share the most recent common ancestor X, so they're more closely related to each other than either is to C or D. Z is the common ancestor of all four.</figcaption>
+</figure>
+<ul>
+  <li><strong>Nodes</strong> = common ancestors; <strong>branch tips</strong> = species (living or extinct).</li>
+  <li>Relatedness depends on how <strong>recent the shared ancestor</strong> is, not on how close the names are on the page. Branches can rotate around a node without changing the tree's meaning.</li>
+  <li>A <strong>clade</strong> is an ancestor and all its descendants.</li>
+</ul>
+<div class="we" data-title="Building a tree from sequence differences" data-marks="3">
+<div class="we-q"><p>Differences in a DNA sequence between four species: P–Q 3, P–R 12, P–S 15, Q–R 12, Q–S 15, R–S 14. Draw the most likely tree.</p></div>
+<div class="we-t"><p>Mutations build up over time, so the fewer sequence differences two species have, the more recently they shared a common ancestor. Join the closest pair first, then add the others in order of increasing difference.</p></div>
+<div class="we-s"><p>P and Q differ least (3): they share the most recent common ancestor.</p></div>
+<div class="we-s"><p>R is next closest to the P/Q group (12 differences each); S is furthest from all.</p></div>
+<div class="we-a"><p><strong>(((P, Q), R), S)</strong>: S branched off first, then R, then P and Q split most recently.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: phylogeny traps">
+<ul>
+  <li><strong>Analogous structures don't show close relatedness</strong>; they show convergent evolution.</li>
+  <li><strong>Humans didn't evolve from chimpanzees.</strong> They share a common ancestor.</li>
+  <li><strong>Reading a tree left to right isn't a ranking</strong>; neighbouring tips aren't necessarily the closest relatives.</li>
+  <li><strong>Amino acid similarity can hide DNA differences</strong> (degenerate code), so DNA is the finer tool.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>The forelimbs of a human, a whale and a bat are</p></div>
+<ol><li>homologous structures showing divergent evolution</li><li>analogous structures showing convergent evolution</li><li>vestigial structures</li><li>unrelated</li></ol>
+<div class="mcq-x"><p>Same bone pattern (pentadactyl limb), different uses.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The wings of a bird and a butterfly are</p></div>
+<ol><li>homologous</li><li>vestigial</li><li>analogous</li><li>evidence of a recent common ancestor</li></ol>
+<div class="mcq-x"><p>Same function, very different structure: convergent evolution.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Two species have identical amino acid sequences for a protein but differ at 6 DNA bases in its gene. This is best explained by</p></div>
+<ol><li>an error in the analysis</li><li>silent mutations, due to the degenerate genetic code</li><li>convergent evolution</li><li>frameshift mutations</li></ol>
+<div class="mcq-x"><p>Different codons can code for the same amino acid.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>On a phylogenetic tree, a node represents</p></div>
+<ol><li>an extinct species with no descendants</li><li>the present day</li><li>a mutation</li><li>the most recent common ancestor of the lineages branching from it</li></ol>
+<div class="mcq-x"><p>Each branching point is a common ancestor.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>Using the cytochrome c table above, which conclusion is best supported?</p></div>
+<ol><li>Humans share a more recent common ancestor with horses than with tuna</li><li>Humans evolved from rhesus monkeys</li><li>Chickens are more closely related to humans than horses are</li><li>Yeast is not related to humans</li></ol>
+<div class="mcq-x"><p>12 differences vs 21: more recent divergence from horses. B and D are wrong; C is contradicted (13 vs 12).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>Explain why vestigial structures are evidence for evolution.</p></div>
+<div class="pq-s"><p>They're reduced structures with little or no current function that were functional in ancestors (e.g. whale pelvic bones). Their presence is best explained by descent from ancestors that used them, with the structure reducing over time.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Explain why comparing the DNA of a highly conserved gene is useful for determining relationships between very distantly related organisms (e.g. humans and yeast).</p></div>
+<div class="pq-s"><p>Conserved genes have essential functions, so most mutations in them are harmful and eliminated by selection; they change very slowly. [1] Distantly related species still share enough sequence to be compared meaningfully. [1] The number of differences then reflects time since divergence without being “saturated” by changes, as fast-changing sequences would be. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Sharks and dolphins both have streamlined bodies and dorsal fins. (a) What type of structures are these? (b) Explain how they arose. (c) What evidence would show that dolphins are more closely related to cows than to sharks?</p></div>
+<div class="pq-s"><p>(a) Analogous. [1] (b) Convergent evolution: similar selection pressures in water favoured similar body shapes in unrelated lineages. [1] (c) Molecular evidence: dolphin DNA/protein sequences are more similar to cows' (and other mammals') than to sharks'. [1] Structural evidence: dolphins have mammalian homologous features, e.g. pentadactyl bones in flippers, lungs, mammary glands, vestigial pelvic bones. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student looks at a phylogenetic tree and says species D is more closely related to C than to A because D is drawn next to C. When is this reasoning correct, and when isn't it?</p></div>
+<div class="pq-s"><p>Relatedness depends only on the most recent common ancestor (node), not on position on the page. It's correct only if C and D share a node more recent than the one they share with A. Rotating branches can put any tip next to any other without changing relationships.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Fewer sequence differences = more recent common ancestor; conserved genes for distant relatives.</li>
+  <li>Homologous → divergent evolution; analogous → convergent; vestigial → ancestral function.</li>
+  <li>Trees: nodes are common ancestors; relatedness depends on the most recent shared node.</li>
+</ul>

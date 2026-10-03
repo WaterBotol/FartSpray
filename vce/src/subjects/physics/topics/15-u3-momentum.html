@@ -1,0 +1,192 @@
+<!--
+id: u3-momentum
+title: Momentum, impulse & collisions
+short: Momentum, impulse & collisions
+summary: Momentum as a vector, impulse and force–time graphs, safety design, conservation of momentum in one dimension, explosions, and elastic versus inelastic collisions.
+keywords: momentum, impulse, conservation of momentum, collision, collisions, elastic, inelastic, kinetic energy, explosion, recoil, force time graph, area under graph, crumple zone, airbag, helmet, safety, bounce, rebound, isolated system, trolley, bullet, block
+dotpoints: apply the laws of energy and momentum conservation in isolated systems | analyse impulse in an isolated system (for collisions between objects moving in a straight line): \(F\Delta t = m\Delta v\) | investigate and analyse theoretically and practically momentum conservation in one dimension | compare elastic and inelastic collisions in terms of conservation of kinetic energy
+-->
+<h2>Momentum</h2>
+<div class="eq"><div class="eq-label">Momentum</div>\[ \vec{p} = m\vec{v} \]<p>Units: kg m s⁻¹ (equivalent to N s). Momentum is a <strong>vector</strong>: it has the direction of the velocity. In one dimension, direction is shown by the sign.</p></div>
+<aside class="c-trap" data-title="Trick alert: signs matter">
+<p>A 2 kg ball moving right at 3 m s⁻¹ has \(p = +6\ \text{kg m s}^{-1}\). Moving left at 3 m s⁻¹ it has \(p = -6\ \text{kg m s}^{-1}\). Its kinetic energy is 9 J either way. Forgetting the minus sign for objects moving the “other” way is the number one momentum error.</p>
+</aside>
+
+<h2>Impulse</h2>
+<p>Newton's second law can be written in terms of momentum. Since \(a = \Delta v/\Delta t\):</p>
+<div class="eq"><div class="eq-label">Impulse–momentum theorem</div>\[ \text{Impulse} = \vec{F}_{\text{net}}\,\Delta t = \Delta\vec{p} = m\vec{v} - m\vec{u} \]<p>Impulse (N s) is the change in momentum. For a varying force, \(F\) is the <em>average</em> net force over the time interval.</p></div>
+
+<h3>Impulse from a force–time graph</h3>
+<p>If the force varies (as it always does in a real collision), the impulse is the <strong>area under the force–time graph</strong>.</p>
+<figure class="fig">
+<svg viewBox="0 0 360 215" width="360" role="img" aria-label="Force-time graph showing a triangular force pulse peaking at 480 N at 0.025 s and lasting 0.05 s, with the area shaded">
+  <polygon points="50,180 162.5,45.6 275,180" class="f-accsoft"/>
+  <polyline points="50,180 162.5,45.6 275,180" class="s-acc"/>
+  <line x1="50" y1="180" x2="335" y2="180" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="180" x2="50" y2="22" class="s-ink" marker-end="url(#ah-ink)"/>
+  <text x="340" y="184" class="t-sm">t (s)</text>
+  <text x="18" y="18" class="t-sm">F (N)</text>
+  <line x1="140" y1="180" x2="140" y2="185" class="s-ink"/><text x="140" y="198" text-anchor="middle" class="t-sm t-mono">0.02</text>
+  <line x1="230" y1="180" x2="230" y2="185" class="s-ink"/><text x="230" y="198" text-anchor="middle" class="t-sm t-mono">0.04</text>
+  <line x1="275" y1="180" x2="275" y2="185" class="s-ink"/><text x="282" y="198" text-anchor="middle" class="t-sm t-mono">0.05</text>
+  <line x1="45" y1="45.6" x2="50" y2="45.6" class="s-ink"/><text x="40" y="49" text-anchor="end" class="t-sm t-mono">480</text>
+  <line x1="45" y1="112.8" x2="50" y2="112.8" class="s-ink"/><text x="40" y="116" text-anchor="end" class="t-sm t-mono">240</text>
+  <line x1="50" y1="45.6" x2="162.5" y2="45.6" class="s-dash"/>
+  <text x="162" y="140" text-anchor="middle" class="t-b t-acc">area = impulse</text>
+  <text x="162" y="157" text-anchor="middle" class="t-sm">½ × 0.05 × 480 = 12 N s</text>
+</svg>
+<figcaption>A boot kicks a ball. The area of the triangle is the impulse, which equals the ball's change in momentum.</figcaption>
+</figure>
+
+<div class="we" data-title="Kicking a ball: using the F–t graph" data-marks="3">
+<div class="we-q"><p>The graph above shows the force on a 0.40 kg ball, initially at rest, as it is kicked. Find the impulse and the speed of the ball as it leaves the boot.</p></div>
+<div class="we-t"><p>Impulse is force × time. When the force varies, the impulse is the area under the force–time graph, and it equals the change in momentum.</p></div>
+<div class="we-s" data-f="I = \text{area under } F\text{–}t"><p><strong>Impulse = area</strong> of the triangle:</p>\[ I = \tfrac12 \times 0.050 \times 480 = 12\ \text{N s} \]</div>
+<div class="we-s" data-f="I = \Delta p = m(v - u)"><p><strong>Impulse = change in momentum:</strong></p>\[ 12 = 0.40(v - 0) \Rightarrow v = 30\ \text{m s}^{-1} \]</div>
+<div class="we-a"><p><strong>Impulse 12 N s; speed 30 m s⁻¹.</strong> The average force was \(12/0.050 = 240\ \text{N}\), half the peak.</p></div>
+</div>
+
+<div class="we" data-title="A ball bouncing off a wall" data-marks="3">
+<div class="we-q"><p>A 0.15 kg ball hits a wall at 20 m s⁻¹ and rebounds along the same line at 15 m s⁻¹. It is in contact with the wall for 0.010 s. Find the impulse on the ball and the average force the wall exerts.</p></div>
+<div class="we-t"><p>Momentum is a vector, so direction matters: a rebound reverses the velocity's sign. The change in momentum is then larger than either momentum on its own, and the average force equals that change divided by the contact time.</p></div>
+<div class="we-s" data-f="\text{choose a positive direction}"><p><strong>Choose a direction.</strong> Towards the wall positive: \(u = +20\ \text{m s}^{-1}\), \(v = -15\ \text{m s}^{-1}\).</p></div>
+<div class="we-s" data-f="\Delta p = m(v - u)"><p><strong>Change in momentum:</strong></p>\[ \Delta p = m(v - u) = 0.15(-15 - 20) = -5.25\ \text{N s} \]</div>
+<div class="we-s" data-f="F = \dfrac{\Delta p}{\Delta t}"><p><strong>Average force:</strong></p>\[ F = \frac{\Delta p}{\Delta t} = \frac{-5.25}{0.010} = -525\ \text{N} \]</div>
+<div class="we-a"><p><strong>Impulse 5.3 N s away from the wall; average force 525 N away from the wall.</strong> Getting 0.75 N s (subtracting speeds, ignoring direction) is the trap.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: bouncing gives a bigger impulse than sticking">
+<p>A rubber ball that bounces off a block delivers a <strong>bigger</strong> impulse than an identical lump of putty that sticks, because the ball's momentum reverses (\(\Delta p\) is roughly doubled) while the putty's just drops to zero. The bouncing ball is more likely to knock the block over.</p>
+</aside>
+
+<h2>Safety design: stretching the collision time</h2>
+<p>In a crash, the change in momentum of a person is fixed by their mass and speed. Since \(F_{\text{avg}} = \Delta p/\Delta t\), the only way to reduce the force is to <strong>increase the stopping time</strong>.</p>
+<ul>
+  <li><strong>Crumple zones</strong> deform over a longer time, so the passenger cell and occupants decelerate more gradually.</li>
+  <li><strong>Airbags and seatbelts</strong> (which stretch slightly) spread the stop over a longer time and a larger area.</li>
+  <li><strong>Helmets</strong> have crushable foam; <strong>landing mats</strong> and <strong>bent knees</strong> do the same job.</li>
+</ul>
+<aside class="c-exam" data-title="Exam tip: the three-sentence safety explanation">
+<p>Examiners want all three links. (1) The change in momentum of the occupant is the same with or without the device. (2) The device increases the time over which that change happens. (3) Since \(F = \Delta p/\Delta t\), the average force on the occupant is smaller, reducing injury. Saying “the airbag absorbs the force” or “absorbs the momentum” earns nothing.</p>
+</aside>
+<div class="we" data-title="Airbag vs steering wheel" data-marks="3">
+<div class="we-q"><p>A 70 kg driver moving at 15 m s⁻¹ is brought to rest in a crash. Compare the average force on the driver if they stop in 0.10 s (airbag) versus 0.010 s (hitting the steering wheel).</p></div>
+<div class="we-t"><p>The change in momentum is fixed by the initial speed. Stretching the stopping time over a longer interval reduces the average force in proportion: that's the whole job of airbags, crumple zones and padding.</p></div>
+<div class="we-s" data-f="\Delta p = m(v - u)"><p><strong>Change in momentum</strong> (same in both cases): \(\Delta p = 70(0 - 15) = -1050\ \text{N s}\).</p></div>
+<div class="we-s" data-f="F = \dfrac{\Delta p}{\Delta t}"><p><strong>Airbag:</strong> \(F = 1050/0.10 = 1.05\times10^4\ \text{N}\). <strong>Steering wheel:</strong> \(F = 1050/0.010 = 1.05\times10^5\ \text{N}\).</p></div>
+<div class="we-a"><p><strong>The airbag reduces the average force tenfold</strong>, from about 105 000 N to 10 500 N, because it makes the stopping time ten times longer.</p></div>
+</div>
+
+<h2>Conservation of momentum</h2>
+<aside class="c-def" data-title="Law of conservation of momentum"><p>In an <strong>isolated system</strong> (no net external force), the total momentum before an interaction equals the total momentum after it.</p></aside>
+<div class="eq">\[ m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2 \]</div>
+<p><strong>Why it works:</strong> during a collision, object 1 pushes on object 2 and object 2 pushes back with an equal and opposite force (third law) for exactly the same time. So their impulses are equal and opposite, and any momentum one gains the other loses.</p>
+<aside class="c-trap" data-title="Trick alert: equal forces, unequal effects">
+<p>When a truck hits a small car, the force on the car equals the force on the truck, and their <em>changes in momentum</em> are equal in size. The car suffers a much larger <strong>acceleration</strong> (and velocity change) because its mass is smaller: \(a = F/m\).</p>
+</aside>
+
+<h3>Collisions where objects stick together</h3>
+<div class="we" data-title="Trolleys that couple" data-marks="4">
+<div class="we-q"><p>A 2.0 kg trolley moving at 3.0 m s⁻¹ collides with a stationary 1.0 kg trolley. They couple together. (a) Find their common velocity. (b) Is the collision elastic? Calculate the kinetic energy lost.</p></div>
+<div class="we-t"><p>In an isolated system total momentum is conserved in every collision. Kinetic energy is conserved only in elastic collisions; objects that stick together lose the most kinetic energy.</p></div>
+<div class="we-s" data-f="m_1u_1 + m_2u_2 = (m_1 + m_2)v"><p><strong>(a) Conservation of momentum:</strong></p>\[ (2.0)(3.0) + (1.0)(0) = (2.0 + 1.0)v \Rightarrow v = \frac{6.0}{3.0} = 2.0\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>(b) Kinetic energy before and after:</strong></p>\[ E_{k,\text{before}} = \tfrac12(2.0)(3.0)^2 = 9.0\ \text{J} \]\[ E_{k,\text{after}} = \tfrac12(3.0)(2.0)^2 = 6.0\ \text{J} \]</div>
+<div class="we-s"><p><strong>Compare:</strong> 3.0 J of kinetic energy has been transformed into heat, sound and deformation of the couplings.</p></div>
+<div class="we-a"><p><strong>(a) 2.0 m s⁻¹ in the original direction (b) inelastic; 3.0 J of kinetic energy lost.</strong> Collisions where the objects stick together always lose the maximum possible kinetic energy.</p></div>
+</div>
+
+<h3>Elastic and inelastic collisions</h3>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Elastic</th><th>Inelastic</th></tr></thead>
+<tbody>
+<tr><td>Momentum conserved?</td><td>Yes (isolated system)</td><td>Yes (isolated system)</td></tr>
+<tr><td>Kinetic energy conserved?</td><td><strong>Yes</strong>: \(\Sigma E_k\) before = after</td><td><strong>No</strong>: some \(E_k\) becomes heat, sound, deformation</td></tr>
+<tr><td>Total energy conserved?</td><td>Yes</td><td>Yes (energy is never destroyed)</td></tr>
+<tr><td>Examples</td><td>Collisions between gas molecules; ideal magnetic trolleys; near-elastic: steel ball bearings</td><td>Car crashes, a ball of putty, a bullet embedding in a block, anything that sticks</td></tr>
+</tbody></table></div>
+<aside class="c-exam" data-title="Exam tip: proving a collision is elastic">
+<p>You must <strong>calculate</strong> the total kinetic energy before and after and show they are equal. Momentum being conserved tells you nothing about elasticity; momentum is conserved in every collision in an isolated system.</p>
+</aside>
+
+<div class="we" data-title="Checking for an elastic collision" data-marks="4">
+<div class="we-q"><p>A 1.0 kg glider moving at 4.0 m s⁻¹ hits a stationary 3.0 kg glider on a frictionless air track. The 1.0 kg glider rebounds at 2.0 m s⁻¹. Find the velocity of the 3.0 kg glider and determine whether the collision is elastic.</p></div>
+<div class="we-t"><p>Momentum conservation finds the unknown velocity. To decide whether a collision is elastic, compare the total kinetic energy before and after; momentum is conserved either way, so it can't tell you.</p></div>
+<div class="we-s" data-f="m_1u_1 + m_2u_2 = m_1v_1 + m_2v_2"><p><strong>Momentum</strong> (right positive; the rebound is negative):</p>\[ (1.0)(4.0) + 0 = (1.0)(-2.0) + (3.0)v \Rightarrow 3.0v = 6.0 \Rightarrow v = 2.0\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>Kinetic energy before:</strong> \(\tfrac12(1.0)(4.0)^2 = 8.0\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>Kinetic energy after:</strong> \(\tfrac12(1.0)(2.0)^2 + \tfrac12(3.0)(2.0)^2 = 2.0 + 6.0 = 8.0\ \text{J}\).</p></div>
+<div class="we-a"><p><strong>The 3.0 kg glider moves at 2.0 m s⁻¹ in the original direction; total \(E_k\) is 8.0 J before and after, so the collision is elastic.</strong></p></div>
+</div>
+
+<h3>Explosions and recoil</h3>
+<p>When objects start at rest and push apart (explosions, recoiling guns, skaters pushing off), the total momentum is zero before, so it must be zero after: the pieces move in opposite directions with equal-sized momenta. Kinetic energy <em>increases</em>, supplied by chemical or stored elastic energy.</p>
+<div class="we" data-title="Skaters pushing apart" data-marks="3">
+<div class="we-q"><p>A 60 kg skater and a 40 kg skater stand at rest on smooth ice and push each other apart. The 40 kg skater moves off at 1.5 m s⁻¹. Find the velocity of the 60 kg skater and the kinetic energy produced.</p></div>
+<div class="we-t"><p>When objects start at rest and push apart, the total momentum is zero before, so it must be zero after: equal and opposite momenta. Kinetic energy isn't conserved; it comes from stored energy (here, muscles).</p></div>
+<div class="we-s" data-f="0 = m_1v_1 + m_2v_2"><p><strong>Momentum:</strong> \(0 = 40(1.5) + 60v \Rightarrow v = -1.0\ \text{m s}^{-1}\) (opposite direction).</p></div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>Kinetic energy:</strong> \(\tfrac12(40)(1.5)^2 + \tfrac12(60)(1.0)^2 = 45 + 30 = 75\ \text{J}\), all from chemical energy in the skaters' muscles.</p></div>
+<div class="we-a"><p><strong>1.0 m s⁻¹ in the opposite direction; 75 J of kinetic energy produced.</strong> The lighter skater gets more of the kinetic energy even though both have the same size momentum.</p></div>
+</div>
+
+<div class="sim" data-sim="collision"></div>
+
+<h2>Is the system isolated?</h2>
+<p>Momentum is conserved only for a system with no net external force. A ball dropped onto the floor gains momentum as it falls (gravity is an external force on the ball). If you include the Earth in the system, the Earth gains an equal and opposite (unmeasurably small) velocity and total momentum is conserved. During a short collision, external forces like friction are usually small compared to the collision forces, so momentum is very nearly conserved.</p>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A loaded truck collides head-on with a small car. During the collision, which statement is correct?</p></div>
+<ol><li>The truck exerts a larger force on the car than the car exerts on the truck.</li><li>The forces are equal in size, but the car has a larger acceleration.</li><li>The forces are equal in size, and the accelerations are equal.</li><li>The car exerts a larger force because it decelerates more.</li></ol>
+<div class="mcq-x"><p>Newton's third law: the forces are equal and opposite. With equal forces, the smaller mass has the larger acceleration.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>Which quantity must be conserved for a collision to be described as <em>elastic</em>?</p></div>
+<ol><li>total kinetic energy</li><li>total momentum</li><li>total energy</li><li>velocity of each object</li></ol>
+<div class="mcq-x"><p>Momentum and total energy are conserved in <em>all</em> collisions in isolated systems. Only elastic collisions also conserve kinetic energy.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A lump of putty and a rubber ball of equal mass are thrown at a wooden block at the same speed. The putty sticks; the ball bounces back. Which delivers the larger impulse to the block?</p></div>
+<ol><li>the putty, because it stays in contact</li><li>both deliver the same impulse</li><li>the ball, because its momentum reverses</li><li>the putty, because the collision is inelastic</li></ol>
+<div class="mcq-x"><p>Impulse = change in momentum. The putty's momentum drops from \(mu\) to 0; the ball's goes from \(mu\) to roughly \(-mu\), about double the change.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>An egg dropped onto a pillow does not break, but the same egg dropped onto concrete from the same height does. The pillow:</p></div>
+<ol><li>reduces the egg's change in momentum</li><li>reduces the egg's impulse</li><li>absorbs the force</li><li>increases the stopping time, reducing the average force</li></ol>
+<div class="mcq-x"><p>The change in momentum (and so the impulse) is the same in both cases. The pillow increases \(\Delta t\), so \(F = \Delta p/\Delta t\) is smaller.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>A 4.0 kg rifle fires a 10 g bullet horizontally at 400 m s⁻¹. The recoil speed of the rifle is:</p></div>
+<ol><li>0.10 m s⁻¹</li><li>1.0 m s⁻¹</li><li>10 m s⁻¹</li><li>1600 m s⁻¹</li></ol>
+<div class="mcq-x"><p>\(0 = (0.010)(400) + 4.0v \Rightarrow v = -1.0\ \text{m s}^{-1}\). Convert grams to kilograms.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="4" data-f="m_1u_1 + m_2u_2 = (m_1 + m_2)v ;; E_k = \tfrac12 mv^2">
+<div class="pq-q"><p>A 1500 kg car travelling at 20 m s⁻¹ runs into the back of a stationary 1000 kg car. The cars lock together. Find (a) their velocity just after the collision and (b) the kinetic energy transformed into other forms.</p></div>
+<div class="pq-s"><p>(a) \(1500(20) = 2500v \Rightarrow v = 12\ \text{m s}^{-1}\).</p><p>(b) Before: \(\tfrac12(1500)(20)^2 = 3.0\times10^5\ \text{J}\). After: \(\tfrac12(2500)(12)^2 = 1.8\times10^5\ \text{J}\). Transformed: \(1.2\times10^5\ \text{J}\) (to heat, sound and deformation).</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="4" data-f="m_1u_1 + m_2u_2 = (m_1 + m_2)v ;; E_k = \tfrac12 mv^2 ;; \tfrac12 mv^2 = mgh">
+<div class="pq-q"><p>A 10 g bullet travelling at 400 m s⁻¹ embeds itself in a 2.0 kg wooden block resting on a frictionless surface. (a) Find the speed of the block afterwards. (b) What percentage of the bullet's kinetic energy remains as kinetic energy? (c) A student uses energy conservation instead of momentum to find the block's speed. What would they get, and why is it wrong?</p></div>
+<div class="pq-s"><p>(a) \(0.010(400) = 2.010v \Rightarrow v = 1.99\ \text{m s}^{-1}\).</p><p>(b) Before: \(\tfrac12(0.010)(400)^2 = 800\ \text{J}\). After: \(\tfrac12(2.010)(1.99)^2 = 3.98\ \text{J}\). Only 0.5% remains; 99.5% becomes heat, sound and deformation.</p><p>(c) Setting 800 J equal to \(\tfrac12(2.010)v^2\) gives \(v = 28\ \text{m s}^{-1}\), fourteen times too big. Kinetic energy is not conserved in this highly inelastic collision; only momentum is.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="\Delta p = m\Delta v ;; F_{\text{avg}} = \dfrac{\Delta p}{\Delta t}">
+<div class="pq-q"><p>Explain, with reference to impulse, why a gymnast bends their knees when landing on a mat.</p></div>
+<div class="pq-s"><p>The gymnast's change in momentum when stopping is fixed by their mass and landing speed (\(\Delta p = m\Delta v\)). [1]</p><p>Bending the knees (and the soft mat) increases the time over which that change in momentum occurs. [1]</p><p>Since \(F_{\text{avg}} = \Delta p/\Delta t\), a longer time means a smaller average force on the gymnast's legs, reducing the chance of injury. [1]</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\Delta p = m(v - u) ;; F = \dfrac{\Delta p}{\Delta t}">
+<div class="pq-q"><p>A 0.058 kg tennis ball arrives at 30 m s⁻¹ and is returned along the same line at 40 m s⁻¹. The racquet is in contact for 5.0 ms. Find the average force of the racquet on the ball.</p></div>
+<div class="pq-s"><p>Take the return direction as positive: \(u = -30\), \(v = +40\).</p><p>\(\Delta p = 0.058(40 - (-30)) = 0.058 \times 70 = 4.06\ \text{N s}\).</p><p>\(F = 4.06/0.0050 = 812\ \text{N} \approx 8.1\times10^2\ \text{N}\) in the direction of the return.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(p = mv\) is a vector: use signs for direction.</li>
+  <li>Impulse \(= F\Delta t = \Delta p\) = area under the F–t graph.</li>
+  <li>Safety devices increase \(\Delta t\) for the same \(\Delta p\), so reduce \(F\).</li>
+  <li>Momentum is conserved in every collision in an isolated system; kinetic energy only in elastic ones.</li>
+</ul>

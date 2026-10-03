@@ -1,0 +1,110 @@
+{
+  "id": "biology",
+  "prefix": "bi",
+  "name": "Biology",
+  "short": "Biology",
+  "design": "Study design 2022–2026",
+  "blurb": "Nucleic acids, proteins and DNA tools; enzymes, photosynthesis and respiration; immunity and disease; genetic change, speciation and human evolution.",
+  "groups": [
+    {
+      "id": "start",
+      "eyebrow": "Start here",
+      "title": "",
+      "map": false,
+      "topics": [
+        "home",
+        "exam-technique",
+        "key-skills"
+      ]
+    },
+    {
+      "id": "u3a1",
+      "eyebrow": "Unit 3 · AoS 1",
+      "title": "What is the role of nucleic acids and proteins in maintaining life?",
+      "quiz": true,
+      "topics": [
+        "nucleic-acids",
+        "protein-synthesis",
+        "gene-regulation",
+        "proteins",
+        "dna-tools",
+        "recombinant"
+      ]
+    },
+    {
+      "id": "u3a2",
+      "eyebrow": "Unit 3 · AoS 2",
+      "title": "How are biochemical pathways regulated?",
+      "quiz": true,
+      "topics": [
+        "enzymes",
+        "photosynthesis",
+        "respiration"
+      ]
+    },
+    {
+      "id": "u4a1",
+      "eyebrow": "Unit 4 · AoS 1",
+      "title": "How do organisms respond to pathogens?",
+      "quiz": true,
+      "topics": [
+        "pathogens",
+        "innate",
+        "adaptive",
+        "immunity",
+        "disease"
+      ]
+    },
+    {
+      "id": "u4a2",
+      "eyebrow": "Unit 4 · AoS 2",
+      "title": "How are species related over time?",
+      "quiz": true,
+      "topics": [
+        "population-genetics",
+        "speciation",
+        "evidence",
+        "human-evolution"
+      ]
+    },
+    {
+      "id": "u4a3",
+      "eyebrow": "Unit 4 · AoS 3",
+      "title": "How is scientific inquiry used to investigate cellular processes and/or biological change?",
+      "quiz": true,
+      "topics": [
+        "investigation"
+      ]
+    },
+    {
+      "id": "exam",
+      "eyebrow": "Exam practice",
+      "title": "Mixed exam-style questions",
+      "quiz": true,
+      "topics": [
+        "exam-mcq",
+        "exam-extended"
+      ]
+    },
+    {
+      "id": "exams",
+      "eyebrow": "Exam practice",
+      "title": "Full practice exams: easier → medium → harder",
+      "map": false,
+      "topics": [
+        "exam-easy",
+        "exam-medium",
+        "exam-hard"
+      ]
+    },
+    {
+      "id": "ref",
+      "eyebrow": "Reference",
+      "title": "",
+      "map": false,
+      "topics": [
+        "glossary"
+      ]
+    }
+  ]
+}

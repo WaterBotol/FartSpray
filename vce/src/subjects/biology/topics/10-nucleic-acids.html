@@ -1,0 +1,138 @@
+<!--
+id: nucleic-acids
+title: Nucleic acids, the genetic code & gene structure
+short: Nucleic acids & the genetic code
+summary: The structure of DNA and RNA (nucleotides, antiparallel strands, complementary base pairing), the three types of RNA, the features of the genetic code, and the structure of a eukaryotic gene (promoter, exons, introns, termination sequence).
+keywords: DNA, RNA, nucleotide, deoxyribose, ribose, phosphate, nitrogenous base, adenine, thymine, guanine, cytosine, uracil, complementary base pairing, hydrogen bonds, double helix, antiparallel, 5' 3', mRNA, tRNA, rRNA, genetic code, codon, triplet, degenerate, redundant, universal, start codon, stop codon, gene structure, promoter, exon, intron, template strand, coding strand, operator
+dotpoints: the relationship between nucleic acids and proteins, including the structure of DNA and RNA and the three types of RNA | the genetic code as a degenerate triplet code, including start and stop codons | the structure of genes, including promoter, exons, introns and termination sequence
+-->
+<h2>Nucleotides: the building blocks</h2>
+<p>Nucleic acids are polymers of <strong>nucleotides</strong>. Each nucleotide has a <strong>phosphate</strong>, a five-carbon <strong>sugar</strong> and a <strong>nitrogenous base</strong>. Nucleotides join by condensation reactions between the phosphate of one and the sugar of the next, forming a sugar–phosphate backbone.</p>
+<div class="tbl"><table>
+<thead><tr><th></th><th>DNA</th><th>RNA</th></tr></thead>
+<tbody>
+<tr><td>Sugar</td><td>Deoxyribose</td><td>Ribose</td></tr>
+<tr><td>Bases</td><td>A, T, G, C</td><td>A, <strong>U</strong>, G, C</td></tr>
+<tr><td>Strands</td><td>Double (double helix)</td><td>Usually single (can fold on itself)</td></tr>
+<tr><td>Location (eukaryotes)</td><td>Nucleus (also mitochondria, chloroplasts)</td><td>Made in the nucleus; functions mostly in the cytoplasm</td></tr>
+<tr><td>Stability</td><td>Very stable (long-term storage)</td><td>Short-lived</td></tr>
+</tbody></table></div>
+<ul>
+  <li><strong>Complementary base pairing:</strong> A pairs with T (two hydrogen bonds) and G pairs with C (three hydrogen bonds). In RNA, A pairs with U.</li>
+  <li><strong>Antiparallel:</strong> the two DNA strands run in opposite directions (one 5′→3′, the other 3′→5′).</li>
+  <li>The base sequence carries the information; the backbone is the same everywhere.</li>
+</ul>
+
+<h2>Three types of RNA</h2>
+<div class="tbl"><table>
+<thead><tr><th>RNA</th><th>Role</th></tr></thead>
+<tbody>
+<tr><td>mRNA (messenger)</td><td>Carries a copy of a gene's coding information from the nucleus to a ribosome</td></tr>
+<tr><td>tRNA (transfer)</td><td>Carries a specific amino acid to the ribosome; its <strong>anticodon</strong> pairs with an mRNA codon</td></tr>
+<tr><td>rRNA (ribosomal)</td><td>With proteins, forms ribosomes and catalyses peptide bond formation</td></tr>
+</tbody></table></div>
+
+<h2>The genetic code</h2>
+<ul>
+  <li><strong>Triplet</strong>: each <strong>codon</strong> (three mRNA bases) codes for one amino acid. \(4^3 = 64\) codons for 20 amino acids.</li>
+  <li><strong>Degenerate (redundant)</strong>: most amino acids have more than one codon (e.g. GGU, GGC, GGA and GGG all code for glycine).</li>
+  <li><strong>Universal</strong>: almost all organisms use the same code. That's why a human gene can be expressed in bacteria.</li>
+  <li><strong>Start codon</strong> AUG (methionine) begins translation; <strong>stop codons</strong> UAA, UAG, UGA code for no amino acid and end it.</li>
+  <li><strong>Non-overlapping</strong>, read in a fixed reading frame from the start codon.</li>
+</ul>
+<div class="sim" data-sim="translation"></div>
+
+<h2>Gene structure</h2>
+<p>A <strong>gene</strong> is a section of DNA that codes for a functional product (usually a polypeptide, sometimes RNA). A typical eukaryotic gene contains:</p>
+<div class="tbl"><table>
+<thead><tr><th>Region</th><th>Function</th></tr></thead>
+<tbody>
+<tr><td>Promoter (upstream)</td><td>Where RNA polymerase binds to start transcription; not transcribed</td></tr>
+<tr><td>Exons</td><td>Coding sequences kept in mature mRNA</td></tr>
+<tr><td>Introns</td><td>Non-coding sequences transcribed but removed (spliced out) before translation</td></tr>
+<tr><td>Termination sequence</td><td>Signals the end of transcription</td></tr>
+</tbody></table></div>
+<p>Prokaryotic genes usually lack introns; groups of genes may share one promoter and an <strong>operator</strong> (an operon: see <a href="#gene-regulation">gene regulation</a>).</p>
+<aside class="c-key" data-title="Template vs coding strand"><p>RNA polymerase reads the <strong>template strand</strong> (3′→5′) and builds mRNA 5′→3′. The mRNA is <em>complementary</em> to the template strand and has the <em>same sequence</em> as the <strong>coding strand</strong>, with U instead of T.</p></aside>
+
+<div class="we" data-title="From DNA to amino acids" data-marks="3">
+<div class="we-q"><p>The template strand of part of a gene reads 3′ TAC GGA CTT ATC 5′. Give (a) the coding strand, (b) the mRNA, (c) the amino acid sequence (AUG = Met, CCU = Pro, GAA = Glu, UAG = stop).</p></div>
+<div class="we-t"><p>Base pairing is complementary (A–T, C–G in DNA; A–U in RNA) and the strands are antiparallel. mRNA is made from the template strand, so it has the same sequence as the coding strand, with U in place of T. Read the mRNA 5′→3′ in codons of three.</p></div>
+<div class="we-s"><p>(a) Complement of the template: 5′ ATG CCT GAA TAG 3′.</p></div>
+<div class="we-s"><p>(b) mRNA = coding strand with U: 5′ AUG CCU GAA UAG 3′.</p></div>
+<div class="we-a"><p><strong>(c) Met – Pro – Glu, then stop</strong> (UAG codes for no amino acid, so the chain has three amino acids).</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: nucleic acid traps">
+<ul>
+  <li><strong>Codons are on mRNA</strong>; anticodons are on tRNA; “triplets” is the word for DNA base triplets.</li>
+  <li><strong>Degenerate ≠ ambiguous.</strong> Several codons can code for one amino acid, but each codon codes for only one amino acid.</li>
+  <li><strong>The mRNA matches the coding strand</strong>, not the template strand (apart from U/T).</li>
+  <li><strong>Stop codons have no tRNA</strong>; release factors end translation.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Which feature is found in RNA but not DNA?</p></div>
+<ol><li>Phosphate groups</li><li>Uracil</li><li>Guanine</li><li>A sugar–phosphate backbone</li></ol>
+<div class="mcq-x"><p>RNA uses uracil instead of thymine. The others are in both.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>If 20% of the bases in a double-stranded DNA sample are adenine, the percentage of guanine is</p></div>
+<ol><li>20%</li><li>40%</li><li>30%</li><li>60%</li></ol>
+<div class="mcq-x"><p>A = T = 20%, so A + T = 40% and G + C = 60%; G = C = 30%.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>The genetic code is described as degenerate because</p></div>
+<ol><li>some codons code for more than one amino acid</li><li>it degrades over time</li><li>it differs between species</li><li>most amino acids are coded for by more than one codon</li></ol>
+<div class="mcq-x"><p>Several codons, one amino acid. A is the reverse and is false.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A coding strand reads 5′ ATG GCA TTC 3′. The corresponding mRNA reads</p></div>
+<ol><li>5′ AUG GCA UUC 3′</li><li>5′ UAC CGU AAG 3′</li><li>3′ UAC CGU AAG 5′</li><li>5′ TAC CGT AAG 3′</li></ol>
+<div class="mcq-x"><p>mRNA has the coding strand's sequence with U for T, in the same 5′→3′ direction.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>A mature mRNA has 900 nucleotides between its start codon and stop codon (including the start codon, excluding the stop codon). The polypeptide has</p></div>
+<ol><li>900 amino acids</li><li>301 amino acids</li><li>300 amino acids</li><li>299 amino acids</li></ol>
+<div class="mcq-x"><p>\(\frac{900}{3} = 300\) codons, each coding for one amino acid (the start codon codes for methionine; the stop codon codes for none).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Which DNA region is transcribed but not present in mature mRNA?</p></div>
+<ol><li>promoter</li><li>intron</li><li>exon</li><li>start codon</li></ol>
+<div class="mcq-x"><p>Introns are transcribed into pre-mRNA and then spliced out. The promoter isn't transcribed at all.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Give three structural differences between DNA and RNA.</p></div>
+<div class="pq-s"><p>DNA contains deoxyribose, RNA contains ribose; DNA has thymine, RNA has uracil; DNA is double-stranded, RNA is usually single-stranded. (DNA is also much longer and more stable.)</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Explain why the universal nature of the genetic code is essential for producing human insulin in bacteria.</p></div>
+<div class="pq-s"><p>Bacteria and humans read the same codons as the same amino acids. [1] So when the human insulin gene (as cDNA) is inserted into a bacterium, the bacterial ribosomes and tRNAs translate its mRNA into the same amino acid sequence. [1] The bacterium therefore produces a polypeptide identical in sequence to human insulin. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A single base substitution changes the codon GAA to GAG. Both code for glutamic acid. (a) Name this type of mutation. (b) Which feature of the genetic code explains why it has no effect? (c) Could it still affect the organism? Explain.</p></div>
+<div class="pq-s"><p>(a) A silent (synonymous) point mutation. [1] (b) Degeneracy: more than one codon codes for the same amino acid. [1] (c) Usually not, since the protein's primary structure is unchanged; rarely, it may affect RNA processing or the rate of translation. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student writes that tRNA carries codons to the ribosome. Correct this statement.</p></div>
+<div class="pq-s"><p>tRNA carries a specific <strong>amino acid</strong> and has an <strong>anticodon</strong>, which pairs complementarily with a codon on the mRNA. Codons are on mRNA.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Nucleotide = phosphate + sugar + base; A–T (A–U in RNA), G–C; antiparallel strands.</li>
+  <li>mRNA carries the code; tRNA brings amino acids (anticodon); rRNA forms ribosomes.</li>
+  <li>The code is triplet, degenerate, universal and non-overlapping; AUG starts, UAA/UAG/UGA stop.</li>
+  <li>Gene: promoter, exons (kept), introns (removed), termination sequence.</li>
+</ul>

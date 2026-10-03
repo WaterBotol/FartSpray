@@ -1,0 +1,201 @@
+<!--
+id: u4-photoelectric
+title: The photoelectric effect & photons
+short: Photoelectric effect
+summary: How light ejects electrons from metals, why the wave model fails to explain it, Einstein's photon model, E = hf, work function, threshold frequency, stopping voltage and the two key graphs.
+keywords: photoelectric effect, photoelectron, photon, einstein, planck, planck's constant, E = hf, work function, threshold frequency, threshold wavelength, stopping voltage, stopping potential, kinetic energy, Ek max, electron volt, eV, photocurrent, saturation current, intensity, frequency, wave model limitations, particle model, graph gradient h
+dotpoints: describe the limitation of the wave model of light in explaining experimental results related to the photoelectric effect | analyse the photoelectric effect with reference to: evidence for the particle-like nature of light; experimental data in the form of graphs of photocurrent versus electrode potential, and of kinetic energy of electrons versus frequency; kinetic energy of emitted photoelectrons: \(E_{k\max} = hf - \phi\), using energy units of joule and electron-volt; effects of intensity of incident irradiation on the emission of photoelectrons
+-->
+<h2>The effect</h2>
+<p>When light of high enough frequency shines on a clean metal surface, electrons are knocked out of it. These are <strong>photoelectrons</strong>, and the current they form is the <strong>photocurrent</strong>. The effect is studied with a vacuum tube: light hits a metal plate (the emitter or cathode), and emitted electrons travel to a collector (anode). A variable voltage can help or hinder them, and an ammeter measures the photocurrent.</p>
+<figure class="fig">
+<svg viewBox="0 0 420 200" width="420" role="img" aria-label="Photoelectric apparatus: light shines on a metal plate in an evacuated tube; ejected electrons travel to a collector; a variable voltage supply and an ammeter complete the circuit">
+  <rect x="80" y="20" width="260" height="110" rx="50" class="f-surf2" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="210" y="40" text-anchor="middle" class="t-sm t-mut">vacuum</text>
+  <rect x="110" y="45" width="12" height="60" class="f-mut"/><text x="96" y="140" class="t-sm">metal plate</text>
+  <rect x="298" y="45" width="12" height="60" class="f-mut"/><text x="270" y="140" class="t-sm">collector</text>
+  <g class="s-w"><path d="M60 5 L112 58" marker-end="url(#ah-w)"/><path d="M40 20 L110 72" marker-end="url(#ah-w)"/></g>
+  <text x="14" y="12" class="t-sm t-w t-b">light, f</text>
+  <g class="f-n"><circle cx="160" cy="62" r="4"/><circle cx="205" cy="80" r="4"/><circle cx="250" cy="68" r="4"/></g>
+  <line x1="168" y1="62" x2="196" y2="62" class="s-n" marker-end="url(#ah-n)"/>
+  <text x="170" y="100" class="t-sm t-n t-b">photoelectrons</text>
+  <path d="M116 105 V175 H196 M224 175 H300 M350 175 H375 V75 H310" class="s-ink"/>
+  <circle cx="210" cy="175" r="14" class="f-surf" style="stroke:var(--ink);stroke-width:1.4"/><text x="210" y="180" text-anchor="middle" class="t-b">A</text>
+  <rect x="300" y="162" width="50" height="26" rx="4" class="f-surf3" style="stroke:var(--ink);stroke-width:1.2"/>
+  <text x="325" y="179" text-anchor="middle" class="t-sm t-b">V (var)</text>
+</svg>
+<figcaption>Making the collector negative repels electrons; the voltage that just stops the most energetic ones is the stopping voltage \(V_0\).</figcaption>
+</figure>
+
+<h2>What experiments show</h2>
+<ol>
+  <li><strong>There is a threshold frequency</strong> \(f_0\) for each metal. Below it, <em>no</em> electrons are emitted, no matter how bright the light or how long you wait.</li>
+  <li>Above \(f_0\), electrons are emitted <strong>instantly</strong>, even with very dim light.</li>
+  <li>The <strong>maximum kinetic energy</strong> of the photoelectrons depends on the <strong>frequency</strong> of the light, not its intensity. It increases linearly with frequency.</li>
+  <li>Increasing the <strong>intensity</strong> (above \(f_0\)) increases the <strong>number</strong> of electrons emitted per second (the photocurrent), but not their maximum kinetic energy.</li>
+</ol>
+<aside class="c-trap" data-title="Trick alert: same power, different colour">
+<p>Intensity means energy per second, not photons per second. If the light's <strong>power stays the same</strong> but its frequency increases (e.g. red → blue), each photon carries more energy, so there are <strong>fewer photons per second</strong>. Result: a <strong>larger</strong> maximum kinetic energy (bigger stopping voltage) but a <strong>smaller</strong> saturation photocurrent. Number of photons per second \(= P/(hf)\).</p>
+</aside>
+
+<h2>Why the wave model fails</h2>
+<div class="tbl"><table>
+<thead><tr><th>Wave model prediction</th><th>What actually happens</th></tr></thead>
+<tbody>
+<tr><td>Any frequency should work if the light is bright enough, since energy is delivered continuously</td><td>Below \(f_0\) nothing happens at any intensity</td></tr>
+<tr><td>Dim light should take time to build up enough energy to free an electron</td><td>Emission is instantaneous</td></tr>
+<tr><td>Brighter light (bigger amplitude) should give electrons more kinetic energy</td><td>Intensity doesn't change \(E_{k\max}\); only frequency does</td></tr>
+<tr><td>Frequency shouldn't matter much</td><td>\(E_{k\max}\) increases linearly with frequency</td></tr>
+</tbody></table></div>
+
+<h2>Einstein's photon model</h2>
+<p>In 1905 Einstein proposed that light energy comes in discrete packets called <strong>photons</strong>, each with energy proportional to the frequency:</p>
+<div class="eq"><div class="eq-label">Photon energy</div>\[ E = hf = \frac{hc}{\lambda} \]<p>\(h = 6.63\times10^{-34}\ \text{J s} = 4.14\times10^{-15}\ \text{eV s}\). Handy shortcut: \(hc = 1.24\times10^{-6}\ \text{eV m}\), so \(E\ (\text{eV}) \approx \dfrac{1240}{\lambda\ (\text{nm})}\).</p></div>
+<ul>
+  <li>Each photon interacts with <strong>one</strong> electron, giving it <strong>all</strong> of its energy (or none).</li>
+  <li>An electron needs a minimum energy, the <strong>work function</strong> \(\phi\), to escape the metal. If \(hf < \phi\), no electron can escape, however many photons arrive.</li>
+  <li>Any energy left over becomes the electron's kinetic energy. Electrons from the surface (which need exactly \(\phi\)) come out with the maximum kinetic energy.</li>
+</ul>
+<div class="eq"><div class="eq-label">Einstein's photoelectric equation</div>\[ E_{k\max} = hf - \phi \qquad \text{threshold: } f_0 = \frac{\phi}{h} \]</div>
+<aside class="c-key" data-title="Key idea: intensity = number of photons">
+<p>Brighter light of the same frequency means <strong>more photons per second</strong>, each with the same energy. More photons → more electrons per second → bigger photocurrent. But each electron still gets just one photon's worth of energy, so \(E_{k\max}\) is unchanged.</p>
+</aside>
+
+<h3>Stopping voltage</h3>
+<p>Making the collector negative repels electrons. The <strong>stopping voltage</strong> \(V_0\) is just enough to stop even the most energetic electrons, so the photocurrent drops to zero:</p>
+<div class="eq">\[ eV_0 = E_{k\max} \]<p>In electron-volts this is neat: if \(E_{k\max} = 1.5\ \text{eV}\), then \(V_0 = 1.5\ \text{V}\).</p></div>
+
+<div class="we" data-title="Sodium lit by violet light" data-marks="5">
+<div class="we-q"><p>Sodium has a work function of 2.3 eV. It is lit with 400 nm light. Find (a) the photon energy in eV and J, (b) the maximum kinetic energy of the photoelectrons, (c) the stopping voltage and (d) the threshold frequency and threshold wavelength.</p></div>
+<div class="we-t"><p>Each photon gives all its energy to one electron. Part of it (the work function) is used to escape the metal; the rest is the maximum kinetic energy. Below the threshold frequency no single photon has enough energy, however bright the light.</p></div>
+<div class="we-s" data-f="E = \dfrac{hc}{\lambda} ;; 1\ \text{eV} = 1.60\times10^{-19}\ \text{J}"><p><strong>(a) Photon energy:</strong></p>\[ E = \frac{hc}{\lambda} = \frac{(4.14\times10^{-15})(3.0\times10^8)}{400\times10^{-9}} = 3.1\ \text{eV} \]<p>In joules:</p>\[ E = 3.1 \times 1.60\times10^{-19} = 5.0\times10^{-19}\ \text{J} \]</div>
+<div class="we-s" data-f="E_{k\max} = hf - \phi"><p><strong>(b)</strong> \(E_{k\max} = hf - \phi = 3.1 - 2.3 = 0.8\ \text{eV}\) (\(1.3\times10^{-19}\ \text{J}\)).</p></div>
+<div class="we-s" data-f="V_0 = \dfrac{E_{k\max}}{e}"><p><strong>(c)</strong> \(V_0 = E_{k\max}/e = 0.8\ \text{V}\).</p></div>
+<div class="we-s" data-f="f_0 = \dfrac\phi h,\ \lambda_0 = \dfrac c{f_0}"><p><strong>(d)</strong> \(f_0 = \phi/h = 2.3/4.14\times10^{-15} = 5.6\times10^{14}\ \text{Hz}\); \(\lambda_0 = c/f_0 = 5.4\times10^{-7}\ \text{m} = 540\ \text{nm}\).</p></div>
+<div class="we-a"><p><strong>(a) 3.1 eV = \(5.0\times10^{-19}\ \text{J}\) (b) 0.8 eV (c) 0.8 V (d) \(5.6\times10^{14}\ \text{Hz}\), 540 nm.</strong> Light with a wavelength longer than 540 nm (green, yellow, red) ejects no electrons from sodium.</p></div>
+</div>
+<aside class="c-trap" data-title="Trick alert: threshold wavelength goes the other way">
+<p>Emission needs \(f \geq f_0\), which means \(\lambda \leq \lambda_0\). Light with a wavelength <strong>longer</strong> than the threshold wavelength does nothing. Students often flip this.</p>
+</aside>
+
+<h2>Graph 1: maximum kinetic energy vs frequency</h2>
+<figure class="fig">
+<svg viewBox="0 0 400 235" width="400" role="img" aria-label="Graph of maximum kinetic energy against frequency for two metals: two parallel straight lines, each crossing the frequency axis at that metal's threshold frequency; extended backwards they cut the energy axis at minus the work function">
+  <line x1="60" y1="110" x2="385" y2="110" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="60" y1="225" x2="60" y2="20" class="s-ink" marker-end="url(#ah-ink)"/>
+  <text x="330" y="128" class="t-sm">f (×10¹⁴ Hz)</text>
+  <text x="66" y="22" class="t-sm">E<tspan dy="3" font-size="9">k max</tspan><tspan dy="-3"> (eV)</tspan></text>
+  <line x1="60" y1="167.5" x2="199" y2="110" class="s-dash"/>
+  <line x1="199" y1="110" x2="360" y2="43.3" class="s-acc" style="stroke-width:2.6"/>
+  <line x1="60" y1="212.5" x2="307.6" y2="110" class="s-dash"/>
+  <line x1="307.6" y1="110" x2="360" y2="88.3" class="s-v" style="stroke-width:2.6"/>
+  <text x="340" y="38" class="t-sm t-acc t-b">sodium</text>
+  <text x="340" y="84" class="t-sm t-v t-b">zinc</text>
+  <circle cx="199" cy="110" r="3.5" class="f-acc"/><text x="199" y="100" text-anchor="middle" class="t-sm t-acc">f₀ = 5.6</text>
+  <circle cx="307.6" cy="110" r="3.5" class="f-v"/><text x="296" y="128" text-anchor="middle" class="t-sm t-v">f₀ = 9.9</text>
+  <text x="54" y="171" text-anchor="end" class="t-sm t-mono t-acc">−2.3</text>
+  <text x="54" y="216" text-anchor="end" class="t-sm t-mono t-v">−4.1</text>
+  <text x="54" y="64" text-anchor="end" class="t-sm t-mono">2</text><line x1="56" y1="60" x2="60" y2="60" class="s-ink"/>
+  <text x="110" y="70" class="t-sm">gradient = h (same for every metal)</text>
+</svg>
+<figcaption>Gradient = Planck's constant \(h\). x-intercept = threshold frequency \(f_0\). y-intercept (extrapolated) = \(-\phi\). Different metals give parallel lines.</figcaption>
+</figure>
+<div class="we" data-title="Analysing experimental data (hard)" data-marks="4">
+<div class="we-q"><p>A student measures \(E_{k\max} = 0.20\ \text{eV}\) at \(6.0\times10^{14}\ \text{Hz}\) and \(E_{k\max} = 1.03\ \text{eV}\) at \(8.0\times10^{14}\ \text{Hz}\) for a metal. Find (a) the experimental value of Planck's constant, (b) the threshold frequency and (c) the work function.</p></div>
+<div class="we-t"><p>\(E_{k\max} = hf - \phi\) is a straight line: gradient \(h\), x-intercept the threshold frequency, and y-intercept \(-\phi\). Two data points are enough to find all three.</p></div>
+<div class="we-s" data-f="h = \text{gradient} = \dfrac{\Delta E_k}{\Delta f}"><p><strong>(a) Gradient:</strong></p>\[ h = \frac{\Delta E_k}{\Delta f} = \frac{1.03 - 0.20}{(8.0 - 6.0)\times10^{14}} = 4.15\times10^{-15}\ \text{eV s} \]</div>
+<div class="we-s" data-f="f_0 = x\text{-intercept}"><p><strong>(b) Extrapolate to \(E_k = 0\):</strong> from the first point, the line drops 0.20 eV more in \(0.20/4.15\times10^{-15} = 0.48\times10^{14}\ \text{Hz}\), so \(f_0 = 6.0\times10^{14} - 0.48\times10^{14} = 5.5\times10^{14}\ \text{Hz}\).</p></div>
+<div class="we-s" data-f="\phi = hf_0"><p><strong>(c)</strong> \(\phi = hf_0 = (4.15\times10^{-15})(5.52\times10^{14}) = 2.3\ \text{eV}\).</p></div>
+<div class="we-a"><p><strong>(a) \(4.2\times10^{-15}\ \text{eV s}\) (b) \(5.5\times10^{14}\ \text{Hz}\) (c) 2.3 eV</strong> (probably sodium).</p></div>
+</div>
+
+<h2>Graph 2: photocurrent vs voltage</h2>
+<figure class="fig">
+<svg viewBox="0 0 440 210" width="440" role="img" aria-label="Two graphs of photocurrent against collector voltage. Left: two intensities of the same frequency have the same stopping voltage but different saturation currents. Right: two frequencies at the same photon rate have the same saturation current but different stopping voltages">
+  <g>
+    <line x1="20" y1="150" x2="205" y2="150" class="s-ink" marker-end="url(#ah-ink)"/>
+    <line x1="90" y1="185" x2="90" y2="20" class="s-ink" marker-end="url(#ah-ink)"/>
+    <text x="96" y="22" class="t-sm">I</text><text x="190" y="168" class="t-sm">V</text>
+    <path d="M52 150 C 70 90, 95 52, 125 50 L 200 50" class="s-acc" style="stroke-width:2.4"/>
+    <path d="M52 150 C 70 125, 95 101, 125 100 L 200 100" class="s-v" style="stroke-width:2.4"/>
+    <circle cx="52" cy="150" r="3.5" class="f-ink"/><text x="52" y="168" text-anchor="middle" class="t-sm t-b">−V₀</text>
+    <text x="150" y="42" class="t-sm t-acc t-b">high intensity</text>
+    <text x="150" y="92" class="t-sm t-v t-b">low intensity</text>
+    <text x="110" y="200" text-anchor="middle" class="t-sm t-b">same f, different intensity</text>
+  </g>
+  <g transform="translate(225,0)">
+    <line x1="20" y1="150" x2="205" y2="150" class="s-ink" marker-end="url(#ah-ink)"/>
+    <line x1="90" y1="185" x2="90" y2="20" class="s-ink" marker-end="url(#ah-ink)"/>
+    <text x="96" y="22" class="t-sm">I</text><text x="190" y="168" class="t-sm">V</text>
+    <path d="M28 150 C 55 105, 90 80, 125 78 L 200 78" class="s-t" style="stroke-width:2.4"/>
+    <path d="M62 150 C 75 110, 100 80, 128 78" class="s-acc" style="stroke-width:2.4"/>
+    <circle cx="28" cy="150" r="3.5" class="f-t"/><text x="30" y="168" text-anchor="middle" class="t-sm t-t t-b">high f</text>
+    <circle cx="62" cy="150" r="3.5" class="f-acc"/><text x="70" y="182" text-anchor="middle" class="t-sm t-acc t-b">low f</text>
+    <text x="110" y="200" text-anchor="middle" class="t-sm t-b">same photon rate, different f</text>
+  </g>
+</svg>
+<figcaption>Left: intensity changes the saturation current only. Right: frequency changes the stopping voltage only. (At positive voltages all emitted electrons are collected, so the current levels off: saturation.)</figcaption>
+</figure>
+<ul>
+  <li><strong>Saturation current</strong> (the flat part) is proportional to the number of photoelectrons per second, which is proportional to the <strong>intensity</strong> (photons per second).</li>
+  <li><strong>Stopping voltage</strong> (where the curve meets the axis on the negative side) depends only on <strong>frequency</strong> (and the metal).</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: why current flows at zero voltage">
+<p>At \(V = 0\) there is still a photocurrent: electrons leave the plate with kinetic energy and some reach the collector on their own. You need a <em>negative</em> collector voltage to stop them. That's why the curves cross the current axis above zero.</p>
+</aside>
+
+<div class="sim" data-sim="photoelectric"></div>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Light of a frequency above the threshold frequency shines on a metal. The intensity is doubled. Which is correct?</p></div>
+<ol><li>The maximum kinetic energy of the photoelectrons doubles.</li><li>The number of photoelectrons emitted per second doubles; their maximum kinetic energy is unchanged.</li><li>Both the number of photoelectrons and their maximum kinetic energy double.</li><li>The stopping voltage doubles.</li></ol>
+<div class="mcq-x"><p>Double intensity = double the photons per second at the same energy per photon: double the photocurrent, same \(E_{k\max}\) and same stopping voltage.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Very bright red light shines on a metal but no photoelectrons are emitted. Dim ultraviolet light does eject photoelectrons. This is best explained by:</p></div>
+<ol><li>the wave model: UV waves have larger amplitude</li><li>red light being absorbed by the air</li><li>the red light needing more time to build up energy</li><li>each red photon having less energy than the work function, while each UV photon has more</li></ol>
+<div class="mcq-x"><p>Emission depends on the energy of individual photons (\(hf\)), not the total energy delivered. No number of low-energy photons can free an electron one at a time.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>On a graph of maximum kinetic energy of photoelectrons against frequency, the gradient represents:</p></div>
+<ol><li>Planck's constant</li><li>the work function</li><li>the threshold frequency</li><li>the charge on an electron</li></ol>
+<div class="mcq-x"><p>\(E_{k\max} = hf - \phi\) is \(y = mx + c\) with gradient \(h\) and intercept \(-\phi\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Photoelectrons from a metal have a maximum kinetic energy of 1.8 eV. The stopping voltage is:</p></div>
+<ol><li>\(2.9\times10^{-19}\ \text{V}\)</li><li>18 V</li><li>1.8 V</li><li>0.18 V</li></ol>
+<div class="mcq-x"><p>\(eV_0 = E_{k\max}\). In eV, the stopping voltage in volts has the same number: 1.8 V.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Two metals, X (\(\phi = 2.0\ \text{eV}\)) and Y (\(\phi = 3.0\ \text{eV}\)), are tested. On a graph of \(E_{k\max}\) vs \(f\), their lines are:</p></div>
+<ol><li>at different gradients, crossing at the origin</li><li>parallel, with Y's line to the right of X's</li><li>parallel, with Y's line to the left of X's</li><li>identical</li></ol>
+<div class="mcq-x"><p>Both have gradient \(h\), so they're parallel. Y needs a higher threshold frequency, so its line is shifted right.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="E = hf ;; E_{k\max} = hf - \phi ;; E_k = \tfrac12 mv^2">
+<div class="pq-q"><p>A metal has a work function of \(3.6\times10^{-19}\ \text{J}\). Light of frequency \(7.5\times10^{14}\ \text{Hz}\) falls on it. Find the maximum kinetic energy of the photoelectrons in joules and eV, and their maximum speed.</p></div>
+<div class="pq-s"><p>\(hf = 6.63\times10^{-34} \times 7.5\times10^{14} = 4.97\times10^{-19}\ \text{J}\).</p><p>\(E_{k\max} = 4.97\times10^{-19} - 3.6\times10^{-19} = 1.37\times10^{-19}\ \text{J} = 0.86\ \text{eV}\).</p><p>\(v = \sqrt{2E_k/m} = \sqrt{2(1.37\times10^{-19})/9.1\times10^{-31}} = 5.5\times10^5\ \text{m s}^{-1}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="E = \dfrac{hc}{\lambda} ;; N = \dfrac{P}{E}">
+<div class="pq-q"><p>A 5.0 mW helium–neon laser emits 633 nm light. How many photons does it emit each second?</p></div>
+<div class="pq-s"><p>Energy per photon: \(E = hc/\lambda = (6.63\times10^{-34})(3.0\times10^8)/(633\times10^{-9}) = 3.14\times10^{-19}\ \text{J}\).</p><p>Photons per second \(= P/E = 5.0\times10^{-3}/3.14\times10^{-19} = 1.6\times10^{16}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4" data-f="E = hf ;; E_{k\max} = hf - \phi">
+<div class="pq-q"><p>Explain how the photoelectric effect provides evidence for the particle-like nature of light, referring to at least two experimental observations that the wave model cannot explain.</p></div>
+<div class="pq-s"><p>Observation 1: there is a threshold frequency below which no electrons are emitted regardless of intensity; the wave model predicts that sufficiently intense light of any frequency should eject electrons. [1]</p><p>Observation 2: the maximum kinetic energy depends on frequency, not intensity (and emission is instantaneous even for dim light); the wave model predicts more intense light gives more energetic electrons, and a time delay for dim light. [1]</p><p>In the photon model, light arrives as discrete photons of energy \(E = hf\); each photon transfers all its energy to a single electron. [1]</p><p>An electron escapes only if \(hf \geq \phi\), with \(E_{k\max} = hf - \phi\); intensity only changes the number of photons, and so the number of electrons. This particle behaviour explains all the observations. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(E = hf = hc/\lambda\); \(E_{k\max} = hf - \phi\); \(f_0 = \phi/h\); \(eV_0 = E_{k\max}\).</li>
+  <li>Frequency sets \(E_{k\max}\) and \(V_0\). Intensity sets the photocurrent.</li>
+  <li>\(E_k\)–\(f\) graph: gradient \(h\), x-intercept \(f_0\), y-intercept \(-\phi\).</li>
+  <li>Threshold, instant emission and frequency dependence can't be explained by waves: evidence for photons.</li>
+</ul>

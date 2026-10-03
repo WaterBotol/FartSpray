@@ -1,0 +1,135 @@
+<!--
+id: gene-regulation
+title: Gene regulation: structural & regulatory genes, the trp operon
+short: Gene regulation & trp operon
+summary: Structural versus regulatory genes, transcription factors, and how the trp operon in E. coli switches tryptophan production off by repression and fine-tunes it by attenuation.
+keywords: gene regulation, gene expression regulation, structural gene, regulatory gene, transcription factor, operon, trp operon, tryptophan, repressor, corepressor, operator, promoter, trpR, trpE, leader sequence, trpL, attenuation, attenuator, terminator hairpin, antiterminator, E. coli, prokaryote, switch on, switch off
+dotpoints: the distinction between structural genes and regulatory genes, and the role of regulatory genes in controlling gene expression | the trp operon as a model of gene regulation in prokaryotes, including repression and attenuation
+-->
+<h2>Structural vs regulatory genes</h2>
+<div class="tbl"><table>
+<thead><tr><th>Structural genes</th><th>Regulatory genes</th></tr></thead>
+<tbody>
+<tr><td>Code for proteins that make up the cell or do its work (enzymes, structural proteins, transport proteins)</td><td>Code for proteins (or RNA) that control the expression of other genes, e.g. <strong>transcription factors</strong> and <strong>repressors</strong></td></tr>
+<tr><td>Example: genes for the enzymes that make tryptophan</td><td>Example: <em>trpR</em>, which codes for the trp repressor</td></tr>
+</tbody></table></div>
+<p>Regulation saves energy and resources: a cell makes a protein only when it's needed. In eukaryotes, transcription factors bind near promoters to switch genes on or off; in prokaryotes, related genes are often grouped into <strong>operons</strong> controlled together.</p>
+
+<h2>The trp operon</h2>
+<p><em>E. coli</em> can make the amino acid tryptophan using five enzymes coded by the structural genes <em>trpE, trpD, trpC, trpB, trpA</em>. These share one promoter and one <strong>operator</strong> (the repressor's binding site). The regulatory gene <em>trpR</em> is elsewhere on the chromosome.</p>
+<figure class="fig">
+<svg viewBox="0 0 560 120" width="560" role="img" aria-label="Diagram of the trp operon">
+<rect x="10" y="50" width="60" height="30" class="f-surf3"/><text x="40" y="70" text-anchor="middle" class="t-sm t-b">trpR</text>
+<text x="40" y="100" text-anchor="middle" class="t-sm t-mut">regulatory gene</text>
+<line x1="80" y1="65" x2="100" y2="65" class="s-mut"/><text x="90" y="44" text-anchor="middle" class="t-sm t-mut">…</text>
+<rect x="110" y="50" width="60" height="30" class="f-surf2"/><text x="140" y="70" text-anchor="middle" class="t-sm">promoter</text>
+<rect x="170" y="50" width="56" height="30" class="f-accsoft"/><text x="198" y="70" text-anchor="middle" class="t-sm t-b">operator</text>
+<rect x="226" y="50" width="54" height="30" class="f-surf2"/><text x="253" y="70" text-anchor="middle" class="t-sm">trpL</text>
+<text x="253" y="100" text-anchor="middle" class="t-sm t-mut">leader / attenuator</text>
+<rect x="280" y="50" width="270" height="30" class="f-surf3"/>
+<text x="307" y="70" text-anchor="middle" class="t-sm t-b">E</text><text x="361" y="70" text-anchor="middle" class="t-sm t-b">D</text><text x="415" y="70" text-anchor="middle" class="t-sm t-b">C</text><text x="469" y="70" text-anchor="middle" class="t-sm t-b">B</text><text x="523" y="70" text-anchor="middle" class="t-sm t-b">A</text>
+<line x1="334" y1="50" x2="334" y2="80" class="s-mut"/><line x1="388" y1="50" x2="388" y2="80" class="s-mut"/><line x1="442" y1="50" x2="442" y2="80" class="s-mut"/><line x1="496" y1="50" x2="496" y2="80" class="s-mut"/>
+<text x="415" y="100" text-anchor="middle" class="t-sm t-mut">structural genes (enzymes for tryptophan synthesis)</text>
+<text x="140" y="30" text-anchor="middle" class="t-sm t-mut">RNA polymerase binds</text>
+<text x="198" y="16" text-anchor="middle" class="t-sm t-mut">repressor binds</text>
+</svg>
+<figcaption>The trp operon. <em>trpR</em> (separate) codes for the repressor protein; the operator overlaps the promoter region.</figcaption>
+</figure>
+
+<h3>Repression (the main on/off switch)</h3>
+<div class="tbl"><table>
+<thead><tr><th>Tryptophan level</th><th>What happens</th><th>Result</th></tr></thead>
+<tbody>
+<tr><td><strong>Low</strong></td><td>The repressor protein (made from <em>trpR</em>) is inactive: it can't bind the operator. RNA polymerase transcribes the structural genes.</td><td>Enzymes made; the cell synthesises tryptophan</td></tr>
+<tr><td><strong>High</strong></td><td>Tryptophan acts as a <strong>corepressor</strong>: it binds the repressor, changing its shape so it binds the operator. RNA polymerase is blocked.</td><td>Transcription stops; energy isn't wasted making tryptophan the cell already has</td></tr>
+</tbody></table></div>
+
+<h3>Attenuation (fine-tuning)</h3>
+<p>Even when the repressor isn't bound, transcription can be stopped early. The leader sequence (<em>trpL</em>) contains four regions (1–4) that can pair up to form hairpins, and region 1 contains <strong>two tryptophan codons</strong>. In bacteria, translation of the leader begins while it's still being transcribed:</p>
+<ul>
+  <li><strong>High tryptophan</strong>: plenty of tryptophan-carrying tRNA, so the ribosome translates region 1 quickly and covers region 2. Regions 3 and 4 pair to form a <strong>terminator hairpin</strong>, and RNA polymerase detaches: transcription stops before the structural genes.</li>
+  <li><strong>Low tryptophan</strong>: the ribosome <strong>stalls</strong> at the trp codons in region 1 (waiting for scarce trp-tRNA). Region 2 pairs with region 3 (an <strong>antiterminator</strong>), so the 3–4 terminator can't form, and transcription continues into the structural genes.</li>
+</ul>
+<aside class="c-key"><p>Attenuation only works in prokaryotes, because transcription and translation are coupled (no nucleus). Repression gives a coarse on/off response; attenuation adjusts transcription according to how much tryptophan-tRNA is available.</p></aside>
+
+<div class="we" data-title="Predicting a mutant (exam classic)" data-marks="3">
+<div class="we-q"><p>A mutation in <em>trpR</em> produces a repressor that can't bind tryptophan. Predict the effect on expression of the trp structural genes when tryptophan is abundant, and explain.</p></div>
+<div class="we-t"><p>The trp operon is repressible. When tryptophan is plentiful, it acts as a corepressor: it binds the repressor protein, changing its shape so it binds the operator and blocks RNA polymerase. Without that binding, the operon stays on.</p></div>
+<div class="we-s"><p>The repressor needs tryptophan (corepressor) bound to change shape and attach to the operator.</p></div>
+<div class="we-s"><p>A repressor that can't bind tryptophan stays inactive, so the operator stays free and RNA polymerase can transcribe.</p></div>
+<div class="we-a"><p><strong>Repression fails, so the structural genes are expressed even when tryptophan is high</strong> (although attenuation can still reduce transcription somewhat). The cell wastes energy making tryptophan.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: trp operon traps">
+<ul>
+  <li><strong>The repressor is made all the time</strong> (<em>trpR</em> is expressed constantly); it's <em>activated</em> by tryptophan.</li>
+  <li><strong>trpR isn't part of the operon</strong>: it has its own promoter elsewhere.</li>
+  <li><strong>Tryptophan is the corepressor</strong>, not the repressor.</li>
+  <li><strong>Attenuation stops transcription</strong> (early termination), not translation of the structural genes.</li>
+  <li><strong>The trp operon is repressible</strong> (normally on, switched off by its product); don't confuse it with inducible systems.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>In the trp operon, the repressor protein binds to the</p></div>
+<ol><li>promoter</li><li>operator</li><li>trpR gene</li><li>ribosome</li></ol>
+<div class="mcq-x"><p>The active (tryptophan-bound) repressor binds the operator, blocking RNA polymerase.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>When tryptophan levels are high in an <em>E. coli</em> cell,</p></div>
+<ol><li>the repressor is inactive and the structural genes are transcribed</li><li>tryptophan binds the operator directly</li><li>trpR stops being transcribed</li><li>tryptophan binds the repressor, which then binds the operator</li></ol>
+<div class="mcq-x"><p>Tryptophan is the corepressor.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>Which is a regulatory gene?</p></div>
+<ol><li>trpR</li><li>trpE</li><li>trpA</li><li>the gene for haemoglobin</li></ol>
+<div class="mcq-x"><p>trpR codes for a protein that controls other genes. trpE and trpA code for enzymes (structural).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>During attenuation, when tryptophan is scarce,</p></div>
+<ol><li>the ribosome moves rapidly through the leader, allowing the terminator hairpin to form</li><li>the repressor binds the attenuator</li><li>the ribosome stalls at the trp codons, region 2 pairs with region 3, and transcription continues</li><li>RNA polymerase can't bind the promoter</li></ol>
+<div class="mcq-x"><p>The 2–3 antiterminator prevents the 3–4 terminator from forming.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Attenuation of the trp operon wouldn't work in a eukaryotic cell mainly because</p></div>
+<ol><li>eukaryotes don't need tryptophan</li><li>eukaryotic transcription (nucleus) and translation (cytoplasm) are separated</li><li>eukaryotes have no ribosomes</li><li>eukaryotic mRNA has no codons for tryptophan</li></ol>
+<div class="mcq-x"><p>Attenuation depends on a ribosome translating the leader while RNA polymerase is still transcribing.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>A mutation in the operator prevents the repressor from binding. When tryptophan is high, the structural genes will be</p></div>
+<ol><li>never transcribed</li><li>transcribed only when tryptophan is low</li><li>transcribed at exactly the normal high-tryptophan rate</li><li>transcribed, with some reduction still possible through attenuation</li></ol>
+<div class="mcq-x"><p>Repression is lost (the operator can't be blocked), but attenuation acts on the leader transcript and still works.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Explain how the trp operon prevents <em>E. coli</em> wasting energy when tryptophan is available in its environment.</p></div>
+<div class="pq-s"><p>Tryptophan enters the cell and binds to the repressor protein (corepressor). [1] The activated repressor binds the operator, blocking RNA polymerase from transcribing the structural genes. [1] The enzymes for tryptophan synthesis aren't made, saving amino acids and ATP. [1]</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Researchers change the two tryptophan codons in the leader sequence to codons for alanine. Predict the effect on attenuation when tryptophan is low but alanine is abundant.</p></div>
+<div class="pq-s"><p>The ribosome would no longer stall when tryptophan is low, because it doesn't need trp-tRNA to translate region 1. [1] It would move quickly, cover region 2, and allow the 3–4 terminator hairpin to form. [1] So transcription would terminate early even though the cell needs tryptophan: attenuation would respond to alanine, not tryptophan. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Compare repression and attenuation as ways of regulating the trp operon.</p></div>
+<div class="pq-s"><p>Both reduce transcription of the structural genes when tryptophan is high. [1] Repression: tryptophan-activated repressor binds the operator and stops transcription from <em>starting</em>. [1] Attenuation: transcription starts but <em>terminates early</em> in the leader region when a terminator hairpin forms, which depends on ribosome speed (the availability of trp-tRNA). [1] Repression is an on/off switch; attenuation fine-tunes the level. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student claims the trpR gene is switched off when tryptophan is high. Explain why this is incorrect.</p></div>
+<div class="pq-s"><p>trpR is expressed continuously (constitutively), so repressor protein is always present. Tryptophan regulates the operon by binding to and activating existing repressor, not by changing trpR expression.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Regulatory genes (trpR) control structural genes (trpE–A).</li>
+  <li>High trp: trp + repressor → binds operator → no transcription.</li>
+  <li>Attenuation: ribosome speed in the leader decides between terminator (3–4) and antiterminator (2–3).</li>
+</ul>

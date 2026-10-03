@@ -1,0 +1,152 @@
+<!--
+id: u4-interference
+title: Young's double slit experiment & interference
+short: Young's double slit
+summary: Interference of light as evidence for the wave model: constructive and destructive interference, path difference, fringe spacing Δx = λL/d, and what changes the pattern.
+keywords: young, youngs double slit, double slit, interference, constructive, destructive, path difference, fringe spacing, fringe, bright band, dark band, coherent, superposition, wave model, delta x = lambda L / d, slit separation, screen distance, white light, laser, monochromatic, in phase, n lambda
+dotpoints: explain the results of Young's double slit experiment with reference to: evidence for the wave-like nature of light; constructive and destructive interference of coherent waves in terms of path differences: \(n\lambda\) and \((n - \frac12)\lambda\) respectively; effect of wavelength, distance of screen and slit separation on interference patterns: \(\Delta x = \frac{\lambda L}{d}\) when \(L \gg d\)
+-->
+<h2>The experiment</h2>
+<p>In 1801 Thomas Young shone light through two narrow, closely spaced slits onto a screen. Instead of two bright strips (what a stream of particles would give), he saw a row of <strong>evenly spaced bright and dark bands</strong> (fringes). This interference pattern is strong evidence that light behaves as a <strong>wave</strong>.</p>
+<figure class="fig">
+<svg viewBox="0 0 440 230" width="440" role="img" aria-label="Double slit experiment: light passes through two slits S1 and S2 separated by d, and waves from each travel to a point P on a screen a distance L away; the path difference S2P minus S1P decides whether P is bright or dark">
+  <rect x="118" y="20" width="8" height="66" class="f-ink"/><rect x="118" y="96" width="8" height="28" class="f-ink"/><rect x="118" y="134" width="8" height="76" class="f-ink"/>
+  <text x="104" y="95" text-anchor="end" class="t-sm t-b">S₁</text><text x="104" y="136" text-anchor="end" class="t-sm t-b">S₂</text>
+  <g class="s-acc" style="opacity:.5"><path d="M20 115 H112"/><path d="M20 100 H112"/><path d="M20 130 H112"/></g>
+  <text x="20" y="160" class="t-sm t-acc">coherent light</text>
+  <line x1="140" y1="91" x2="140" y2="129" class="s-mut" marker-start="url(#ah-mut)" marker-end="url(#ah-mut)"/><text x="146" y="114" class="t-sm">d</text>
+  <rect x="390" y="16" width="12" height="198" class="f-surf2" style="stroke:var(--ink);stroke-width:1"/>
+  <g class="f-acc">
+    <rect x="390" y="104" width="12" height="12"/><rect x="390" y="78" width="12" height="10"/><rect x="390" y="132" width="12" height="10"/><rect x="390" y="54" width="12" height="8"/><rect x="390" y="158" width="12" height="8"/><rect x="390" y="30" width="12" height="6"/><rect x="390" y="184" width="12" height="6"/>
+  </g>
+  <line x1="122" y1="91" x2="390" y2="58" class="s-w" style="stroke-width:1.6"/>
+  <line x1="122" y1="129" x2="390" y2="58" class="s-n" style="stroke-width:1.6"/>
+  <circle cx="390" cy="58" r="3.5" class="f-ink"/><text x="408" y="62" class="t-sm t-b">P</text>
+  <line x1="122" y1="110" x2="390" y2="110" class="s-dash"/>
+  <text x="408" y="114" class="t-sm t-mut">central</text><text x="408" y="126" class="t-sm t-mut">maximum</text>
+  <line x1="126" y1="222" x2="390" y2="222" class="s-mut" marker-start="url(#ah-mut)" marker-end="url(#ah-mut)"/><text x="258" y="216" text-anchor="middle" class="t-sm">L</text>
+  <text x="250" y="70" class="t-sm t-w">S₁P</text><text x="250" y="102" class="t-sm t-n">S₂P</text>
+</svg>
+<figcaption>Point P is bright if the path difference \(S_2P - S_1P\) is a whole number of wavelengths, and dark if it is a half-number. Not to scale: in practice \(L \gg d\).</figcaption>
+</figure>
+
+<h2>Superposition and path difference</h2>
+<p>Light from the two slits spreads out (diffracts) and overlaps. Where two waves meet, their displacements add (<strong>superposition</strong>):</p>
+<ul>
+  <li><strong>Constructive interference</strong> (bright band): the waves arrive <em>in phase</em>, crest on crest.</li>
+  <li><strong>Destructive interference</strong> (dark band): the waves arrive <em>exactly out of phase</em>, crest on trough, and cancel.</li>
+</ul>
+<p>Whether they arrive in phase depends on the <strong>path difference</strong>: how much further the light from one slit travels than the light from the other.</p>
+<div class="eq"><div class="eq-label">Path difference conditions</div>\[ \text{bright: } \ S_2P - S_1P = n\lambda \quad (n = 0, 1, 2, \ldots) \]\[ \text{dark: } \ S_2P - S_1P = \left(n - \tfrac12\right)\lambda \quad (n = 1, 2, 3, \ldots) \]</div>
+<div class="tbl"><table>
+<thead><tr><th>Band (counting out from the centre)</th><th>Path difference</th></tr></thead>
+<tbody>
+<tr><td>Central bright band</td><td>0</td></tr>
+<tr><td>1st dark band</td><td>\(\tfrac12\lambda\)</td></tr>
+<tr><td>1st bright band (beside the central one)</td><td>\(1\lambda\)</td></tr>
+<tr><td>2nd dark band</td><td>\(1\tfrac12\lambda\)</td></tr>
+<tr><td>2nd bright band</td><td>\(2\lambda\)</td></tr>
+<tr><td>3rd dark band</td><td>\(2\tfrac12\lambda\)</td></tr>
+</tbody></table></div>
+<aside class="c-trap" data-title="Trick alert: counting bands">
+<p>The central band has path difference zero and is usually not counted as the “first” bright band. The <strong>third dark band</strong> from the centre has a path difference of \(2.5\lambda\), not \(3\lambda\) or \(3.5\lambda\). Draw the table above in the margin before answering.</p>
+</aside>
+<aside class="c-key" data-title="Key idea: coherence">
+<p>A stable pattern needs <strong>coherent</strong> sources: same frequency and a constant phase relationship. Young used one source and split it with the two slits (or passed sunlight through a single slit first). Today we use a laser. Two separate light bulbs never give stable fringes.</p>
+</aside>
+
+<h2>Fringe spacing</h2>
+<div class="eq"><div class="eq-label">Fringe spacing (when \(L \gg d\))</div>\[ \Delta x = \frac{\lambda L}{d} \]<p>\(\Delta x\) = distance between adjacent bright bands (or adjacent dark bands); \(\lambda\) = wavelength; \(L\) = slit-to-screen distance; \(d\) = slit separation (centre to centre). Use the same units for everything (metres).</p></div>
+<div class="tbl"><table>
+<thead><tr><th>Change</th><th>Effect on fringe spacing</th></tr></thead>
+<tbody>
+<tr><td>Longer wavelength (e.g. red instead of blue)</td><td>Wider fringes</td></tr>
+<tr><td>Screen further away (larger \(L\))</td><td>Wider fringes</td></tr>
+<tr><td>Slits closer together (smaller \(d\))</td><td>Wider fringes</td></tr>
+<tr><td>Brighter light (more intense)</td><td>Brighter fringes, same spacing</td></tr>
+<tr><td>White light</td><td>White central band; coloured fringes beyond, violet/blue on the inner edge and red on the outer edge (red has the longest λ so spreads furthest)</td></tr>
+</tbody></table></div>
+
+<div class="we" data-title="Calculating fringe spacing" data-marks="2">
+<div class="we-q"><p>Light of wavelength 600 nm passes through two slits 0.20 mm apart onto a screen 2.0 m away. Find the spacing between adjacent bright bands.</p></div>
+<div class="we-s">\[ \Delta x = \frac{\lambda L}{d} = \frac{(600\times10^{-9})(2.0)}{0.20\times10^{-3}} = 6.0\times10^{-3}\ \text{m} \]</div>
+<div class="we-a"><p><strong>6.0 mm.</strong> Convert nm (×10⁻⁹) and mm (×10⁻³) before substituting.</p></div>
+</div>
+
+<div class="we" data-title="Measuring a wavelength" data-marks="3">
+<div class="we-q"><p>Students shine a laser through slits 0.25 mm apart onto a wall 1.20 m away. They measure the distance across 10 fringe spacings as 27 mm. Find the laser's wavelength.</p></div>
+<div class="we-s"><p><strong>One fringe spacing:</strong> \(\Delta x = 27/10 = 2.7\ \text{mm}\). (Measuring across many fringes and dividing reduces the uncertainty.)</p></div>
+<div class="we-s">\[ \lambda = \frac{\Delta x\, d}{L} = \frac{(2.7\times10^{-3})(0.25\times10^{-3})}{1.20} = 5.6\times10^{-7}\ \text{m} \]</div>
+<div class="we-a"><p><strong>563 nm (green-yellow).</strong></p></div>
+</div>
+
+<div class="we" data-title="Which band is it? (trick)" data-marks="3">
+<div class="we-q"><p>In a double slit experiment with 500 nm light, point Q on the screen is 1250 nm further from one slit than the other. Is Q bright or dark, and which band is it? What happens at Q if the wavelength is changed to 625 nm?</p></div>
+<div class="we-s"><p><strong>Path difference in wavelengths:</strong> \(1250/500 = 2.5\lambda\). A half-number, so destructive: <strong>dark</strong>.</p></div>
+<div class="we-s"><p><strong>Which dark band?</strong> \((n - \tfrac12) = 2.5 \Rightarrow n = 3\): the third dark band from the centre.</p></div>
+<div class="we-s"><p><strong>With 625 nm:</strong> \(1250/625 = 2.0\lambda\), a whole number, so Q becomes the <strong>second bright band</strong>.</p></div>
+<div class="we-a"><p><strong>Third dark band; with 625 nm it becomes the second bright band.</strong></p></div>
+</div>
+
+<div class="sim" data-sim="doubleslit"></div>
+
+<h2>Why this is evidence for waves</h2>
+<ul>
+  <li>A particle model (Newton's “corpuscles”) predicts two bright strips behind the two slits, not a pattern of many fringes.</li>
+  <li>Dark bands appear where light from both slits arrives. Adding more light and getting <em>darkness</em> can only be explained by waves cancelling.</li>
+  <li>The spacing depends on \(\lambda\) exactly as the wave model predicts.</li>
+</ul>
+<p>Later experiments with very dim light showed that the pattern builds up one photon at a time (see <a href="#u4-duality">Wave–particle duality</a>), which is where the story gets strange.</p>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>In a double slit pattern, the path difference to the <strong>second dark band</strong> on one side of the centre is:</p></div>
+<ol><li>\(2\lambda\)</li><li>\(1.5\lambda\)</li><li>\(2.5\lambda\)</li><li>\(0.5\lambda\)</li></ol>
+<div class="mcq-x"><p>Dark bands are at \((n - \tfrac12)\lambda\): first 0.5λ, second 1.5λ, third 2.5λ.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Which change would make the fringes in a double slit pattern further apart?</p></div>
+<ol><li>moving the screen closer to the slits</li><li>using blue light instead of red light</li><li>moving the slits further apart</li><li>moving the slits closer together</li></ol>
+<div class="mcq-x"><p>\(\Delta x = \lambda L/d\): smaller \(d\) → larger \(\Delta x\). The other options all decrease the spacing.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>The intensity of the laser in a double slit experiment is doubled. The fringe spacing:</p></div>
+<ol><li>stays the same</li><li>doubles</li><li>halves</li><li>increases by √2</li></ol>
+<div class="mcq-x"><p>Intensity doesn't appear in \(\Delta x = \lambda L/d\). The bright fringes just get brighter.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Young's double slit experiment supports the wave model of light because:</p></div>
+<ol><li>light travels in straight lines through the slits</li><li>the slits reflect light onto the screen</li><li>the pattern of bright and dark bands can only be explained by interference of waves</li><li>light is shown to consist of photons</li></ol>
+<div class="mcq-x"><p>Interference (especially dark bands where light from both slits meets) is a wave property that a classical particle model can't explain.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>A double slit experiment is done with white light. The first bright band beside the central band appears:</p></div>
+<ol><li>white</li><li>as a spectrum with violet closest to the centre</li><li>as a spectrum with red closest to the centre</li><li>as a single red band</li></ol>
+<div class="mcq-x"><p>Each colour's fringe spacing is proportional to its wavelength. Violet (shortest λ) forms its first fringe closest to the centre, red furthest out. Only the central band, where every colour has zero path difference, is white.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>A 650 nm laser gives a fringe spacing of 3.9 mm on a screen 1.5 m from a double slit. Find the slit separation.</p></div>
+<div class="pq-s"><p>\(d = \dfrac{\lambda L}{\Delta x} = \dfrac{(650\times10^{-9})(1.5)}{3.9\times10^{-3}} = 2.5\times10^{-4}\ \text{m} = 0.25\ \text{mm}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>In a double slit experiment, the centre of the 4th bright band beside the central maximum is 12 mm from the centre of the central maximum. The slits are 0.30 mm apart and the screen is 1.6 m away. Find the wavelength.</p></div>
+<div class="pq-s"><p>From the central maximum to the 4th bright band is 4 fringe spacings: \(\Delta x = 12/4 = 3.0\ \text{mm}\).</p><p>\(\lambda = \dfrac{\Delta x\,d}{L} = \dfrac{(3.0\times10^{-3})(3.0\times10^{-4})}{1.6} = 5.6\times10^{-7}\ \text{m}\) (563 nm).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Explain the formation of a dark band in Young's double slit experiment, with reference to path difference.</p></div>
+<div class="pq-s"><p>Light from the two slits is coherent and spreads out (diffracts), so waves from both slits reach every point on the screen. [1]</p><p>At a dark band, the path difference from the two slits is a half-number of wavelengths, \((n - \tfrac12)\lambda\), so the waves arrive exactly out of phase (crest meets trough). [1]</p><p>They interfere destructively and cancel, giving zero (minimum) intensity. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Bright: path difference \(n\lambda\). Dark: \((n - \tfrac12)\lambda\). Central band: zero.</li>
+  <li>\(\Delta x = \lambda L/d\): bigger λ or L, smaller d → wider fringes. Intensity has no effect on spacing.</li>
+  <li>Needs coherent light. The pattern is evidence for the wave model.</li>
+</ul>

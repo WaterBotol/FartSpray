@@ -1,0 +1,137 @@
+<!--
+id: transformations
+title: Transformations of graphs
+short: Transformations
+summary: Dilations, reflections and translations, mapping notation, finding image equations, working out which transformations map one graph onto another, and why the order matters.
+keywords: transformation, dilation, reflection, translation, mapping, image, from the x-axis, from the y-axis, parallel to, horizontal dilation, vertical dilation, sequence of transformations, order of transformations, x' y', dash notation, stretch, shift
+dotpoints: transformations of the plane: dilations, reflections in the axes and translations, and their effect on graphs | mapping notation and finding image equations | determining a sequence of transformations
+-->
+<h2>The three moves</h2>
+<div class="tbl"><table>
+<thead><tr><th>Transformation</th><th>Mapping</th><th>Effect on the rule \(y = f(x)\)</th></tr></thead>
+<tbody>
+<tr><td>Dilation by factor \(a\) <strong>from the \(x\)-axis</strong> (parallel to the \(y\)-axis)</td><td>\((x, y) \to (x, ay)\)</td><td>\(y = a f(x)\)</td></tr>
+<tr><td>Dilation by factor \(b\) <strong>from the \(y\)-axis</strong> (parallel to the \(x\)-axis)</td><td>\((x, y) \to (bx, y)\)</td><td>\(y = f\!\left(\tfrac{x}{b}\right)\)</td></tr>
+<tr><td>Reflection in the \(x\)-axis</td><td>\((x, y) \to (x, -y)\)</td><td>\(y = -f(x)\)</td></tr>
+<tr><td>Reflection in the \(y\)-axis</td><td>\((x, y) \to (-x, y)\)</td><td>\(y = f(-x)\)</td></tr>
+<tr><td>Translation \(h\) right and \(k\) up</td><td>\((x, y) \to (x + h, y + k)\)</td><td>\(y = f(x - h) + k\)</td></tr>
+</tbody></table></div>
+<aside class="c-def" data-title="“From the x-axis” means vertical"><p>A dilation <em>from</em> the \(x\)-axis pushes points away from the \(x\)-axis, so it stretches vertically. VCAA also writes “parallel to the \(y\)-axis” for the same thing. Mix these up and every mark in the question goes.</p></aside>
+
+<h2>The general form, and the order that works</h2>
+<div class="eq"><div class="eq-label">Standard form</div>\[ y = a\,f\big(n(x - h)\big) + k \]<p>Read it as: dilate by \(|a|\) from the \(x\)-axis (reflect in the \(x\)-axis if \(a < 0\)); dilate by \(\frac{1}{|n|}\) from the \(y\)-axis (reflect in the \(y\)-axis if \(n < 0\)); <em>then</em> translate \(h\) right and \(k\) up. The mapping is \((x, y) \to \left(\frac{x}{n} + h,\ ay + k\right)\).</p></div>
+<aside class="c-key"><p><strong>Always factor out the coefficient of \(x\) first.</strong> \(f(2x + 6) = f(2(x + 3))\) is a translation of 3 left, not 6, when the dilation is done first. With dilations first and translations last you never go wrong.</p></aside>
+
+<div class="sim" data-sim="transform"></div>
+
+<h2>Finding the image equation: the dash method</h2>
+<p>This is the method VCAA's solutions use, and it works for any transformation (even ones you can't picture):</p>
+<ol>
+  <li>Write the mapping as \(x' = \ldots\) and \(y' = \ldots\).</li>
+  <li>Rearrange to get \(x\) and \(y\) in terms of \(x'\) and \(y'\).</li>
+  <li>Substitute into the original rule, then drop the dashes.</li>
+</ol>
+<div class="we" data-title="Image of a square-root graph" data-marks="2">
+<div class="we-q"><p>Find the image of \(y = \sqrt{x}\) under the transformation \((x, y) \to (-2x + 1,\ 3y - 2)\).</p></div>
+<div class="we-t"><p>To find an image rule, write the old coordinates in terms of the new ones, then substitute into the original equation. This works for any combination of dilations, reflections and translations.</p></div>
+<div class="we-s" data-f="x&#x27; = ax + b \Rightarrow x = \dfrac{x&#x27; - b}{a}"><p>\(x' = -2x + 1 \Rightarrow x = \dfrac{1 - x'}{2}\), and \(y' = 3y - 2 \Rightarrow y = \dfrac{y' + 2}{3}\).</p></div>
+<div class="we-s" data-f="\text{substitute into } y = f(x)"><p>Substitute into \(y = \sqrt{x}\): \(\dfrac{y' + 2}{3} = \sqrt{\dfrac{1 - x'}{2}}\).</p></div>
+<div class="we-a"><p><strong>\(y = 3\sqrt{\dfrac{1 - x}{2}} - 2\)</strong>, with domain \(x \le 1\).</p></div>
+</div>
+
+<div class="we" data-title="Describing a sequence of transformations" data-marks="3">
+<div class="we-q"><p>Describe a sequence of transformations that maps \(y = e^x\) onto \(y = 3e^{2x - 4} + 1\), and give the mapping.</p></div>
+<div class="we-t"><p>Write the image as \(y = af(n(x - h)) + k\): \(a\) dilates from the \(x\)-axis, \(n\) dilates from the \(y\)-axis by factor \(\frac1n\), and \(h, k\) translate. Factor the coefficient of \(x\) out of the bracket first.</p></div>
+<div class="we-s" data-f="y = af(n(x - h)) + k"><p>Factor the exponent: \(y = 3e^{2(x - 2)} + 1\). So \(a = 3,\ n = 2,\ h = 2,\ k = 1\).</p></div>
+<div class="we-s" data-f="\text{dilate, then translate}"><p>Dilation by factor 3 from the \(x\)-axis; dilation by factor \(\frac12\) from the \(y\)-axis; translation 2 units right and 1 unit up.</p></div>
+<div class="we-a" data-f="(x, y) \to \left(\dfrac xn + h,\ ay + k\right)"><p><strong>Mapping \((x, y) \to \left(\frac{x}{2} + 2,\ 3y + 1\right)\).</strong> Check with the dash method: \(x = 2x' - 4\), \(y = \frac{y' - 1}{3}\), giving \(\frac{y' - 1}{3} = e^{2x' - 4}\). ✓</p></div>
+</div>
+
+<div class="we" data-title="Transforming a point, domain and range" data-marks="3">
+<div class="we-q"><p>The function \(f\) has domain \([-2, 4]\) and range \([0, 6]\), and \(f(2) = 5\). For \(g(x) = -f(2x) + 3\), find (a) the domain and range of \(g\), and (b) the image of the point \((2, 5)\).</p></div>
+<div class="we-t"><p>Transform the domain by solving for where the inside of \(f\) is allowed; transform the range by applying the outside operations in order. Points map using the same rule.</p></div>
+<div class="we-s" data-f="2x \in \text{dom} f"><p><strong>Domain:</strong> need \(2x \in [-2, 4]\), so \(x \in [-1, 2]\).</p></div>
+<div class="we-s" data-f="\text{apply } -f + 3 \text{ to the range}"><p><strong>Range:</strong> \(f \in [0, 6] \Rightarrow -f \in [-6, 0] \Rightarrow -f + 3 \in [-3, 3]\).</p></div>
+<div class="we-s" data-f="(x, y) \to \left(\dfrac x2,\ -y + 3\right)"><p><strong>Point:</strong> the mapping is \((x, y) \to \left(\frac{x}{2},\ -y + 3\right)\), so \((2, 5) \to (1, -2)\).</p></div>
+<div class="we-a"><p><strong>Domain \([-1, 2]\), range \([-3, 3]\); image point \((1, -2)\).</strong> Check: \(g(1) = -f(2) + 3 = -5 + 3 = -2\). ✓</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: transformation traps">
+<ul>
+  <li><strong>Horizontal changes act “backwards”.</strong> \(f(x - 3)\) moves right 3; \(f(2x)\) squashes by factor \(\frac12\) (dilation factor \(\frac12\) from the \(y\)-axis, not 2).</li>
+  <li><strong>Order matters when dilations and translations mix.</strong> “Translate 1 right, then dilate by 2 from the \(y\)-axis” gives \(f\!\left(\frac{x}{2} - 1\right)\), not \(f\!\left(\frac{x - 1}{2}\right)\).</li>
+  <li><strong>Sequences aren't unique.</strong> \(y = (2x)^2 = 4x^2\): a dilation by \(\frac12\) from the \(y\)-axis gives the same graph as a dilation by 4 from the \(x\)-axis. Similarly \(e^{x - 2} = e^{-2}e^x\).</li>
+  <li><strong>Transform the asymptotes too.</strong> The image of \(y = \log_e x\) under a translation 3 left has asymptote \(x = -3\).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The graph of \(y = \log_e x\) is dilated by factor 3 from the \(y\)-axis, then translated 2 units up. The image is</p></div>
+<ol><li>\(y = 3\log_e x + 2\)</li><li>\(y = \log_e\!\left(\frac{x}{3}\right) + 2\)</li><li>\(y = \log_e(3x) + 2\)</li><li>\(y = \log_e\!\left(\frac{x + 2}{3}\right)\)</li></ol>
+<div class="mcq-x"><p>Dilation from the \(y\)-axis by factor 3 replaces \(x\) with \(\frac{x}{3}\). The translation up adds 2.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Under the mapping \((x, y) \to (x + 2, -y)\), the image of \(y = x^3\) is</p></div>
+<ol><li>\(y = -(x + 2)^3\)</li><li>\(y = (x - 2)^3\)</li><li>\(y = -x^3 + 2\)</li><li>\(y = -(x - 2)^3\)</li></ol>
+<div class="mcq-x"><p>\(x = x' - 2\) and \(y = -y'\): \(-y' = (x' - 2)^3\), so \(y = -(x - 2)^3\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Which sequence maps \(y = f(x)\) onto \(y = f(2x + 6)\)?</p></div>
+<ol><li>Translation 6 units left, then dilation by factor 2 from the \(y\)-axis</li><li>Dilation by factor \(\frac12\) from the \(y\)-axis, then translation 6 units left</li><li>Dilation by factor \(\frac12\) from the \(y\)-axis, then translation 3 units left</li><li>Dilation by factor 2 from the \(y\)-axis, then translation 3 units left</li></ol>
+<div class="mcq-x"><p>\(f(2x + 6) = f(2(x + 3))\): dilate by \(\frac12\) from the \(y\)-axis first, then translate 3 left. (Translating 6 left <em>first</em> and then dilating by \(\frac12\) also works, but A uses factor 2, which is wrong.)</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>The point \((2, 5)\) lies on \(y = f(x)\). The corresponding point on \(y = 2f(3x - 6) + 1\) is</p></div>
+<ol><li>\(\left(\frac83, 11\right)\)</li><li>\((0, 11)\)</li><li>\(\left(\frac83, 10\right)\)</li><li>\((12, 11)\)</li></ol>
+<div class="mcq-x"><p>\(y = 2f(3(x - 2)) + 1\). Mapping \((x, y) \to \left(\frac{x}{3} + 2,\ 2y + 1\right)\): \(\left(\frac23 + 2,\ 11\right) = \left(\frac83, 11\right)\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>The graph of \(y = x^2\) is dilated by factor \(\frac12\) from the \(y\)-axis. The same image is produced by</p></div>
+<ol><li>a dilation by factor 2 from the \(x\)-axis</li><li>a dilation by factor 4 from the \(x\)-axis</li><li>a dilation by factor \(\frac14\) from the \(x\)-axis</li><li>no single dilation from the \(x\)-axis</li></ol>
+<div class="mcq-x"><p>The image is \(y = (2x)^2 = 4x^2\), which is also \(y = x^2\) dilated by factor 4 from the \(x\)-axis.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The graph of \(y = \dfrac{1}{x}\) is translated 2 units left and 3 units down. The asymptotes of the image are</p></div>
+<ol><li>\(x = 2,\ y = -3\)</li><li>\(x = -3,\ y = -2\)</li><li>\(x = -2,\ y = -3\)</li><li>\(x = -2,\ y = 3\)</li></ol>
+<div class="mcq-x"><p>Image \(y = \frac{1}{x + 2} - 3\). Asymptotes move with the graph.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>The graph of \(y = f(x)\) is reflected in the \(y\)-axis and then translated 1 unit right. The image is</p></div>
+<ol><li>\(y = f(-x - 1)\)</li><li>\(y = -f(x - 1)\)</li><li>\(y = f(-x) + 1\)</li><li>\(y = f(1 - x)\)</li></ol>
+<div class="mcq-x"><p>Reflect: \(y = f(-x)\). Then translate right 1 by replacing \(x\) with \(x - 1\): \(y = f(-(x - 1)) = f(1 - x)\). Option A is what you get if you translate first and then reflect: that's the order trap.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="y = af(x - h) + k">
+<div class="pq-q"><p>State a sequence of transformations that maps \(y = x^2\) onto \(y = 2(x + 1)^2 - 3\).</p></div>
+<div class="pq-s"><p>Dilation by factor 2 from the \(x\)-axis, then a translation of 1 unit left and 3 units down. Mapping: \((x, y) \to (x - 1,\ 2y - 3)\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="y = af(n(x - h)) + k ;; (x, y) \to \left(\dfrac xn + h,\ ay + k\right)">
+<div class="pq-q"><p>Find a mapping of the form \((x, y) \to (ax + b,\ cy + d)\), with \(a, c > 0\), that maps \(y = \sin x\) onto \(y = 3\sin\!\left(2x - \frac{\pi}{2}\right) + 1\).</p></div>
+<div class="pq-s"><p>Factor: \(y = 3\sin\!\left(2\left(x - \frac{\pi}{4}\right)\right) + 1\). [1]</p><p>Dilation by \(\frac12\) from the \(y\)-axis, by 3 from the \(x\)-axis, then translation \(\frac{\pi}{4}\) right and 1 up. [1]</p><p>\((x, y) \to \left(\frac{x}{2} + \frac{\pi}{4},\ 3y + 1\right)\). [1] (Adding any multiple of the period \(\pi\) to \(b\) also works.)</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="\text{inverse mapping: make } x, y \text{ the subject}">
+<div class="pq-q"><p>Find the rule of a transformation that maps the graph of \(y = 3e^{2x - 4} + 1\) back onto \(y = e^x\).</p></div>
+<div class="pq-s"><p>Undo the forward mapping \((x, y) \to \left(\frac{x}{2} + 2, 3y + 1\right)\) by solving for \(x, y\): the inverse mapping is \((x, y) \to \left(2x - 4,\ \frac{y - 1}{3}\right)\). [2]</p><p>Check: under this mapping \(x = \frac{x' + 4}{2}\), \(y = 3y' + 1\): \(3y' + 1 = 3e^{x' + 4 - 4} + 1 \Rightarrow y' = e^{x'}\). ✓ [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{order matters: } y = f\!\left(\dfrac{x - b}{a}\right) \text{ for } x \to ax + b">
+<div class="pq-q"><p>A student translates \(y = f(x)\) 1 unit right and then dilates by factor 2 from the \(y\)-axis, and writes the image as \(y = f\!\left(\frac{x - 1}{2}\right)\). Find their mistake.</p></div>
+<div class="pq-s"><p>After the translation: \(y = f(x - 1)\). The dilation then replaces \(x\) with \(\frac{x}{2}\): \(y = f\!\left(\frac{x}{2} - 1\right) = f\!\left(\frac{x - 2}{2}\right)\).</p><p>Their answer, \(f\!\left(\frac{x - 1}{2}\right)\), is what you get if you dilate <em>first</em> then translate.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(y = af(n(x - h)) + k\): mapping \((x, y) \to \left(\frac{x}{n} + h,\ ay + k\right)\).</li>
+  <li>“From the \(x\)-axis” = vertical; “from the \(y\)-axis” = horizontal.</li>
+  <li>Dash method: express \(x, y\) in terms of \(x', y'\) and substitute.</li>
+  <li>Domains, ranges, points and asymptotes all transform with the graph.</li>
+</ul>

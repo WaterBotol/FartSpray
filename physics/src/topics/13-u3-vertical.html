@@ -1,0 +1,182 @@
+<!--
+id: u3-vertical
+title: Vertical circles & rollercoasters
+short: Vertical circles & rollercoasters
+summary: Circular motion in a vertical plane at the highest and lowest points: rollercoaster loops, humps and dips, balls on strings, apparent weight and g-forces, and combining energy conservation with F = mv²/r.
+keywords: vertical circle, rollercoaster, roller coaster, loop, loop the loop, top of loop, bottom of loop, minimum speed, hump, hill, crest, dip, valley, apparent weight, g force, normal force, weightless, ball on string, bucket of water, tension, energy conservation, release height, clothoid
+dotpoints: investigate and apply theoretically Newton's second law to circular motion in a vertical plane (forces at the highest and lowest positions only) | apply the laws of energy and momentum conservation in isolated systems
+-->
+<h2>What changes in a vertical circle</h2>
+<p>In a vertical circle, gravity acts along the radius at the top and bottom, so it becomes part of the centripetal force. The speed is usually <strong>not</strong> constant: an object slows as it climbs and speeds up as it falls. VCE only asks about forces at the <strong>highest and lowest points</strong>, where the maths is one-dimensional.</p>
+<aside class="c-key" data-title="Key idea: the one equation you need">
+<p>At the top and bottom, take <strong>towards the centre as positive</strong> and write</p>
+<p>\[ \Sigma F_{\text{towards centre}} = \frac{mv^2}{r} \]</p>
+<p>Forces pointing to the centre are positive, forces pointing away are negative. Everything below is this one line applied carefully.</p>
+</aside>
+
+<figure class="fig">
+<svg viewBox="0 0 420 260" width="420" role="img" aria-label="Rollercoaster loop with free-body diagrams at the top, where normal force and weight both point down, and at the bottom, where the normal force points up and weight down">
+  <circle cx="150" cy="130" r="88" class="s-ink" style="stroke-width:3"/>
+  <circle cx="150" cy="130" r="3" class="f-mut"/>
+  <line x1="150" y1="130" x2="238" y2="130" class="s-dash"/><text x="186" y="124" class="t-mut t-sm">r</text>
+  <rect x="136" y="44" width="28" height="18" rx="4" class="f-acc"/>
+  <line x1="143" y1="62" x2="143" y2="96" class="s-n" marker-end="url(#ah-n)"/><text x="116" y="88" class="t-n t-b">N</text>
+  <line x1="158" y1="62" x2="158" y2="104" class="s-w" marker-end="url(#ah-w)"/><text x="164" y="100" class="t-w t-b">mg</text>
+  <rect x="136" y="200" width="28" height="18" rx="4" class="f-acc"/>
+  <line x1="150" y1="200" x2="150" y2="150" class="s-n" marker-end="url(#ah-n)"/><text x="156" y="166" class="t-n t-b">N</text>
+  <line x1="150" y1="218" x2="150" y2="252" class="s-w" marker-end="url(#ah-w)"/><text x="156" y="248" class="t-w t-b">mg</text>
+  <text x="262" y="50" class="t-b">Top (inside the loop)</text>
+  <text x="262" y="68" class="t-sm">N + mg = mv²/r</text>
+  <text x="262" y="84" class="t-sm">both forces point to the centre</text>
+  <text x="262" y="100" class="t-sm">stays on track if v ≥ √(gr)</text>
+  <text x="262" y="186" class="t-b">Bottom</text>
+  <text x="262" y="204" class="t-sm">N − mg = mv²/r</text>
+  <text x="262" y="220" class="t-sm">N &gt; mg: rider feels heavy</text>
+</svg>
+<figcaption>At the top of a loop the track is <em>above</em> the cart, so the normal force from the track pushes <strong>down</strong>, towards the centre.</figcaption>
+</figure>
+
+<h2>The bottom of a loop or dip</h2>
+<p>At the lowest point the centre is <em>above</em> the object. The normal force (or tension) points up, towards the centre; weight points down, away from it.</p>
+<div class="eq"><div class="eq-label">Lowest point</div>\[ N - mg = \frac{mv^2}{r} \quad\Rightarrow\quad N = m\left(g + \frac{v^2}{r}\right) \]<p>\(N > mg\): the rider feels heavier than normal. The same equation applies at the bottom of a dip in a road or a swing at its lowest point (with tension instead of \(N\)).</p></div>
+
+<h2>The top of a loop (inside the track)</h2>
+<p>At the highest point of a loop, a rider is upside down on the <em>inside</em> of the track. Both weight and the normal force point down, towards the centre.</p>
+<div class="eq"><div class="eq-label">Highest point, inside the loop</div>\[ N + mg = \frac{mv^2}{r} \quad\Rightarrow\quad N = m\left(\frac{v^2}{r} - g\right) \]</div>
+<h3>The minimum speed at the top</h3>
+<p>As the speed at the top drops, \(N\) gets smaller. The track can push but never pull, so the smallest possible value is \(N = 0\). Then gravity alone provides the centripetal force:</p>
+<div class="eq"><div class="eq-label">Minimum speed to stay on the loop</div>\[ mg = \frac{mv_{\min}^2}{r} \quad\Rightarrow\quad v_{\min} = \sqrt{gr} \]<p>Below this speed the cart would leave the track (a rollercoaster has extra wheels under the rail to prevent this). The same limit applies to a ball on a string (tension \(= 0\)) or a bucket of water swung overhead.</p></div>
+<aside class="c-trap" data-title="Trick alert: 'weightless' at the top">
+<p>At exactly \(v = \sqrt{gr}\) the rider feels weightless because the seat pushes with zero force (apparent weight = 0). Gravity has <strong>not</strong> disappeared: weight is the only force acting and it is providing the whole centripetal force. Writing “there is no force at the top” or “gravity is cancelled” loses the mark.</p>
+</aside>
+
+<h2>The top of a hump or hill (outside the track)</h2>
+<p>A car driving over the crest of a hill, or a rollercoaster cart on top of a hill, is on the <em>outside</em> of the curve. Now the normal force points <strong>up</strong>, away from the centre.</p>
+<div class="eq"><div class="eq-label">Crest of a hill (on top of the track)</div>\[ mg - N = \frac{mv^2}{r} \quad\Rightarrow\quad N = m\left(g - \frac{v^2}{r}\right) \]<p>The faster you go, the lighter you feel. When \(v = \sqrt{gr}\), \(N = 0\) and the car is about to leave the road. Any faster and it becomes airborne.</p></div>
+<div class="tbl"><table>
+<thead><tr><th>Position</th><th>Equation (towards centre +)</th><th>Apparent weight</th></tr></thead>
+<tbody>
+<tr><td>Bottom of loop / dip</td><td>\(N - mg = mv^2/r\)</td><td>\(N > mg\) (heavy)</td></tr>
+<tr><td>Top of loop, inside the track</td><td>\(N + mg = mv^2/r\)</td><td>\(N\) can be anything \(\geq 0\)</td></tr>
+<tr><td>Crest of hill, on top of the track</td><td>\(mg - N = mv^2/r\)</td><td>\(N < mg\) (light)</td></tr>
+</tbody></table></div>
+
+<h2>Apparent weight and g-forces</h2>
+<p>A rider's <strong>apparent weight</strong> is the normal force from the seat. Rides describe it in “g”:</p>
+<div class="eq">\[ \text{g-force} = \frac{N}{mg} \]<p>Normal standing is 1 g. At the top of a loop at \(v_{\min}\) you experience 0 g. Riders on steel coasters typically peak at 4–5 g at the bottom of loops.</p></div>
+<aside class="c-trap" data-title="Trick alert: net force vs normal force in g's">
+<p>A rider “experiencing 3 g” at the bottom of a loop has \(N = 3mg\). The <strong>net</strong> force is \(N - mg = 2mg\) upward, so their acceleration is \(2g\), not \(3g\). Read carefully whether a question asks for the normal force, the net force or the acceleration.</p>
+</aside>
+
+<h2>Combining energy and circular motion</h2>
+<p>Rollercoaster questions almost always need two tools:</p>
+<ol>
+  <li><strong>Energy conservation</strong> to find the speed at a point: \(mgh_1 + \tfrac12 mv_1^2 = mgh_2 + \tfrac12 mv_2^2\) (frictionless) or with energy lost to friction subtracted.</li>
+  <li><strong>\(\Sigma F = mv^2/r\)</strong> at that point to find the normal force.</li>
+</ol>
+<aside class="c-trap" data-title="Trick alert: the top of a loop is 2r above the bottom">
+<p>If the loop starts at ground level, its highest point is at height \(2r\) (the diameter), not \(r\). Using \(r\) is the single most common error in rollercoaster energy questions.</p>
+</aside>
+
+<div class="we" data-title="Rollercoaster: speed and forces around a loop" data-marks="7">
+<div class="we-q"><p>A rollercoaster cart starts from rest at the top of a hill 30 m above the ground and rolls down into a circular loop of radius 10 m whose lowest point is at ground level. Ignore friction. A 60 kg rider sits in the cart.</p><p>(a) Find the speed at the bottom of the loop. (b) Find the speed at the top of the loop. (c) Show that the cart stays on the track. (d) Find the force of the seat on the rider at the top and at the bottom, and express each as a g-force.</p></div>
+<div class="we-s"><p><strong>(a) Energy conservation, top of hill → bottom of loop</strong> (drop of 30 m):</p>\[ mgh = \tfrac12 mv_b^2 \Rightarrow v_b = \sqrt{2gh} = \sqrt{2(9.8)(30)} = 24.2\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>(b) Top of the loop</strong> is at \(2r = 20\ \text{m}\), a net drop of \(30 - 20 = 10\ \text{m}\) from the start:</p>\[ v_t = \sqrt{2g(10)} = \sqrt{196} = 14.0\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>(c) Minimum speed at the top:</strong></p>\[ v_{\min} = \sqrt{gr} = \sqrt{9.8 \times 10} = 9.90\ \text{m s}^{-1} \]<p>Since \(14.0 > 9.90\), the track still has to push down on the cart, so it stays on.</p></div>
+<div class="we-s"><p><strong>(d) Top:</strong> seat force (normal force) and weight both point down (towards the centre):</p>\[ N_t = m\left(\frac{v_t^2}{r} - g\right) = 60\left(\frac{196}{10} - 9.8\right) = 60(9.8) = 588\ \text{N} \]<p>That is \(588/588 = 1.0\) g: the rider feels their normal weight, but upside down.</p></div>
+<div class="we-s"><p><strong>Bottom:</strong></p>\[ N_b = m\left(g + \frac{v_b^2}{r}\right) = 60\left(9.8 + \frac{588}{10}\right) = 60(68.6) = 4116\ \text{N} \]<p>That is \(4116/588 = 7.0\) g.</p></div>
+<div class="we-a"><p><strong>(a) 24 m s⁻¹ (b) 14 m s⁻¹ (c) 14 &gt; 9.9 m s⁻¹, so it stays on (d) top: 588 N downward (1.0 g); bottom: 4.1 × 10³ N upward (7.0 g).</strong></p></div>
+</div>
+
+<aside class="c-deep" data-title="Going deeper: why real loops are teardrop-shaped">
+<p>The circular loop above gives a painful 7 g at the bottom but only 1 g at the top. Real coasters use a <strong>clothoid</strong> (teardrop) loop: a tight radius at the top, where the cart is slow, and a large radius at the bottom, where it is fast. Since \(N\) depends on \(v^2/r\), making \(r\) large where \(v\) is large keeps the g-force survivable. It's a nice example of using \(F = mv^2/r\) in design.</p>
+</aside>
+
+<div class="we" data-title="Minimum release height for a loop" data-marks="3">
+<div class="we-q"><p>Show that a frictionless cart released from rest must start at least \(2.5r\) above the bottom of a loop of radius \(r\) to get around it.</p></div>
+<div class="we-s"><p><strong>Condition at the top:</strong> the minimum speed is \(v_t^2 = gr\).</p></div>
+<div class="we-s"><p><strong>Energy from release height \(h\) to the top (height \(2r\)):</strong></p>\[ mgh = mg(2r) + \tfrac12 m v_t^2 = mg(2r) + \tfrac12 m(gr) \]</div>
+<div class="we-s"><p><strong>Cancel \(mg\):</strong></p>\[ h = 2r + \tfrac12 r = 2.5r \]</div>
+<div class="we-a"><p><strong>\(h_{\min} = 2.5r\).</strong> Releasing from exactly \(2r\) is <em>not</em> enough: the cart would need zero speed at the top, but it needs \(\sqrt{gr}\) to stay on the track, so it would fall off before reaching the top.</p></div>
+</div>
+
+<div class="sim" data-sim="loop"></div>
+
+<div class="we" data-title="Car over a hump" data-marks="3">
+<div class="we-q"><p>A 1200 kg car drives over a hump in the road whose top is part of a circle of radius 20 m. (a) Find the normal force on the car at the top if its speed is 10 m s⁻¹. (b) Find the maximum speed at which the car keeps contact with the road.</p></div>
+<div class="we-s"><p><strong>(a)</strong> On top of the hump, weight points to the centre (down) and \(N\) points away (up):</p>\[ N = m\left(g - \frac{v^2}{r}\right) = 1200\left(9.8 - \frac{100}{20}\right) = 5.76\times10^3\ \text{N} \]</div>
+<div class="we-s"><p><strong>(b)</strong> Contact is lost when \(N = 0\):</p>\[ v_{\max} = \sqrt{gr} = \sqrt{9.8 \times 20} = 14\ \text{m s}^{-1} \]</div>
+<div class="we-a"><p><strong>(a) \(5.8\times10^3\ \text{N}\), less than the car's weight of \(1.18\times10^4\ \text{N}\) (b) 14 m s⁻¹ (about 50 km h⁻¹).</strong></p></div>
+</div>
+
+<h2>A ball on a string in a vertical circle</h2>
+<p>Replace \(N\) with tension \(T\). The string pulls towards the centre at both the top and the bottom.</p>
+<div class="eq">\[ \text{Top: } T + mg = \frac{mv_t^2}{r} \qquad \text{Bottom: } T - mg = \frac{mv_b^2}{r} \]<p>Tension is always greatest at the bottom (highest speed, and gravity works against it) and least at the top. This is why a string whirled vertically breaks at the bottom.</p></div>
+
+<div class="we" data-title="Ball on a string (hard)" data-marks="5">
+<div class="we-q"><p>A 0.30 kg ball on a 0.60 m string is whirled in a vertical circle. At the top its speed is 4.0 m s⁻¹. Find (a) the tension at the top, (b) the speed at the bottom and (c) the tension at the bottom. Ignore air resistance.</p></div>
+<div class="we-s"><p><strong>(a) Top:</strong></p>\[ T_t = \frac{mv_t^2}{r} - mg = \frac{0.30(16)}{0.60} - 0.30(9.8) = 8.00 - 2.94 = 5.06\ \text{N} \]</div>
+<div class="we-s"><p><strong>(b) Energy, top → bottom</strong> (drop of \(2r = 1.2\ \text{m}\)):</p>\[ v_b^2 = v_t^2 + 2g(2r) = 16 + 2(9.8)(1.2) = 39.5 \Rightarrow v_b = 6.29\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>(c) Bottom:</strong></p>\[ T_b = mg + \frac{mv_b^2}{r} = 2.94 + \frac{0.30(39.5)}{0.60} = 2.94 + 19.76 = 22.7\ \text{N} \]</div>
+<div class="we-a"><p><strong>(a) 5.1 N (b) 6.3 m s⁻¹ (c) 23 N.</strong> Neat check: \(T_b - T_t = 17.6\ \text{N} = 6mg\). That difference is always \(6mg\) for a full vertical circle on a string, whatever the speed.</p></div>
+</div>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A rollercoaster cart passes the top of a vertical loop (inside the track) at exactly the minimum speed needed to stay on the track. At this point, the force of the track on the cart is:</p></div>
+<ol><li>zero</li><li>equal to the cart's weight, upward</li><li>equal to the cart's weight, downward</li><li>twice the cart's weight, downward</li></ol>
+<div class="mcq-x"><p>At \(v_{\min} = \sqrt{gr}\), gravity alone provides \(mv^2/r\), so \(N = 0\). The rider feels weightless, but weight still acts.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>At the top of a loop (inside the track), the net force on a rollercoaster rider is directed:</p></div>
+<ol><li>upward, because the rider is pressed into the seat</li><li>zero, because the rider is momentarily not moving up or down</li><li>downward, towards the centre of the loop</li><li>horizontally, in the direction of motion</li></ol>
+<div class="mcq-x"><p>Circular motion always needs a net force towards the centre. At the top, the centre is below the rider. Being “pressed into the seat” (which is above them) is the normal force, which also points down.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A car drives over the crest of a hill at increasing speed. As its speed increases, the normal force on the car at the crest:</p></div>
+<ol><li>increases</li><li>decreases</li><li>stays equal to its weight</li><li>first increases then decreases</li></ol>
+<div class="mcq-x"><p>\(N = m(g - v^2/r)\): larger \(v\) means smaller \(N\), reaching zero at \(v = \sqrt{gr}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>A ball is whirled on a string in a vertical circle. The string is most likely to break when the ball is:</p></div>
+<ol><li>at the top</li><li>halfway up, moving upward</li><li>halfway down, moving downward</li><li>at the bottom</li></ol>
+<div class="mcq-x"><p>At the bottom the speed is highest and the tension must both support the weight and provide the centripetal force: \(T = mg + mv^2/r\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A frictionless cart is released from rest at a height of exactly \(2r\) above the bottom of a loop of radius \(r\). The cart will:</p></div>
+<ol><li>just reach the top of the loop with zero speed and continue around</li><li>go around the loop with speed \(\sqrt{gr}\) at the top</li><li>leave the track before it reaches the top of the loop</li><li>stop at the top of the loop and hang there</li></ol>
+<div class="mcq-x"><p>To reach the top it would need zero speed there, but staying on the track at the top needs at least \(\sqrt{gr}\). It loses contact before the top and falls. The minimum release height is \(2.5r\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A rider experiences “4 g” at the bottom of a loop. The rider's acceleration at that point is:</p></div>
+<ol><li>4g upward</li><li>3g upward</li><li>4g downward</li><li>5g upward</li></ol>
+<div class="mcq-x"><p>“4 g” means \(N = 4mg\). Net force \(= N - mg = 3mg\) upward, so \(a = 3g\) upward (towards the centre).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>A 500 kg cart passes the bottom of a loop of radius 12 m at 20 m s⁻¹. Calculate the normal force on the cart and the g-force experienced.</p></div>
+<div class="pq-s"><p>\(N = m(g + v^2/r) = 500(9.8 + 400/12) = 500(43.1) = 2.16\times10^4\ \text{N}\) upward.</p><p>g-force \(= 43.1/9.8 = 4.4\) g.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>A bucket of water is swung in a vertical circle of radius 0.90 m. (a) What is the minimum speed at the top so the water stays in? (b) If the bucket instead moves at 4.0 m s⁻¹ at the top, what force does the bucket base exert on 1.5 kg of water there?</p></div>
+<div class="pq-s"><p>(a) Water stays in if the bucket is still pushing on it, i.e. \(N \geq 0\): \(v_{\min} = \sqrt{gr} = \sqrt{9.8 \times 0.90} = 3.0\ \text{m s}^{-1}\).</p><p>(b) At the top: \(N + mg = mv^2/r \Rightarrow N = 1.5(16/0.90 - 9.8) = 1.5(17.8 - 9.8) = 12\ \text{N}\) downward (the base is above the water at the top).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="6">
+<div class="pq-q"><p>A cart (with rider, total 400 kg) is released from rest at point A, 25 m above the bottom of a circular loop of radius 8.0 m. Friction does 20 kJ of work against the cart between A and the top of the loop.</p><p>(a) Calculate the speed at the top of the loop. (b) Determine whether the cart stays on the track. (c) Calculate the normal force at the top.</p></div>
+<div class="pq-s"><p>(a) Height of the top of the loop: \(2r = 16\ \text{m}\), so the drop from A is 9.0 m. [1]</p><p>Energy: \(mg\Delta h - W_{\text{friction}} = \tfrac12 mv^2\): \(400(9.8)(9.0) - 20\,000 = 35\,280 - 20\,000 = 15\,280\ \text{J}\). [1]</p><p>\(v = \sqrt{2(15\,280)/400} = 8.74\ \text{m s}^{-1}\). [1]</p><p>(b) \(v_{\min} = \sqrt{9.8 \times 8.0} = 8.85\ \text{m s}^{-1}\). Since \(8.74 < 8.85\), the cart would <strong>not</strong> stay on the track by itself (it relies on the under-rail wheels). [2]</p><p>(c) \(N = m(v^2/r - g) = 400(76.4/8.0 - 9.8) = 400(9.55 - 9.8) = -100\ \text{N}\). The negative sign confirms the track would have to <em>pull</em> the cart towards the centre (about 100 N): the safety wheels do this. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Towards the centre is positive: top of loop \(N + mg = mv^2/r\); bottom \(N - mg = mv^2/r\); crest of hill \(mg - N = mv^2/r\).</li>
+  <li>Minimum speed at the top of a loop (or maximum over a crest): \(v = \sqrt{gr}\).</li>
+  <li>Use energy conservation for speeds; the top of a loop is \(2r\) above the bottom.</li>
+  <li>Apparent weight is \(N\); g-force \(= N/mg\); net force is \(N - mg\) at the bottom.</li>
+</ul>

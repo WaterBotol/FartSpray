@@ -1,0 +1,230 @@
+<!--
+id: u3-newton
+title: Newton's laws & free-body diagrams
+short: Newton's laws & free-body diagrams
+summary: The three laws, the forces you must recognise, free-body diagrams, resolving forces on slopes and in two dimensions, and apparent weight in lifts.
+keywords: newton, first law, second law, third law, inertia, net force, resultant, free body diagram, fbd, normal force, weight, friction, incline, slope, ramp, lift, elevator, apparent weight, components, resolve, equilibrium, action reaction
+dotpoints: investigate and apply theoretically and practically Newton's three laws of motion in situations where two or more coplanar forces act along a straight line and in two dimensions | apply the concepts of force due to gravity (\(F_g = mg\)) and normal force (\(F_N\))
+-->
+<h2>The three laws</h2>
+<p>Newton's laws link <strong>forces</strong> (pushes and pulls) to <strong>changes in motion</strong>. Almost every mechanics question in Unit 3 is one of these laws in disguise, so learn them in words as well as symbols.</p>
+
+<h3>First law: inertia</h3>
+<aside class="c-def"><p>An object stays at rest, or keeps moving at constant velocity (same speed, same direction), unless an <strong>unbalanced (net) external force</strong> acts on it.</p></aside>
+<p>The key word is <em>velocity</em>, not speed. If the direction changes, even at constant speed, there must be a net force. That is why every circular motion problem has a net force.</p>
+<p>Inertia is the tendency of an object to resist changes to its motion, and it depends only on mass. A passenger lurches forward when a bus brakes because their body keeps moving forward: no force pushes them forward. The seatbelt supplies the backward force that changes their motion.</p>
+
+<h3>Second law: \(F_{\text{net}} = ma\)</h3>
+<div class="eq"><div class="eq-label">Newton's second law</div>\[ \vec{F}_{\text{net}} = m\vec{a} \]<p>\(F_{\text{net}}\) is the vector sum of <em>all</em> forces on the object (N), \(m\) its mass (kg) and \(a\) its acceleration (m s⁻²). The acceleration is always in the same direction as the net force.</p></div>
+<p>Two consequences to remember:</p>
+<ul>
+  <li>If \(F_{\text{net}} = 0\) then \(a = 0\). The object is in <strong>equilibrium</strong>: at rest <em>or</em> moving at constant velocity.</li>
+  <li>The net force tells you the direction of the acceleration, <strong>not</strong> the direction of motion. A ball thrown upward is moving up while its net force (weight) points down.</li>
+</ul>
+
+<h3>Third law: force pairs</h3>
+<aside class="c-def"><p>If object A exerts a force on object B, then B exerts a force on A that is <strong>equal in magnitude and opposite in direction</strong>.</p></aside>
+<p>Third-law pairs always act on <strong>two different objects</strong>, are always the <strong>same type of force</strong>, and exist at the same instant. Because they act on different objects they never cancel each other out.</p>
+<aside class="c-trap" data-title="Trick alert: weight and normal force are not a third-law pair">
+<p>For a book resting on a table, the weight (Earth pulls book down) and the normal force (table pushes book up) are equal and opposite, but they are <strong>not</strong> a Newton's third law pair. Both act on the <em>same object</em> (the book), and they are different types of force. They are equal only because the book is in equilibrium; in an accelerating lift they are not equal at all.</p>
+<ul>
+  <li>Pair partner of the book's weight: the book pulls the <strong>Earth</strong> upward with an equal gravitational force.</li>
+  <li>Pair partner of the normal force: the book pushes <strong>down on the table</strong> with an equal contact force.</li>
+</ul>
+</aside>
+
+<h2>Forces you need to recognise</h2>
+<div class="tbl"><table>
+<thead><tr><th>Force</th><th>Symbol</th><th>Direction</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Weight (gravity)</td><td>\(F_g = mg\)</td><td>Straight down (towards the centre of Earth)</td><td>Near Earth's surface \(g = 9.8\ \text{N kg}^{-1}\). Acts at the centre of mass.</td></tr>
+<tr><td>Normal force</td><td>\(F_N\) or \(N\)</td><td>Perpendicular to the contact surface, pushing away</td><td>A contact force. It adjusts to whatever value stops the object sinking into the surface. It is <strong>not</strong> always equal to \(mg\).</td></tr>
+<tr><td>Tension</td><td>\(T\)</td><td>Along the string, pulling away from the object</td><td>A string can only pull. An ideal (light, inextensible) string has the same tension all the way along.</td></tr>
+<tr><td>Friction</td><td>\(F_f\)</td><td>Parallel to the surface, opposing sliding (or attempted sliding)</td><td>In VCE you are given the friction value or treat it qualitatively.</td></tr>
+<tr><td>Air resistance / drag</td><td>\(F_{\text{air}}\)</td><td>Opposite to the velocity</td><td>Increases with speed. Usually ignored unless stated.</td></tr>
+<tr><td>Applied / driving force</td><td>\(F\)</td><td>As given</td><td>For a car, the driving force is friction from the road on the tyres, pointing forwards.</td></tr>
+</tbody></table></div>
+
+<h2>Drawing free-body diagrams</h2>
+<p>A free-body diagram (FBD) shows <strong>one object</strong> and <strong>every force acting on it</strong>, each drawn as an arrow from the object with length roughly proportional to its size.</p>
+<ol>
+  <li>Isolate one object. Draw it as a box or dot.</li>
+  <li>Add weight first (always there near Earth), then one contact force for every surface or string touching it.</li>
+  <li>Never draw forces the object exerts on other things.</li>
+  <li>Never draw “net force”, “centripetal force” or “\(ma\)” as a separate arrow. Those are the <em>result</em> of the real forces.</li>
+  <li>Choose axes along and perpendicular to the acceleration. On a slope, that means along and perpendicular to the slope.</li>
+</ol>
+
+<figure class="fig">
+<svg viewBox="0 0 380 230" width="380" role="img" aria-label="Free-body diagram of a block on an inclined plane showing weight, normal force, friction and weight components">
+  <polygon points="30,205 340,205 340,60" class="f-surf2" />
+  <polyline points="30,205 340,205 340,60 30,205" class="s-mut"/>
+  <path d="M72 205 A42 42 0 0 0 68.1 187.2" class="s-mut"/>
+  <text x="78" y="199" class="t-mut">θ</text>
+  <g transform="translate(200,126) rotate(-25)">
+    <rect x="-26" y="-38" width="52" height="38" class="f-surf3" stroke="currentColor" style="stroke:var(--ink);stroke-width:1.4"/>
+  </g>
+  <line x1="192" y1="109" x2="192" y2="192" class="s-w" marker-end="url(#ah-w)"/>
+  <text x="198" y="190" class="t-w t-b">mg</text>
+  <line x1="192" y1="109" x2="161.4" y2="43.4" class="s-n" marker-end="url(#ah-n)"/>
+  <text x="140" y="42" class="t-n t-b">N</text>
+  <line x1="192" y1="109" x2="239" y2="87.1" class="s-f" marker-end="url(#ah-f)"/>
+  <text x="240" y="80" class="t-f t-b">F<tspan dy="3" font-size="10">f</tspan></text>
+  <line x1="192" y1="109" x2="160.5" y2="123.7" class="s-dash" marker-end="url(#ah-mut)"/>
+  <text x="96" y="140" class="t-mut t-sm">mg sin θ</text>
+  <line x1="192" y1="109" x2="222.6" y2="174.7" class="s-dash" marker-end="url(#ah-mut)"/>
+  <text x="230" y="170" class="t-mut t-sm">mg cos θ</text>
+</svg>
+<figcaption>Block on a rough slope. Weight is split into components along the slope (\(mg\sin\theta\)) and into the slope (\(mg\cos\theta\)). The dashed components replace \(mg\); don't count both.</figcaption>
+</figure>
+
+<h2>Resolving forces into components</h2>
+<p>Forces are vectors. When forces are not all along one line, split each into two perpendicular components and apply \(F_{\text{net}} = ma\) separately along each axis.</p>
+<div class="eq"><div class="eq-label">Components of a force \(F\) at angle \(\theta\) to the x-axis</div>\[ F_x = F\cos\theta \qquad F_y = F\sin\theta \]\[ F = \sqrt{F_x^2 + F_y^2}, \qquad \tan\theta = \frac{F_y}{F_x} \]</div>
+
+<h3>Objects on inclined planes</h3>
+<p>Tilt your axes so that x runs along the slope. Then the normal force has no x-component, and only weight needs resolving:</p>
+<div class="eq">\[ \text{along the slope: } mg\sin\theta \qquad \text{into the slope: } mg\cos\theta \]\[ \text{frictionless slope: } a = g\sin\theta, \qquad N = mg\cos\theta \]</div>
+<aside class="c-key"><p>Sanity-check sin vs cos with extreme angles. At \(\theta = 0^\circ\) (flat) the along-slope component must be zero, and \(\sin 0^\circ = 0\). At \(\theta = 90^\circ\) (vertical) the object free-falls, and \(g\sin 90^\circ = g\).</p></aside>
+
+<div class="we" data-title="Pulling a box with an angled rope" data-marks="4">
+<div class="we-q"><p>A 12 kg box is dragged across a horizontal floor by a rope angled 30° above the horizontal. The tension in the rope is 50 N and friction on the box is 20 N.</p><p>(a) Calculate the acceleration of the box. (b) Calculate the normal force on the box.</p></div>
+<div class="we-t"><p>Newton's second law works separately in perpendicular directions. Horizontally the box speeds up, so the horizontal forces are unbalanced; vertically it doesn't move, so the vertical forces must balance. A force at an angle contributes to both directions through its components.</p></div>
+<div class="we-s" data-f="F_x = F\cos\theta,\ F_y = F\sin\theta"><p><strong>Resolve the tension.</strong> Only the horizontal component drags the box forward:</p>\[ T_x = 50\cos 30^\circ = 43.3\ \text{N}, \]\[ T_y = 50\sin 30^\circ = 25\ \text{N (upward)} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Horizontal: apply \(F_{\text{net}} = ma\).</strong></p>\[ a = \frac{T_x - F_f}{m} = \frac{43.3 - 20}{12} = 1.94\ \text{m s}^{-2} \]</div>
+<div class="we-s" data-f="\Sigma F_y = 0"><p><strong>Vertical: no vertical acceleration, so forces balance.</strong> The rope is lifting part of the weight, so the floor pushes up less:</p>\[ N + T_y = mg \Rightarrow N = 12(9.8) - 25 = 117.6 - 25 = 92.6\ \text{N} \]</div>
+<div class="we-a"><p><strong>(a) \(a \approx 1.9\ \text{m s}^{-2}\) in the direction of the pull. (b) \(N \approx 93\ \text{N}\) upward.</strong> The normal force is less than \(mg\) because the rope carries some of the weight.</p></div>
+</div>
+
+<div class="we" data-title="Block sliding down a ramp" data-marks="4">
+<div class="we-q"><p>A 5.0 kg block slides down a ramp inclined at 25° to the horizontal.</p><p>(a) Find its acceleration if the ramp is frictionless. (b) Find the normal force. (c) Find the acceleration if a constant friction force of 8.0 N acts.</p></div>
+<div class="we-t"><p>On a slope, choose axes along and perpendicular to the surface. Weight splits into \(mg\sin\theta\) down the slope (which drives the motion) and \(mg\cos\theta\) into the slope (balanced by the normal force, since nothing accelerates into the surface).</p></div>
+<div class="we-s" data-f="F_\parallel = mg\sin\theta"><p><strong>Weight component along the slope:</strong></p>\[ mg\sin\theta = 5.0 \times 9.8 \times \sin 25^\circ = 20.7\ \text{N} \]</div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m}"><p><strong>(a) Frictionless:</strong> this is the only force along the slope.</p>\[ a = \frac{20.7}{5.0} = 4.14\ \text{m s}^{-2} \quad (= g\sin 25^\circ) \]</div>
+<div class="we-s" data-f="N = mg\cos\theta"><p><strong>(b) Perpendicular to the slope nothing accelerates,</strong> so</p>\[ N = mg\cos\theta = 5.0 \times 9.8 \times \cos 25^\circ = 44.4\ \text{N} \]</div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m}"><p><strong>(c) With friction</strong> acting up the slope (opposing the slide):</p>\[ a = \frac{mg\sin\theta - F_f}{m} = \frac{20.7 - 8.0}{5.0} = 2.54\ \text{m s}^{-2} \]</div>
+<div class="we-a"><p><strong>(a) 4.1 m s⁻² down the slope (b) 44 N perpendicular to the slope (c) 2.5 m s⁻² down the slope.</strong></p></div>
+</div>
+
+<h3>Coplanar forces in two dimensions</h3>
+<p>When several forces act in a plane, add them as vectors (tip to tail) or add components. If the object is in equilibrium the components in each direction sum to zero, which lets you find unknown forces. Hanging signs and ropes at angles are covered on the <a href="#u3-tension">Tension</a> page.</p>
+
+<h2>Apparent weight and lifts</h2>
+<p>Scales measure the <strong>normal force</strong>, not your weight. The normal force is your <strong>apparent weight</strong>. Your true weight \(mg\) never changes in a lift.</p>
+<figure class="fig">
+<svg viewBox="0 0 450 215" width="450" role="img" aria-label="Three free-body diagrams of a person in a lift: accelerating upward, constant velocity, accelerating downward">
+  <g>
+    <rect x="50" y="78" width="40" height="46" rx="6" class="f-surf3" style="stroke:var(--ink);stroke-width:1.2"/>
+    <line x1="70" y1="78" x2="70" y2="18" class="s-n" marker-end="url(#ah-n)"/><text x="76" y="30" class="t-n t-b">N</text>
+    <line x1="70" y1="124" x2="70" y2="170" class="s-w" marker-end="url(#ah-w)"/><text x="76" y="168" class="t-w t-b">mg</text>
+    <line x1="112" y1="120" x2="112" y2="84" class="s-net" marker-end="url(#ah-net)"/><text x="118" y="105" class="t-net t-b">a</text>
+    <text x="75" y="196" text-anchor="middle" class="t-sm t-b">a upward</text>
+    <text x="75" y="210" text-anchor="middle" class="t-sm t-mut">N &gt; mg (feel heavy)</text>
+  </g>
+  <g transform="translate(150,0)">
+    <rect x="50" y="78" width="40" height="46" rx="6" class="f-surf3" style="stroke:var(--ink);stroke-width:1.2"/>
+    <line x1="70" y1="78" x2="70" y2="32" class="s-n" marker-end="url(#ah-n)"/><text x="76" y="44" class="t-n t-b">N</text>
+    <line x1="70" y1="124" x2="70" y2="170" class="s-w" marker-end="url(#ah-w)"/><text x="76" y="168" class="t-w t-b">mg</text>
+    <text x="75" y="196" text-anchor="middle" class="t-sm t-b">a = 0 (any constant velocity)</text>
+    <text x="75" y="210" text-anchor="middle" class="t-sm t-mut">N = mg</text>
+  </g>
+  <g transform="translate(300,0)">
+    <rect x="50" y="78" width="40" height="46" rx="6" class="f-surf3" style="stroke:var(--ink);stroke-width:1.2"/>
+    <line x1="70" y1="78" x2="70" y2="52" class="s-n" marker-end="url(#ah-n)"/><text x="76" y="62" class="t-n t-b">N</text>
+    <line x1="70" y1="124" x2="70" y2="170" class="s-w" marker-end="url(#ah-w)"/><text x="76" y="168" class="t-w t-b">mg</text>
+    <line x1="112" y1="84" x2="112" y2="120" class="s-net" marker-end="url(#ah-net)"/><text x="118" y="105" class="t-net t-b">a</text>
+    <text x="75" y="196" text-anchor="middle" class="t-sm t-b">a downward</text>
+    <text x="75" y="210" text-anchor="middle" class="t-sm t-mut">N &lt; mg (feel light)</text>
+  </g>
+</svg>
+<figcaption>Only the acceleration matters, never the direction of travel.</figcaption>
+</figure>
+<div class="eq"><div class="eq-label">Normal force in a lift (up positive)</div>\[ N - mg = ma \quad\Rightarrow\quad N = m(g + a) \]<p>Use \(a > 0\) for upward acceleration and \(a < 0\) for downward acceleration. If \(a = -g\) (free fall), \(N = 0\) and you feel weightless.</p></div>
+
+<aside class="c-trap" data-title="Trick alert: moving down does not mean feeling light">
+<p>A lift <em>moving downward but slowing down</em> is accelerating <strong>upward</strong>, so you feel <strong>heavier</strong>. A lift moving upward at constant speed has \(a = 0\), so the scale reads your true weight. Always ask “which way is the acceleration?”, never “which way is it moving?”.</p>
+</aside>
+
+<div class="we" data-title="Scales in a lift" data-marks="3">
+<div class="we-q"><p>A 60 kg student stands on bathroom scales in a lift. The lift is <em>moving downward</em> and <em>slowing down</em> at 1.5 m s⁻². What reading (in newtons, and in the “kg” the scale displays) do the scales show?</p></div>
+<div class="we-t"><p>Scales read the normal force, not your weight. In an accelerating lift the normal force must provide both support and the extra (or reduced) force needed to accelerate you, so \(N - mg = ma\). What matters is the direction of the acceleration, not of the motion.</p></div>
+<div class="we-s" data-f="\vec a \text{ opposite } \vec v \text{ when slowing}"><p><strong>Direction of acceleration.</strong> Moving down and slowing means the acceleration is opposite to the velocity: <strong>upward</strong>, so \(a = +1.5\ \text{m s}^{-2}\).</p></div>
+<div class="we-s" data-f="N = m(g + a)"><p><strong>Apply \(N = m(g + a)\):</strong></p>\[ N = 60(9.8 + 1.5) = 678\ \text{N} \]</div>
+<div class="we-s" data-f="\text{reading} = \dfrac{N}{g}"><p><strong>Scale display.</strong> Scales divide the force by 9.8:</p>\[ \frac{678}{9.8} = 69.2\ \text{“kg”} \]</div>
+<div class="we-a"><p><strong>678 N (the scale shows about 69 kg).</strong> This is exactly the same as for a lift moving <em>up</em> and <em>speeding up</em> at 1.5 m s⁻².</p></div>
+</div>
+
+<h2>Solving any Newton's-law problem</h2>
+<ol>
+  <li>Draw an FBD for each object separately.</li>
+  <li>Choose a positive direction (usually the direction of acceleration).</li>
+  <li>Resolve any angled forces into components.</li>
+  <li>Write \(F_{\text{net}} = ma\) along the direction of acceleration, and \(\Sigma F = 0\) perpendicular to it.</li>
+  <li>Solve, then check the sign and size make sense.</li>
+</ol>
+<aside class="c-exam"><p>In “show that” or “explain” questions, name each force and the object exerting it, e.g. “the normal force from the seat on the rider”. Answers like “the force” or “gravity pushes” lose marks. Always write the equation you use before substituting.</p></aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A book rests on a table. According to Newton's third law, the reaction to the gravitational force of Earth on the book is:</p></div>
+<ol><li>the normal force of the table on the book</li><li>the force of the book on the table</li><li>the gravitational force of the book on Earth</li><li>the friction force of the table on the book</li></ol>
+<div class="mcq-x"><p>Third-law pairs involve the same two objects and the same type of force. Earth pulls the book (gravity), so the book pulls Earth (gravity) with equal magnitude. The normal force (A) is a different type of force on the same object: it is balanced with weight only because \(a = 0\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A car travels along a straight, level highway at a constant 100 km h⁻¹. Which statement about the forces on the car is correct?</p></div>
+<ol><li>The driving force is larger than the resistive forces.</li><li>The net force on the car is zero.</li><li>There is a net forward force that keeps the car moving.</li><li>There are no horizontal forces on the car.</li></ol>
+<div class="mcq-x"><p>Constant velocity means \(a = 0\), so \(F_{\text{net}} = 0\) (first law). The driving force exactly balances drag and rolling resistance. No net force is needed to <em>keep</em> something moving.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A person stands on scales in a lift that is moving <strong>upward</strong> but <strong>slowing down</strong>. Compared to their true weight, the scales read:</p></div>
+<ol><li>less than their true weight</li><li>equal to their true weight</li><li>more than their true weight</li><li>zero</li></ol>
+<div class="mcq-x"><p>Moving up and slowing means the acceleration is <strong>downward</strong>. Then \(N = m(g + a)\) with \(a < 0\), so \(N < mg\). The direction of travel is a distractor.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Two horizontal forces act on a 2.0 kg puck on frictionless ice: 3.0 N east and 4.0 N north. The magnitude of the puck's acceleration is:</p></div>
+<ol><li>0.50 m s⁻²</li><li>1.5 m s⁻²</li><li>3.5 m s⁻²</li><li>2.5 m s⁻²</li></ol>
+<div class="mcq-x"><p>\(F_{\text{net}} = \sqrt{3^2 + 4^2} = 5.0\ \text{N}\) (at 53° north of east), so \(a = 5.0/2.0 = 2.5\ \text{m s}^{-2}\). Option C adds the forces as if they were in a line.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A block slides down a frictionless slope. As the angle of the slope is increased, the normal force on the block:</p></div>
+<ol><li>increases</li><li>stays the same, because the mass has not changed</li><li>decreases</li><li>becomes equal to \(mg\)</li></ol>
+<div class="mcq-x"><p>\(N = mg\cos\theta\). As \(\theta\) increases, \(\cos\theta\) decreases, so \(N\) decreases. It equals \(mg\) only on a flat surface (\(\theta = 0\)).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>An astronaut far from any planet throws a spanner. After it leaves her hand, the spanner will:</p></div>
+<ol><li>slow down and stop, because no force is pushing it</li><li>keep moving in a straight line at constant speed</li><li>accelerate, because it was given a force</li><li>curve back towards the astronaut</li></ol>
+<div class="mcq-x"><p>With no net force the spanner keeps its velocity (first law). The force from her hand acted only while she was in contact. Things only “naturally stop” on Earth because friction and drag act.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="F_\parallel = mg\sin\theta ;; F_{\text{net}} = ma">
+<div class="pq-q"><p>A 1500 kg car brakes while travelling down a hill inclined at 10° to the horizontal. The braking (friction) force is 6000 N. Ignoring air resistance, calculate the car's deceleration.</p></div>
+<div class="pq-s"><p>Take down the slope as positive. Weight component down the slope: \(mg\sin 10^\circ = 1500 \times 9.8 \times 0.174 = 2.55\times10^3\ \text{N}\).</p><p>Braking acts up the slope: \(F_{\text{net}} = 2553 - 6000 = -3447\ \text{N}\).</p><p>\(a = \dfrac{-3447}{1500} = -2.3\ \text{m s}^{-2}\), so the car decelerates at <strong>2.3 m s⁻²</strong>. Common error: forgetting that gravity helps the car down the hill, giving 4.0 m s⁻².</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="F_{\text{net}} = ma ;; N - mg = ma">
+<div class="pq-q"><p>A lift cable snaps and the lift falls freely. Use Newton's second law to explain why a passenger standing on scales in the lift would read zero, even though gravity still acts on them.</p></div>
+<div class="pq-s"><p>In free fall the passenger's acceleration is \(g\) downward. Newton's second law (up positive): \(N - mg = m(-g)\), so \(N = 0\).</p><p>Gravity (weight \(mg\)) still acts: it provides <em>all</em> of the passenger's acceleration, so the scales don't need to push. The scales read the normal force, so they read zero. The passenger experiences <strong>apparent weightlessness</strong>, not an absence of gravity.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4" data-f="F_\parallel = mg\sin\theta ;; F_{\text{net}} = ma">
+<div class="pq-q"><p>A 40 kg crate is pushed up a rough ramp inclined at 20° by a force of 250 N acting <em>parallel to the ramp</em>. Friction on the crate is 60 N.</p><p>(a) Calculate the acceleration of the crate. (b) The push is removed while the crate is still moving up the ramp. Calculate its acceleration now.</p></div>
+<div class="pq-s"><p>Weight component down the ramp: \(mg\sin 20^\circ = 40 \times 9.8 \times 0.342 = 134\ \text{N}\).</p><p>(a) Moving up the ramp, friction acts down the ramp. \(F_{\text{net}} = 250 - 134 - 60 = 56\ \text{N}\), so \(a = 56/40 = 1.4\ \text{m s}^{-2}\) up the ramp.</p><p>(b) Still moving up, so friction <strong>still acts down</strong> the ramp: \(F_{\text{net}} = -134 - 60 = -194\ \text{N}\), so \(a = -194/40 = -4.9\ \text{m s}^{-2}\), i.e. 4.9 m s⁻² down the ramp (slowing it). Trap: friction opposes the <em>direction of sliding</em>, so it flips only once the crate starts sliding back down.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="F_{\text{net}} = ma">
+<div class="pq-q"><p>A student claims: “When I push a heavy box and it doesn't move, it is because the box pushes back on me with an equal force, so the forces cancel.” Evaluate this claim using Newton's laws.</p></div>
+<div class="pq-s"><p>The claim is incorrect. The box pushing back on the student is the third-law partner of the student's push, but it acts on the <strong>student</strong>, not on the box, so it cannot cancel a force on the box. [1]</p><p>The box stays still because the forces <strong>on the box</strong> are balanced: the student's push is matched by static friction from the floor on the box (first law, \(F_{\text{net}} = 0\)). [1]</p><p>Third-law pairs act on different objects and so never cancel; balanced forces act on the same object. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>No net force → constant velocity (which includes at rest). Net force → acceleration in the direction of the net force.</li>
+  <li>Third-law pairs act on different objects and never cancel. Weight and normal force are <em>not</em> a pair.</li>
+  <li>On a slope: \(mg\sin\theta\) along, \(mg\cos\theta\) into the slope.</li>
+  <li>Apparent weight = normal force = \(m(g + a)\), with \(a\) positive upward. Direction of motion is irrelevant.</li>
+</ul>

@@ -1,0 +1,134 @@
+<!--
+id: functional-eq
+title: Functional equations, odd & even functions
+short: Functional equations
+summary: Recognising which function families satisfy f(x + y) = f(x)f(y), f(xy) = f(x) + f(y) and similar equations, odd and even functions, self-inverse functions, and the quick number-testing strategy for multiple choice.
+keywords: functional equation, f(x+y), f(xy), f(2x), odd function, even function, symmetry, self-inverse, f(f(x)), exponential property, logarithmic property, linear, test values, multiple choice strategy
+dotpoints: functional equations and the properties of families of functions | odd and even functions and symmetry
+-->
+<h2>What's a functional equation?</h2>
+<p>A functional equation describes a <em>property</em> a function has for all inputs, such as \(f(x + y) = f(x)f(y)\). VCAA usually asks “which function satisfies…” in multiple choice, or “show that \(f\) satisfies…” in short answer.</p>
+<div class="tbl"><table>
+<thead><tr><th>Property (for all \(x, y\) in the domain)</th><th>Satisfied by</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>\(f(x + y) = f(x) + f(y)\)</td><td>\(f(x) = kx\)</td><td>\(k(x + y) = kx + ky\)</td></tr>
+<tr><td>\(f(x + y) = f(x)\,f(y)\)</td><td>\(f(x) = e^{kx}\) (or \(a^x\))</td><td>index law \(a^{x + y} = a^x a^y\)</td></tr>
+<tr><td>\(f(xy) = f(x) + f(y)\)</td><td>\(f(x) = k\log_e x\)</td><td>log law \(\log(xy) = \log x + \log y\)</td></tr>
+<tr><td>\(f(xy) = f(x)\,f(y)\)</td><td>\(f(x) = x^n\)</td><td>\((xy)^n = x^n y^n\)</td></tr>
+<tr><td>\(f(2x) = 2f(x)\)</td><td>\(f(x) = kx\)</td><td>\(k(2x) = 2(kx)\)</td></tr>
+<tr><td>\(f(-x) = f(x)\)</td><td><strong>even</strong>: \(x^2, |x|, \cos x, e^x + e^{-x}\)</td><td>symmetric in the \(y\)-axis</td></tr>
+<tr><td>\(f(-x) = -f(x)\)</td><td><strong>odd</strong>: \(x^3, \sin x, \tan x, \frac1x\)</td><td>point symmetry about the origin</td></tr>
+<tr><td>\(f(f(x)) = x\)</td><td>self-inverse: \(\frac1x\), \(c - x\), some hyperbolas</td><td>graph symmetric in \(y = x\)</td></tr>
+</tbody></table></div>
+
+<aside class="c-exam" data-title="The number-test strategy"><p>In multiple choice, don't do algebra first. Pick easy values (\(x = 1,\ y = 2\), or \(x = y = 0\)) and test each option. Usually three options fail on the first test. Then prove the survivor in your head.</p></aside>
+
+<div class="we" data-title="Which function satisfies f(x + y) = f(x)f(y)?" data-marks="1">
+<div class="we-q"><p>Which one of \(f(x) = 3x\), \(f(x) = x^3\), \(f(x) = e^{3x}\), \(f(x) = \log_e(3x)\) satisfies \(f(x + y) = f(x)f(y)\) for all real \(x, y\)?</p></div>
+<div class="we-t"><p>Testing simple values (like 0 and 1) quickly rules out functions that fail a functional equation. The exponential property \(e^{a + b} = e^ae^b\) is what turns sums into products.</p></div>
+<div class="we-s" data-f="\text{test } x = y = 0"><p>Test \(x = y = 0\): we need \(f(0) = f(0)^2\), so \(f(0) = 0\) or 1. \(\log_e(0)\) is undefined, so D is out.</p></div>
+<div class="we-s" data-f="\text{test } x = y = 1"><p>Test \(x = y = 1\): \(3x\) gives \(6\) vs \(9\) ✗; \(x^3\) gives \(8\) vs \(1\) ✗; \(e^{3x}\) gives \(e^6\) vs \(e^3 \cdot e^3 = e^6\) ✓.</p></div>
+<div class="we-a" data-f="e^{a + b} = e^ae^b"><p><strong>\(f(x) = e^{3x}\):</strong> \(e^{3(x + y)} = e^{3x}e^{3y}\) for all \(x, y\).</p></div>
+</div>
+
+<div class="we" data-title="Finding a parameter" data-marks="2">
+<div class="we-q"><p>\(f(x) = e^{kx}\) satisfies \(f(x + 1) = 2f(x)\) for all \(x\). Find \(k\).</p></div>
+<div class="we-t"><p>Use index laws to split the exponential, then divide by the common factor (which is never zero) to isolate the parameter.</p></div>
+<div class="we-s" data-f="e^{a + b} = e^ae^b"><p>\(e^{k(x + 1)} = e^{kx}e^k\), so the condition is \(e^{kx}e^k = 2e^{kx}\).</p></div>
+<div class="we-a" data-f="e^k = 2 \iff k = \log_e 2"><p>Divide by \(e^{kx}\) (never 0): \(e^k = 2\), so <strong>\(k = \log_e 2\)</strong>.</p></div>
+</div>
+
+<div class="we" data-title="Showing a symmetry property" data-marks="2">
+<div class="we-q"><p>Let \(f(x) = x^2 - 2x\). Show that \(f(1 + h) = f(1 - h)\) for all \(h\), and interpret this.</p></div>
+<div class="we-t"><p>\(f(a + h) = f(a - h)\) for every \(h\) means points equally far either side of \(x = a\) have the same height: the graph is symmetric about \(x = a\).</p></div>
+<div class="we-s" data-f="\text{expand } f(1 + h)"><p>\(f(1 + h) = (1 + h)^2 - 2(1 + h) = 1 + 2h + h^2 - 2 - 2h = h^2 - 1\).</p></div>
+<div class="we-s" data-f="\text{expand } f(1 - h)"><p>\(f(1 - h) = (1 - h)^2 - 2(1 - h) = 1 - 2h + h^2 - 2 + 2h = h^2 - 1\). Equal. ✓</p></div>
+<div class="we-a"><p>Points the same distance either side of \(x = 1\) have the same height: <strong>the graph is symmetric about the line \(x = 1\)</strong> (its axis of symmetry).</p></div>
+</div>
+
+<div class="we" data-title="Linear functions with f(f(x)) = 4x + 3 (hard)" data-marks="3">
+<div class="we-q"><p>Find all linear functions \(f(x) = ax + b\) such that \(f(f(x)) = 4x + 3\) for all \(x\).</p></div>
+<div class="we-t"><p>If two polynomials are equal for all \(x\), their corresponding coefficients must be equal. That gives equations for the unknowns.</p></div>
+<div class="we-s" data-f="f(f(x)) = a(ax + b) + b"><p>\(f(f(x)) = a(ax + b) + b = a^2x + ab + b\).</p></div>
+<div class="we-s" data-f="\text{equate coefficients}"><p>Equate coefficients: \(a^2 = 4\) and \(b(a + 1) = 3\).</p></div>
+<div class="we-a"><p>\(a = 2 \Rightarrow b = 1\); \(a = -2 \Rightarrow -b = 3 \Rightarrow b = -3\). <strong>\(f(x) = 2x + 1\) or \(f(x) = -2x - 3\).</strong> Most students miss the second one.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert">
+<ul>
+  <li><strong>“For all \(x\)” means one counter-example kills an option</strong>, but one success doesn't prove it.</li>
+  <li><strong>Watch the domain.</strong> \(f(x) = \log_e x\) satisfies \(f(xy) = f(x) + f(y)\) only for \(x, y > 0\).</li>
+  <li><strong>Neither odd nor even is the usual case.</strong> \(e^x\), \(x^2 + x\) and \(\log_e x\) are neither.</li>
+  <li><strong>A function can be odd and still have \(f(0)\) undefined</strong> (e.g. \(\frac1x\)). If an odd function is defined at 0, then \(f(0) = 0\).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Which function is odd?</p></div>
+<ol><li>\(f(x) = x^2 + x\)</li><li>\(f(x) = \cos x\)</li><li>\(f(x) = e^{-x}\)</li><li>\(f(x) = x^3 - x\)</li></ol>
+<div class="mcq-x"><p>\(f(-x) = -x^3 + x = -(x^3 - x) = -f(x)\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Which function satisfies \(f(xy) = f(x) + f(y)\) for all \(x, y > 0\)?</p></div>
+<ol><li>\(f(x) = e^x\)</li><li>\(f(x) = 5\log_e x\)</li><li>\(f(x) = x + 1\)</li><li>\(f(x) = \sqrt{x}\)</li></ol>
+<div class="mcq-x"><p>\(5\log_e(xy) = 5\log_e x + 5\log_e y\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>If \(f(x) = 2^x\), then \(f(x + 2)\) equals</p></div>
+<ol><li>\(4f(x)\)</li><li>\(f(x) + 4\)</li><li>\(2f(x)\)</li><li>\(f(x) + 2\)</li></ol>
+<div class="mcq-x"><p>\(2^{x + 2} = 2^x \cdot 2^2 = 4f(x)\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Which function satisfies \(f(2x) = 2f(x)\) for all real \(x\)?</p></div>
+<ol><li>\(f(x) = x^2\)</li><li>\(f(x) = x + 2\)</li><li>\(f(x) = -3x\)</li><li>\(f(x) = \log_e|x|\)</li></ol>
+<div class="mcq-x"><p>\(-3(2x) = 2(-3x)\) ✓. \(x^2\) gives \(4x^2\); \(x + 2\) gives \(2x + 2 \ne 2x + 4\); \(\log_e|2x| = \log_e 2 + \log_e|x|\) (and it's undefined at 0 anyway).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Which function is even?</p></div>
+<ol><li>\(f(x) = \sin x\)</li><li>\(f(x) = e^x + e^{-x}\)</li><li>\(f(x) = e^x - e^{-x}\)</li><li>\(f(x) = (x + 1)^2\)</li></ol>
+<div class="mcq-x"><p>\(f(-x) = e^{-x} + e^x = f(x)\). C is odd; D is symmetric about \(x = -1\), not the \(y\)-axis.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>\(f(x) = kx^2\) satisfies \(f(x + 1) - f(x) = 6x + 3\) for all \(x\). The value of \(k\) is</p></div>
+<ol><li>6</li><li>1</li><li>2</li><li>3</li></ol>
+<div class="mcq-x"><p>\(k(x + 1)^2 - kx^2 = k(2x + 1) = 6x + 3 \Rightarrow k = 3\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>Which function satisfies \(f(f(x)) = x\) for all \(x\) in its domain?</p></div>
+<ol><li>\(f(x) = 5 - x\)</li><li>\(f(x) = x^3\)</li><li>\(f(x) = 2x\)</li><li>\(f(x) = e^x\)</li></ol>
+<div class="mcq-x"><p>\(f(f(x)) = 5 - (5 - x) = x\). Its graph is a line perpendicular to \(y = x\), so reflecting it in \(y = x\) gives the same line.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="\text{even: } f(-x) = f(x) ;; \sin(-x) = -\sin x">
+<div class="pq-q"><p>Show that \(f(x) = x\sin x\) is even.</p></div>
+<div class="pq-s"><p>\(f(-x) = (-x)\sin(-x) = (-x)(-\sin x) = x\sin x = f(x)\). An odd function times an odd function is even.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="\log_e(x^n) = n\log_e x\ (x &gt; 0)">
+<div class="pq-q"><p>Let \(g(x) = \log_e x\). Show that \(g(x^2) - 2g(x) = 0\) for \(x > 0\). Why does the result fail for \(x < 0\)?</p></div>
+<div class="pq-s"><p>\(g(x^2) = \log_e x^2 = 2\log_e x = 2g(x)\) for \(x > 0\).</p><p>For \(x < 0\), \(g(x^2)\) is defined but \(g(x)\) is not, so the equation has no meaning there.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{substitute } x = y = 0,\ \text{then } y = -x ;; \text{odd: } f(-x) = -f(x)">
+<div class="pq-q"><p>A function satisfies \(f(x + y) = f(x) + f(y)\) for all real \(x\) and \(y\). Show that (a) \(f(0) = 0\), and (b) \(f\) is odd.</p></div>
+<div class="pq-s"><p>(a) Let \(x = y = 0\): \(f(0) = 2f(0) \Rightarrow f(0) = 0\). [1]</p><p>(b) Let \(y = -x\): \(f(0) = f(x) + f(-x)\), so \(0 = f(x) + f(-x)\) and \(f(-x) = -f(x)\). [2]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="\text{odd: } f(-x) = -f(x) ;; e^{\log_e a} = a">
+<div class="pq-q"><p>Let \(h(x) = \dfrac{e^x - e^{-x}}{2}\). (a) Show that \(h\) is odd. (b) Show that \(h(2x) = 2h(x)\sqrt{1 + h(x)^2}\) when \(x = 0\) and \(x = \log_e 2\).</p></div>
+<div class="pq-s"><p>(a) \(h(-x) = \frac{e^{-x} - e^x}{2} = -h(x)\). [1]</p><p>(b) \(x = 0\): both sides are 0. \(x = \log_e 2\): \(h(\log_e 2) = \frac{2 - \frac12}{2} = \frac34\), and \(h(2\log_e 2) = h(\log_e 4) = \frac{4 - \frac14}{2} = \frac{15}{8}\). [1]</p><p>RHS \(= 2 \cdot \frac34 \sqrt{1 + \frac{9}{16}} = \frac32 \cdot \frac54 = \frac{15}{8}\). ✓ [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Sums inside → products outside: exponential. Products inside → sums outside: log. Products → products: power.</li>
+  <li>Even: \(f(-x) = f(x)\). Odd: \(f(-x) = -f(x)\).</li>
+  <li>Multiple choice: test numbers first; \(x = y = 0\) and \(x = y = 1\) are your friends.</li>
+</ul>

@@ -1,0 +1,171 @@
+<!--
+id: polynomials
+title: Polynomials: factor theorem, cubics & quartics
+short: Polynomials
+summary: Division, the remainder and factor theorems, sums and differences of cubes, the shapes of cubic and quartic graphs, repeated roots, and counting solutions when there is a parameter.
+keywords: difference of squares, quartic, number of solutions, polynomial, cubic, quartic, factor theorem, remainder theorem, long division, synthetic division, sum of cubes, difference of cubes, repeated root, stationary point of inflection, turning point form, x-intercepts, number of solutions, parameter, leading coefficient, end behaviour
+dotpoints: graphs of polynomial functions and their key features | the factor and remainder theorems and polynomial division | solution of polynomial equations, including those with parameters
+-->
+<h2>Division, remainders and factors</h2>
+<p>Dividing a polynomial \(P(x)\) by \((x - a)\) gives a quotient \(Q(x)\) and a remainder \(R\) (a number):</p>
+<div class="eq"><div class="eq-label">Division statement</div>\[ P(x) = (x - a)\,Q(x) + R \]</div>
+<p>Substituting \(x = a\) kills the first term, which gives the two theorems you use every week.</p>
+<div class="eq"><div class="eq-label">Remainder theorem</div>\[ \text{The remainder when } P(x) \text{ is divided by } (x - a) \text{ is } P(a). \]<p>For a divisor \((bx - a)\) the remainder is \(P\!\left(\tfrac{a}{b}\right)\).</p></div>
+<div class="eq"><div class="eq-label">Factor theorem</div>\[ (x - a) \text{ is a factor of } P(x) \iff P(a) = 0. \]</div>
+<aside class="c-key"><p>To factorise a cubic by hand: try the factors of the constant term (\(\pm1, \pm2, \pm3, \ldots\)) until \(P(a) = 0\), then divide by \((x - a)\) and factorise the quadratic that is left. With a non-monic leading coefficient, also try fractions \(\pm\frac{\text{factor of constant}}{\text{factor of leading coeff}}\).</p></aside>
+
+<div class="we" data-title="Factorising a cubic (tech-free)" data-marks="3">
+<div class="we-q"><p>Factorise \(P(x) = 2x^3 - 3x^2 - 11x + 6\) and solve \(P(x) = 0\).</p></div>
+<div class="we-t"><p>The factor theorem: if \(P(a) = 0\) then \((x - a)\) is a factor. Test small integer factors of the constant term (divided by factors of the leading coefficient), then divide to reduce the cubic to a quadratic.</p></div>
+<div class="we-s" data-f="P(a) = 0 \iff (x - a) \text{ is a factor}"><p><strong>Hunt for a root:</strong> \(P(1) = -6\), \(P(-1) = 12\), \(P(3) = 54 - 27 - 33 + 6 = 0\). So \((x - 3)\) is a factor.</p></div>
+<div class="we-s" data-f="\text{polynomial division}"><p><strong>Divide</strong> (or match coefficients): \(2x^3 - 3x^2 - 11x + 6 = (x - 3)(2x^2 + 3x - 2)\).</p></div>
+<div class="we-s" data-f="\text{factorise the quadratic}"><p><strong>Factorise the quadratic:</strong> \(2x^2 + 3x - 2 = (2x - 1)(x + 2)\).</p></div>
+<div class="we-a"><p><strong>\(P(x) = (x - 3)(2x - 1)(x + 2)\)</strong>, so \(x = -2, \tfrac12, 3\).</p></div>
+</div>
+
+<div class="we" data-title="Two unknowns from two factors" data-marks="3">
+<div class="we-q"><p>\(P(x) = x^3 + ax^2 + bx - 6\) has factors \((x - 1)\) and \((x + 2)\). Find \(a\) and \(b\), then fully factorise \(P(x)\).</p></div>
+<div class="we-t"><p>Each known factor gives an equation: substituting its root into \(P(x)\) must give zero. Two factors give two equations for the two unknowns.</p></div>
+<div class="we-s" data-f="P(1) = 0"><p>\(P(1) = 0\): \(1 + a + b - 6 = 0 \Rightarrow a + b = 5\).</p></div>
+<div class="we-s" data-f="P(-2) = 0"><p>\(P(-2) = 0\): \(-8 + 4a - 2b - 6 = 0 \Rightarrow 2a - b = 7\).</p></div>
+<div class="we-s" data-f="\text{solve simultaneously}"><p>Add the equations: \(3a = 12\), so \(a = 4,\ b = 1\).</p></div>
+<div class="we-a"><p><strong>\(a = 4,\ b = 1\)</strong> and \(P(x) = x^3 + 4x^2 + x - 6 = (x - 1)(x + 2)(x + 3)\). (The third factor must make the constant term \(-6\): \((-1)(2)(c) = -6 \Rightarrow c = 3\).)</p></div>
+</div>
+
+<div class="eq"><div class="eq-label">Sum and difference of cubes</div>\[ a^3 + b^3 = (a + b)(a^2 - ab + b^2) \qquad a^3 - b^3 = (a - b)(a^2 + ab + b^2) \]<p>The quadratic factor never has real roots, so \(x^3 - 27 = 0\) has only one real solution, \(x = 3\).</p></div>
+
+<h2>Shapes of polynomial graphs</h2>
+<p>A factor tells you what the graph does at that \(x\)-intercept:</p>
+<div class="tbl"><table>
+<thead><tr><th>Factor</th><th>Behaviour at \(x = a\)</th></tr></thead>
+<tbody>
+<tr><td>\((x - a)\)</td><td>Cuts straight through the axis</td></tr>
+<tr><td>\((x - a)^2\)</td><td>Touches the axis and turns (a turning point on the axis)</td></tr>
+<tr><td>\((x - a)^3\)</td><td>Flattens out and passes through: a <strong>stationary point of inflection</strong></td></tr>
+</tbody></table></div>
+<p><strong>End behaviour</strong> depends on the degree and the sign of the leading coefficient. Odd degree, positive: from bottom-left to top-right. Even degree, positive: both ends up. A negative leading coefficient flips everything.</p>
+<figure class="fig">
+<svg viewBox="0 0 420 290" width="420" role="img" aria-label="two cubic graphs"><defs><clipPath id="clip6554218a"><rect x="34" y="16" width="370" height="248"/></clipPath></defs><line x1="60.4" y1="16" x2="60.4" y2="264" class="s-line" style="opacity:.55"/><line x1="113.3" y1="16" x2="113.3" y2="264" class="s-line" style="opacity:.55"/><line x1="166.1" y1="16" x2="166.1" y2="264" class="s-line" style="opacity:.55"/><line x1="219.0" y1="16" x2="219.0" y2="264" class="s-line" style="opacity:.55"/><line x1="271.9" y1="16" x2="271.9" y2="264" class="s-line" style="opacity:.55"/><line x1="324.7" y1="16" x2="324.7" y2="264" class="s-line" style="opacity:.55"/><line x1="377.6" y1="16" x2="377.6" y2="264" class="s-line" style="opacity:.55"/><line x1="34" y1="264.0" x2="404" y2="264.0" class="s-line" style="opacity:.55"/><line x1="34" y1="244.9" x2="404" y2="244.9" class="s-line" style="opacity:.55"/><line x1="34" y1="225.8" x2="404" y2="225.8" class="s-line" style="opacity:.55"/><line x1="34" y1="206.8" x2="404" y2="206.8" class="s-line" style="opacity:.55"/><line x1="34" y1="187.7" x2="404" y2="187.7" class="s-line" style="opacity:.55"/><line x1="34" y1="168.6" x2="404" y2="168.6" class="s-line" style="opacity:.55"/><line x1="34" y1="149.5" x2="404" y2="149.5" class="s-line" style="opacity:.55"/><line x1="34" y1="130.5" x2="404" y2="130.5" class="s-line" style="opacity:.55"/><line x1="34" y1="111.4" x2="404" y2="111.4" class="s-line" style="opacity:.55"/><line x1="34" y1="92.3" x2="404" y2="92.3" class="s-line" style="opacity:.55"/><line x1="34" y1="73.2" x2="404" y2="73.2" class="s-line" style="opacity:.55"/><line x1="34" y1="54.2" x2="404" y2="54.2" class="s-line" style="opacity:.55"/><line x1="34" y1="35.1" x2="404" y2="35.1" class="s-line" style="opacity:.55"/><line x1="34" y1="16.0" x2="404" y2="16.0" class="s-line" style="opacity:.55"/><line x1="34" y1="149.5" x2="412" y2="149.5" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><line x1="219.0" y1="264" x2="219.0" y2="8" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><text x="408" y="143.5" class="t-sm t-b">x</text><text x="225.0" y="14" class="t-sm t-b">y</text><text x="60.4" y="163.5" text-anchor="middle" class="t-sm t-mut t-mono">-3</text><text x="113.3" y="163.5" text-anchor="middle" class="t-sm t-mut t-mono">-2</text><text x="166.1" y="163.5" text-anchor="middle" class="t-sm t-mut t-mono">-1</text><text x="271.9" y="163.5" text-anchor="middle" class="t-sm t-mut t-mono">1</text><text x="324.7" y="163.5" text-anchor="middle" class="t-sm t-mut t-mono">2</text><text x="377.6" y="163.5" text-anchor="middle" class="t-sm t-mut t-mono">3</text><text x="214.0" y="268.0" text-anchor="end" class="t-sm t-mut t-mono">-6</text><text x="214.0" y="248.9" text-anchor="end" class="t-sm t-mut t-mono">-5</text><text x="214.0" y="229.8" text-anchor="end" class="t-sm t-mut t-mono">-4</text><text x="214.0" y="210.8" text-anchor="end" class="t-sm t-mut t-mono">-3</text><text x="214.0" y="191.7" text-anchor="end" class="t-sm t-mut t-mono">-2</text><text x="214.0" y="172.6" text-anchor="end" class="t-sm t-mut t-mono">-1</text><text x="214.0" y="134.5" text-anchor="end" class="t-sm t-mut t-mono">1</text><text x="214.0" y="115.4" text-anchor="end" class="t-sm t-mut t-mono">2</text><text x="214.0" y="96.3" text-anchor="end" class="t-sm t-mut t-mono">3</text><text x="214.0" y="77.2" text-anchor="end" class="t-sm t-mut t-mono">4</text><text x="214.0" y="58.2" text-anchor="end" class="t-sm t-mut t-mono">5</text><text x="214.0" y="39.1" text-anchor="end" class="t-sm t-mut t-mono">6</text><text x="214.0" y="20.0" text-anchor="end" class="t-sm t-mut t-mono">7</text><polyline clip-path="url(#clip6554218a)" points="34.0,729.0 34.9,717.8 35.9,706.7 36.8,695.7 37.7,684.9 38.6,674.2 39.5,663.6 40.5,653.1 41.4,642.7 42.3,632.5 43.2,622.4 44.2,612.3 45.1,602.4 46.0,592.7 47.0,583.0 47.9,573.4 48.8,564.0 49.7,554.7 50.6,545.5 51.6,536.4 52.5,527.4 53.4,518.5 54.3,509.7 55.3,501.1 56.2,492.5 57.1,484.1 58.1,475.7 59.0,467.5 59.9,459.4 60.8,451.3 61.7,443.4 62.7,435.6 63.6,427.9 64.5,420.3 65.4,412.8 66.4,405.4 67.3,398.1 68.2,390.9 69.2,383.8 70.1,376.8 71.0,369.9 71.9,363.1 72.8,356.4 73.8,349.8 74.7,343.3 75.6,336.9 76.6,330.6 77.5,324.3 78.4,318.2 79.3,312.2 80.2,306.2 81.2,300.4 82.1,294.6 83.0,288.9 83.9,283.3 84.9,277.9 85.8,272.5 86.7,267.1 87.6,261.9 88.6,256.8 89.5,251.7 90.4,246.7 91.3,241.9 92.3,237.1 93.2,232.4 94.1,227.7 95.1,223.2 96.0,218.7 96.9,214.3 97.8,210.0 98.8,205.8 99.7,201.7 100.6,197.6 101.5,193.6 102.5,189.7 103.4,185.9 104.3,182.1 105.2,178.5 106.2,174.8 107.1,171.3 108.0,167.9 108.9,164.5 109.9,161.2 110.8,158.0 111.7,154.8 112.6,151.7 113.5,148.7 114.5,145.7 115.4,142.9 116.3,140.0 117.2,137.3 118.2,134.6 119.1,132.0 120.0,129.5 121.0,127.0 121.9,124.6 122.8,122.2 123.7,119.9 124.7,117.7 125.6,115.6 126.5,113.5 127.4,111.4 128.4,109.5 129.3,107.5 130.2,105.7 131.1,103.9 132.1,102.2 133.0,100.5 133.9,98.9 134.8,97.3 135.8,95.8 136.7,94.3 137.6,92.9 138.5,91.6 139.5,90.3 140.4,89.0 141.3,87.9 142.2,86.7 143.1,85.6 144.1,84.6 145.0,83.6 145.9,82.7 146.8,81.8 147.8,80.9 148.7,80.1 149.6,79.4 150.6,78.7 151.5,78.0 152.4,77.4 153.3,76.9 154.2,76.3 155.2,75.9 156.1,75.4 157.0,75.0 157.9,74.7 158.9,74.4 159.8,74.1 160.7,73.9 161.7,73.7 162.6,73.5 163.5,73.4 164.4,73.3 165.3,73.2 166.3,73.2 167.2,73.3 168.1,73.3 169.1,73.4 170.0,73.5 170.9,73.7 171.8,73.9 172.8,74.1 173.7,74.3 174.6,74.6 175.5,74.9 176.4,75.3 177.4,75.6 178.3,76.0 179.2,76.4 180.2,76.9 181.1,77.4 182.0,77.9 182.9,78.4 183.8,78.9 184.8,79.5 185.7,80.1 186.6,80.7 187.5,81.4 188.5,82.0 189.4,82.7 190.3,83.4 191.2,84.1 192.2,84.8 193.1,85.6 194.0,86.4 194.9,87.1 195.9,87.9 196.8,88.8 197.7,89.6 198.7,90.4 199.6,91.3 200.5,92.2 201.4,93.1 202.3,94.0 203.3,94.9 204.2,95.8 205.1,96.7 206.0,97.6 207.0,98.6 207.9,99.5 208.8,100.5 209.8,101.5 210.7,102.4 211.6,103.4 212.5,104.4 213.4,105.4 214.4,106.4 215.3,107.4 216.2,108.4 217.2,109.4 218.1,110.4 219.0,111.4 219.9,112.4 220.8,113.4 221.8,114.4 222.7,115.4 223.6,116.4 224.6,117.4 225.5,118.4 226.4,119.3 227.3,120.3 228.2,121.3 229.2,122.3 230.1,123.2 231.0,124.2 232.0,125.1 232.9,126.1 233.8,127.0 234.7,127.9 235.7,128.8 236.6,129.7 237.5,130.6 238.4,131.5 239.3,132.3 240.3,133.2 241.2,134.0 242.1,134.8 243.1,135.6 244.0,136.4 244.9,137.2 245.8,137.9 246.8,138.7 247.7,139.4 248.6,140.1 249.5,140.8 250.4,141.4 251.4,142.1 252.3,142.7 253.2,143.3 254.1,143.8 255.1,144.4 256.0,144.9 256.9,145.4 257.9,145.9 258.8,146.3 259.7,146.7 260.6,147.1 261.5,147.5 262.5,147.8 263.4,148.2 264.3,148.4 265.2,148.7 266.2,148.9 267.1,149.1 268.0,149.2 269.0,149.4 269.9,149.5 270.8,149.5 271.7,149.5 272.6,149.5 273.6,149.5 274.5,149.4 275.4,149.3 276.4,149.1 277.3,148.9 278.2,148.7 279.1,148.4 280.1,148.1 281.0,147.7 281.9,147.3 282.8,146.9 283.8,146.4 284.7,145.9 285.6,145.3 286.5,144.7 287.4,144.1 288.4,143.4 289.3,142.6 290.2,141.8 291.2,141.0 292.1,140.1 293.0,139.2 293.9,138.2 294.8,137.1 295.8,136.1 296.7,134.9 297.6,133.7 298.6,132.5 299.5,131.2 300.4,129.8 301.3,128.4 302.2,127.0 303.2,125.5 304.1,123.9 305.0,122.3 305.9,120.6 306.9,118.9 307.8,117.1 308.7,115.2 309.6,113.3 310.6,111.3 311.5,109.3 312.4,107.2 313.4,105.0 314.3,102.8 315.2,100.5 316.1,98.2 317.1,95.8 318.0,93.3 318.9,90.8 319.8,88.1 320.8,85.5 321.7,82.7 322.6,79.9 323.5,77.0 324.4,74.1 325.4,71.1 326.3,68.0 327.2,64.8 328.2,61.6 329.1,58.3 330.0,54.9 330.9,51.4 331.8,47.9 332.8,44.3 333.7,40.6 334.6,36.9 335.6,33.1 336.5,29.2 337.4,25.2 338.3,21.1 339.2,17.0 340.2,12.7 341.1,8.4 342.0,4.1 342.9,-0.4 343.9,-5.0 344.8,-9.6 345.7,-14.3 346.6,-19.1 347.6,-24.0 348.5,-28.9 349.4,-34.0 350.4,-39.1 351.3,-44.4 352.2,-49.7 353.1,-55.1 354.1,-60.6 355.0,-66.2 355.9,-71.8 356.8,-77.6 357.8,-83.4 358.7,-89.4 359.6,-95.4 360.5,-101.6 361.4,-107.8 362.4,-114.1 363.3,-120.5 364.2,-127.0 365.1,-133.6 366.1,-140.3 367.0,-147.1 367.9,-154.0 368.9,-161.0 369.8,-168.1 370.7,-175.3 371.6,-182.6 372.6,-190.0 373.5,-197.5 374.4,-205.1 375.3,-212.9 376.2,-220.7 377.2,-228.6 378.1,-236.6 379.0,-244.7 379.9,-253.0 380.9,-261.3 381.8,-269.7 382.7,-278.3 383.7,-287.0 384.6,-295.7 385.5,-304.6 386.4,-313.6 387.3,-322.7 388.3,-331.9 389.2,-341.2 390.1,-350.7 391.1,-360.2 392.0,-369.9 392.9,-379.7 393.8,-389.6 394.8,-399.6 395.7,-409.7 396.6,-420.0 397.5,-430.3 398.4,-440.8 399.4,-451.4 400.3,-462.1 401.2,-473.0 402.1,-483.9 403.1,-495.0 404.0,-506.2" class="s-acc" style="stroke-width:2.4"/><text x="44.6" y="48.4" class="t-sm t-b t-acc">y = (x + 2)(x − 1)²</text><polyline clip-path="url(#clip6554218a)" points="34.0,1926.1 34.9,1905.9 35.9,1885.8 36.8,1865.9 37.7,1846.2 38.6,1826.6 39.5,1807.2 40.5,1787.9 41.4,1768.8 42.3,1749.9 43.2,1731.1 44.2,1712.4 45.1,1693.9 46.0,1675.5 47.0,1657.3 47.9,1639.3 48.8,1621.4 49.7,1603.6 50.6,1586.0 51.6,1568.5 52.5,1551.2 53.4,1534.0 54.3,1517.0 55.3,1500.1 56.2,1483.3 57.1,1466.7 58.1,1450.3 59.0,1434.0 59.9,1417.8 60.8,1401.8 61.7,1385.9 62.7,1370.1 63.6,1354.5 64.5,1339.0 65.4,1323.7 66.4,1308.5 67.3,1293.4 68.2,1278.5 69.2,1263.7 70.1,1249.0 71.0,1234.5 71.9,1220.1 72.8,1205.8 73.8,1191.7 74.7,1177.7 75.6,1163.8 76.6,1150.1 77.5,1136.5 78.4,1123.0 79.3,1109.6 80.2,1096.4 81.2,1083.3 82.1,1070.3 83.0,1057.5 83.9,1044.8 84.9,1032.2 85.8,1019.7 86.7,1007.4 87.6,995.1 88.6,983.0 89.5,971.1 90.4,959.2 91.3,947.5 92.3,935.8 93.2,924.3 94.1,913.0 95.1,901.7 96.0,890.5 96.9,879.5 97.8,868.6 98.8,857.8 99.7,847.1 100.6,836.5 101.5,826.1 102.5,815.7 103.4,805.5 104.3,795.4 105.2,785.4 106.2,775.5 107.1,765.7 108.0,756.0 108.9,746.4 109.9,737.0 110.8,727.6 111.7,718.4 112.6,709.2 113.5,700.2 114.5,691.3 115.4,682.4 116.3,673.7 117.2,665.1 118.2,656.6 119.1,648.2 120.0,639.8 121.0,631.6 121.9,623.5 122.8,615.5 123.7,607.6 124.7,599.8 125.6,592.1 126.5,584.4 127.4,576.9 128.4,569.5 129.3,562.1 130.2,554.9 131.1,547.8 132.1,540.7 133.0,533.7 133.9,526.9 134.8,520.1 135.8,513.4 136.7,506.8 137.6,500.3 138.5,493.9 139.5,487.6 140.4,481.3 141.3,475.2 142.2,469.1 143.1,463.1 144.1,457.2 145.0,451.4 145.9,445.7 146.8,440.0 147.8,434.5 148.7,429.0 149.6,423.6 150.6,418.3 151.5,413.1 152.4,407.9 153.3,402.8 154.2,397.8 155.2,392.9 156.1,388.1 157.0,383.3 157.9,378.6 158.9,374.0 159.8,369.5 160.7,365.0 161.7,360.6 162.6,356.3 163.5,352.0 164.4,347.9 165.3,343.8 166.3,339.7 167.2,335.8 168.1,331.9 169.1,328.1 170.0,324.3 170.9,320.6 171.8,317.0 172.8,313.4 173.7,310.0 174.6,306.5 175.5,303.2 176.4,299.9 177.4,296.6 178.3,293.5 179.2,290.4 180.2,287.3 181.1,284.3 182.0,281.4 182.9,278.6 183.8,275.7 184.8,273.0 185.7,270.3 186.6,267.7 187.5,265.1 188.5,262.6 189.4,260.1 190.3,257.7 191.2,255.4 192.2,253.0 193.1,250.8 194.0,248.6 194.9,246.5 195.9,244.4 196.8,242.3 197.7,240.3 198.7,238.4 199.6,236.5 200.5,234.6 201.4,232.8 202.3,231.1 203.3,229.4 204.2,227.7 205.1,226.1 206.0,224.5 207.0,223.0 207.9,221.5 208.8,220.0 209.8,218.6 210.7,217.3 211.6,216.0 212.5,214.7 213.4,213.4 214.4,212.2 215.3,211.1 216.2,209.9 217.2,208.8 218.1,207.8 219.0,206.8 219.9,205.8 220.8,204.8 221.8,203.9 222.7,203.0 223.6,202.2 224.6,201.4 225.5,200.6 226.4,199.8 227.3,199.1 228.2,198.4 229.2,197.7 230.1,197.1 231.0,196.5 232.0,195.9 232.9,195.3 233.8,194.8 234.7,194.3 235.7,193.8 236.6,193.4 237.5,192.9 238.4,192.5 239.3,192.1 240.3,191.8 241.2,191.4 242.1,191.1 243.1,190.8 244.0,190.5 244.9,190.2 245.8,190.0 246.8,189.7 247.7,189.5 248.6,189.3 249.5,189.1 250.4,189.0 251.4,188.8 252.3,188.7 253.2,188.5 254.1,188.4 255.1,188.3 256.0,188.2 256.9,188.1 257.9,188.0 258.8,188.0 259.7,187.9 260.6,187.9 261.5,187.8 262.5,187.8 263.4,187.8 264.3,187.7 265.2,187.7 266.2,187.7 267.1,187.7 268.0,187.7 269.0,187.7 269.9,187.7 270.8,187.7 271.7,187.7 272.6,187.7 273.6,187.7 274.5,187.7 275.4,187.7 276.4,187.7 277.3,187.7 278.2,187.7 279.1,187.6 280.1,187.6 281.0,187.6 281.9,187.6 282.8,187.5 283.8,187.5 284.7,187.4 285.6,187.4 286.5,187.3 287.4,187.2 288.4,187.1 289.3,187.0 290.2,186.9 291.2,186.8 292.1,186.6 293.0,186.5 293.9,186.3 294.8,186.1 295.8,185.9 296.7,185.7 297.6,185.5 298.6,185.2 299.5,185.0 300.4,184.7 301.3,184.4 302.2,184.1 303.2,183.7 304.1,183.4 305.0,183.0 305.9,182.6 306.9,182.1 307.8,181.7 308.7,181.2 309.6,180.7 310.6,180.2 311.5,179.6 312.4,179.1 313.4,178.5 314.3,177.8 315.2,177.2 316.1,176.5 317.1,175.8 318.0,175.0 318.9,174.2 319.8,173.4 320.8,172.6 321.7,171.7 322.6,170.8 323.5,169.9 324.4,168.9 325.4,167.9 326.3,166.8 327.2,165.8 328.2,164.6 329.1,163.5 330.0,162.3 330.9,161.1 331.8,159.8 332.8,158.5 333.7,157.1 334.6,155.7 335.6,154.3 336.5,152.8 337.4,151.3 338.3,149.8 339.2,148.2 340.2,146.5 341.1,144.8 342.0,143.1 342.9,141.3 343.9,139.4 344.8,137.6 345.7,135.6 346.6,133.6 347.6,131.6 348.5,129.5 349.4,127.4 350.4,125.2 351.3,123.0 352.2,120.7 353.1,118.4 354.1,116.0 355.0,113.5 355.9,111.0 356.8,108.4 357.8,105.8 358.7,103.2 359.6,100.4 360.5,97.6 361.4,94.8 362.4,91.9 363.3,88.9 364.2,85.9 365.1,82.8 366.1,79.6 367.0,76.4 367.9,73.2 368.9,69.8 369.8,66.4 370.7,62.9 371.6,59.4 372.6,55.8 373.5,52.1 374.4,48.4 375.3,44.6 376.2,40.7 377.2,36.8 378.1,32.8 379.0,28.7 379.9,24.5 380.9,20.3 381.8,16.0 382.7,11.7 383.7,7.2 384.6,2.7 385.5,-1.9 386.4,-6.6 387.3,-11.3 388.3,-16.1 389.2,-21.0 390.1,-26.0 391.1,-31.1 392.0,-36.2 392.9,-41.4 393.8,-46.7 394.8,-52.1 395.7,-57.5 396.6,-63.1 397.5,-68.7 398.4,-74.4 399.4,-80.2 400.3,-86.0 401.2,-92.0 402.1,-98.0 403.1,-104.2 404.0,-110.4" class="s-w" style="stroke-width:2.4"/><text x="300.9" y="231.6" class="t-sm t-b t-w">y = (x − 1)³ − 2</text><circle cx="113.3" cy="149.5" r="3.6" class="f-ink"/><text x="69.3" y="141.5" class="t-sm">(−2, 0)</text><circle cx="271.9" cy="149.5" r="3.6" class="f-ink"/><text x="275.9" y="141.5" class="t-sm">(1, 0)</text><circle cx="271.9" cy="187.7" r="3.6" class="f-ink"/><text x="277.9" y="201.7" class="t-sm">(1, −2)</text><circle cx="219.0" cy="111.4" r="3.6" class="f-ink"/><text x="225.0" y="107.4" class="t-sm">2</text></svg>
+<figcaption>\(y = (x + 2)(x - 1)^2\) cuts at \(x = -2\) and touches at \(x = 1\). \(y = (x - 1)^3 - 2\) is the basic cubic translated: its stationary point of inflection is at \((1, -2)\).</figcaption>
+</figure>
+<div class="eq"><div class="eq-label">Cubic in “turning point” (inflection) form</div>\[ y = a(x - h)^3 + k \]<p>Stationary point of inflection at \((h, k)\). No other turning points.</p></div>
+
+<div class="we" data-title="Rule from a graph's features" data-marks="2">
+<div class="we-q"><p>A cubic touches the \(x\)-axis at \(x = 2\), crosses it at \(x = -1\) and passes through \((0, 8)\). Find its rule.</p></div>
+<div class="we-t"><p>The shape at each \(x\)-intercept tells you the factor: a crossing gives \((x - p)\), a touch (turning point on the axis) gives \((x - q)^2\). One more point fixes the dilation factor \(a\).</p></div>
+<div class="we-s" data-f="\text{touch at } q \Rightarrow (x - q)^2"><p>The touch gives a squared factor: \(y = a(x + 1)(x - 2)^2\).</p></div>
+<div class="we-s" data-f="\text{substitute a known point to find } a"><p>Substitute \((0, 8)\): \(8 = a(1)(4)\), so \(a = 2\).</p></div>
+<div class="we-a"><p><strong>\(y = 2(x + 1)(x - 2)^2\)</strong> (expanded: \(y = 2x^3 - 6x^2 + 8\)).</p></div>
+</div>
+
+<div class="we" data-title="Biquadratic (quartic in disguise)" data-marks="2">
+<div class="we-q"><p>Solve \(x^4 - 5x^2 + 4 = 0\).</p></div>
+<div class="we-t"><p>A quartic with only \(x^4\) and \(x^2\) terms is a quadratic in \(x^2\). Substitute \(u = x^2\), solve, then go back to \(x\), rejecting any negative \(u\).</p></div>
+<div class="we-s" data-f="u = x^2"><p>Let \(u = x^2\): \(u^2 - 5u + 4 = 0 \Rightarrow (u - 1)(u - 4) = 0\), so \(u = 1\) or \(u = 4\).</p></div>
+<div class="we-a" data-f="x^2 = u \Rightarrow x = \pm\sqrt u"><p><strong>\(x = \pm1, \pm2\)</strong>. Don't stop at \(u\): the question asked for \(x\).</p></div>
+</div>
+
+<h2>How many solutions? Polynomials with a parameter</h2>
+<p>Exam 2 loves “find the values of \(k\) for which the equation has exactly one / two / three solutions”. Rewrite so the parameter sits alone, then think of it as a horizontal line \(y = k\) moving up and down against a fixed graph.</p>
+<div class="we" data-title="Number of solutions of x³ − 3x + k = 0" data-marks="4">
+<div class="we-q"><p>Find the values of \(k\) for which \(x^3 - 3x + k = 0\) has (a) exactly three, (b) exactly two, (c) exactly one real solution.</p></div>
+<div class="we-t"><p>The number of solutions of \(f(x) = c\) equals the number of times the horizontal line \(y = c\) meets \(y = f(x)\). The turning points mark where that count changes.</p></div>
+<div class="we-s" data-f="f(x) = c \leftrightarrow \text{intersections with } y = c"><p>Rearrange: \(-k = x^3 - 3x\). Count intersections of \(y = x^3 - 3x\) with the horizontal line \(y = -k\).</p></div>
+<div class="we-s" data-f="f&#x27;(x) = 0 \text{ at turning points}"><p>\(y = x^3 - 3x\) has turning points where \(3x^2 - 3 = 0\), i.e. \(x = \pm1\): a local max at \((-1, 2)\) and a local min at \((1, -2)\).</p></div>
+<div class="we-s"><p>The line cuts three times when it is strictly between the turning points: \(-2 < -k < 2\), i.e. \(-2 < k < 2\). It touches a turning point (two solutions) when \(-k = \pm2\).</p></div>
+<div class="we-a"><p><strong>(a) \(-2 < k < 2\); (b) \(k = \pm2\); (c) \(k < -2\) or \(k > 2\).</strong> Check (b): \(k = 2\) gives \(x^3 - 3x + 2 = (x - 1)^2(x + 2)\), two distinct solutions.</p></div>
+</div>
+
+<div class="we" data-title="How many solutions? A difference of squares (hard)" data-marks="4">
+<div class="we-q"><p>Let \(f(x) = (x^2 - 1)^2\) and \(k &gt; 0\). Find the number of solutions of \(f(x) = k^2\) for each value of \(k\).</p></div>
+<div class="we-t"><p>Don't expand a quartic. Anything of the form \(A^2 = B^2\) is a difference of squares, \((A - B)(A + B) = 0\), which splits into two easier equations. Count the solutions of each separately, and watch for values of the parameter where a solution count changes or two solutions coincide.</p></div>
+<div class="we-s" data-f="A^2 - B^2 = (A - B)(A + B)"><p>\((x^2 - 1)^2 - k^2 = 0 \Rightarrow (x^2 - 1 - k)(x^2 - 1 + k) = 0\), so \(x^2 = 1 + k\) or \(x^2 = 1 - k\).</p></div>
+<div class="we-s" data-f="x^2 = c:\ 2 \text{ solutions if } c &gt; 0,\ 1 \text{ if } c = 0,\ 0 \text{ if } c &lt; 0"><p>\(x^2 = 1 + k\): since \(k &gt; 0\), \(1 + k &gt; 0\), giving always two solutions \(x = \pm\sqrt{1 + k}\).</p></div>
+<div class="we-s"><p>\(x^2 = 1 - k\): two solutions if \(0 &lt; k &lt; 1\); one solution (\(x = 0\)) if \(k = 1\); none if \(k &gt; 1\). The two equations never share a solution, because \(1 + k \neq 1 - k\) for \(k &gt; 0\).</p></div>
+<div class="we-a" data-f="f&#x27;(x) = 0 \text{ at turning points}"><p><strong>4 solutions for \(0 &lt; k &lt; 1\); 3 solutions for \(k = 1\); 2 solutions for \(k &gt; 1\).</strong> Graphically: \(y = (x^2 - 1)^2\) has minimums at \((\pm1, 0)\) and a local maximum at \((0, 1)\). The line \(y = k^2\) cuts four times below the maximum, touches it (3 solutions) when \(k^2 = 1\), and cuts twice above it.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: polynomial traps">
+<ul>
+  <li><strong>“Solutions” means distinct solutions.</strong> \((x - 1)^2(x + 2) = 0\) has two solutions, not three.</li>
+  <li><strong>A factor isn't always a root you can see.</strong> If \((x - 1)\) is a factor of \(x^3 + x - 2\), the other factor \(x^2 + x + 2\) has a negative discriminant, so the graph has only one \(x\)-intercept.</li>
+  <li><strong>Remainder with \((x + a)\):</strong> substitute \(x = -a\), not \(x = a\).</li>
+  <li><strong>The turning point at a double root isn't always a minimum.</strong> For \(y = (x + 1)^2(x - 3)\) (positive leading coefficient) the double root is on the left, so it's a local <em>maximum</em>.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The remainder when \(x^4 - 3x + 1\) is divided by \((x + 1)\) is</p></div>
+<ol><li>\(-1\)</li><li>\(5\)</li><li>\(3\)</li><li>\(-3\)</li></ol>
+<div class="mcq-x"><p>\(P(-1) = 1 + 3 + 1 = 5\). Option A comes from substituting \(x = 1\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>\(x^3 + 8\) factorises as</p></div>
+<ol><li>\((x + 2)^3\)</li><li>\((x + 2)(x^2 + 2x + 4)\)</li><li>\((x - 2)(x^2 + 2x + 4)\)</li><li>\((x + 2)(x^2 - 2x + 4)\)</li></ol>
+<div class="mcq-x"><p>Sum of cubes with \(a = x,\ b = 2\): \((a + b)(a^2 - ab + b^2)\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>The graph of \(y = (x + 1)^2(x - 3)\) has</p></div>
+<ol><li>a local maximum at \((-1, 0)\)</li><li>a local minimum at \((-1, 0)\)</li><li>a stationary point of inflection at \((-1, 0)\)</li><li>no stationary point at \(x = -1\)</li></ol>
+<div class="mcq-x"><p>Positive cubic: it rises from the bottom left, touches the axis at \(x = -1\) and turns back down, then turns up again (local min at \(x = \tfrac53\)) before cutting at \(x = 3\). So \((-1, 0)\) is a local maximum.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>When \(2x^3 - 3x^2 + 4\) is divided by \((x - 2)\), the quotient and remainder are</p></div>
+<ol><li>\(2x^2 - 7x + 14\), remainder \(-24\)</li><li>\(2x^2 + x + 2\), remainder 0</li><li>\(2x^2 + x + 2\), remainder 8</li><li>\(2x^2 - x - 2\), remainder 0</li></ol>
+<div class="mcq-x"><p>\((x - 2)(2x^2 + x + 2) = 2x^3 - 3x^2 - 4\), and adding 8 gives the original. Quick check on the remainder: \(P(2) = 16 - 12 + 4 = 8\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>\(P(x) = x^3 + kx^2 + x - 2\) has \((x - 1)\) as a factor. The number of \(x\)-intercepts of \(y = P(x)\) is</p></div>
+<ol><li>0</li><li>1</li><li>2</li><li>3</li></ol>
+<div class="mcq-x"><p>\(P(1) = 1 + k + 1 - 2 = 0 \Rightarrow k = 0\). Then \(P(x) = (x - 1)(x^2 + x + 2)\), and \(x^2 + x + 2\) has discriminant \(1 - 8 < 0\). Only one intercept, at \(x = 1\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>How many stationary points does \(y = (x - 2)^3 + 1\) have?</p></div>
+<ol><li>0</li><li>2</li><li>1</li><li>3</li></ol>
+<div class="mcq-x"><p>\(\frac{dy}{dx} = 3(x - 2)^2 = 0\) only at \(x = 2\): one stationary point, and it's a point of inflection at \((2, 1)\). It is not a turning point.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>The equation \(x^3 - x^2 - 8x + 12 = 0\) has solutions</p></div>
+<ol><li>\(x = 2, -3\) and one other irrational solution</li><li>\(x = -2, 3\) only</li><li>\(x = 1, 2, -3\)</li><li>\(x = 2, -3\) only</li></ol>
+<div class="mcq-x"><p>\(P(2) = 8 - 4 - 16 + 12 = 0\). Dividing gives \(x^2 + x - 6 = (x + 3)(x - 2)\), so \(P(x) = (x - 2)^2(x + 3)\). Two distinct solutions.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="\text{remainder theorem: remainder of } P(x) \div (x - a) = P(a)">
+<div class="pq-q"><p>When \(x^3 + ax^2 - 5x + 2\) is divided by \((x - 2)\) the remainder is 4. Find \(a\).</p></div>
+<div class="pq-s"><p>\(P(2) = 8 + 4a - 10 + 2 = 4\), so \(4a = 4\) and \(a = 1\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="\text{factor theorem} ;; \text{sign diagram}">
+<div class="pq-q"><p>Solve \(x^3 - 2x^2 - 5x + 6 \ge 0\).</p></div>
+<div class="pq-s"><p>\(P(1) = 0\), and dividing gives \(P(x) = (x - 1)(x + 2)(x - 3)\). It's a positive cubic, so it's above the axis between the first two roots and after the last one.</p><p>\(x \in [-2, 1] \cup [3, \infty)\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{substitute } u = x^2 ;; f&#x27;(x) = 0 \text{ at stationary points}">
+<div class="pq-q"><p>Sketch \(y = x^4 - 10x^2 + 9\), labelling all intercepts, and state the values of \(c\) for which \(x^4 - 10x^2 + 9 = c\) has exactly four solutions.</p></div>
+<div class="pq-s"><p>\(x^4 - 10x^2 + 9 = (x^2 - 1)(x^2 - 9) = (x - 1)(x + 1)(x - 3)(x + 3)\): \(x\)-intercepts \(\pm1, \pm3\), \(y\)-intercept 9. [1]</p><p>Stationary points: \(4x^3 - 20x = 0 \Rightarrow x = 0, \pm\sqrt5\). Local max \((0, 9)\); minima at \(x = \pm\sqrt5\) where \(y = 25 - 50 + 9 = -16\). [1]</p><p>A horizontal line \(y = c\) cuts the W shape four times when it is between the minima and the local max: \(-16 < c < 9\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="f&#x27;(x) = 0 \text{ at turning points} ;; \text{3 solutions: } f_{\max} &gt; 0 &gt; f_{\min} ;; \text{1 solution: } f_{\max},\ f_{\min} \text{ same sign}">
+<div class="pq-q"><p>Let \(f(x) = x^3 - 3x^2 + p\). Find the values of \(p\) for which \(f(x) = 0\) has exactly one real solution.</p></div>
+<div class="pq-s"><p>\(f'(x) = 3x^2 - 6x = 3x(x - 2)\), so turning points at \(x = 0\) (local max, \(f = p\)) and \(x = 2\) (local min, \(f = p - 4\)). [1]</p><p>Three solutions need the max above the axis and the min below: \(p > 0\) and \(p - 4 < 0\). Exactly one solution needs both turning points on the same side of the axis. [1]</p><p>\(p < 0\) or \(p > 4\). [1] (At \(p = 0\) or \(p = 4\) there are two solutions.)</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="1" data-f="a^3 + b^3 = (a + b)(a^2 - ab + b^2) ;; \Delta = b^2 - 4ac">
+<div class="pq-q"><p>How many real solutions does \(8x^3 + 1 = 0\) have? Give them.</p></div>
+<div class="pq-s"><p>\(8x^3 + 1 = (2x + 1)(4x^2 - 2x + 1)\). The quadratic has discriminant \(4 - 16 < 0\), so there is only one real solution: \(x = -\tfrac12\).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Remainder of \(P(x) \div (x - a)\) is \(P(a)\); \((x - a)\) is a factor iff \(P(a) = 0\).</li>
+  <li>Single factor: cut. Squared: touch and turn. Cubed: stationary point of inflection.</li>
+  <li>Counting solutions with a parameter: isolate the parameter and slide a horizontal line past the turning points.</li>
+  <li>Watch for quadratic factors with negative discriminants: they add no \(x\)-intercepts.</li>
+</ul>

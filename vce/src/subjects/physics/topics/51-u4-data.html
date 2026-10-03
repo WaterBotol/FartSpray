@@ -1,0 +1,159 @@
+<!--
+id: u4-data
+title: Graphs, linearisation & data analysis
+short: Graphs & linearisation
+summary: Drawing and reading scientific graphs, lines of best fit, gradients and intercepts, error bars, linearising data to find a physical constant, spotting systematic errors from intercepts, and interpolation versus extrapolation.
+keywords: graph, graphs, line of best fit, gradient, slope, intercept, linearise, linearisation, straight line graph, error bars, uncertainty bars, table, axes, units, extrapolation, interpolation, systematic error intercept, outlier, T squared r cubed, inverse square, data analysis, experimental constant
+dotpoints: organise, present and interpret data using tables and graphs, including linearisation of data and error bars | use gradients and intercepts of graphs to determine physical quantities | identify outliers and systematic errors from graphical data | distinguish between interpolation and extrapolation
+-->
+<h2>Tables and graphs that earn full marks</h2>
+<ul>
+  <li><strong>Tables:</strong> independent variable in the first column; headings with quantity and unit, e.g. “Time (s)”; consistent decimal places.</li>
+  <li><strong>Axes:</strong> independent variable on the x-axis, dependent on the y-axis (unless told otherwise); labels with units; even, sensible scales that use most of the grid.</li>
+  <li><strong>Points:</strong> plotted accurately, with error bars where uncertainties are known.</li>
+  <li><strong>Line of best fit:</strong> a single smooth line (straight ruler line or smooth curve) with points evenly scattered either side. Never join dot to dot. It should pass through all (or nearly all) error bars.</li>
+</ul>
+
+<h2>Gradients and intercepts</h2>
+<p>For a straight line \(y = mx + c\): the gradient \(m = \Delta y/\Delta x\) and the y-intercept \(c\). In physics, both usually mean something.</p>
+<aside class="c-exam" data-title="Exam tip: calculating a gradient">
+<p>Use two points <strong>on your line of best fit</strong> (not data points, unless they lie exactly on the line), as far apart as possible. Show the rise and run, and give the gradient's <strong>unit</strong> (y-unit ÷ x-unit).</p>
+</aside>
+
+<h2>Linearisation</h2>
+<p>Most physics relationships aren't straight lines. To extract a constant, rearrange the equation into the form \(y = mx\) (or \(y = mx + c\)) and choose what to plot so the graph is a straight line. Then the gradient gives the constant.</p>
+<p>There is often more than one correct choice: \(v^2 = 2gs\) gives a straight line for \(v^2\) against \(s\) <em>and</em> for \(v\) against \(\sqrt{s}\). Any pair where \(y\) is directly proportional to \(x\) works.</p>
+<div class="tbl"><table>
+<thead><tr><th>Relationship</th><th>Plot y</th><th>against x</th><th>Gradient</th></tr></thead>
+<tbody>
+<tr><td>Kepler: \(T^2 = \dfrac{4\pi^2}{GM}r^3\)</td><td>\(T^2\)</td><td>\(r^3\)</td><td>\(4\pi^2/GM\)</td></tr>
+<tr><td>Circular motion: \(F = \dfrac{m}{r}v^2\)</td><td>\(F\)</td><td>\(v^2\)</td><td>\(m/r\)</td></tr>
+<tr><td>Inverse square: \(g = GM\cdot\dfrac{1}{r^2}\)</td><td>\(g\)</td><td>\(1/r^2\)</td><td>\(GM\)</td></tr>
+<tr><td>Double slit: \(\Delta x = \dfrac{\lambda}{d}L\)</td><td>\(\Delta x\)</td><td>\(L\)</td><td>\(\lambda/d\)</td></tr>
+<tr><td>Photoelectric: \(E_{k\max} = hf - \phi\)</td><td>\(E_{k\max}\)</td><td>\(f\)</td><td>\(h\) (y-intercept \(-\phi\))</td></tr>
+<tr><td>Spring energy: \(E_s = \tfrac12 k x^2\)</td><td>\(E_s\)</td><td>\(x^2\)</td><td>\(k/2\)</td></tr>
+<tr><td>Free fall from rest: \(s = \tfrac12 g t^2\)</td><td>\(s\)</td><td>\(t^2\)</td><td>\(g/2\)</td></tr>
+<tr><td>Energy on a ramp: \(v^2 = 2g h\)</td><td>\(v^2\)</td><td>\(h\)</td><td>\(2g\)</td></tr>
+<tr><td>The same, square-rooted: \(v = \sqrt{2g}\,\sqrt{s}\)</td><td>\(v\)</td><td>\(\sqrt{s}\)</td><td>\(\sqrt{2g}\)</td></tr>
+<tr><td>Satellite speed: \(v^2 = GM\cdot\dfrac1r\)</td><td>\(v^2\)</td><td>\(1/r\)</td><td>\(GM\)</td></tr>
+<tr><td>de Broglie: \(\lambda = h\cdot\dfrac{1}{p}\)</td><td>\(\lambda\)</td><td>\(1/p\)</td><td>\(h\)</td></tr>
+</tbody></table></div>
+
+<div class="we" data-title="Finding a laser's wavelength from a graph" data-marks="5">
+<div class="we-q"><p>A student measures the fringe spacing \(\Delta x\) for a laser passing through a double slit (\(d = 0.30\ \text{mm}\)) at different screen distances \(L\):</p>
+<div class="tbl"><table><thead><tr><th>L (m)</th><th>0.50</th><th>1.00</th><th>1.50</th><th>2.00</th><th>2.50</th></tr></thead><tbody><tr><td>Δx (mm) ± 0.2</td><td>1.1</td><td>2.0</td><td>3.2</td><td>4.3</td><td>5.2</td></tr></tbody></table></div>
+<div class="we-t"><p>Rearrange the relationship into \(y = mx\) so the graph is a straight line; the gradient then contains the constant you want. A gradient uses all the data, so it's more reliable than a single point.</p></div>
+<p>(a) Explain why plotting \(\Delta x\) against \(L\) should give a straight line. (b) Use the graph below to find the wavelength of the laser.</p></div>
+<div class="we-s" data-f="y = mx \leftrightarrow \Delta x = \dfrac{\lambda}{d}L"><p><strong>(a)</strong> \(\Delta x = \dfrac{\lambda}{d}L\) has the form \(y = mx\) with \(y = \Delta x\), \(x = L\) and gradient \(m = \lambda/d\). So the graph should be a straight line through the origin.</p></div>
+<div class="we-s" data-f="m = \dfrac{\Delta y}{\Delta x}"><p><strong>(b) Gradient from the line of best fit</strong>, using (0, 0) and (2.50 m, 5.25 mm):</p>\[ m = \frac{5.25\times10^{-3} - 0}{2.50 - 0} = 2.1\times10^{-3}\ (\text{m per m, i.e. no unit}) \]</div>
+<div class="we-s" data-f="\lambda = m \times d"><p><strong>Gradient = λ/d:</strong></p>\[ \lambda = m \times d = (2.1\times10^{-3})(0.30\times10^{-3}) = 6.3\times10^{-7}\ \text{m} \]</div>
+<div class="we-a"><p><strong>\(\lambda \approx 630\ \text{nm}\)</strong> (consistent with a red helium–neon laser at 633 nm). Using a gradient averages over all the data, so it's more reliable than calculating λ from a single point.</p></div>
+</div>
+
+<figure class="fig">
+<svg viewBox="0 0 380 240" width="380" role="img" aria-label="Graph of fringe spacing against screen distance: five data points with error bars lie close to a straight line of best fit through the origin">
+  <line x1="80.0" y1="20" x2="80.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="110.0" y1="20" x2="110.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="140.0" y1="20" x2="140.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="170.0" y1="20" x2="170.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="200.0" y1="20" x2="200.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="230.0" y1="20" x2="230.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="260.0" y1="20" x2="260.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="290.0" y1="20" x2="290.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="320.0" y1="20" x2="320.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="350.0" y1="20" x2="350.0" y2="200" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="170" x2="350" y2="170" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="140" x2="350" y2="140" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="110" x2="350" y2="110" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="80" x2="350" y2="80" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="50" x2="350" y2="50" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="20" x2="350" y2="20" class="s-line" style="opacity:.6"/>
+  <line x1="50" y1="200" x2="360" y2="200" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="200" x2="50" y2="14" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="200" x2="350" y2="42.5" class="s-acc" style="stroke-width:2"/>
+  <line x1="110.0" y1="161.0" x2="110.0" y2="173.0" class="s-ink"/><line x1="106.0" y1="161.0" x2="114.0" y2="161.0" class="s-ink"/><line x1="106.0" y1="173.0" x2="114.0" y2="173.0" class="s-ink"/><circle cx="110.0" cy="167.0" r="3.5" class="f-v"/>
+  <line x1="170.0" y1="134.0" x2="170.0" y2="146.0" class="s-ink"/><line x1="166.0" y1="134.0" x2="174.0" y2="134.0" class="s-ink"/><line x1="166.0" y1="146.0" x2="174.0" y2="146.0" class="s-ink"/><circle cx="170.0" cy="140.0" r="3.5" class="f-v"/>
+  <line x1="230.0" y1="98.0" x2="230.0" y2="110.0" class="s-ink"/><line x1="226.0" y1="98.0" x2="234.0" y2="98.0" class="s-ink"/><line x1="226.0" y1="110.0" x2="234.0" y2="110.0" class="s-ink"/><circle cx="230.0" cy="104.0" r="3.5" class="f-v"/>
+  <line x1="290.0" y1="65.0" x2="290.0" y2="77.0" class="s-ink"/><line x1="286.0" y1="65.0" x2="294.0" y2="65.0" class="s-ink"/><line x1="286.0" y1="77.0" x2="294.0" y2="77.0" class="s-ink"/><circle cx="290.0" cy="71.0" r="3.5" class="f-v"/>
+  <line x1="350.0" y1="38.0" x2="350.0" y2="50.0" class="s-ink"/><line x1="346.0" y1="38.0" x2="354.0" y2="38.0" class="s-ink"/><line x1="346.0" y1="50.0" x2="354.0" y2="50.0" class="s-ink"/><circle cx="350.0" cy="44.0" r="3.5" class="f-v"/>
+  <text x="110.0" y="216" text-anchor="middle" class="t-sm t-mono">0.5</text>
+  <text x="170.0" y="216" text-anchor="middle" class="t-sm t-mono">1.0</text>
+  <text x="230.0" y="216" text-anchor="middle" class="t-sm t-mono">1.5</text>
+  <text x="290.0" y="216" text-anchor="middle" class="t-sm t-mono">2.0</text>
+  <text x="350.0" y="216" text-anchor="middle" class="t-sm t-mono">2.5</text>
+  <text x="42" y="204" text-anchor="end" class="t-sm t-mono">0</text>
+  <text x="42" y="174" text-anchor="end" class="t-sm t-mono">1</text>
+  <text x="42" y="144" text-anchor="end" class="t-sm t-mono">2</text>
+  <text x="42" y="114" text-anchor="end" class="t-sm t-mono">3</text>
+  <text x="42" y="84" text-anchor="end" class="t-sm t-mono">4</text>
+  <text x="42" y="54" text-anchor="end" class="t-sm t-mono">5</text>
+  <text x="42" y="24" text-anchor="end" class="t-sm t-mono">6</text>
+  <text x="205" y="234" text-anchor="middle" class="t-sm">screen distance L (m)</text>
+  <text x="14" y="12" class="t-sm">Δx (mm)</text>
+  <text x="200" y="60" class="t-sm t-acc t-b">gradient = λ/d</text>
+</svg>
+<figcaption>Data points with ±0.2 mm error bars and a line of best fit through the origin. The line passes through every error bar.</figcaption>
+</figure>
+
+<h2>What an intercept tells you</h2>
+<p>If theory says the line should pass through the origin but your line of best fit has a clear intercept, that's the signature of a <strong>systematic error</strong>: every reading is shifted by the same amount.</p>
+<div class="we" data-title="Spotting a systematic error" data-marks="3">
+<div class="we-q"><p>Students plot the extension of a spring (y-axis) against the load (x-axis). Hooke's law predicts a line through the origin, but their best-fit line cuts the y-axis at +4 mm. Suggest a cause and explain how it affects the value of the spring constant they calculate.</p></div>
+<div class="we-t"><p>A systematic error that shifts every reading by the same amount moves the whole line up or down (an intercept) without changing its slope. Constants found from the gradient are unaffected.</p></div>
+<div class="we-s"><p><strong>Cause:</strong> a consistent 4 mm offset, e.g. measuring each length from the wrong end of the ruler, or recording total length instead of extension for one reference point (a zero error).</p></div>
+<div class="we-s" data-f="k = \dfrac{1}{\text{gradient}}"><p><strong>Effect on k:</strong> the offset shifts every point by the same amount, so the <strong>gradient is unchanged</strong>. Since \(k\) comes from the gradient (\(k = 1/\text{gradient}\) for this choice of axes), the value of \(k\) is unaffected.</p></div>
+<div class="we-a"><p><strong>A zero error (systematic); it creates an intercept but doesn't change the gradient, so k is still correct.</strong> This is a big advantage of using gradients.</p></div>
+</div>
+
+<h2>Outliers, interpolation and extrapolation</h2>
+<ul>
+  <li><strong>Outlier:</strong> a point far from the trend. Check for a recording mistake and repeat the measurement if possible. Don't include it in the line of best fit if it's clearly anomalous, but mention it and explain why you excluded it.</li>
+  <li><strong>Interpolation:</strong> reading a value from the graph <em>within</em> the range of measured data. Generally reliable.</li>
+  <li><strong>Extrapolation:</strong> extending the line <em>beyond</em> the measured data (e.g. back to find an intercept). Less reliable, because the relationship may not continue (a spring past its elastic limit, relativistic effects at high speed).</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: gradients need consistent units">
+<p>If \(\Delta x\) is plotted in mm and \(L\) in m, the gradient 2.1 has units of mm m⁻¹, which is \(2.1\times10^{-3}\) with no unit. Forgetting this unit conversion gives a wavelength 1000 times too big.</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>To determine Planck's constant from photoelectric data, a student should plot:</p></div>
+<ol><li>stopping voltage against intensity</li><li>photocurrent against frequency</li><li>maximum kinetic energy against frequency</li><li>maximum kinetic energy against wavelength</li></ol>
+<div class="mcq-x"><p>\(E_{k\max} = hf - \phi\) is linear in \(f\) with gradient \(h\). Against wavelength it would be a curve.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A student's graph of \(T^2\) against \(r^3\) for several satellites is a straight line, but doesn't pass through the origin. The most likely explanation is:</p></div>
+<ol><li>a systematic error in the measurements</li><li>a random error in one measurement</li><li>Kepler's law does not apply to satellites</li><li>the satellites have different masses</li></ol>
+<div class="mcq-x"><p>Theory predicts \(T^2 \propto r^3\) (through the origin). A consistent offset suggests a systematic error, e.g. measuring altitude instead of orbital radius from Earth's centre.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>A student measures the speed \(v\) of a ball at the bottom of a ramp for various release heights \(h\). To get a straight-line graph, they should plot:</p></div>
+<ol><li>\(v\) against \(h\)</li><li>\(v\) against \(h^2\)</li><li>\(\sqrt{v}\) against \(h\)</li><li>\(v^2\) against \(h\)</li></ol>
+<div class="mcq-x"><p>\(mgh = \tfrac12 mv^2 \Rightarrow v^2 = 2gh\): plot \(v^2\) against \(h\), gradient \(2g\) (less if energy is lost to friction).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Reading a value from a graph beyond the range of the measured data is called:</p></div>
+<ol><li>interpolation</li><li>extrapolation</li><li>linearisation</li><li>calibration</li></ol>
+<div class="mcq-x"><p>Extrapolation goes beyond the data and is less reliable than interpolation (within the data).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4" data-f="F = \dfrac{m}{r}v^2 ;; \text{gradient} = \dfrac mr">
+<div class="pq-q"><p>A student measures the force needed to keep a 0.20 kg mass moving in a horizontal circle of radius 0.50 m at various speeds. (a) What should they plot to get a straight line? (b) What should the gradient be? (c) Their gradient is 0.36 kg m⁻¹. Suggest a reason for the difference.</p></div>
+<div class="pq-s"><p>(a) \(F = \dfrac{m}{r}v^2\): plot \(F\) (y) against \(v^2\) (x).</p><p>(b) Gradient \(= m/r = 0.20/0.50 = 0.40\ \text{kg m}^{-1}\).</p><p>(c) 0.36 is 10% low. Possible systematic errors: the effective radius was larger than 0.50 m (e.g. measured to the edge rather than the centre of the mass), since gradient \(= m/r\); or the force sensor under-reads. A 10% too-large radius (0.55 m) would give 0.36 exactly.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Explain why determining a constant from the gradient of a line of best fit is generally better than calculating it from each data point and averaging.</p></div>
+<div class="pq-s"><p>A line of best fit uses all the data at once and averages out random errors across the points. [1]</p><p>It makes outliers easy to see (and exclude with justification). [1]</p><p>A constant systematic offset (zero error) shifts the line but does not change its gradient, so the gradient method is unaffected, whereas calculating from each point would carry the offset into every value. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>IV on x, DV on y, labelled with units; smooth line of best fit through the error bars.</li>
+  <li>Linearise: rearrange to \(y = mx + c\); the gradient (and intercept) gives the constant.</li>
+  <li>Unexpected intercept → systematic error; gradient is unaffected by a constant offset.</li>
+  <li>Interpolation is reliable; extrapolation is risky.</li>
+</ul>

@@ -1,0 +1,233 @@
+<!--
+id: u3-tension
+title: Connected bodies & tension
+short: Tension & connected bodies
+summary: Strings, cables, tow bars and pulleys. How to find the acceleration of a connected system and the tension in each link, plus the tension traps that catch almost everyone.
+keywords: tension, string, rope, cable, pulley, atwood, connected bodies, train, carriages, tow bar, trailer, coupling, hanging mass, table pulley, incline pulley, contact force, blocks, sign, two ropes, equilibrium, spring balance, crane
+dotpoints: investigate and apply theoretically and practically Newton's three laws of motion in situations where two or more coplanar forces act along a straight line and in two dimensions
+-->
+<h2>What tension is</h2>
+<p><strong>Tension</strong> is the pulling force a string, rope, cable, chain or tow bar exerts on whatever it is attached to. In VCE the string is usually <em>ideal</em>: massless and inextensible. That gives you three facts to use:</p>
+<ul>
+  <li>The tension is the <strong>same at every point</strong> along one string, even around an ideal (frictionless, massless) pulley.</li>
+  <li>Objects joined by a taut string have the <strong>same magnitude of acceleration</strong>.</li>
+  <li>A string can only <strong>pull</strong>, never push. If the maths gives a negative tension, the string has gone slack.</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: tension is not the sum of both ends">
+<p>Two people pull on opposite ends of a rope, each with 200 N. The tension is <strong>200 N</strong>, not 400 N and not zero. Each end of the rope pulls on each person with 200 N. The same idea applies to a spring balance with a 2.0 kg mass hanging from each end over two pulleys: it reads 19.6 N (it shows “2 kg”), exactly as if one end were tied to a wall.</p>
+</aside>
+
+<h2>The two methods for connected bodies</h2>
+<p>Every connected-bodies question can be done with two steps. Learn this routine and they become easy marks.</p>
+<div class="eq"><div class="eq-label">Step 1: whole system (tension is internal and disappears)</div>\[ a = \frac{\text{net external force driving the system}}{\text{total mass}} \]<div class="eq-label">Step 2: isolate one object (tension is now external)</div>\[ F_{\text{net on that object}} = m_{\text{object}}\, a \;\Rightarrow\; \text{solve for } T \]</div>
+<p>In step 2, pick the object with the <em>fewest</em> forces on it. For a train that is usually the last carriage.</p>
+
+<h3>Car towing a trailer (a straight line)</h3>
+<div class="we" data-title="Tension in a tow bar" data-marks="4">
+<div class="we-q"><p>A 1200 kg car tows a 400 kg trailer along a level road. The driving force on the car is 2400 N. Resistive forces are 300 N on the car and 100 N on the trailer.</p><p>(a) Find the acceleration. (b) Find the tension in the tow bar.</p></div>
+<div class="we-t"><p>Treat connected objects as one system to find the acceleration: internal forces (like tension in the tow bar) cancel in pairs. Then isolate one object to find an internal force, because on its own the tension becomes an external force.</p></div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m_{\text{total}}}"><p><strong>Whole system.</strong> Tension is internal. External horizontal forces: driving force forward, both resistances backward.</p>\[ a = \frac{2400 - 300 - 100}{1200 + 400} = \frac{2000}{1600} = 1.25\ \text{m s}^{-2} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Isolate the trailer.</strong> Its horizontal forces are tension \(T\) forward and 100 N resistance backward.</p>\[ T - 100 = 400(1.25) \Rightarrow T = 600\ \text{N} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Check using the car.</strong> Forces on the car: 2400 N forward, 300 N back, and the tow bar pulls it <em>back</em> with 600 N (third law).</p>\[ 2400 - 300 - 600 = 1500 = 1200(1.25)\ ✓ \]</div>
+<div class="we-a"><p><strong>(a) 1.25 m s⁻² (b) 600 N.</strong></p></div>
+</div>
+
+<aside class="c-key" data-title="Key idea: trains"><p>In a train pulled from the front, the tension is <strong>largest in the coupling nearest the engine</strong> and smallest at the back, because each coupling has to accelerate everything behind it. With \(n\) identical carriages behind a coupling (and no friction), \(T = n\,m_{\text{carriage}}\,a\).</p></aside>
+
+<h2>Pulley systems</h2>
+<h3>Mass on a table pulled by a hanging mass</h3>
+<figure class="fig">
+<svg viewBox="0 0 360 245" width="360" role="img" aria-label="Block A on a table connected by a string over a pulley to hanging block B">
+  <line x1="20" y1="82" x2="262" y2="82" class="s-ink"/>
+  <line x1="40" y1="82" x2="40" y2="235" class="s-mut"/><line x1="240" y1="82" x2="240" y2="235" class="s-mut"/>
+  <line x1="262" y1="82" x2="262" y2="96" class="s-mut"/>
+  <circle cx="262" cy="74" r="12" class="f-surf2" style="stroke:var(--ink);stroke-width:1.4"/>
+  <rect x="100" y="44" width="70" height="38" rx="3" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="135" y="68" text-anchor="middle" class="t-b">A</text>
+  <line x1="170" y1="62" x2="262" y2="62" class="s-ink" style="stroke-width:1.2"/>
+  <line x1="274" y1="74" x2="274" y2="150" class="s-ink" style="stroke-width:1.2"/>
+  <rect x="252" y="150" width="44" height="38" rx="3" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="274" y="174" text-anchor="middle" class="t-b">B</text>
+  <line x1="170" y1="52" x2="212" y2="52" class="s-t" marker-end="url(#ah-t)"/><text x="190" y="44" class="t-t t-b">T</text>
+  <line x1="286" y1="150" x2="286" y2="112" class="s-t" marker-end="url(#ah-t)"/><text x="292" y="128" class="t-t t-b">T</text>
+  <line x1="274" y1="188" x2="274" y2="230" class="s-w" marker-end="url(#ah-w)"/><text x="281" y="226" class="t-w t-b">m<tspan dy="3" font-size="10">B</tspan><tspan dy="-3">g</tspan></text>
+  <line x1="110" y1="30" x2="160" y2="30" class="s-net" marker-end="url(#ah-net)"/><text x="94" y="34" class="t-net t-b">a</text>
+  <line x1="318" y1="152" x2="318" y2="192" class="s-net" marker-end="url(#ah-net)"/><text x="324" y="176" class="t-net t-b">a</text>
+</svg>
+<figcaption>The same tension \(T\) pulls A towards the pulley and pulls B upward. On a frictionless table, the only driving force is B's weight.</figcaption>
+</figure>
+
+<div class="we" data-title="Table and hanging mass" data-marks="4">
+<div class="we-q"><p>Block A (3.0 kg) sits on a frictionless table. A light string runs from A over an ideal pulley to block B (2.0 kg), which hangs freely. The system is released from rest.</p><p>(a) Find the acceleration. (b) Find the tension in the string.</p></div>
+<div class="we-t"><p>Both blocks move together with the same acceleration. Only B's weight drives the whole system (A's weight is cancelled by the table), and the tension is whatever force gives A its acceleration.</p></div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m_{\text{total}}}"><p><strong>Whole system.</strong> The only external force that drives the motion is B's weight (A's weight is balanced by the table's normal force).</p>\[ a = \frac{m_B g}{m_A + m_B} = \frac{2.0 \times 9.8}{5.0} = 3.92\ \text{m s}^{-2} \]</div>
+<div class="we-s" data-f="T = m_A a"><p><strong>Isolate A</strong> (only one horizontal force: tension).</p>\[ T = m_A a = 3.0 \times 3.92 = 11.8\ \text{N} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Check with B</strong> (down positive).</p>\[ m_B g - T = 19.6 - 11.8 = 7.8 = 2.0 \times 3.92\ ✓ \]</div>
+<div class="we-a"><p><strong>(a) 3.9 m s⁻² (b) 12 N.</strong> The tension is <em>less</em> than B's weight (19.6 N): if it were equal, B would not accelerate.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: the hanging mass's weight is not the tension">
+<p>While the system accelerates, \(T < m_B g\). Tension equals the hanging weight only if the system is at rest or moving at constant velocity. This is one of the most common errors in the whole course.</p>
+</aside>
+
+<h3>Atwood machine (two hanging masses)</h3>
+<figure class="fig">
+<svg viewBox="0 0 340 235" width="340" role="img" aria-label="Atwood machine: two masses hanging either side of a pulley">
+  <line x1="120" y1="12" x2="220" y2="12" class="s-ink"/>
+  <line x1="170" y1="12" x2="170" y2="40" class="s-mut"/>
+  <circle cx="170" cy="46" r="30" class="f-surf2" style="stroke:var(--ink);stroke-width:1.4"/>
+  <line x1="140" y1="46" x2="140" y2="130" class="s-ink" style="stroke-width:1.2"/>
+  <line x1="200" y1="46" x2="200" y2="96" class="s-ink" style="stroke-width:1.2"/>
+  <rect x="116" y="130" width="48" height="46" rx="3" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="140" y="158" text-anchor="middle" class="t-b">5.0 kg</text>
+  <rect x="180" y="96" width="40" height="36" rx="3" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="200" y="119" text-anchor="middle" class="t-b">3.0</text>
+  <line x1="128" y1="130" x2="128" y2="92" class="s-t" marker-end="url(#ah-t)"/><text x="108" y="104" class="t-t t-b">T</text>
+  <line x1="212" y1="96" x2="212" y2="62" class="s-t" marker-end="url(#ah-t)"/><text x="218" y="74" class="t-t t-b">T</text>
+  <line x1="140" y1="176" x2="140" y2="226" class="s-w" marker-end="url(#ah-w)"/><text x="148" y="222" class="t-w t-b">49 N</text>
+  <line x1="200" y1="132" x2="200" y2="162" class="s-w" marker-end="url(#ah-w)"/><text x="208" y="160" class="t-w t-b">29.4 N</text>
+  <line x1="88" y1="140" x2="88" y2="176" class="s-net" marker-end="url(#ah-net)"/><text x="72" y="164" class="t-net t-b">a</text>
+  <line x1="252" y1="130" x2="252" y2="98" class="s-net" marker-end="url(#ah-net)"/><text x="258" y="118" class="t-net t-b">a</text>
+</svg>
+<figcaption>The heavier mass accelerates down and the lighter mass accelerates up, with the same magnitude.</figcaption>
+</figure>
+<div class="eq"><div class="eq-label">Atwood machine</div>\[ a = \frac{(m_1 - m_2)\,g}{m_1 + m_2}, \qquad T = m_2(g + a) = m_1(g - a) \]<p>Don't memorise these. Derive them with the two-step method every time; examiners change the set-up.</p></div>
+
+<div class="we" data-title="Atwood machine" data-marks="4">
+<div class="we-q"><p>A 5.0 kg mass and a 3.0 kg mass hang on either side of an ideal pulley and are released from rest. Find the acceleration, the tension, and the speed of the masses after they have moved 1.0 m.</p></div>
+<div class="we-t"><p>In an Atwood machine the two weights oppose each other; their difference is the net force on the whole system, which is the total mass. The tension sits between the two weights, big enough to accelerate the lighter mass upwards.</p></div>
+<div class="we-s" data-f="a = \dfrac{(m_1 - m_2)g}{m_1 + m_2}"><p><strong>Whole system.</strong> Take “5.0 kg side down” as positive. The weights oppose each other.</p>\[ a = \frac{(5.0 - 3.0)(9.8)}{5.0 + 3.0} = \frac{19.6}{8.0} = 2.45\ \text{m s}^{-2} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Isolate the 3.0 kg mass</strong> (accelerating upward):</p>\[ T - 29.4 = 3.0(2.45) \Rightarrow T = 36.75\ \text{N} \]<p>Check with the 5.0 kg mass: \(49 - 36.75 = 12.25 = 5.0 \times 2.45\) ✓.</p></div>
+<div class="we-s" data-f="v^2 = u^2 + 2as"><p><strong>Speed after 1.0 m</strong> (constant acceleration from rest):</p>\[ v^2 = u^2 + 2as = 0 + 2(2.45)(1.0) \Rightarrow v = 2.2\ \text{m s}^{-1} \]</div>
+<div class="we-a"><p><strong>\(a = 2.5\ \text{m s}^{-2}\), \(T = 37\ \text{N}\), \(v = 2.2\ \text{m s}^{-1}\).</strong> Notice \(29.4 < T < 49\): tension sits between the two weights.</p></div>
+</div>
+
+<h3>Mass on a slope pulled by a hanging mass</h3>
+<div class="we" data-title="Incline and pulley (hard)" data-marks="5">
+<div class="we-q"><p>A 4.0 kg block sits on a frictionless slope inclined at 30°. A string parallel to the slope runs over an ideal pulley at the top of the slope to a 3.0 kg mass hanging vertically. Which way does the system move, and what are the acceleration and tension?</p></div>
+<div class="we-t"><p>Decide the direction of motion first by comparing the two driving forces (the hanging weight vs the block's weight component down the slope). Then treat the system as one object for the acceleration and isolate one mass for the tension.</p></div>
+<div class="we-s" data-f="F_\parallel = mg\sin\theta"><p><strong>Compare the two forces that drive the motion.</strong></p>\[ \text{hanging weight} = 3.0 \times 9.8 = 29.4\ \text{N} \]\[ \text{block's weight down the slope} = 4.0 \times 9.8 \times \sin 30^\circ = 19.6\ \text{N} \]<p>The hanging weight wins, so the hanging mass falls and the block moves <em>up</em> the slope.</p></div>
+<div class="we-s" data-f="a = \dfrac{F_{\text{net}}}{m_{\text{total}}}"><p><strong>Whole system.</strong></p>\[ a = \frac{29.4 - 19.6}{4.0 + 3.0} = \frac{9.8}{7.0} = 1.4\ \text{m s}^{-2} \]</div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Isolate the hanging mass</strong> (down positive):</p>\[ 29.4 - T = 3.0(1.4) \Rightarrow T = 25.2\ \text{N} \]<p>Check the block: \(T - 19.6 = 5.6 = 4.0 \times 1.4\) ✓.</p></div>
+<div class="we-a"><p><strong>The block moves up the slope with \(a = 1.4\ \text{m s}^{-2}\); \(T = 25\ \text{N}\).</strong> Always compare the driving forces first so your signs are right.</p></div>
+</div>
+
+<div class="sim" data-sim="pulley"></div>
+
+<h2>Objects pushed in contact</h2>
+<p>Blocks pushed side by side behave like a train, except the link is a <strong>contact (normal) force</strong> instead of tension.</p>
+<div class="we" data-title="Which block feels the bigger push?" data-marks="3">
+<div class="we-q"><p>A 4.0 kg block and a 2.0 kg block sit side by side on a frictionless floor. A 30 N horizontal force pushes the 4.0 kg block, which pushes the 2.0 kg block. Find the contact force between them. What changes if the 30 N force pushes the 2.0 kg block instead?</p></div>
+<div class="we-t"><p>The contact force between blocks is exactly what's needed to accelerate the block(s) in front of it. The push accelerates everything, but the rear block only has to push the front block's mass.</p></div>
+<div class="we-s" data-f="a = \dfrac{F}{m_{\text{total}}}"><p><strong>Whole system:</strong> \(a = 30/6.0 = 5.0\ \text{m s}^{-2}\).</p></div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Isolate the front block (2.0 kg).</strong> The only horizontal force on it is the contact force: \(F_c = 2.0 \times 5.0 = 10\ \text{N}\).</p></div>
+<div class="we-s" data-f="F_{\text{net}} = ma"><p><strong>Reversed.</strong> Now the front block is the 4.0 kg one: \(F_c = 4.0 \times 5.0 = 20\ \text{N}\).</p></div>
+<div class="we-a"><p><strong>10 N, or 20 N if pushed from the other side.</strong> The contact force equals whatever is needed to accelerate the block(s) <em>in front</em>.</p></div>
+</div>
+
+<h2>Tension in two dimensions: hanging objects</h2>
+<p>When an object hangs from two ropes at angles, it is in equilibrium: the vector sum of the forces on the knot is zero. Resolve every tension into horizontal and vertical components.</p>
+<figure class="fig">
+<svg viewBox="0 0 360 215" width="360" role="img" aria-label="Sign hanging from two ropes each at 30 degrees to the horizontal">
+  <line x1="30" y1="20" x2="330" y2="20" class="s-ink" style="stroke-width:2.4"/>
+  <g class="hatch"><line x1="40" y1="20" x2="30" y2="10"/><line x1="70" y1="20" x2="60" y2="10"/><line x1="100" y1="20" x2="90" y2="10"/><line x1="130" y1="20" x2="120" y2="10"/><line x1="160" y1="20" x2="150" y2="10"/><line x1="190" y1="20" x2="180" y2="10"/><line x1="220" y1="20" x2="210" y2="10"/><line x1="250" y1="20" x2="240" y2="10"/><line x1="280" y1="20" x2="270" y2="10"/><line x1="310" y1="20" x2="300" y2="10"/><line x1="330" y1="20" x2="320" y2="10"/></g>
+  <line x1="80" y1="20" x2="180" y2="78" class="s-ink" style="stroke-width:1.2"/>
+  <line x1="280" y1="20" x2="180" y2="78" class="s-ink" style="stroke-width:1.2"/>
+  <line x1="180" y1="78" x2="180" y2="112" class="s-ink" style="stroke-width:1.2"/>
+  <rect x="135" y="112" width="90" height="40" rx="4" class="f-surf3" style="stroke:var(--ink);stroke-width:1.4"/>
+  <text x="180" y="137" text-anchor="middle" class="t-b">20 kg</text>
+  <path d="M112 20 A32 32 0 0 1 107.7 36" class="s-mut"/><text x="114" y="40" class="t-mut t-sm">30°</text>
+  <path d="M248 20 A32 32 0 0 0 252.3 36" class="s-mut"/><text x="226" y="40" class="t-mut t-sm">30°</text>
+  <line x1="180" y1="78" x2="128" y2="48" class="s-t" marker-end="url(#ah-t)"/><text x="116" y="66" class="t-t t-b">T</text>
+  <line x1="180" y1="78" x2="232" y2="48" class="s-t" marker-end="url(#ah-t)"/><text x="236" y="66" class="t-t t-b">T</text>
+  <line x1="180" y1="152" x2="180" y2="202" class="s-w" marker-end="url(#ah-w)"/><text x="187" y="198" class="t-w t-b">mg = 196 N</text>
+</svg>
+<figcaption>Each rope's vertical component supports half the weight. The horizontal components cancel.</figcaption>
+</figure>
+
+<div class="we" data-title="A sign on two ropes (symmetric)" data-marks="3">
+<div class="we-q"><p>A 20 kg sign hangs from two ropes, each at 30° to the horizontal ceiling. Find the tension in each rope. What would it be if each rope were at 10° to the horizontal?</p></div>
+<div class="we-t"><p>A hanging object is in equilibrium, so the vertical components of the rope tensions must add up to its weight. Flatter ropes have smaller vertical components, so they need much larger tensions to hold the same weight.</p></div>
+<div class="we-s" data-f="2T\sin\theta = mg"><p><strong>Vertical equilibrium.</strong> By symmetry both tensions are equal. Their vertical components hold up the weight:</p>\[ 2T\sin 30^\circ = mg \Rightarrow T = \frac{20 \times 9.8}{2 \times 0.5} = 196\ \text{N} \]</div>
+<div class="we-s" data-f="T = \dfrac{mg}{2\sin\theta}"><p><strong>At 10°:</strong></p>\[ T = \frac{196}{2\sin 10^\circ} = \frac{196}{0.347} = 564\ \text{N} \]</div>
+<div class="we-a"><p><strong>196 N each (equal to the whole weight!), rising to 564 N at 10°.</strong> The flatter the ropes, the larger the tension. A perfectly horizontal rope would need infinite tension to support any weight.</p></div>
+</div>
+
+<div class="we" data-title="Unequal angles (hard)" data-marks="4">
+<div class="we-q"><p>A 10 kg mass hangs from two ropes. Rope 1 makes 30° with the horizontal and rope 2 makes 60° with the horizontal. Find both tensions.</p></div>
+<div class="we-t"><p>In equilibrium the net force is zero in every direction. Resolving each tension into components gives two equations (horizontal and vertical), enough to find two unknown tensions.</p></div>
+<div class="we-s" data-f="\Sigma F_x = 0"><p><strong>Horizontal components cancel:</strong></p>\[ T_1\cos 30^\circ = T_2\cos 60^\circ \Rightarrow T_2 = T_1\frac{\cos 30^\circ}{\cos 60^\circ} = 1.732\,T_1 \]</div>
+<div class="we-s" data-f="\Sigma F_y = 0"><p><strong>Vertical components support the weight:</strong></p>\[ T_1\sin 30^\circ + T_2\sin 60^\circ = 98 \]\[ 0.5\,T_1 + (1.732)(0.866)\,T_1 = 0.5\,T_1 + 1.5\,T_1 = 2.0\,T_1 = 98 \]</div>
+<div class="we-s"><p><strong>Solve:</strong> \(T_1 = 49\ \text{N}\) and \(T_2 = 1.732 \times 49 = 84.9\ \text{N}\).</p></div>
+<div class="we-a"><p><strong>\(T_1 = 49\ \text{N}\) (30° rope), \(T_2 = 85\ \text{N}\) (60° rope).</strong> The steeper rope carries more of the load.</p></div>
+</div>
+
+<h2>Tension in accelerating vertical cables</h2>
+<p>A cable holding a load in a lift or crane works exactly like the normal force in a lift:</p>
+<div class="eq">\[ T - mg = ma \Rightarrow T = m(g + a) \quad (\text{up positive}) \]</div>
+<p>A crane lifting an 800 kg load with an upward acceleration of 0.50 m s⁻² needs \(T = 800(9.8 + 0.50) = 8.24\times10^3\ \text{N}\). Lowering the same load while slowing it (acceleration upward) needs exactly the same tension.</p>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>Two students have a tug of war. Each pulls on the rope with a force of 150 N and nobody moves. The tension in the rope is:</p></div>
+<ol><li>0 N</li><li>150 N</li><li>300 N</li><li>75 N</li></ol>
+<div class="mcq-x"><p>The rope pulls on each student with 150 N, so the tension is 150 N. It is the same as tying one end to a tree and pulling with 150 N. The forces on the <em>rope</em> balance, which is why it doesn't accelerate, but the tension is not zero.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A 2.0 kg mass hangs from each end of a string that passes over two frictionless pulleys. A spring balance is spliced into the middle of the string. The balance reads:</p></div>
+<ol><li>0 N</li><li>39.2 N</li><li>19.6 N</li><li>9.8 N</li></ol>
+<div class="mcq-x"><p>The system is in equilibrium, so the tension equals the weight on either side: 19.6 N. The second mass does the same job a wall hook would do. Doubling to 39.2 N is the classic mistake.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>An engine pulls three identical carriages along a straight frictionless track with constant acceleration. Which coupling has the greatest tension?</p></div>
+<ol><li>between the engine and the first carriage</li><li>between the first and second carriages</li><li>between the second and third carriages</li><li>all couplings have the same tension</li></ol>
+<div class="mcq-x"><p>The coupling behind the engine must accelerate all three carriages (\(T = 3ma\)). The next accelerates two (\(2ma\)), the last one (\(ma\)).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Block A on a frictionless table is connected over a pulley to hanging block B, and the system accelerates. The tension in the string is:</p></div>
+<ol><li>equal to the weight of B</li><li>greater than the weight of B</li><li>equal to the weight of A</li><li>less than the weight of B</li></ol>
+<div class="mcq-x"><p>B accelerates downward, so the net force on B is downward: \(m_B g - T = m_B a > 0\), so \(T < m_B g\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A lift is moving upward and slowing down. Compared with the weight of the lift, the tension in the lift cable is:</p></div>
+<ol><li>greater</li><li>smaller</li><li>equal</li><li>zero</li></ol>
+<div class="mcq-x"><p>Moving up and slowing means acceleration is downward, so \(T = m(g + a)\) with \(a < 0\), giving \(T < mg\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>A picture is hung from a nail by a wire. Which arrangement gives the smallest tension in the wire?</p></div>
+<ol><li>Wire nearly horizontal, making 5° with the horizontal on each side</li><li>Wire at 30° to the horizontal on each side</li><li>Wire at 70° to the horizontal on each side</li><li>The tension is the same in all cases</li></ol>
+<div class="mcq-x"><p>\(2T\sin\theta = mg\), so \(T = mg/(2\sin\theta)\). The larger the angle to the horizontal (the more vertical the wire), the smaller the tension.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="a = \dfrac{F}{m_{\text{total}}} ;; F_{\text{net}} = ma">
+<div class="pq-q"><p>Three blocks of mass 4.0 kg, 3.0 kg and 2.0 kg sit in a line on a frictionless surface, joined by light strings. A 36 N force pulls the 4.0 kg block horizontally, away from the others. Find the tension in each string.</p></div>
+<div class="pq-s"><p>System: \(a = 36/9.0 = 4.0\ \text{m s}^{-2}\).</p><p>String between the 4.0 kg and 3.0 kg blocks accelerates the 3.0 kg and 2.0 kg blocks: \(T_1 = (3.0 + 2.0)(4.0) = 20\ \text{N}\).</p><p>String between the 3.0 kg and 2.0 kg blocks accelerates only the 2.0 kg block: \(T_2 = 2.0 \times 4.0 = 8.0\ \text{N}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4" data-f="a = \dfrac{F_{\text{net}}}{m_{\text{total}}} ;; F_{\text{net}} = ma">
+<div class="pq-q"><p>A 5.0 kg block on a rough horizontal table is connected over an ideal pulley to a hanging 2.0 kg mass. Friction on the block is 10 N. Calculate the acceleration of the system and the tension in the string.</p></div>
+<div class="pq-s"><p>System: driving force is the hanging weight, 19.6 N. Friction opposes the motion.</p><p>\(a = \dfrac{19.6 - 10}{5.0 + 2.0} = \dfrac{9.6}{7.0} = 1.37\ \text{m s}^{-2}\)</p><p>Hanging mass (down positive): \(19.6 - T = 2.0(1.37) \Rightarrow T = 16.9\ \text{N}\).</p><p>Check the block: \(T - 10 = 6.9 \approx 5.0 \times 1.37\) ✓.</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="3" data-f="a = \dfrac{(m_1 - m_2)g}{m_1 + m_2} ;; v = u + at">
+<div class="pq-q"><p>In an Atwood machine, a 3.0 kg and a 5.0 kg mass are released from rest. After 1.5 s the string is cut. Describe the motion of the 3.0 kg mass immediately after the cut, including its velocity and acceleration.</p></div>
+<div class="pq-s"><p>Before the cut: \(a = 2.45\ \text{m s}^{-2}\) (3.0 kg mass upward), so after 1.5 s: \(v = 2.45 \times 1.5 = 3.7\ \text{m s}^{-1}\) upward.</p><p>After the cut, the tension vanishes and the only force is weight, so the acceleration is <strong>9.8 m s⁻² downward</strong>. But velocity cannot change instantly: the mass is still moving <strong>upward at 3.7 m s⁻¹</strong>. It rises further, stops, then falls. Students often say it “immediately falls”; it doesn't.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4" data-f="\Sigma F_y = 0 ;; 2T\sin\theta = mg">
+<div class="pq-q"><p>A 60 kg climber hangs at rest from a rope tied between two anchor points at the same height. The rope sags so that each side makes an angle of 15° with the horizontal. The rope's breaking strength is 1500 N.</p><p>(a) Calculate the tension in the rope. (b) Will the rope hold? (c) Explain why pulling the rope tighter (less sag) makes it <em>more</em> likely to break.</p></div>
+<div class="pq-s"><p>(a) \(2T\sin 15^\circ = mg \Rightarrow T = \dfrac{60 \times 9.8}{2 \times 0.259} = 1.14\times10^3\ \text{N}\). [2]</p><p>(b) Yes, 1140 N is below the 1500 N breaking strength (just). [1]</p><p>(c) Less sag means a smaller angle to the horizontal, so \(\sin\theta\) is smaller and each side's tension must be larger for the vertical components to support the same weight. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Step 1: treat the whole system to find \(a\) (tension cancels). Step 2: isolate one body to find \(T\).</li>
+  <li>An accelerating hanging mass has \(T \neq mg\). Tension equals the weight only at rest or constant velocity.</li>
+  <li>Couplings nearest the pulling force carry the most tension.</li>
+  <li>For angled ropes: horizontal components cancel, vertical components support the weight. Flatter ropes → bigger tension.</li>
+</ul>

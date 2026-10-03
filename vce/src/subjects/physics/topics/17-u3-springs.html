@@ -1,0 +1,191 @@
+<!--
+id: u3-springs
+title: Springs, strain energy & bungee jumping
+short: Springs & bungee jumping
+summary: Hooke's law, spring constants from force–extension graphs, strain potential energy, vertical springs, bungee jumping (the classic hard question) and springs in collisions.
+keywords: spring, springs, hooke, hookes law, spring constant, stiffness, extension, compression, strain potential energy, elastic potential energy, spe, force extension graph, area under graph, bungee, bungee jumping, equilibrium position, maximum speed, maximum extension, oscillation, trampoline, launcher, elastic limit
+dotpoints: analyse transformations of energy between kinetic energy, strain potential energy, gravitational potential energy and energy dissipated to the environment | strain potential energy: area under a force–displacement graph including ideal springs obeying Hooke's Law: \(F = -kx\) and \(E_s = \frac12 kx^2\) | apply the laws of energy and momentum conservation in isolated systems
+-->
+<h2>Hooke's law</h2>
+<p>An ideal spring pulls back (or pushes back) with a force proportional to how far it has been stretched or compressed from its natural length.</p>
+<div class="eq"><div class="eq-label">Hooke's law</div>\[ F = -kx \]<p>\(x\) is the extension or compression from the <strong>natural length</strong> (m), \(k\) is the spring constant (N m⁻¹). The minus sign means the spring force is a <strong>restoring force</strong>: it always points back towards the natural length. For magnitudes, use \(F = kx\).</p></div>
+<ul>
+  <li>A <strong>stiffer</strong> spring has a larger \(k\): it needs more force for each metre of stretch.</li>
+  <li>Hooke's law only holds up to the <strong>elastic limit</strong>. Beyond it, the spring deforms permanently and the graph curves.</li>
+  <li>The spring constant is the <strong>gradient</strong> of a force–extension graph.</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: x is the change in length">
+<p>If a 0.40 m spring is stretched to 0.55 m, then \(x = 0.15\ \text{m}\), not 0.55 m. Similarly, for a bungee cord \(x\) only starts counting once the cord is taut (after the jumper has fallen the natural length).</p>
+</aside>
+
+<h2>Strain potential energy</h2>
+<p>Work done stretching a spring is stored as <strong>strain (elastic) potential energy</strong>. Because the force grows linearly from 0 to \(kx\), the work is the area of a triangle under the F–x graph.</p>
+<figure class="fig">
+<svg viewBox="0 0 360 215" width="360" role="img" aria-label="Straight-line force-extension graph for an ideal spring from the origin to 16 newtons at 0.20 metres, with the triangular area shaded as strain potential energy">
+  <polygon points="50,180 290,180 290,68" class="f-accsoft"/>
+  <line x1="50" y1="180" x2="320" y2="48" class="s-acc"/>
+  <line x1="50" y1="180" x2="335" y2="180" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="180" x2="50" y2="22" class="s-ink" marker-end="url(#ah-ink)"/>
+  <text x="300" y="200" class="t-sm">x (m)</text><text x="18" y="18" class="t-sm">F (N)</text>
+  <line x1="290" y1="68" x2="290" y2="180" class="s-dash"/>
+  <line x1="50" y1="68" x2="290" y2="68" class="s-dash"/>
+  <text x="290" y="198" text-anchor="middle" class="t-sm t-mono">0.20</text>
+  <text x="170" y="198" text-anchor="middle" class="t-sm t-mono">0.10</text>
+  <text x="42" y="72" text-anchor="end" class="t-sm t-mono">16</text>
+  <text x="42" y="128" text-anchor="end" class="t-sm t-mono">8</text>
+  <text x="215" y="160" text-anchor="middle" class="t-b t-acc">area = E<tspan dy="3" font-size="10">s</tspan></text>
+  <text x="120" y="92" class="t-sm">gradient = k = 16 ÷ 0.20 = 80 N m⁻¹</text>
+</svg>
+<figcaption>For an ideal spring, strain energy is the triangle: \(E_s = \tfrac12 Fx = \tfrac12 kx^2\).</figcaption>
+</figure>
+<div class="eq"><div class="eq-label">Strain potential energy (ideal spring)</div>\[ E_s = \tfrac12 kx^2 = \tfrac12 Fx \]<p>For a non-ideal spring (curved graph) there is no formula: find the area under the graph by counting squares or splitting into shapes.</p></div>
+<aside class="c-key"><p>\(E_s \propto x^2\): doubling the extension quadruples the stored energy, even though the force only doubles.</p></aside>
+
+<div class="we" data-title="Reading a force–extension graph" data-marks="3">
+<div class="we-q"><p>Using the graph above, find (a) the spring constant and (b) the strain energy stored at an extension of 0.20 m. (c) How much extra energy is stored in stretching it from 0.10 m to 0.20 m?</p></div>
+<div class="we-t"><p>For an ideal spring the force–extension graph is a straight line through the origin: its gradient is the spring constant and the area under it is the stored energy.</p></div>
+<div class="we-s" data-f="k = \text{gradient of } F\text{–}x"><p><strong>(a) Gradient:</strong> \(k = \dfrac{16\ \text{N}}{0.20\ \text{m}} = 80\ \text{N m}^{-1}\).</p></div>
+<div class="we-s" data-f="E_s = \tfrac12 kx^2"><p><strong>(b)</strong> \(E_s = \tfrac12 kx^2 = \tfrac12(80)(0.20)^2 = 1.6\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_s = \tfrac12 kx^2"><p><strong>(c)</strong> At 0.10 m: \(\tfrac12(80)(0.10)^2 = 0.40\ \text{J}\). Extra: \(1.6 - 0.40 = 1.2\ \text{J}\).</p></div>
+<div class="we-a"><p><strong>(a) 80 N m⁻¹ (b) 1.6 J (c) 1.2 J.</strong> The second 0.10 m stores three times as much energy as the first.</p></div>
+</div>
+
+<h2>Horizontal springs: kinetic ↔ strain energy</h2>
+<div class="we" data-title="A cart hitting a spring buffer" data-marks="3">
+<div class="we-q"><p>A 2.0 kg cart rolls at 3.0 m s⁻¹ along a frictionless track into a spring buffer with \(k = 800\ \text{N m}^{-1}\). Find the maximum compression and the maximum force on the cart.</p></div>
+<div class="we-t"><p>At maximum compression the cart is momentarily at rest, so all its kinetic energy has become elastic potential energy. The force is largest there because \(F = kx\).</p></div>
+<div class="we-s" data-f="\tfrac12 mv^2 = \tfrac12 kx^2"><p><strong>All kinetic energy becomes strain energy</strong> at maximum compression (the cart is momentarily at rest):</p>\[ \tfrac12 mv^2 = \tfrac12 kx^2 \Rightarrow x = v\sqrt{\frac{m}{k}} = 3.0\sqrt{\frac{2.0}{800}} = 0.15\ \text{m} \]</div>
+<div class="we-s" data-f="F = kx"><p><strong>Maximum force</strong> at maximum compression: \(F = kx = 800 \times 0.15 = 120\ \text{N}\).</p></div>
+<div class="we-a"><p><strong>0.15 m; 120 N.</strong> The cart then rebounds at 3.0 m s⁻¹ (an ideal spring returns all the energy).</p></div>
+</div>
+
+<h2>Vertical springs</h2>
+<p>Hang a mass on a spring and it settles at the <strong>equilibrium position</strong>, where the spring force balances the weight:</p>
+<div class="eq">\[ kx_{\text{eq}} = mg \quad\Rightarrow\quad x_{\text{eq}} = \frac{mg}{k} \]</div>
+<p>If instead you attach the mass at the natural length and let go, it falls <em>past</em> equilibrium and oscillates. Energy conservation (\(mgx = \tfrac12 kx^2\)) gives the lowest point at \(x = 2mg/k\): exactly <strong>twice</strong> the equilibrium extension.</p>
+<ul>
+  <li>At the top (natural length): speed zero, acceleration \(g\) downward.</li>
+  <li>At equilibrium: net force zero, so acceleration zero and <strong>speed maximum</strong>.</li>
+  <li>At the bottom: speed zero, net force upward, acceleration maximum (upward).</li>
+</ul>
+
+<h2>Bungee jumping</h2>
+<p>A bungee jump is the classic hard energy question. Split it into two phases.</p>
+<ol>
+  <li><strong>Free fall</strong> for the first \(L\) metres (the cord's natural length). Only gravity acts: \(E_g \to E_k\).</li>
+  <li><strong>Cord stretching.</strong> The cord behaves like a spring. The jumper keeps speeding up until the cord's force equals their weight (the equilibrium point), then slows down. At the lowest point \(v = 0\) and all the gravitational energy lost has become strain energy.</li>
+</ol>
+<div class="eq"><div class="eq-label">Lowest point (starting from rest, no losses)</div>\[ mg(L + x_{\max}) = \tfrac12 k x_{\max}^2 \]<p>This is a quadratic in \(x_{\max}\). Remember the jumper falls \(L + x_{\max}\) in total, not just \(x_{\max}\).</p></div>
+
+<figure class="fig">
+<svg viewBox="0 0 380 240" width="380" role="img" aria-label="Energy versus distance fallen for a bungee jumper: gravitational energy falls linearly, kinetic energy rises linearly then peaks at the equilibrium point and falls to zero, strain energy rises from the natural length to a maximum at the lowest point">
+  <line x1="50" y1="200" x2="365" y2="200" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="200" x2="50" y2="22" class="s-ink" marker-end="url(#ah-ink)"/>
+  <text x="250" y="232" class="t-sm">distance fallen (m)</text>
+  <text x="12" y="16" class="t-sm">energy (kJ)</text>
+  <line x1="210" y1="200" x2="210" y2="40" class="s-dash"/>
+  <line x1="241.4" y1="200" x2="241.4" y2="40" class="s-dash"/>
+  <polyline points="50.0,47.5 346.3,200.0" class="s-w"/>
+  <polyline points="50.0,200.0 58.0,195.9 66.0,191.8 74.0,187.7 82.0,183.5 90.0,179.4 98.0,175.3 106.0,171.2 114.0,167.1 122.0,163.0 130.0,158.8 138.0,154.7 146.0,150.6 154.0,146.5 162.0,142.4 170.0,138.3 178.0,134.1 186.0,130.0 194.0,125.9 202.0,121.8 210.0,117.7 218.0,114.1 226.0,111.5 234.0,110.1 242.0,109.6 250.0,110.2 258.0,111.9 266.0,114.6 274.0,118.4 282.0,123.2 290.0,129.0 298.0,135.9 306.0,143.9 314.0,152.9 322.0,163.0 330.0,174.1 338.0,186.2 346.3,200.0" class="s-v"/>
+  <polyline points="210.0,200.0 218.0,199.5 226.0,197.9 234.0,195.3 242.0,191.6 250.0,186.9 258.0,181.1 266.0,174.3 274.0,166.4 282.0,157.5 290.0,147.5 298.0,136.5 306.0,124.4 314.0,111.3 322.0,97.1 330.0,81.9 338.0,65.6 346.3,47.5" class="s-t"/>
+  <text x="210" y="214" text-anchor="middle" class="t-sm t-mono">20</text>
+  <text x="346" y="214" text-anchor="middle" class="t-sm t-mono">37</text>
+  <text x="130" y="214" text-anchor="middle" class="t-sm t-mono">10</text>
+  <text x="42" y="51" text-anchor="end" class="t-sm t-mono">21.8</text>
+  <text x="42" y="113" text-anchor="end" class="t-sm t-mono">12.9</text>
+  <line x1="46" y1="109.6" x2="50" y2="109.6" class="s-ink"/>
+  <text x="92" y="70" class="t-sm t-w t-b">gravitational (E<tspan dy="3" font-size="9">g</tspan><tspan dy="-3">)</tspan></text>
+  <text x="96" y="160" class="t-sm t-v t-b">kinetic</text>
+  <text x="300" y="70" class="t-sm t-t t-b">strain</text>
+  <text x="178" y="36" class="t-sm t-mut">cord taut</text>
+  <text x="246" y="36" class="t-sm t-mut">equilibrium: v max</text>
+</svg>
+<figcaption>Worked example below: 60 kg jumper, 20 m cord, \(k = 150\ \text{N m}^{-1}\). Kinetic energy keeps rising for 3.9 m after the cord goes taut and peaks at the equilibrium point. At every point \(E_g + E_k + E_s = 21.8\ \text{kJ}\).</figcaption>
+</figure>
+
+<div class="we" data-title="The full bungee jump (hard)" data-marks="8">
+<div class="we-q"><p>A 60 kg bungee jumper steps off a platform attached to a cord of natural length 20 m and spring constant 150 N m⁻¹. Treat the cord as ideal and ignore air resistance.</p><p>(a) Find the speed when the cord first becomes taut. (b) Find the maximum extension of the cord and the lowest point reached. (c) Find where the jumper's speed is greatest, and that speed. (d) Find the jumper's acceleration at the lowest point.</p></div>
+<div class="we-t"><p>A bungee jump is energy bookkeeping. Before the cord is taut it's free fall; after, gravitational energy is shared between kinetic and elastic energy. At the lowest point \(E_k = 0\), so all the gravitational energy lost is stored in the cord. Speed is greatest where the cord force equals the weight (net force zero).</p></div>
+<div class="we-s" data-f="v^2 = u^2 + 2as"><p><strong>(a) Free fall for 20 m:</strong></p>\[ v = \sqrt{2gL} = \sqrt{2(9.8)(20)} = 19.8\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="mg(L + x) = \tfrac12 kx^2"><p><strong>(b) Lowest point:</strong> all the gravitational energy lost over \(20 + x\) metres is stored in the cord:</p>\[ mg(20 + x) = \tfrac12 kx^2 \Rightarrow 588(20 + x) = 75x^2 \]\[ 75x^2 - 588x - 11\,760 = 0 \]</div>
+<div class="we-s" data-f="x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}"><p><strong>Quadratic formula</strong> (positive root):</p>\[ x = \frac{588 + \sqrt{588^2 + 4(75)(11\,760)}}{2(75)} = \frac{588 + 1968}{150} = 17.0\ \text{m} \]<p>Lowest point: \(20 + 17.0 = 37.0\ \text{m}\) below the platform.</p></div>
+<div class="we-s" data-f="kx_{\text{eq}} = mg"><p><strong>(c) Maximum speed</strong> is at equilibrium, where the cord's force equals the weight (net force zero, acceleration changes from down to up):</p>\[ x_{\text{eq}} = \frac{mg}{k} = \frac{588}{150} = 3.92\ \text{m of extension (23.9 m below the platform)} \]</div>
+<div class="we-s" data-f="\tfrac12 mv^2 = mg\Delta h - \tfrac12 kx^2"><p><strong>Energy at that point:</strong></p>\[ \tfrac12 mv^2 = mg(23.92) - \tfrac12 k(3.92)^2 = 14\,065 - 1152 = 12\,913\ \text{J} \]\[ v_{\max} = \sqrt{\frac{2(12\,913)}{60}} = 20.7\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="a = \dfrac{kx - mg}{m}"><p><strong>(d) Lowest point:</strong> cord force \(= kx = 150 \times 17.04 = 2556\ \text{N}\) up; weight 588 N down.</p>\[ a = \frac{2556 - 588}{60} = 32.8\ \text{m s}^{-2}\ \text{upward} \]</div>
+<div class="we-a"><p><strong>(a) 19.8 m s⁻¹ (b) 17.0 m extension; 37.0 m below the platform (c) 20.7 m s⁻¹, 23.9 m below the platform (d) 33 m s⁻² upward (about 3.3 g).</strong></p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: three bungee myths">
+<ul>
+  <li><strong>“Fastest when the cord becomes taut.”</strong> No: the cord's force is still smaller than the weight, so the jumper keeps speeding up until the equilibrium point.</li>
+  <li><strong>“Acceleration is zero at the bottom because the speed is zero.”</strong> No: the acceleration is at its maximum there, pointing <em>up</em>.</li>
+  <li><strong>“Energy stored = \(mgx\)”.</strong> No: the jumper fell \(L + x\), so use \(mg(L + x)\).</li>
+</ul>
+</aside>
+
+<div class="sim" data-sim="bungee"></div>
+
+<h2>Springs in collisions</h2>
+<p>When two objects collide through a spring (for example magnetic or spring-loaded trolleys), the spring is at <strong>maximum compression</strong> when the two objects are moving at the <strong>same velocity</strong>. At that instant, use momentum to find the common velocity, then energy to find the strain energy.</p>
+<div class="we" data-title="Maximum compression in a collision (hard)" data-marks="4">
+<div class="we-q"><p>A 1.0 kg trolley moving at 4.0 m s⁻¹ collides with a stationary 3.0 kg trolley that has a light spring (\(k = 1200\ \text{N m}^{-1}\)) on its front. Find the maximum compression of the spring.</p></div>
+<div class="we-t"><p>At maximum compression the two trolleys move together, so momentum conservation fixes their shared velocity. The kinetic energy that "disappears" at that instant is stored in the spring, and an ideal spring gives it all back afterwards.</p></div>
+<div class="we-s" data-f="m_1u_1 = (m_1 + m_2)v"><p><strong>Common velocity at maximum compression</strong> (momentum):</p>\[ 1.0(4.0) = 4.0v \Rightarrow v = 1.0\ \text{m s}^{-1} \]</div>
+<div class="we-s" data-f="E_s = E_{k,\text{before}} - E_{k,\text{after}}"><p><strong>Kinetic energy "missing" is stored in the spring:</strong></p>\[ E_s = \tfrac12(1.0)(4.0)^2 - \tfrac12(4.0)(1.0)^2 = 8.0 - 2.0 = 6.0\ \text{J} \]</div>
+<div class="we-s" data-f="E_s = \tfrac12 kx^2"><p><strong>Compression:</strong></p>\[ \tfrac12 kx^2 = 6.0 \Rightarrow x = \sqrt{\frac{2(6.0)}{1200}} = 0.10\ \text{m} \]</div>
+<div class="we-a"><p><strong>0.10 m.</strong> A common error is to assume all 8.0 J is stored; it can't be, because momentum means the trolleys must still be moving.</p></div>
+</div>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>During a bungee jump, the jumper reaches maximum speed:</p></div>
+<ol><li>just as the cord becomes taut</li><li>at the lowest point</li><li>at the point where the cord's tension equals the jumper's weight</li><li>halfway between the platform and the lowest point</li></ol>
+<div class="mcq-x"><p>The jumper speeds up while the net force is downward. Net force becomes zero (and then upward) once the tension equals the weight: that's the equilibrium point, below the taut point.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>At the lowest point of a bungee jump, the jumper's acceleration is:</p></div>
+<ol><li>zero, because they are momentarily at rest</li><li>at its maximum, directed upward</li><li>9.8 m s⁻² downward</li><li>at its maximum, directed downward</li></ol>
+<div class="mcq-x"><p>Velocity is zero, but the cord is at maximum stretch, so its upward force (and the net upward force) is greatest.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>The extension of an ideal spring is doubled. The strain potential energy stored is:</p></div>
+<ol><li>halved</li><li>unchanged</li><li>doubled</li><li>quadrupled</li></ol>
+<div class="mcq-x"><p>\(E_s = \tfrac12 kx^2 \propto x^2\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A spring stretches by 0.12 m when a 30 N force is applied. Its spring constant is:</p></div>
+<ol><li>250 N m⁻¹</li><li>3.6 N m⁻¹</li><li>0.004 N m⁻¹</li><li>1.8 N m⁻¹</li></ol>
+<div class="mcq-x"><p>\(k = F/x = 30/0.12 = 250\ \text{N m}^{-1}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A mass is attached to a hanging spring at its natural length and released from rest. The equilibrium extension for this mass is 0.10 m. The maximum extension reached is:</p></div>
+<ol><li>0.10 m</li><li>0.14 m</li><li>0.20 m</li><li>0.40 m</li></ol>
+<div class="mcq-x"><p>From \(mgx = \tfrac12 kx^2\), \(x_{\max} = 2mg/k = 2x_{\text{eq}}\). The mass overshoots equilibrium because it is moving fastest there.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="E_s = \tfrac12 kx^2 ;; E_k = \tfrac12 mv^2 ;; E_g = mgh">
+<div class="pq-q"><p>A toy launcher has a spring with \(k = 250\ \text{N m}^{-1}\), compressed by 0.12 m. It fires a 50 g ball vertically. Ignoring losses and the small height of the compression, find (a) the launch speed and (b) the maximum height.</p></div>
+<div class="pq-s"><p>(a) \(E_s = \tfrac12(250)(0.12)^2 = 1.8\ \text{J} = \tfrac12(0.050)v^2 \Rightarrow v = 8.5\ \text{m s}^{-1}\).</p><p>(b) \(1.8 = 0.050 \times 9.8 \times h \Rightarrow h = 3.7\ \text{m}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="x_{\text{eq}} = \dfrac{mg}{k} ;; \tfrac12 mv^2 = mgx - \tfrac12 kx^2">
+<div class="pq-q"><p>A 0.50 kg mass hangs on a spring (\(k = 49\ \text{N m}^{-1}\)). It is released from rest at the spring's natural length. Find its maximum speed.</p></div>
+<div class="pq-s"><p>Maximum speed is at equilibrium: \(x_{\text{eq}} = mg/k = 4.9/49 = 0.10\ \text{m}\).</p><p>Energy: \(\tfrac12 mv^2 = mgx - \tfrac12 kx^2 = 0.50(9.8)(0.10) - \tfrac12(49)(0.10)^2 = 0.49 - 0.245 = 0.245\ \text{J}\).</p><p>\(v = \sqrt{2(0.245)/0.50} = 0.99\ \text{m s}^{-1}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="6" data-f="mg(L + x) = \tfrac12 kx^2 ;; x_{\text{eq}} = \dfrac{mg}{k}">
+<div class="pq-q"><p>A 75 kg jumper uses a bungee cord of natural length 15 m and spring constant 200 N m⁻¹. Ignore air resistance and the mass of the cord.</p><p>(a) Calculate the maximum extension of the cord. (b) Calculate the maximum speed of the jumper. (c) Describe the energy transformations from the platform to the lowest point.</p></div>
+<div class="pq-s"><p>(a) \(mg(15 + x) = \tfrac12(200)x^2 \Rightarrow 735(15 + x) = 100x^2 \Rightarrow 100x^2 - 735x - 11\,025 = 0\). [1]</p><p>\(x = \dfrac{735 + \sqrt{735^2 + 4(100)(11\,025)}}{200} = 14.8\ \text{m}\). [1]</p><p>(b) Equilibrium: \(x_{\text{eq}} = 735/200 = 3.68\ \text{m}\), i.e. 18.68 m below the platform. [1]</p><p>\(\tfrac12(75)v^2 = 735(18.68) - 100(3.68)^2 \Rightarrow v = 18.2\ \text{m s}^{-1}\). [1]</p><p>(c) First 15 m: gravitational potential energy → kinetic energy. After the cord is taut: gravitational potential energy → kinetic + strain energy until equilibrium; below equilibrium, kinetic and gravitational energy → strain energy, until at the lowest point all of the gravitational energy lost is stored as strain energy (in reality some is dissipated as heat and sound). [2]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(F = kx\); \(k\) = gradient of F–x graph; \(E_s = \tfrac12 kx^2\) = area under F–x graph.</li>
+  <li>Vertical spring: equilibrium at \(x = mg/k\) (maximum speed there); released from natural length it reaches \(2mg/k\).</li>
+  <li>Bungee: \(mg(L + x) = \tfrac12 kx^2\) at the lowest point, max speed at equilibrium, max (upward) acceleration at the bottom.</li>
+  <li>Spring collisions: maximum compression at the common velocity.</li>
+</ul>

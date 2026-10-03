@@ -1,0 +1,118 @@
+<!--
+id: faraday
+title: Faraday's laws & electrolysis calculations
+short: Faraday's laws
+summary: Charge, current and time, moles of electrons, and mass or gas volume of product, including cells in series, finding the charge on an ion or a molar mass, current efficiency, and applying the same method to galvanic and fuel cells.
+keywords: Faraday, faraday constant, Faraday's laws, Q = It, charge, current, time, coulomb, moles of electrons, mass deposited, electroplating calculation, cells in series, charge on ion, molar mass from electrolysis, current efficiency, gas volume electrolysis, 96500
+dotpoints: Faraday's laws of electrolysis and calculations involving charge, current, time and amount of product | applications to electroplating, electrolytic production and cells connected in series
+-->
+<h2>The method</h2>
+<div class="eq"><div class="eq-label">Faraday's laws in three steps</div>\[ Q = It \quad\longrightarrow\quad n(\ce{e-}) = \frac{Q}{F} \quad\longrightarrow\quad n(\text{product}) \text{ via the half-equation} \]<p>\(Q\) in coulombs, \(I\) in amperes, \(t\) in <strong>seconds</strong>, \(F = 96\,500\ \text{C mol}^{-1}\) (the charge on one mole of electrons).</p></div>
+<aside class="c-key"><p>Faraday's first law: the amount of product is proportional to the charge passed. Second law: to make one mole of product you need \(n\) moles of electrons, where \(n\) comes from the half-equation (1 for Ag⁺, 2 for Cu²⁺, 3 for Al³⁺, 4 for O₂ from water).</p></aside>
+
+<div class="we" data-title="Mass of copper deposited" data-marks="3">
+<div class="we-q"><p>A current of 2.00 A flows through CuSO₄(aq) for 30.0 minutes. What mass of copper is deposited?</p></div>
+<div class="we-t"><p>Faraday's first law: the amount of substance produced at an electrode is proportional to the charge passed. Charge gives moles of electrons; the half-equation gives the ratio to moles of metal.</p></div>
+<div class="we-s" data-f="Q = It,\ n(e^-) = \dfrac QF"><p>\(Q = 2.00 \times 1800 = 3600\text{ C}\); \(n(\ce{e-}) = \frac{3600}{96\,500} = 0.03731\text{ mol}\).</p></div>
+<div class="we-s" data-f="\ce{Cu^2+ + 2e- -&gt; Cu}"><p>\(\ce{Cu^2+ + 2e- -> Cu}\): \(n(\ce{Cu}) = 0.01865\text{ mol}\).</p></div>
+<div class="we-a" data-f="m = nM"><p>\(m = 0.01865 \times 63.5 = \) <strong>1.18 g</strong>.</p></div>
+</div>
+
+<div class="we" data-title="Time to plate a mass of silver" data-marks="3">
+<div class="we-q"><p>How long must a current of 1.50 A flow to deposit 5.00 g of silver?</p></div>
+<div class="we-t"><p>Work backwards: the mass to deposit gives moles of metal, the half-equation gives moles of electrons, and the charge needed divided by the current gives the time.</p></div>
+<div class="we-s" data-f="n = \dfrac mM"><p>\(n(\ce{Ag}) = \frac{5.00}{107.9} = 0.04634\text{ mol} = n(\ce{e-})\) (1 : 1).</p></div>
+<div class="we-s" data-f="Q = n(e^-)F"><p>\(Q = 0.04634 \times 96\,500 = 4472\text{ C}\).</p></div>
+<div class="we-a" data-f="t = \dfrac QI"><p>\(t = \frac{4472}{1.50} = 2981\text{ s} = \) <strong>49.7 min</strong>.</p></div>
+</div>
+
+<div class="we" data-title="Identify the metal (hard)" data-marks="3">
+<div class="we-q"><p>A current of 1.00 A for 1930 s deposits 0.180 g of a metal from a solution of its M³⁺ ions. Identify the metal.</p></div>
+<div class="we-t"><p>Faraday's second law: the charge on the ion decides how many electrons each atom needs. Moles of electrons ÷ 3 gives moles of metal, and mass ÷ moles gives the molar mass, which identifies the metal.</p></div>
+<div class="we-s" data-f="n(e^-) = \dfrac{It}{F}"><p>\(n(\ce{e-}) = \frac{1930}{96\,500} = 0.0200\text{ mol}\).</p></div>
+<div class="we-s" data-f="n(\ce{M}) = \dfrac{n(e^-)}{3}"><p>\(\ce{M^3+ + 3e- -> M}\): \(n(\ce{M}) = \frac{0.0200}{3} = 6.67 \times 10^{-3}\text{ mol}\).</p></div>
+<div class="we-a" data-f="M = \dfrac mn"><p>\(M = \frac{0.180}{6.67 \times 10^{-3}} = 27.0\ \text{g mol}^{-1}\): <strong>aluminium</strong>. (In practice Al can't be deposited from water; this is a molten-electrolyte question.)</p></div>
+</div>
+
+<div class="we" data-title="Cells in series" data-marks="3">
+<div class="we-q"><p>Two electrolytic cells are connected in series: one contains AgNO₃(aq) and the other CuSO₄(aq). A current of 0.500 A flows for 1.00 hour. Find the mass of metal deposited in each.</p></div>
+<div class="we-t"><p>Cells in series carry the same current for the same time, so the same moles of electrons pass through each. Different ion charges then give different moles of metal.</p></div>
+<div class="we-s" data-f="Q = It,\ n(e^-) = \dfrac QF"><p>In series, the <strong>same charge</strong> flows through both: \(Q = 1800\text{ C}\), \(n(\ce{e-}) = 0.01865\text{ mol}\).</p></div>
+<div class="we-s" data-f="n(\text{metal}) = \dfrac{n(e^-)}{\text{ion charge}},\ m = nM"><p>Ag: \(0.01865 \times 107.9 = 2.01\text{ g}\). Cu: \(\frac{0.01865}{2} \times 63.5 = 0.592\text{ g}\).</p></div>
+<div class="we-a"><p><strong>2.01 g Ag and 0.592 g Cu.</strong> Twice as many moles of silver form, because Ag⁺ needs one electron and Cu²⁺ needs two.</p></div>
+</div>
+
+<div class="we" data-title="Gas volumes from water" data-marks="3">
+<div class="we-q"><p>Dilute sulfuric acid is electrolysed at 2.00 A for 30.0 min. Calculate the volumes of H₂ and O₂ at SLC.</p></div>
+<div class="we-t"><p>For gases, find moles of electrons from the charge, use each half-equation for moles of gas, then convert to volume at SLC.</p></div>
+<div class="we-s" data-f="n(e^-) = \dfrac{It}{F},\ \ce{2H+ + 2e- -&gt; H2}"><p>\(n(\ce{e-}) = 0.03731\text{ mol}\). Cathode \(\ce{2H+ + 2e- -> H2}\): \(n(\ce{H2}) = 0.01865\text{ mol}\).</p></div>
+<div class="we-s" data-f="\ce{2H2O -&gt; O2 + 4H+ + 4e-}"><p>Anode \(\ce{2H2O -> O2 + 4H+ + 4e-}\): \(n(\ce{O2}) = 0.009326\text{ mol}\).</p></div>
+<div class="we-a" data-f="V = n \times 24.8"><p><strong>H₂: 0.463 L; O₂: 0.231 L</strong>. The 2 : 1 ratio matches the formula of water.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: Faraday traps">
+<ul>
+  <li><strong>Time in seconds.</strong> Minutes or hours give answers 60 or 3600 times too small.</li>
+  <li><strong>Use the electron ratio from the half-equation</strong>, not from the formula of the salt.</li>
+  <li><strong>Series cells share the charge</strong>, not the mass or the moles of product.</li>
+  <li><strong>Current efficiency:</strong> actual product = theoretical × efficiency (side reactions such as H₂ production waste some charge).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>A current of 3.00 A for 10.0 minutes delivers a charge of</p></div>
+<ol><li>1800 C</li><li>30.0 C</li><li>0.0187 C</li><li>300 C</li></ol>
+<div class="mcq-x"><p>\(Q = 3.00 \times 600 = 1800\text{ C}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The number of moles of electrons needed to deposit 1.0 mol of chromium from Cr³⁺ ions is</p></div>
+<ol><li>1.0</li><li>2.0</li><li>3.0</li><li>6.0</li></ol>
+<div class="mcq-x"><p>\(\ce{Cr^3+ + 3e- -> Cr}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>The same charge passes through molten NaCl and molten MgCl₂ cells in series. The ratio of moles of Na to moles of Mg produced is</p></div>
+<ol><li>1 : 1</li><li>2 : 1</li><li>1 : 2</li><li>23 : 24</li></ol>
+<div class="mcq-x"><p>Na⁺ needs 1 e⁻ and Mg²⁺ needs 2, so the same electrons make twice as many Na atoms.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>0.327 g of zinc is deposited by 965 C of charge. The charge on the zinc ion is</p></div>
+<ol><li>+1</li><li>+3</li><li>+4</li><li>+2</li></ol>
+<div class="mcq-x"><p>\(n(\ce{e-}) = 0.0100\); \(n(\ce{Zn}) = \frac{0.327}{65.4} = 0.00500\). Two electrons per atom: Zn²⁺.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>A copper refinery runs at 5.00 A for 2.00 h and deposits 10.9 g of copper. The current efficiency is closest to</p></div>
+<ol><li>100%</li><li>46%</li><li>92%</li><li>109%</li></ol>
+<div class="mcq-x"><p>Theoretical: \(\frac{36\,000}{96\,500} \times \frac12 \times 63.5 = 11.8\text{ g}\). \(\frac{10.9}{11.8} \approx 92\%\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="Q = It ;; n(e^-) = \dfrac QF ;; m = nM">
+<div class="pq-q"><p>What mass of nickel is deposited from Ni²⁺(aq) by a current of 4.00 A for 45.0 minutes?</p></div>
+<div class="pq-s"><p>\(Q = 4.00 \times 2700 = 10\,800\text{ C}\); \(n(\ce{e-}) = 0.1119\text{ mol}\); \(n(\ce{Ni}) = 0.05596\text{ mol}\); \(m = 0.05596 \times 58.7 = 3.28\text{ g}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="V = A \times \text{thickness} ;; m = \rho V ;; n = \dfrac mM ;; t = \dfrac{n(e^-)F}{I}">
+<div class="pq-q"><p>A car part with a surface area of 250 cm² is chrome-plated to a thickness of 0.0100 mm (density of Cr = 7.19 g cm⁻³) from a Cr(VI) solution (6 electrons per Cr atom). How long does it take at 20.0 A, assuming 100% efficiency?</p></div>
+<div class="pq-s"><p>Volume \(= 250 \times 0.00100 = 0.250\text{ cm}^3\); mass \(= 1.80\text{ g}\); \(n(\ce{Cr}) = \frac{1.80}{52.0} = 0.0346\text{ mol}\). [1]</p><p>\(n(\ce{e-}) = 6 \times 0.0346 = 0.2074\text{ mol}\); \(Q = 2.00 \times 10^4\text{ C}\). [1]</p><p>\(t = \frac{20\,014}{20.0} \approx 1.00 \times 10^3\text{ s}\) (about 16.7 min). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4" data-f="Q = It ;; n(e^-) = \dfrac QF ;; m = nM ;; E = VIt">
+<div class="pq-q"><p>Green hydrogen is made by electrolysis of water. An electrolyser runs at 150 A for 8.00 hours. (a) Calculate the mass of H₂ produced. (b) If the cell voltage is 1.90 V, calculate the electrical energy used, and the percentage of it stored in the hydrogen (\(\Delta H_c(\ce{H2}) = -286\ \text{kJ mol}^{-1}\)).</p></div>
+<div class="pq-s"><p>(a) \(Q = 150 \times 28\,800 = 4.32 \times 10^6\text{ C}\); \(n(\ce{e-}) = 44.77\text{ mol}\); \(n(\ce{H2}) = 22.38\text{ mol}\); \(m = 44.8\text{ g}\). [2]</p><p>(b) \(E = VIt = 1.90 \times 150 \times 28\,800 = 8.21 \times 10^6\text{ J} = 8210\text{ kJ}\). Stored: \(22.38 \times 286 = 6401\text{ kJ}\). Efficiency \(\approx 78\%\). [2]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="n(e^-) = \dfrac{It}{F}\ (t \text{ in seconds})">
+<div class="pq-q"><p>A student calculates the mass of copper deposited by 2.00 A in 30 minutes as \(\frac{2.00 \times 30}{96\,500} \times 63.5\). Identify two errors.</p></div>
+<div class="pq-s"><p>Time must be in seconds (1800 s, not 30). The moles of electrons must be halved because Cu²⁺ needs 2 electrons per Cu atom. Correct: \(\frac{2.00 \times 1800}{96\,500} \times \frac12 \times 63.5 = 1.18\text{ g}\).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(Q = It\) (seconds!), \(n(\ce{e-}) = \frac{Q}{F}\), then use the half-equation's electron ratio.</li>
+  <li>Cells in series pass the same charge.</li>
+  <li>Work backwards to find a charge, molar mass, time or current.</li>
+</ul>

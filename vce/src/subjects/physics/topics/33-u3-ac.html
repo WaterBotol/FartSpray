@@ -1,0 +1,115 @@
+<!--
+id: u3-ac
+title: AC voltage: peak, peak-to-peak & RMS
+short: AC, peak & RMS values
+summary: Describing sinusoidal AC with period, frequency, amplitude and peak-to-peak values, reading oscilloscope traces, and using RMS values to compare AC with DC power.
+keywords: AC, alternating current, rms, root mean square, peak voltage, peak to peak, vpp, ipp, amplitude, period, frequency, oscilloscope, CRO, divisions, mains, 230 V, 50 Hz, household, power, resistor, DC equivalent, sinusoidal
+dotpoints: compare sinusoidal voltages produced as a result of the uniform rotation of a loop in a constant magnetic field with reference to frequency, period, amplitude, peak-to-peak voltage (\(V_{p\text{-}p}\)) and peak-to-peak current (\(I_{p\text{-}p}\)) | compare alternating voltage expressed as the root-mean-square (rms) to a constant DC voltage developing the same power in a resistive component: \(V_{\text{rms}} = \frac{1}{\sqrt{2}}V_{\text{peak}}\), \(I_{\text{rms}} = \frac{1}{\sqrt{2}}I_{\text{peak}}\)
+-->
+<h2>Describing a sinusoidal voltage</h2>
+<figure class="fig">
+<svg viewBox="0 0 420 220" width="420" role="img" aria-label="Sinusoidal voltage over two cycles, showing peak voltage, peak-to-peak voltage, the RMS level at about 0.71 of the peak, and one period">
+  <line x1="50" y1="110" x2="400" y2="110" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="205" x2="50" y2="12" class="s-ink" marker-end="url(#ah-ink)"/>
+  <line x1="50" y1="40" x2="390" y2="40" class="s-dash"/>
+  <line x1="50" y1="180" x2="390" y2="180" class="s-dash"/>
+  <line x1="50" y1="60.5" x2="390" y2="60.5" class="s-acc" style="stroke-dasharray:6 4;stroke-width:1.5"/>
+  <polyline points="50.0,110.0 54.0,99.0 58.0,88.4 62.0,78.2 66.0,68.9 70.0,60.5 74.0,53.4 78.0,47.6 82.0,43.4 86.0,40.9 90.0,40.0 94.0,40.9 98.0,43.4 102.0,47.6 106.0,53.4 110.0,60.5 114.0,68.9 118.0,78.2 122.0,88.4 126.0,99.0 130.0,110.0 134.0,121.0 138.0,131.6 142.0,141.8 146.0,151.1 150.0,159.5 154.0,166.6 158.0,172.4 162.0,176.6 166.0,179.1 170.0,180.0 174.0,179.1 178.0,176.6 182.0,172.4 186.0,166.6 190.0,159.5 194.0,151.1 198.0,141.8 202.0,131.6 206.0,121.0 210.0,110.0 214.0,99.0 218.0,88.4 222.0,78.2 226.0,68.9 230.0,60.5 234.0,53.4 238.0,47.6 242.0,43.4 246.0,40.9 250.0,40.0 254.0,40.9 258.0,43.4 262.0,47.6 266.0,53.4 270.0,60.5 274.0,68.9 278.0,78.2 282.0,88.4 286.0,99.0 290.0,110.0 294.0,121.0 298.0,131.6 302.0,141.8 306.0,151.1 310.0,159.5 314.0,166.6 318.0,172.4 322.0,176.6 326.0,179.1 330.0,180.0 334.0,179.1 338.0,176.6 342.0,172.4 346.0,166.6 350.0,159.5 354.0,151.1 358.0,141.8 362.0,131.6 366.0,121.0 370.0,110.0" class="s-v" style="stroke-width:2.6"/>
+  <line x1="75" y1="110" x2="75" y2="44" class="s-ink" marker-end="url(#ah-ink)"/><text x="80" y="82" class="t-sm t-b">V<tspan dy="3" font-size="9">p</tspan></text>
+  <line x1="392" y1="44" x2="392" y2="176" class="s-ink" marker-start="url(#ah-ink)" marker-end="url(#ah-ink)"/><text x="360" y="134" class="t-sm t-b">V<tspan dy="3" font-size="9">p-p</tspan></text>
+  <text x="300" y="56" class="t-sm t-acc t-b">V<tspan dy="3" font-size="9">rms</tspan><tspan dy="-3"> = 0.707 V</tspan><tspan dy="3" font-size="9">p</tspan></text>
+  <line x1="50" y1="198" x2="210" y2="198" class="s-mut" marker-start="url(#ah-mut)" marker-end="url(#ah-mut)"/>
+  <text x="130" y="214" text-anchor="middle" class="t-sm t-b">period T</text>
+  <text x="404" y="114" class="t-sm">t</text><text x="14" y="12" class="t-sm">V</text>
+</svg>
+<figcaption>Peak (amplitude), peak-to-peak and RMS for a sine wave. The RMS line sits at 70.7% of the peak.</figcaption>
+</figure>
+<div class="tbl"><table>
+<thead><tr><th>Quantity</th><th>Meaning</th><th>Relationship</th></tr></thead>
+<tbody>
+<tr><td>Period \(T\)</td><td>Time for one complete cycle (s)</td><td>\(T = 1/f\)</td></tr>
+<tr><td>Frequency \(f\)</td><td>Cycles per second (Hz); equals the generator's rotation rate</td><td>\(f = 1/T\)</td></tr>
+<tr><td>Peak (amplitude) \(V_p\)</td><td>Maximum value measured from zero</td><td></td></tr>
+<tr><td>Peak-to-peak \(V_{p\text{-}p}\)</td><td>From the highest point to the lowest point</td><td>\(V_{p\text{-}p} = 2V_p\)</td></tr>
+<tr><td>RMS \(V_{\text{rms}}\)</td><td>The DC voltage that would deliver the same average power to a resistor</td><td>\(V_{\text{rms}} = V_p/\sqrt2\)</td></tr>
+</tbody></table></div>
+<p>Currents are described the same way: \(I_{p\text{-}p} = 2I_p\) and \(I_{\text{rms}} = I_p/\sqrt2\).</p>
+
+<h2>Why RMS?</h2>
+<p>The average of a sine-wave voltage over a whole cycle is <strong>zero</strong> (as much positive as negative), yet AC clearly heats a kettle. Power in a resistor depends on \(V^2\) (or \(I^2\)), which is always positive. The <strong>root-mean-square</strong> value takes the <em>square</em> of the voltage, finds its <em>mean</em> over a cycle, then takes the square <em>root</em>. For a sine wave that works out to \(V_p/\sqrt2\).</p>
+<div class="eq"><div class="eq-label">RMS values and power</div>\[ V_{\text{rms}} = \frac{V_p}{\sqrt2} \qquad I_{\text{rms}} = \frac{I_p}{\sqrt2} \]\[ P_{\text{avg}} = V_{\text{rms}}I_{\text{rms}} = I_{\text{rms}}^2R = \frac{V_{\text{rms}}^2}{R} \]</div>
+<aside class="c-key" data-title="Key idea: RMS is the fair comparison with DC">
+<p>A 10 V rms AC supply and a 10 V battery deliver <strong>the same average power</strong> to the same resistor. Household voltages, appliance ratings and meter readings are all RMS unless stated otherwise.</p>
+</aside>
+
+<h3>Australian mains electricity</h3>
+<p>Mains power in Australia is <strong>230 V rms at 50 Hz</strong>. So:</p>
+<div class="eq">\[ V_p = 230\sqrt2 = 325\ \text{V} \qquad V_{p\text{-}p} = 650\ \text{V} \qquad T = \frac{1}{50} = 0.020\ \text{s} = 20\ \text{ms} \]</div>
+
+<div class="we" data-title="An electric kettle" data-marks="4">
+<div class="we-q"><p>A 2400 W kettle runs from 230 V rms mains. Find (a) the rms current, (b) the kettle's resistance, (c) the peak current and (d) the peak-to-peak current.</p></div>
+<div class="we-t"><p>RMS values are the equivalent DC values that deliver the same power, so power calculations use RMS directly. Peak and peak-to-peak values describe the actual sinusoid.</p></div>
+<div class="we-s" data-f="I_{\text{rms}} = \dfrac{P}{V_{\text{rms}}}"><p><strong>(a)</strong> \(I_{\text{rms}} = P/V_{\text{rms}} = 2400/230 = 10.4\ \text{A}\).</p></div>
+<div class="we-s" data-f="R = \dfrac{V_{\text{rms}}}{I_{\text{rms}}}"><p><strong>(b)</strong> \(R = V_{\text{rms}}/I_{\text{rms}} = 230/10.43 = 22.0\ \Omega\).</p></div>
+<div class="we-s" data-f="I_p = \sqrt2\, I_{\text{rms}}"><p><strong>(c)</strong> \(I_p = \sqrt2 \times 10.43 = 14.8\ \text{A}\).</p></div>
+<div class="we-s" data-f="I_{p\text{-}p} = 2I_p"><p><strong>(d)</strong> \(I_{p\text{-}p} = 2 \times 14.8 = 29.5\ \text{A}\).</p></div>
+<div class="we-a"><p><strong>(a) 10 A (b) 22 Ω (c) 15 A (d) 30 A.</strong> Power ratings use RMS, so \(P = V_{\text{rms}}I_{\text{rms}}\) needs no √2.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: never mix peak and RMS in a power calculation">
+<p>\(P = V_pI_p\) gives <em>twice</em> the true average power. If you're given peak values, convert to RMS first. Also check what a question asks for: “peak-to-peak” is double the peak, and students regularly halve or double the wrong thing.</p>
+</aside>
+
+<h2>Reading an oscilloscope (CRO) trace</h2>
+<p>An oscilloscope shows voltage (vertical) against time (horizontal) on a grid. The <strong>vertical sensitivity</strong> (volts per division) and <strong>time base</strong> (time per division) convert squares into values.</p>
+<div class="we" data-title="Oscilloscope reading" data-marks="4">
+<div class="we-q"><p>An oscilloscope is set to 5 V/div and 2 ms/div. A sine wave on the screen rises 4.0 divisions above the centre line, and one complete cycle spans 4.0 divisions horizontally. Find \(V_p\), \(V_{p\text{-}p}\), \(V_{\text{rms}}\) and the frequency.</p></div>
+<div class="we-t"><p>On an oscilloscope, vertical divisions × volts/div give voltage and horizontal divisions × time/div give time. Read peak from the centre line, period from one full cycle.</p></div>
+<div class="we-s" data-f="V_p = \text{div} \times \text{V/div},\ V_{p\text{-}p} = 2V_p"><p><strong>Peak:</strong> \(4.0\ \text{div} \times 5\ \text{V/div} = 20\ \text{V}\). <strong>Peak-to-peak:</strong> 40 V.</p></div>
+<div class="we-s" data-f="V_{\text{rms}} = \dfrac{V_p}{\sqrt2}"><p><strong>RMS:</strong> \(20/\sqrt2 = 14.1\ \text{V}\).</p></div>
+<div class="we-s" data-f="T = \text{div} \times \text{time/div},\ f = \dfrac1T"><p><strong>Period:</strong> \(4.0\ \text{div} \times 2\ \text{ms/div} = 8.0\ \text{ms}\); <strong>frequency</strong> \(= 1/0.0080 = 125\ \text{Hz}\).</p></div>
+<div class="we-a"><p><strong>\(V_p = 20\ \text{V}\), \(V_{p\text{-}p} = 40\ \text{V}\), \(V_{\text{rms}} = 14\ \text{V}\), \(f = 125\ \text{Hz}\).</strong></p></div>
+</div>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>An AC supply of peak voltage 20 V is connected across a 10 Ω resistor. The average power dissipated is:</p></div>
+<ol><li>40 W</li><li>20 W</li><li>28 W</li><li>14 W</li></ol>
+<div class="mcq-x"><p>\(V_{\text{rms}} = 20/\sqrt2 = 14.1\ \text{V}\); \(P = V_{\text{rms}}^2/R = 200/10 = 20\ \text{W}\). Using the peak gives 40 W, double the true value.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Australian mains supply is 230 V rms. Its peak-to-peak voltage is closest to:</p></div>
+<ol><li>230 V</li><li>325 V</li><li>460 V</li><li>650 V</li></ol>
+<div class="mcq-x"><p>\(V_p = 230\sqrt2 = 325\ \text{V}\), so \(V_{p\text{-}p} = 650\ \text{V}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>The DC voltage that would deliver the same power to a resistor as a 12 V rms AC supply is:</p></div>
+<ol><li>12 V</li><li>17 V</li><li>8.5 V</li><li>24 V</li></ol>
+<div class="mcq-x"><p>That's the definition of RMS: 12 V rms AC and 12 V DC give the same power.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>The average value of a sinusoidal AC voltage over one complete cycle is:</p></div>
+<ol><li>\(V_p/\sqrt2\)</li><li>\(V_p\)</li><li>zero</li><li>\(2V_p\)</li></ol>
+<div class="mcq-x"><p>The positive and negative halves cancel, so the average is zero. That's exactly why RMS is used to describe AC.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="V_p = \tfrac12 V_{p\text{-}p} ;; V_{\text{rms}} = \dfrac{V_p}{\sqrt2} ;; f = \dfrac1T">
+<div class="pq-q"><p>A generator's output has a peak-to-peak voltage of 170 V and a period of 40 ms. Find its peak voltage, RMS voltage and frequency.</p></div>
+<div class="pq-s"><p>\(V_p = 170/2 = 85\ \text{V}\); \(V_{\text{rms}} = 85/\sqrt2 = 60\ \text{V}\); \(f = 1/0.040 = 25\ \text{Hz}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="V_{\text{rms}} = \dfrac{V_p}{\sqrt2} ;; P = \dfrac{V^2}{R} \propto V_{\text{rms}}^2">
+<div class="pq-q"><p>A heater is rated at 1500 W when connected to 230 V rms. What power would it deliver if connected to a 230 V DC supply, and to an AC supply with a <em>peak</em> of 230 V?</p></div>
+<div class="pq-s"><p>230 V DC delivers the same power as 230 V rms: <strong>1500 W</strong>.</p><p>With \(V_p = 230\ \text{V}\), \(V_{\text{rms}} = 163\ \text{V}\). Power ∝ \(V^2\): \(P = 1500 \times (163/230)^2 = 1500 \times \tfrac12 = 750\ \text{W}\).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(T = 1/f\); \(V_{p\text{-}p} = 2V_p\); \(V_{\text{rms}} = V_p/\sqrt2\).</li>
+  <li>RMS AC and the same DC voltage give the same power. Use RMS in \(P = VI\).</li>
+  <li>Australian mains: 230 V rms, 325 V peak, 650 V peak-to-peak, 50 Hz.</li>
+  <li>Oscilloscope: divisions × V/div for voltage, divisions × time/div for time.</li>
+</ul>

@@ -1,0 +1,149 @@
+<!--
+id: u3-satellites
+title: Satellites & orbits
+short: Satellites & orbits
+summary: Modelling natural and artificial satellites in circular orbits: orbital speed, period, Kepler's third law, geostationary and GPS satellites, finding a planet's mass, and apparent weightlessness.
+keywords: satellite, orbit, orbital speed, orbital period, kepler, keplers third law, geostationary, geosynchronous, gps, low earth orbit, iss, space station, moon, planet, apparent weightlessness, weightless, free fall, normal force, centripetal, T squared r cubed, mass of planet, jupiter, communications satellite
+dotpoints: apply the concepts of force due to gravity (\(F_g = mg\)) and normal force (\(F_N\)) including in relation to satellites in orbit where the orbits are assumed to be uniform and circular | model natural and artificial satellite motion, including planet, moon, geostationary and global positioning system (GPS) satellites: \(\frac{GMm}{r^2} = \frac{mv^2}{r} = \frac{4\pi^2 mr}{T^2}\)
+-->
+<h2>Gravity provides the centripetal force</h2>
+<p>A satellite in a circular orbit is in uniform circular motion. The only force on it is gravity, so gravity <em>is</em> the net (centripetal) force:</p>
+<div class="eq"><div class="eq-label">The orbit equation</div>\[ \frac{GMm}{r^2} = \frac{mv^2}{r} = \frac{4\pi^2 mr}{T^2} \]<p>\(M\) = mass of the central body (planet or star), \(m\) = mass of the satellite, \(r\) = orbital radius from the <strong>centre</strong> of the central body.</p></div>
+<p>The satellite's mass \(m\) cancels from every part. That gives three results worth knowing:</p>
+<div class="eq">\[ v = \sqrt{\frac{GM}{r}} \qquad T = 2\pi\sqrt{\frac{r^3}{GM}} \qquad a = g = \frac{GM}{r^2} \]</div>
+<aside class="c-key" data-title="Key idea: orbits don't care about the satellite's mass">
+<p>A 1 kg CubeSat and the 420 000 kg ISS at the same altitude move at the same speed with the same period. Only the <strong>central mass</strong> and the <strong>orbital radius</strong> matter.</p>
+</aside>
+<ul>
+  <li><strong>Higher orbit → slower speed and longer period.</strong> The Moon takes 27.3 days; the ISS takes 92 minutes.</li>
+  <li>The satellite's centripetal acceleration equals the gravitational field strength at its orbit.</li>
+</ul>
+
+<h2>Kepler's third law</h2>
+<p>Rearranging the orbit equation shows that \(r^3/T^2\) is the same for every satellite of the same central body:</p>
+<div class="eq"><div class="eq-label">Kepler's third law</div>\[ \frac{r^3}{T^2} = \frac{GM}{4\pi^2} = \text{constant} \qquad\Rightarrow\qquad \frac{r_1^3}{T_1^2} = \frac{r_2^3}{T_2^2} \]<p>A graph of \(T^2\) against \(r^3\) is a straight line through the origin with gradient \(4\pi^2/GM\). This is how the mass of a planet is found from its moons.</p></div>
+<div class="we" data-title="Ratio without G" data-marks="2">
+<div class="we-q"><p>Satellite B orbits a planet at four times the orbital radius of satellite A. If A's period is 2.0 hours, what is B's period?</p></div>
+<div class="we-s">\[ \frac{T_B^2}{T_A^2} = \frac{r_B^3}{r_A^3} = 4^3 = 64 \Rightarrow \frac{T_B}{T_A} = 8 \]</div>
+<div class="we-a"><p><strong>16 hours.</strong> Four times the radius, \(4^{3/2} = 8\) times the period.</p></div>
+</div>
+
+<h2>Low Earth orbit: the ISS</h2>
+<div class="we" data-title="Speed and period of the ISS" data-marks="3">
+<div class="we-q"><p>The ISS orbits 400 km above Earth's surface. Find its orbital speed and period.</p></div>
+<div class="we-s"><p><strong>Orbital radius:</strong> \(r = 6.37\times10^6 + 4.00\times10^5 = 6.77\times10^6\ \text{m}\).</p></div>
+<div class="we-s"><p><strong>Speed:</strong></p>\[ v = \sqrt{\frac{GM_E}{r}} = \sqrt{\frac{(6.67\times10^{-11})(5.98\times10^{24})}{6.77\times10^6}} = 7.68\times10^3\ \text{m s}^{-1} \]</div>
+<div class="we-s"><p><strong>Period:</strong></p>\[ T = \frac{2\pi r}{v} = \frac{2\pi(6.77\times10^6)}{7676} = 5.54\times10^3\ \text{s} = 92\ \text{min} \]</div>
+<div class="we-a"><p><strong>About 7.7 km s⁻¹ (27 600 km h⁻¹) and 92 minutes.</strong> Astronauts see about 16 sunrises a day.</p></div>
+</div>
+
+<h2>Geostationary satellites</h2>
+<p>A <strong>geostationary</strong> satellite stays above the same point on Earth's surface, so ground antennas can point at it permanently (satellite TV, weather images, communications). It must:</p>
+<ul>
+  <li>have a period of <strong>24 hours</strong> (one Earth rotation);</li>
+  <li>orbit directly above the <strong>equator</strong>;</li>
+  <li>travel in the <strong>same direction</strong> as Earth rotates (west to east).</li>
+</ul>
+<div class="we" data-title="Radius and altitude of a geostationary orbit" data-marks="4">
+<div class="we-q"><p>Calculate the orbital radius and altitude of a geostationary satellite, and its orbital speed.</p></div>
+<div class="we-s"><p><strong>Period in seconds:</strong> \(T = 24 \times 3600 = 86\,400\ \text{s}\).</p></div>
+<div class="we-s"><p><strong>Rearrange Kepler's third law for \(r\):</strong></p>\[ r = \sqrt[3]{\frac{GM_ET^2}{4\pi^2}} = \sqrt[3]{\frac{(6.67\times10^{-11})(5.98\times10^{24})(86\,400)^2}{4\pi^2}} = 4.23\times10^7\ \text{m} \]</div>
+<div class="we-s"><p><strong>Altitude:</strong> \(4.23\times10^7 - 6.37\times10^6 = 3.59\times10^7\ \text{m}\) (about 35 900 km).</p></div>
+<div class="we-s"><p><strong>Speed:</strong> \(v = \dfrac{2\pi r}{T} = \dfrac{2\pi(4.23\times10^7)}{86\,400} = 3.07\times10^3\ \text{m s}^{-1}\).</p></div>
+<div class="we-a"><p><strong>\(r = 4.23\times10^7\ \text{m}\); altitude \(3.59\times10^7\ \text{m}\); \(v = 3.1\ \text{km s}^{-1}\).</strong> Every geostationary satellite, whatever its mass, sits at this one radius.</p></div>
+</div>
+<aside class="c-trap" data-title="Trick alert: geostationary satellites are not stationary">
+<p>A geostationary satellite moves at over 3 km s⁻¹. It only <em>appears</em> stationary from the ground because it keeps pace with Earth's rotation. It is accelerating towards Earth's centre the whole time. A satellite with a 24 h period that is <em>not</em> above the equator is geosynchronous but not geostationary.</p>
+</aside>
+
+<h2>GPS satellites</h2>
+<p>The Global Positioning System uses about 30 satellites at an altitude of about 20 200 km with periods of about 12 hours, in several tilted orbital planes so that at least four are visible from anywhere on Earth. A receiver works out its position from the timing of signals from several satellites. They are <strong>not</strong> geostationary.</p>
+<div class="we" data-title="Checking the GPS altitude" data-marks="3">
+<div class="we-q"><p>Show that a satellite with a 12.0 hour period orbits at an altitude of about \(2.0\times10^7\ \text{m}\).</p></div>
+<div class="we-s"><p>\(T = 12.0 \times 3600 = 43\,200\ \text{s}\).</p></div>
+<div class="we-s">\[ r = \sqrt[3]{\frac{GM_ET^2}{4\pi^2}} = \sqrt[3]{\frac{(3.99\times10^{14})(43\,200)^2}{4\pi^2}} = 2.66\times10^7\ \text{m} \]</div>
+<div class="we-a"><p><strong>Altitude \(= 2.66\times10^7 - 6.37\times10^6 = 2.02\times10^7\ \text{m}\) ✓.</strong> Shortcut: halving \(T\) divides \(r\) by \(2^{2/3} = 1.59\): \(4.23\times10^7/1.59 = 2.66\times10^7\ \text{m}\).</p></div>
+</div>
+
+<h2>Finding the mass of a planet or star</h2>
+<div class="we" data-title="Weighing the Earth using the Moon" data-marks="3">
+<div class="we-q"><p>The Moon orbits Earth with a radius of \(3.84\times10^8\ \text{m}\) and a period of 27.3 days. Calculate the mass of Earth.</p></div>
+<div class="we-s"><p><strong>Period in seconds:</strong> \(T = 27.3 \times 86\,400 = 2.36\times10^6\ \text{s}\).</p></div>
+<div class="we-s"><p><strong>Rearrange for \(M\):</strong></p>\[ M = \frac{4\pi^2 r^3}{GT^2} = \frac{4\pi^2(3.84\times10^8)^3}{(6.67\times10^{-11})(2.36\times10^6)^2} = 6.0\times10^{24}\ \text{kg} \]</div>
+<div class="we-a"><p><strong>\(6.0\times10^{24}\ \text{kg}\)</strong>, close to the accepted \(5.98\times10^{24}\ \text{kg}\). The Moon's own mass cancels, so you can't find the Moon's mass this way.</p></div>
+</div>
+
+<div class="sim" data-sim="orbit"></div>
+
+<h2>Apparent weightlessness in orbit</h2>
+<p>An astronaut in the ISS has a true weight of \(F_g = mg\) with \(g = 8.7\ \text{N kg}^{-1}\). Yet they float. Why?</p>
+<ul>
+  <li>The astronaut and the station are <strong>both in free fall</strong>: both accelerate towards Earth at exactly \(g\).</li>
+  <li>For the astronaut: \(F_{\text{net}} = mg - N = ma = mg\), so \(N = 0\).</li>
+  <li>With no normal force, they experience <strong>apparent weightlessness</strong>. Bathroom scales would read zero.</li>
+</ul>
+<aside class="c-trap" data-title="Trick alert: the wrong reasons">
+<p>Astronauts are <strong>not</strong> weightless because they are “outside Earth's gravity”, “in a vacuum”, or because “gravity is balanced by centrifugal force”. Gravity is the unbalanced, net force on them. Write: “the normal force is zero because the astronaut and spacecraft are both in free fall with acceleration \(g\)”.</p>
+</aside>
+
+<h2>Changing orbits (qualitative)</h2>
+<p>Moving a satellite to a higher orbit needs energy from its rockets. In the higher orbit it moves more slowly (less kinetic energy), but its gravitational potential energy has increased by more than the kinetic energy decreased, so its total energy is higher. A satellite in low orbit that loses energy to atmospheric drag drops to a lower orbit and actually <em>speeds up</em>.</p>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Two satellites orbit Earth at the same altitude. Satellite P has twice the mass of satellite Q. Compared with Q, P has:</p></div>
+<ol><li>twice the orbital speed</li><li>half the orbital period</li><li>the same orbital speed and period</li><li>half the orbital speed</li></ol>
+<div class="mcq-x"><p>\(v = \sqrt{GM/r}\) and \(T = 2\pi\sqrt{r^3/GM}\) depend only on Earth's mass and the orbit radius. P does experience twice the gravitational force, but it also needs twice the centripetal force.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>Which statement about a geostationary satellite is correct?</p></div>
+<ol><li>It orbits above the equator with a period of 24 hours.</li><li>It can orbit above any point on Earth as long as its period is 24 hours.</li><li>It has zero velocity relative to the centre of Earth.</li><li>It has zero acceleration.</li></ol>
+<div class="mcq-x"><p>To stay above one spot it must orbit the equator in the same direction as Earth's rotation with a 24 h period. It is moving at about 3.1 km s⁻¹ and accelerating centripetally.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>An astronaut floats inside a space station in low Earth orbit. The best explanation is that:</p></div>
+<ol><li>there is no gravity at that altitude</li><li>the gravitational force is balanced by a centrifugal force</li><li>the station shields the astronaut from gravity</li><li>the astronaut and station are both in free fall, so the normal force is zero</li></ol>
+<div class="mcq-x"><p>At 400 km, \(g\) is still 8.7 N kg⁻¹. Everything falls together, so nothing pushes on the astronaut: apparent weightlessness.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A satellite moves from a circular orbit of radius \(r\) to one of radius \(2r\). Its orbital speed changes by a factor of:</p></div>
+<ol><li>2</li><li>\(1/\sqrt{2}\)</li><li>\(1/2\)</li><li>\(\sqrt{2}\)</li></ol>
+<div class="mcq-x"><p>\(v \propto 1/\sqrt{r}\), so doubling \(r\) multiplies \(v\) by \(1/\sqrt2 \approx 0.71\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>A student plots \(T^2\) (vertical axis) against \(r^3\) (horizontal axis) for the moons of Jupiter. The gradient of the line equals:</p></div>
+<ol><li>\(GM/4\pi^2\)</li><li>\(4\pi^2 GM\)</li><li>\(4\pi^2/GM\)</li><li>\(\sqrt{GM}\)</li></ol>
+<div class="mcq-x"><p>\(T^2 = \dfrac{4\pi^2}{GM}r^3\): the gradient of \(T^2\) vs \(r^3\) is \(4\pi^2/GM\). If the axes were swapped the gradient would be \(GM/4\pi^2\), so read the axes carefully.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A satellite orbits 2000 km above Earth's surface. Calculate (a) its orbital speed and (b) its period in minutes.</p></div>
+<div class="pq-s"><p>\(r = 6.37\times10^6 + 2.00\times10^6 = 8.37\times10^6\ \text{m}\).</p><p>(a) \(v = \sqrt{(3.99\times10^{14})/(8.37\times10^6)} = 6.90\times10^3\ \text{m s}^{-1}\).</p><p>(b) \(T = 2\pi r/v = 2\pi(8.37\times10^6)/6903 = 7.62\times10^3\ \text{s} = 127\ \text{min}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Phobos orbits Mars with a radius of \(9.38\times10^6\ \text{m}\) and a period of 7.65 hours. Calculate the mass of Mars.</p></div>
+<div class="pq-s"><p>\(T = 7.65 \times 3600 = 2.754\times10^4\ \text{s}\).</p><p>\(M = \dfrac{4\pi^2 r^3}{GT^2} = \dfrac{4\pi^2(9.38\times10^6)^3}{(6.67\times10^{-11})(2.754\times10^4)^2} = 6.4\times10^{23}\ \text{kg}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>Io orbits Jupiter at \(4.22\times10^8\ \text{m}\) with a period of 1.77 days. Callisto orbits at \(1.88\times10^9\ \text{m}\). (a) Use Kepler's third law to predict Callisto's period. (b) Calculate the mass of Jupiter.</p></div>
+<div class="pq-s"><p>(a) \(T_C = T_I\left(\dfrac{r_C}{r_I}\right)^{3/2} = 1.77 \times \left(\dfrac{1.88\times10^9}{4.22\times10^8}\right)^{1.5} = 1.77 \times 9.40 = 16.6\ \text{days}\) (actual: 16.7 days).</p><p>(b) \(T_I = 1.77 \times 86\,400 = 1.529\times10^5\ \text{s}\); \(M = \dfrac{4\pi^2(4.22\times10^8)^3}{(6.67\times10^{-11})(1.529\times10^5)^2} = 1.9\times10^{27}\ \text{kg}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Explain why all geostationary satellites must be at the same altitude, regardless of their mass.</p></div>
+<div class="pq-s"><p>For a circular orbit, gravity provides the centripetal force: \(\dfrac{GMm}{r^2} = \dfrac{4\pi^2 mr}{T^2}\). [1]</p><p>The satellite mass \(m\) cancels, giving \(r^3 = \dfrac{GMT^2}{4\pi^2}\): radius depends only on Earth's mass and the period. [1]</p><p>All geostationary satellites have the same period (24 h), so they must all have the same orbital radius, \(4.23\times10^7\ \text{m}\) (altitude \(3.59\times10^7\ \text{m}\)). [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(GMm/r^2 = mv^2/r = 4\pi^2mr/T^2\); satellite mass cancels.</li>
+  <li>\(v = \sqrt{GM/r}\), \(T = 2\pi\sqrt{r^3/GM}\), \(r^3/T^2 = GM/4\pi^2\).</li>
+  <li>Geostationary: 24 h, equatorial, eastward, \(r = 4.23\times10^7\ \text{m}\). GPS: about 12 h, 20 200 km.</li>
+  <li>Floating astronauts: free fall, \(N = 0\), gravity still acts.</li>
+</ul>

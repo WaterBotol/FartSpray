@@ -1,0 +1,85 @@
+<!--
+id: exam-technique
+title: Methods exam technique
+short: Exam technique
+summary: Command words, setting out for method marks, exact vs approximate answers, notation that loses marks, CAS habits for Exam 2, multiple-choice strategy, bound reference tips and the errors examiners' reports mention year after year.
+keywords: exam technique, methods exam, command words, show that, hence, hence or otherwise, exact value, correct to, decimal places, notation, CAS, bound reference, multiple choice, examiners report, common errors, reading time, working, marks
+special: reference
+-->
+<h2>Command words in Methods</h2>
+<div class="tbl"><table>
+<thead><tr><th>Phrase</th><th>What it means</th></tr></thead>
+<tbody>
+<tr><td><strong>Find / determine</strong></td><td>Get the answer; show enough working for method marks if it's worth more than 1 mark.</td></tr>
+<tr><td><strong>Show that</strong></td><td>The answer is given. Every step from the starting point to that answer must be written, with no jumps. A CAS “it's true” is worth 0.</td></tr>
+<tr><td><strong>Hence</strong></td><td>You <em>must</em> use the previous part. Another method gets no marks.</td></tr>
+<tr><td><strong>Hence, or otherwise</strong></td><td>The previous part is the quickest route, but any valid method is fine.</td></tr>
+<tr><td><strong>Exact value</strong></td><td>No decimals: surds, \(\pi\), \(e\), logs and fractions stay as they are.</td></tr>
+<tr><td><strong>Correct to \(n\) decimal places</strong></td><td>Round only the final answer, and use exactly \(n\) places (including trailing zeros: 0.50, not 0.5).</td></tr>
+<tr><td><strong>Sketch</strong></td><td>Correct shape plus labelled key features (intercepts, turning points, asymptotes, endpoints with open/closed circles).</td></tr>
+<tr><td><strong>State / write down</strong></td><td>No working needed.</td></tr>
+</tbody></table></div>
+
+<h2>Setting out for method marks</h2>
+<ul>
+  <li><strong>Write the setup before the answer.</strong> For example: “Solve \(f'(x) = 0\) for \(x\)” or “\(P(X &gt; 180)\) where \(X \sim \text{N}(170, 8^2)\)”. In Exam 2, a correct setup often earns the first mark even if the final answer is wrong.</li>
+  <li><strong>Use correct notation.</strong> \(f'(x)\), not \(f'\) or \(\frac{d}{dx}\) floating without an expression. Write \(\int_0^2(x^2 + 1)\,dx\) with brackets and \(dx\). Use \(=\) only between things that really are equal.</li>
+  <li><strong>Define your variables</strong> in modelling and probability questions: “Let \(X\) be the number of faulty items, \(X \sim \text{Bi}(20, 0.1)\).”</li>
+  <li><strong>Don't round intermediate values.</strong> Carry full precision; round the final answer only.</li>
+  <li><strong>State domains</strong> for inverses, composites and derivatives, and for optimisation variables.</li>
+</ul>
+
+<h2>Exam 1 (tech-free) habits</h2>
+<ul>
+  <li><strong>Know your exact values</strong> (\(\sin\frac{\pi}{3}\) and so on), log and index laws, and the derivative and antiderivative table without thinking.</li>
+  <li><strong>Factorise derivatives</strong> before solving \(= 0\).</li>
+  <li><strong>Check solutions against domains</strong>, especially for log equations and trig equations over restricted intervals.</li>
+  <li><strong>Simplify at the end</strong> (\(\log_e 9 - \log_e 3 = \log_e 3\)), but don't waste time making it “prettier” than needed.</li>
+</ul>
+
+<h2>Exam 2 (CAS) habits</h2>
+<ul>
+  <li><strong>Define functions on CAS</strong> (e.g. <code>define f(x) = …</code>) so you can reuse them for derivatives, integrals and solve commands.</li>
+  <li><strong>Check the mode</strong>: radians, and approximate vs exact as needed.</li>
+  <li><strong>Restrict solves to the domain</strong> (e.g. <code>solve(f(x)=0, x) | 0≤x≤2π</code>) to avoid extra solutions.</li>
+  <li><strong>Sketch what CAS gives you</strong> and sanity-check it (range of a probability, sign of an area, sensible units).</li>
+  <li><strong>Watch cube roots of negatives and \(x^{2/3}\)</strong>: some CAS settings return complex values or only the \(x \ge 0\) branch.</li>
+</ul>
+
+<h2>Multiple choice strategy</h2>
+<ul>
+  <li>Eliminate options by testing numbers (for functional equations, transformations, domains).</li>
+  <li>For “which is true” questions, check <em>every</em> option: two can look right until you simplify.</li>
+  <li>Never leave one blank: there's no penalty for wrong answers.</li>
+  <li>Watch strict vs non-strict inequalities and open vs closed endpoints. These are the most common MCQ traps.</li>
+</ul>
+
+<h2>Your bound reference</h2>
+<ul>
+  <li>Organise it by topic with tabs. Include worked examples of the question types you find hard, not a copy of the textbook.</li>
+  <li>Include the CAS syntax you use for: inverse normal, binomial cdf, solving with a domain, defining piecewise functions, and Newton's method.</li>
+  <li>Add a page of your personal mistakes. Reading it during reading time is worth more than any formula.</li>
+</ul>
+
+<h2>Errors examiners' reports mention every year</h2>
+<aside class="c-trap" data-title="Don't lose these marks">
+<ul>
+  <li>Giving a decimal when an exact answer was asked for (or vice versa).</li>
+  <li>“Show that” answers that skip steps or work backwards from the answer.</li>
+  <li>Confusing “dilation from the \(x\)-axis” with “from the \(y\)-axis”.</li>
+  <li>Missing open/closed circles, asymptote labels or endpoint coordinates on sketches.</li>
+  <li>Not rejecting invalid solutions (negative lengths, logs of negatives, values outside the domain).</li>
+  <li>Using \(\text{N}(\mu, \sigma^2)\) with the variance as the standard deviation.</li>
+  <li>Off-by-one errors in binomial inequalities (\(P(X &gt; 3)\) vs \(P(X \ge 3)\)).</li>
+  <li>Calculating signed area when “area” was asked for.</li>
+  <li>Writing the answer to a different question: \(x\) instead of the maximum value, or the probability instead of the expected number.</li>
+</ul>
+</aside>
+
+<h2>Reading time plan (15 minutes)</h2>
+<ol>
+  <li>Skim the whole paper. Mark each question as easy, medium or hard.</li>
+  <li>For Exam 2 Section B, read the stem of each question and note which topic(s) it tests.</li>
+  <li>Plan your order: bank the easy marks first, but don't skip the start of a long question, since part (a) is usually quick.</li>
+  <li>Mentally set up the first few MCQs, so you start writing fast.</li>
+</ol>

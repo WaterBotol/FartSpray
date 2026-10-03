@@ -1,0 +1,158 @@
+<!--
+id: u4-sr-dilation
+title: Time dilation, length contraction & muons
+short: Time dilation & length contraction
+summary: Proper time and proper length, the Lorentz factor γ, time dilation and length contraction calculations, how to decide who measures what, and muon decay as experimental evidence.
+keywords: time dilation, length contraction, proper time, proper length, lorentz factor, gamma, t = gamma t0, L = L0/gamma, muon, muon decay, light clock, spaceship, astronaut, twin paradox, relativistic, observer, frame, GPS, atmosphere, lifetime, half life
+dotpoints: describe proper time (\(t_0\)) as the time interval between two events in a reference frame where the two events occur at the same point in space | describe proper length (\(L_0\)) as the length that is measured in the frame of reference in which objects are at rest | model mathematically time dilation and length contraction at speeds approaching c using the equations: \(t = t_0\gamma\) and \(L = \frac{L_0}{\gamma}\) where \(\gamma = \left(1 - \frac{v^2}{c^2}\right)^{-\frac12}\) | explain muon decay as evidence for time dilation and length contraction
+-->
+<h2>The Lorentz factor</h2>
+<div class="eq"><div class="eq-label">Lorentz factor</div>\[ \gamma = \frac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}} \]<p>\(\gamma\) is always ≥ 1. It is essentially 1 at everyday speeds and grows without limit as \(v \to c\).</p></div>
+<div class="tbl"><table>
+<thead><tr><th>\(v\)</th><th>0.10c</th><th>0.50c</th><th>0.60c</th><th>0.80c</th><th>0.90c</th><th>0.99c</th><th>0.995c</th></tr></thead>
+<tbody><tr><td>\(\gamma\)</td><td>1.005</td><td>1.155</td><td>1.25</td><td>1.667</td><td>2.294</td><td>7.09</td><td>10.0</td></tr></tbody>
+</table></div>
+<aside class="c-exam" data-title="Exam tip: computing γ quickly">
+<p>If \(v\) is given as a fraction of \(c\), write \(\beta = v/c\) and use \(\gamma = 1/\sqrt{1 - \beta^2}\). For \(v = 0.8c\): \(1 - 0.64 = 0.36\), \(\sqrt{0.36} = 0.6\), \(\gamma = 1/0.6 = 1.667\). Keep \(\gamma\) unrounded until the end.</p>
+</aside>
+
+<h2>Time dilation</h2>
+<aside class="c-def" data-title="Proper time \(t_0\)"><p>The time interval between two events measured in the frame of reference in which the two events occur <strong>at the same place</strong>. It is measured by a single clock that is present at both events.</p></aside>
+<div class="eq"><div class="eq-label">Time dilation</div>\[ t = \gamma t_0 \]<p>\(t\) is the time between the same two events measured by an observer for whom the events happen at <em>different</em> places (they see the clock moving). Since \(\gamma \geq 1\), \(t \geq t_0\): <strong>moving clocks run slow</strong>. Proper time is always the shortest.</p></div>
+
+<figure class="fig">
+<svg viewBox="0 0 440 190" width="440" role="img" aria-label="Light clock: in its own frame light bounces straight up and down; seen from a frame where the clock moves, the light follows a longer zigzag path, so each tick takes longer">
+  <g>
+    <line x1="60" y1="30" x2="120" y2="30" class="s-ink" style="stroke-width:4"/><line x1="60" y1="150" x2="120" y2="150" class="s-ink" style="stroke-width:4"/>
+    <line x1="90" y1="148" x2="90" y2="34" class="s-w" marker-end="url(#ah-w)"/>
+    <text x="90" y="178" text-anchor="middle" class="t-sm t-b">clock's own frame</text>
+    <text x="98" y="95" class="t-sm t-w">d</text>
+  </g>
+  <g>
+    <line x1="190" y1="30" x2="240" y2="30" class="s-mut" style="stroke-width:4;opacity:.5"/><line x1="190" y1="150" x2="240" y2="150" class="s-mut" style="stroke-width:4;opacity:.5"/>
+    <line x1="280" y1="30" x2="330" y2="30" class="s-ink" style="stroke-width:4"/><line x1="280" y1="150" x2="330" y2="150" class="s-mut" style="stroke-width:4;opacity:.5"/>
+    <line x1="370" y1="30" x2="420" y2="30" class="s-mut" style="stroke-width:4;opacity:.5"/><line x1="370" y1="150" x2="420" y2="150" class="s-ink" style="stroke-width:4"/>
+    <line x1="215" y1="148" x2="303" y2="34" class="s-w" marker-end="url(#ah-w)"/>
+    <line x1="307" y1="34" x2="393" y2="146" class="s-w" marker-end="url(#ah-w)"/>
+    <line x1="200" y1="170" x2="260" y2="170" class="s-v" marker-end="url(#ah-v)"/><text x="266" y="174" class="t-sm t-v t-b">v</text>
+    <text x="305" y="188" text-anchor="middle" class="t-sm t-b">frame where the clock moves</text>
+  </g>
+</svg>
+<figcaption>Light always travels at \(c\). In the frame where the clock moves, the light's path is longer, so each tick takes longer: the moving clock runs slow by the factor \(\gamma\).</figcaption>
+</figure>
+
+<h2>Length contraction</h2>
+<aside class="c-def" data-title="Proper length \(L_0\)"><p>The length of an object (or distance between two points) measured in the frame in which the object (or the two points) is <strong>at rest</strong>.</p></aside>
+<div class="eq"><div class="eq-label">Length contraction</div>\[ L = \frac{L_0}{\gamma} \]<p>An observer who sees the object moving measures it shorter, <strong>only along the direction of motion</strong>. Proper length is always the longest.</p></div>
+<aside class="c-trap" data-title="Trick alert: only the direction of motion shrinks">
+<p>A spaceship flying horizontally at \(0.8c\) is measured shorter in length, but its <strong>height and width are unchanged</strong>. A square moving sideways becomes a narrower rectangle, not a smaller square.</p>
+</aside>
+
+<h2>Deciding who measures proper time and proper length</h2>
+<p>This is the skill that decides most relativity marks. Ask two questions:</p>
+<ol>
+  <li><strong>Proper time:</strong> in which frame do the start and end events happen <em>at the same place</em>? (Usually: whoever carries the clock, travels with the particle, or rides the ship.)</li>
+  <li><strong>Proper length:</strong> in which frame is the length <em>at rest</em>? (The ship's crew for the ship's length; Earth for the Earth–star distance or the thickness of the atmosphere.)</li>
+</ol>
+<div class="tbl"><table>
+<thead><tr><th>Situation</th><th>Proper time measured by</th><th>Proper length measured by</th></tr></thead>
+<tbody>
+<tr><td>Spaceship travels from Earth to a star</td><td>The astronaut (departure and arrival both happen at the ship)</td><td>Earth observers, for the Earth–star distance</td></tr>
+<tr><td>Length of the spaceship itself</td><td>n/a</td><td>The astronaut (the ship is at rest relative to them)</td></tr>
+<tr><td>Muon created high in the atmosphere, reaches the ground</td><td>The muon's own frame (its lifetime)</td><td>Earth, for the atmosphere's thickness</td></tr>
+<tr><td>A clock on a train passing a platform</td><td>A passenger next to the clock</td><td>A passenger, for the train's length; the platform observer, for the platform's length</td></tr>
+</tbody></table></div>
+<aside class="c-trap" data-title="Trick alert: the traveller's proper time goes with the Earth's proper length">
+<p>For a trip to a star, the astronaut measures the <strong>proper time</strong> but a <strong>contracted distance</strong>; Earth measures the <strong>proper distance</strong> but a <strong>dilated time</strong>. Neither observer has both “proper” quantities. Mixing \(t_0\) with \(L_0\) in one speed calculation is a very common error.</p>
+</aside>
+
+<div class="we" data-title="A trip to a star (hard)" data-marks="6">
+<div class="we-q"><p>A spaceship travels at \(0.80c\) from Earth to a star 12 light-years away (as measured from Earth). Ignore acceleration.</p><p>(a) How long does the trip take according to Earth observers? (b) How long does it take according to the astronaut? (c) How far is it to the star according to the astronaut? (d) Show that both observers agree on the relative speed.</p></div>
+<div class="we-s"><p><strong>\(\gamma\):</strong> \(\gamma = 1/\sqrt{1 - 0.64} = 1/0.6 = 1.667\).</p></div>
+<div class="we-s"><p><strong>(a) Earth frame:</strong> distance 12 ly at \(0.80c\): \(t = \dfrac{12\ \text{ly}}{0.80c} = 15\ \text{years}\). (A light-year is the distance light travels in a year, so ly ÷ c gives years.)</p></div>
+<div class="we-s"><p><strong>(b) The astronaut measures proper time</strong> (departure and arrival both happen at the ship):</p>\[ t_0 = \frac{t}{\gamma} = \frac{15}{1.667} = 9.0\ \text{years} \]</div>
+<div class="we-s"><p><strong>(c) The Earth–star distance is proper length in Earth's frame</strong>, so the astronaut measures it contracted:</p>\[ L = \frac{L_0}{\gamma} = \frac{12}{1.667} = 7.2\ \text{ly} \]</div>
+<div class="we-s"><p><strong>(d)</strong> Earth: \(12\ \text{ly}/15\ \text{y} = 0.80c\). Astronaut: \(7.2\ \text{ly}/9.0\ \text{y} = 0.80c\). ✓</p></div>
+<div class="we-a"><p><strong>(a) 15 years (b) 9.0 years (c) 7.2 ly (d) both get \(0.80c\).</strong> Time dilation (Earth's view) and length contraction (the astronaut's view) are two descriptions of the same physics.</p></div>
+</div>
+
+<div class="we" data-title="Length of a moving spaceship" data-marks="2">
+<div class="we-q"><p>A spaceship is 100 m long when measured by its crew. What length does an observer on a space station measure as it passes at \(0.60c\)? What does the crew measure for the ship's length?</p></div>
+<div class="we-s"><p>\(\gamma = 1/\sqrt{1 - 0.36} = 1.25\). The crew measure proper length (100 m).</p></div>
+<div class="we-s"><p>Station: \(L = L_0/\gamma = 100/1.25 = 80\ \text{m}\).</p></div>
+<div class="we-a"><p><strong>80 m for the station; 100 m for the crew.</strong> The crew notice nothing unusual about their own ship.</p></div>
+</div>
+
+<h2>Evidence: muon decay</h2>
+<p><strong>Muons</strong> are unstable particles created when cosmic rays hit the upper atmosphere, about 10 km up. At rest, a muon's mean lifetime is 2.2 μs. They are created moving at about \(0.998c\).</p>
+<div class="we" data-title="Why do muons reach the ground? (classic)" data-marks="6">
+<div class="we-q"><p>Muons are created 10 km above the ground moving at \(0.998c\). Their mean lifetime at rest is 2.2 μs. (a) Classically, how far would a typical muon travel before decaying? (b) Explain, from Earth's frame, why many reach the ground. (c) Explain the same result from the muon's frame.</p></div>
+<div class="we-s"><p><strong>(a) Classical:</strong> \(d = vt = (0.998)(3.0\times10^8)(2.2\times10^{-6}) = 660\ \text{m}\). Almost none should reach the ground 10 km below.</p></div>
+<div class="we-s"><p><strong>\(\gamma\) at \(0.998c\):</strong> \(\gamma = 1/\sqrt{1 - 0.998^2} = 15.8\).</p></div>
+<div class="we-s"><p><strong>(b) Earth frame: time dilation.</strong> The 2.2 μs lifetime is proper time (measured in the muon's frame). Earth observers measure it dilated:</p>\[ t = \gamma t_0 = 15.8 \times 2.2\ \mu\text{s} = 34.8\ \mu\text{s} \]<p>In that time: \(d = (0.998c)(34.8\times10^{-6}) = 1.04\times10^4\ \text{m} \approx 10\ \text{km}\). Enough to reach the ground.</p></div>
+<div class="we-s"><p><strong>(c) Muon frame: length contraction.</strong> The muon is at rest; the atmosphere rushes past at \(0.998c\). The 10 km thickness is proper length in Earth's frame, so the muon measures it contracted:</p>\[ L = \frac{L_0}{\gamma} = \frac{10\,000}{15.8} = 632\ \text{m} \]<p>Time to cover 632 m at \(0.998c\): \(632/(2.99\times10^8) = 2.1\ \mu\text{s}\), within its 2.2 μs lifetime.</p></div>
+<div class="we-a"><p><strong>(a) about 660 m (b) the muon's clock runs slow: 34.8 μs in Earth's frame, enough to travel ~10 km (c) the atmosphere is only ~630 m thick in the muon's frame.</strong> The large number of muons detected at sea level is direct experimental evidence for both effects.</p></div>
+</div>
+<aside class="c-exam" data-title="Exam tip: muon answers need the right frame">
+<p>In Earth's frame, use <strong>time dilation</strong> (the atmosphere is its proper thickness). In the muon's frame, use <strong>length contraction</strong> (its lifetime is proper time). Never apply both in the same frame.</p>
+</aside>
+
+<div class="sim" data-sim="relativity"></div>
+
+<aside class="c-deep" data-title="Going deeper: it's symmetric, and GPS proves it">
+<p>Each inertial observer sees the <em>other's</em> clock running slow. There's no contradiction because they disagree about which events are simultaneous. The famous “twin paradox” is resolved because the travelling twin must accelerate to turn around, so their frame is not inertial the whole time. GPS satellites move fast enough that their clocks would drift by several microseconds per day if special (and general) relativity weren't corrected for, giving position errors of kilometres.</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>An astronaut travels at high speed to a distant star. Who measures the proper time for the journey?</p></div>
+<ol><li>the astronaut</li><li>an observer on Earth</li><li>an observer on the star</li><li>both Earth and star observers together</li></ol>
+<div class="mcq-x"><p>Departure and arrival both happen at the astronaut's location, so only the astronaut's clock is present at both events.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>For the same journey, who measures the proper <em>distance</em> between Earth and the star?</p></div>
+<ol><li>the astronaut</li><li>no-one, because distances are always contracted</li><li>an observer on Earth</li><li>both measure the same distance</li></ol>
+<div class="mcq-x"><p>Earth and the star are at rest relative to each other in Earth's frame, so Earth measures the proper length. The astronaut measures a contracted distance.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A spaceship passes Earth at \(0.60c\). Its crew measure a 1.0 hour interval on their clock. An Earth observer measures this interval as:</p></div>
+<ol><li>0.80 h</li><li>1.25 h</li><li>1.0 h</li><li>1.67 h</li></ol>
+<div class="mcq-x"><p>The crew measure proper time. \(t = \gamma t_0 = 1.25 \times 1.0 = 1.25\ \text{h}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>A cube-shaped spaceship with 10 m sides flies past at \(0.80c\) in the direction of one of its edges. An external observer measures its dimensions as:</p></div>
+<ol><li>6 m × 6 m × 6 m</li><li>10 m × 10 m × 10 m</li><li>16.7 m × 10 m × 10 m</li><li>6 m × 10 m × 10 m</li></ol>
+<div class="mcq-x"><p>Only the dimension along the motion contracts: \(10/1.667 = 6\ \text{m}\). The other two stay 10 m.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>Muons reaching the Earth's surface are evidence for special relativity because:</p></div>
+<ol><li>they travel faster than light in the atmosphere</li><li>their lifetime is longer than classical physics predicts in every frame, including their own</li><li>without time dilation (or length contraction) far fewer would survive the trip through the atmosphere</li><li>their mass increases as they fall</li></ol>
+<div class="mcq-x"><p>Classically most would decay within about 660 m. In their own frame their lifetime is the normal 2.2 μs; it's Earth observers who measure it dilated.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A particle with a proper lifetime of \(2.6\times10^{-8}\ \text{s}\) moves through a lab at \(0.95c\). Find its lifetime as measured in the lab and the distance it travels in the lab before decaying.</p></div>
+<div class="pq-s"><p>\(\gamma = 1/\sqrt{1 - 0.9025} = 3.20\).</p><p>\(t = \gamma t_0 = 3.20 \times 2.6\times10^{-8} = 8.3\times10^{-8}\ \text{s}\).</p><p>\(d = vt = 0.95 \times 3.0\times10^8 \times 8.3\times10^{-8} = 24\ \text{m}\) (classically only 7.4 m).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4">
+<div class="pq-q"><p>How fast must a spaceship travel so that its crew measure a journey to a star 20 ly away (Earth frame) as taking only 10 years?</p></div>
+<div class="pq-s"><p>In the crew's frame the distance is \(L = 20/\gamma\) ly and the time is 10 y, so \(v = \dfrac{20/\gamma}{10}c = \dfrac{2}{\gamma}c\), i.e. \(\beta = 2\sqrt{1 - \beta^2}\).</p><p>Square: \(\beta^2 = 4(1 - \beta^2) \Rightarrow 5\beta^2 = 4 \Rightarrow \beta = 0.894\).</p><p>\(v = 0.89c\) (check: \(\gamma = 2.24\), distance 8.94 ly, time 8.94/0.894 = 10 y ✓).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Explain how the detection of large numbers of muons at sea level supports special relativity. Refer to the frames of reference of both an Earth observer and the muon.</p></div>
+<div class="pq-s"><p>Muons are produced ~10 km up with a proper mean lifetime of about 2.2 μs; classically, even at nearly \(c\), they'd travel only ~660 m before decaying, so very few should reach sea level. [1]</p><p>Earth frame: the muon's lifetime is proper time in its own frame; Earth observers measure it dilated (\(t = \gamma t_0\), about 35 μs for \(\gamma \approx 16\)), long enough to travel ~10 km. [1]</p><p>Muon frame: the atmosphere's thickness is proper length in Earth's frame; the muon measures it contracted (\(L = L_0/\gamma\), ~630 m), which it can cross within its normal 2.2 μs lifetime. [1]</p><p>Both frames predict that many muons reach the ground, which matches observation and contradicts classical physics. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(\gamma = 1/\sqrt{1 - v^2/c^2}\); \(t = \gamma t_0\); \(L = L_0/\gamma\).</li>
+  <li>Proper time: events at the same place (the traveller). Proper length: object at rest (usually Earth for Earth–star distances).</li>
+  <li>Contraction only along the motion.</li>
+  <li>Muons: Earth frame → time dilation; muon frame → length contraction. Same answer.</li>
+</ul>

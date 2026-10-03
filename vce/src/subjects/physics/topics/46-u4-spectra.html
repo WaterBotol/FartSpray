@@ -1,0 +1,211 @@
+<!--
+id: u4-spectra
+title: Energy levels, spectra & electron standing waves
+short: Energy levels & spectra
+summary: Quantised atomic energy levels, emission and absorption line spectra, calculating photon energies and wavelengths from transitions, metal vapour lamps, and why electrons form standing waves in atoms.
+keywords: laser, stimulated emission, coherent, coherence, LED, band gap, incandescent, synchrotron light, light sources, energy levels, quantised, bohr, ground state, excited state, ionisation energy, emission spectrum, absorption spectrum, line spectrum, continuous spectrum, photon, transition, delta E = hf, hydrogen, mercury, sodium, metal vapour lamp, standing wave, n lambda = 2 pi r, electron orbit, number of spectral lines, fraunhofer, collision excitation
+dotpoints: explain the production of atomic absorption and emission line spectra, including those from metal vapour lamps | interpret spectra and calculate the energy of absorbed or emitted photons: \(\Delta E = hf\) | analyse the emission or absorption of a photon by an atom in terms of a change in the electron energy levels, and the frequency and wavelength of the emitted or absorbed photon: \(\Delta E = hf = \frac{hc}{\lambda}\) | describe the quantised states of the atom with reference to electrons forming standing waves, and explain this as evidence for the dual nature of matter | compare the production of light in lasers, synchrotrons, LEDs and incandescent lights | explain the importance of quantisation in the development of knowledge about light and in explaining the nature of atoms
+-->
+<h2>Quantised energy levels</h2>
+<p>Electrons in an atom can only have certain <strong>allowed energies</strong>, called energy levels. They can't have energies in between. We say the energy is <strong>quantised</strong>.</p>
+<ul>
+  <li>The lowest level is the <strong>ground state</strong>; higher levels are <strong>excited states</strong>.</li>
+  <li>Energies are usually quoted as <em>negative</em> numbers, with 0 eV meaning the electron has just escaped the atom. The energy needed to free an electron from the ground state is the <strong>ionisation energy</strong> (13.6 eV for hydrogen).</li>
+  <li>Levels get closer together towards the top.</li>
+</ul>
+
+<figure class="fig">
+<svg viewBox="0 0 420 270" width="420" role="img" aria-label="Energy level diagram for hydrogen with levels at minus 13.6, minus 3.4, minus 1.51, minus 0.85 and minus 0.54 electron volts, and downward arrows for transitions producing photons">
+  <g class="s-ink" style="stroke-width:1.6">
+    <line x1="90" y1="20" x2="330" y2="20" style="stroke-dasharray:5 4"/>
+    <line x1="90" y1="28.7" x2="330" y2="28.7"/><line x1="90" y1="33.8" x2="330" y2="33.8"/>
+    <line x1="90" y1="44.4" x2="330" y2="44.4"/><line x1="90" y1="75.1" x2="330" y2="75.1"/>
+    <line x1="90" y1="240" x2="330" y2="240" style="stroke-width:2.4"/>
+  </g>
+  <g class="t-sm t-mono">
+    <text x="84" y="24" text-anchor="end">0</text>
+    <text x="84" y="37" text-anchor="end">−0.85</text><text x="84" y="48" text-anchor="end">−1.51</text>
+    <text x="84" y="79" text-anchor="end">−3.40</text><text x="84" y="244" text-anchor="end">−13.6</text>
+  </g>
+  <g class="t-sm">
+    <text x="336" y="24">n = ∞ (ionised)</text><text x="336" y="37">n = 4</text><text x="336" y="48">n = 3</text><text x="336" y="79">n = 2</text><text x="336" y="244">n = 1 (ground)</text>
+  </g>
+  <text x="14" y="14" class="t-sm">E (eV)</text>
+  <line x1="130" y1="44.4" x2="130" y2="72" class="s-w" style="stroke-width:2.4" marker-end="url(#ah-w)"/>
+  <text x="120" y="100" text-anchor="middle" class="t-sm t-w t-b">656 nm</text>
+  <line x1="175" y1="33.8" x2="175" y2="72" class="s-n" style="stroke-width:2.4" marker-end="url(#ah-n)"/>
+  <text x="180" y="100" text-anchor="middle" class="t-sm t-n t-b">486 nm</text>
+  <line x1="240" y1="75.1" x2="240" y2="237" class="s-t" style="stroke-width:2.4" marker-end="url(#ah-t)"/>
+  <text x="246" y="170" class="t-sm t-t t-b">122 nm (UV)</text>
+  <line x1="290" y1="44.4" x2="290" y2="237" class="s-t" style="stroke-width:2.4;opacity:.7" marker-end="url(#ah-t)"/>
+  <text x="296" y="210" class="t-sm t-t">103 nm</text>
+</svg>
+<figcaption>Hydrogen. Drops to n = 2 give visible lines (the Balmer series); drops to n = 1 give ultraviolet. Not to scale near the top.</figcaption>
+</figure>
+
+<h2>Emission spectra</h2>
+<p>When an atom is excited (by heating, an electric discharge, or collisions), an electron jumps to a higher level. It soon drops back down, emitting a <strong>photon</strong> whose energy exactly equals the energy difference between the two levels:</p>
+<div class="eq"><div class="eq-label">Photon emitted or absorbed in a transition</div>\[ \Delta E = E_{\text{upper}} - E_{\text{lower}} = hf = \frac{hc}{\lambda} \]<p>Shortcut: \(\lambda\ (\text{nm}) \approx \dfrac{1240}{\Delta E\ (\text{eV})}\), using \(hc = 1.24\times10^{-6}\ \text{eV m}\).</p></div>
+<p>Because only certain energy differences are possible, only certain photon energies (wavelengths) come out: a <strong>line emission spectrum</strong> of bright coloured lines on a dark background. Each element's pattern is unique, like a fingerprint.</p>
+<p><strong>Metal vapour lamps</strong> (sodium street lights, mercury lamps) work this way: an electric current through the vapour excites the atoms, which emit their characteristic lines. Sodium's dominant yellow line is at 589 nm (2.1 eV).</p>
+
+<div class="we" data-title="Hydrogen's red line" data-marks="3">
+<div class="we-q"><p>A hydrogen electron drops from n = 3 (−1.51 eV) to n = 2 (−3.40 eV). Find the energy, frequency and wavelength of the emitted photon.</p></div>
+<div class="we-t"><p>An atom emits a photon when an electron drops between energy levels. The photon's energy equals the difference between the levels, which fixes its frequency and wavelength.</p></div>
+<div class="we-s" data-f="\Delta E = E_i - E_f"><p><strong>Energy difference:</strong> \(\Delta E = -1.51 - (-3.40) = 1.89\ \text{eV}\).</p></div>
+<div class="we-s" data-f="f = \dfrac{\Delta E}{h}"><p><strong>Frequency:</strong> \(f = \Delta E/h = 1.89/4.14\times10^{-15} = 4.57\times10^{14}\ \text{Hz}\).</p></div>
+<div class="we-s" data-f="\lambda = \dfrac cf"><p><strong>Wavelength:</strong> \(\lambda = c/f = 3.0\times10^8/4.57\times10^{14} = 6.57\times10^{-7}\ \text{m}\).</p></div>
+<div class="we-a"><p><strong>1.89 eV, \(4.6\times10^{14}\ \text{Hz}\), 657 nm (red).</strong> Subtract energies carefully with the signs.</p></div>
+</div>
+
+<h3>How many lines?</h3>
+<p>An electron in level \(n\) can reach the ground state by many routes, each step giving a photon. The number of different photon energies possible from level \(n\) is</p>
+<div class="eq">\[ \text{number of lines} = \frac{n(n-1)}{2} \]<p>From n = 4: \(4 \times 3/2 = 6\) lines (4→3, 4→2, 4→1, 3→2, 3→1, 2→1).</p></div>
+<aside class="c-trap" data-title="Trick alert: count the lines, not the jumps">
+<p>“Atoms are excited to n = 4. How many spectral lines can be observed?” The answer is 6, not 3 (the number of levels below) and not 4. Draw the levels and list every pair.</p>
+</aside>
+
+<h2>Absorption spectra</h2>
+<p>When white light (all wavelengths) passes through a cool gas, atoms absorb photons whose energy <strong>exactly matches</strong> an energy gap, jumping to higher levels. Those wavelengths are missing from the transmitted light: a <strong>line absorption spectrum</strong> of dark lines on a continuous background. The dark lines are at exactly the same wavelengths as that element's emission lines. (The re-emitted photons go off in all directions, so very few continue in the original direction.)</p>
+<p>Dark lines in the Sun's spectrum (Fraunhofer lines) reveal which elements are in its outer layers.</p>
+<aside class="c-trap" data-title="Trick alert: photons must match exactly; electrons needn't">
+<ul>
+  <li>A <strong>photon</strong> is absorbed only if its energy exactly equals an energy gap (or is enough to ionise the atom). A 3.0 eV photon hitting ground-state hydrogen is not absorbed at all, because no level lies 3.0 eV above the ground state.</li>
+  <li>A <strong>colliding electron</strong> can give up <em>part</em> of its kinetic energy. A 12.0 eV electron hitting ground-state hydrogen can excite it to n = 2 (10.2 eV) and carry on with the remaining 1.8 eV. It can't reach n = 3 (needs 12.09 eV).</li>
+</ul>
+</aside>
+
+<div class="we" data-title="Mercury lamp (VCAA-style levels)" data-marks="3">
+<div class="we-q"><p>Mercury atoms have excited levels at 4.9 eV and 6.7 eV above the ground state. Find the wavelength of the photon emitted in (a) the 4.9 eV → ground transition and (b) the 6.7 eV → 4.9 eV transition. Which part of the spectrum is each in?</p></div>
+<div class="we-t"><p>Each transition's photon energy is the gap between two levels. Large gaps give short-wavelength (UV) photons; small gaps give visible or infrared ones.</p></div>
+<div class="we-s" data-f="\lambda = \dfrac{hc}{\Delta E}"><p><strong>(a)</strong> \(\lambda = \dfrac{hc}{\Delta E} = \dfrac{1.24\times10^{-6}}{4.9} = 2.53\times10^{-7}\ \text{m}\) (253 nm), ultraviolet.</p></div>
+<div class="we-s" data-f="\Delta E = E_i - E_f,\ \lambda = \dfrac{hc}{\Delta E}"><p><strong>(b)</strong> \(\Delta E = 6.7 - 4.9 = 1.8\ \text{eV}\); \(\lambda = 1.24\times10^{-6}/1.8 = 6.9\times10^{-7}\ \text{m}\) (690 nm), red.</p></div>
+<div class="we-a"><p><strong>(a) 253 nm, UV (b) 690 nm, red.</strong> Mercury's strong UV line is why fluorescent tubes need a phosphor coating to convert UV to visible light.</p></div>
+</div>
+
+<div class="sim" data-sim="levels"></div>
+
+<h2>Continuous vs line spectra</h2>
+<div class="tbl"><table>
+<thead><tr><th>Source</th><th>Spectrum</th><th>Why</th></tr></thead>
+<tbody>
+<tr><td>Incandescent bulb, the Sun's surface, hot solids</td><td>Continuous</td><td>Densely packed atoms in a hot solid produce a smooth range of energies (thermal radiation)</td></tr>
+<tr><td>Metal vapour lamp, gas discharge tube</td><td>Line emission</td><td>Isolated atoms with discrete energy levels</td></tr>
+<tr><td>LED</td><td>Narrow band around one colour</td><td>Electrons crossing a fixed energy gap in a semiconductor (see the comparison below)</td></tr>
+<tr><td>White light through cool gas</td><td>Continuous with dark lines</td><td>Atoms absorb photons matching their energy gaps</td></tr>
+</tbody></table></div>
+
+<h2>How different light sources produce light</h2>
+<p>Four sources are worth comparing, because each makes light in a different way and so gives a different spectrum:</p>
+<div class="tbl"><table>
+<thead><tr><th>Source</th><th>How the light is produced</th><th>Spectrum</th><th>Coherence and direction</th></tr></thead>
+<tbody>
+<tr><td><strong>Incandescent bulb</strong></td><td>A filament is heated to about 2500–3000 K; the hot, dense solid emits thermal radiation</td><td>Continuous and broad; most of the energy is emitted as infrared, so it's inefficient</td><td>Incoherent (random phases), emitted in all directions</td></tr>
+<tr><td><strong>LED</strong></td><td>In a semiconductor, electrons drop across a fixed energy gap (band gap) and each emits a photon with \(E \approx E_{\text{gap}}\)</td><td>Narrow band of wavelengths (typically tens of nanometres wide) around one colour; the colour depends on the material. White LEDs use a blue LED plus a phosphor</td><td>Incoherent; emitted over a wide angle</td></tr>
+<tr><td><strong>Laser</strong></td><td><strong>Stimulated emission</strong>: an incoming photon triggers an excited atom to emit an identical photon, and the light is amplified between mirrors</td><td>Essentially one wavelength (monochromatic)</td><td><strong>Coherent</strong> (same frequency and phase), highly directional, intense narrow beam</td></tr>
+<tr><td><strong>Synchrotron</strong></td><td>Electrons travelling at nearly \(c\) are accelerated centripetally by bending magnets and radiate (accelerating charges emit EM waves)</td><td>Very broad and continuous, from infrared to X-rays; a narrow band can be selected for experiments</td><td>Extremely bright, highly collimated beam, emitted tangentially to the ring</td></tr>
+</tbody></table></div>
+<aside class="c-trap" data-title="Trick alert: light-source traps">
+<ul>
+  <li><strong>Coherent ≠ bright.</strong> Coherent means a constant phase relationship. A synchrotron beam is far brighter than a laser but covers a wide range of wavelengths.</li>
+  <li><strong>An LED isn't a laser.</strong> Both can look like one colour, but LED light comes from spontaneous emission and is incoherent.</li>
+  <li><strong>Why coherence matters</strong>: a stable interference pattern (Young's experiment) needs coherent sources, which is why lasers are used.</li>
+</ul>
+</aside>
+
+<h2>Why levels are quantised: electron standing waves</h2>
+<p>Bohr simply <em>assumed</em> electrons have fixed orbits. De Broglie's matter waves explained why. Treat the electron in an orbit of radius \(r\) as a wave travelling around the nucleus. It will only be stable if it forms a <strong>standing wave</strong>, joining up smoothly with itself after one lap:</p>
+<div class="eq"><div class="eq-label">Standing-wave condition</div>\[ n\lambda = 2\pi r \qquad (n = 1, 2, 3, \ldots) \]<p>A whole number of de Broglie wavelengths must fit around the circumference.</p></div>
+<figure class="fig">
+<svg viewBox="0 0 420 170" width="420" role="img" aria-label="Electron standing waves around a nucleus: with three and four whole wavelengths fitting around the orbit the wave joins itself smoothly; with a non-whole number it does not">
+  <g transform="translate(80,85)"><circle r="55" class="s-dash"/><path d="M55.0,0.0 L55.7,1.5 L56.3,3.0 L56.9,4.5 L57.5,6.0 L57.9,7.6 L58.4,9.2 L58.7,10.9 L59.0,12.5 L59.2,14.2 L59.3,15.9 L59.3,17.6 L59.2,19.2 L59.1,20.9 L58.8,22.6 L58.5,24.2 L58.1,25.9 L57.5,27.4 L56.9,29.0 L56.2,30.5 L55.4,32.0 L54.5,33.4 L53.6,34.8 L52.5,36.1 L51.4,37.4 L50.2,38.5 L49.0,39.7 L47.7,40.7 L46.3,41.7 L44.9,42.6 L43.4,43.4 L41.9,44.1 L40.3,44.8 L38.8,45.4 L37.2,45.9 L35.6,46.4 L34.0,46.7 L32.3,47.1 L30.7,47.3 L29.1,47.5 L27.5,47.6 L25.9,47.7 L24.3,47.8 L22.8,47.7 L21.2,47.7 L19.7,47.6 L18.2,47.5 L16.8,47.4 L15.4,47.3 L14.0,47.1 L12.6,47.0 L11.2,46.8 L9.9,46.7 L8.6,46.5 L7.3,46.4 L6.1,46.3 L4.9,46.2 L3.6,46.1 L2.4,46.0 L1.2,46.0 L0.0,46.0 L-1.2,46.0 L-2.4,46.0 L-3.6,46.1 L-4.9,46.2 L-6.1,46.3 L-7.3,46.4 L-8.6,46.5 L-9.9,46.7 L-11.2,46.8 L-12.6,47.0 L-14.0,47.1 L-15.4,47.3 L-16.8,47.4 L-18.2,47.5 L-19.7,47.6 L-21.2,47.7 L-22.8,47.7 L-24.3,47.8 L-25.9,47.7 L-27.5,47.6 L-29.1,47.5 L-30.7,47.3 L-32.3,47.1 L-34.0,46.7 L-35.6,46.4 L-37.2,45.9 L-38.8,45.4 L-40.3,44.8 L-41.9,44.1 L-43.4,43.4 L-44.9,42.6 L-46.3,41.7 L-47.7,40.7 L-49.0,39.7 L-50.2,38.5 L-51.4,37.4 L-52.5,36.1 L-53.6,34.8 L-54.5,33.4 L-55.4,32.0 L-56.2,30.5 L-56.9,29.0 L-57.5,27.4 L-58.1,25.9 L-58.5,24.2 L-58.8,22.6 L-59.1,20.9 L-59.2,19.2 L-59.3,17.6 L-59.3,15.9 L-59.2,14.2 L-59.0,12.5 L-58.7,10.9 L-58.4,9.2 L-57.9,7.6 L-57.5,6.0 L-56.9,4.5 L-56.3,3.0 L-55.7,1.5 L-55.0,0.0 L-54.3,-1.4 L-53.5,-2.8 L-52.7,-4.2 L-51.9,-5.5 L-51.1,-6.7 L-50.3,-8.0 L-49.5,-9.2 L-48.6,-10.3 L-47.8,-11.5 L-47.0,-12.6 L-46.2,-13.7 L-45.4,-14.7 L-44.6,-15.8 L-43.9,-16.8 L-43.1,-17.9 L-42.4,-18.9 L-41.7,-19.9 L-41.1,-20.9 L-40.4,-22.0 L-39.8,-23.0 L-39.2,-24.0 L-38.7,-25.1 L-38.1,-26.2 L-37.6,-27.3 L-37.0,-28.4 L-36.5,-29.6 L-36.0,-30.7 L-35.5,-31.9 L-34.9,-33.1 L-34.4,-34.4 L-33.8,-35.7 L-33.3,-36.9 L-32.7,-38.2 L-32.0,-39.6 L-31.4,-40.9 L-30.7,-42.2 L-30.0,-43.6 L-29.2,-44.9 L-28.4,-46.3 L-27.5,-47.6 L-26.6,-49.0 L-25.6,-50.3 L-24.6,-51.5 L-23.5,-52.8 L-22.4,-54.0 L-21.2,-55.2 L-19.9,-56.3 L-18.6,-57.3 L-17.3,-58.3 L-15.9,-59.3 L-14.4,-60.1 L-12.9,-60.9 L-11.4,-61.6 L-9.9,-62.2 L-8.3,-62.8 L-6.6,-63.2 L-5.0,-63.6 L-3.3,-63.8 L-1.7,-64.0 L-0.0,-64.0 L1.7,-64.0 L3.3,-63.8 L5.0,-63.6 L6.6,-63.2 L8.3,-62.8 L9.9,-62.2 L11.4,-61.6 L12.9,-60.9 L14.4,-60.1 L15.9,-59.3 L17.3,-58.3 L18.6,-57.3 L19.9,-56.3 L21.2,-55.2 L22.4,-54.0 L23.5,-52.8 L24.6,-51.5 L25.6,-50.3 L26.6,-49.0 L27.5,-47.6 L28.4,-46.3 L29.2,-44.9 L30.0,-43.6 L30.7,-42.2 L31.4,-40.9 L32.0,-39.6 L32.7,-38.2 L33.3,-36.9 L33.8,-35.7 L34.4,-34.4 L34.9,-33.1 L35.5,-31.9 L36.0,-30.7 L36.5,-29.6 L37.0,-28.4 L37.6,-27.3 L38.1,-26.2 L38.7,-25.1 L39.2,-24.0 L39.8,-23.0 L40.4,-22.0 L41.1,-20.9 L41.7,-19.9 L42.4,-18.9 L43.1,-17.9 L43.9,-16.8 L44.6,-15.8 L45.4,-14.7 L46.2,-13.7 L47.0,-12.6 L47.8,-11.5 L48.6,-10.3 L49.5,-9.2 L50.3,-8.0 L51.1,-6.7 L51.9,-5.5 L52.7,-4.2 L53.5,-2.8 L54.3,-1.4 L55.0,-0.0" class="s-acc" style="stroke-width:2.2"/><circle r="5" class="f-w"/></g>
+  <g transform="translate(210,85)"><circle r="55" class="s-dash"/><path d="M55.0,0.0 L55.9,1.5 L56.8,3.0 L57.6,4.5 L58.3,6.1 L59.0,7.8 L59.5,9.4 L60.0,11.1 L60.3,12.8 L60.6,14.5 L60.7,16.3 L60.6,18.0 L60.4,19.6 L60.1,21.3 L59.7,22.9 L59.1,24.5 L58.4,26.0 L57.6,27.5 L56.6,28.9 L55.6,30.2 L54.4,31.4 L53.1,32.5 L51.7,33.6 L50.3,34.6 L48.8,35.4 L47.2,36.2 L45.6,36.9 L43.9,37.5 L42.3,38.1 L40.6,38.5 L38.9,38.9 L37.2,39.2 L35.6,39.5 L33.9,39.7 L32.3,39.9 L30.7,40.1 L29.2,40.2 L27.7,40.4 L26.3,40.5 L24.9,40.7 L23.6,40.9 L22.3,41.1 L21.1,41.4 L19.9,41.7 L18.7,42.1 L17.6,42.5 L16.5,43.0 L15.4,43.5 L14.4,44.2 L13.3,44.9 L12.2,45.6 L11.1,46.4 L10.0,47.3 L8.9,48.2 L7.8,49.1 L6.6,50.1 L5.4,51.1 L4.1,52.1 L2.8,53.1 L1.4,54.0 L0.0,55.0 L-1.5,55.9 L-3.0,56.8 L-4.5,57.6 L-6.1,58.3 L-7.8,59.0 L-9.4,59.5 L-11.1,60.0 L-12.8,60.3 L-14.5,60.6 L-16.3,60.7 L-18.0,60.6 L-19.6,60.4 L-21.3,60.1 L-22.9,59.7 L-24.5,59.1 L-26.0,58.4 L-27.5,57.6 L-28.9,56.6 L-30.2,55.6 L-31.4,54.4 L-32.5,53.1 L-33.6,51.7 L-34.6,50.3 L-35.4,48.8 L-36.2,47.2 L-36.9,45.6 L-37.5,43.9 L-38.1,42.3 L-38.5,40.6 L-38.9,38.9 L-39.2,37.2 L-39.5,35.6 L-39.7,33.9 L-39.9,32.3 L-40.1,30.7 L-40.2,29.2 L-40.4,27.7 L-40.5,26.3 L-40.7,24.9 L-40.9,23.6 L-41.1,22.3 L-41.4,21.1 L-41.7,19.9 L-42.1,18.7 L-42.5,17.6 L-43.0,16.5 L-43.5,15.4 L-44.2,14.4 L-44.9,13.3 L-45.6,12.2 L-46.4,11.1 L-47.3,10.0 L-48.2,8.9 L-49.1,7.8 L-50.1,6.6 L-51.1,5.4 L-52.1,4.1 L-53.1,2.8 L-54.0,1.4 L-55.0,0.0 L-55.9,-1.5 L-56.8,-3.0 L-57.6,-4.5 L-58.3,-6.1 L-59.0,-7.8 L-59.5,-9.4 L-60.0,-11.1 L-60.3,-12.8 L-60.6,-14.5 L-60.7,-16.3 L-60.6,-18.0 L-60.4,-19.6 L-60.1,-21.3 L-59.7,-22.9 L-59.1,-24.5 L-58.4,-26.0 L-57.6,-27.5 L-56.6,-28.9 L-55.6,-30.2 L-54.4,-31.4 L-53.1,-32.5 L-51.7,-33.6 L-50.3,-34.6 L-48.8,-35.4 L-47.2,-36.2 L-45.6,-36.9 L-43.9,-37.5 L-42.3,-38.1 L-40.6,-38.5 L-38.9,-38.9 L-37.2,-39.2 L-35.6,-39.5 L-33.9,-39.7 L-32.3,-39.9 L-30.7,-40.1 L-29.2,-40.2 L-27.7,-40.4 L-26.3,-40.5 L-24.9,-40.7 L-23.6,-40.9 L-22.3,-41.1 L-21.1,-41.4 L-19.9,-41.7 L-18.7,-42.1 L-17.6,-42.5 L-16.5,-43.0 L-15.4,-43.5 L-14.4,-44.2 L-13.3,-44.9 L-12.2,-45.6 L-11.1,-46.4 L-10.0,-47.3 L-8.9,-48.2 L-7.8,-49.1 L-6.6,-50.1 L-5.4,-51.1 L-4.1,-52.1 L-2.8,-53.1 L-1.4,-54.0 L-0.0,-55.0 L1.5,-55.9 L3.0,-56.8 L4.5,-57.6 L6.1,-58.3 L7.8,-59.0 L9.4,-59.5 L11.1,-60.0 L12.8,-60.3 L14.5,-60.6 L16.3,-60.7 L18.0,-60.6 L19.6,-60.4 L21.3,-60.1 L22.9,-59.7 L24.5,-59.1 L26.0,-58.4 L27.5,-57.6 L28.9,-56.6 L30.2,-55.6 L31.4,-54.4 L32.5,-53.1 L33.6,-51.7 L34.6,-50.3 L35.4,-48.8 L36.2,-47.2 L36.9,-45.6 L37.5,-43.9 L38.1,-42.3 L38.5,-40.6 L38.9,-38.9 L39.2,-37.2 L39.5,-35.6 L39.7,-33.9 L39.9,-32.3 L40.1,-30.7 L40.2,-29.2 L40.4,-27.7 L40.5,-26.3 L40.7,-24.9 L40.9,-23.6 L41.1,-22.3 L41.4,-21.1 L41.7,-19.9 L42.1,-18.7 L42.5,-17.6 L43.0,-16.5 L43.5,-15.4 L44.2,-14.4 L44.9,-13.3 L45.6,-12.2 L46.4,-11.1 L47.3,-10.0 L48.2,-8.9 L49.1,-7.8 L50.1,-6.6 L51.1,-5.4 L52.1,-4.1 L53.1,-2.8 L54.0,-1.4 L55.0,-0.0" class="s-acc" style="stroke-width:2.2"/><circle r="5" class="f-w"/></g>
+  <g transform="translate(340,85)"><circle r="55" class="s-dash"/><path d="M55.0,0.0 L55.8,1.5 L56.6,3.0 L57.3,4.5 L57.9,6.1 L58.5,7.7 L59.0,9.3 L59.4,11.0 L59.7,12.7 L59.9,14.4 L60.0,16.1 L60.0,17.8 L59.9,19.5 L59.7,21.1 L59.4,22.8 L59.0,24.4 L58.4,26.0 L57.8,27.6 L57.0,29.0 L56.1,30.5 L55.2,31.8 L54.1,33.1 L52.9,34.4 L51.7,35.5 L50.4,36.6 L49.0,37.6 L47.6,38.5 L46.1,39.3 L44.5,40.1 L42.9,40.7 L41.3,41.3 L39.7,41.8 L38.1,42.3 L36.4,42.6 L34.8,42.9 L33.1,43.2 L31.5,43.4 L29.9,43.5 L28.3,43.6 L26.8,43.7 L25.3,43.7 L23.8,43.8 L22.3,43.8 L20.9,43.8 L19.5,43.9 L18.2,43.9 L16.9,44.0 L15.6,44.1 L14.4,44.2 L13.1,44.3 L11.9,44.5 L10.7,44.7 L9.6,45.0 L8.4,45.3 L7.2,45.7 L6.1,46.1 L4.9,46.5 L3.7,47.0 L2.5,47.5 L1.3,48.1 L0.0,48.6 L-1.3,49.2 L-2.6,49.8 L-4.0,50.4 L-5.4,51.1 L-6.8,51.7 L-8.3,52.2 L-9.8,52.8 L-11.3,53.3 L-12.9,53.8 L-14.5,54.3 L-16.2,54.6 L-17.9,55.0 L-19.5,55.2 L-21.2,55.4 L-23.0,55.4 L-24.7,55.4 L-26.4,55.3 L-28.1,55.1 L-29.8,54.8 L-31.4,54.4 L-33.0,53.9 L-34.6,53.2 L-36.1,52.5 L-37.6,51.7 L-38.9,50.8 L-40.3,49.7 L-41.5,48.6 L-42.7,47.4 L-43.8,46.1 L-44.8,44.8 L-45.7,43.3 L-46.5,41.9 L-47.2,40.3 L-47.8,38.7 L-48.3,37.1 L-48.8,35.4 L-49.1,33.8 L-49.4,32.1 L-49.6,30.4 L-49.6,28.7 L-49.7,27.0 L-49.6,25.3 L-49.5,23.6 L-49.4,22.0 L-49.2,20.4 L-49.0,18.8 L-48.7,17.2 L-48.4,15.7 L-48.1,14.3 L-47.8,12.8 L-47.5,11.4 L-47.3,10.0 L-47.0,8.7 L-46.7,7.4 L-46.5,6.1 L-46.3,4.9 L-46.2,3.6 L-46.1,2.4 L-46.0,1.2 L-46.0,0.0 L-46.0,-1.2 L-46.1,-2.4 L-46.2,-3.6 L-46.3,-4.9 L-46.5,-6.1 L-46.7,-7.4 L-47.0,-8.7 L-47.3,-10.0 L-47.5,-11.4 L-47.8,-12.8 L-48.1,-14.3 L-48.4,-15.7 L-48.7,-17.2 L-49.0,-18.8 L-49.2,-20.4 L-49.4,-22.0 L-49.5,-23.6 L-49.6,-25.3 L-49.7,-27.0 L-49.6,-28.7 L-49.6,-30.4 L-49.4,-32.1 L-49.1,-33.8 L-48.8,-35.4 L-48.3,-37.1 L-47.8,-38.7 L-47.2,-40.3 L-46.5,-41.9 L-45.7,-43.3 L-44.8,-44.8 L-43.8,-46.1 L-42.7,-47.4 L-41.5,-48.6 L-40.3,-49.7 L-38.9,-50.8 L-37.6,-51.7 L-36.1,-52.5 L-34.6,-53.2 L-33.0,-53.9 L-31.4,-54.4 L-29.8,-54.8 L-28.1,-55.1 L-26.4,-55.3 L-24.7,-55.4 L-23.0,-55.4 L-21.2,-55.4 L-19.5,-55.2 L-17.9,-55.0 L-16.2,-54.6 L-14.5,-54.3 L-12.9,-53.8 L-11.3,-53.3 L-9.8,-52.8 L-8.3,-52.2 L-6.8,-51.7 L-5.4,-51.1 L-4.0,-50.4 L-2.6,-49.8 L-1.3,-49.2 L-0.0,-48.6 L1.3,-48.1 L2.5,-47.5 L3.7,-47.0 L4.9,-46.5 L6.1,-46.1 L7.2,-45.7 L8.4,-45.3 L9.6,-45.0 L10.7,-44.7 L11.9,-44.5 L13.1,-44.3 L14.4,-44.2 L15.6,-44.1 L16.9,-44.0 L18.2,-43.9 L19.5,-43.9 L20.9,-43.8 L22.3,-43.8 L23.8,-43.8 L25.3,-43.7 L26.8,-43.7 L28.3,-43.6 L29.9,-43.5 L31.5,-43.4 L33.1,-43.2 L34.8,-42.9 L36.4,-42.6 L38.1,-42.3 L39.7,-41.8 L41.3,-41.3 L42.9,-40.7 L44.5,-40.1 L46.1,-39.3 L47.6,-38.5 L49.0,-37.6 L50.4,-36.6 L51.7,-35.5 L52.9,-34.4 L54.1,-33.1 L55.2,-31.8 L56.1,-30.5 L57.0,-29.0 L57.8,-27.6 L58.4,-26.0 L59.0,-24.4 L59.4,-22.8 L59.7,-21.1 L59.9,-19.5 L60.0,-17.8 L60.0,-16.1 L59.9,-14.4 L59.7,-12.7 L59.4,-11.0 L59.0,-9.3 L58.5,-7.7 L57.9,-6.1 L57.3,-4.5 L56.6,-3.0 L55.8,-1.5 L55.0,-0.0" class="s-v" style="stroke-width:2.2"/><circle r="5" class="f-w"/></g>
+  <text x="80" y="164" text-anchor="middle" class="t-sm t-b">n = 3: allowed</text>
+  <text x="210" y="164" text-anchor="middle" class="t-sm t-b">n = 4: allowed</text>
+  <text x="340" y="164" text-anchor="middle" class="t-sm t-b">3.5 λ: not allowed</text>
+</svg>
+<figcaption>Only whole numbers of wavelengths fit. Otherwise the wave interferes destructively with itself and can't persist.</figcaption>
+</figure>
+<p>Since \(\lambda = h/(mv)\), only certain wavelengths, and so certain speeds and energies, are allowed: the energy levels are quantised. This is <strong>evidence for the dual nature of matter</strong>: an electron's wave properties explain the discrete energy levels that produce line spectra.</p>
+
+<h2>Why quantisation changed physics</h2>
+<p>Quantisation (energy coming in discrete amounts) is the thread that ties this area of study together:</p>
+<ul>
+  <li><strong>Light</strong>: the photoelectric effect could only be explained if light's energy arrives in packets, \(E = hf\). This forced physicists to accept that light has particle-like as well as wave-like properties.</li>
+  <li><strong>Atoms</strong>: line spectra showed that atoms emit and absorb only particular photon energies, so electron energies inside atoms must be quantised. De Broglie's standing waves then explained <em>why</em>: only whole numbers of wavelengths fit around an orbit.</li>
+  <li><strong>The big picture</strong>: classical physics predicted continuous energies for both light and atoms. Experiments that contradicted it led to quantum theory, a clear example of experimental evidence changing scientific models.</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Hydrogen atoms are excited to the n = 4 level. How many different wavelengths of light can they emit as they return to the ground state?</p></div>
+<ol><li>3</li><li>4</li><li>6</li><li>10</li></ol>
+<div class="mcq-x"><p>\(n(n-1)/2 = 4 \times 3/2 = 6\): 4→3, 4→2, 4→1, 3→2, 3→1, 2→1.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A photon of energy 11.0 eV strikes a hydrogen atom in its ground state (levels: −13.6, −3.4, −1.51 eV). The photon is:</p></div>
+<ol><li>absorbed, raising the electron to n = 2 with 0.8 eV left over</li><li>not absorbed</li><li>absorbed, ionising the atom</li><li>absorbed, raising the electron to n = 3</li></ol>
+<div class="mcq-x"><p>A photon must be absorbed whole, and 11.0 eV doesn't match any gap from the ground state (10.2 eV or 12.09 eV). It passes straight through. An <em>electron</em> with 11.0 eV could excite to n = 2 and keep 0.8 eV.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>The dark lines in an absorption spectrum of a gas occur at:</p></div>
+<ol><li>the same wavelengths as the bright lines in that gas's emission spectrum</li><li>wavelengths longer than all the emission lines</li><li>random wavelengths that depend on the temperature</li><li>wavelengths where the gas emits most strongly</li></ol>
+<div class="mcq-x"><p>Absorption and emission involve the same energy gaps, so the same photon energies and wavelengths.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>A transition releases a photon of 2.5 eV. Its wavelength is closest to:</p></div>
+<ol><li>250 nm</li><li>310 nm</li><li>620 nm</li><li>500 nm</li></ol>
+<div class="mcq-x"><p>\(\lambda \approx 1240/2.5 = 496\ \text{nm}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>According to the standing-wave model, the circumference of the electron's orbit in the n = 3 state is equal to:</p></div>
+<ol><li>one-third of its de Broglie wavelength</li><li>its de Broglie wavelength</li><li>three times its de Broglie wavelength</li><li>nine times its de Broglie wavelength</li></ol>
+<div class="mcq-x"><p>\(n\lambda = 2\pi r\), so the circumference \(2\pi r = 3\lambda\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="\Delta E = E_i - E_f ;; \lambda = \dfrac{hc}{\Delta E}">
+<div class="pq-q"><p>A hydrogen electron drops from n = 4 (−0.85 eV) to n = 2 (−3.40 eV). Find the wavelength of the photon and state its colour.</p></div>
+<div class="pq-s"><p>\(\Delta E = 3.40 - 0.85 = 2.55\ \text{eV}\).</p><p>\(\lambda = hc/\Delta E = 1.24\times10^{-6}/2.55 = 4.86\times10^{-7}\ \text{m}\) (486 nm): blue-green (cyan).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\Delta E = E_f - E_i \leq E_k">
+<div class="pq-q"><p>Electrons with 12.5 eV of kinetic energy are fired through hydrogen gas in its ground state. Which levels can be excited? What photon wavelengths might then be emitted?</p></div>
+<div class="pq-s"><p>Energies needed from the ground state: n = 2 needs 10.2 eV, n = 3 needs 12.09 eV, n = 4 needs 12.75 eV. With 12.5 eV, electrons can excite up to <strong>n = 3</strong>.</p><p>Possible emissions: 3→2 (1.89 eV, 657 nm), 3→1 (12.09 eV, 103 nm) and 2→1 (10.2 eV, 122 nm).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>Which light source produces coherent light by stimulated emission?</p></div>
+<ol><li>an incandescent bulb</li><li>an LED</li><li>a laser</li><li>a synchrotron</li></ol>
+<div class="mcq-x"><p>Stimulated emission produces photons identical in frequency, phase and direction. LEDs and incandescent bulbs rely on spontaneous emission or thermal radiation; a synchrotron's light comes from electrons accelerated in magnetic fields.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>Researchers need an extremely bright beam of X-rays whose wavelength can be tuned to study a protein crystal. The most suitable source is:</p></div>
+<ol><li>a red laser</li><li>a synchrotron</li><li>a white LED</li><li>a sodium vapour lamp</li></ol>
+<div class="mcq-x"><p>Synchrotrons give a very bright, broad spectrum (IR to X-rays) from which a narrow band can be selected. The Australian Synchrotron in Melbourne is used for exactly this.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Compare how light is produced by an incandescent bulb and by a laser, and explain why only one of them would produce a clear interference pattern in a double slit experiment without extra filtering.</p></div>
+<div class="pq-s"><p>Incandescent: a hot filament emits thermal radiation from a dense solid, giving a continuous spectrum. [1]</p><p>Laser: stimulated emission produces photons with the same frequency and phase, giving monochromatic, directional light. [1]</p><p>A clear, stable interference pattern needs coherent light of a single wavelength, so the two slits act as sources with a constant phase difference and \(\Delta x = \lambda L/d\) has one value. [1]</p><p>The laser satisfies this. The bulb's light is incoherent (unless it's first passed through a narrow single slit, as Young did) and contains many wavelengths, so any fringes are coloured and blur together beyond the first few orders. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="\Delta E = hf">
+<div class="pq-q"><p>Explain why a sodium vapour lamp emits light of only certain wavelengths, whereas an incandescent bulb emits a continuous spectrum.</p></div>
+<div class="pq-s"><p>In the sodium lamp, the current excites isolated sodium atoms; their electrons can only occupy discrete (quantised) energy levels. [1]</p><p>When electrons drop between levels they emit photons with \(E = hf = \Delta E\), and since only certain \(\Delta E\) values exist, only certain wavelengths (e.g. 589 nm) are emitted: a line spectrum. [1]</p><p>An incandescent filament is a hot, dense solid in which atoms interact strongly, producing thermal radiation with a continuous range of energies, so all wavelengths are emitted. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Energy levels are quantised; transitions emit or absorb photons with \(\Delta E = hf = hc/\lambda\).</li>
+  <li>Emission: bright lines. Absorption: dark lines at the same wavelengths.</li>
+  <li>Photons must match a gap exactly; colliding electrons can give part of their energy.</li>
+  <li>Lines from level \(n\): \(n(n-1)/2\).</li>
+  <li>Incandescent (thermal, continuous), LED (band gap, narrow band), laser (stimulated emission, coherent), synchrotron (accelerated electrons, broad and very bright).</li>
+  <li>Standing waves: \(n\lambda = 2\pi r\) explains quantisation and is evidence for matter waves.</li>
+</ul>

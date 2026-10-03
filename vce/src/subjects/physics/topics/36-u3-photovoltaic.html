@@ -1,0 +1,104 @@
+<!--
+id: u3-photovoltaic
+title: Photovoltaic cells & inverters
+short: Photovoltaic cells & inverters
+summary: How solar (photovoltaic) cells produce DC electricity without moving parts or induction, why homes and the grid need an inverter to convert DC to AC, and how to calculate panel output, inverter output and currents, with a comparison to generators.
+keywords: photovoltaic, string, strings, panels in series, panels in parallel, array, PV, solar cell, solar panel, rooftop solar, inverter, DC to AC, direct current, alternating current, irradiance, efficiency, grid, 230 V, 50 Hz, renewable, generator comparison
+dotpoints: describe the production of electricity using photovoltaic cells and the need for an inverter to convert power from DC to AC for use in the home (details of semiconductor action are not required)
+-->
+<h2>Electricity without spinning anything</h2>
+<p>Every other source in this area of study makes electricity by <strong>electromagnetic induction</strong>: a coil and a magnetic field moving relative to each other. A <strong>photovoltaic (PV) cell</strong> is different. Light falling on the cell transfers energy to electrons in the cell material, and the cell's built-in structure pushes those electrons one way around an external circuit. Light energy is converted <em>directly</em> into electrical energy, with no moving parts and no changing flux.</p>
+<ul>
+  <li>The output is <strong>DC</strong>: current flows in one direction only, at a roughly steady voltage (about 0.5–0.6 V per cell).</li>
+  <li>Cells are connected in <strong>series</strong> in a panel to raise the voltage, and panels are connected together in an array to raise the power.</li>
+  <li>Output depends on the light intensity (irradiance) reaching the panel, the panel area and its efficiency (typical rooftop panels are about 20% efficient).</li>
+</ul>
+<aside class="c-key" data-title="Not required"><p>You don't need to explain how the semiconductor inside the cell works (p–n junctions, band gaps). You do need to know that PV cells convert light to <strong>DC</strong> electricity and why an inverter is then needed.</p></aside>
+
+<h2>Panels in series and in parallel</h2>
+<p>Real arrays combine panels in <strong>strings</strong>. The circuit rules decide what you get:</p>
+<ul>
+  <li><strong>Panels in series (one string)</strong>: the same current flows through every panel and the voltages add. Ten 20 V panels in a string give 200 V.</li>
+  <li><strong>Strings in parallel</strong>: every string has the same voltage and the currents add. Five 200 V strings in parallel still give 200 V, but five times the current.</li>
+  <li>Either way the powers add: total power = number of panels × power per panel.</li>
+</ul>
+<div class="we" data-title="A rooftop array of strings" data-marks="4">
+<div class="we-q"><p>Each panel in an array produces 25 V and 8.0 A (200 W). The array has 4 strings connected in parallel, each string being 12 panels in series. Find (a) the total power, (b) the voltage and current from one string, (c) the voltage and current delivered to the inverter.</p></div>
+<div class="we-t"><p>Panels in series share the same current and add their voltages; strings in parallel share the same voltage and add their currents. Either way the total power is the sum of the panel powers.</p></div>
+<div class="we-s" data-f="P_T = P_1 + P_2 + \cdots"><p><strong>(a)</strong> \(48\ \text{panels} \times 200\ \text{W} = 9600\ \text{W} = 9.6\ \text{kW}\).</p></div>
+<div class="we-s" data-f="\text{series: } V_T = V_1 + V_2 + \cdots,\ I \text{ same}"><p><strong>(b)</strong> Series: voltages add, current is the same: \(12 \times 25 = 300\ \text{V}\) at 8.0 A (check: \(300 \times 8.0 = 2400\ \text{W}\) per string).</p></div>
+<div class="we-s" data-f="\text{parallel: } I_T = I_1 + I_2 + \cdots,\ V \text{ same}"><p><strong>(c)</strong> Parallel strings: same voltage, currents add: 300 V and \(4 \times 8.0 = 32\ \text{A}\).</p></div>
+<div class="we-a" data-f="P = VI"><p><strong>(a) 9.6 kW (b) 300 V, 8.0 A (c) 300 V, 32 A</strong> (\(300 \times 32 = 9600\ \text{W}\) ✓). A common error is to multiply both the voltage and the current when strings are combined in parallel.</p></div>
+</div>
+
+<h2>Why an inverter is needed</h2>
+<p>Household appliances and the electricity grid in Australia use <strong>AC at 230 V rms and 50 Hz</strong>. A PV array produces DC. An <strong>inverter</strong> converts the DC into AC with the right voltage and frequency, so the solar power can run the home or be fed into the grid.</p>
+<ul>
+  <li>A transformer can't do this job: transformers need a <strong>changing</strong> flux, so they don't work on steady DC (see <a href="#u3-transformers">transformers</a>).</li>
+  <li>Inverters aren't 100% efficient (typically about 95–98%), so a little energy is lost as heat in the conversion.</li>
+  <li>Batteries (home storage) also store and deliver DC, so a system with a battery still needs an inverter to supply AC loads.</li>
+</ul>
+
+<h2>PV cells vs generators</h2>
+<div class="tbl"><table>
+<thead><tr><th></th><th>Generator / alternator</th><th>Photovoltaic array</th></tr></thead>
+<tbody>
+<tr><td>Energy input</td><td>Kinetic energy turning a coil (steam, wind, water)</td><td>Light energy</td></tr>
+<tr><td>Physics</td><td>Electromagnetic induction (\(\varepsilon = -N\Delta\Phi/\Delta t\))</td><td>Light frees electrons in the cell; no induction</td></tr>
+<tr><td>Moving parts</td><td>Yes</td><td>None</td></tr>
+<tr><td>Output</td><td>AC (slip rings) or pulsating DC (commutator)</td><td>Steady DC; needs an inverter for AC</td></tr>
+<tr><td>Output varies with</td><td>Rotation speed, field strength, turns, area</td><td>Light intensity, panel area, efficiency, temperature</td></tr>
+</tbody></table></div>
+
+<div class="we" data-title="Rooftop solar system" data-marks="4">
+<div class="we-q"><p>A rooftop PV array has a total area of 12 m² and an efficiency of 20%. At midday the sunlight delivers 1000 W m⁻². The inverter is 96% efficient. Find (a) the DC power produced, (b) the AC power delivered to the house and (c) the rms current supplied at 230 V rms.</p></div>
+<div class="we-t"><p>Each energy conversion keeps only a fraction of the input: light to DC in the panels, then DC to AC in the inverter. Multiply the efficiencies in turn. AC power ratings use RMS values, so no √2 is needed.</p></div>
+<div class="we-s" data-f="P_{\text{light}} = \text{irradiance} \times A,\ P_{\text{out}} = \eta P_{\text{in}}"><p><strong>(a)</strong> Light power reaching the array: \(1000 \times 12 = 12\,000\ \text{W}\). DC output: \(0.20 \times 12\,000 = 2400\ \text{W}\).</p></div>
+<div class="we-s" data-f="P_{\text{out}} = \eta P_{\text{in}}"><p><strong>(b)</strong> AC output: \(0.96 \times 2400 = 2304\ \text{W} \approx 2.3\ \text{kW}\).</p></div>
+<div class="we-s" data-f="I_{\text{rms}} = \dfrac{P}{V_{\text{rms}}}"><p><strong>(c)</strong> \(I_{\text{rms}} = P/V_{\text{rms}} = 2304/230 = 10.0\ \text{A}\).</p></div>
+<div class="we-a"><p><strong>(a) 2.4 kW DC (b) 2.3 kW AC (c) 10 A rms.</strong> Power ratings of AC supplies use rms values, so no factor of \(\sqrt2\) is needed.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: PV traps">
+<ul>
+  <li><strong>PV cells don't use induction.</strong> Don't mention flux, coils or Lenz's law.</li>
+  <li><strong>Transformers can't convert DC to AC.</strong> That's the inverter's job.</li>
+  <li><strong>Efficiency applies twice</strong>: once in the panel (light → DC) and again in the inverter (DC → AC).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>A household solar system needs an inverter because</p></div>
+<ol><li>PV cells produce AC at the wrong frequency</li><li>the inverter increases the energy produced by the panels</li><li>PV cells produce DC, but household appliances and the grid use AC</li><li>the panels need AC to operate</li></ol>
+<div class="mcq-x"><p>The inverter converts DC to 230 V, 50 Hz AC. It can't add energy; it loses a little.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="trick">
+<div class="mcq-q"><p>A student suggests using a step-up transformer instead of an inverter to connect a PV array to the grid. This won't work because</p></div>
+<ol><li>transformers only work at high voltages</li><li>a transformer needs a changing flux, which a steady DC input doesn't produce</li><li>transformers convert AC to DC</li><li>PV arrays produce too much current</li></ol>
+<div class="mcq-x"><p>Steady DC gives constant flux in the core, so no emf is induced in the secondary (apart from a spike at switch-on).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>Which statement correctly compares a PV cell with an alternator?</p></div>
+<ol><li>Both rely on electromagnetic induction.</li><li>Both produce AC directly.</li><li>The PV cell has a rotating coil; the alternator doesn't.</li><li>The PV cell converts light energy directly to DC electrical energy with no moving parts; the alternator uses induction in a rotating coil.</li></ol>
+<div class="mcq-x"><p>Only the alternator uses induction and moving parts.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="I = \dfrac PV ;; P_{\text{out}} = \text{efficiency} \times P_{\text{in}}">
+<div class="pq-q"><p>A PV array produces 4.0 kW of DC power at 400 V. The inverter is 95% efficient and supplies the house at 230 V rms. Find the DC current from the array and the rms current supplied to the house.</p></div>
+<div class="pq-s"><p>DC current: \(I = P/V = 4000/400 = 10\ \text{A}\). [1] AC power: \(0.95 \times 4000 = 3800\ \text{W}\). [1] \(I_{\text{rms}} = 3800/230 = 16.5\ \text{A}\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Describe how a rooftop photovoltaic system supplies energy to a home's appliances, naming the energy transformations and the role of each component.</p></div>
+<div class="pq-s"><p>PV cells in the panels convert light energy directly into electrical energy, producing DC. [1] The inverter converts the DC into AC at 230 V rms and 50 Hz, the form used by household appliances and the grid, with small losses as heat. [1] The AC then powers appliances (electrical energy → light, heat, kinetic energy, etc.), and any excess can be exported to the grid. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>PV cells convert light directly to DC electricity: no moving parts, no induction.</li>
+  <li>Homes and the grid use 230 V rms, 50 Hz AC, so an inverter converts DC to AC.</li>
+  <li>Transformers can't convert DC; inverters and panels each have an efficiency to apply.</li>
+</ul>

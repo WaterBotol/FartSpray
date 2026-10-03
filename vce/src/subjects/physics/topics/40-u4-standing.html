@@ -1,0 +1,131 @@
+<!--
+id: u4-standing
+title: Superposition & standing waves on strings
+short: Standing waves
+summary: How overlapping waves add (superposition), how a travelling wave and its reflection form a standing wave, and how to analyse standing waves on a string with nodes at both ends: nodes, antinodes, harmonics, λ = 2L/n and f = nv/2L.
+keywords: standing wave, stationary wave, superposition, principle of superposition, wave pulse, reflection, fixed end, inverted, node, antinode, harmonic, fundamental, first harmonic, overtone, string, guitar, violin, nodes at both ends, loops, lambda = 2L/n, f = nv/2L, microwave oven, cold spots, resonance
+dotpoints: explain the formation of a standing wave resulting from the superposition of a travelling wave and its reflection | analyse the formation of standing waves (only those with nodes at both ends are required)
+-->
+<h2>Superposition: waves add</h2>
+<p>When two waves (or pulses) overlap, the displacement at each point is the <strong>sum</strong> of the displacements each wave would cause on its own. This is the <strong>principle of superposition</strong>. After they pass, each wave carries on unchanged, as if the other had never been there.</p>
+<ul>
+  <li><strong>Constructive</strong>: crests meet crests, so the displacements add to a bigger one.</li>
+  <li><strong>Destructive</strong>: a crest meets a trough, so the displacements partly or completely cancel.</li>
+  <li>Example: a 2.0 cm upward pulse and a 1.0 cm downward pulse of the same shape overlap exactly. At that instant the string shows a 1.0 cm upward pulse. A moment later both pulses re-emerge with their original shapes.</li>
+</ul>
+<p>Superposition is also what makes the bright and dark bands in <a href="#u4-interference">Young's double-slit experiment</a>. Standing waves are superposition of a wave with its own reflection.</p>
+
+<h2>How a standing wave forms</h2>
+<ol>
+  <li>A wave travels along a string towards a <strong>fixed end</strong>.</li>
+  <li>At the fixed end it reflects and comes back <strong>inverted</strong> (a crest returns as a trough), with the same frequency, wavelength and speed.</li>
+  <li>The incident and reflected waves travel in opposite directions through each other and superpose.</li>
+  <li>If the string's length suits the wavelength, the result is a pattern that doesn't travel: a <strong>standing wave</strong>. Some points never move (<strong>nodes</strong>, permanent destructive interference); halfway between them the string oscillates with the largest amplitude (<strong>antinodes</strong>).</li>
+</ol>
+<div class="sim" data-sim="standing"></div>
+<div class="tbl"><table>
+<thead><tr><th>Feature</th><th>Standing wave</th></tr></thead>
+<tbody>
+<tr><td>Nodes</td><td>Zero displacement at all times; adjacent nodes are \(\tfrac{\lambda}{2}\) apart</td></tr>
+<tr><td>Antinodes</td><td>Maximum amplitude, midway between nodes; node to antinode is \(\tfrac{\lambda}{4}\)</td></tr>
+<tr><td>Phase</td><td>All points between two adjacent nodes move up and down together; points in neighbouring segments move in opposite directions</td></tr>
+<tr><td>Energy</td><td>Not carried along the string: it stays in each segment, swapping between kinetic and elastic potential energy</td></tr>
+<tr><td>Snapshot over time</td><td>Maximum displacement at \(t = 0\), flat at \(t = \tfrac T4\) (every point moving fastest), inverted at \(t = \tfrac T2\), back at \(t = T\)</td></tr>
+</tbody></table></div>
+
+<h2>Strings fixed at both ends</h2>
+<p>Both ends of a guitar or violin string are held still, so both ends must be <strong>nodes</strong>. The string can only hold a whole number of half-wavelengths (“loops”):</p>
+<div class="eq">\[ L = n\frac{\lambda}{2} \quad\Rightarrow\quad \lambda_n = \frac{2L}{n} \qquad f_n = \frac{v}{\lambda_n} = \frac{nv}{2L} = nf_1 \qquad (n = 1, 2, 3, \ldots) \]</div>
+<ul>
+  <li>\(n = 1\) is the <strong>fundamental</strong> (first harmonic): one loop, \(\lambda = 2L\). The \(n\)th harmonic has \(n\) loops, \(n\) antinodes and \(n + 1\) nodes (counting both ends).</li>
+  <li>Allowed frequencies are whole-number multiples of the fundamental. Any other frequency doesn't set up a standing wave.</li>
+  <li>The wave speed \(v\) depends on the string (its tension and mass per metre), not on the frequency. A tighter or lighter string has a higher \(v\), so higher frequencies; a longer string gives lower frequencies.</li>
+</ul>
+
+<div class="we" data-title="Guitar string harmonics" data-marks="4">
+<div class="we-q"><p>A guitar string of length 0.65 m carries waves at 286 m s⁻¹. Find (a) the wavelength and frequency of the fundamental and (b) the frequency and wavelength of the third harmonic, and the number of nodes and antinodes it has.</p></div>
+<div class="we-t"><p>With nodes at both ends the string can only hold whole numbers of half-wavelengths. The wave speed is fixed by the string, so each allowed wavelength has one allowed frequency, a whole-number multiple of the fundamental.</p></div>
+<div class="we-s" data-f="\lambda_1 = 2L,\ f = \dfrac v\lambda"><p><strong>(a)</strong> Fundamental: \(\lambda_1 = 2L = 2(0.65) = 1.30\ \text{m}\); \(f_1 = v/\lambda_1 = 286/1.30 = 220\ \text{Hz}\).</p></div>
+<div class="we-s" data-f="f_n = nf_1,\ \lambda_n = \dfrac{2L}{n}"><p><strong>(b)</strong> \(f_3 = 3f_1 = 660\ \text{Hz}\); \(\lambda_3 = 2L/3 = 0.433\ \text{m}\).</p></div>
+<div class="we-a"><p><strong>(a) 1.30 m, 220 Hz (b) 660 Hz, 0.433 m; 4 nodes (including both ends) and 3 antinodes.</strong></p></div>
+</div>
+
+<div class="we" data-title="Counting loops to find the wave speed" data-marks="3">
+<div class="we-q"><p>A 1.8 m string fixed at both ends vibrates in four loops at 50 Hz. Find the wavelength and wave speed, and the next higher frequency that would produce a standing wave.</p></div>
+<div class="we-t"><p>Each loop of a standing wave is half a wavelength, so counting loops gives the wavelength directly; the wave equation then gives the speed. The next standing wave adds one more loop.</p></div>
+<div class="we-s" data-f="\lambda_n = \dfrac{2L}{n}"><p>Four loops: \(n = 4\), so \(\lambda = 2L/4 = 0.90\ \text{m}\).</p></div>
+<div class="we-s" data-f="v = f\lambda"><p>\(v = f\lambda = 50 \times 0.90 = 45\ \text{m s}^{-1}\).</p></div>
+<div class="we-a"><p><strong>0.90 m and 45 m s⁻¹.</strong> The fundamental is \(50/4 = 12.5\ \text{Hz}\), so the next standing wave is \(n = 5\): <strong>62.5 Hz</strong>.</p></div>
+</div>
+
+<div class="we" data-title="Snapshots of a standing wave" data-marks="2">
+<div class="we-q"><p>A string vibrates in its second harmonic at 25 Hz. At \(t = 0\) it is at maximum displacement. Describe its shape at \(t = 0.010\ \text{s}\) and \(t = 0.020\ \text{s}\).</p></div>
+<div class="we-t"><p>In a standing wave every point oscillates in step within a loop. Over one period the pattern goes from maximum displacement, through flat, to the inverted shape and back.</p></div>
+<div class="we-s" data-f="T = \dfrac1f"><p>\(T = 1/25 = 0.040\ \text{s}\). So 0.010 s is \(\tfrac T4\) and 0.020 s is \(\tfrac T2\).</p></div>
+<div class="we-a"><p><strong>At 0.010 s the string is momentarily flat</strong> (every point passing through equilibrium at maximum speed). <strong>At 0.020 s it has the same shape as at \(t = 0\) but inverted</strong>: each loop has swapped sides.</p></div>
+</div>
+
+<h2>Standing waves beyond strings</h2>
+<ul>
+  <li><strong>Microwave ovens</strong>: microwaves reflect off the metal walls and form standing waves. Food at nodes barely heats (cold spots), which is why the turntable rotates. Cold spots are \(\tfrac\lambda2\) apart.</li>
+  <li><strong>Lasers</strong>: light bounces between two mirrors, and only wavelengths that fit a whole number of half-wavelengths between them build up.</li>
+  <li><strong>Electrons in atoms</strong>: de Broglie modelled an orbiting electron as a standing wave that fits a whole number of wavelengths around the orbit (\(n\lambda = 2\pi r\)), explaining why energy levels are quantised (see <a href="#u4-spectra">energy levels</a>).</li>
+</ul>
+
+<aside class="c-trap" data-title="Trick alert: standing wave traps">
+<ul>
+  <li><strong>The fundamental wavelength is 2L, not L.</strong> One loop is half a wavelength.</li>
+  <li><strong>Adjacent nodes are λ/2 apart</strong>, not λ.</li>
+  <li><strong>Count nodes including the fixed ends.</strong> The \(n\)th harmonic has \(n + 1\) nodes and \(n\) antinodes.</li>
+  <li><strong>A standing wave doesn't transport energy along the string</strong>, even though it's made of two travelling waves that each do.</li>
+  <li><strong>Half a period later the shape is inverted, not identical.</strong> A quarter-period later the string is flat.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>In a standing wave, the distance between two adjacent nodes is</p></div>
+<ol><li>\(\tfrac\lambda4\)</li><li>\(\tfrac\lambda2\)</li><li>\(\lambda\)</li><li>\(2\lambda\)</li></ol>
+<div class="mcq-x"><p>One loop spans half a wavelength.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>A string fixed at both ends is 1.5 m long and the waves on it travel at 30 m s⁻¹. The frequency of its fundamental is</p></div>
+<ol><li>5 Hz</li><li>45 Hz</li><li>10 Hz</li><li>20 Hz</li></ol>
+<div class="mcq-x"><p>\(\lambda_1 = 2L = 3.0\ \text{m}\); \(f_1 = v/\lambda = 30/3.0 = 10\ \text{Hz}\). Using \(\lambda = L\) gives the trap answer 20 Hz.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>A 1.2 m string fixed at both ends has a wave speed of 96 m s⁻¹. Which frequency could <em>not</em> produce a standing wave on it?</p></div>
+<ol><li>40 Hz</li><li>80 Hz</li><li>120 Hz</li><li>100 Hz</li></ol>
+<div class="mcq-x"><p>\(f_1 = 96/(2 \times 1.2) = 40\ \text{Hz}\). Allowed frequencies are 40, 80, 120, … Hz; 100 Hz isn't a whole-number multiple of 40 Hz.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A string vibrates in its third harmonic. Two points lie on opposite sides of the same node, each 5 cm from it. At any instant these points</p></div>
+<ol><li>move in opposite directions</li><li>move in the same direction</li><li>are both stationary</li><li>move in the same direction but with different amplitudes</li></ol>
+<div class="mcq-x"><p>Neighbouring loops are half a cycle out of phase: when one loop is up, the next is down.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>A standing wave on a string has a frequency of 50 Hz and is at maximum displacement at \(t = 0\). At \(t = 0.005\ \text{s}\) the string</p></div>
+<ol><li>has the same shape as at \(t = 0\)</li><li>has the inverted shape</li><li>is flat</li><li>has half its original amplitude everywhere</li></ol>
+<div class="mcq-x"><p>\(T = 0.020\ \text{s}\), so 0.005 s is a quarter-period: the string passes through equilibrium. At 0.010 s it would be inverted.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="L = n\dfrac{\lambda}{2}">
+<div class="pq-q"><p>Explain how plucking a guitar string, which is fixed at both ends, produces a standing wave. Refer to superposition and to nodes and antinodes.</p></div>
+<div class="pq-s"><p>Waves travel along the string and reflect (inverted) at each fixed end, so waves of the same frequency and wavelength travel in opposite directions along the string. [1] They superpose: at some points they always cancel (destructive interference), giving nodes, including at both fixed ends; midway between, they reinforce, giving antinodes of maximum amplitude. [1] Only wavelengths that fit a whole number of half-wavelengths into the string (\(L = n\lambda/2\)) produce a stable pattern, so the string vibrates at its fundamental and harmonics. [1]</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\text{node spacing} = \dfrac\lambda2 ;; c = f\lambda">
+<div class="pq-q"><p>With the turntable removed, a plate of cheese in a microwave oven melts in spots 6.1 cm apart, with unmelted cheese in between. Explain the pattern and use it to estimate the microwave frequency.</p></div>
+<div class="pq-s"><p>Microwaves reflect from the oven walls and superpose with the incoming waves to form a standing wave. The melted spots are antinodes (large oscillating fields) and the unmelted regions are nodes. [1] Adjacent antinodes are \(\lambda/2\) apart, so \(\lambda = 2 \times 0.061 = 0.122\ \text{m}\). [1] \(f = c/\lambda = 3.0\times10^8/0.122 = 2.5\times10^9\ \text{Hz}\) (2.5 GHz). [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Superposition: overlapping waves add displacements, then continue unchanged.</li>
+  <li>A travelling wave and its inverted reflection superpose into a standing wave with nodes (always still) and antinodes (maximum amplitude), \(\lambda/2\) apart.</li>
+  <li>Nodes at both ends: \(\lambda_n = 2L/n\), \(f_n = nv/2L = nf_1\); the \(n\)th harmonic has \(n\) loops.</li>
+</ul>

@@ -1,0 +1,173 @@
+<!--
+id: u3-electric
+title: Electric fields & forces
+short: Electric fields
+summary: Coulomb's law, the field of a point charge, uniform fields between parallel plates, the energy a charge gains when accelerated through a potential difference, electron guns and the electron-volt.
+keywords: electric field, electric force, coulomb, coulombs law, point charge, charge, k, field strength, parallel plates, uniform field, potential difference, voltage, V/d, qE, work qV, electron volt, eV, electron gun, accelerate charge, proton, electron, hydrogen atom, superposition, deflection
+dotpoints: analyse the use of an electric field to accelerate a charge, including: electric field and electric force concepts: \(E = k\frac{q}{r^2}\) and \(F = k\frac{q_1 q_2}{r^2}\); potential energy changes in a uniform electric field: \(W = qV\), \(E = \frac{V}{d}\); the magnitude of the force on a charged particle due to a uniform electric field: \(F = qE\) | investigate and compare theoretically and practically gravitational fields and electrical fields about a point mass or charge (positive or negative)
+-->
+<h2>Coulomb's law</h2>
+<div class="eq"><div class="eq-label">Force between two point charges</div>\[ F = k\frac{q_1 q_2}{r^2} \]<p>\(k = 8.99\times10^9\ \text{N m}^2\,\text{C}^{-2}\); charges in coulombs (C); \(r\) between the centres (m). Like charges repel, unlike charges attract. The forces on the two charges are equal and opposite.</p></div>
+<aside class="c-exam" data-title="Exam tip: magnitudes first, direction second">
+<p>Substitute the <strong>sizes</strong> of the charges (ignore the signs) to get the magnitude of the force, then state “attractive” or “repulsive” from the signs. Plugging in negative signs and reporting a “negative force” without explanation loses marks.</p>
+</aside>
+<p>Charge prefixes you'll meet: μC = \(10^{-6}\) C, nC = \(10^{-9}\) C. The charge of one electron is \(-1.60\times10^{-19}\ \text{C}\) and of one proton \(+1.60\times10^{-19}\ \text{C}\).</p>
+
+<div class="we" data-title="Force between two charges" data-marks="2">
+<div class="we-q"><p>A \(+3.0\ \mu\text{C}\) charge and a \(-5.0\ \mu\text{C}\) charge are 0.20 m apart. Find the force between them.</p></div>
+<div class="we-t"><p>Coulomb's law gives the size of the force between point charges; the signs tell you only whether it attracts or repels. Use magnitudes in the formula and state the direction in words.</p></div>
+<div class="we-s" data-f="F = \dfrac{kq_1q_2}{r^2}">\[ F = \frac{(8.99\times10^9)(3.0\times10^{-6})(5.0\times10^{-6})}{(0.20)^2} = \frac{0.135}{0.040} = 3.4\ \text{N} \]</div>
+<div class="we-a"><p><strong>3.4 N, attractive</strong> (opposite charges). Each charge feels 3.4 N towards the other.</p></div>
+</div>
+
+<h2>Electric field of a point charge</h2>
+<div class="eq"><div class="eq-label">Field strength</div>\[ E = \frac{F}{q} \qquad\qquad E = k\frac{q}{r^2}\ \text{(point charge)} \]<p>Units: N C⁻¹ (equivalently V m⁻¹). Direction: away from a positive source charge, towards a negative one.</p></div>
+<div class="we" data-title="Field near a charged sphere" data-marks="2">
+<div class="we-q"><p>Find the electric field 0.10 m from the centre of a small sphere carrying \(+2.0\ \mu\text{C}\). What force would an electron experience there?</p></div>
+<div class="we-t"><p>The field strength at a point is the force per coulomb on a positive test charge. A negative charge feels a force opposite to the field direction.</p></div>
+<div class="we-s" data-f="E = \dfrac{kq}{r^2}">\[ E = \frac{(8.99\times10^9)(2.0\times10^{-6})}{(0.10)^2} = 1.8\times10^6\ \text{N C}^{-1}\ \text{(away from the sphere)} \]</div>
+<div class="we-s" data-f="F = qE">\[ F = qE = (1.60\times10^{-19})(1.8\times10^6) = 2.9\times10^{-13}\ \text{N} \]</div>
+<div class="we-a"><p><strong>\(1.8\times10^6\ \text{N C}^{-1}\) outward; the electron feels \(2.9\times10^{-13}\ \text{N}\) towards the sphere</strong> (opposite to the field, because it is negative).</p></div>
+</div>
+
+<h3>Fields from two charges (along a line)</h3>
+<p>Fields are vectors, so add them. On the line between two charges, work out each field's size and direction separately, then combine.</p>
+<div class="we" data-title="Where is the field zero? (hard)" data-marks="3">
+<div class="we-q"><p>A \(+4.0\ \mu\text{C}\) charge and a \(+1.0\ \mu\text{C}\) charge are 0.30 m apart. Where between them is the electric field zero?</p></div>
+<div class="we-t"><p>Between two like charges the fields point in opposite directions, so they cancel at one point. It lies closer to the smaller charge. Square-rooting the equation turns it into a simple linear equation.</p></div>
+<div class="we-s" data-f="\dfrac{kq_1}{x^2} = \dfrac{kq_2}{(d - x)^2}"><p><strong>Between two like charges the fields point in opposite directions</strong>, so they can cancel. Let \(x\) be the distance from the 4.0 μC charge:</p>\[ \frac{k(4.0)}{x^2} = \frac{k(1.0)}{(0.30 - x)^2} \]</div>
+<div class="we-s"><p><strong>Square-root:</strong> \(\dfrac{2.0}{x} = \dfrac{1.0}{0.30 - x} \Rightarrow 0.60 - 2.0x = x \Rightarrow x = 0.20\ \text{m}\).</p></div>
+<div class="we-a"><p><strong>0.20 m from the 4.0 μC charge</strong> (closer to the smaller charge, as expected).</p></div>
+</div>
+
+<h3>Fields from two charges (at right angles)</h3>
+<p>When the two fields at a point aren't along the same line, draw each field arrow (away from positive charges, towards negative charges), then add them as vectors: Pythagoras for the size and trigonometry for the direction.</p>
+<div class="we" data-title="Adding perpendicular fields" data-marks="4">
+<div class="we-q"><p>Point P is 0.30 m east of a \(+5.0\ \mu\text{C}\) charge and 0.20 m south of a \(+2.0\ \mu\text{C}\) charge. Find the magnitude and direction of the resultant electric field at P.</p></div>
+<div class="we-t"><p>Fields are vectors, so fields from separate charges add by vector addition, not by adding magnitudes. Each field points away from a positive charge (towards a negative one). When the two are perpendicular, use Pythagoras and trigonometry.</p></div>
+<div class="we-s" data-f="E = \dfrac{kq}{r^2}"><p>Field from the 5.0 μC charge: \(E_1 = \dfrac{(8.99\times10^9)(5.0\times10^{-6})}{0.30^2} = 5.0\times10^5\ \text{N C}^{-1}\), pointing <strong>east</strong> (away from a positive charge).</p></div>
+<div class="we-s" data-f="E = \dfrac{kq}{r^2}"><p>Field from the 2.0 μC charge: \(E_2 = \dfrac{(8.99\times10^9)(2.0\times10^{-6})}{0.20^2} = 4.5\times10^5\ \text{N C}^{-1}\), pointing <strong>south</strong>.</p></div>
+<div class="we-s" data-f="E = \sqrt{E_1^2 + E_2^2}"><p>The fields are at right angles: \(E = \sqrt{(5.0\times10^5)^2 + (4.5\times10^5)^2} = 6.7\times10^5\ \text{N C}^{-1}\).</p></div>
+<div class="we-a" data-f="\tan\theta = \dfrac{E_2}{E_1}"><p>Direction: \(\tan\theta = 4.5/5.0 \Rightarrow \theta = 42^\circ\). <strong>\(6.7\times10^5\ \text{N C}^{-1}\), 42° south of east.</strong> Just adding the two magnitudes (\(9.5\times10^5\)) is the classic error.</p></div>
+</div>
+
+<h2>Uniform fields between parallel plates</h2>
+<p>Two parallel plates connected to a voltage supply create a <strong>uniform</strong> field between them, pointing from the positive plate to the negative plate.</p>
+<div class="eq"><div class="eq-label">Uniform field</div>\[ E = \frac{V}{d} \qquad F = qE \]<p>\(V\) = potential difference between the plates (V), \(d\) = plate separation (m).</p></div>
+<aside class="c-trap" data-title="Trick alert: the force is the same everywhere between the plates">
+<p>In a uniform field, a charge experiences exactly the same force next to the positive plate, in the middle, or next to the negative plate. Don't use \(kq/r^2\) for plates: that formula is only for point charges. Doubling the separation at constant voltage <strong>halves</strong> the field and the force.</p>
+</aside>
+<div class="we" data-title="Electron between plates" data-marks="3">
+<div class="we-q"><p>Two parallel plates 2.0 cm apart are connected to a 500 V supply. Find the field strength, the force on an electron between the plates and its acceleration (\(m_e = 9.1\times10^{-31}\ \text{kg}\)).</p></div>
+<div class="we-t"><p>Between parallel plates the field is uniform, so the force on a charge is the same everywhere between them. The acceleration is huge because an electron's mass is so small.</p></div>
+<div class="we-s" data-f="E = \dfrac Vd"><p><strong>Field:</strong> \(E = V/d = 500/0.020 = 2.5\times10^4\ \text{V m}^{-1}\).</p></div>
+<div class="we-s" data-f="F = qE"><p><strong>Force:</strong> \(F = qE = (1.60\times10^{-19})(2.5\times10^4) = 4.0\times10^{-15}\ \text{N}\), towards the positive plate.</p></div>
+<div class="we-s" data-f="a = \dfrac Fm"><p><strong>Acceleration:</strong> \(a = F/m = 4.0\times10^{-15}/9.1\times10^{-31} = 4.4\times10^{15}\ \text{m s}^{-2}\).</p></div>
+<div class="we-a"><p><strong>\(2.5\times10^4\ \text{V m}^{-1}\); \(4.0\times10^{-15}\ \text{N}\) towards the + plate; \(4.4\times10^{15}\ \text{m s}^{-2}\).</strong> Gravity on the electron (\(\sim10^{-29}\ \text{N}\)) is utterly negligible.</p></div>
+</div>
+
+<h2>Accelerating charges: \(W = qV\)</h2>
+<p>When a charge moves through a potential difference \(V\), the field does work \(W = qV\) on it. If it starts from rest and nothing else acts, all of that work becomes kinetic energy:</p>
+<div class="eq"><div class="eq-label">Energy gained through a potential difference</div>\[ W = qV = \Delta E_k \qquad\Rightarrow\qquad \tfrac12 mv^2 = qV \ \ (\text{from rest, } v \ll c) \]</div>
+<aside class="c-def" data-title="The electron-volt"><p>One <strong>electron-volt</strong> (eV) is the energy gained by one electron (charge \(e\)) accelerated through a potential difference of 1 V: \(1\ \text{eV} = 1.60\times10^{-19}\ \text{J}\). An electron accelerated through 2000 V gains 2000 eV = 2.0 keV. To convert eV → J, multiply by \(1.60\times10^{-19}\).</p></aside>
+
+<figure class="fig">
+<svg viewBox="0 0 400 190" width="400" role="img" aria-label="Electron gun: electrons leave a heated cathode, accelerate across a potential difference towards the anode and pass through a hole as a beam">
+  <rect x="70" y="40" width="10" height="110" class="f-n"/>
+  <rect x="250" y="40" width="10" height="45" class="f-w"/><rect x="250" y="105" width="10" height="45" class="f-w"/>
+  <path d="M58 70 q-8 5 0 10 q8 5 0 10 q-8 5 0 10 q8 5 0 10" class="s-w" style="stroke-width:1.8"/>
+  <text x="30" y="170" class="t-sm t-mut">heated cathode (−)</text>
+  <text x="230" y="170" class="t-sm t-mut">anode (+)</text>
+  <g class="s-acc" style="stroke-width:1.4">
+    <line x1="245" y1="55" x2="90" y2="55" marker-end="url(#ah-acc)"/><line x1="245" y1="135" x2="90" y2="135" marker-end="url(#ah-acc)"/>
+  </g>
+  <text x="140" y="48" class="t-sm t-acc t-b">E field (+ → −)</text>
+  <circle cx="100" cy="95" r="4" class="f-n"/><circle cx="150" cy="95" r="4" class="f-n"/><circle cx="210" cy="95" r="4" class="f-n"/><circle cx="300" cy="95" r="4" class="f-n"/><circle cx="350" cy="95" r="4" class="f-n"/>
+  <line x1="110" y1="95" x2="140" y2="95" class="s-net" marker-end="url(#ah-net)"/>
+  <text x="104" y="118" class="t-sm t-net t-b">force on e⁻ (towards +)</text>
+  <line x1="270" y1="95" x2="385" y2="95" class="s-dash" marker-end="url(#ah-mut)"/>
+  <text x="300" y="85" class="t-sm">beam: E<tspan dy="3" font-size="9">k</tspan><tspan dy="-3"> = eV</tspan></text>
+  <line x1="75" y1="24" x2="255" y2="24" class="s-mut"/>
+  <text x="165" y="18" text-anchor="middle" class="t-sm t-b">accelerating voltage V</text>
+</svg>
+<figcaption>An electron gun (as in a synchrotron's first stage or an old CRT). The field points from anode to cathode; the negative electrons are pushed the other way and gain \(eV\) of kinetic energy.</figcaption>
+</figure>
+
+<div class="we" data-title="Electron gun" data-marks="4">
+<div class="we-q"><p>Electrons start from rest and are accelerated through 2000 V in an electron gun. Find (a) their kinetic energy in eV and in J, and (b) their final speed. (c) What speed would a proton reach through the same voltage?</p></div>
+<div class="we-t"><p>The work done on a charge by an accelerating voltage is \(qV\), and it becomes kinetic energy. Equal charges gain equal energy, but the lighter particle ends up much faster.</p></div>
+<div class="we-s" data-f="E_k = qV"><p><strong>(a)</strong> \(E_k = qV = e(2000) = 2000\ \text{eV} = 2000 \times 1.60\times10^{-19} = 3.2\times10^{-16}\ \text{J}\).</p></div>
+<div class="we-s" data-f="E_k = \tfrac12 mv^2"><p><strong>(b)</strong> \(\tfrac12 m_ev^2 = 3.2\times10^{-16}\):</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{9.1\times10^{-31}}} = 2.65\times10^7\ \text{m s}^{-1} \]<p>That's under 9% of \(c\), so the non-relativistic formula is fine.</p></div>
+<div class="we-s" data-f="v = \sqrt{\dfrac{2E_k}{m}}"><p><strong>(c) Proton:</strong> same charge size, so the same kinetic energy, but 1835 times the mass:</p>\[ v = \sqrt{\frac{2(3.2\times10^{-16})}{1.67\times10^{-27}}} = 6.2\times10^5\ \text{m s}^{-1} \]</div>
+<div class="we-a"><p><strong>(a) 2000 eV = \(3.2\times10^{-16}\ \text{J}\) (b) \(2.7\times10^7\ \text{m s}^{-1}\) (c) \(6.2\times10^5\ \text{m s}^{-1}\).</strong></p></div>
+</div>
+<aside class="c-trap" data-title="Trick alert: energy gained depends only on V">
+<p>The kinetic energy gained is \(qV\), independent of the plate separation. Moving the plates further apart (same voltage) weakens the field and the force, but the force acts over a longer distance, so the work (\(Fd = qEd = qV\)) is unchanged.</p>
+</aside>
+
+<h2>Electric vs gravitational forces</h2>
+<div class="we" data-title="Inside a hydrogen atom" data-marks="3">
+<div class="we-q"><p>In a hydrogen atom the electron is about \(5.3\times10^{-11}\ \text{m}\) from the proton. Compare the electric and gravitational forces between them.</p></div>
+<div class="we-t"><p>Both forces follow inverse-square laws, so their ratio doesn't depend on distance. The comparison shows how weak gravity is between individual particles.</p></div>
+<div class="we-s" data-f="F_e = \dfrac{kq_1q_2}{r^2}">\[ F_e = \frac{(8.99\times10^9)(1.60\times10^{-19})^2}{(5.3\times10^{-11})^2} = 8.2\times10^{-8}\ \text{N} \]</div>
+<div class="we-s" data-f="F_g = \dfrac{Gm_1m_2}{r^2}">\[ F_g = \frac{(6.67\times10^{-11})(9.1\times10^{-31})(1.67\times10^{-27})}{(5.3\times10^{-11})^2} = 3.6\times10^{-47}\ \text{N} \]</div>
+<div class="we-a"><p><strong>The electric force is about \(2\times10^{39}\) times stronger.</strong> Gravity only dominates on large scales because matter is almost perfectly electrically neutral, while mass always adds up.</p></div>
+</div>
+
+<aside class="c-deep" data-title="Going deeper: deflecting a beam between plates">
+<p>An electron fired <em>between</em> horizontal plates (parallel to them) behaves like a projectile: constant horizontal velocity and a constant sideways acceleration \(a = eE/m\). For a 2.0 × 10⁷ m s⁻¹ electron passing 5.0 cm long plates with \(E = 2000\ \text{V m}^{-1}\): \(t = 0.050/2.0\times10^7 = 2.5\times10^{-9}\ \text{s}\), \(a = 3.5\times10^{14}\ \text{m s}^{-2}\), deflection \(= \tfrac12 at^2 = 1.1\ \text{mm}\), in a parabolic path towards the positive plate.</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>An electron is placed at three positions between two charged parallel plates: near the positive plate, in the middle, and near the negative plate. The force on it is:</p></div>
+<ol><li>greatest near the positive plate</li><li>greatest near the negative plate</li><li>the same at all three positions</li><li>zero in the middle</li></ol>
+<div class="mcq-x"><p>The field between parallel plates is uniform, so \(F = qE\) is identical everywhere between them.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The distance between two point charges is halved. The electric force between them:</p></div>
+<ol><li>halves</li><li>becomes four times larger</li><li>doubles</li><li>becomes one quarter</li></ol>
+<div class="mcq-x"><p>\(F \propto 1/r^2\): halving \(r\) multiplies \(F\) by 4.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>The voltage across a pair of parallel plates is kept constant while the plate separation is doubled. The kinetic energy gained by an electron crossing from one plate to the other:</p></div>
+<ol><li>stays the same</li><li>halves</li><li>doubles</li><li>quarters</li></ol>
+<div class="mcq-x"><p>\(E_k = qV\) depends only on the voltage. The field halves, but the distance doubles, so the work is the same.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>An alpha particle (charge \(+2e\)) is accelerated from rest through a potential difference of 5000 V. Its kinetic energy is:</p></div>
+<ol><li>2500 eV</li><li>5000 eV</li><li>\(8.0\times10^{-16}\ \text{eV}\)</li><li>10 000 eV</li></ol>
+<div class="mcq-x"><p>\(E_k = qV = (2e)(5000\ \text{V}) = 10\,000\ \text{eV}\) (\(1.6\times10^{-15}\ \text{J}\)). The eV unit is per electron charge, so double the charge means double the energy.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>An electron and a proton are released from rest in the same uniform electric field. Which statement is correct?</p></div>
+<ol><li>They experience forces in the same direction with different sizes.</li><li>They experience equal-sized forces in opposite directions, and the electron's acceleration is much larger.</li><li>They have the same acceleration because they have the same size charge.</li><li>The proton's acceleration is larger because it is heavier.</li></ol>
+<div class="mcq-x"><p>\(F = qE\), and the charges are equal in size but opposite in sign. \(a = F/m\): the electron's mass is 1835 times smaller, so its acceleration is 1835 times larger.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="W = qV">
+<div class="pq-q"><p>A charge of \(+2.0\ \mu\text{C}\) moves from the negative plate to the positive plate of a pair of plates with a potential difference of 300 V. (a) How much work must be done on it? (b) Does its electric potential energy increase or decrease?</p></div>
+<div class="pq-s"><p>(a) \(W = qV = (2.0\times10^{-6})(300) = 6.0\times10^{-4}\ \text{J}\).</p><p>(b) A positive charge is pushed towards the negative plate by the field; moving it to the positive plate is against the field force, so its electric potential energy <strong>increases</strong> by \(6.0\times10^{-4}\ \text{J}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4" data-f="qV = \tfrac12 mv^2 ;; s = \tfrac12(u + v)t">
+<div class="pq-q"><p>An electron is accelerated from rest across a 2.0 cm gap between plates with a potential difference of 500 V. Find (a) its final speed using energy, and (b) the time taken to cross the gap.</p></div>
+<div class="pq-s"><p>(a) \(\tfrac12 mv^2 = eV \Rightarrow v = \sqrt{2(1.60\times10^{-19})(500)/9.1\times10^{-31}} = 1.33\times10^7\ \text{m s}^{-1}\).</p><p>(b) Uniform acceleration from rest: \(d = \tfrac12(u + v)t \Rightarrow t = \dfrac{2d}{v} = \dfrac{2(0.020)}{1.33\times10^7} = 3.0\times10^{-9}\ \text{s}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3" data-f="E_k = qV ;; 1\ \text{eV} = 1.60\times10^{-19}\ \text{J}">
+<div class="pq-q"><p>A student states: “An electron accelerated through 100 V gains 100 J of energy.” Identify the error and give the correct value.</p></div>
+<div class="pq-s"><p>The energy gained is \(qV\), not \(V\). [1]</p><p>\(E_k = (1.60\times10^{-19}\ \text{C})(100\ \text{V}) = 1.6\times10^{-17}\ \text{J}\), [1]</p><p>which is 100 eV. The student confused the electron-volt with the joule. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(F = kq_1q_2/r^2\), \(E = kq/r^2\) for point charges; use magnitudes, then give direction.</li>
+  <li>Parallel plates: \(E = V/d\), uniform; \(F = qE\) everywhere between them.</li>
+  <li>\(W = qV = \Delta E_k\); 1 eV = \(1.60\times10^{-19}\) J.</li>
+  <li>Electric forces dwarf gravity at atomic scales.</li>
+</ul>

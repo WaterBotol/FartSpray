@@ -1,0 +1,114 @@
+<!--
+id: u4-sr-energy
+title: Mass–energy equivalence & relativistic energy
+short: Mass–energy: E = mc²
+summary: Rest energy, total energy and relativistic kinetic energy, why nothing with mass reaches c, and mass–energy conversion in the Sun, nuclear reactions and particle accelerators.
+keywords: mass energy equivalence, E = mc2, E = mc squared, rest energy, total energy, relativistic kinetic energy, gamma mc2, (gamma - 1) mc2, speed limit, infinite energy, fusion, fission, sun, mass defect, nuclear energy, particle accelerator, synchrotron, electron volt, MeV
+dotpoints: interpret Einstein's prediction by showing that the total "mass-energy" of an object is given by: \(E_{\text{total}} = E_k + E_{\text{rest}} = \gamma mc^2\) where \(E_{\text{rest}} = mc^2\), and that kinetic energy can be calculated by: \(E_k = (\gamma - 1)mc^2\) | describe how matter is converted to energy by nuclear fusion in the Sun, which leads to its mass decreasing and the emission of electromagnetic radiation
+-->
+<h2>Mass is a form of energy</h2>
+<p>Special relativity shows that mass and energy are equivalent: an object at rest has energy simply because it has mass.</p>
+<div class="eq"><div class="eq-label">Rest energy</div>\[ E_{\text{rest}} = mc^2 \]<p>\(m\) is the object's (rest) mass in kg. Because \(c^2 = 9.0\times10^{16}\ \text{m}^2\,\text{s}^{-2}\), a tiny mass is equivalent to an enormous energy: 1 g ↔ \(9\times10^{13}\) J, about the energy of a 20-kilotonne explosion.</p></div>
+<div class="eq"><div class="eq-label">Total and kinetic energy</div>\[ E_{\text{total}} = \gamma mc^2 = E_k + E_{\text{rest}} \qquad\Rightarrow\qquad E_k = (\gamma - 1)mc^2 \]</div>
+<aside class="c-key" data-title="Key idea: the relativistic kinetic energy formula">
+<p>\(E_k = (\gamma - 1)mc^2\) is the correct formula at all speeds. At low speeds it gives the same answer as \(\tfrac12 mv^2\) (to a very good approximation). As \(v \to c\), \(\gamma \to \infty\), so the kinetic energy needed grows without limit. <strong>No object with mass can reach the speed of light</strong>, because it would need infinite energy.</p>
+</aside>
+
+<div class="we" data-title="Rest energy of an electron" data-marks="2">
+<div class="we-q"><p>Calculate the rest energy of an electron in joules and in MeV.</p></div>
+<div class="we-s">\[ E = mc^2 = (9.1\times10^{-31})(3.0\times10^8)^2 = 8.2\times10^{-14}\ \text{J} \]</div>
+<div class="we-s">\[ \frac{8.19\times10^{-14}}{1.60\times10^{-19}} = 5.1\times10^5\ \text{eV} = 0.51\ \text{MeV} \]</div>
+<div class="we-a"><p><strong>\(8.2\times10^{-14}\ \text{J}\) = 0.51 MeV.</strong> Worth remembering: once an electron's kinetic energy is comparable to 0.5 MeV, it's relativistic.</p></div>
+</div>
+
+<div class="we" data-title="Relativistic vs classical kinetic energy" data-marks="3">
+<div class="we-q"><p>A proton moves at \(0.60c\). Calculate its kinetic energy using relativity and compare with the classical value.</p></div>
+<div class="we-s"><p><strong>\(\gamma\):</strong> \(1/\sqrt{1 - 0.36} = 1.25\). <strong>Rest energy:</strong> \(mc^2 = (1.67\times10^{-27})(9.0\times10^{16}) = 1.50\times10^{-10}\ \text{J}\).</p></div>
+<div class="we-s"><p><strong>Relativistic:</strong> \(E_k = (\gamma - 1)mc^2 = 0.25 \times 1.50\times10^{-10} = 3.8\times10^{-11}\ \text{J}\).</p></div>
+<div class="we-s"><p><strong>Classical:</strong> \(\tfrac12 mv^2 = \tfrac12(1.67\times10^{-27})(1.8\times10^8)^2 = 2.7\times10^{-11}\ \text{J}\).</p></div>
+<div class="we-a"><p><strong>\(3.8\times10^{-11}\ \text{J}\) relativistic vs \(2.7\times10^{-11}\ \text{J}\) classical.</strong> At \(0.6c\) the classical formula underestimates by about 30%.</p></div>
+</div>
+
+<div class="we" data-title="A 1 MeV electron (trick)" data-marks="4">
+<div class="we-q"><p>An electron is accelerated from rest through a potential difference of 1.0 MV. (a) What is its kinetic energy? (b) What speed does the classical formula predict? (c) What is its actual speed?</p></div>
+<div class="we-s"><p><strong>(a)</strong> \(E_k = eV = 1.0\ \text{MeV} = 1.6\times10^{-13}\ \text{J}\).</p></div>
+<div class="we-s"><p><strong>(b) Classical:</strong> \(v = \sqrt{2E_k/m} = \sqrt{2(1.6\times10^{-13})/9.1\times10^{-31}} = 5.9\times10^8\ \text{m s}^{-1}\), about \(2c\). Impossible.</p></div>
+<div class="we-s"><p><strong>(c) Relativistic:</strong> \(\gamma = 1 + \dfrac{E_k}{mc^2} = 1 + \dfrac{1.6\times10^{-13}}{8.19\times10^{-14}} = 2.95\).</p></div>
+<div class="we-s"><p><strong>Speed from \(\gamma\):</strong> \(\dfrac{v}{c} = \sqrt{1 - \dfrac{1}{\gamma^2}} = \sqrt{1 - \dfrac{1}{2.95^2}} = 0.94\).</p></div>
+<div class="we-a"><p><strong>(a) 1.0 MeV (b) \(5.9\times10^8\ \text{m s}^{-1}\), faster than light, so wrong (c) \(0.94c = 2.8\times10^8\ \text{m s}^{-1}\).</strong> Always check whether \(E_k\) is small compared with \(mc^2\) before using \(\tfrac12 mv^2\).</p></div>
+</div>
+<aside class="c-trap" data-title="Trick alert: 'relativistic mass' language">
+<p>Older books say mass increases with speed. VCAA uses the (rest) mass \(m\) throughout and puts the speed dependence in \(\gamma\): write \(E_{\text{total}} = \gamma mc^2\), not “the mass becomes \(\gamma m\)”. Also, \(E_k = \tfrac12\gamma mv^2\) is <strong>wrong</strong>; the correct form is \((\gamma - 1)mc^2\).</p>
+</aside>
+
+<h2>Mass–energy conversion in nature and technology</h2>
+<h3>Nuclear fusion in the Sun</h3>
+<p>In the Sun's core, hydrogen nuclei fuse (through several steps) into helium. The mass of the helium nucleus plus other products is <strong>less</strong> than the mass of the four protons that made it. The missing mass (the <strong>mass defect</strong>) appears as energy: kinetic energy of the products and gamma-ray photons, which eventually leave the Sun as electromagnetic radiation (mostly visible and infrared light).</p>
+<div class="we" data-title="How fast is the Sun losing mass?" data-marks="2">
+<div class="we-q"><p>The Sun radiates energy at \(3.85\times10^{26}\ \text{W}\). At what rate is it losing mass?</p></div>
+<div class="we-s">\[ \frac{\Delta m}{\Delta t} = \frac{P}{c^2} = \frac{3.85\times10^{26}}{(3.0\times10^8)^2} = 4.3\times10^9\ \text{kg s}^{-1} \]</div>
+<div class="we-a"><p><strong>About 4 million tonnes per second.</strong> The Sun is so massive (\(2\times10^{30}\) kg) that this barely matters over billions of years.</p></div>
+</div>
+<div class="we" data-title="Energy from one fusion reaction" data-marks="2">
+<div class="we-q"><p>The overall fusion of four protons into helium releases 26.7 MeV. What mass is converted to energy in each reaction?</p></div>
+<div class="we-s"><p>\(E = 26.7\times10^6 \times 1.60\times10^{-19} = 4.27\times10^{-12}\ \text{J}\).</p></div>
+<div class="we-s"><p>\(\Delta m = E/c^2 = 4.27\times10^{-12}/9.0\times10^{16} = 4.7\times10^{-29}\ \text{kg}\).</p></div>
+<div class="we-a"><p><strong>\(4.7\times10^{-29}\ \text{kg}\)</strong>, about 0.7% of the mass of the four protons.</p></div>
+</div>
+
+<h3>Fission and particle accelerators</h3>
+<ul>
+  <li><strong>Nuclear fission</strong> (splitting uranium in a reactor) also converts a small fraction of mass into kinetic energy of the fragments, which becomes heat to drive turbines.</li>
+  <li>In <strong>particle accelerators</strong>, electric fields do work on particles, raising \(\gamma\) enormously. At the Australian Synchrotron, 3 GeV electrons have \(\gamma \approx 5900\). In particle colliders, kinetic energy is converted into the mass of new particles (\(E = mc^2\) in reverse).</li>
+</ul>
+<aside class="c-exam" data-title="Exam tip: describing mass decrease in the Sun">
+<p>Say: “In fusion, the total mass of the products is less than the total mass of the reactants. The mass difference is converted to energy according to \(E = \Delta mc^2\), released as kinetic energy and electromagnetic radiation, so the Sun's mass decreases as it radiates.”</p>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Which expression correctly gives the kinetic energy of an object moving at speed \(v\) close to \(c\)?</p></div>
+<ol><li>\(\tfrac12 mv^2\)</li><li>\(\tfrac12\gamma mv^2\)</li><li>\((\gamma - 1)mc^2\)</li><li>\(\gamma mc^2\)</li></ol>
+<div class="mcq-x"><p>Kinetic energy is total energy minus rest energy: \(\gamma mc^2 - mc^2 = (\gamma - 1)mc^2\). Option D is the total energy.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Increasing amounts of energy are supplied to an electron in an accelerator. Its speed:</p></div>
+<ol><li>increases without limit</li><li>approaches but never reaches \(c\)</li><li>reaches \(c\) and then stays constant</li><li>decreases once it passes \(0.9c\)</li></ol>
+<div class="mcq-x"><p>As \(v \to c\), \(\gamma \to \infty\), so each extra joule increases the speed less and less. Reaching \(c\) would need infinite energy.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>The Sun's mass decreases over time mainly because:</p></div>
+<ol><li>mass is converted to energy in nuclear fusion, which is radiated away</li><li>it burns hydrogen chemically</li><li>the solar wind carries away most of its mass</li><li>gravity compresses it</li></ol>
+<div class="mcq-x"><p>Fusion products have less mass than the reactants; that mass becomes energy that leaves as radiation (\(\Delta m = E/c^2\)).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>An object's total energy is three times its rest energy. Its kinetic energy is:</p></div>
+<ol><li>\(mc^2\)</li><li>\(3mc^2\)</li><li>\(\tfrac32 mc^2\)</li><li>\(2mc^2\)</li></ol>
+<div class="mcq-x"><p>\(E_{\text{total}} = 3mc^2 = E_k + mc^2 \Rightarrow E_k = 2mc^2\) (and \(\gamma = 3\)).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>How much energy would be needed to accelerate a 1.0 kg object from rest to \(0.90c\)?</p></div>
+<div class="pq-s"><p>\(\gamma = 1/\sqrt{1 - 0.81} = 2.29\).</p><p>\(E_k = (\gamma - 1)mc^2 = 1.29 \times 1.0 \times 9.0\times10^{16} = 1.2\times10^{17}\ \text{J}\), about the energy released by 29 megatonnes of TNT, just to get one kilogram moving that fast.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>A proton has a kinetic energy equal to its rest energy. Find its speed.</p></div>
+<div class="pq-s"><p>\(E_k = (\gamma - 1)mc^2 = mc^2 \Rightarrow \gamma = 2\).</p><p>\(v/c = \sqrt{1 - 1/\gamma^2} = \sqrt{1 - 0.25} = 0.866\).</p><p>\(v = 0.87c = 2.6\times10^8\ \text{m s}^{-1}\). (True for any particle, not just protons.)</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Explain why a spacecraft can never be accelerated to the speed of light, using the relativistic expression for kinetic energy.</p></div>
+<div class="pq-s"><p>The kinetic energy of an object is \(E_k = (\gamma - 1)mc^2\), where \(\gamma = 1/\sqrt{1 - v^2/c^2}\). [1]</p><p>As \(v\) approaches \(c\), \(1 - v^2/c^2\) approaches zero, so \(\gamma\) and therefore \(E_k\) increase without limit. [1]</p><p>Reaching \(v = c\) would require infinite energy, which is impossible, so any object with mass must travel slower than light. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(E_{\text{rest}} = mc^2\); \(E_{\text{total}} = \gamma mc^2\); \(E_k = (\gamma - 1)mc^2\).</li>
+  <li>\(\tfrac12 mv^2\) only works when \(v \ll c\). Check before using it.</li>
+  <li>Reaching \(c\) would need infinite energy.</li>
+  <li>Fusion in the Sun converts about 4 × 10⁹ kg of mass to radiated energy every second.</li>
+</ul>

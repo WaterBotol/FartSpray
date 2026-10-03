@@ -1,0 +1,147 @@
+<!--
+id: integration
+title: Definite integrals, areas & average value
+short: Definite integrals & area
+summary: The fundamental theorem of calculus, properties of definite integrals, signed area vs actual area, area between curves, average value of a function, and applications to accumulation (rates to totals).
+keywords: definite integral, fundamental theorem of calculus, FTC, area under curve, signed area, area between curves, average value, properties of integrals, linearity, reversing limits, net change, accumulation, rate to total, integral function, bounded region
+dotpoints: the fundamental theorem of calculus and evaluation of definite integrals | properties of definite integrals | area under a curve and between curves, signed area | average value of a function | applications of integration to accumulation and net change
+-->
+<h2>The fundamental theorem</h2>
+<div class="eq"><div class="eq-label">Fundamental theorem of calculus</div>\[ \int_a^b f(x)\,dx = F(b) - F(a) \quad\text{where } F' = f \qquad\qquad \frac{d}{dx}\int_a^x f(t)\,dt = f(x) \]<p>The definite integral gives the <strong>signed area</strong> between the graph and the \(x\)-axis: area above counts positive, area below counts negative.</p></div>
+<div class="eq"><div class="eq-label">Properties</div>\[ \int_a^a f = 0 \qquad \int_b^a f = -\int_a^b f \qquad \int_a^b f + \int_b^c f = \int_a^c f \qquad \int_a^b (kf + g) = k\!\int_a^b f + \int_a^b g \]<p>Constants integrate to (constant) × (interval width): \(\int_a^b k\,dx = k(b - a)\).</p></div>
+
+<div class="we" data-title="Using properties (Exam 1 classic)" data-marks="2">
+<div class="we-q"><p>Given \(\int_1^4 f(x)\,dx = 5\), find \(\displaystyle\int_1^4\big(2f(x) + 1\big)\,dx\) and \(\displaystyle\int_4^1 f(x)\,dx\).</p></div>
+<div class="we-t"><p>Definite integrals are linear: constants factor out and sums split. A constant \(k\) integrated over \([a, b]\) gives \(k(b - a)\), not \(k\). Swapping the limits changes the sign.</p></div>
+<div class="we-s" data-f="\int_a^b (kf + g) = k\int_a^b f + \int_a^b g ;; \int_a^b 1\,dx = b - a"><p>\(2\int_1^4 f + \int_1^4 1\,dx = 2(5) + (4 - 1) = 13\).</p></div>
+<div class="we-a" data-f="\int_b^a f = -\int_a^b f"><p><strong>13 and \(-5\).</strong> The common error is \(2(5) + 1 = 11\): the 1 must be integrated over an interval of width 3.</p></div>
+</div>
+
+<h2>Signed area vs actual area</h2>
+<div class="we" data-title="When part of the region is below the axis" data-marks="3">
+<div class="we-q"><p>For \(f(x) = x^2 - 1\) on \([0, 2]\), find (a) \(\int_0^2 f(x)\,dx\) and (b) the total area between the graph and the \(x\)-axis.</p></div>
+<div class="we-t"><p>The definite integral gives signed area: area below the axis counts as negative. For total area, split at each \(x\)-intercept and take the absolute value of each piece.</p></div>
+<div class="we-s" data-f="\int_a^b f(x)\,dx = F(b) - F(a)"><p>(a) \(\left[\frac{x^3}{3} - x\right]_0^2 = \frac83 - 2 = \frac23\).</p></div>
+<div class="we-s" data-f="\text{area} = \left|\int_a^c f\right| + \left|\int_c^b f\right|"><p>(b) The graph crosses at \(x = 1\). Area \(= -\int_0^1(x^2 - 1)\,dx + \int_1^2(x^2 - 1)\,dx = \frac23 + \frac43\).</p></div>
+<div class="we-a"><p><strong>(a) \(\frac23\) (signed); (b) 2 square units.</strong> Always sketch first and split at the \(x\)-intercepts.</p></div>
+</div>
+<figure class="fig">
+<svg viewBox="0 0 400 280" width="400" role="img" aria-label="signed area of x squared minus 1"><defs><clipPath id="clip4d7712db"><rect x="34" y="16" width="350" height="238"/></clipPath></defs><line x1="34.0" y1="16" x2="34.0" y2="254" class="s-line" style="opacity:.55"/><line x1="94.3" y1="16" x2="94.3" y2="254" class="s-line" style="opacity:.55"/><line x1="154.7" y1="16" x2="154.7" y2="254" class="s-line" style="opacity:.55"/><line x1="215.0" y1="16" x2="215.0" y2="254" class="s-line" style="opacity:.55"/><line x1="275.4" y1="16" x2="275.4" y2="254" class="s-line" style="opacity:.55"/><line x1="335.7" y1="16" x2="335.7" y2="254" class="s-line" style="opacity:.55"/><line x1="34" y1="230.2" x2="384" y2="230.2" class="s-line" style="opacity:.55"/><line x1="34" y1="182.6" x2="384" y2="182.6" class="s-line" style="opacity:.55"/><line x1="34" y1="135.0" x2="384" y2="135.0" class="s-line" style="opacity:.55"/><line x1="34" y1="87.4" x2="384" y2="87.4" class="s-line" style="opacity:.55"/><line x1="34" y1="39.8" x2="384" y2="39.8" class="s-line" style="opacity:.55"/><polygon clip-path="url(#clip4d7712db)" points="94.3,182.6 95.4,182.6 96.4,182.6 97.4,182.6 98.4,182.6 99.4,182.6 100.4,182.6 101.4,182.6 102.4,182.6 103.4,182.6 104.4,182.6 105.4,182.6 106.4,182.6 107.4,182.6 108.4,182.6 109.4,182.6 110.4,182.6 111.4,182.6 112.4,182.6 113.5,182.6 114.5,182.6 115.5,182.6 116.5,182.6 117.5,182.6 118.5,182.6 119.5,182.6 120.5,182.6 121.5,182.6 122.5,182.6 123.5,182.6 124.5,182.6 125.5,182.6 126.5,182.6 127.5,182.6 128.5,182.6 129.5,182.6 130.6,182.6 131.6,182.6 132.6,182.6 133.6,182.6 134.6,182.6 135.6,182.6 136.6,182.6 137.6,182.6 138.6,182.6 139.6,182.6 140.6,182.6 141.6,182.6 142.6,182.6 143.6,182.6 144.6,182.6 145.6,182.6 146.6,182.6 147.6,182.6 148.7,182.6 149.7,182.6 150.7,182.6 151.7,182.6 152.7,182.6 153.7,182.6 154.7,182.6 155.7,182.6 156.7,182.6 157.7,182.6 158.7,182.6 159.7,182.6 160.7,182.6 161.7,182.6 162.7,182.6 163.7,182.6 164.7,182.6 165.8,182.6 166.8,182.6 167.8,182.6 168.8,182.6 169.8,182.6 170.8,182.6 171.8,182.6 172.8,182.6 173.8,182.6 174.8,182.6 175.8,182.6 176.8,182.6 177.8,182.6 178.8,182.6 179.8,182.6 180.8,182.6 181.8,182.6 182.9,182.6 183.9,182.6 184.9,182.6 185.9,182.6 186.9,182.6 187.9,182.6 188.9,182.6 189.9,182.6 190.9,182.6 191.9,182.6 192.9,182.6 193.9,182.6 194.9,182.6 195.9,182.6 196.9,182.6 197.9,182.6 198.9,182.6 199.9,182.6 201.0,182.6 202.0,182.6 203.0,182.6 204.0,182.6 205.0,182.6 206.0,182.6 207.0,182.6 208.0,182.6 209.0,182.6 210.0,182.6 211.0,182.6 212.0,182.6 213.0,182.6 214.0,182.6 215.0,182.6 215.0,182.6 214.0,183.4 213.0,184.2 212.0,185.0 211.0,185.7 210.0,186.5 209.0,187.2 208.0,188.0 207.0,188.7 206.0,189.5 205.0,190.2 204.0,190.9 203.0,191.6 202.0,192.4 201.0,193.1 199.9,193.8 198.9,194.4 197.9,195.1 196.9,195.8 195.9,196.5 194.9,197.1 193.9,197.8 192.9,198.5 191.9,199.1 190.9,199.7 189.9,200.4 188.9,201.0 187.9,201.6 186.9,202.2 185.9,202.8 184.9,203.4 183.9,204.0 182.9,204.6 181.8,205.2 180.8,205.8 179.8,206.3 178.8,206.9 177.8,207.4 176.8,208.0 175.8,208.5 174.8,209.0 173.8,209.6 172.8,210.1 171.8,210.6 170.8,211.1 169.8,211.6 168.8,212.1 167.8,212.6 166.8,213.1 165.8,213.5 164.7,214.0 163.7,214.5 162.7,214.9 161.7,215.4 160.7,215.8 159.7,216.2 158.7,216.7 157.7,217.1 156.7,217.5 155.7,217.9 154.7,218.3 153.7,218.7 152.7,219.1 151.7,219.5 150.7,219.8 149.7,220.2 148.7,220.6 147.6,220.9 146.6,221.3 145.6,221.6 144.6,221.9 143.6,222.3 142.6,222.6 141.6,222.9 140.6,223.2 139.6,223.5 138.6,223.8 137.6,224.1 136.6,224.4 135.6,224.6 134.6,224.9 133.6,225.2 132.6,225.4 131.6,225.7 130.6,225.9 129.5,226.2 128.5,226.4 127.5,226.6 126.5,226.8 125.5,227.0 124.5,227.2 123.5,227.4 122.5,227.6 121.5,227.8 120.5,228.0 119.5,228.1 118.5,228.3 117.5,228.5 116.5,228.6 115.5,228.7 114.5,228.9 113.5,229.0 112.4,229.1 111.4,229.2 110.4,229.4 109.4,229.5 108.4,229.6 107.4,229.6 106.4,229.7 105.4,229.8 104.4,229.9 103.4,229.9 102.4,230.0 101.4,230.0 100.4,230.1 99.4,230.1 98.4,230.1 97.4,230.2 96.4,230.2 95.4,230.2 94.3,230.2" class="f-w" style="opacity:.55"/><polygon clip-path="url(#clip4d7712db)" points="215.0,182.6 216.0,181.8 217.0,181.0 218.1,180.2 219.1,179.4 220.1,178.6 221.1,177.7 222.1,176.9 223.1,176.0 224.1,175.2 225.1,174.3 226.1,173.5 227.1,172.6 228.1,171.7 229.1,170.8 230.1,170.0 231.1,169.1 232.1,168.2 233.1,167.2 234.1,166.3 235.1,165.4 236.2,164.5 237.2,163.5 238.2,162.6 239.2,161.7 240.2,160.7 241.2,159.7 242.2,158.8 243.2,157.8 244.2,156.8 245.2,155.8 246.2,154.8 247.2,153.8 248.2,152.8 249.2,151.8 250.2,150.8 251.2,149.8 252.2,148.7 253.3,147.7 254.3,146.6 255.3,145.6 256.3,144.5 257.3,143.4 258.3,142.4 259.3,141.3 260.3,140.2 261.3,139.1 262.3,138.0 263.3,136.9 264.3,135.8 265.3,134.7 266.3,133.5 267.3,132.4 268.3,131.3 269.3,130.1 270.4,129.0 271.4,127.8 272.4,126.6 273.4,125.5 274.4,124.3 275.4,123.1 276.4,121.9 277.4,120.7 278.4,119.5 279.4,118.3 280.4,117.1 281.4,115.8 282.4,114.6 283.4,113.4 284.4,112.1 285.4,110.9 286.4,109.6 287.4,108.3 288.5,107.1 289.5,105.8 290.5,104.5 291.5,103.2 292.5,101.9 293.5,100.6 294.5,99.3 295.5,98.0 296.5,96.7 297.5,95.3 298.5,94.0 299.5,92.6 300.5,91.3 301.5,89.9 302.5,88.6 303.5,87.2 304.5,85.8 305.6,84.4 306.6,83.0 307.6,81.6 308.6,80.2 309.6,78.8 310.6,77.4 311.6,76.0 312.6,74.5 313.6,73.1 314.6,71.7 315.6,70.2 316.6,68.8 317.6,67.3 318.6,65.8 319.6,64.3 320.6,62.9 321.6,61.4 322.6,59.9 323.7,58.4 324.7,56.9 325.7,55.3 326.7,53.8 327.7,52.3 328.7,50.7 329.7,49.2 330.7,47.7 331.7,46.1 332.7,44.5 333.7,43.0 334.7,41.4 335.7,39.8 335.7,182.6 334.7,182.6 333.7,182.6 332.7,182.6 331.7,182.6 330.7,182.6 329.7,182.6 328.7,182.6 327.7,182.6 326.7,182.6 325.7,182.6 324.7,182.6 323.7,182.6 322.6,182.6 321.6,182.6 320.6,182.6 319.6,182.6 318.6,182.6 317.6,182.6 316.6,182.6 315.6,182.6 314.6,182.6 313.6,182.6 312.6,182.6 311.6,182.6 310.6,182.6 309.6,182.6 308.6,182.6 307.6,182.6 306.6,182.6 305.6,182.6 304.5,182.6 303.5,182.6 302.5,182.6 301.5,182.6 300.5,182.6 299.5,182.6 298.5,182.6 297.5,182.6 296.5,182.6 295.5,182.6 294.5,182.6 293.5,182.6 292.5,182.6 291.5,182.6 290.5,182.6 289.5,182.6 288.5,182.6 287.4,182.6 286.4,182.6 285.4,182.6 284.4,182.6 283.4,182.6 282.4,182.6 281.4,182.6 280.4,182.6 279.4,182.6 278.4,182.6 277.4,182.6 276.4,182.6 275.4,182.6 274.4,182.6 273.4,182.6 272.4,182.6 271.4,182.6 270.4,182.6 269.3,182.6 268.3,182.6 267.3,182.6 266.3,182.6 265.3,182.6 264.3,182.6 263.3,182.6 262.3,182.6 261.3,182.6 260.3,182.6 259.3,182.6 258.3,182.6 257.3,182.6 256.3,182.6 255.3,182.6 254.3,182.6 253.3,182.6 252.2,182.6 251.2,182.6 250.2,182.6 249.2,182.6 248.2,182.6 247.2,182.6 246.2,182.6 245.2,182.6 244.2,182.6 243.2,182.6 242.2,182.6 241.2,182.6 240.2,182.6 239.2,182.6 238.2,182.6 237.2,182.6 236.2,182.6 235.1,182.6 234.1,182.6 233.1,182.6 232.1,182.6 231.1,182.6 230.1,182.6 229.1,182.6 228.1,182.6 227.1,182.6 226.1,182.6 225.1,182.6 224.1,182.6 223.1,182.6 222.1,182.6 221.1,182.6 220.1,182.6 219.1,182.6 218.1,182.6 217.0,182.6 216.0,182.6 215.0,182.6" class="f-accsoft" style="opacity:.55"/><line x1="34" y1="182.6" x2="392" y2="182.6" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><line x1="94.3" y1="254" x2="94.3" y2="8" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><text x="388" y="176.6" class="t-sm t-b">x</text><text x="100.3" y="14" class="t-sm t-b">y</text><text x="34.0" y="196.6" text-anchor="middle" class="t-sm t-mut t-mono">-0.5</text><text x="154.7" y="196.6" text-anchor="middle" class="t-sm t-mut t-mono">0.5</text><text x="215.0" y="196.6" text-anchor="middle" class="t-sm t-mut t-mono">1</text><text x="275.4" y="196.6" text-anchor="middle" class="t-sm t-mut t-mono">1.5</text><text x="335.7" y="196.6" text-anchor="middle" class="t-sm t-mut t-mono">2</text><text x="89.3" y="234.2" text-anchor="end" class="t-sm t-mut t-mono">-1</text><text x="89.3" y="139.0" text-anchor="end" class="t-sm t-mut t-mono">1</text><text x="89.3" y="91.4" text-anchor="end" class="t-sm t-mut t-mono">2</text><text x="89.3" y="43.8" text-anchor="end" class="t-sm t-mut t-mono">3</text><polyline clip-path="url(#clip4d7712db)" points="58.1,225.9 58.9,226.1 59.6,226.3 60.4,226.4 61.2,226.6 61.9,226.8 62.7,226.9 63.4,227.1 64.2,227.2 64.9,227.4 65.7,227.5 66.4,227.7 67.2,227.8 67.9,227.9 68.7,228.1 69.5,228.2 70.2,228.3 71.0,228.4 71.7,228.5 72.5,228.6 73.2,228.7 74.0,228.8 74.7,228.9 75.5,229.0 76.2,229.1 77.0,229.2 77.8,229.3 78.5,229.4 79.3,229.5 80.0,229.5 80.8,229.6 81.5,229.7 82.3,229.7 83.0,229.8 83.8,229.8 84.5,229.9 85.3,229.9 86.0,230.0 86.8,230.0 87.6,230.0 88.3,230.1 89.1,230.1 89.8,230.1 90.6,230.2 91.3,230.2 92.1,230.2 92.8,230.2 93.6,230.2 94.3,230.2 95.1,230.2 95.9,230.2 96.6,230.2 97.4,230.2 98.1,230.2 98.9,230.1 99.6,230.1 100.4,230.1 101.1,230.0 101.9,230.0 102.6,230.0 103.4,229.9 104.2,229.9 104.9,229.8 105.7,229.8 106.4,229.7 107.2,229.7 107.9,229.6 108.7,229.5 109.4,229.5 110.2,229.4 110.9,229.3 111.7,229.2 112.4,229.1 113.2,229.0 114.0,228.9 114.7,228.8 115.5,228.7 116.2,228.6 117.0,228.5 117.7,228.4 118.5,228.3 119.2,228.2 120.0,228.1 120.7,227.9 121.5,227.8 122.3,227.7 123.0,227.5 123.8,227.4 124.5,227.2 125.3,227.1 126.0,226.9 126.8,226.8 127.5,226.6 128.3,226.4 129.0,226.3 129.8,226.1 130.6,225.9 131.3,225.7 132.1,225.6 132.8,225.4 133.6,225.2 134.3,225.0 135.1,224.8 135.8,224.6 136.6,224.4 137.3,224.2 138.1,223.9 138.8,223.7 139.6,223.5 140.4,223.3 141.1,223.1 141.9,222.8 142.6,222.6 143.4,222.3 144.1,222.1 144.9,221.9 145.6,221.6 146.4,221.3 147.1,221.1 147.9,220.8 148.7,220.6 149.4,220.3 150.2,220.0 150.9,219.7 151.7,219.5 152.4,219.2 153.2,218.9 153.9,218.6 154.7,218.3 155.4,218.0 156.2,217.7 157.0,217.4 157.7,217.1 158.5,216.8 159.2,216.4 160.0,216.1 160.7,215.8 161.5,215.5 162.2,215.1 163.0,214.8 163.7,214.5 164.5,214.1 165.2,213.8 166.0,213.4 166.8,213.1 167.5,212.7 168.3,212.3 169.0,212.0 169.8,211.6 170.5,211.2 171.3,210.9 172.0,210.5 172.8,210.1 173.5,209.7 174.3,209.3 175.1,208.9 175.8,208.5 176.6,208.1 177.3,207.7 178.1,207.3 178.8,206.9 179.6,206.5 180.3,206.0 181.1,205.6 181.8,205.2 182.6,204.7 183.4,204.3 184.1,203.9 184.9,203.4 185.6,203.0 186.4,202.5 187.1,202.1 187.9,201.6 188.6,201.1 189.4,200.7 190.1,200.2 190.9,199.7 191.7,199.3 192.4,198.8 193.2,198.3 193.9,197.8 194.7,197.3 195.4,196.8 196.2,196.3 196.9,195.8 197.7,195.3 198.4,194.8 199.2,194.3 199.9,193.8 200.7,193.2 201.5,192.7 202.2,192.2 203.0,191.6 203.7,191.1 204.5,190.6 205.2,190.0 206.0,189.5 206.7,188.9 207.5,188.4 208.2,187.8 209.0,187.2 209.8,186.7 210.5,186.1 211.3,185.5 212.0,185.0 212.8,184.4 213.5,183.8 214.3,183.2 215.0,182.6 215.8,182.0 216.5,181.4 217.3,180.8 218.1,180.2 218.8,179.6 219.6,179.0 220.3,178.3 221.1,177.7 221.8,177.1 222.6,176.5 223.3,175.8 224.1,175.2 224.8,174.6 225.6,173.9 226.3,173.3 227.1,172.6 227.9,171.9 228.6,171.3 229.4,170.6 230.1,170.0 230.9,169.3 231.6,168.6 232.4,167.9 233.1,167.2 233.9,166.6 234.6,165.9 235.4,165.2 236.2,164.5 236.9,163.8 237.7,163.1 238.4,162.4 239.2,161.7 239.9,160.9 240.7,160.2 241.4,159.5 242.2,158.8 242.9,158.0 243.7,157.3 244.5,156.6 245.2,155.8 246.0,155.1 246.7,154.3 247.5,153.6 248.2,152.8 249.0,152.1 249.7,151.3 250.5,150.5 251.2,149.8 252.0,149.0 252.8,148.2 253.5,147.4 254.3,146.6 255.0,145.8 255.8,145.0 256.5,144.3 257.3,143.4 258.0,142.6 258.8,141.8 259.5,141.0 260.3,140.2 261.0,139.4 261.8,138.6 262.6,137.7 263.3,136.9 264.1,136.1 264.8,135.2 265.6,134.4 266.3,133.5 267.1,132.7 267.8,131.8 268.6,131.0 269.3,130.1 270.1,129.3 270.9,128.4 271.6,127.5 272.4,126.6 273.1,125.8 273.9,124.9 274.6,124.0 275.4,123.1 276.1,122.2 276.9,121.3 277.6,120.4 278.4,119.5 279.2,118.6 279.9,117.7 280.7,116.8 281.4,115.8 282.2,114.9 282.9,114.0 283.7,113.1 284.4,112.1 285.2,111.2 285.9,110.2 286.7,109.3 287.4,108.3 288.2,107.4 289.0,106.4 289.7,105.5 290.5,104.5 291.2,103.5 292.0,102.6 292.7,101.6 293.5,100.6 294.2,99.6 295.0,98.6 295.7,97.6 296.5,96.7 297.3,95.7 298.0,94.7 298.8,93.6 299.5,92.6 300.3,91.6 301.0,90.6 301.8,89.6 302.5,88.6 303.3,87.5 304.0,86.5 304.8,85.5 305.6,84.4 306.3,83.4 307.1,82.3 307.8,81.3 308.6,80.2 309.3,79.2 310.1,78.1 310.8,77.0 311.6,76.0 312.3,74.9 313.1,73.8 313.8,72.7 314.6,71.7 315.4,70.6 316.1,69.5 316.9,68.4 317.6,67.3 318.4,66.2 319.1,65.1 319.9,64.0 320.6,62.9 321.4,61.7 322.1,60.6 322.9,59.5 323.7,58.4 324.4,57.2 325.2,56.1 325.9,55.0 326.7,53.8 327.4,52.7 328.2,51.5 328.9,50.4 329.7,49.2 330.4,48.0 331.2,46.9 332.0,45.7 332.7,44.5 333.5,43.4 334.2,42.2 335.0,41.0 335.7,39.8 336.5,38.6 337.2,37.4 338.0,36.2 338.7,35.0 339.5,33.8 340.3,32.6 341.0,31.4 341.8,30.2 342.5,28.9 343.3,27.7 344.0,26.5 344.8,25.3 345.5,24.0 346.3,22.8 347.0,21.5 347.8,20.3 348.5,19.0 349.3,17.8 350.1,16.5 350.8,15.3 351.6,14.0 352.3,12.7 353.1,11.4 353.8,10.2 354.6,8.9 355.3,7.6 356.1,6.3 356.8,5.0 357.6,3.7 358.4,2.4 359.1,1.1 359.9,-0.2" class="s-acc" style="stroke-width:2.4"/><text x="251.2" y="58.8" class="t-sm t-b t-acc">y = x² − 1</text><circle cx="148.7" cy="204.0" r="3.6" class="f-none"/><text x="140.7" y="208.0" class="t-sm">−⅔</text><circle cx="289.9" cy="156.4" r="3.6" class="f-none"/><text x="285.9" y="160.4" class="t-sm">+4⁄3</text></svg>
+<figcaption>\(y = x^2 - 1\) on \([0, 2]\): the region below the axis has area \(\frac23\) and the region above has area \(\frac43\). The integral subtracts them (\(\frac43 - \frac23 = \frac23\)); the area adds them (2).</figcaption>
+</figure>
+
+<h2>Area between curves</h2>
+<div class="eq"><div class="eq-label">Area between curves</div>\[ A = \int_a^b\big(\text{upper} - \text{lower}\big)\,dx \]<p>Find the intersection points first. If the curves swap over, split the integral where they cross. Upper − lower works whether the region is above or below the axis.</p></div>
+<div class="we" data-title="Area enclosed by y = x and y = x²" data-marks="2">
+<div class="we-q"><p>Find the area of the region enclosed by \(y = x\) and \(y = x^2\).</p></div>
+<div class="we-t"><p>The area between two curves is the integral of (upper minus lower) between their intersection points. Find the intersections first, then check which curve is on top.</p></div>
+<div class="we-s" data-f="\text{solve } f(x) = g(x)"><p>Intersections: \(x = x^2 \Rightarrow x = 0, 1\). On \((0, 1)\), \(x &gt; x^2\).</p></div>
+<div class="we-a" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx"><p>\(A = \int_0^1(x - x^2)\,dx = \frac12 - \frac13 = \boldsymbol{\frac16}\) square units.</p></div>
+</div>
+<div class="we" data-title="Between sin and cos (tech-free)" data-marks="3">
+<div class="we-q"><p>Find the area enclosed between \(y = \sin x\) and \(y = \cos x\) from \(x = \frac{\pi}{4}\) to \(x = \frac{5\pi}{4}\).</p></div>
+<div class="we-t"><p>Same area-between-curves method. Here the limits are the intersection points, and the exact values of \(\sin\) and \(\cos\) at \(\frac\pi4\) and \(\frac{5\pi}4\) do the rest.</p></div>
+<div class="we-s" data-f="\tan x = 1 \text{ at intersections}"><p>They meet at \(\frac{\pi}{4}\) and \(\frac{5\pi}{4}\) (where \(\tan x = 1\)); in between, \(\sin x \ge \cos x\).</p></div>
+<div class="we-s" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx ;; \int \sin x\,dx = -\cos x ;; \int \cos x\,dx = \sin x"><p>\(\int_{\pi/4}^{5\pi/4}(\sin x - \cos x)\,dx = \big[-\cos x - \sin x\big]_{\pi/4}^{5\pi/4} = \left(\frac{\sqrt2}{2} + \frac{\sqrt2}{2}\right) - \left(-\frac{\sqrt2}{2} - \frac{\sqrt2}{2}\right)\).</p></div>
+<div class="we-a"><p><strong>\(2\sqrt2\) square units.</strong></p></div>
+</div>
+<div class="we" data-title="A symmetric region (CAS)" data-marks="3">
+<div class="we-q"><p>Find the total area enclosed between \(y = x^3 - x\) and \(y = 3x\).</p></div>
+<div class="we-t"><p>When curves cross more than once, the upper curve switches. Split the integral at each intersection, or the positive and negative parts cancel. Symmetry can halve the work.</p></div>
+<div class="we-s" data-f="\text{solve } f(x) = g(x)"><p>Intersections: \(x^3 - x = 3x \Rightarrow x(x^2 - 4) = 0 \Rightarrow x = -2, 0, 2\).</p></div>
+<div class="we-s" data-f="\text{odd functions: } f(-x) = -f(x)"><p>On \((0, 2)\), \(3x\) is on top; on \((-2, 0)\), the cubic is on top. By symmetry (both are odd functions), the two regions are equal.</p></div>
+<div class="we-a" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx"><p>\(A = 2\int_0^2\big(3x - (x^3 - x)\big)\,dx = 2\left[2x^2 - \frac{x^4}{4}\right]_0^2 = 2(8 - 4) = \boldsymbol{8}\). \(\int_{-2}^2(3x - x^3 + x)\,dx = 0\): don't integrate straight across a crossing.</p></div>
+</div>
+
+<h2>Average value</h2>
+<div class="eq"><div class="eq-label">Average value of \(f\) on \([a, b]\)</div>\[ f_{\text{avg}} = \frac{1}{b - a}\int_a^b f(x)\,dx \]<p>The height of the rectangle on \([a, b]\) with the same (signed) area as the region under \(f\).</p></div>
+<div class="we" data-title="Average value of eˣ" data-marks="2">
+<div class="we-q"><p>Find the average value of \(f(x) = e^x\) on \([0, 2]\).</p></div>
+<div class="we-t"><p>The average value of a function is the constant height that gives the same area over the interval: total area divided by the width.</p></div>
+<div class="we-s" data-f="\text{average value} = \dfrac{1}{b - a}\int_a^b f(x)\,dx"><p>\(\frac{1}{2}\int_0^2 e^x\,dx = \frac12\big[e^x\big]_0^2\).</p></div>
+<div class="we-a"><p><strong>\(\dfrac{e^2 - 1}{2} \approx 3.19\).</strong> This is not the same as the average of \(f(0)\) and \(f(2)\) (≈ 4.19).</p></div>
+</div>
+
+<h2>From rates to totals</h2>
+<p>If \(R(t)\) is a rate (litres/min, cars/hour, m/s), then \(\int_a^b R(t)\,dt\) is the <strong>net change</strong> in the quantity from \(t = a\) to \(t = b\).</p>
+
+<aside class="c-trap" data-title="Trick alert: integration traps">
+<ul>
+  <li><strong>“Area” is never negative.</strong> Split at the \(x\)-intercepts and add magnitudes.</li>
+  <li><strong>Constant terms integrate to (constant) × width</strong>, not the constant itself.</li>
+  <li><strong>Upper − lower</strong>, not “curve − axis”, for regions between curves.</li>
+  <li><strong>Average value divides by \(b - a\)</strong>, not by 2.</li>
+  <li><strong>Exact vs approximate:</strong> an Exam 1 area like \(\frac{e^2 - 1}{2}\) must stay exact.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>\(\displaystyle\int_0^{\pi/2}\cos(2x)\,dx\) equals</p></div>
+<ol><li>1</li><li>\(\frac12\)</li><li>0</li><li>\(-1\)</li></ol>
+<div class="mcq-x"><p>\(\left[\frac12\sin(2x)\right]_0^{\pi/2} = \frac12(\sin\pi - \sin 0) = 0\). (The areas above and below cancel.)</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>If \(\int_0^3 g(x)\,dx = 4\), then \(\int_0^3\big(g(x) - 2\big)\,dx\) equals</p></div>
+<ol><li>\(-2\)</li><li>2</li><li>\(-6\)</li><li>4</li></ol>
+<div class="mcq-x"><p>\(4 - 2 \times 3 = -2\). Option B forgets to multiply by the width.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>\(\displaystyle\int_1^e\frac{2}{x}\,dx\) equals</p></div>
+<ol><li>\(2e - 2\)</li><li>1</li><li>\(e\)</li><li>2</li></ol>
+<div class="mcq-x"><p>\(2[\log_e x]_1^e = 2(1 - 0) = 2\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The average value of \(f(x) = x^2\) on \([0, 3]\) is</p></div>
+<ol><li>9</li><li>3</li><li>4.5</li><li>1</li></ol>
+<div class="mcq-x"><p>\(\frac13\int_0^3 x^2\,dx = \frac13\cdot 9 = 3\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>The positive value of \(k\) for which \(\int_0^k(2x - 1)\,dx = 6\) is</p></div>
+<ol><li>2</li><li>6</li><li>3</li><li>\(\sqrt6\)</li></ol>
+<div class="mcq-x"><p>\(k^2 - k = 6 \Rightarrow (k - 3)(k + 2) = 0 \Rightarrow k = 3\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>The area between \(y = x^3\) and the \(x\)-axis from \(x = -1\) to \(x = 1\) is</p></div>
+<ol><li>\(\frac12\)</li><li>0</li><li>\(\frac14\)</li><li>1</li></ol>
+<div class="mcq-x"><p>By symmetry each piece has area \(\int_0^1 x^3\,dx = \frac14\); total \(\frac12\). The integral from \(-1\) to 1 is 0, but that's not the area.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>If \(F(x) = \displaystyle\int_1^x\log_e(t^2 + 1)\,dt\), then \(F'(2)\) equals</p></div>
+<ol><li>\(\log_e 2\)</li><li>\(\log_e 5\)</li><li>\(\frac45\)</li><li>\(\log_e 5 - \log_e 2\)</li></ol>
+<div class="mcq-x"><p>Fundamental theorem: \(F'(x) = \log_e(x^2 + 1)\), so \(F'(2) = \log_e 5\). No integration needed.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="\int e^{kx}\,dx = \dfrac1k e^{kx} ;; \int_a^b f(x)\,dx = F(b) - F(a)">
+<div class="pq-q"><p>Evaluate \(\displaystyle\int_0^1\big(e^{2x} + 3\big)\,dx\).</p></div>
+<div class="pq-s"><p>\(\left[\frac12e^{2x} + 3x\right]_0^1 = \frac12e^2 + 3 - \frac12 = \frac{e^2 + 5}{2}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="A = \int_a^b (\text{upper} - \text{lower})\,dx">
+<div class="pq-q"><p>Find the area enclosed between \(y = x^2 - 2x\) and \(y = x\).</p></div>
+<div class="pq-s"><p>Intersections: \(x^2 - 2x = x \Rightarrow x(x - 3) = 0\), so \(x = 0, 3\). The line is on top. [1]</p><p>\(A = \int_0^3\big(x - x^2 + 2x\big)\,dx = \int_0^3(3x - x^2)\,dx = \left[\frac{3x^2}{2} - \frac{x^3}{3}\right]_0^3\). [1]</p><p>\(= \frac{27}{2} - 9 = \frac92\) square units. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4" data-f="\text{total} = \int_a^b R(t)\,dt ;; \text{average} = \dfrac{1}{b - a}\int_a^b R(t)\,dt">
+<div class="pq-q"><p>Water flows out of a tank at \(R(t) = 5 + 4\sin\!\left(\frac{\pi t}{12}\right)\) litres per hour, \(0 \le t \le 24\). (a) Find the total volume that flows out in 24 hours. (b) Find the average flow rate over the first 6 hours, exactly.</p></div>
+<div class="pq-s"><p>(a) \(\int_0^{24}R\,dt = \left[5t - \frac{48}{\pi}\cos\frac{\pi t}{12}\right]_0^{24} = 120 - \frac{48}{\pi}(1 - 1) = 120\) L. [2]</p><p>(b) \(\frac16\int_0^6 R\,dt = \frac16\left(30 - \frac{48}{\pi}(0 - 1)\right) = \frac16\left(30 + \frac{48}{\pi}\right) = 5 + \frac{8}{\pi}\) L/h. [2]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{area} = \int |f(x)|\,dx \text{ (split where } f \text{ changes sign)}">
+<div class="pq-q"><p>A student finds the area between \(y = \sin x\) and the \(x\)-axis for \(0 \le x \le 2\pi\) by evaluating \(\int_0^{2\pi}\sin x\,dx\). What do they get, and what is the correct area?</p></div>
+<div class="pq-s"><p>They get \([-\cos x]_0^{2\pi} = -1 + 1 = 0\). The correct area is \(2\int_0^{\pi}\sin x\,dx = 2 \times 2 = 4\).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(\int_a^b f = F(b) - F(a)\) gives signed area; split at the \(x\)-intercepts for actual area.</li>
+  <li>Between curves: \(\int(\text{upper} - \text{lower})\), split where they cross.</li>
+  <li>Average value: \(\frac{1}{b - a}\int_a^b f\).</li>
+  <li>\(\frac{d}{dx}\int_a^x f(t)\,dt = f(x)\).</li>
+</ul>

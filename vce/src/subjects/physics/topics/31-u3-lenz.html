@@ -1,0 +1,111 @@
+<!--
+id: u3-lenz
+title: Lenz's law & the direction of induced current
+short: Lenz's law
+summary: Working out the direction of induced currents with Lenz's law: magnets and coils, loops entering and leaving fields, falling magnets and eddy currents, and why it is really conservation of energy.
+keywords: lenz, lenzs law, direction of induced current, induced current, opposes change, magnet and coil, falling magnet, copper tube, eddy currents, induction braking, loop entering field, loop leaving field, clockwise, anticlockwise, conservation of energy, right hand grip
+dotpoints: investigate and analyse theoretically and practically the generation of emf with reference to direction of induced current resulting from changes in flux: Lenz's law
+-->
+<h2>The rule</h2>
+<aside class="c-def" data-title="Lenz's law"><p>The direction of an induced current is such that the magnetic field it creates <strong>opposes the change in flux</strong> that produced it.</p></aside>
+<p>Note: it opposes the <em>change</em>, not the flux itself. If the flux through a loop is increasing, the induced field points the opposite way to the external field (trying to reduce it). If the flux is decreasing, the induced field points the <em>same</em> way (trying to keep it up).</p>
+
+<h2>A four-step method that always works</h2>
+<ol>
+  <li><strong>Original field:</strong> which way does the external field point through the loop?</li>
+  <li><strong>Change:</strong> is the flux through the loop increasing or decreasing?</li>
+  <li><strong>Induced field:</strong> increasing → induced field opposite to the original; decreasing → induced field in the same direction.</li>
+  <li><strong>Current:</strong> use the right-hand grip rule (thumb along the induced field through the loop, fingers give the current direction).</li>
+</ol>
+
+<h2>A magnet approaching a coil</h2>
+<figure class="fig">
+<svg viewBox="0 0 440 190" width="440" role="img" aria-label="A bar magnet with its north pole facing a coil moves towards it; the induced current makes the near face of the coil a north pole, which repels the magnet">
+  <rect x="20" y="80" width="60" height="30" class="f-n"/><rect x="80" y="80" width="60" height="30" class="f-w"/>
+  <text x="50" y="100" text-anchor="middle" class="t-b" style="fill:#fff">S</text><text x="110" y="100" text-anchor="middle" class="t-b" style="fill:#fff">N</text>
+  <line x1="60" y1="60" x2="120" y2="60" class="s-v" marker-end="url(#ah-v)"/><text x="60" y="52" class="t-sm t-v t-b">magnet moves in</text>
+  <g class="s-acc" style="opacity:.6"><line x1="145" y1="88" x2="250" y2="88" marker-end="url(#ah-acc)"/><line x1="145" y1="102" x2="250" y2="102" marker-end="url(#ah-acc)"/></g>
+  <text x="160" y="128" class="t-sm t-acc">magnet's field → (increasing)</text>
+  <ellipse cx="290" cy="95" rx="18" ry="55" class="s-ink" style="stroke-width:3"/>
+  <line x1="330" y1="95" x2="240" y2="95" class="s-t" marker-end="url(#ah-t)"/>
+  <text x="340" y="99" class="t-sm t-t t-b">induced field ←</text>
+  <path d="M276 50 A18 55 0 0 0 276 140" class="s-t" style="stroke-width:1" marker-end="url(#ah-t)"/>
+  <text x="300" y="172" text-anchor="middle" class="t-sm t-b">near face of coil becomes N: repels the magnet</text>
+</svg>
+<figcaption>Flux to the right is increasing, so the induced field points left. The face of the coil nearest the magnet becomes a north pole and pushes back on the incoming north pole. Seen from the magnet, the induced current flows anticlockwise.</figcaption>
+</figure>
+<div class="tbl"><table>
+<thead><tr><th>Action</th><th>Face of the coil nearest the magnet becomes…</th><th>Effect on the magnet</th></tr></thead>
+<tbody>
+<tr><td>N pole pushed in</td><td>N</td><td>Repelled (opposes approach)</td></tr>
+<tr><td>N pole pulled out</td><td>S</td><td>Attracted (opposes leaving)</td></tr>
+<tr><td>S pole pushed in</td><td>S</td><td>Repelled</td></tr>
+<tr><td>S pole pulled out</td><td>N</td><td>Attracted</td></tr>
+<tr><td>Magnet held still</td><td>nothing</td><td>No current, no force</td></tr>
+</tbody></table></div>
+<aside class="c-key" data-title="Key idea: Lenz's law is energy conservation">
+<p>The induced current always makes the coil <strong>resist</strong> the motion that causes it. You have to do work to push the magnet in against the repulsion, and that work becomes the electrical energy of the induced current (then heat in the circuit). If the induced current helped the motion instead, the magnet would speed up by itself and create energy from nothing.</p>
+</aside>
+
+<h2>A loop moving into and out of a field</h2>
+<div class="we" data-title="Loop entering and leaving a field" data-marks="4">
+<div class="we-q"><p>A square wire loop moves to the right at constant speed through a region of uniform magnetic field directed into the page. Determine the direction of the induced current (clockwise or anticlockwise, as seen on the page) as the loop (a) enters the field, (b) is completely inside, and (c) leaves the field.</p></div>
+<div class="we-t"><p>Lenz's law: the induced current flows so that its own magnetic field opposes the change in flux. If flux is increasing, the induced field points the opposite way; if decreasing, it points the same way. The right-hand grip rule then gives the current.</p></div>
+<div class="we-s" data-f="\text{increasing flux} \Rightarrow \text{induced field opposite}"><p><strong>(a) Entering.</strong> Original field: into the page. More of the loop is in the field, so flux into the page is <em>increasing</em>. Induced field opposes: <strong>out of the page</strong> inside the loop. Grip rule (thumb out of the page) gives an <strong>anticlockwise</strong> current.</p></div>
+<div class="we-s" data-f="\Delta\Phi = 0 \Rightarrow I = 0"><p><strong>(b) Completely inside.</strong> The flux through the loop is constant, so there is <strong>no induced current</strong>, even though the loop is moving through the field.</p></div>
+<div class="we-s" data-f="\text{decreasing flux} \Rightarrow \text{induced field same way}"><p><strong>(c) Leaving.</strong> Flux into the page is <em>decreasing</em>. Induced field tries to maintain it: <strong>into the page</strong>. Grip rule (thumb into the page) gives a <strong>clockwise</strong> current.</p></div>
+<div class="we-a"><p><strong>(a) anticlockwise (b) none (c) clockwise.</strong> The currents on entering and leaving are in opposite directions, and in both cases the field exerts a force opposing the loop's motion (it acts like a brake).</p></div>
+</div>
+<aside class="c-trap" data-title="Trick alert: moving in a field isn't enough">
+<p>A loop moving through a <em>uniform</em> field while completely inside it has no induced current: the flux through it isn't changing. Induction needs a change in flux, not just motion.</p>
+</aside>
+
+<h2>Falling magnets, eddy currents and braking</h2>
+<ul>
+  <li><strong>Magnet dropped through a copper tube:</strong> as it falls, the changing flux induces circulating currents in the tube walls. By Lenz's law these currents create fields that oppose the magnet's motion (repel it from above, attract it from below), so it falls much more slowly than a non-magnetic object. Its lost gravitational energy becomes heat in the copper.</li>
+  <li><strong>Magnet dropped through a coil</strong> connected to a CRO: a pulse one way as it enters, and a larger, shorter pulse the other way as it leaves. <em>Opposite sign</em>: as the magnet enters, the flux through the coil is <strong>increasing</strong>; as it leaves, the flux (same direction) is <strong>decreasing</strong>, so by Lenz's law the induced emf reverses. <em>Larger and shorter</em>: the magnet has accelerated, so the same change in flux happens in less time, and \(\varepsilon = -N\Delta\Phi/\Delta t\) is bigger. The areas under the two pulses (each equal to \(N\Delta\Phi\)) are the same size.</li>
+  <li><strong>Eddy currents:</strong> swirling induced currents in any solid conductor exposed to changing flux. They're used for braking trains and rollercoasters (magnets near a moving metal fin), in induction cooktops, and they are reduced in transformer cores by using thin insulated <em>laminations</em>.</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>The north pole of a magnet is pulled away from a coil. The end of the coil nearest the magnet becomes:</p></div>
+<ol><li>a north pole, repelling the magnet</li><li>a north pole, attracting the magnet</li><li>a south pole, attracting the magnet</li><li>a south pole, repelling the magnet</li></ol>
+<div class="mcq-x"><p>The coil opposes the magnet leaving, so it attracts it: the near end becomes a south pole (unlike poles attract).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Lenz's law is a consequence of the conservation of:</p></div>
+<ol><li>charge</li><li>energy</li><li>momentum</li><li>magnetic flux</li></ol>
+<div class="mcq-x"><p>Opposing the change means work must be done to produce the induced current; that work supplies the electrical energy.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>A magnet is dropped through a vertical copper pipe. Compared with an identical unmagnetised piece of metal dropped through the same pipe, the magnet:</p></div>
+<ol><li>falls faster, because it is attracted to the copper</li><li>falls at the same rate, because copper is not magnetic</li><li>stops and floats inside the pipe</li><li>falls much more slowly, because induced currents in the pipe oppose its motion</li></ol>
+<div class="mcq-x"><p>Copper isn't magnetic, but it is a conductor. The moving magnet changes the flux through the pipe walls, inducing eddy currents whose fields oppose the motion. It can't stop completely: no motion would mean no induced current and no opposing force.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>A loop lies flat on the page in a magnetic field directed out of the page. The field strength is decreasing. The induced current in the loop is:</p></div>
+<ol><li>anticlockwise</li><li>clockwise</li><li>zero, because the field is out of the page</li><li>clockwise, then anticlockwise</li></ol>
+<div class="mcq-x"><p>Flux out of the page is decreasing, so the induced field points out of the page (to maintain it). Thumb out of the page → fingers anticlockwise.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>A loop on the page has a magnetic field into the page that is increasing. Use the four-step method to find the direction of the induced current.</p></div>
+<div class="pq-s"><p>(1) Original field: into the page. (2) Flux into the page is increasing. (3) Induced field opposes: out of the page. (4) Grip rule with thumb out of the page: <strong>anticlockwise</strong>.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A strong magnet is dropped from rest through a horizontal coil connected to a data logger. Describe and explain the shape of the emf–time graph recorded as the magnet falls through the coil.</p></div>
+<div class="pq-s"><p>As the magnet approaches and enters, the flux through the coil increases, producing an emf pulse in one direction. [1]</p><p>As it leaves, the flux decreases, producing a pulse in the opposite direction (Lenz's law), with a zero emf in between when the flux is briefly at a maximum and not changing. [1]</p><p>The second pulse is larger in size and shorter in duration because the magnet is moving faster (flux changes more quickly) as it leaves; the areas under the two pulses are equal in size because the total flux change is the same. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Induced current opposes the <em>change</em> in flux.</li>
+  <li>Method: original field → increasing or decreasing? → induced field opposite or same → grip rule.</li>
+  <li>The coil always resists the motion: that's energy conservation.</li>
+  <li>Constant flux (even while moving) → no induced current.</li>
+</ul>

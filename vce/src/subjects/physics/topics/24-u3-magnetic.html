@@ -1,0 +1,146 @@
+<!--
+id: u3-magnetic
+title: Magnetic fields
+short: Magnetic fields
+summary: Magnetic fields of magnets, Earth, straight wires, loops and solenoids; the right-hand grip rule; dot and cross notation; and adding magnetic fields as vectors.
+keywords: magnetic field, magnet, bar magnet, north pole, south pole, earth's magnetic field, compass, right hand grip rule, straight wire, current carrying wire, solenoid, coil, loop, electromagnet, dot, cross, into page, out of page, tesla, vector addition, field lines, horseshoe magnet
+dotpoints: investigate and apply theoretically and practically a vector model to magnetic fields, including: magnetic fields around permanent magnets; the Earth's magnetic field; the magnetic field around a current-carrying wire, a current-carrying loop and a solenoid | identify fields as static or changing, and as uniform or non-uniform | describe the interaction of two fields, allowing that magnetic poles and current carrying conductors can either attract or repel
+-->
+<h2>Magnetic fields and poles</h2>
+<p>A magnetic field exists around magnets and around <strong>moving charges</strong> (currents). Its direction at any point is the direction a compass needle's <strong>north</strong> pole would point. Its strength is the <strong>magnetic flux density \(B\)</strong>, measured in tesla (T). Earth's field at the surface is about \(5\times10^{-5}\ \text{T}\); a strong lab magnet is about 1 T.</p>
+<ul>
+  <li>Outside a magnet, field lines run from N to S. Inside, S to N. They form closed loops.</li>
+  <li>Like poles repel; unlike poles attract.</li>
+  <li>A <strong>horseshoe</strong> or pair of flat pole pieces facing each other produces a nearly <strong>uniform</strong> field in the gap: this is the field used in motors and generators.</li>
+</ul>
+
+<h3>Earth's magnetic field</h3>
+<p>Earth behaves roughly like a giant bar magnet tilted slightly from its rotation axis. The <strong>north</strong> end of a compass is attracted towards the geographic North Pole, which means there is a magnetic <strong>south</strong> pole near the geographic North Pole. Field lines leave the Southern Hemisphere, run northward across the surface and dip into the ground in the Northern Hemisphere. In Melbourne the field points roughly north (horizontally) and <em>upward</em> (out of the ground), because we're in the Southern Hemisphere.</p>
+
+<h2>Dot and cross notation</h2>
+<figure class="fig">
+<svg viewBox="0 0 380 110" width="380" role="img" aria-label="Dot notation means out of the page, cross notation means into the page">
+  <circle cx="60" cy="50" r="20" class="f-surf" style="stroke:var(--ink);stroke-width:1.6"/><circle cx="60" cy="50" r="4" class="f-ink"/>
+  <text x="60" y="95" text-anchor="middle" class="t-sm">• out of the page</text>
+  <text x="60" y="108" text-anchor="middle" class="t-sm t-mut">(arrow tip coming at you)</text>
+  <circle cx="190" cy="50" r="20" class="f-surf" style="stroke:var(--ink);stroke-width:1.6"/>
+  <line x1="176" y1="36" x2="204" y2="64" class="s-ink"/><line x1="204" y1="36" x2="176" y2="64" class="s-ink"/>
+  <text x="190" y="95" text-anchor="middle" class="t-sm">× into the page</text>
+  <text x="190" y="108" text-anchor="middle" class="t-sm t-mut">(arrow tail going away)</text>
+  <g class="t-mut" style="font-size:16px">
+    <text x="290" y="30">× × ×</text><text x="290" y="55">× × ×</text><text x="290" y="80">× × ×</text>
+  </g>
+  <text x="310" y="100" text-anchor="middle" class="t-sm">uniform B into page</text>
+</svg>
+<figcaption>Think of an arrow: you see its point (•) as it comes towards you and its feathers (×) as it flies away.</figcaption>
+</figure>
+
+<h2>The field around a straight current-carrying wire</h2>
+<p>A current in a straight wire creates circular field lines centred on the wire. The field is stronger close to the wire and weaker further away (non-uniform).</p>
+<aside class="c-key" data-title="Right-hand grip rule (straight wire)"><p>Point your right thumb in the direction of the <strong>conventional current</strong> (+ to −). Your fingers curl in the direction of the magnetic field.</p></aside>
+<figure class="fig">
+<svg viewBox="0 0 400 190" width="400" role="img" aria-label="Magnetic field around a wire: current out of the page gives anticlockwise circles, current into the page gives clockwise circles">
+  <g>
+    <circle cx="100" cy="90" r="10" class="f-surf" style="stroke:var(--ink);stroke-width:1.6"/><circle cx="100" cy="90" r="3" class="f-ink"/>
+    <circle cx="100" cy="90" r="34" class="s-acc"/><circle cx="100" cy="90" r="62" class="s-acc" style="opacity:.7"/>
+    <path d="M134 86 L134 94" class="s-acc" marker-start="url(#ah-acc)"/>
+    <path d="M66 94 L66 86" class="s-acc" marker-start="url(#ah-acc)"/>
+    <path d="M162 84 L162 96" class="s-acc" marker-start="url(#ah-acc)"/>
+    <text x="100" y="178" text-anchor="middle" class="t-sm t-b">current out of page: anticlockwise</text>
+  </g>
+  <g>
+    <circle cx="300" cy="90" r="10" class="f-surf" style="stroke:var(--ink);stroke-width:1.6"/>
+    <line x1="293" y1="83" x2="307" y2="97" class="s-ink"/><line x1="307" y1="83" x2="293" y2="97" class="s-ink"/>
+    <circle cx="300" cy="90" r="34" class="s-acc"/><circle cx="300" cy="90" r="62" class="s-acc" style="opacity:.7"/>
+    <path d="M334 94 L334 86" class="s-acc" marker-start="url(#ah-acc)"/>
+    <path d="M266 86 L266 94" class="s-acc" marker-start="url(#ah-acc)"/>
+    <path d="M362 96 L362 84" class="s-acc" marker-start="url(#ah-acc)"/>
+    <text x="300" y="178" text-anchor="middle" class="t-sm t-b">current into page: clockwise</text>
+  </g>
+</svg>
+<figcaption>Circles get further apart moving outward: the field weakens with distance from the wire.</figcaption>
+</figure>
+<aside class="c-trap" data-title="Trick alert: conventional current vs electron flow">
+<p>The grip rule uses <strong>conventional current</strong> (positive to negative). If a question describes the flow of electrons, the conventional current is in the <em>opposite</em> direction. This catches many students in both field and force questions.</p>
+</aside>
+
+<h2>Loops and solenoids</h2>
+<p>Bending the wire into a loop concentrates the field in the middle. A <strong>solenoid</strong> (a long coil of many loops) produces a field just like a bar magnet: strong and <strong>uniform inside</strong>, weak and spread out outside.</p>
+<aside class="c-key" data-title="Right-hand grip rule (coil or solenoid)"><p>Curl your right fingers in the direction of the conventional current around the loops. Your thumb points to the <strong>north pole</strong> end of the solenoid (the direction of the field inside).</p></aside>
+<figure class="fig">
+<svg viewBox="0 0 420 190" width="420" role="img" aria-label="Solenoid: current in the loops produces a uniform field inside pointing right and a bar-magnet field outside, with north at the right end">
+  <g class="s-ink" style="stroke-width:2">
+    <ellipse cx="140" cy="95" rx="10" ry="40"/><ellipse cx="170" cy="95" rx="10" ry="40"/><ellipse cx="200" cy="95" rx="10" ry="40"/><ellipse cx="230" cy="95" rx="10" ry="40"/><ellipse cx="260" cy="95" rx="10" ry="40"/><ellipse cx="290" cy="95" rx="10" ry="40"/>
+  </g>
+  <g class="s-acc">
+    <line x1="110" y1="85" x2="325" y2="85" marker-end="url(#ah-acc)"/><line x1="110" y1="105" x2="325" y2="105" marker-end="url(#ah-acc)"/>
+    <path d="M325 80 Q 370 20 215 20 Q 60 20 110 80" style="opacity:.8"/>
+    <path d="M325 110 Q 370 170 215 170 Q 60 170 110 110" style="opacity:.8"/>
+  </g>
+  <g class="f-acc"><path d="M220 16 L210 20 L220 24 z"/><path d="M220 166 L210 170 L220 174 z"/></g>
+  <text x="345" y="100" class="t-b t-w">N</text><text x="80" y="100" class="t-b t-n">S</text>
+  <text x="215" y="188" text-anchor="middle" class="t-sm t-mut">uniform inside; like a bar magnet outside</text>
+</svg>
+<figcaption>Here the conventional current flows <em>down</em> the near side of each loop, so it looks anticlockwise from the right-hand end: that end is north. Curl your right fingers with the current and your thumb points to the north end. Reversing the current swaps the poles.</figcaption>
+</figure>
+<p>Ways to make a solenoid's field stronger: more current, more turns per metre, and an iron core (which makes an <strong>electromagnet</strong>).</p>
+
+<h2>Adding magnetic fields as vectors</h2>
+<p>Where two fields overlap, the total field is their <strong>vector sum</strong>. A compass needle lines up with the <em>resultant</em> field.</p>
+<div class="we" data-title="Compass near a wire" data-marks="3">
+<div class="we-q"><p>A long vertical wire carries a current. At a point near the wire, the wire produces a horizontal field of \(3.0\times10^{-5}\ \text{T}\) towards the east, and Earth's horizontal field there is \(4.0\times10^{-5}\ \text{T}\) towards the north. Find the magnitude and direction of the resultant field, and the direction a compass points.</p></div>
+<div class="we-t"><p>Magnetic fields from different sources add as vectors. A compass needle aligns with the resultant field, not with either field alone.</p></div>
+<div class="we-s" data-f="B = \sqrt{B_1^2 + B_2^2}"><p><strong>The two fields are perpendicular,</strong> so use Pythagoras:</p>\[ B = \sqrt{(3.0\times10^{-5})^2 + (4.0\times10^{-5})^2} = 5.0\times10^{-5}\ \text{T} \]</div>
+<div class="we-s" data-f="\tan\theta = \dfrac{B_1}{B_2}"><p><strong>Direction:</strong> \(\tan\theta = \dfrac{3.0}{4.0} \Rightarrow \theta = 37^\circ\) east of north.</p></div>
+<div class="we-a"><p><strong>\(5.0\times10^{-5}\ \text{T}\) at 37° east of north; the compass needle points along N37°E.</strong></p></div>
+</div>
+
+<h2>Forces between magnetic fields</h2>
+<ul>
+  <li>Two magnets: like poles repel, unlike poles attract.</li>
+  <li>Two parallel wires, currents in the <strong>same direction: attract</strong>. Opposite directions: repel. (Each wire sits in the other's field and feels a force, see <a href="#u3-motor">Force on conductors</a>.)</li>
+  <li>Two solenoids end to end behave like two bar magnets.</li>
+</ul>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A long straight wire runs perpendicular to the page with conventional current flowing out of the page. The magnetic field lines around it are:</p></div>
+<ol><li>straight lines radiating outward</li><li>anticlockwise circles</li><li>clockwise circles</li><li>parallel to the wire</li></ol>
+<div class="mcq-x"><p>Right thumb out of the page; fingers curl anticlockwise (as seen looking at the page).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Electrons flow upward through a vertical wire. Looking down on the wire from above, the magnetic field around it circulates:</p></div>
+<ol><li>anticlockwise</li><li>outward, away from the wire</li><li>there is no field, because electrons are negative</li><li>clockwise</li></ol>
+<div class="mcq-x"><p>Electrons upward means conventional current downward. Looking down, the current is going away from you (into the page), so the field is clockwise. Using the electron direction directly gives the wrong answer (A).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>Which of these is the best description of the field inside a long current-carrying solenoid?</p></div>
+<ol><li>uniform, parallel to the axis of the solenoid</li><li>zero</li><li>circular around the axis</li><li>strongest at the edges of the coils</li></ol>
+<div class="mcq-x"><p>Inside a long solenoid the field lines are straight, parallel and evenly spaced.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>The north pole of a compass needle points towards Earth's geographic North Pole. This shows that near Earth's geographic North Pole there is:</p></div>
+<ol><li>a magnetic north pole</li><li>no magnetic pole</li><li>a magnetic south pole</li><li>a magnetic monopole</li></ol>
+<div class="mcq-x"><p>Unlike poles attract: the compass's N pole is pulled towards a magnetic S pole.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2">
+<div class="pq-q"><p>A solenoid lies along an east–west line. Looking at it from the east end, the conventional current flows anticlockwise around the coils. Which end is the north pole?</p></div>
+<div class="pq-s"><p>Curl your right fingers anticlockwise as seen from the east: your thumb points towards you, i.e. out of the east end. The field inside points east, so the <strong>east end is the north pole</strong>. (Quick check: looking at an end, anticlockwise current = North, clockwise = South.)</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>Two long parallel wires, P and Q, both carry current into the page. Explain, using the field of P and the force on Q, why the wires attract.</p></div>
+<div class="pq-s"><p>P's current into the page makes a clockwise field around P. At Q's position (say Q is to the right of P), that field points downward (towards the bottom of the page).</p><p>Q carries current into the page in a downward field. Using the right-hand force rule (fingers down for B, thumb into page for I), the palm faces left: towards P.</p><p>By the same argument P is pushed towards Q (third law), so they attract.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Field direction: where a compass N pole points. Unit: tesla.</li>
+  <li>Straight wire: circles, right-hand grip (thumb = conventional current).</li>
+  <li>Solenoid: bar-magnet field, uniform inside; fingers = current, thumb = north.</li>
+  <li>Fields add as vectors; compasses follow the resultant.</li>
+</ul>

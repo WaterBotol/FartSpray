@@ -1,0 +1,69 @@
+<!--
+id: glossary
+title: Methods glossary
+short: Glossary
+summary: Precise definitions of the key terms in Mathematical Methods Units 3 and 4, each linked to the topic where it's explained.
+keywords: glossary, definitions, terms, vocabulary, meaning, define, definition, methods terms
+special: reference
+-->
+<p>Definitions written the way VCAA uses them. Click the link after each for the full explanation.</p>
+<h2>A–F</h2>
+<dl class="gloss">
+  <dt>Absolute maximum/minimum</dt><dd>The greatest/least value of a function over its whole domain; on a closed interval it may occur at an endpoint. <a href="#optimisation">Optimisation</a></dd>
+  <dt>Asymptote</dt><dd>A line the graph approaches but never reaches (as \(x\) or \(y\) grows without bound). <a href="#power">Power functions</a></dd>
+  <dt>Average rate of change</dt><dd>\(\frac{f(b) - f(a)}{b - a}\): the gradient of the secant over \([a, b]\). <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Average value</dt><dd>\(\frac{1}{b - a}\int_a^b f(x)\,dx\). <a href="#integration">Integration</a></dd>
+  <dt>Bernoulli trial</dt><dd>A single trial with two outcomes (success with probability \(p\), failure with \(1 - p\)). <a href="#binomial">Binomial</a></dd>
+  <dt>Bias</dt><dd>A systematic tendency of a sampling method to over- or under-estimate a parameter. <a href="#sampling">Sampling</a></dd>
+  <dt>Binomial distribution</dt><dd>The number of successes in \(n\) independent Bernoulli trials with constant \(p\): \(X \sim \text{Bi}(n, p)\). <a href="#binomial">Binomial</a></dd>
+  <dt>Bisection method</dt><dd>Repeatedly halving an interval on which \(f\) changes sign to trap a root. <a href="#newton">Newton's method</a></dd>
+  <dt>Composite function</dt><dd>\((f \circ g)(x) = f(g(x))\); exists iff \(\text{ran}\, g \subseteq \text{dom}\, f\). <a href="#composite-inverse">Composite &amp; inverse</a></dd>
+  <dt>Concave up/down</dt><dd>\(f''(x) &gt; 0\) (gradient increasing) / \(f''(x) &lt; 0\) (gradient decreasing). <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Conditional probability</dt><dd>\(P(A \mid B) = \frac{P(A \cap B)}{P(B)}\): the probability of \(A\) given \(B\) has occurred. <a href="#probability">Probability</a></dd>
+  <dt>Confidence interval</dt><dd>An interval estimate of a parameter; about 95% of 95% intervals built this way contain the true value. <a href="#ci">Confidence intervals</a></dd>
+  <dt>Continuous (function)</dt><dd>No breaks at \(x = a\): \(\lim_{x \to a} f(x) = f(a)\). <a href="#limits">Limits</a></dd>
+  <dt>Continuous random variable</dt><dd>A random variable taking any value in an interval, described by a pdf. <a href="#crv">CRVs</a></dd>
+  <dt>Differentiable</dt><dd>The derivative exists: continuous with no corners, cusps or vertical tangents. <a href="#limits">Limits</a></dd>
+  <dt>Dilation from the \(x\)-axis</dt><dd>A vertical stretch \((x, y) \to (x, ay)\). <a href="#transformations">Transformations</a></dd>
+  <dt>Discriminant</dt><dd>\(\Delta = b^2 - 4ac\); its sign gives the number of real roots of a quadratic. <a href="#systems">Systems</a></dd>
+  <dt>Domain</dt><dd>The set of allowed input values. <a href="#functions">Functions</a></dd>
+  <dt>Even function</dt><dd>\(f(-x) = f(x)\): symmetric in the \(y\)-axis. <a href="#functional-eq">Functional equations</a></dd>
+  <dt>Expected value</dt><dd>The long-run mean of a random variable: \(\sum xp(x)\) or \(\int xf(x)\,dx\). <a href="#drv">DRVs</a></dd>
+  <dt>Function</dt><dd>A relation in which each input has exactly one output. <a href="#functions">Functions</a></dd>
+</dl>
+<h2>G–O</h2>
+<dl class="gloss">
+  <dt>General solution</dt><dd>All solutions of a trig equation, written using an integer parameter \(n\). <a href="#circular">Circular functions</a></dd>
+  <dt>Hybrid function</dt><dd>A function defined by different rules on different parts of its domain. <a href="#functions">Functions</a></dd>
+  <dt>Independent events</dt><dd>\(P(A \cap B) = P(A)P(B)\): one occurring doesn't change the probability of the other. <a href="#probability">Probability</a></dd>
+  <dt>Inflection point</dt><dd>A point where the concavity changes. <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Instantaneous rate of change</dt><dd>\(f'(a)\): the gradient of the tangent at \(x = a\). <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Inverse function</dt><dd>\(f^{-1}\) undoes \(f\); exists only if \(f\) is one-to-one. Its graph is the reflection in \(y = x\). <a href="#composite-inverse">Composite &amp; inverse</a></dd>
+  <dt>Margin of error</dt><dd>Half the width of a confidence interval: \(z\sqrt{\hat p(1 - \hat p)/n}\). <a href="#ci">Confidence intervals</a></dd>
+  <dt>Maximal (implied) domain</dt><dd>The largest set of real numbers for which a rule is defined. <a href="#functions">Functions</a></dd>
+  <dt>Median (CRV)</dt><dd>The value \(m\) with \(\int_{-\infty}^m f(x)\,dx = \frac12\). <a href="#crv">CRVs</a></dd>
+  <dt>Modulus function</dt><dd>\(|x|\): the distance of \(x\) from 0. <a href="#functions">Functions</a></dd>
+  <dt>Mutually exclusive</dt><dd>Events that can't occur together: \(P(A \cap B) = 0\). <a href="#probability">Probability</a></dd>
+  <dt>Newton's method</dt><dd>An iterative root-finding method: \(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\). <a href="#newton">Newton's method</a></dd>
+  <dt>Normal distribution</dt><dd>The symmetric bell-shaped distribution \(\text{N}(\mu, \sigma^2)\). <a href="#normal">Normal</a></dd>
+  <dt>Odd function</dt><dd>\(f(-x) = -f(x)\): rotational symmetry about the origin. <a href="#functional-eq">Functional equations</a></dd>
+  <dt>One-to-one</dt><dd>Each output comes from exactly one input (passes the horizontal line test). <a href="#functions">Functions</a></dd>
+</dl>
+<h2>P–Z</h2>
+<dl class="gloss">
+  <dt>Parameter (statistics)</dt><dd>A number describing a population, such as \(p\). <a href="#sampling">Sampling</a></dd>
+  <dt>Percentile</dt><dd>The value below which a given percentage of the distribution lies. <a href="#normal">Normal</a></dd>
+  <dt>Probability density function (pdf)</dt><dd>A function \(f \ge 0\) with total area 1; probabilities are areas under it. <a href="#crv">CRVs</a></dd>
+  <dt>Pseudocode</dt><dd>A structured, language-neutral description of an algorithm. <a href="#newton">Algorithms</a></dd>
+  <dt>Range</dt><dd>The set of output values a function actually produces. <a href="#functions">Functions</a></dd>
+  <dt>Sample proportion</dt><dd>\(\hat p = \frac{x}{n}\): the proportion of successes in a sample; a random variable. <a href="#sampling">Sampling</a></dd>
+  <dt>Signed area</dt><dd>The value of a definite integral: area above the axis minus area below. <a href="#integration">Integration</a></dd>
+  <dt>Standard deviation</dt><dd>\(\sqrt{\operatorname{Var}(X)}\): the typical distance of values from the mean. <a href="#drv">DRVs</a></dd>
+  <dt>Stationary point</dt><dd>A point where \(f'(x) = 0\): a local max, local min or stationary point of inflection. <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Statistic</dt><dd>A number calculated from a sample, such as \(\hat p\). <a href="#sampling">Sampling</a></dd>
+  <dt>Strictly increasing</dt><dd>\(a &lt; b \Rightarrow f(a) &lt; f(b)\). VCAA includes the endpoints of such intervals. <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Tangent</dt><dd>The line touching a curve at a point with the same gradient as the curve there. <a href="#diff-apps">Applications of differentiation</a></dd>
+  <dt>Trapezium rule</dt><dd>Estimating an integral with trapeziums: \(\frac{h}{2}[\text{ends} + 2(\text{middles})]\). <a href="#numerical">Numerical integration</a></dd>
+  <dt>Variance</dt><dd>\(E[(X - \mu)^2] = E(X^2) - \mu^2\). <a href="#drv">DRVs</a></dd>
+  <dt>\(z\)-score</dt><dd>\(\frac{x - \mu}{\sigma}\): the number of standard deviations from the mean. <a href="#normal">Normal</a></dd>
+</dl>

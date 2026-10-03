@@ -1,0 +1,152 @@
+<!--
+id: circular
+title: Circular (trigonometric) functions
+short: Circular functions
+summary: Radians, exact values and symmetry, graphs of sine, cosine and tangent with amplitude, period and shifts, solving trig equations over a domain and in general, and periodic models.
+keywords: trigonometry, trig, circular functions, sine, cosine, tangent, sin, cos, tan, radians, unit circle, exact values, amplitude, period, phase, general solution, symmetry, ASTC, quadrants, tides, periodic model, trig equation
+dotpoints: circular functions sin, cos and tan and their graphs, including amplitude, period and translations | exact values and symmetry properties | solution of trigonometric equations over a specified domain and general solutions | modelling periodic phenomena
+-->
+<h2>Radians, exact values and symmetry</h2>
+<p>\(\pi\) radians \(= 180^\circ\). On the unit circle, the point at angle \(\theta\) is \((\cos\theta, \sin\theta)\), and \(\tan\theta = \frac{\sin\theta}{\cos\theta}\).</p>
+<div class="tbl"><table>
+<thead><tr><th>\(\theta\)</th><th>0</th><th>\(\frac{\pi}{6}\)</th><th>\(\frac{\pi}{4}\)</th><th>\(\frac{\pi}{3}\)</th><th>\(\frac{\pi}{2}\)</th></tr></thead>
+<tbody>
+<tr><td>\(\sin\theta\)</td><td>0</td><td>\(\frac12\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac{\sqrt3}{2}\)</td><td>1</td></tr>
+<tr><td>\(\cos\theta\)</td><td>1</td><td>\(\frac{\sqrt3}{2}\)</td><td>\(\frac{\sqrt2}{2}\)</td><td>\(\frac12\)</td><td>0</td></tr>
+<tr><td>\(\tan\theta\)</td><td>0</td><td>\(\frac{1}{\sqrt3}\)</td><td>1</td><td>\(\sqrt3\)</td><td>undefined</td></tr>
+</tbody></table></div>
+<div class="eq"><div class="eq-label">Symmetry (quadrants 2, 3, 4)</div>\[ \sin(\pi - \theta) = \sin\theta \quad \sin(\pi + \theta) = -\sin\theta \quad \sin(2\pi - \theta) = -\sin\theta \]\[ \cos(\pi - \theta) = -\cos\theta \quad \cos(\pi + \theta) = -\cos\theta \quad \cos(2\pi - \theta) = \cos\theta \]\[ \sin\!\left(\tfrac{\pi}{2} - \theta\right) = \cos\theta \qquad \sin^2\theta + \cos^2\theta = 1 \]<p>Memory aid for the positive ratio in each quadrant, going anticlockwise from quadrant 1: <strong>A</strong>ll, <strong>S</strong>in, <strong>T</strong>an, <strong>C</strong>os.</p></div>
+
+<h2>Graphs</h2>
+<div class="eq"><div class="eq-label">Transformed sine and cosine</div>\[ y = a\sin\big(n(x - h)\big) + k \]<p>Amplitude \(|a|\), period \(\frac{2\pi}{n}\), horizontal shift \(h\), centre line \(y = k\), range \([k - |a|,\ k + |a|]\). For \(y = a\tan(n(x - h)) + k\): period \(\frac{\pi}{n}\), with vertical asymptotes wherever \(n(x - h) = \frac{\pi}{2} + m\pi\).</p></div>
+<div class="we" data-title="Sketch over a restricted domain" data-marks="4">
+<div class="we-q"><p>Sketch \(y = 2\sin\!\left(2x - \frac{\pi}{3}\right) + 1\) for \(x \in [0, \pi]\), labelling endpoints and \(x\)-intercepts with exact coordinates.</p></div>
+<div class="we-t"><p>Write the rule in the form \(a\sin(n(x - h)) + k\) to read off amplitude, period, horizontal shift and centre line. For intercepts, solve over the transformed interval of the argument.</p></div>
+<div class="we-s" data-f="\text{period} = \dfrac{2\pi}{n},\ \text{range} = [k - |a|, k + |a|]"><p>Factor: \(y = 2\sin\!\left(2\left(x - \frac{\pi}{6}\right)\right) + 1\). Amplitude 2, period \(\pi\), shifted \(\frac{\pi}{6}\) right, centre \(y = 1\), range \([-1, 3]\).</p></div>
+<div class="we-s" data-f="\text{substitute the endpoints}"><p>Endpoints: \(y(0) = 2\sin\!\left(-\frac{\pi}{3}\right) + 1 = 1 - \sqrt3\); \(y(\pi) = 2\sin\!\left(\frac{5\pi}{3}\right) + 1 = 1 - \sqrt3\).</p></div>
+<div class="we-s" data-f="\sin\theta = -\tfrac12 \Rightarrow \theta = -\tfrac\pi6, \tfrac{7\pi}{6}, \ldots"><p>\(x\)-intercepts: \(\sin\!\left(2x - \frac{\pi}{3}\right) = -\frac12\). With \(2x - \frac{\pi}{3} \in \left[-\frac{\pi}{3}, \frac{5\pi}{3}\right]\): \(2x - \frac{\pi}{3} = -\frac{\pi}{6}\) or \(\frac{7\pi}{6}\).</p></div>
+<div class="we-a"><p><strong>Endpoints \((0, 1 - \sqrt3)\) and \((\pi, 1 - \sqrt3)\); \(x\)-intercepts \(\left(\frac{\pi}{12}, 0\right)\) and \(\left(\frac{3\pi}{4}, 0\right)\)</strong>; maximum \(\left(\frac{5\pi}{12}, 3\right)\), minimum \(\left(\frac{11\pi}{12}, -1\right)\).</p></div>
+</div>
+<figure class="fig">
+<svg viewBox="0 0 440 280" width="440" role="img" aria-label="sine graph on 0 to pi"><defs><clipPath id="clip840b3ac2"><rect x="34" y="16" width="390" height="238"/></clipPath></defs><line x1="34.0" y1="16" x2="34.0" y2="254" class="s-line" style="opacity:.55"/><line x1="64.0" y1="16" x2="64.0" y2="254" class="s-line" style="opacity:.55"/><line x1="94.1" y1="16" x2="94.1" y2="254" class="s-line" style="opacity:.55"/><line x1="124.1" y1="16" x2="124.1" y2="254" class="s-line" style="opacity:.55"/><line x1="154.1" y1="16" x2="154.1" y2="254" class="s-line" style="opacity:.55"/><line x1="184.1" y1="16" x2="184.1" y2="254" class="s-line" style="opacity:.55"/><line x1="214.2" y1="16" x2="214.2" y2="254" class="s-line" style="opacity:.55"/><line x1="244.2" y1="16" x2="244.2" y2="254" class="s-line" style="opacity:.55"/><line x1="274.2" y1="16" x2="274.2" y2="254" class="s-line" style="opacity:.55"/><line x1="304.3" y1="16" x2="304.3" y2="254" class="s-line" style="opacity:.55"/><line x1="334.3" y1="16" x2="334.3" y2="254" class="s-line" style="opacity:.55"/><line x1="364.3" y1="16" x2="364.3" y2="254" class="s-line" style="opacity:.55"/><line x1="394.4" y1="16" x2="394.4" y2="254" class="s-line" style="opacity:.55"/><line x1="34" y1="227.6" x2="424" y2="227.6" class="s-line" style="opacity:.55"/><line x1="34" y1="183.5" x2="424" y2="183.5" class="s-line" style="opacity:.55"/><line x1="34" y1="139.4" x2="424" y2="139.4" class="s-line" style="opacity:.55"/><line x1="34" y1="95.3" x2="424" y2="95.3" class="s-line" style="opacity:.55"/><line x1="34" y1="51.3" x2="424" y2="51.3" class="s-line" style="opacity:.55"/><line x1="34" y1="183.5" x2="432" y2="183.5" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><line x1="34.0" y1="254" x2="34.0" y2="8" class="s-ink" style="stroke-width:1.2" marker-end="url(#ah-ink)"/><text x="428" y="177.5" class="t-sm t-b">x</text><text x="40.0" y="14" class="t-sm t-b">y</text><text x="64.0" y="197.5" text-anchor="middle" class="t-sm t-mut t-mono">π/12</text><text x="124.1" y="197.5" text-anchor="middle" class="t-sm t-mut t-mono"></text><text x="184.1" y="197.5" text-anchor="middle" class="t-sm t-mut t-mono">5π/12</text><text x="304.3" y="197.5" text-anchor="middle" class="t-sm t-mut t-mono">3π/4</text><text x="364.3" y="197.5" text-anchor="middle" class="t-sm t-mut t-mono">11π/12</text><text x="394.4" y="197.5" text-anchor="middle" class="t-sm t-mut t-mono">π</text><text x="29.0" y="231.6" text-anchor="end" class="t-sm t-mut t-mono">-1</text><text x="29.0" y="143.4" text-anchor="end" class="t-sm t-mut t-mono">1</text><text x="29.0" y="99.3" text-anchor="end" class="t-sm t-mut t-mono">2</text><text x="29.0" y="55.3" text-anchor="end" class="t-sm t-mut t-mono">3</text><line x1="34" y1="139.4" x2="424" y2="139.4" class="s-dash"/><text x="422" y="134.4" text-anchor="end" class="t-sm t-mut">centre y = 1</text><polyline clip-path="url(#clip840b3ac2)" points="34.0,215.7 34.9,215.0 35.8,214.3 36.7,213.6 37.6,212.8 38.5,212.1 39.4,211.3 40.3,210.4 41.2,209.6 42.1,208.8 43.0,207.9 43.9,207.0 44.8,206.1 45.7,205.2 46.6,204.3 47.5,203.3 48.4,202.4 49.3,201.4 50.2,200.4 51.1,199.4 52.0,198.4 52.9,197.4 53.8,196.3 54.7,195.2 55.6,194.2 56.5,193.1 57.4,192.0 58.3,190.8 59.2,189.7 60.1,188.6 61.0,187.4 61.9,186.2 62.8,185.1 63.7,183.9 64.6,182.7 65.5,181.5 66.4,180.2 67.3,179.0 68.2,177.8 69.1,176.5 70.0,175.3 70.9,174.0 71.8,172.7 72.7,171.4 73.6,170.1 74.5,168.8 75.4,167.5 76.3,166.2 77.2,164.9 78.1,163.6 79.0,162.2 79.9,160.9 80.8,159.5 81.7,158.2 82.6,156.8 83.5,155.5 84.5,154.1 85.4,152.7 86.3,151.4 87.2,150.0 88.1,148.6 89.0,147.2 89.9,145.9 90.8,144.5 91.7,143.1 92.6,141.7 93.5,140.3 94.4,138.9 95.3,137.6 96.2,136.2 97.1,134.8 98.0,133.4 98.9,132.0 99.8,130.7 100.7,129.3 101.6,127.9 102.5,126.5 103.4,125.2 104.3,123.8 105.2,122.4 106.1,121.1 107.0,119.7 107.9,118.4 108.8,117.0 109.7,115.7 110.6,114.4 111.5,113.0 112.4,111.7 113.3,110.4 114.2,109.1 115.1,107.8 116.0,106.5 116.9,105.2 117.8,104.0 118.7,102.7 119.6,101.5 120.5,100.2 121.4,99.0 122.3,97.8 123.2,96.5 124.1,95.3 125.0,94.1 125.9,93.0 126.8,91.8 127.7,90.6 128.6,89.5 129.5,88.3 130.4,87.2 131.3,86.1 132.2,85.0 133.1,83.9 134.0,82.9 134.9,81.8 135.8,80.8 136.7,79.7 137.6,78.7 138.5,77.7 139.4,76.8 140.3,75.8 141.2,74.8 142.1,73.9 143.0,73.0 143.9,72.1 144.8,71.2 145.7,70.3 146.6,69.5 147.5,68.6 148.4,67.8 149.3,67.0 150.2,66.2 151.1,65.5 152.0,64.7 152.9,64.0 153.8,63.3 154.7,62.6 155.6,61.9 156.5,61.3 157.4,60.7 158.3,60.0 159.2,59.5 160.1,58.9 161.0,58.3 161.9,57.8 162.8,57.3 163.7,56.8 164.6,56.3 165.5,55.9 166.4,55.4 167.3,55.0 168.2,54.6 169.1,54.3 170.0,53.9 170.9,53.6 171.8,53.3 172.7,53.0 173.6,52.7 174.5,52.5 175.4,52.3 176.3,52.1 177.2,51.9 178.1,51.7 179.0,51.6 179.9,51.5 180.8,51.4 181.7,51.3 182.6,51.3 183.5,51.3 184.4,51.3 185.4,51.3 186.3,51.3 187.2,51.4 188.1,51.5 189.0,51.6 189.9,51.7 190.8,51.8 191.7,52.0 192.6,52.2 193.5,52.4 194.4,52.7 195.3,52.9 196.2,53.2 197.1,53.5 198.0,53.8 198.9,54.1 199.8,54.5 200.7,54.9 201.6,55.3 202.5,55.7 203.4,56.2 204.3,56.6 205.2,57.1 206.1,57.6 207.0,58.1 207.9,58.7 208.8,59.3 209.7,59.8 210.6,60.5 211.5,61.1 212.4,61.7 213.3,62.4 214.2,63.1 215.1,63.8 216.0,64.5 216.9,65.2 217.8,66.0 218.7,66.8 219.6,67.6 220.5,68.4 221.4,69.2 222.3,70.0 223.2,70.9 224.1,71.8 225.0,72.7 225.9,73.6 226.8,74.5 227.7,75.5 228.6,76.4 229.5,77.4 230.4,78.4 231.3,79.4 232.2,80.4 233.1,81.5 234.0,82.5 234.9,83.6 235.8,84.7 236.7,85.7 237.6,86.9 238.5,88.0 239.4,89.1 240.3,90.2 241.2,91.4 242.1,92.6 243.0,93.7 243.9,94.9 244.8,96.1 245.7,97.3 246.6,98.6 247.5,99.8 248.4,101.0 249.3,102.3 250.2,103.6 251.1,104.8 252.0,106.1 252.9,107.4 253.8,108.7 254.7,110.0 255.6,111.3 256.5,112.6 257.4,113.9 258.3,115.3 259.2,116.6 260.1,117.9 261.0,119.3 261.9,120.6 262.8,122.0 263.7,123.3 264.6,124.7 265.5,126.1 266.4,127.4 267.3,128.8 268.2,130.2 269.1,131.6 270.0,133.0 270.9,134.3 271.8,135.7 272.7,137.1 273.6,138.5 274.5,139.9 275.4,141.3 276.3,142.6 277.2,144.0 278.1,145.4 279.0,146.8 279.9,148.2 280.8,149.5 281.7,150.9 282.6,152.3 283.5,153.7 284.4,155.0 285.4,156.4 286.3,157.7 287.2,159.1 288.1,160.4 289.0,161.8 289.9,163.1 290.8,164.4 291.7,165.8 292.6,167.1 293.5,168.4 294.4,169.7 295.3,171.0 296.2,172.3 297.1,173.6 298.0,174.8 298.9,176.1 299.8,177.4 300.7,178.6 301.6,179.8 302.5,181.1 303.4,182.3 304.3,183.5 305.2,184.7 306.1,185.9 307.0,187.0 307.9,188.2 308.8,189.3 309.7,190.5 310.6,191.6 311.5,192.7 312.4,193.8 313.3,194.9 314.2,196.0 315.1,197.0 316.0,198.0 316.9,199.1 317.8,200.1 318.7,201.1 319.6,202.1 320.5,203.0 321.4,204.0 322.3,204.9 323.2,205.8 324.1,206.7 325.0,207.6 325.9,208.5 326.8,209.3 327.7,210.2 328.6,211.0 329.5,211.8 330.4,212.6 331.3,213.3 332.2,214.1 333.1,214.8 334.0,215.5 334.9,216.2 335.8,216.9 336.7,217.5 337.6,218.2 338.5,218.8 339.4,219.4 340.3,219.9 341.2,220.5 342.1,221.0 343.0,221.5 343.9,222.0 344.8,222.5 345.7,223.0 346.6,223.4 347.5,223.8 348.4,224.2 349.3,224.6 350.2,224.9 351.1,225.2 352.0,225.5 352.9,225.8 353.8,226.1 354.7,226.3 355.6,226.5 356.5,226.7 357.4,226.9 358.3,227.1 359.2,227.2 360.1,227.3 361.0,227.4 361.9,227.5 362.8,227.5 363.7,227.6 364.6,227.6 365.5,227.5 366.4,227.5 367.3,227.4 368.2,227.4 369.1,227.2 370.0,227.1 370.9,227.0 371.8,226.8 372.7,226.6 373.6,226.4 374.5,226.2 375.4,225.9 376.3,225.6 377.2,225.3 378.1,225.0 379.0,224.7 379.9,224.3 380.8,223.9 381.7,223.5 382.6,223.1 383.5,222.7 384.4,222.2 385.4,221.7 386.3,221.2 387.2,220.7 388.1,220.1 389.0,219.6 389.9,219.0 390.8,218.4 391.7,217.7 392.6,217.1 393.5,216.4 394.4,215.7" class="s-acc" style="stroke-width:2.4"/><circle cx="34.0" cy="215.7" r="4" class="f-acc" style="stroke:var(--accent);stroke-width:1.6"/><circle cx="394.4" cy="215.7" r="4" class="f-acc" style="stroke:var(--accent);stroke-width:1.6"/><text x="211.8" y="35.8" class="t-sm t-b t-acc">y = 2 sin(2x − π/3) + 1</text><circle cx="64.0" cy="183.5" r="3.6" class="f-ink"/><circle cx="304.3" cy="183.5" r="3.6" class="f-ink"/><circle cx="184.1" cy="51.3" r="3.6" class="f-ink"/><text x="190.1" y="45.3" class="t-sm">max</text><circle cx="364.3" cy="227.6" r="3.6" class="f-ink"/><text x="370.3" y="241.6" class="t-sm">min</text></svg>
+<figcaption>\(y = 2\sin\!\left(2x - \frac{\pi}{3}\right) + 1\) on \([0, \pi]\). Always find where the argument \(2x - \frac{\pi}{3}\) starts and ends. That's the step that finds all the solutions.</figcaption>
+</figure>
+
+<h2>Solving trig equations</h2>
+<ol>
+  <li>Isolate the trig function: \(\sin(\ldots) = c\).</li>
+  <li><strong>Adjust the domain</strong> to match the argument (e.g. \(x \in [0, 2\pi] \Rightarrow 2x \in [0, 4\pi]\)).</li>
+  <li>Find the reference angle from \(|c|\), then use the quadrants for the sign.</li>
+  <li>List every solution in the adjusted domain, then solve for \(x\).</li>
+</ol>
+<div class="we" data-title="A double-angle argument" data-marks="3">
+<div class="we-q"><p>Solve \(2\cos(2x) + \sqrt2 = 0\) for \(x \in [0, 2\pi]\).</p></div>
+<div class="we-t"><p>Find the reference angle, use the quadrant rules (the sign of cos) to list angles, and extend the interval to match the argument: if \(x \in [0, 2\pi]\) then \(2x \in [0, 4\pi]\).</p></div>
+<div class="we-s" data-f="\cos\theta &lt; 0 \text{ in quadrants 2 and 3}"><p>\(\cos(2x) = -\frac{\sqrt2}{2}\). Reference angle \(\frac{\pi}{4}\); cosine is negative in quadrants 2 and 3.</p></div>
+<div class="we-s" data-f="x \in [0, 2\pi] \Rightarrow 2x \in [0, 4\pi]"><p>\(2x \in [0, 4\pi]\): \(2x = \frac{3\pi}{4}, \frac{5\pi}{4}, \frac{11\pi}{4}, \frac{13\pi}{4}\).</p></div>
+<div class="we-a"><p><strong>\(x = \frac{3\pi}{8}, \frac{5\pi}{8}, \frac{11\pi}{8}, \frac{13\pi}{8}\).</strong> A doubled argument means twice as many solutions. Four, not two.</p></div>
+</div>
+
+<div class="we" data-title="sin = cos, and general solutions" data-marks="3">
+<div class="we-q"><p>(a) Solve \(\sin(2x) = \cos(2x)\) for \(x \in [0, \pi]\). (b) Find the general solution of \(\sqrt3\sin(2x) = \cos(2x)\).</p></div>
+<div class="we-t"><p>When sin and cos of the same angle are equal (or in a fixed ratio), divide to get tan. Tan repeats every \(\pi\), which gives the general solution.</p></div>
+<div class="we-s" data-f="\tan\theta = \dfrac{\sin\theta}{\cos\theta}"><p>(a) Divide by \(\cos(2x)\): \(\tan(2x) = 1\). \(2x \in [0, 2\pi]\): \(2x = \frac{\pi}{4}, \frac{5\pi}{4}\), so \(x = \frac{\pi}{8}, \frac{5\pi}{8}\).</p></div>
+<div class="we-s" data-f="\tan\theta = a \Rightarrow \theta = \tan^{-1}a + n\pi"><p>(b) \(\tan(2x) = \frac{1}{\sqrt3}\), so \(2x = \frac{\pi}{6} + n\pi\), \(n \in \mathbb{Z}\).</p></div>
+<div class="we-a"><p><strong>(a) \(x = \frac{\pi}{8}, \frac{5\pi}{8}\); (b) \(x = \frac{\pi}{12} + \frac{n\pi}{2},\ n \in \mathbb{Z}\).</strong></p></div>
+</div>
+<div class="eq"><div class="eq-label">General solutions (\(n \in \mathbb{Z}\))</div>\[ \sin x = a:\ x = 2n\pi + \sin^{-1}a \ \text{ or } \ x = (2n + 1)\pi - \sin^{-1}a \]\[ \cos x = a:\ x = 2n\pi \pm \cos^{-1}a \qquad \tan x = a:\ x = n\pi + \tan^{-1}a \]</div>
+
+<h2>Periodic models</h2>
+<div class="we" data-title="Tide model (Exam 2 style)" data-marks="4">
+<div class="we-q"><p>The depth of water in a harbour is \(D(t) = 3 + 2\cos\!\left(\frac{\pi t}{6}\right)\) metres, \(t\) hours after midnight. (a) State the maximum and minimum depths and the period. (b) For how long in the first 12 hours is the depth at least 4 m?</p></div>
+<div class="we-t"><p>For \(k + a\cos(nt)\), the maximum and minimum are \(k \pm |a|\) and the period is \(2\pi/n\). Inequalities are solved like equations, then you pick the intervals where the condition holds.</p></div>
+<div class="we-s" data-f="\max = k + |a|,\ \min = k - |a|,\ \text{period} = \dfrac{2\pi}{n}"><p>(a) Max \(3 + 2 = 5\) m, min \(3 - 2 = 1\) m, period \(\frac{2\pi}{\pi/6} = 12\) hours.</p></div>
+<div class="we-s" data-f="\cos\theta = \tfrac12 \Rightarrow \theta = \tfrac\pi3, \tfrac{5\pi}{3}"><p>(b) \(\cos\!\left(\frac{\pi t}{6}\right) \ge \frac12\) with \(\frac{\pi t}{6} \in [0, 2\pi]\): \(\frac{\pi t}{6} \in \left[0, \frac{\pi}{3}\right] \cup \left[\frac{5\pi}{3}, 2\pi\right]\).</p></div>
+<div class="we-s"><p>So \(t \in [0, 2] \cup [10, 12]\).</p></div>
+<div class="we-a"><p><strong>(a) 5 m, 1 m, 12 h. (b) 4 hours in total</strong> (midnight to 2 am and 10 am to noon).</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: trig traps">
+<ul>
+  <li><strong>Adjust the domain for the argument.</strong> Forgetting this is the number-one way students lose solutions.</li>
+  <li><strong>\(\sin^2 x = \frac14\) means \(\sin x = \pm\frac12\):</strong> four solutions in \([0, 2\pi]\), not two.</li>
+  <li><strong>Endpoints count.</strong> \(\sin x = 0\) on \([0, 2\pi]\) has three solutions: \(0, \pi, 2\pi\).</li>
+  <li><strong>Calculator in radians!</strong> Degree mode is an instant zero in Methods.</li>
+  <li><strong>Tan's period is \(\frac{\pi}{n}\)</strong>, not \(\frac{2\pi}{n}\).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The period of \(y = 3\tan(2x)\) is</p></div>
+<ol><li>\(\pi\)</li><li>\(\frac{\pi}{2}\)</li><li>\(2\pi\)</li><li>\(\frac{\pi}{3}\)</li></ol>
+<div class="mcq-x"><p>Tan's basic period is \(\pi\); divide by \(n = 2\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>The range of \(y = 1 - 2\cos(3x)\) is</p></div>
+<ol><li>\([-1, 3]\)</li><li>\([-2, 2]\)</li><li>\([1, 3]\)</li><li>\([-3, 1]\)</li></ol>
+<div class="mcq-x"><p>\(\cos(3x) \in [-1, 1]\), so \(-2\cos(3x) \in [-2, 2]\), and adding 1 gives \([-1, 3]\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>The number of solutions of \(\sin(3x) = \frac12\) for \(x \in [0, \pi]\) is</p></div>
+<ol><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+<div class="mcq-x"><p>\(3x \in [0, 3\pi]\): \(3x = \frac{\pi}{6}, \frac{5\pi}{6}, \frac{13\pi}{6}, \frac{17\pi}{6}\), so \(x = \frac{\pi}{18}, \frac{5\pi}{18}, \frac{13\pi}{18}, \frac{17\pi}{18}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>\(\cos\!\left(\frac{7\pi}{6}\right)\) equals</p></div>
+<ol><li>\(\frac12\)</li><li>\(-\frac12\)</li><li>\(-\frac{\sqrt3}{2}\)</li><li>\(\frac{\sqrt3}{2}\)</li></ol>
+<div class="mcq-x"><p>\(\frac{7\pi}{6} = \pi + \frac{\pi}{6}\) is in quadrant 3, where cos is negative: \(-\cos\frac{\pi}{6} = -\frac{\sqrt3}{2}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The solutions of \(\tan x = -\sqrt3\) for \(x \in [0, 2\pi]\) are</p></div>
+<ol><li>\(\frac{\pi}{3}, \frac{4\pi}{3}\)</li><li>\(\frac{2\pi}{3}, \frac{5\pi}{3}\)</li><li>\(\frac{2\pi}{3}, \frac{4\pi}{3}\)</li><li>\(\frac{5\pi}{6}, \frac{11\pi}{6}\)</li></ol>
+<div class="mcq-x"><p>Reference angle \(\frac{\pi}{3}\); tan is negative in quadrants 2 and 4: \(\pi - \frac{\pi}{3}\) and \(2\pi - \frac{\pi}{3}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>The number of solutions of \(\sin^2 x = \frac14\) for \(x \in [0, 2\pi]\) is</p></div>
+<ol><li>1</li><li>2</li><li>4</li><li>8</li></ol>
+<div class="mcq-x"><p>\(\sin x = \pm\frac12\): \(x = \frac{\pi}{6}, \frac{5\pi}{6}, \frac{7\pi}{6}, \frac{11\pi}{6}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>The solutions of \(2\sin^2 x - \sin x - 1 = 0\) for \(x \in [0, 2\pi]\) are</p></div>
+<ol><li>\(\frac{\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}\)</li><li>\(\frac{\pi}{2}, \frac{\pi}{6}, \frac{5\pi}{6}\)</li><li>\(\frac{\pi}{2}\) only</li><li>\(\frac{3\pi}{2}, \frac{7\pi}{6}, \frac{11\pi}{6}\)</li></ol>
+<div class="mcq-x"><p>\((2\sin x + 1)(\sin x - 1) = 0\): \(\sin x = 1 \Rightarrow x = \frac{\pi}{2}\); \(\sin x = -\frac12 \Rightarrow x = \frac{7\pi}{6}, \frac{11\pi}{6}\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="\sin\theta = -\dfrac{\sqrt3}{2} \Rightarrow \theta = -\dfrac\pi3, -\dfrac{2\pi}{3} \text{ in } [-\pi, \pi]">
+<div class="pq-q"><p>Solve \(2\sin x = -\sqrt3\) for \(x \in [-\pi, \pi]\).</p></div>
+<div class="pq-s"><p>\(\sin x = -\frac{\sqrt3}{2}\), reference angle \(\frac{\pi}{3}\), negative in quadrants 3 and 4. In \([-\pi, \pi]\) these are \(x = -\frac{\pi}{3}\) and \(x = -\frac{2\pi}{3}\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="a = \dfrac{\max - \min}{2} ;; c = \dfrac{\max + \min}{2} ;; \text{period} = \dfrac{2\pi}{b}">
+<div class="pq-q"><p>A graph with rule \(y = a\sin(bx) + c\) (\(a, b > 0\)) has maximum 5, minimum \(-1\) and period \(\pi\). Find \(a\), \(b\) and \(c\).</p></div>
+<div class="pq-s"><p>\(a = \frac{5 - (-1)}{2} = 3\); \(c = \frac{5 + (-1)}{2} = 2\); \(\frac{2\pi}{b} = \pi \Rightarrow b = 2\).</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>Find all values of \(k\) for which \(\sin x = k\) has <em>exactly two</em> solutions for \(x \in [0, 2\pi]\).</p></div>
+<div class="pq-s"><p>For \(-1 < k < 1\) a horizontal line usually cuts one full wave twice, but at \(k = 0\) it also hits both endpoints: \(x = 0, \pi, 2\pi\) (three solutions). At \(k = \pm1\) there is one solution.</p><p><strong>\(k \in (-1, 0) \cup (0, 1)\).</strong></p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\tan\theta = \dfrac{\sin\theta}{\cos\theta}">
+<div class="pq-q"><p>Solve \(\sqrt3\sin(2x) = \cos(2x)\) for \(x \in [0, 2\pi]\).</p></div>
+<div class="pq-s"><p>\(\tan(2x) = \frac{1}{\sqrt3}\), with \(2x \in [0, 4\pi]\): \(2x = \frac{\pi}{6}, \frac{7\pi}{6}, \frac{13\pi}{6}, \frac{19\pi}{6}\).</p><p>\(x = \frac{\pi}{12}, \frac{7\pi}{12}, \frac{13\pi}{12}, \frac{19\pi}{12}\).</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4" data-f="\cos\theta = -1 \iff \theta = \pi ;; \cos\theta = -\dfrac12 \Rightarrow \theta = \dfrac{2\pi}{3}, \dfrac{4\pi}{3}">
+<div class="pq-q"><p>The temperature in a greenhouse is \(T(t) = 22 - 6\cos\!\left(\frac{\pi(t - 2)}{12}\right)\) °C, where \(t\) is hours after midnight, \(0 \le t \le 24\). (a) Find the maximum temperature and when it occurs. (b) Find the times when the temperature is 25 °C.</p></div>
+<div class="pq-s"><p>(a) Max when \(\cos(\ldots) = -1\): \(\frac{\pi(t - 2)}{12} = \pi \Rightarrow t = 14\). Max \(28\) °C at 2 pm. [2]</p><p>(b) \(\cos\!\left(\frac{\pi(t - 2)}{12}\right) = -\frac12\). With \(\frac{\pi(t - 2)}{12} \in \left[-\frac{\pi}{6}, \frac{11\pi}{6}\right]\): \(= \frac{2\pi}{3}\) or \(\frac{4\pi}{3}\), so \(t - 2 = 8\) or \(16\). [1]</p><p>\(t = 10\) and \(t = 18\): 10 am and 6 pm. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(y = a\sin(n(x - h)) + k\): amplitude \(|a|\), period \(\frac{2\pi}{n}\) (tan: \(\frac{\pi}{n}\)), range \([k - |a|, k + |a|]\).</li>
+  <li>Solve: isolate, adjust the domain for the argument, reference angle, quadrants, then solve for \(x\).</li>
+  <li>General solutions: \(\cos\): \(2n\pi \pm \alpha\); \(\tan\): \(n\pi + \alpha\).</li>
+</ul>

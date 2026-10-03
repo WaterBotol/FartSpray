@@ -1,0 +1,142 @@
+<!--
+id: u3-generators
+title: Generators & alternators
+short: Generators & alternators
+summary: How a rotating coil generates electricity: AC generators with slip rings, DC generators with split-ring commutators, flux and emf graphs, and what changes when you spin faster or use a bigger coil.
+keywords: generator, alternator, AC generator, DC generator, slip rings, split ring commutator, commutator, rotating coil, sinusoidal, emf graph, flux graph, peak emf, frequency, period, rotation speed, pulsating DC, rectified, turbine, power station, back emf, motor vs generator, average emf quarter turn
+dotpoints: explain the production of DC voltage in DC generators and AC voltage in alternators, including the use of split ring commutators and slip rings respectively | compare sinusoidal voltages produced as a result of the uniform rotation of a loop in a constant magnetic field with reference to frequency, period, amplitude, peak-to-peak voltage (\(V_{p\text{-}p}\)) and peak-to-peak current (\(I_{p\text{-}p}\)) | investigate and analyse theoretically and practically the generation of electromotive force (emf) including AC voltage
+-->
+<h2>How a generator works</h2>
+<p>A generator is a coil of wire rotated in a magnetic field (or a magnet rotated inside coils). As the coil turns, the angle between its plane and the field keeps changing, so the <strong>flux through it keeps changing</strong>, and by Faraday's law an emf is induced. Mechanical energy (from a turbine driven by steam, water or wind) becomes electrical energy.</p>
+<p>Structurally, a generator is a motor run backwards: the same coil, magnets and brushes. The only difference between an AC and a DC generator is how the coil connects to the outside circuit.</p>
+
+<h2>Where in the rotation is the emf biggest?</h2>
+<div class="tbl"><table>
+<thead><tr><th>Coil position</th><th>Flux through coil</th><th>Rate of change of flux</th><th>Induced emf</th></tr></thead>
+<tbody>
+<tr><td>Plane <strong>perpendicular</strong> to \(B\)</td><td>Maximum (\(BA\))</td><td>Zero (momentarily not changing)</td><td><strong>Zero</strong></td></tr>
+<tr><td>Plane <strong>parallel</strong> to \(B\)</td><td>Zero</td><td>Maximum</td><td><strong>Maximum</strong></td></tr>
+</tbody></table></div>
+<p>Another way to see it: when the plane is parallel to the field, the long sides of the coil are moving straight across the field lines (cutting them fastest). When the plane is perpendicular, the sides move along the field lines and cut none.</p>
+<aside class="c-trap" data-title="Trick alert: the flux–emf offset">
+<p>Flux and emf are a quarter of a cycle apart: emf is zero when flux is maximum, and maximum when flux is zero. If a question gives you a flux–time graph (a cosine), the emf graph is its negative gradient (a sine). Drawing the emf in phase with the flux is a classic error.</p>
+</aside>
+
+<figure class="fig">
+<svg viewBox="0 0 400 290" width="400" role="img" aria-label="Three graphs against time over one and a half rotations: flux as a cosine wave, AC generator emf as a sine wave, and DC generator emf as a sine wave with the negative halves flipped positive">
+  <line x1="50" y1="60" x2="365" y2="60" class="s-mut"/><line x1="50" y1="20" x2="50" y2="100" class="s-mut"/>
+  <polyline points="50.0,28.0 55.0,28.4 60.0,29.6 65.0,31.5 70.0,34.1 75.0,37.4 80.0,41.2 85.0,45.5 90.0,50.1 95.0,55.0 100.0,60.0 105.0,65.0 110.0,69.9 115.0,74.5 120.0,78.8 125.0,82.6 130.0,85.9 135.0,88.5 140.0,90.4 145.0,91.6 150.0,92.0 155.0,91.6 160.0,90.4 165.0,88.5 170.0,85.9 175.0,82.6 180.0,78.8 185.0,74.5 190.0,69.9 195.0,65.0 200.0,60.0 205.0,55.0 210.0,50.1 215.0,45.5 220.0,41.2 225.0,37.4 230.0,34.1 235.0,31.5 240.0,29.6 245.0,28.4 250.0,28.0 255.0,28.4 260.0,29.6 265.0,31.5 270.0,34.1 275.0,37.4 280.0,41.2 285.0,45.5 290.0,50.1 295.0,55.0 300.0,60.0 305.0,65.0 310.0,69.9 315.0,74.5 320.0,78.8 325.0,82.6 330.0,85.9 335.0,88.5 340.0,90.4 345.0,91.6 350.0,92.0" class="s-acc" style="stroke-width:2.4"/>
+  <text x="56" y="16" class="t-sm t-b t-acc">flux Φ</text>
+  <line x1="50" y1="150" x2="365" y2="150" class="s-mut"/><line x1="50" y1="110" x2="50" y2="190" class="s-mut"/>
+  <polyline points="50.0,150.0 55.0,145.0 60.0,140.1 65.0,135.5 70.0,131.2 75.0,127.4 80.0,124.1 85.0,121.5 90.0,119.6 95.0,118.4 100.0,118.0 105.0,118.4 110.0,119.6 115.0,121.5 120.0,124.1 125.0,127.4 130.0,131.2 135.0,135.5 140.0,140.1 145.0,145.0 150.0,150.0 155.0,155.0 160.0,159.9 165.0,164.5 170.0,168.8 175.0,172.6 180.0,175.9 185.0,178.5 190.0,180.4 195.0,181.6 200.0,182.0 205.0,181.6 210.0,180.4 215.0,178.5 220.0,175.9 225.0,172.6 230.0,168.8 235.0,164.5 240.0,159.9 245.0,155.0 250.0,150.0 255.0,145.0 260.0,140.1 265.0,135.5 270.0,131.2 275.0,127.4 280.0,124.1 285.0,121.5 290.0,119.6 295.0,118.4 300.0,118.0 305.0,118.4 310.0,119.6 315.0,121.5 320.0,124.1 325.0,127.4 330.0,131.2 335.0,135.5 340.0,140.1 345.0,145.0 350.0,150.0" class="s-v" style="stroke-width:2.4"/>
+  <text x="56" y="108" class="t-sm t-b t-v">emf, AC generator (slip rings)</text>
+  <line x1="50" y1="250" x2="365" y2="250" class="s-mut"/><line x1="50" y1="208" x2="50" y2="262" class="s-mut"/>
+  <polyline points="50.0,250.0 55.0,245.0 60.0,240.1 65.0,235.5 70.0,231.2 75.0,227.4 80.0,224.1 85.0,221.5 90.0,219.6 95.0,218.4 100.0,218.0 105.0,218.4 110.0,219.6 115.0,221.5 120.0,224.1 125.0,227.4 130.0,231.2 135.0,235.5 140.0,240.1 145.0,245.0 150.0,250.0 155.0,245.0 160.0,240.1 165.0,235.5 170.0,231.2 175.0,227.4 180.0,224.1 185.0,221.5 190.0,219.6 195.0,218.4 200.0,218.0 205.0,218.4 210.0,219.6 215.0,221.5 220.0,224.1 225.0,227.4 230.0,231.2 235.0,235.5 240.0,240.1 245.0,245.0 250.0,250.0 255.0,245.0 260.0,240.1 265.0,235.5 270.0,231.2 275.0,227.4 280.0,224.1 285.0,221.5 290.0,219.6 295.0,218.4 300.0,218.0 305.0,218.4 310.0,219.6 315.0,221.5 320.0,224.1 325.0,227.4 330.0,231.2 335.0,235.5 340.0,240.1 345.0,245.0 350.0,250.0" class="s-t" style="stroke-width:2.4"/>
+  <text x="56" y="206" class="t-sm t-b t-t">emf, DC generator (split ring)</text>
+  <g class="s-dash"><line x1="100" y1="20" x2="100" y2="262"/><line x1="150" y1="20" x2="150" y2="262"/><line x1="200" y1="20" x2="200" y2="262"/></g>
+  <text x="100" y="280" text-anchor="middle" class="t-sm t-mono">T/4</text>
+  <text x="150" y="280" text-anchor="middle" class="t-sm t-mono">T/2</text>
+  <text x="200" y="280" text-anchor="middle" class="t-sm t-mono">3T/4</text>
+  <text x="250" y="280" text-anchor="middle" class="t-sm t-mono">T</text>
+  <text x="370" y="64" class="t-sm">t</text><text x="370" y="154" class="t-sm">t</text><text x="370" y="254" class="t-sm">t</text>
+</svg>
+<figcaption>Starting with the coil's plane perpendicular to \(B\): flux is maximum and emf zero. A quarter turn later flux is zero and emf is maximum. The DC generator's commutator flips every negative half-cycle to positive.</figcaption>
+</figure>
+
+<h2>AC generators (alternators): slip rings</h2>
+<p>In an alternator each end of the coil is permanently connected to its own <strong>slip ring</strong>, and a brush presses on each ring. Because the connection never swaps, the output reverses every half turn exactly as the coil's emf does: the output is <strong>sinusoidal alternating current</strong>.</p>
+
+<h2>DC generators: the split-ring commutator</h2>
+<p>A DC generator uses a <strong>split-ring commutator</strong>, just like a DC motor. Every half turn, at the moment the coil's emf passes through zero (plane perpendicular to the field), the commutator swaps the coil's connections to the brushes. The emf in the coil still alternates, but the output to the external circuit always has the same polarity.</p>
+<aside class="c-trap" data-title="Trick alert: 'DC' from a generator is not steady">
+<p>A single-coil DC generator gives <strong>pulsating DC</strong>: a series of positive humps that drop to zero twice every rotation. It is not the flat line of a battery. Real DC generators use many coils at different angles to smooth the output.</p>
+</aside>
+<div class="tbl"><table>
+<thead><tr><th></th><th>AC generator (alternator)</th><th>DC generator</th></tr></thead>
+<tbody>
+<tr><td>Connection to circuit</td><td>Slip rings (two complete rings)</td><td>Split-ring commutator</td></tr>
+<tr><td>Output</td><td>Sinusoidal AC (positive and negative)</td><td>Pulsating DC (always positive)</td></tr>
+<tr><td>Emf in the coil itself</td><td>Alternating</td><td>Also alternating (the commutator fixes the output only)</td></tr>
+<tr><td>Output frequency</td><td>Equal to rotation frequency</td><td>Humps at twice the rotation frequency</td></tr>
+</tbody></table></div>
+
+<h2>What changes the output?</h2>
+<div class="tbl"><table>
+<thead><tr><th>Change</th><th>Peak emf</th><th>Period / frequency</th></tr></thead>
+<tbody>
+<tr><td>Double the number of turns \(N\)</td><td>Doubles</td><td>No change</td></tr>
+<tr><td>Double the field \(B\)</td><td>Doubles</td><td>No change</td></tr>
+<tr><td>Double the coil area \(A\)</td><td>Doubles</td><td>No change</td></tr>
+<tr><td><strong>Double the rotation speed</strong></td><td><strong>Doubles</strong></td><td><strong>Period halves, frequency doubles</strong></td></tr>
+</tbody></table></div>
+<aside class="c-trap" data-title="Trick alert: spinning faster changes two things">
+<p>Spinning the coil faster makes the flux change faster, so the peak emf goes up <strong>and</strong> the waves get closer together. Many students double only the frequency and forget the amplitude (or vice versa). On an emf graph: twice as tall and twice as many cycles.</p>
+</aside>
+
+<h3>Average emf over a quarter turn</h3>
+<p>In a quarter turn (time \(T/4\)) the flux goes from \(BA\) to zero (or zero to \(BA\)), so Faraday's law gives the average emf over that quarter:</p>
+<div class="eq">\[ \varepsilon_{\text{avg}} = N\frac{\Delta\Phi}{\Delta t} = N\frac{BA}{T/4} = 4NBAf \]</div>
+<div class="we" data-title="Average emf from a generator coil" data-marks="3">
+<div class="we-q"><p>An alternator coil has 100 turns and an area of 0.020 m². It rotates at 50 revolutions per second in a 0.25 T field. Calculate the average emf during a quarter turn starting from the position where the coil's plane is perpendicular to the field.</p></div>
+<div class="we-t"><p>As a generator coil turns, the flux through it changes, inducing an emf. The average over a quarter turn uses the full flux change (maximum to zero) over a quarter of the period.</p></div>
+<div class="we-s" data-f="T = \dfrac1f,\ \Delta t = \tfrac14 T"><p><strong>Time for a quarter turn:</strong> \(T = 1/50 = 0.020\ \text{s}\), so \(\Delta t = 0.020/4 = 0.0050\ \text{s}\).</p></div>
+<div class="we-s" data-f="\Phi = BA"><p><strong>Flux change:</strong> \(BA = 0.25 \times 0.020 = 5.0\times10^{-3}\ \text{Wb}\) to 0.</p></div>
+<div class="we-s" data-f="\varepsilon_{\text{avg}} = N\dfrac{\Delta\Phi}{\Delta t}">\[ \varepsilon_{\text{avg}} = 100 \times \frac{5.0\times10^{-3}}{0.0050} = 100\ \text{V} \]</div>
+<div class="we-a"><p><strong>100 V average.</strong> The peak emf is higher: for a sinusoid, \(\varepsilon_{\text{peak}} = 2\pi fNBA = 157\ \text{V}\), which is \(\pi/2\) times the quarter-turn average.</p></div>
+</div>
+
+<div class="sim" data-sim="generator"></div>
+
+<aside class="c-deep" data-title="Going deeper: back emf in motors">
+<p>A spinning motor coil is also a generator: as it turns, it induces an emf that opposes the supply voltage (Lenz's law). This <strong>back emf</strong> grows as the motor speeds up, reducing the current. That's why a motor draws a large current when it starts or when it is jammed (little or no back emf), and why jammed motors burn out.</p>
+</aside>
+
+<p class="ln">Not every source uses induction: solar panels produce DC directly and need an inverter. See <a href="#u3-photovoltaic">photovoltaic cells and inverters</a>.</p>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>In an AC generator, the induced emf is at its maximum when the plane of the coil is:</p></div>
+<ol><li>parallel to the magnetic field, where the flux is zero</li><li>perpendicular to the magnetic field, where the flux is maximum</li><li>at 45° to the magnetic field</li><li>perpendicular to the field, because the most field lines pass through it</li></ol>
+<div class="mcq-x"><p>Emf depends on the rate of change of flux, which is greatest when the flux is passing through zero (plane parallel to \(B\)).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>The rotation speed of an alternator is doubled. The output voltage graph will have:</p></div>
+<ol><li>the same peak voltage and half the period</li><li>double the peak voltage and the same period</li><li>double the peak voltage and half the period</li><li>half the peak voltage and double the period</li></ol>
+<div class="mcq-x"><p>Faster rotation means the flux changes twice as fast (double peak emf) and each cycle takes half the time.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The difference between an AC generator and a DC generator is that:</p></div>
+<ol><li>an AC generator uses a permanent magnet and a DC generator uses an electromagnet</li><li>an AC generator uses slip rings and a DC generator uses a split-ring commutator</li><li>the coil in a DC generator does not rotate</li><li>a DC generator produces a constant, steady voltage like a battery</li></ol>
+<div class="mcq-x"><p>The connection is the only difference. A single-coil DC generator gives pulsating (not steady) DC.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="hard">
+<div class="mcq-q"><p>A generator coil's flux–time graph is a cosine curve starting at its maximum value at \(t = 0\). The emf–time graph:</p></div>
+<ol><li>is also a cosine curve starting at its maximum</li><li>is a straight line</li><li>is a cosine curve starting at its minimum</li><li>is a sine curve starting at zero</li></ol>
+<div class="mcq-x"><p>emf ∝ negative gradient of flux. At \(t = 0\) the cosine is at its peak (gradient zero), so the emf starts at zero and follows a sine curve.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="\varepsilon_{\text{peak}} \propto NBAf">
+<div class="pq-q"><p>A generator produces a peak emf of 12 V at a frequency of 25 Hz. The number of turns on the coil is doubled and the rotation speed is halved. Give the new peak emf and frequency.</p></div>
+<div class="pq-s"><p>Doubling \(N\) doubles the peak; halving the speed halves the peak and halves the frequency. Net peak: \(12 \times 2 \times \tfrac12 = 12\ \text{V}\). Frequency: \(25/2 = 12.5\ \text{Hz}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="\Delta t = \tfrac14 T ;; \varepsilon_{\text{avg}} = N\dfrac{BA}{\Delta t}">
+<div class="pq-q"><p>A 250-turn coil of area 40 cm² rotates at 10 revolutions per second in a 0.15 T field. Find the average emf over a quarter turn, and sketch how the output would look with (a) slip rings and (b) a split-ring commutator.</p></div>
+<div class="pq-s"><p>\(A = 4.0\times10^{-3}\ \text{m}^2\); \(\Delta t = T/4 = 0.10/4 = 0.025\ \text{s}\).</p><p>\(\varepsilon_{\text{avg}} = NBA/\Delta t = 250 \times 0.15 \times 4.0\times10^{-3}/0.025 = 6.0\ \text{V}\).</p><p>(a) A sine wave alternating between + and − peaks, period 0.10 s. (b) The same shape with every negative half flipped positive: humps every 0.050 s, never going below zero.</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>Explain why a DC generator with a single coil produces a varying rather than a constant voltage, and suggest how its output could be made smoother.</p></div>
+<div class="pq-s"><p>The emf induced in the rotating coil still varies sinusoidally with the rate of change of flux, dropping to zero when the coil's plane is perpendicular to the field. [1]</p><p>The commutator only reverses the connections every half turn so the output never changes sign; it can't stop the size of the emf varying, so the output is a series of pulses dropping to zero. [1]</p><p>Using several coils at different angles (each with its own commutator segments) means there's always a coil near its maximum emf, giving a much smoother output. [1]</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Rotating coil → changing flux → emf. Max emf when flux is zero (plane ∥ B).</li>
+  <li>Slip rings → AC; split-ring commutator → pulsating DC.</li>
+  <li>More N, B or A → bigger peak. Faster rotation → bigger peak <em>and</em> higher frequency.</li>
+  <li>Average emf over a quarter turn \(= NBA/(T/4)\).</li>
+</ul>

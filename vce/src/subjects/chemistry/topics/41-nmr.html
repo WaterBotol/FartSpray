@@ -1,0 +1,157 @@
+<!--
+id: nmr
+title: NMR spectroscopy (¹H and ¹³C)
+short: NMR spectroscopy
+summary: How NMR works, TMS and deuterated solvents, chemical shift, counting environments in ¹³C and ¹H spectra, integration, the n + 1 splitting rule, and solving structures from combined IR, MS and NMR data.
+keywords: NMR, nuclear magnetic resonance, proton NMR, 1H NMR, carbon-13 NMR, 13C NMR, chemical shift, ppm, TMS, tetramethylsilane, deuterated solvent, CDCl3, environment, equivalent, integration, peak area, splitting, splitting pattern, n+1 rule, multiplicity, singlet, doublet, triplet, quartet, multiplet, high resolution, structure determination, spectroscopy problem
+dotpoints: the principles of NMR spectroscopy, including chemical shift and the use of TMS as a reference | interpretation of ¹³C NMR and high-resolution ¹H NMR spectra (chemical shift, number of environments, integration and splitting) | determination of structures from combined spectroscopic data
+-->
+<h2>How NMR works</h2>
+<p>Nuclei such as ¹H and ¹³C behave like tiny magnets. In a strong magnetic field they can absorb radio waves and flip their spin. The exact frequency depends on the <strong>chemical environment</strong>: electrons around a nucleus shield it, and nearby electronegative atoms (O, Cl, C=O) pull electrons away, deshielding it and shifting its signal to higher \(\delta\).</p>
+<ul>
+  <li><strong>Chemical shift</strong> \(\delta\) (ppm) is measured relative to <strong>TMS</strong>, tetramethylsilane, \(\ce{Si(CH3)4}\), set at 0 ppm. TMS is used because its 12 equivalent H give one strong peak, upfield of almost everything, and it's inert and volatile (easy to remove).</li>
+  <li>Samples are dissolved in <strong>deuterated solvents</strong> (e.g. \(\ce{CDCl3}\)) so the solvent gives no ¹H signal.</li>
+</ul>
+
+<h2>¹³C NMR</h2>
+<p>Each peak corresponds to a set of <strong>equivalent carbons</strong> (a carbon environment). Routine ¹³C spectra show no splitting, and peak heights aren't used.</p>
+<div class="tbl"><table>
+<thead><tr><th>Carbon type</th><th>\(\delta\) (ppm), approx.</th></tr></thead>
+<tbody>
+<tr><td>C–C (alkyl)</td><td>5–50</td></tr>
+<tr><td>C–Cl, C–N</td><td>30–70</td></tr>
+<tr><td>C–O (alcohols, esters)</td><td>50–90</td></tr>
+<tr><td>C=C</td><td>110–160</td></tr>
+<tr><td>C=O (acids, esters, amides)</td><td>160–185</td></tr>
+<tr><td>C=O (aldehydes, ketones)</td><td>190–220</td></tr>
+</tbody></table></div>
+
+<h2>¹H NMR</h2>
+<p>A high-resolution ¹H spectrum gives four pieces of information:</p>
+<ol>
+  <li><strong>Number of peak sets</strong> = number of hydrogen environments.</li>
+  <li><strong>Chemical shift</strong> = the type of environment.</li>
+  <li><strong>Integration</strong> (relative peak area) = the ratio of H atoms in each environment.</li>
+  <li><strong>Splitting</strong>: a set of H with \(n\) H on <em>neighbouring</em> carbons is split into \(n + 1\) peaks.</li>
+</ol>
+<div class="tbl"><table>
+<thead><tr><th>Hydrogen type</th><th>\(\delta\) (ppm), approx.</th></tr></thead>
+<tbody>
+<tr><td>R–CH₃</td><td>0.9–1.0</td></tr>
+<tr><td>R–CH₂–R</td><td>1.3–1.4</td></tr>
+<tr><td>CH₃–CO– (ketones, esters, acids), R–CH₂–CO–</td><td>2.0–2.5</td></tr>
+<tr><td>R–CH₂–Cl, CH₃–O–, R–CH₂–OH</td><td>3.3–3.7</td></tr>
+<tr><td>R–COO–CH₂–R (ester, alcohol side)</td><td>about 4.1</td></tr>
+<tr><td>R–OH</td><td>1–6 (variable, usually a singlet)</td></tr>
+<tr><td>R–CHO</td><td>9.4–10</td></tr>
+<tr><td>R–COOH</td><td>9–13 (singlet)</td></tr>
+</tbody></table></div>
+<p class="ln">Approximate values. Use the table in your data book.</p>
+<aside class="c-key" data-title="Splitting names"><p>0 neighbours: singlet (s); 1: doublet (d); 2: triplet (t); 3: quartet (q); 6: septet. Peak heights within a multiplet follow Pascal's triangle (1 : 2 : 1 for a triplet, 1 : 3 : 3 : 1 for a quartet). H on O (OH, COOH) usually appear as singlets and don't split their neighbours.</p></aside>
+<div class="sim" data-sim="nmr"></div>
+
+<div class="we" data-title="The ¹H spectrum of ethanol" data-marks="3">
+<div class="we-q"><p>Predict the high-resolution ¹H NMR spectrum of ethanol, \(\ce{CH3CH2OH}\).</p></div>
+<div class="we-t"><p>Each set of equivalent hydrogens gives one signal. Its chemical shift shows the environment (higher near O), its area shows how many H, and its splitting shows how many H are on neighbouring carbons.</p></div>
+<div class="we-s" data-f="\text{integration} \propto \text{number of H}"><p>Three environments: CH₃, CH₂, OH. Ratio 3 : 2 : 1.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule}"><p>CH₃ (δ ≈ 1.2) has 2 neighbouring H (on CH₂): triplet. CH₂ (δ ≈ 3.7, next to O) has 3 neighbours (CH₃): quartet. OH: singlet (variable, about 2.6).</p></div>
+<div class="we-a"><p><strong>1.2 ppm triplet (3H), 3.7 ppm quartet (2H), about 2.6 ppm singlet (1H).</strong> The triplet–quartet pair is the fingerprint of an ethyl group.</p></div>
+</div>
+
+<div class="we" data-title="Distinguishing isomers" data-marks="3">
+<div class="we-q"><p>How would ¹H NMR distinguish 1-chloropropane from 2-chloropropane?</p></div>
+<div class="we-t"><p>Isomers can be told apart by the number of hydrogen environments, the integration ratios and the splitting patterns, because each depends on the molecule's symmetry and connections.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule}"><p>1-chloropropane \(\ce{CH3CH2CH2Cl}\): three environments (3 : 2 : 2): CH₃ triplet ≈ 1.0, CH₂ sextet ≈ 1.8, CH₂Cl triplet ≈ 3.5.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule}"><p>2-chloropropane \(\ce{CH3CHClCH3}\): two environments (6 : 1): a doublet ≈ 1.5 (6H) and a septet ≈ 4.1 (1H).</p></div>
+<div class="we-a"><p><strong>Number of peak sets (3 vs 2), integration (3 : 2 : 2 vs 6 : 1) and splitting all differ.</strong> ¹³C NMR also distinguishes them (3 peaks vs 2).</p></div>
+</div>
+
+<div class="we" data-title="Structure from combined data (exam classic)" data-marks="5">
+<div class="we-q"><p>Compound X, C₄H₈O₂, shows: IR: strong 1740 cm⁻¹, strong 1240 cm⁻¹, no broad peak above 3000. ¹³C NMR: 4 peaks, one at 171 ppm. ¹H NMR: 4.1 (quartet, 2H), 2.0 (singlet, 3H), 1.3 (triplet, 3H). Identify X.</p></div>
+<div class="we-t"><p>Combine evidence: the formula limits the possibilities, IR shows the functional groups, ¹³C NMR counts carbon environments, and ¹H NMR shows neighbouring groups through splitting. Build fragments, then assemble them.</p></div>
+<div class="we-s"><p>IR: C=O and C–O, no O–H → ester. ¹³C: 171 ppm = ester C=O; 4 carbon environments.</p></div>
+<div class="we-s" data-f="\text{splitting: } n + 1 \text{ rule},\ \text{integration} \propto \text{number of H}"><p>¹H: 3H singlet at 2.0 → \(\ce{CH3-CO-}\) with no neighbours. 2H quartet at 4.1 → \(\ce{-O-CH2-}\) next to a CH₃. 3H triplet at 1.3 → CH₃ next to CH₂.</p></div>
+<div class="we-s"><p>Assemble: \(\ce{CH3-CO-O-CH2-CH3}\).</p></div>
+<div class="we-a"><p><strong>Ethyl ethanoate.</strong> Its isomer methyl propanoate (\(\ce{CH3CH2COOCH3}\)) would instead show a 3H singlet at about 3.7 (OCH₃) and a quartet near 2.3.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: NMR traps">
+<ul>
+  <li><strong>Splitting counts neighbours</strong> (H on adjacent C), not the H in the group itself.</li>
+  <li><strong>Symmetry reduces environments:</strong> propanone has one ¹H environment and two ¹³C environments.</li>
+  <li><strong>Integration gives a ratio</strong>: 1 : 1.5 might mean 2H : 3H.</li>
+  <li><strong>The TMS peak (0 ppm) isn't part of the compound.</strong></li>
+  <li><strong>OH peaks are singlets</strong> and don't split neighbours (in typical VCE spectra).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>How many peaks appear in the ¹³C NMR spectrum of butanone, \(\ce{CH3COCH2CH3}\)?</p></div>
+<ol><li>3</li><li>4</li><li>2</li><li>8</li></ol>
+<div class="mcq-x"><p>All four carbons are in different environments.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>In the ¹H NMR spectrum of \(\ce{CH3CH2Br}\), the CH₃ signal is a</p></div>
+<ol><li>singlet</li><li>doublet</li><li>triplet</li><li>quartet</li></ol>
+<div class="mcq-x"><p>CH₃ has 2 neighbouring H (on CH₂): \(2 + 1 = 3\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>How many hydrogen environments does 2-methylpropane, \(\ce{(CH3)3CH}\), have?</p></div>
+<ol><li>2</li><li>4</li><li>10</li><li>3</li></ol>
+<div class="mcq-x"><p>Nine equivalent H in the three CH₃ groups, plus the single CH. Ratio 9 : 1.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>TMS is used as a reference in NMR because it</p></div>
+<ol><li>has many different H environments</li><li>reacts with the sample to form a standard</li><li>absorbs at a very high chemical shift</li><li>gives a single strong peak, set at 0 ppm, and is inert</li></ol>
+<div class="mcq-x"><p>12 equivalent H give one peak at a lower δ than almost all organic H.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>A compound C₃H₆O has a single peak in its ¹H NMR spectrum. It is</p></div>
+<ol><li>propanal</li><li>propanone</li><li>prop-2-en-1-ol</li><li>propan-1-ol</li></ol>
+<div class="mcq-x"><p>\(\ce{CH3COCH3}\): both CH₃ groups are equivalent (δ ≈ 2.1). Propan-1-ol is C₃H₈O anyway.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>In ethyl ethanoate, the CH₃ group attached to the C=O appears as a</p></div>
+<ol><li>triplet, because it's near the ethyl group</li><li>quartet</li><li>singlet</li><li>doublet</li></ol>
+<div class="mcq-x"><p>Its neighbouring carbon is the C=O carbon, which has no H. So it's a singlet at about 2.0 ppm.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="hard">
+<div class="mcq-q"><p>A ¹H spectrum shows: δ 11.8 (s, 1H), 2.4 (q, 2H), 1.2 (t, 3H). The compound is</p></div>
+<ol><li>propanoic acid</li><li>propanal</li><li>propan-1-ol</li><li>methyl ethanoate</li></ol>
+<div class="mcq-x"><p>11.8 singlet = COOH; ethyl group (q + t) attached to C=O (CH₂ at 2.4).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="\text{splitting: } n + 1 \text{ rule} ;; \text{integration} \propto \text{number of H}">
+<div class="pq-q"><p>Predict the ¹H NMR spectrum (shift, integration, splitting) of propanone and of methyl ethanoate.</p></div>
+<div class="pq-s"><p>Propanone: one singlet at about 2.1 ppm (6H).</p><p>Methyl ethanoate \(\ce{CH3COOCH3}\): singlet about 2.0 ppm (3H, CH₃CO) and singlet about 3.7 ppm (3H, OCH₃). No splitting, as neither CH₃ has neighbouring H.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4" data-f="\text{splitting: } n + 1 \text{ rule} ;; \text{integration} \propto \text{number of H}">
+<div class="pq-q"><p>A compound C₃H₈O has a ¹³C spectrum with 2 peaks (25 and 64 ppm) and a ¹H spectrum: 1.2 (doublet, 6H), 2.2 (singlet, 1H), 4.0 (septet, 1H). Identify it, explaining each piece of evidence.</p></div>
+<div class="pq-s"><p>Two C environments in C₃ means symmetry: two equivalent CH₃ groups. [1]</p><p>6H doublet: two equivalent CH₃ next to one H. 1H septet at 4.0: a CH next to 6 H and to O (high δ). [1]</p><p>1H singlet at 2.2: OH. 64 ppm is C–O. [1]</p><p>Propan-2-ol, \(\ce{(CH3)2CHOH}\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="5" data-f="M^+ = \text{molar mass} ;; \text{splitting: } n + 1 \text{ rule}">
+<div class="pq-q"><p>Compound Y has M⁺ = 88 in its mass spectrum. IR: 1740 and 1200 cm⁻¹, no broad O–H. ¹H NMR: 3.7 (s, 3H), 2.3 (q, 2H), 1.1 (t, 3H). ¹³C NMR: 4 peaks. Deduce the structure of Y and explain how the data rules out ethyl ethanoate.</p></div>
+<div class="pq-s"><p>M = 88 and ester IR → C₄H₈O₂ ester. [1]</p><p>3H singlet at 3.7: \(\ce{-O-CH3}\) (no neighbours, attached to O). [1] Ethyl group (q 2H + t 3H) with CH₂ at 2.3: next to C=O. [1]</p><p>Y is methyl propanoate, \(\ce{CH3CH2COOCH3}\). [1]</p><p>Ethyl ethanoate would show the quartet at about 4.1 (\(\ce{-O-CH2-}\)) and the singlet at about 2.0 (\(\ce{CH3CO-}\)). [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="\text{splitting: } n + 1 \text{ rule}">
+<div class="pq-q"><p>A student says the CH₂ in \(\ce{CH3CH2CH2Cl}\) (the middle one) should be a quartet because it's next to a CH₃. Correct them.</p></div>
+<div class="pq-s"><p>The middle CH₂ has neighbours on <em>both</em> sides: 3 H (CH₃) + 2 H (CH₂Cl) = 5 neighbouring H, so it's split into \(5 + 1 = 6\) peaks: a sextet.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>¹³C: number of peaks = carbon environments; shift = carbon type.</li>
+  <li>¹H: environments, shift, integration (H ratio), splitting (\(n + 1\), neighbours).</li>
+  <li>Ethyl group: triplet (3H) + quartet (2H). Isopropyl: doublet (6H) + septet (1H).</li>
+  <li>Combine MS (molar mass), IR (functional groups) and NMR (connectivity).</li>
+</ul>

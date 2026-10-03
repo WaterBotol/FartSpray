@@ -1,0 +1,137 @@
+<!--
+id: calorimetry
+title: Calorimetry
+short: Calorimetry
+summary: Measuring energy changes with q = mcΔT, electrical calibration and calibration factors, solution and bomb calorimetry, heats of combustion from experiments, heat loss, efficiency and sources of error.
+keywords: calorimetry, calorimeter, q = mcΔT, specific heat capacity, calibration factor, electrical calibration, E = VIt, solution calorimetry, bomb calorimeter, heat of combustion, spirit burner, heat loss, efficiency, temperature change, neutralisation, enthalpy of solution, errors
+dotpoints: the use of specific heat capacity of water to determine the approximate amount of heat energy released in the combustion of a fuel | the use of solution and bomb calorimetry, including calibration, to determine enthalpy changes | sources of error and limitations in calorimetry
+-->
+<h2>Two ways to measure energy</h2>
+<div class="grid2">
+<div class="eq"><div class="eq-label">Heating water (simple calorimetry)</div>\[ q = mc\Delta T \]<p>\(m\) = mass of water (g), \(c = 4.18\ \text{J g}^{-1}\,\text{K}^{-1}\) (data book), \(\Delta T\) in °C or K (same size). 1 mL of water ≈ 1 g.</p></div>
+<div class="eq"><div class="eq-label">Calibrated calorimeter</div>\[ \text{CF} = \frac{E}{\Delta T} = \frac{VIt}{\Delta T} \qquad q = \text{CF} \times \Delta T \]<p>The calibration factor (J °C⁻¹) includes the water, container, thermometer and stirrer. It's more accurate than \(mc\Delta T\).</p></div>
+</div>
+<p>Then convert heat to an enthalpy change: \(\Delta H = -\dfrac{q}{n}\) for an exothermic reaction (the temperature rose), \(+\dfrac{q}{n}\) for an endothermic one (the temperature fell).</p>
+
+<div class="we" data-title="Spirit burner: heat of combustion and efficiency" data-marks="4">
+<div class="we-q"><p>A spirit burner heats 200 g of water from 20.0 °C to 45.0 °C, and burns 1.20 g of ethanol. (a) Calculate the energy absorbed by the water. (b) Calculate the experimental heat of combustion in kJ g⁻¹. (c) Given the data-book value of 29.6 kJ g⁻¹, find the percentage of energy transferred to the water.</p></div>
+<div class="we-t"><p>The energy released by the burning fuel is measured by the energy gained by the water, using the water's mass and temperature rise. Experimental values come out low because heat is lost to the surroundings.</p></div>
+<div class="we-s" data-f="q = mc\Delta T"><p>(a) \(q = 200 \times 4.18 \times 25.0 = 20\,900\text{ J} = 20.9\text{ kJ}\).</p></div>
+<div class="we-s" data-f="\text{heat of combustion} = \dfrac{q}{m_{\text{fuel}}}"><p>(b) \(\frac{20.9}{1.20} = 17.4\text{ kJ g}^{-1}\).</p></div>
+<div class="we-s" data-f="\%\text{ efficiency} = \dfrac{\text{experimental}}{\text{theoretical}} \times 100"><p>(c) \(\frac{17.4}{29.6} \times 100 = 58.8\%\).</p></div>
+<div class="we-a"><p><strong>20.9 kJ; 17.4 kJ g⁻¹; about 59%.</strong> The rest heats the air, the can and the clamp, or goes into incomplete combustion (soot on the can).</p></div>
+</div>
+
+<div class="we" data-title="Calibration then combustion (bomb calorimeter)" data-marks="4">
+<div class="we-q"><p>A bomb calorimeter is calibrated by passing a current of 2.50 A at 5.00 V for 120 s; the temperature rises by 0.60 °C. Then 0.500 g of ethanol (\(M = 46.0\)) is burnt in it, raising the temperature by 5.20 °C. Calculate the molar heat of combustion of ethanol.</p></div>
+<div class="we-t"><p>A calorimeter is calibrated with a known amount of electrical energy to find how many joules raise its temperature by 1 °C (the calibration factor). That factor then converts the temperature rise from the reaction into energy.</p></div>
+<div class="we-s" data-f="E = VIt,\ \text{CF} = \dfrac{E}{\Delta T}"><p>\(E = VIt = 5.00 \times 2.50 \times 120 = 1500\text{ J}\); \(\text{CF} = \frac{1500}{0.60} = 2500\text{ J °C}^{-1}\).</p></div>
+<div class="we-s" data-f="q = \text{CF} \times \Delta T"><p>\(q = 2500 \times 5.20 = 13\,000\text{ J} = 13.0\text{ kJ}\).</p></div>
+<div class="we-s" data-f="n = \dfrac mM,\ \dfrac qn"><p>\(n = \frac{0.500}{46.0} = 0.01087\text{ mol}\), so \(\frac{13.0}{0.01087} = 1196\text{ kJ mol}^{-1}\).</p></div>
+<div class="we-a" data-f="\Delta H = -\dfrac qn \text{ (exothermic)}"><p><strong>\(\Delta H_c = -1.20 \times 10^3\ \text{kJ mol}^{-1}\)</strong> (negative: exothermic). It's lower in magnitude than the data-book value (1360), suggesting heat loss or incomplete combustion.</p></div>
+</div>
+
+<div class="we" data-title="Solution calorimetry: an endothermic dissolution" data-marks="3">
+<div class="we-q"><p>5.00 g of ammonium nitrate (\(M = 80.0\)) dissolves in 100 g of water in a polystyrene cup, and the temperature falls by 3.9 °C. Calculate \(\Delta H\) for \(\ce{NH4NO3(s)}\) \(\ce{-> NH4+(aq) + NO3-(aq)}\).</p></div>
+<div class="we-t"><p>In solution calorimetry the water is the surroundings. If the temperature falls, the reaction absorbed energy from the water, so it's endothermic and \(\Delta H\) is positive.</p></div>
+<div class="we-s" data-f="q = mc\Delta T"><p>\(q = 100 \times 4.18 \times 3.9 = 1630\text{ J}\) absorbed from the water.</p></div>
+<div class="we-s" data-f="n = \dfrac mM"><p>\(n = \frac{5.00}{80.0} = 0.0625\text{ mol}\).</p></div>
+<div class="we-a" data-f="\Delta H = +\dfrac qn \text{ (endothermic)}"><p>\(\Delta H = +\frac{1.63}{0.0625} = \) <strong>+26.1 kJ mol⁻¹</strong> (positive: the solution got colder).</p></div>
+</div>
+
+<div class="we" data-title="Neutralisation" data-marks="3">
+<div class="we-q"><p>50.0 mL of 1.00 M HCl is mixed with 50.0 mL of 1.00 M NaOH. The temperature rises by 6.7 °C. Assuming the solution behaves like 100 g of water, find \(\Delta H\) for \(\ce{H+(aq) + OH-(aq) -> H2O(l)}\).</p></div>
+<div class="we-t"><p>The heat of neutralisation is the energy released per mole of water formed. Use the total mass of the mixed solutions for \(q\), and the limiting amount of acid or base for the moles.</p></div>
+<div class="we-s" data-f="q = mc\Delta T"><p>\(q = 100 \times 4.18 \times 6.7 = 2800\text{ J}\). Use the <strong>total</strong> mass of the mixture.</p></div>
+<div class="we-s" data-f="n = cV"><p>\(n(\ce{H2O}) = 0.0500\text{ mol}\).</p></div>
+<div class="we-a" data-f="\Delta H = -\dfrac qn"><p>\(\Delta H = -\frac{2.80}{0.0500} = \) <strong>−56.0 kJ mol⁻¹</strong>.</p></div>
+</div>
+
+<h2>Errors and improvements</h2>
+<div class="tbl"><table>
+<thead><tr><th>Source of error</th><th>Effect on measured |ΔH|</th><th>Improvement</th></tr></thead>
+<tbody>
+<tr><td>Heat lost to surroundings</td><td>Too small (systematic)</td><td>Insulate; lid; calibrate electrically; draught shield</td></tr>
+<tr><td>Incomplete combustion (soot)</td><td>Too small</td><td>Better air supply; bomb calorimeter with excess O₂</td></tr>
+<tr><td>Fuel evaporating from the burner wick</td><td>Too small (mass loss counted as burnt)</td><td>Cap the burner when weighing; weigh immediately</td></tr>
+<tr><td>Heat absorbed by the container is ignored (using \(mc\Delta T\))</td><td>Too small</td><td>Use a calibration factor</td></tr>
+<tr><td>Thermometer resolution / reading</td><td>Random</td><td>Digital probe; repeat trials; extrapolate a temperature–time graph</td></tr>
+</tbody></table></div>
+<aside class="c-exam"><p>“Heat loss” on its own rarely gets the mark. Say where the heat goes and which way it pushes the result: “heat lost to the air means \(\Delta T\) is smaller than it should be, so the calculated heat of combustion is lower than the true value.”</p></aside>
+
+<aside class="c-exam" data-title="When is “heat loss” the wrong answer?">
+<p>In <strong>solution calorimetry</strong> with a calibration factor and an extrapolated temperature–time graph, heat loss usually <em>isn't</em> an accepted explanation:</p>
+<ul>
+  <li>Heat lost during <strong>calibration</strong> gives a smaller ΔT, so a <em>larger</em> CF, which pushes the result up, not down.</li>
+  <li>Heat lost during the <strong>reaction</strong> is already corrected by extrapolating the cooling curve back to the time of mixing.</li>
+</ul>
+<p>Accepted reasons for a result that's too low include: a CF that's too small (e.g. calibrated with a different volume, or below the minimum possible \(mc\) of the water inside); a reagent that absorbed water from the air (NaOH pellets are hygroscopic, so the weighed mass isn't all NaOH); impurities reacting endothermically; the wrong limiting reagent assumed. Check which reagent is in excess before blaming an “incomplete reaction”.</p>
+<p>Handy check: a calorimeter holding 100 g of water must have a CF of at least \(100 \times 4.18 = 418\ \text{J °C}^{-1}\), because the water alone needs that much. A smaller CF means less water was present or the calibration is invalid.</p>
+</aside>
+
+<aside class="c-trap" data-title="Trick alert: calorimetry traps">
+<ul>
+  <li><strong>\(m\) is the mass of the water</strong> (or solution), not the mass of fuel.</li>
+  <li><strong>Joules vs kilojoules:</strong> \(mc\Delta T\) gives joules. Convert before dividing by moles.</li>
+  <li><strong>Sign of ΔH comes from the direction of temperature change</strong>, not from the arithmetic.</li>
+  <li><strong>Calibration factor units:</strong> J °C⁻¹ (or kJ °C⁻¹). A CF already includes the water, so don't also use \(mc\Delta T\).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>The energy needed to raise the temperature of 250 mL of water by 12.0 °C is closest to</p></div>
+<ol><li>3.0 kJ</li><li>12.5 kJ</li><li>50.2 kJ</li><li>1.25 kJ</li></ol>
+<div class="mcq-x"><p>\(250 \times 4.18 \times 12.0 = 12\,540\text{ J} \approx 12.5\text{ kJ}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>During calibration, 4.20 kJ of electrical energy raises the calorimeter's temperature by 1.40 °C. The calibration factor is</p></div>
+<ol><li>5.88 kJ °C⁻¹</li><li>0.333 kJ °C⁻¹</li><li>4.18 kJ °C⁻¹</li><li>3.00 kJ °C⁻¹</li></ol>
+<div class="mcq-x"><p>\(\text{CF} = \frac{4.20}{1.40} = 3.00\text{ kJ °C}^{-1}\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>A student uses a spirit burner and gets a heat of combustion for methanol much lower than the data-book value. Which is the least likely explanation?</p></div>
+<ol><li>The thermometer read 0.5 °C too high throughout</li><li>Heat was lost to the air around the can</li><li>Soot formed on the bottom of the can</li><li>Methanol evaporated from the wick before the final weighing</li></ol>
+<div class="mcq-x"><p>A constant offset cancels in \(\Delta T = T_f - T_i\). The others all reduce the energy measured per gram.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>In a calibrated calorimeter (CF = 1.85 kJ °C⁻¹), 0.0200 mol of a compound dissolves and the temperature falls by 2.40 °C. \(\Delta H\) for the dissolution is</p></div>
+<ol><li>−222 kJ mol⁻¹</li><li>−4.44 kJ mol⁻¹</li><li>+222 kJ mol⁻¹</li><li>+4.44 kJ mol⁻¹</li></ol>
+<div class="mcq-x"><p>\(q = 1.85 \times 2.40 = 4.44\text{ kJ}\); \(\frac{4.44}{0.0200} = 222\). The temperature fell, so it's endothermic: +222 kJ mol⁻¹.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>Why is electrical calibration more accurate than using \(q = mc\Delta T\) for a calorimeter?</p></div>
+<ol><li>It removes all heat loss</li><li>It accounts for heat absorbed by all parts of the calorimeter, not just the water</li><li>It makes the reaction faster</li><li>It avoids having to measure temperature</li></ol>
+<div class="mcq-x"><p>The calibration factor includes the container, stirrer and thermometer. Some heat loss still occurs, but it happens similarly in calibration and reaction, so it partly cancels.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3" data-f="q = mc\Delta T ;; \text{heat of combustion} = \dfrac{q}{m_{\text{fuel}}}">
+<div class="pq-q"><p>Burning 0.800 g of a fuel heats 150 g of water from 18.5 °C to 38.9 °C. Calculate the heat of combustion in kJ g⁻¹, assuming no heat loss.</p></div>
+<div class="pq-s"><p>\(q = 150 \times 4.18 \times 20.4 = 12\,791\text{ J} = 12.8\text{ kJ}\). \(\frac{12.8}{0.800} = 16.0\text{ kJ g}^{-1}\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="4" data-f="E = VIt ;; \text{CF} = \dfrac{E}{\Delta T} ;; q = \text{CF} \times \Delta T ;; \Delta H = -\dfrac qn">
+<div class="pq-q"><p>A calorimeter is calibrated with 6.00 V and 1.80 A for 150 s, giving a 0.820 °C rise. 0.350 g of octane (\(M = 114\)) is then burnt, raising the temperature by 7.95 °C. Calculate \(\Delta H_c\) for octane and the percentage error compared with −5460 kJ mol⁻¹.</p></div>
+<div class="pq-s"><p>\(E = 6.00 \times 1.80 \times 150 = 1620\text{ J}\); CF \(= \frac{1620}{0.820} = 1976\text{ J °C}^{-1}\). [1]</p><p>\(q = 1976 \times 7.95 = 15\,710\text{ J} = 15.71\text{ kJ}\). [1]</p><p>\(n = \frac{0.350}{114} = 3.070 \times 10^{-3}\text{ mol}\); \(\Delta H = -\frac{15.71}{0.003070} \approx -5116\ \text{kJ mol}^{-1}\). [1]</p><p>Error: \(\frac{5460 - 5116}{5460} \times 100 = 6.3\%\) too low in magnitude. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="3">
+<div class="pq-q"><p>A student measures the heat of neutralisation using a glass beaker instead of an insulated cup. Explain how this affects the result, and suggest two improvements.</p></div>
+<div class="pq-s"><p>Glass conducts heat, so more heat is lost to the surroundings; \(\Delta T\) is lower than it should be and the calculated |ΔH| is too small. [1]</p><p>Improvements: use an insulated (polystyrene) cup with a lid; calibrate the calorimeter electrically; record temperature over time and extrapolate back to the moment of mixing. [2]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="q = mc\Delta T">
+<div class="pq-q"><p>A student calculates \(q = mc\Delta T\) using the mass of fuel burnt (1.20 g) instead of the mass of water. Explain why this is wrong in terms of what \(q = mc\Delta T\) represents.</p></div>
+<div class="pq-s"><p>\(q = mc\Delta T\) is the heat absorbed by the substance whose temperature changed: here, the water. The fuel's mass is used afterwards, to convert \(q\) into energy per gram (or per mole, via \(n\)).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(q = mc\Delta T\) (water) or \(q = \text{CF} \times \Delta T\) (calibrated), with \(\text{CF} = \frac{VIt}{\Delta T}\).</li>
+  <li>\(\Delta H = \mp\frac{q}{n}\): negative if the temperature rose.</li>
+  <li>Heat loss and incomplete combustion make experimental |ΔH| too small.</li>
+</ul>

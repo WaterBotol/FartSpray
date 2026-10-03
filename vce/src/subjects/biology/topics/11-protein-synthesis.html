@@ -1,0 +1,130 @@
+<!--
+id: protein-synthesis
+title: Gene expression: transcription, RNA processing & translation
+short: Transcription & translation
+summary: How a gene is expressed as a polypeptide: transcription by RNA polymerase, processing of pre-mRNA (splicing, 5′ cap, poly-A tail, alternative splicing), and translation at the ribosome with tRNA, including where each step happens.
+keywords: gene expression, protein synthesis, transcription, RNA polymerase, promoter, template strand, pre-mRNA, RNA processing, splicing, spliceosome, introns removed, exons joined, 5' cap, methyl guanosine cap, poly-A tail, alternative splicing, mature mRNA, nuclear pore, translation, ribosome, tRNA, anticodon, amino acid, peptide bond, polypeptide, start codon, stop codon, release factor, polyribosome
+dotpoints: the process of gene expression: transcription, RNA processing in eukaryotic cells, and translation | the roles of RNA polymerase, ribosomes, mRNA, tRNA and rRNA in protein synthesis
+-->
+<h2>Overview</h2>
+<div class="tbl"><table>
+<thead><tr><th>Stage</th><th>Where (eukaryote)</th><th>Input → output</th></tr></thead>
+<tbody>
+<tr><td>Transcription</td><td>Nucleus</td><td>DNA template → pre-mRNA</td></tr>
+<tr><td>RNA processing</td><td>Nucleus</td><td>pre-mRNA → mature mRNA</td></tr>
+<tr><td>Translation</td><td>Ribosomes in the cytoplasm (free or on rough ER)</td><td>mRNA → polypeptide</td></tr>
+</tbody></table></div>
+<p>In prokaryotes there's no nucleus: transcription and translation both happen in the cytoplasm, often at the same time, and there's no splicing.</p>
+
+<h2>1. Transcription</h2>
+<ol>
+  <li><strong>RNA polymerase binds to the promoter</strong>, and the DNA unwinds and separates locally (hydrogen bonds break).</li>
+  <li>RNA polymerase moves along the <strong>template strand</strong> (3′→5′), adding complementary RNA nucleotides to build pre-mRNA 5′→3′ (A–U, T–A, G–C, C–G).</li>
+  <li>At the <strong>termination sequence</strong>, RNA polymerase detaches and the pre-mRNA is released; the DNA re-forms its double helix.</li>
+</ol>
+
+<h2>2. RNA processing (eukaryotes)</h2>
+<ul>
+  <li><strong>Splicing</strong>: introns are removed and exons joined (by spliceosomes).</li>
+  <li><strong>5′ methyl-guanosine cap</strong> added: helps the ribosome bind and protects the mRNA from degradation.</li>
+  <li><strong>Poly-A tail</strong> (many adenine nucleotides) added to the 3′ end: increases stability and aids export through nuclear pores.</li>
+  <li><strong>Alternative splicing</strong>: different combinations of exons can be kept, so <em>one gene can code for several different proteins</em>. This is one reason humans have about 20 000 genes but many more proteins.</li>
+</ul>
+
+<h2>3. Translation</h2>
+<ol>
+  <li><strong>Initiation</strong>: the small ribosomal subunit binds the mRNA (near the cap) and moves to the start codon AUG. A tRNA with anticodon UAC carrying methionine pairs with it; the large subunit joins.</li>
+  <li><strong>Elongation</strong>: the next tRNA with a complementary anticodon brings its amino acid. A <strong>peptide bond</strong> forms between the amino acids (a condensation reaction catalysed by rRNA). The ribosome moves along one codon, and the empty tRNA leaves to be recharged.</li>
+  <li><strong>Termination</strong>: at a stop codon, a release factor binds, and the polypeptide and ribosome separate.</li>
+</ol>
+<p>Several ribosomes can translate one mRNA at the same time (a polyribosome), producing many copies of the polypeptide quickly.</p>
+
+<div class="we" data-title="Anticodons and amino acids" data-marks="3">
+<div class="we-q"><p>A section of mRNA reads 5′ AUG UUU GGC 3′. (a) Give the anticodons of the tRNAs that bind to it, in order. (b) How many peptide bonds form between these amino acids?</p></div>
+<div class="we-t"><p>During translation, each tRNA's anticodon pairs with a complementary codon on the mRNA, and the tRNA carries the matching amino acid. Adjacent amino acids are joined by condensation reactions, forming one peptide bond per join, so \(n\) amino acids need \(n - 1\) bonds.</p></div>
+<div class="we-s"><p>Anticodons are complementary to the codons: AUG → UAC; UUU → AAA; GGC → CCG.</p></div>
+<div class="we-s"><p>Three amino acids joined in a chain: 2 peptide bonds.</p></div>
+<div class="we-a"><p><strong>(a) UAC, AAA, CCG. (b) 2.</strong> (Anticodons are usually written 3′→5′ to line up with the codon: 3′ UAC 5′ pairs with 5′ AUG 3′.)</p></div>
+</div>
+
+<div class="we" data-title="Alternative splicing (exam style)" data-marks="3">
+<div class="we-q"><p>A gene has exons 1, 2, 3 and 4 separated by introns. In muscle cells the protein made from it contains exons 1-2-4; in liver cells, 1-3-4. Explain how this is possible and state one advantage.</p></div>
+<div class="we-t"><p>In eukaryotes, the whole gene is transcribed into pre-mRNA, which is then processed: a 5′ cap and poly-A tail are added and introns are spliced out. Alternative splicing removes some exons as well, so one gene can give several different mature mRNAs.</p></div>
+<div class="we-s"><p>The whole gene, including all exons and introns, is transcribed into pre-mRNA in both cell types.</p></div>
+<div class="we-s"><p>During RNA processing, different exons are spliced out along with the introns: exon 3 is removed in muscle and exon 2 in liver.</p></div>
+<div class="we-a"><p><strong>Alternative splicing produces different mature mRNAs, and so different polypeptides, from one gene.</strong> Advantage: a single gene can code for multiple proteins, increasing the proteome without extra DNA.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: gene expression traps">
+<ul>
+  <li><strong>RNA polymerase doesn't need a primer</strong> and reads the template strand, not the coding strand.</li>
+  <li><strong>Introns are transcribed</strong> (they're in pre-mRNA). They're removed afterwards.</li>
+  <li><strong>The ribosome reads codons; tRNA anticodons pair with them.</strong> tRNA doesn't read DNA.</li>
+  <li><strong>Translation ends at the stop codon</strong>, not at the end of the mRNA (there's an untranslated region and the poly-A tail after it).</li>
+  <li><strong>Amino acids are joined by peptide bonds</strong>; codon–anticodon pairing uses hydrogen bonds.</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>In eukaryotes, transcription occurs in the</p></div>
+<ol><li>cytoplasm</li><li>ribosome</li><li>nucleus</li><li>Golgi apparatus</li></ol>
+<div class="mcq-x"><p>DNA stays in the nucleus; pre-mRNA is made there.</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="core">
+<div class="mcq-q"><p>The enzyme that builds mRNA from a DNA template is</p></div>
+<ol><li>RNA polymerase</li><li>DNA polymerase</li><li>DNA ligase</li><li>reverse transcriptase</li></ol>
+<div class="mcq-x"><p>RNA polymerase transcribes. DNA polymerase replicates DNA; reverse transcriptase makes DNA from RNA.</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="trick">
+<div class="mcq-q"><p>Which is <em>not</em> a function of the 5′ cap and poly-A tail?</p></div>
+<ol><li>Protecting mRNA from degradation</li><li>Helping export from the nucleus</li><li>Helping the ribosome bind</li><li>Coding for the first and last amino acids</li></ol>
+<div class="mcq-x"><p>They aren't translated. The start codon codes for the first amino acid.</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>A tRNA molecule has the anticodon 3′ GCU 5′. The codon it pairs with, and the amino acid it carries, are coded by</p></div>
+<ol><li>3′ CGA 5′ on mRNA</li><li>5′ CGA 3′ on mRNA</li><li>5′ GCU 3′ on DNA</li><li>5′ CGT 3′ on mRNA</li></ol>
+<div class="mcq-x"><p>Complementary and antiparallel: 3′ GCU 5′ pairs with 5′ CGA 3′ (arginine). mRNA has no T.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="hard">
+<div class="mcq-q"><p>A mutation deletes the splice site at the boundary of intron 2 in a gene. The most likely effect is</p></div>
+<ol><li>no transcription of the gene</li><li>the promoter can't bind RNA polymerase</li><li>intron 2 is retained in the mRNA, changing the polypeptide or introducing an early stop codon</li><li>the poly-A tail isn't added</li></ol>
+<div class="mcq-x"><p>Without the splice signal, the intron isn't removed; its sequence is then translated (often producing a premature stop codon or a frameshift).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>Which statement comparing prokaryotic and eukaryotic gene expression is correct?</p></div>
+<ol><li>In prokaryotes, translation can begin before transcription is finished</li><li>Prokaryotic mRNA is spliced in the nucleus</li><li>Eukaryotic ribosomes are found only in the nucleus</li><li>Prokaryotes don't use RNA polymerase</li></ol>
+<div class="mcq-x"><p>With no nuclear membrane, ribosomes attach to mRNA while it's still being transcribed.</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="3">
+<div class="pq-q"><p>Describe the role of each of mRNA, tRNA and rRNA in translation.</p></div>
+<div class="pq-s"><p>mRNA carries the codons that specify the amino acid sequence. tRNA delivers the correct amino acid to the ribosome, matching its anticodon to the codon. rRNA forms part of the ribosome and catalyses peptide bond formation.</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3">
+<div class="pq-q"><p>A gene is 12 000 base pairs long from promoter to termination sequence, yet its mature mRNA is only 2100 nucleotides long. Give two reasons for the difference.</p></div>
+<div class="pq-s"><p>Introns (often most of a eukaryotic gene) are transcribed but spliced out. [1] The promoter (and other regulatory sequences) isn't transcribed at all. [1] (Also: the transcribed length depends on where termination occurs.) Note that the cap and poly-A tail are <em>added</em>, so they don't explain a shorter mRNA. [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4">
+<div class="pq-q"><p>Outline the steps from a gene in the nucleus to a polypeptide in the cytoplasm, naming the key molecules at each step.</p></div>
+<div class="pq-s"><p>Transcription: RNA polymerase binds the promoter and uses the template strand to make complementary pre-mRNA. [1] Processing: introns spliced out, exons joined, 5′ cap and poly-A tail added; mature mRNA exits through a nuclear pore. [1] Translation: a ribosome binds the mRNA at AUG; tRNAs with complementary anticodons bring amino acids. [1] Peptide bonds form between adjacent amino acids until a stop codon is reached and the polypeptide is released. [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2">
+<div class="pq-q"><p>A student says: “Every cell in the body makes every protein, because every cell has the same DNA.” Explain why this is incorrect.</p></div>
+<div class="pq-s"><p>Cells contain the same genes, but only some genes are expressed in each cell type: transcription (and processing and translation) is regulated. Different cells therefore make different sets of proteins (e.g. insulin only in pancreatic β cells).</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>Transcription (nucleus): RNA polymerase, promoter, template strand → pre-mRNA.</li>
+  <li>Processing: splice out introns, add cap and tail; alternative splicing gives multiple proteins.</li>
+  <li>Translation (ribosome): codon–anticodon pairing, peptide bonds, AUG to stop codon.</li>
+</ul>

@@ -1,0 +1,127 @@
+<!--
+id: normal
+title: The normal distribution
+short: Normal distribution
+summary: The normal curve, standardising with z-scores, the 68–95–99.7% rule, probabilities and inverse-normal (percentile) problems, finding an unknown mean or standard deviation, conditional normal probabilities and combining normal with binomial.
+keywords: normal distribution, bell curve, standard normal, z score, standardise, standardize, 68 95 99.7, empirical rule, inverse normal, percentile, quantile, find mean, find standard deviation, conditional normal, normcdf, invnorm, N(mu, sigma^2), symmetric
+dotpoints: the normal distribution N(μ, σ²) and the standard normal distribution | standardisation and the 68–95–99.7% rule | calculation of probabilities and quantiles, including finding unknown parameters
+-->
+<h2>The normal curve</h2>
+<p>\(X \sim \text{N}(\mu, \sigma^2)\) has a symmetric bell-shaped pdf centred at \(\mu\) (mean = median = mode), with spread set by the standard deviation \(\sigma\). Note that the second parameter is the <strong>variance</strong>: \(\text{N}(170, 64)\) means \(\sigma = 8\).</p>
+<div class="eq"><div class="eq-label">Standardising</div>\[ Z = \frac{X - \mu}{\sigma} \sim \text{N}(0, 1) \]<p>A \(z\)-score counts how many standard deviations a value is from the mean.</p></div>
+<div class="tbl"><table>
+<thead><tr><th>Interval</th><th>\(\mu \pm \sigma\)</th><th>\(\mu \pm 2\sigma\)</th><th>\(\mu \pm 3\sigma\)</th></tr></thead>
+<tbody><tr><td>Approx. probability</td><td>68%</td><td>95%</td><td>99.7%</td></tr></tbody></table></div>
+<div class="sim" data-sim="normal"></div>
+
+<div class="we" data-title="Probability and percentile" data-marks="3">
+<div class="we-q"><p>Heights of adult men are \(X \sim \text{N}(170, 8^2)\) cm. Find (a) \(P(X &gt; 180)\), (b) the height exceeded by only 10% of men.</p></div>
+<div class="we-t"><p>Standardising turns any normal variable into \(Z \sim \text{N}(0, 1)\). Going the other way, a percentile's \(z\)-value converts back with \(x = \mu + z\sigma\). CAS inverse normal works with the area to the left.</p></div>
+<div class="we-s" data-f="Z = \dfrac{X - \mu}{\sigma}"><p>(a) \(z = \frac{180 - 170}{8} = 1.25\); \(P(Z &gt; 1.25) \approx 0.1056\).</p></div>
+<div class="we-s" data-f="P(X &gt; h) = 0.1 \iff P(X &lt; h) = 0.9 ;; x = \mu + z\sigma"><p>(b) Need \(P(X &gt; h) = 0.1\), i.e. \(P(X &lt; h) = 0.9\). Inverse normal: \(z = 1.2816\), so \(h = 170 + 1.2816 \times 8\).</p></div>
+<div class="we-a"><p><strong>(a) 0.1056, (b) \(h \approx 180.25\) cm.</strong> CAS inverse normal uses the area to the <em>left</em> by default: convert “top 10%” into 0.9.</p></div>
+</div>
+
+<div class="we" data-title="Using the 68–95–99.7 rule (tech-free)" data-marks="2">
+<div class="we-q"><p>\(X \sim \text{N}(50, 16)\). Without technology, estimate \(P(42 &lt; X &lt; 54)\).</p></div>
+<div class="we-t"><p>About 68%, 95% and 99.7% of a normal distribution lies within 1, 2 and 3 standard deviations of the mean. The curve is symmetric, so each half holds half of those amounts.</p></div>
+<div class="we-s" data-f="68\%,\ 95\%,\ 99.7\% \text{ within } 1, 2, 3\ \sigma ;; \sigma = \sqrt{\operatorname{Var}(X)}"><p>\(\sigma = 4\). \(42 = \mu - 2\sigma\), \(54 = \mu + \sigma\). By symmetry, \(P(42 &lt; X &lt; 50) \approx \frac{95\%}{2} = 47.5\%\) and \(P(50 &lt; X &lt; 54) \approx \frac{68\%}{2} = 34\%\).</p></div>
+<div class="we-a"><p><strong>\(\approx 0.815\)</strong> (81.5%). Draw the bell and split at the mean.</p></div>
+</div>
+
+<div class="we" data-title="Finding σ" data-marks="2">
+<div class="we-q"><p>The mass of a packet is normally distributed with mean 50 g, and 10% of packets weigh less than 40 g. Find the standard deviation.</p></div>
+<div class="we-t"><p>A known percentile gives a \(z\)-value from inverse normal. Put it into the standardising formula and solve for the unknown parameter.</p></div>
+<div class="we-s" data-f="Z = \dfrac{X - \mu}{\sigma} ;; P(Z &lt; -1.2816) = 0.1"><p>\(P(X &lt; 40) = 0.1 \Rightarrow \frac{40 - 50}{\sigma} = -1.2816\).</p></div>
+<div class="we-a"><p><strong>\(\sigma = \frac{10}{1.2816} \approx 7.80\) g.</strong></p></div>
+</div>
+
+<div class="we" data-title="Finding μ and σ together (hard)" data-marks="4">
+<div class="we-q"><p>For a normal variable, \(P(X &lt; 30) = 0.2\) and \(P(X &gt; 60) = 0.1\). Find \(\mu\) and \(\sigma\).</p></div>
+<div class="we-t"><p>Two known percentiles give two standardising equations. Both unknowns appear linearly, so solve them simultaneously.</p></div>
+<div class="we-s" data-f="Z = \dfrac{X - \mu}{\sigma}"><p>\(\frac{30 - \mu}{\sigma} = z_{0.2} = -0.8416\) and \(\frac{60 - \mu}{\sigma} = z_{0.9} = 1.2816\).</p></div>
+<div class="we-s" data-f="x = \mu + z\sigma ;; \text{subtract to eliminate } \mu"><p>So \(30 = \mu - 0.8416\sigma\) and \(60 = \mu + 1.2816\sigma\). Subtract: \(30 = 2.1232\sigma\).</p></div>
+<div class="we-a"><p><strong>\(\sigma \approx 14.13\), \(\mu \approx 30 + 0.8416 \times 14.13 \approx 41.89\).</strong></p></div>
+</div>
+
+<div class="we" data-title="Conditional normal, then binomial (Exam 2 chain)" data-marks="4">
+<div class="we-q"><p>Using \(X \sim \text{N}(170, 8^2)\): (a) find \(P(X &gt; 180 \mid X &gt; 170)\); (b) ten men are chosen at random. Find the probability that at least two are taller than 180 cm.</p></div>
+<div class="we-t"><p>A classic Exam 2 chain: a normal probability becomes the success probability \(p\) of a binomial. Carry the unrounded value through, or your final answer drifts.</p></div>
+<div class="we-s" data-f="P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}"><p>(a) \(\frac{P(X &gt; 180)}{P(X &gt; 170)} = \frac{0.1056}{0.5} \approx 0.2113\).</p></div>
+<div class="we-s" data-f="P(Y = y) = \dbinom ny p^y(1 - p)^{n - y} ;; P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1)"><p>(b) \(Y \sim \text{Bi}(10, 0.1056)\): \(P(Y \ge 2) = 1 - P(Y = 0) - P(Y = 1)\).</p></div>
+<div class="we-a"><p><strong>(a) 0.2113; (b) \(\approx 0.2858\).</strong> Use the unrounded probability from the normal part in the binomial part.</p></div>
+</div>
+
+<aside class="c-trap" data-title="Trick alert: normal traps">
+<ul>
+  <li><strong>\(\text{N}(\mu, \sigma^2)\): the second number is the variance.</strong> \(\text{N}(10, 9)\) has \(\sigma = 3\).</li>
+  <li><strong>Inverse normal = area to the left.</strong> “Top 5%” means use 0.95.</li>
+  <li><strong>Symmetry shortcuts:</strong> \(P(Z &lt; -a) = P(Z &gt; a)\), and \(P(X &gt; \mu) = 0.5\).</li>
+  <li><strong>The 68–95–99.7 rule is approximate</strong>, so use it only when told to (or tech-free).</li>
+</ul>
+</aside>
+
+<h2>Practice</h2>
+<div class="mcq" data-ans="B" data-level="core">
+<div class="mcq-q"><p>\(Z \sim \text{N}(0, 1)\) and \(P(Z &lt; a) = 0.3\). Then \(P(Z &gt; -a)\) is</p></div>
+<ol><li>0.7</li><li>0.3</li><li>0.4</li><li>0.6</li></ol>
+<div class="mcq-x"><p>By symmetry, \(P(Z &gt; -a) = P(Z &lt; a) = 0.3\).</p></div>
+</div>
+
+<div class="mcq" data-ans="A" data-level="trick">
+<div class="mcq-q"><p>\(X \sim \text{N}(20, 9)\). \(P(X &gt; 26)\) is approximately</p></div>
+<ol><li>0.025</li><li>0.16</li><li>0.0015</li><li>0.05</li></ol>
+<div class="mcq-x"><p>\(\sigma = 3\), so 26 is \(\mu + 2\sigma\). The tail beyond \(2\sigma\) is \(\frac{1 - 0.95}{2} = 0.025\). Using \(\sigma = 9\) gives \(z = 0.67\) and a very different answer.</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="core">
+<div class="mcq-q"><p>The scores on a test are normal with mean 65 and standard deviation 10. A student's score has a \(z\)-score of \(-1.5\). Their score is</p></div>
+<ol><li>80</li><li>63.5</li><li>50</li><li>55</li></ol>
+<div class="mcq-x"><p>\(x = 65 - 1.5 \times 10 = 50\).</p></div>
+</div>
+
+<div class="mcq" data-ans="D" data-level="core">
+<div class="mcq-q"><p>For any normal distribution, \(P(\mu - \sigma &lt; X &lt; \mu + 2\sigma)\) is approximately</p></div>
+<ol><li>0.95</li><li>0.68</li><li>0.975</li><li>0.815</li></ol>
+<div class="mcq-x"><p>\(0.34 + 0.475 = 0.815\).</p></div>
+</div>
+
+<div class="mcq" data-ans="B" data-level="hard">
+<div class="mcq-q"><p>\(X\) is normal with \(\sigma = 5\) and \(P(X &gt; 62) = 0.2\). The mean is closest to</p></div>
+<ol><li>66.2</li><li>57.8</li><li>61.2</li><li>53.6</li></ol>
+<div class="mcq-x"><p>\(P(X &lt; 62) = 0.8 \Rightarrow z = 0.8416\). \(\mu = 62 - 0.8416 \times 5 \approx 57.8\).</p></div>
+</div>
+
+<div class="mcq" data-ans="C" data-level="trick">
+<div class="mcq-q"><p>Which of the following is <em>not</em> true for \(X \sim \text{N}(\mu, \sigma^2)\)?</p></div>
+<ol><li>\(P(X = \mu) = 0\)</li><li>mean = median</li><li>\(P(X &gt; \mu + \sigma) = 0.32\)</li><li>\(P(X &lt; \mu) = 0.5\)</li></ol>
+<div class="mcq-x"><p>About 32% lies <em>outside</em> \(\mu \pm \sigma\), split between both tails, so \(P(X &gt; \mu + \sigma) \approx 0.16\).</p></div>
+</div>
+
+<div class="pq" data-level="core" data-marks="2" data-f="Z = \dfrac{X - \mu}{\sigma}">
+<div class="pq-q"><p>Battery life is normal with mean 400 hours and standard deviation 25 hours. Find the proportion of batteries lasting between 350 and 420 hours.</p></div>
+<div class="pq-s"><p>\(z\)-scores \(-2\) and \(0.8\). \(P(-2 &lt; Z &lt; 0.8) \approx 0.7881 - 0.0228 = 0.7654\).</p></div>
+</div>
+
+<div class="pq" data-level="hard" data-marks="3" data-f="Z = \dfrac{X - \mu}{\sigma}">
+<div class="pq-q"><p>The time to complete a puzzle is normal with mean 12 minutes. 5% of people take more than 18 minutes. Find the standard deviation and the proportion taking less than 10 minutes.</p></div>
+<div class="pq-s"><p>\(\frac{18 - 12}{\sigma} = 1.6449 \Rightarrow \sigma \approx 3.648\) min. [2]</p><p>\(P(X &lt; 10) = P\left(Z &lt; \frac{-2}{3.648}\right) = P(Z &lt; -0.548) \approx 0.2917\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="exam" data-marks="4" data-f="Z = \dfrac{X - \mu}{\sigma} ;; P(A \mid B) = \dfrac{P(A \cap B)}{P(B)}">
+<div class="pq-q"><p>Apples have masses \(M \sim \text{N}(150, 20^2)\) g. Apples under 120 g are rejected. (a) Find the proportion rejected. (b) Is the mean mass of the accepted apples greater or less than 150 g? Give a reason. (c) A box holds 12 apples chosen at random from the accepted apples. Find the probability that at least 11 weigh more than 140 g.</p></div>
+<div class="pq-s"><p>(a) \(P(M &lt; 120) = P(Z &lt; -1.5) \approx 0.0668\). [1]</p><p>(b) Greater: the lightest apples have been removed from the left tail. [1]</p><p>(c) \(P(M &gt; 140 \mid M \ge 120) = \frac{P(M &gt; 140)}{P(M \ge 120)} = \frac{0.6915}{0.9332} \approx 0.7410\). [1] Then \(Y \sim \text{Bi}(12, 0.7410)\): \(P(Y \ge 11) \approx 0.1423\). [1]</p></div>
+</div>
+
+<div class="pq" data-level="trick" data-marks="2" data-f="P(X &gt; a) = 0.05 \iff P(X &lt; a) = 0.95">
+<div class="pq-q"><p>A student uses invNorm(0.05, 60, 4) to find “the value exceeded by 5% of the population”. What's wrong?</p></div>
+<div class="pq-s"><p>invNorm uses the area to the left, so 0.05 gives the <em>bottom</em> 5% (≈ 53.4). The value exceeded by 5% needs invNorm(0.95, 60, 4) ≈ 66.6.</p></div>
+</div>
+
+<h2>Summary</h2>
+<ul>
+  <li>\(Z = \frac{X - \mu}{\sigma}\); remember \(\text{N}(\mu, \sigma^2)\) uses the variance.</li>
+  <li>68–95–99.7% for quick, tech-free estimates.</li>
+  <li>Unknown \(\mu\) or \(\sigma\): turn each probability into a \(z\)-equation; two unknowns need two equations.</li>
+  <li>Conditional: divide probabilities. Then feed an unrounded \(p\) into a binomial if needed.</li>
+</ul>
